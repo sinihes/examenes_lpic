@@ -84,7 +84,6 @@ jobs:
           [ -f .env ] || cp .env.example .env
           php artisan storage:link
           chmod -R 755 storage bootstrap/cache
-          chown -R www-data:www-data storage bootstrap/cache
           php artisan config:cache
           php artisan route:cache
           php artisan view:cache
