@@ -1,11 +1,18 @@
+name: examenes
+
 version: 1.0
-deploy:
-  # comment in one of the following lines to force the use of the recurring or bootstrap configuration
-  #  force: recurring
-  #  force: bootstrap
+
+root: public
+
+languages:
+  php:
+    version: "8.2"
+
+domains:
+  - examenes.sinihescode.com
 
   # configure the initial deployment of each branch
-  bootstrap:
+bootstrap:
     # directories that are not overwritten or removed by the next deployment
     excludes:
       - tests
