@@ -78,6 +78,8 @@ jobs:
           DB_USERNAME: dbu4846625
         run: |
           [ -f .env ] || cp .env.example .env
+          mkdir -p storage/logs
+          touch storage/.gitkeep
           php artisan storage:link
           chmod -R 755 storage bootstrap/cache
           php artisan config:cache
