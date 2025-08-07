@@ -19,7 +19,7 @@ env:
 jobs:
 # Please do not rename this job
   build-project:
-    name: build examenes_lpic
+    name: build examenes
     runs-on: ubuntu-latest
     permissions:
       contents: read
