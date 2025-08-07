@@ -1,4 +1,5 @@
 name: examenes_lpic
+version: 1
 root: public
 domains:
   - examenes.sinihescode.com
