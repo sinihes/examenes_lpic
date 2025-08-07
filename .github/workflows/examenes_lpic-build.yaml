@@ -1,0 +1,98 @@
+# To better understand this file read this:
+# https://docs.ionos.space/docs/github-actions-customization/
+
+name: "Deploy Now: Execute Build"
+
+on:
+  workflow_call:
+    inputs:
+      site-url:
+        required: true
+        type: string
+      branch-id:
+        required: true
+        type: string
+
+env:
+  DEPLOYMENT_FOLDER: public
+
+jobs:
+# Please do not rename this job
+  build-project:
+    name: build examenes_lpic
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      # if you add permissions here this needs to be done in the examenes_lpic-orchestration.yaml as well
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: 'recursive'
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: v22.x
+
+      - name: Build Node assets
+        env:
+          CI: true
+          SITE_URL: ${{ inputs.site-url }}
+        run: |
+          npm ci
+          npm run build
+
+      - name: Setup composer
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          tools: composer:2
+
+      - name: Run composer install
+        env:
+          APP_ENV: production
+          APP_KEY: base64:7CK6V81ABPAgaHrDsp3BL3vEmLtJdOB+LCXh//Kddp0=
+          APP_URL: https://examenes.sinihescode.com
+          ASSET_URL: ${APP_URL}
+          DB_CONNECTION: mysql
+          DB_DATABASE: dbs14534791
+          DB_HOST: db5018359034.hosting-data.io
+          DB_PASSWORD: DB23pSsas2dsaa23
+          DB_PORT: 3306
+          DB_USERNAME: dbu4846625
+        run: composer install --optimize-autoloader --no-dev
+
+      - name: Build PHP assets
+        env:
+          APP_ENV: production
+          APP_KEY: base64:7CK6V81ABPAgaHrDsp3BL3vEmLtJdOB+LCXh//Kddp0=
+          APP_URL: https://examenes.sinihescode.com
+          ASSET_URL: ${APP_URL}
+          DB_CONNECTION: mysql
+          DB_DATABASE: dbs14534791
+          DB_HOST: db5018359034.hosting-data.io
+          DB_PASSWORD: DB23pSsas2dsaa23
+          DB_PORT: 3306
+          DB_USERNAME: dbu4846625
+        run: |
+          [ -f .env ] || cp .env.example .env
+          php artisan storage:link
+          chmod -R 755 storage bootstrap/cache
+          php artisan config:cache
+          php artisan route:cache
+          php artisan view:cache
+
+# Please do not touch the following action
+      - name: Store deployment content
+        uses: ionos-deploy-now/artifact-action@v1
+        with:
+          api-key: ${{ secrets.IONOS_API_KEY }}
+          service-host: api-eu.ionos.space
+          project-id: a06a7f66-384d-410b-b741-53181cc8eee4
+          branch-id: ${{ inputs.branch-id }}
+          version: ${{ github.sha }}
+          folder: ${{ env.DEPLOYMENT_FOLDER }}
+          config-file: .deploy-now/examenes_lpic/config.yaml
+          action: upload
