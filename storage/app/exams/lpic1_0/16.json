@@ -1,0 +1,486 @@
+{
+  "id": "16",
+  "title": "103 - GNU and Linux Commands",
+  "questions": [
+    {
+      "id": 1,
+      "type": "single",
+      "question": "¿Qué comando se puede usar para ver la configuración actual de tu entorno cuando usas Bash?",
+      "options": [
+        { "label": "a", "text": "environment", "correct": false },
+        { "label": "b", "text": "env", "correct": true },
+        { "label": "c", "text": "listenv", "correct": false },
+        { "label": "d", "text": "echoenv", "correct": false }
+      ],
+      "feedback": "El comando 'env' imprimirá las variables de entorno actuales de Bash. El comando 'printenv' también realiza la misma operación. Los otros comandos listados en esta pregunta no existen."
+    },
+    {
+      "id": 2,
+      "type": "single",
+      "question": "Supón que estás usando el shell Bash y quieres evitar que las redirecciones de salida sobrescriban accidentalmente archivos existentes. ¿Qué comando y opción se pueden usar para invocar este comportamiento?",
+      "options": [
+        { "label": "a", "text": "setoutput -f", "correct": false },
+        { "label": "b", "text": "overwrite=no", "correct": false },
+        { "label": "c", "text": "overwrite -n", "correct": false },
+        { "label": "d", "text": "set -C", "correct": true }
+      ],
+      "feedback": "El comando 'set' puede usarse para varios propósitos, incluyendo cambiar cómo funciona el entorno del shell. Una de estas opciones es '-C', que evita que redirecciones de salida como '>' sobrescriban un archivo si ya existe."
+    },
+    {
+      "id": 3,
+      "type": "single",
+      "question": "¿Qué comando se usa para acceder a la documentación en un computador Linux para un comando dado?",
+      "options": [
+        { "label": "a", "text": "doc", "correct": false },
+        { "label": "b", "text": "heredoc", "correct": false },
+        { "label": "c", "text": "man", "correct": true },
+        { "label": "d", "text": "manual", "correct": false }
+      ],
+      "feedback": "El comando 'man' muestra documentación para el comando dado como argumento. Las otras opciones listadas no existen."
+    },
+    {
+      "id": 4,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos imprimirá información variada sobre el kernel y la arquitectura, junto con otros detalles?",
+      "options": [
+        { "label": "a", "text": "info --sys", "correct": false },
+        { "label": "b", "text": "man sys", "correct": false },
+        { "label": "c", "text": "sysinfo", "correct": false },
+        { "label": "d", "text": "uname -a", "correct": true }
+      ],
+      "feedback": "El comando 'uname' se usa para imprimir información del sistema, y la opción '-a' imprime toda la información disponible para 'uname'."
+    },
+    {
+      "id": 5,
+      "type": "single",
+      "question": "Cuando se usa sed para una operación de sustitución, ¿qué opción debe incluirse para que la sustitución se aplique a toda la línea en lugar de solo a la primera instancia?",
+      "options": [
+        { "label": "a", "text": "g", "correct": true },
+        { "label": "b", "text": "a", "correct": false },
+        { "label": "c", "text": "r", "correct": false },
+        { "label": "d", "text": "y", "correct": false }
+      ],
+      "feedback": "La opción 'g' (global o greedy) aplicará la operación de coincidencia a toda la línea en lugar de solo a la primera instancia de la coincidencia."
+    },
+    {
+      "id": 6,
+      "type": "single",
+      "question": "¿Qué opción para el comando wc imprime el número de líneas dadas como entrada?",
+      "options": [
+        { "label": "a", "text": "-f", "correct": false },
+        { "label": "b", "text": "-a", "correct": false },
+        { "label": "c", "text": "-l", "correct": true },
+        { "label": "d", "text": "-o", "correct": false }
+      ],
+      "feedback": "La opción '-l' proporciona el número de líneas dadas como entrada. Por ejemplo, 'wc -l /etc/passwd' imprimiría el número de líneas en el archivo /etc/passwd. Las otras opciones no son válidas para el comando wc."
+    },
+    {
+      "id": 7,
+      "type": "single",
+      "question": "¿Cuál es el número predeterminado de líneas impresas por los comandos head y tail, respectivamente?",
+      "options": [
+        { "label": "a", "text": "10 para head, 5 para tail", "correct": false },
+        { "label": "b", "text": "5 para head, 10 para tail", "correct": false },
+        { "label": "c", "text": "10 para ambos head y tail", "correct": true },
+        { "label": "d", "text": "3 para ambos head y tail", "correct": false }
+      ],
+      "feedback": "Tanto head como tail imprimen 10 líneas de salida por defecto."
+    },
+    {
+      "id": 8,
+      "type": "single",
+      "question": "Estás intentando usar rmdir para eliminar un directorio, pero todavía hay múltiples archivos y otros directorios dentro de él. Suponiendo que estás seguro de que quieres eliminar el directorio y todo su contenido, ¿cuáles son el comando y los argumentos necesarios para eliminar el directorio y todo su contenido?",
+      "options": [
+        { "label": "a", "text": "rm -f", "correct": false },
+        { "label": "b", "text": "rm -rf", "correct": true },
+        { "label": "c", "text": "rmdir -a", "correct": false },
+        { "label": "d", "text": "rmdir -m", "correct": false }
+      ],
+      "feedback": "Las opciones '-rf' para rm eliminarán recursivamente el contenido de un directorio, incluyendo otros directorios. La opción '-f' sola no funcionará en este caso debido a los directorios adicionales. Las otras opciones dadas para rmdir no existen."
+    },
+    {
+      "id": 9,
+      "type": "single",
+      "question": "¿Qué comando encontrará directorios con nombres que comiencen con 2014 ubicados debajo del directorio actual?",
+      "options": [
+        { "label": "a", "text": "find ./ -name \"2014\"", "correct": false },
+        { "label": "b", "text": "find ./ -type d -name \"2014\"", "correct": false },
+        { "label": "c", "text": "find / -type d \"2014\"", "correct": false },
+        { "label": "d", "text": "find ./ -type d -name \"2014*\"", "correct": true }
+      ],
+      "feedback": "La opción '-type' hace que find limite su búsqueda solo a directorios, mientras que la opción '-name' limita los nombres de los elementos devueltos. Nota el uso del comodín debido a la redacción de la pregunta. También nota el uso de './' para denotar comenzar la búsqueda en el directorio actual."
+    },
+    {
+      "id": 10,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos proporcionará los nombres de usuario en una lista ordenada obtenida del archivo /etc/passwd?",
+      "options": [
+        { "label": "a", "text": "cat /etc/passwd | awk -F: '{print $1}' | sort", "correct": true },
+        { "label": "b", "text": "sort /etc/passwd | cut", "correct": false },
+        { "label": "c", "text": "echo /etc/passwd", "correct": false },
+        { "label": "d", "text": "cat /etc/passwd | awk '{print $1}' | sort", "correct": false }
+      ],
+      "feedback": "El comando 'cat' mostrará el contenido del archivo /etc/passwd y luego canalizará esa salida al comando 'awk'. El comando 'awk' luego analiza su entrada, dividiendo según el separador especificado para /etc/passwd, que es dos puntos (:). La salida se imprime y luego se canaliza al comando 'sort'. El comando 'sort' en la opción B no funcionará porque el comando 'cut' requiere un argumento. De manera similar, el comando 'echo' en la opción C solo mostrará /etc/passwd en stdout."
+    },
+        {
+      "id": 11,
+      "type": "single",
+      "question": "¿Qué opciones de ls producirán una salida que incluya archivos ocultos (punto), en una lista ordenada de modo que los archivos más nuevos estén al final de la salida?",
+      "options": [
+        { "label": "a", "text": "-la", "correct": false },
+        { "label": "b", "text": "-lat", "correct": false },
+        { "label": "c", "text": "-latr", "correct": true },
+        { "label": "d", "text": "-ltr", "correct": false }
+      ],
+      "feedback": "La opción -l de ls produce una salida larga o listada, y -t ordena por marca de tiempo. La opción -r invierte el orden, y -a es necesaria para incluir archivos ocultos (punto), haciendo que la respuesta C sea correcta."
+    },
+    {
+      "id": 12,
+      "type": "single",
+      "question": "¿Qué resultado tendrá si se ejecuta el comando touch en un archivo que ya existe?",
+      "options": [
+        { "label": "a", "text": "La marca de tiempo de acceso del archivo cambiará a la hora actual cuando se ejecute el comando touch.", "correct": true },
+        { "label": "b", "text": "El archivo será sobrescrito.", "correct": false },
+        { "label": "c", "text": "No habrá ningún cambio.", "correct": false },
+        { "label": "d", "text": "El archivo será añadido.", "correct": false }
+      ],
+      "feedback": "La marca de tiempo del archivo cambiará cuando se ejecute touch en un archivo que ya existe."
+    },
+    {
+      "id": 13,
+      "type": "single",
+      "question": "¿Qué opción en ambos comandos mv y cp hará que el comando pregunte antes de sobrescribir archivos que ya existen?",
+      "options": [
+        { "label": "a", "text": "-f", "correct": false },
+        { "label": "b", "text": "-Z", "correct": false },
+        { "label": "c", "text": "-r", "correct": false },
+        { "label": "d", "text": "-i", "correct": true }
+      ],
+      "feedback": "La opción -i hará que tanto cp como mv sean interactivos, es decir, que pregunten antes de sobrescribir. La opción -f forzará el comando mientras que -r es recursivo."
+    },
+    {
+      "id": 14,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos enviará el contenido de /etc/passwd tanto a stdout como a un archivo llamado passwordfile?",
+      "options": [
+        { "label": "a", "text": "cat /etc/passwd > passwordfile", "correct": false },
+        { "label": "b", "text": "var /etc/passwd | passwordfile", "correct": false },
+        { "label": "c", "text": "cat /etc/passwd | tee passwordfile", "correct": true },
+        { "label": "d", "text": "echo /etc/passwd | stdout > passwordfil", "correct": false }
+      ],
+      "feedback": "El comando tee enviará la salida tanto a stdout como al archivo especificado, haciendo que la respuesta C sea correcta. La opción A redirigirá la salida al archivo correcto pero no a stdout simultáneamente."
+    },
+    {
+      "id": 15,
+      "type": "single",
+      "question": "La jerarquía actual en el servidor contiene un directorio llamado /usr/local. Necesitas crear directorios adicionales debajo de ese llamados /usr/local/test/october. ¿Qué comando realizará esta tarea?",
+      "options": [
+        { "label": "a", "text": "mkdir -p /usr/local/test/october", "correct": true },
+        { "label": "b", "text": "mkdir /usr/local/test/october", "correct": false },
+        { "label": "c", "text": "mkdir -r /usr/local/test/october", "correct": false },
+        { "label": "d", "text": "mkdir -f /usr/local/test/october", "correct": false }
+      ],
+      "feedback": "La opción -p hará que mkdir cree niveles adicionales de directorios sin error. Ejecutar mkdir sin opciones no funcionará en este caso."
+    },
+    {
+      "id": 16,
+      "type": "single",
+      "question": "¿Qué opción del comando cp copiará directorios de manera recursiva?",
+      "options": [
+        { "label": "a", "text": "-v", "correct": false },
+        { "label": "b", "text": "-R", "correct": true },
+        { "label": "c", "text": "-Z", "correct": false },
+        { "label": "d", "text": "-i", "correct": false }
+      ],
+      "feedback": "La opción -R copiará directorios recursivamente. Nota que si la opción -i no está habilitada, la copia recursiva sobrescribirá archivos en el destino."
+    },
+    {
+      "id": 17,
+      "type": "single",
+      "question": "Has recibido un archivo que no tiene extensión. ¿Qué comando puedes ejecutar para ayudar a determinar qué tipo de archivo podría ser?",
+      "options": [
+        { "label": "a", "text": "grep", "correct": false },
+        { "label": "b", "text": "telnet", "correct": false },
+        { "label": "c", "text": "file", "correct": true },
+        { "label": "d", "text": "export", "correct": false }
+      ],
+      "feedback": "El comando file puede usarse para determinar qué tipo de archivo se está usando. Esto puede ser particularmente útil para archivos sin extensiones donde no estás seguro si deberías ver el contenido del archivo."
+    },
+    {
+      "id": 18,
+      "type": "single",
+      "question": "¿Qué comando creará una imagen de la partición de disco /dev/sda1 y colocará esa imagen en un archivo llamado output.img?",
+      "options": [
+        { "label": "a", "text": "dd if=sda of=/dev/sda1", "correct": false },
+        { "label": "b", "text": "dd if=output.img of=/dev/sda1", "correct": false },
+        { "label": "c", "text": "dd if=/dev/sda1 of=output.img", "correct": true },
+        { "label": "d", "text": "echo /dev/sda1 > output.img", "correct": false }
+      ],
+      "feedback": "El comando dd se usa para crear imágenes de disco, entre otras cosas. En este caso, el archivo de entrada es /dev/sda1 y el archivo de salida es output.img."
+    },
+    {
+      "id": 19,
+      "type": "single",
+      "question": "¿Cuál es el delimitador predeterminado utilizado por el comando cut?",
+      "options": [
+        { "label": "a", "text": "Dos puntos", "correct": false },
+        { "label": "b", "text": "Tabulación", "correct": true },
+        { "label": "c", "text": "Espacio", "correct": false },
+        { "label": "d", "text": "Coma", "correct": false }
+      ],
+      "feedback": "El comando cut usa una tabulación como delimitador predeterminado. Esto puede cambiarse con la opción -d."
+    },
+    {
+      "id": 20,
+      "type": "single",
+      "question": "¿Cuál de los siguientes descomprimirá y extraerá el contenido de un archivo que ha sido empaquetado con tar y comprimido con gzip?",
+      "options": [
+        { "label": "a", "text": "tar -zxf <file.tgz>", "correct": true },
+        { "label": "b", "text": "tar -xf <file.tgz>", "correct": false },
+        { "label": "c", "text": "tar -vz <file.tgz>", "correct": false },
+        { "label": "d", "text": "tar -fd <file.tgz>", "correct": false }
+      ],
+      "feedback": "La opción -z descomprimirá el archivo mientras que -x extraerá del archivo tar, y -f se usa para indicar el archivo sobre el cual realizar las operaciones mencionadas."
+    },
+        {
+      "id": 21,
+      "type": "single",
+      "question": "¿Qué comando se usa para traer un comando al primer plano después de haber sido enviado al fondo con &?",
+      "options": [
+        { "label": "a", "text": "bg", "correct": false },
+        { "label": "b", "text": "fore", "correct": false },
+        { "label": "c", "text": "4g", "correct": false },
+        { "label": "d", "text": "fg", "correct": true }
+      ],
+      "feedback": "El comando fg traerá un comando al primer plano si ha sido enviado al fondo con & o con el comando bg. Puedes enviar un comando al fondo para que continúe ejecutándose después de cerrar la sesión."
+    },
+    {
+      "id": 22,
+      "type": "single",
+      "question": "Necesitas escribir un script que recoja todos los IDs de proceso de todas las instancias de Apache ejecutándose en el sistema. ¿Cuál de los siguientes comandos realizará esta tarea?",
+      "options": [
+        { "label": "a", "text": "ps auwx | grep apache", "correct": false },
+        { "label": "b", "text": "pgrep apache", "correct": true },
+        { "label": "c", "text": "processlist apache", "correct": false },
+        { "label": "d", "text": "ls -p apache", "correct": false }
+      ],
+      "feedback": "Mientras que el comando ps auwx combinado con grep proporciona información sobre las instancias de Apache en ejecución, proporciona mucha más información de la necesaria. El comando pgrep solo proporciona los IDs de proceso y por lo tanto cumple con los criterios de la pregunta."
+    },
+    {
+      "id": 23,
+      "type": "single",
+      "question": "¿Cuál de las siguientes líneas de comando monitorearía un único proceso llamado nagios de manera continua?",
+      "options": [
+        { "label": "a", "text": "top -n 1", "correct": false },
+        { "label": "b", "text": "top -p 23", "correct": false },
+        { "label": "c", "text": "ps -nagios", "correct": false },
+        { "label": "d", "text": "top -p `pidof nagios`", "correct": true }
+      ],
+      "feedback": "El comando top se usa para monitorear continuamente cosas como uso de CPU y memoria, y la opción -p monitorea un único proceso. Al usar las comillas invertidas con el comando pidof, el ID del proceso se proporciona como entrada a la opción -p."
+    },
+    {
+      "id": 24,
+      "type": "single",
+      "question": "Los usuarios reportan que varios programas se están cerrando inesperadamente en el servidor. Al examinar los logs, ves que ciertos procesos reportan condiciones de memoria insuficiente. ¿Qué comando puedes usar para ver el uso general de memoria, incluyendo el espacio de intercambio (swap) disponible?",
+      "options": [
+        { "label": "a", "text": "tree", "correct": false },
+        { "label": "b", "text": "pgrep", "correct": false },
+        { "label": "c", "text": "uptime", "correct": false },
+        { "label": "d", "text": "free", "correct": true }
+      ],
+      "feedback": "El comando free muestra el uso general de memoria tanto para RAM como para swap y puede usarse para determinar cuándo se necesita memoria adicional."
+    },
+    {
+      "id": 25,
+      "type": "single",
+      "question": "Estás usando el editor vi para modificar un archivo y necesitas salir. Recibes un aviso que dice 'No write since last change'. Asumiendo que quieres guardar tu trabajo, ¿cuál de los siguientes comandos guardará tu trabajo y saldrá de vi?",
+      "options": [
+        { "label": "a", "text": ":wq", "correct": true },
+        { "label": "b", "text": ":q!", "correct": false },
+        { "label": "c", "text": "dd", "correct": false },
+        { "label": "d", "text": "x", "correct": false }
+      ],
+      "feedback": "Necesitas escribir los cambios en el archivo; por lo tanto, necesitarás :w. La adición de q también saldrá. Nota que podrías usar ZZ para escribir y salir también. El comando dd elimina una línea mientras que x elimina un único carácter."
+    },
+    {
+      "id": 26,
+      "type": "single",
+      "question": "¿Qué opción se usa para cambiar el número de líneas de salida para los comandos head y tail?",
+      "options": [
+        { "label": "a", "text": "-l", "correct": false },
+        { "label": "b", "text": "-f", "correct": false },
+        { "label": "c", "text": "-g", "correct": false },
+        { "label": "d", "text": "-n", "correct": true }
+      ],
+      "feedback": "La opción -n cambia el número de líneas de salida tanto para head como para tail al número especificado. Las otras opciones listadas no son válidas para head, y la opción -f sigue un archivo con tail a medida que el archivo crece."
+    },
+    {
+      "id": 27,
+      "type": "single",
+      "question": "¿Qué comando puede usarse para determinar la carga promedio actual junto con información sobre el tiempo transcurrido desde el último arranque del sistema?",
+      "options": [
+        { "label": "a", "text": "uptime", "correct": true },
+        { "label": "b", "text": "sysinfo", "correct": false },
+        { "label": "c", "text": "bash", "correct": false },
+        { "label": "d", "text": "ls -u", "correct": false }
+      ],
+      "feedback": "El comando uptime muestra información básica como la descrita en la pregunta junto con el número de usuarios conectados al sistema y la hora actual."
+    },
+    {
+      "id": 28,
+      "type": "single",
+      "question": "Necesitas iniciar un proceso de larga duración que requiere terminal y procesamiento en primer plano. Sin embargo, no puedes dejar tu ventana de terminal abierta debido a restricciones de seguridad. ¿Qué comando te permitirá iniciar el proceso y volver más tarde para continuar la sesión?",
+      "options": [
+        { "label": "a", "text": "fg", "correct": false },
+        { "label": "b", "text": "bg", "correct": false },
+        { "label": "c", "text": "kill", "correct": false },
+        { "label": "d", "text": "screen", "correct": true }
+      ],
+      "feedback": "El comando screen inicia un nuevo terminal que puede desconectarse y reconectarse según sea necesario. Los procesos que se ejecutan dentro de la sesión screen no saben que están ejecutándose en una sesión screen, y por lo tanto esto cumple con los criterios necesarios para satisfacer esta pregunta."
+    },
+    {
+      "id": 29,
+      "type": "single",
+      "question": "Has intentado detener un proceso usando su comando de servicio y también usando el comando kill. ¿Qué señal puede enviarse al proceso usando el comando kill para forzar al proceso a terminar?",
+      "options": [
+        { "label": "a", "text": "-15", "correct": false },
+        { "label": "b", "text": "-f", "correct": false },
+        { "label": "c", "text": "-9", "correct": true },
+        { "label": "d", "text": "-stop", "correct": false }
+      ],
+      "feedback": "La opción -9 invoca SIGKILL, lo que forzará al proceso a terminar. La señal -15 es la predeterminada, y las opciones -f y -stop no existen."
+    },
+    {
+      "id": 30,
+      "type": "single",
+      "question": "Cuando trabajas en el shell Bash, necesitas redirigir tanto stdout como stderr. ¿Cuál de los siguientes comandos redirigirá tanto stdout como stderr?",
+      "options": [
+        { "label": "a", "text": "1>2", "correct": false },
+        { "label": "b", "text": ">2", "correct": false },
+        { "label": "c", "text": "2>&1", "correct": true },
+        { "label": "d", "text": ">>", "correct": false }
+      ],
+      "feedback": "Dentro de Bash, el número 1 representa stdout y 2 representa stderr. Redirigir ambos significa combinarlos de la manera mostrada en la opción C."
+    },
+        {
+      "id": 31,
+      "type": "single",
+      "question": "¿Qué comando puede ejecutarse para determinar la prioridad predeterminada para procesos generados por el usuario actual?",
+      "options": [
+        { "label": "a", "text": "prio", "correct": false },
+        { "label": "b", "text": "nice", "correct": true },
+        { "label": "c", "text": "renice", "correct": false },
+        { "label": "d", "text": "defpriority", "correct": false }
+      ],
+      "feedback": "El comando nice, cuando se ejecuta sin argumentos, mostrará la prioridad para el usuario actualmente conectado, que normalmente es 0. El comando renice puede usarse para cambiar la prioridad de procesos en ejecución."
+    },
+    {
+      "id": 32,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos egrep examinará /etc/passwd para encontrar usuarios que estén usando /bin/bash o /usr/bin/zsh como su entorno de shell?",
+      "options": [
+        { "label": "a", "text": "grep sh /etc/passwd", "correct": false },
+        { "label": "b", "text": "egrep '/*/.sh$' /etc/passwd", "correct": false },
+        { "label": "c", "text": "grep '/*/.=sh$' /etc/passwd", "correct": false },
+        { "label": "d", "text": "egrep '/*/.?sh$' /etc/passwd", "correct": true }
+      ],
+      "feedback": "En una expresión regular, * representa cero o más caracteres, y en este caso no importa si una persona usa /bin/bash o /usr/bin/zsh. El ? hace que el segundo . sea opcional. Finalmente, el $ ancla el patrón al final de la cadena."
+    },
+    {
+      "id": 33,
+      "type": "single",
+      "question": "¿Qué opción del comando man accede a un nivel diferente de documentación, por ejemplo, documentación de llamadas al sistema?",
+      "options": [
+        { "label": "a", "text": "man 2 <argumento>", "correct": true },
+        { "label": "b", "text": "progman <argumento>", "correct": false },
+        { "label": "c", "text": "man ––sys <argumento>", "correct": false },
+        { "label": "d", "text": "man ––list sys", "correct": false }
+      ],
+      "feedback": "Los diferentes niveles del manual se acceden anteponiendo al argumento el nivel deseado. Las otras opciones no existen en este contexto."
+    },
+    {
+      "id": 34,
+      "type": "single",
+      "question": "Al editar con vi, ¿qué comando cambia al modo de inserción y abre una nueva línea debajo de la ubicación actual del cursor?",
+      "options": [
+        { "label": "a", "text": "f", "correct": false },
+        { "label": "b", "text": "a", "correct": false },
+        { "label": "c", "text": "o", "correct": true },
+        { "label": "d", "text": "i", "correct": false }
+      ],
+      "feedback": "El comando o abre una nueva línea debajo de la ubicación actual del cursor. El comando a comienza una sesión de modo de inserción después del cursor, no en la línea."
+    },
+    {
+      "id": 35,
+      "type": "single",
+      "question": "¿Qué señal kill puede enviarse para reiniciar un proceso?",
+      "options": [
+        { "label": "a", "text": "-HUP", "correct": true },
+        { "label": "b", "text": "-RESTART", "correct": false },
+        { "label": "c", "text": "-9", "correct": false },
+        { "label": "d", "text": "-SIG", "correct": false }
+      ],
+      "feedback": "Enviar -HUP como parte del comando kill reiniciará un proceso. De las otras respuestas, -9 matará el proceso completamente."
+    },
+    {
+      "id": 36,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos mostrará las últimas 50 líneas de tu historial de comandos cuando usas Bash, incluyendo comandos de la sesión actual?",
+      "options": [
+        { "label": "a", "text": "bashhist 50", "correct": false },
+        { "label": "b", "text": "history 50", "correct": true },
+        { "label": "c", "text": "cat .bash_history", "correct": false },
+        { "label": "d", "text": "tail -f .bash_history", "correct": false }
+      ],
+      "feedback": "El comando history mostrará tu historial de comandos, incluyendo comandos de la sesión actual. Puedes especificar cuántas líneas de historial mostrar."
+    },
+    {
+      "id": 37,
+      "type": "single",
+      "question": "Has enviado varias tareas al fondo usando &. ¿Qué comando puede usarse para ver la lista actual de tareas en ejecución que han sido enviadas al fondo?",
+      "options": [
+        { "label": "a", "text": "procs", "correct": false },
+        { "label": "b", "text": "plist", "correct": false },
+        { "label": "c", "text": "jobs", "correct": true },
+        { "label": "d", "text": "free", "correct": false }
+      ],
+      "feedback": "El comando interno jobs muestra la lista de trabajos ejecutándose en segundo plano. Su salida incluye un número de trabajo y el estado del trabajo."
+    },
+    {
+      "id": 38,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos busca en el archivo .bash_history de cada usuario para determinar si el usuario ha invocado el comando sudo?",
+      "options": [
+        { "label": "a", "text": "find /home -name \"bash_history\" | grep sudo", "correct": false },
+        { "label": "b", "text": "find /home -name \".bash_history\" | xargs grep sudo", "correct": true },
+        { "label": "c", "text": "find /home/.bash_history | xargs grep sudo", "correct": false },
+        { "label": "d", "text": "find /home -type history | xargs grep sudo", "correct": false }
+      ],
+      "feedback": "El comando find comenzando con la ruta y luego el argumento -name localizará todos los archivos llamados .bash_history. La salida debe canalizarse a xargs, que puede construir comandos adicionales desde la entrada estándar."
+    },
+    {
+      "id": 39,
+      "type": "single",
+      "question": "¿Qué comando monitoreará el log de Apache en /var/log/httpd/access.log y se desplazará continuamente a medida que se creen nuevas entradas?",
+      "options": [
+        { "label": "a", "text": "watch /var/log/httpd/access.log", "correct": false },
+        { "label": "b", "text": "tail /var/log/httpd/access.log", "correct": false },
+        { "label": "c", "text": "tail -f /var/log/httpd/access.log", "correct": true },
+        { "label": "d", "text": "mon /var/log/httpd/access.log", "correct": false }
+      ],
+      "feedback": "El comando tail muestra la parte final del archivo. Agregar la opción -f hará que la salida se actualice a medida que se añadan nuevas líneas al archivo."
+    },
+    {
+      "id": 40,
+      "type": "single",
+      "question": "Estás depurando un archivo de configuración y el demonio indica que hay un problema en la línea 932. ¿Cuál de los siguientes comandos antepondrá números de línea al archivo?",
+      "options": [
+        { "label": "a", "text": "lines", "correct": false },
+        { "label": "b", "text": "wc -l", "correct": false },
+        { "label": "c", "text": "newline", "correct": false },
+        { "label": "d", "text": "nl", "correct": true }
+      ],
+      "feedback": "El comando nl antepondrá números de línea al archivo dado como argumento. La salida se envía luego a stdout. wc -l imprimirá el número de líneas pero no las antepondrá a cada línea."
+    }
+  ]
+}

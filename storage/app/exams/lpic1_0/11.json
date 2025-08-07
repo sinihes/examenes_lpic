@@ -1,0 +1,591 @@
+{
+    "id": "11",
+    "title": "103:C - GNU and Unix Commands",
+    "questions": [
+        {
+            "id": 45,
+            "type": "single",
+            "question": "¿Qué comando mata múltiples procesos por nombre sin necesidad de usar ps?",
+            "options": [
+                { "label": "a", "text": "pkill", "correct": true },
+                { "label": "b", "text": "psk", "correct": false },
+                { "label": "c", "text": "pskill", "correct": false },
+                { "label": "d", "text": "prock", "correct": false }
+            ],
+            "feedback": "Ejemplo: pkill -9 apache2 termina todos los procesos llamados \"apache2\"."
+        },
+        {
+            "id": 46,
+            "type": "single",
+            "question": "¿Qué opción de pgrep busca coincidencias con la ruta completa del proceso?",
+            "options": [
+                { "label": "a", "text": "-f", "correct": true },
+                { "label": "b", "text": "-d", "correct": false },
+                { "label": "c", "text": "-o", "correct": false },
+                { "label": "d", "text": "-i", "correct": false }
+            ],
+            "feedback": "Ejemplo: pgrep -f \"/usr/bin/python\" busca procesos cuya línea de comando incluya esa ruta."
+        },
+        {
+            "id": 47,
+            "type": "single",
+            "question": "¿Qué comando muestra la ruta exacta de un ejecutable según tu $PATH?",
+            "options": [
+                { "label": "a", "text": "what", "correct": false },
+                { "label": "b", "text": "which", "correct": true },
+                { "label": "c", "text": "find", "correct": false },
+                { "label": "d", "text": "ls", "correct": false }
+            ],
+            "feedback": "Ejemplo: which python muestra /usr/bin/python (si está en tu $PATH)."
+        },
+        {
+            "id": 48,
+            "type": "single",
+            "question": "¿Cuántas líneas muestran por defecto head y tail?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "10 para head, 5 para tail",
+                    "correct": false
+                },
+                {
+                    "label": "b",
+                    "text": "5 para head, 10 para tail",
+                    "correct": false
+                },
+                { "label": "c", "text": "10 para ambos", "correct": true },
+                { "label": "d", "text": "3 para ambos", "correct": false }
+            ],
+            "feedback": "Puedes cambiarlo con -n:\n• head -n 5 archivo.txt (muestra las primeras 5 líneas).\n• tail -n 20 archivo.txt (muestra las últimas 20 líneas)."
+        },
+        {
+            "id": 49,
+            "type": "single",
+            "question": "¿Qué comando elimina una variable de entorno solo para la sesión actual?",
+            "options": [
+                { "label": "a", "text": "reset", "correct": false },
+                { "label": "b", "text": "unset", "correct": true },
+                { "label": "c", "text": "undo", "correct": false },
+                { "label": "d", "text": "clear", "correct": false }
+            ],
+            "feedback": "Ejemplo: unset MI_VAR elimina MI_VAR del entorno actual."
+        },
+        {
+            "id": 50,
+            "type": "single",
+            "question": "No encuentras la página man de un comando (ejemplo: alias). ¿Qué comando te dice si es un built-in del shell o un ejecutable externo?",
+            "options": [
+                { "label": "a", "text": "type", "correct": true },
+                { "label": "b", "text": "cmd", "correct": false },
+                { "label": "c", "text": "uses", "correct": false },
+                { "label": "d", "text": "listr", "correct": false }
+            ],
+            "feedback": "Ejemplo:\n• type alias → \"alias is a shell builtin\"\n• type ls → \"ls is /usr/bin/ls\"."
+        },
+        {
+            "id": 51,
+            "type": "single",
+            "question": "¿Qué tipo de comillas se usan en Bash para que las variables sean interpretadas dentro del script?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "Comillas escapadas",
+                    "correct": false
+                },
+                {
+                    "label": "b",
+                    "text": "Comillas simples (' ')",
+                    "correct": false
+                },
+                {
+                    "label": "c",
+                    "text": "Comillas dobles (\" \")",
+                    "correct": true
+                },
+                { "label": "d", "text": "Comillas laterales", "correct": false }
+            ],
+            "feedback": "Ejemplo: echo \"Hola $nombre\" interpreta $nombre, mientras que con comillas simples (' ') se mostraría literalmente $nombre."
+        },
+        {
+            "id": 52,
+            "type": "single",
+            "question": "¿Qué visor de texto permite búsquedas hacia adelante/atrás y navegación línea por línea o página por página?",
+            "options": [
+                { "label": "a", "text": "more", "correct": false },
+                { "label": "b", "text": "mplus", "correct": false },
+                { "label": "c", "text": "less", "correct": true },
+                { "label": "d", "text": "catch", "correct": false }
+            ],
+            "feedback": "less es más avanzado que more (soporta scroll bidireccional y búsqueras con / y ?)."
+        },
+        {
+            "id": 53,
+            "type": "single",
+            "question": "¿Qué comando muestra un archivo en formato octal?",
+            "options": [
+                { "label": "a", "text": "oct", "correct": false },
+                { "label": "b", "text": "cat | octalf", "correct": false },
+                { "label": "c", "text": "od", "correct": true },
+                { "label": "d", "text": "octf", "correct": false }
+            ],
+            "feedback": "Ejemplo: od -b archivo.txt muestra el contenido en octal byte por byte."
+        },
+        {
+            "id": 54,
+            "type": "single",
+            "question": "¿Qué opción de sha256sum lee el archivo en modo binario?",
+            "options": [
+                { "label": "a", "text": "-i", "correct": false },
+                { "label": "b", "text": "-b", "correct": true },
+                { "label": "c", "text": "-c", "correct": false },
+                { "label": "d", "text": "-p", "correct": false }
+            ],
+            "feedback": "Útil para evitar conversiones de fin de línea en archivos Windows (\\r\\n vs \\n)."
+        },
+        {
+            "id": 55,
+            "type": "single",
+            "question": "En Vi (modo comando), ¿qué teclas mueven el cursor?",
+            "options": [
+                { "label": "a", "text": "a, s, d, f", "correct": false },
+                { "label": "b", "text": "h, j, k, l", "correct": true },
+                { "label": "c", "text": "q, w, e, r", "correct": false },
+                { "label": "d", "text": "z, x, c, v", "correct": false }
+            ],
+            "feedback": "- h ←, j ↓, k ↑, l →"
+        },
+        {
+            "id": 56,
+            "type": "single",
+            "question": "¿Qué opciones de xz equivalen al programa xzcat?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "decompress and output",
+                    "correct": false
+                },
+                { "label": "b", "text": "output and format", "correct": false },
+                {
+                    "label": "c",
+                    "text": "decompress and stdout",
+                    "correct": true
+                },
+                { "label": "d", "text": "stdout and format", "correct": false }
+            ],
+            "feedback": "xzcat archivo.xz = xz -dc archivo.xz (descomprime y muestra por STDOUT)."
+        },
+        {
+            "id": 57,
+            "type": "single",
+            "question": "¿Qué variable de entorno define el editor de texto predeterminado en Linux?",
+            "options": [
+                { "label": "a", "text": "EDITOR", "correct": true },
+                { "label": "b", "text": "EDIT", "correct": false },
+                { "label": "c", "text": "TEXTEDITOR", "correct": false },
+                { "label": "d", "text": "DEFAULT_EDITOR", "correct": false }
+            ],
+            "feedback": "Ejemplo: export EDITOR=nano (para usar Nano como editor por defecto)."
+        },
+        {
+            "id": 58,
+            "type": "single",
+            "question": "¿Qué comando muestra la sección 7 del manual (sobre expresiones regulares)?",
+            "options": [
+                { "label": "a", "text": "man regex -7", "correct": false },
+                { "label": "b", "text": "man regex 7", "correct": false },
+                {
+                    "label": "c",
+                    "text": "man --page 7 regex",
+                    "correct": false
+                },
+                { "label": "d", "text": "man 7 regex", "correct": true }
+            ],
+            "feedback": "Las secciones del manual se especifican antes del tema: man <sección> <tema>."
+        },
+        {
+            "id": 59,
+            "type": "single",
+            "question": "¿Qué comando elimina un directorio y todo su contenido recursivamente?",
+            "options": [
+                { "label": "a", "text": "rm -f", "correct": false },
+                { "label": "b", "text": "rm -rf", "correct": true },
+                { "label": "c", "text": "rmdir -a", "correct": false },
+                { "label": "d", "text": "rmdir -m", "correct": false }
+            ],
+            "feedback": "⚠️ ¡Cuidado! Este comando es irreversible. Ejemplo: rm -rf /directorio/."
+        },
+        {
+            "id": 60,
+            "type": "single",
+            "question": "¿Qué comando cambia la prioridad (nice) de un proceso en ejecución?",
+            "options": [
+                { "label": "a", "text": "nice", "correct": false },
+                { "label": "b", "text": "renice", "correct": true },
+                { "label": "c", "text": "chnice", "correct": false },
+                { "label": "d", "text": "altnice", "correct": false }
+            ],
+            "feedback": "Ejemplo: renice +5 -p 1234 (aumenta la prioridad del proceso con PID 1234)."
+        },
+
+        {
+            "id": 61,
+            "type": "single",
+            "question": "El comando fgrep equivale a ejecutar grep con qué opción?",
+            "options": [
+                { "label": "a", "text": "-f", "correct": false },
+                { "label": "b", "text": "-F", "correct": true },
+                { "label": "c", "text": "-a", "correct": false },
+                { "label": "d", "text": "-E", "correct": false }
+            ],
+            "feedback": "fgrep = grep -F (busca cadenas fijas, sin interpretar regex)."
+        },
+        {
+            "id": 62,
+            "type": "single",
+            "question": "¿Qué expresión regular encuentra \"Steve\" o \"steve\" en un archivo usando grep?",
+            "options": [
+                { "label": "a", "text": "'[sS]teve'", "correct": true },
+                { "label": "b", "text": "'[S]*teve'", "correct": false },
+                { "label": "c", "text": "'^[Ss]teve'", "correct": false },
+                { "label": "d", "text": "'[$Steve]'", "correct": false }
+            ],
+            "feedback": "Los corchetes [] definen una clase de caracteres. Ejemplo:\n• [sS] coincide con \"s\" mayúscula o minúscula."
+        },
+        {
+            "id": 63,
+            "type": "single",
+            "question": "¿Qué comando muestra procesos en ejecución y su uso de recursos en tiempo real?",
+            "options": [
+                { "label": "a", "text": "nice", "correct": false },
+                { "label": "b", "text": "ps", "correct": false },
+                { "label": "c", "text": "top", "correct": true },
+                { "label": "d", "text": "procs", "correct": false }
+            ],
+            "feedback": "Alternativas modernas: htop o btop (más interactivos)."
+        },
+        {
+            "id": 64,
+            "type": "single",
+            "question": "¿Qué herramienta comprime archivos para que sean legibles en otros sistemas operativos?",
+            "options": [
+                { "label": "a", "text": "gzip", "correct": true },
+                { "label": "b", "text": "bzip2", "correct": false },
+                { "label": "c", "text": "xz", "correct": false },
+                { "label": "d", "text": "tar", "correct": false }
+            ],
+            "feedback": "gzip es ampliamente compatible. Para múltiples archivos, usa:\ntar czf archivo.tar.gz directorio/."
+        },
+        {
+            "id": 65,
+            "type": "single",
+            "question": "¿Qué patrón de comodín coincide con archivos que comienzan con \"201\" (ej: 2017, 2018)?",
+            "options": [
+                { "label": "a", "text": "201?", "correct": false },
+                { "label": "b", "text": "201$", "correct": false },
+                { "label": "c", "text": "201@", "correct": false },
+                { "label": "d", "text": "201*", "correct": true }
+            ],
+            "feedback": "El asterisco * coincide con cero o más caracteres. Para un solo carácter, usa 201?."
+        },
+        {
+            "id": 66,
+            "type": "single",
+            "question": "¿Qué comando divide un archivo grande en partes más pequeñas?",
+            "options": [
+                { "label": "a", "text": "cut", "correct": false },
+                { "label": "b", "text": "split", "correct": true },
+                { "label": "c", "text": "dice", "correct": false },
+                { "label": "d", "text": "rem", "correct": false }
+            ],
+            "feedback": "Ejemplo:\n• split -b 100M archivo_grande.zip parte_\n(Divide en partes de 100MB llamadas parte_aa, parte_ab, etc.)."
+        },
+        {
+            "id": 67,
+            "type": "single",
+            "question": "En top, ¿qué indica la columna \"PR\"?",
+            "options": [
+                { "label": "a", "text": "ID del proceso", "correct": false },
+                {
+                    "label": "b",
+                    "text": "Utilización del proceso",
+                    "correct": false
+                },
+                {
+                    "label": "c",
+                    "text": "Prioridad del proceso",
+                    "correct": true
+                },
+                {
+                    "label": "d",
+                    "text": "Núcleo de CPU donde se ejecuta",
+                    "correct": false
+                }
+            ],
+            "feedback": "PR = Priority (prioridad de planificación). Valores bajos = mayor prioridad."
+        },
+        {
+            "id": 68,
+            "type": "single",
+            "question": "En Vi, ¿qué combinación borra 8 líneas?",
+            "options": [
+                { "label": "a", "text": "d7", "correct": false },
+                { "label": "b", "text": "d8", "correct": false },
+                { "label": "c", "text": "r8", "correct": false },
+                { "label": "d", "text": "7dd", "correct": true }
+            ],
+            "feedback": "En Vi:\n• 7dd borra 8 líneas (7 líneas + la actual).\n• dd borra 1 línea, 5dd borra 5 líneas."
+        },
+        {
+            "id": 69,
+            "type": "single",
+            "question": "¿Qué comando descomprime archivos .xz?",
+            "options": [
+                { "label": "a", "text": "unxz", "correct": true },
+                { "label": "b", "text": "dexz", "correct": false },
+                { "label": "c", "text": "xzu", "correct": false },
+                { "label": "d", "text": "u2xz", "correct": false }
+            ],
+            "feedback": "También puedes usar: xz -d archivo.xz."
+        },
+        {
+            "id": 70,
+            "type": "single",
+            "question": "¿Qué comando encuentra directorios que empiezan con \"2014\" desde el directorio actual?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "find ./ -name \"2014\"",
+                    "correct": false
+                },
+                {
+                    "label": "b",
+                    "text": "find ./ -type d -name \"2014\"",
+                    "correct": false
+                },
+                {
+                    "label": "c",
+                    "text": "find / -type d \"2014\"",
+                    "correct": false
+                },
+                {
+                    "label": "d",
+                    "text": "find ./ -type d -name \"2014*\"",
+                    "correct": true
+                }
+            ],
+            "feedback": "Explicación:\n• ./: Busca desde el directorio actual.\n• -type d: Solo directorios.\n• -name \"2014*\": Coincide con nombres que empiezan por \"2014\"."
+        },
+            {
+      "id": 71,
+      "type": "single",
+      "question": "¿Qué comando utiliza resúmenes de mensaje de 128 bits?",
+      "options": [
+        { "label": "a", "text": "sha256sum", "correct": false },
+        { "label": "b", "text": "sha512sum", "correct": false },
+        { "label": "c", "text": "sh128sum", "correct": false },
+        { "label": "d", "text": "md5sum", "correct": true }
+      ],
+      "feedback": "MD5 genera hashes de 128 bits, mientras que SHA-256 y SHA-512 producen hashes más largos (256 y 512 bits respectivamente)."
+    },
+    {
+      "id": 72,
+      "type": "single",
+      "question": "¿Qué comando combina archivos línea por línea (una línea de cada archivo por línea de salida)?",
+      "options": [
+        { "label": "a", "text": "paste", "correct": true },
+        { "label": "b", "text": "comb", "correct": false },
+        { "label": "c", "text": "appfile", "correct": false },
+        { "label": "d", "text": "combo", "correct": false }
+      ],
+      "feedback": "Ejemplo: paste archivo1.txt archivo2.txt combina las líneas separadas por tabulaciones."
+    },
+    {
+      "id": 73,
+      "type": "single",
+      "question": "¿Cómo ejecutar un comando que no está en tu PATH actual?",
+      "options": [
+        { "label": "a", "text": "Usar la ruta absoluta del comando", "correct": true },
+        { "label": "b", "text": "Modificar la variable PATH", "correct": false },
+        { "label": "c", "text": "Reiniciar el shell", "correct": false },
+        { "label": "d", "text": "Reiniciar el computador", "correct": false }
+      ],
+      "feedback": "Ejemplo: /usr/local/bin/mi_script.sh en lugar de solo mi_script.sh."
+    },
+    {
+      "id": 74,
+      "type": "single",
+      "question": "¿Qué señal envía pkill por defecto?",
+      "options": [
+        { "label": "a", "text": "SIGKILL (9)", "correct": false },
+        { "label": "b", "text": "SIGTERM (15)", "correct": true },
+        { "label": "c", "text": "SIGHUP (1)", "correct": false },
+        { "label": "d", "text": "SIGKS (no existe)", "correct": false }
+      ],
+      "feedback": "SIGTERM permite al proceso terminar limpiamente. Para forzar terminación usa: pkill -9 nombre."
+    },
+    {
+      "id": 75,
+      "type": "single",
+      "question": "¿Qué opción de jobs muestra solo trabajos en ejecución?",
+      "options": [
+        { "label": "a", "text": "-s", "correct": false },
+        { "label": "b", "text": "-a", "correct": false },
+        { "label": "c", "text": "-l", "correct": false },
+        { "label": "d", "text": "-r", "correct": true }
+      ],
+      "feedback": "jobs -r → muestra procesos en ejecución, jobs -s → muestra procesos detenidos."
+    },
+    {
+      "id": 76,
+      "type": "single",
+      "question": "¿Qué opción de bunzip2 envía la salida a STDOUT (como bzcat)?",
+      "options": [
+        { "label": "a", "text": "-s", "correct": false },
+        { "label": "b", "text": "-o", "correct": false },
+        { "label": "c", "text": "-c", "correct": true },
+        { "label": "d", "text": "-d", "correct": false }
+      ],
+      "feedback": "bunzip2 -c archivo.bz2 = bzcat archivo.bz2 (muestra contenido sin descomprimir en disco)."
+    },
+    {
+      "id": 77,
+      "type": "single",
+      "question": "¿Qué opciones de ls muestran archivos ocultos (.) ordenados con los más nuevos al final?",
+      "options": [
+        { "label": "a", "text": "-la", "correct": false },
+        { "label": "b", "text": "-lat", "correct": false },
+        { "label": "c", "text": "-latr", "correct": true },
+        { "label": "d", "text": "-ltr", "correct": false }
+      ],
+      "feedback": "Explicación:\n• -a: Muestra archivos ocultos\n• -t: Ordena por fecha (más nuevos primero)\n• -r: Invierte el orden (más nuevos al final)\n• -l: Formato largo."
+    },
+    {
+      "id": 78,
+      "type": "single",
+      "question": "¿Qué ocurre al ejecutar touch en un archivo existente?",
+      "options": [
+        { "label": "a", "text": "Se actualiza su marca de tiempo", "correct": true },
+        { "label": "b", "text": "Se sobrescribe el contenido", "correct": false },
+        { "label": "c", "text": "No hay cambios", "correct": false },
+        { "label": "d", "text": "Se añade contenido", "correct": false }
+      ],
+      "feedback": "touch actualiza los timestamps (acceso y modificación) a la hora actual."
+    },
+    {
+      "id": 79,
+      "type": "single",
+      "question": "¿Qué comando muestra las variables de entorno actuales en Bash?",
+      "options": [
+        { "label": "a", "text": "environment", "correct": false },
+        { "label": "b", "text": "env", "correct": true },
+        { "label": "c", "text": "listenv", "correct": false },
+        { "label": "d", "text": "echoenv", "correct": false }
+      ],
+      "feedback": "Alternativas: printenv o export -p."
+    },
+    {
+      "id": 80,
+      "type": "single",
+      "question": "¿Qué opción hace que cp y mv pregunten antes de sobrescribir?",
+      "options": [
+        { "label": "a", "text": "-f (force)", "correct": false },
+        { "label": "b", "text": "-Z (SELinux)", "correct": false },
+        { "label": "c", "text": "-r (recursive)", "correct": false },
+        { "label": "d", "text": "-i (interactive)", "correct": true }
+      ],
+      "feedback": "Ejemplo: cp -i origen destino o mv -i origen destino."
+    },
+        {
+      "id": 81,
+      "type": "single",
+      "question": "¿Qué comando envía el contenido de /etc/passwd tanto a STDOUT como a un archivo llamado passwordfile?",
+      "options": [
+        { "label": "a", "text": "cat /etc/passwd > passwordfile", "correct": false },
+        { "label": "b", "text": "var /etc/passwd | passwordfile", "correct": false },
+        { "label": "c", "text": "cat /etc/passwd | tee passwordfile", "correct": true },
+        { "label": "d", "text": "echo /etc/passwd | stdout > passwordfile", "correct": false }
+      ],
+      "feedback": "tee duplica la salida: muestra en pantalla (STDOUT) y escribe en el archivo."
+    },
+    {
+      "id": 82,
+      "type": "single",
+      "question": "¿Qué comando crea el directorio /usr/local/test/october (incluyendo directorios padres si no existen)?",
+      "options": [
+        { "label": "a", "text": "mkdir -p /usr/local/test/october", "correct": true },
+        { "label": "b", "text": "mkdir /usr/local/test/october", "correct": false },
+        { "label": "c", "text": "mkdir -r /usr/local/test/october", "correct": false },
+        { "label": "d", "text": "mkdir -f /usr/local/test/october", "correct": false }
+      ],
+      "feedback": "La opción -p crea toda la jerarquía de directorios necesaria."
+    },
+    {
+      "id": 83,
+      "type": "single",
+      "question": "¿Qué opción de cp copia directorios de forma recursiva?",
+      "options": [
+        { "label": "a", "text": "-v", "correct": false },
+        { "label": "b", "text": "-R", "correct": true },
+        { "label": "c", "text": "-Z", "correct": false },
+        { "label": "d", "text": "-i", "correct": false }
+      ],
+      "feedback": "Ejemplo: cp -R directorio_origen/ directorio_destino/ copia todo el contenido, incluyendo subdirectorios."
+    },
+    {
+      "id": 84,
+      "type": "single",
+      "question": "¿Qué comando determina el tipo de un archivo sin extensión?",
+      "options": [
+        { "label": "a", "text": "grep", "correct": false },
+        { "label": "b", "text": "telnet", "correct": false },
+        { "label": "c", "text": "file", "correct": true },
+        { "label": "d", "text": "export", "correct": false }
+      ],
+      "feedback": "Ejemplo: file archivo_desconocido muestra si es texto, binario, comprimido, etc."
+    },
+    {
+      "id": 85,
+      "type": "single",
+      "question": "¿Qué comando crea una imagen de la partición /dev/sda1 en el archivo output.img?",
+      "options": [
+        { "label": "a", "text": "dd if=sda of=/dev/sda1", "correct": false },
+        { "label": "b", "text": "dd if=output.img of=/dev/sda1", "correct": false },
+        { "label": "c", "text": "dd if=/dev/sda1 of=output.img", "correct": true },
+        { "label": "d", "text": "echo /dev/sda1 > output.img", "correct": false }
+      ],
+      "feedback": "dd copia datos bit a bit:\n• if: Archivo de entrada (input file).\n• of: Archivo de salida (output file)."
+    },
+    {
+      "id": 86,
+      "type": "single",
+      "question": "¿Qué delimitador usa cut por defecto?",
+      "options": [
+        { "label": "a", "text": "Dos puntos (:)", "correct": false },
+        { "label": "b", "text": "Tabulación (\\t)", "correct": true },
+        { "label": "c", "text": "Espacio ( )", "correct": false },
+        { "label": "d", "text": "Coma (,)", "correct": false }
+      ],
+      "feedback": "Para cambiar el delimitador: cut -d':' -f1 /etc/passwd (usa : como delimitador)."
+    },
+    {
+      "id": 87,
+      "type": "single",
+      "question": "¿Qué opciones de tar descomprimen (gzip) y extraen un archivo .tar.gz?",
+      "options": [
+        { "label": "a", "text": "-zxf", "correct": true },
+        { "label": "b", "text": "-xf", "correct": false },
+        { "label": "c", "text": "-vz", "correct": false },
+        { "label": "d", "text": "-fd", "correct": false }
+      ],
+      "feedback": "Explicación:\n• -z: Descomprime con gzip.\n• -x: Extrae archivos.\n• -f: Especifica el archivo.\n• -v (opcional): Muestra progreso."
+    },
+    {
+      "id": 88,
+      "type": "text",
+      "question": "¿Qué comando muestra los nombres de usuario de /etc/passwd ordenados alfabéticamente?",
+      "answer": "cut -d: -f1 /etc/passwd | sort",
+      "feedback": "Explicación:\n1. cut -d: -f1 /etc/passwd: Extrae la primera columna (nombres de usuario) usando : como delimitador.\n2. sort: Ordena alfabéticamente."
+    }
+
+    ]
+}

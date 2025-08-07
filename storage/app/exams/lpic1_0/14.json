@@ -1,0 +1,582 @@
+{
+  "id": "14",
+  "title": "101:D - System Achitecture",
+  "questions": [
+        {
+      "id": 1,
+      "type": "single",
+      "question": "¿Qué identificador utiliza un disco Serial ATA (SATA)?",
+      "options": [
+        { "label": "a", "text": "/dev/hdX", "correct": false },
+        { "label": "b", "text": "/dev/sataX", "correct": false },
+        { "label": "c", "text": "/dev/sdX", "correct": true },
+        { "label": "d", "text": "/disk/sataX", "correct": false }
+      ],
+      "feedback": "Los discos SATA se direccionan como /dev/sdX, al igual que un disco SCSI. /dev/hdX es un disco ATA tradicional. Las otras opciones no existen."
+    },
+    {
+      "id": 2,
+      "type": "single",
+      "question": "¿Qué comando te permite ver las asignaciones actuales de IRQ?",
+      "options": [
+        { "label": "a", "text": "view /proc/irq", "correct": false },
+        { "label": "b", "text": "cat /proc/interrupts", "correct": true },
+        { "label": "c", "text": "cat /dev/irq", "correct": false },
+        { "label": "d", "text": "less /dev/irq", "correct": false }
+      ],
+      "feedback": "Las asignaciones actuales de interrupciones (IRQ) están contenidas en el archivo /proc/interrupts. Por lo tanto, ver el contenido del archivo con un comando como cat funcionará."
+    },
+    {
+      "id": 3,
+      "type": "single",
+      "question": "¿Qué dispositivo está típicamente conectado como el primer disco floppy?",
+      "options": [
+        { "label": "a", "text": "/dev/hd0", "correct": false },
+        { "label": "b", "text": "/dev/flop0", "correct": false },
+        { "label": "c", "text": "/dev/fd0", "correct": true },
+        { "label": "d", "text": "/dev/sda", "correct": false }
+      ],
+      "feedback": "La interfaz /dev/fd0 es típicamente el primer disco floppy en un sistema Linux."
+    },
+    {
+      "id": 4,
+      "type": "single",
+      "question": "¿En qué directorio se configura los dispositivos udev?",
+      "options": [
+        { "label": "a", "text": "/udev/devices", "correct": false },
+        { "label": "b", "text": "/devices/", "correct": false },
+        { "label": "c", "text": "/udev/config", "correct": false },
+        { "label": "d", "text": "/etc/udev", "correct": true }
+      ],
+      "feedback": "Los archivos de configuración para udev se encuentran en /etc/udev."
+    },
+    {
+      "id": 5,
+      "type": "single",
+      "question": "¿Qué comando se usa para cargar un módulo y sus dependencias automáticamente?",
+      "options": [
+        { "label": "a", "text": "modprobe", "correct": true },
+        { "label": "b", "text": "lsmod", "correct": false },
+        { "label": "c", "text": "insmod", "correct": false },
+        { "label": "d", "text": "rmmod", "correct": false }
+      ],
+      "feedback": "El comando modprobe carga el módulo y sus dependencias, si las hay."
+    },
+    {
+      "id": 6,
+      "type": "single",
+      "question": "¿Qué comando se usa para obtener una lista de dispositivos USB?",
+      "options": [
+        { "label": "a", "text": "usb-list", "correct": false },
+        { "label": "b", "text": "lsusb", "correct": true },
+        { "label": "c", "text": "ls-usb", "correct": false },
+        { "label": "d", "text": "ls --usb", "correct": false }
+      ],
+      "feedback": "El comando lsusb se usa para obtener una lista básica de dispositivos USB en un sistema."
+    },
+    {
+      "id": 7,
+      "type": "single",
+      "question": "Cuando se trabaja con dispositivos hotplug, ¿cuál es la ubicación de los scripts que se ejecutan cuando se inserta un dispositivo en la computadora?",
+      "options": [
+        { "label": "a", "text": "/etc/usb", "correct": false },
+        { "label": "b", "text": "/etc/usb-dev", "correct": false },
+        { "label": "c", "text": "/dev/usb", "correct": false },
+        { "label": "d", "text": "/etc/hotplug/usb", "correct": true }
+      ],
+      "feedback": "El directorio /etc/hotplug/usb contiene scripts que se ejecutan cuando se conecta un dispositivo."
+    },
+    {
+      "id": 8,
+      "type": "single",
+      "question": "¿Qué opción dada en el tiempo de arranque dentro de la configuración de GRUB arrancará el sistema en modo monousuario?",
+      "options": [
+        { "label": "a", "text": "single-user", "correct": false },
+        { "label": "b", "text": "su", "correct": false },
+        { "label": "c", "text": "single", "correct": true },
+        { "label": "d", "text": "root", "correct": false }
+      ],
+      "feedback": "La palabra clave 'single' en la línea de comandos del kernel de Linux arrancará el sistema en modo monousuario."
+    },
+    {
+      "id": 9,
+      "type": "single",
+      "question": "Durante el arranque de un sistema con GRUB, ¿qué tecla se puede presionar para mostrar el menú de GRUB?",
+      "options": [
+        { "label": "a", "text": "shift", "correct": true },
+        { "label": "b", "text": "E", "correct": false },
+        { "label": "c", "text": "V", "correct": false },
+        { "label": "d", "text": "H", "correct": false }
+      ],
+      "feedback": "La tecla Shift, si se presiona cuando el control ha sido transferido a GRUB, hará que se muestre el menú de GRUB."
+    },
+    {
+      "id": 10,
+      "type": "single",
+      "question": "¿Qué comando se puede usar para ver el buffer de anillo del kernel para solucionar problemas en el proceso de arranque?",
+      "options": [
+        { "label": "a", "text": "lsboot", "correct": false },
+        { "label": "b", "text": "boot-log", "correct": false },
+        { "label": "c", "text": "krblog", "correct": false },
+        { "label": "d", "text": "dmesg", "correct": true }
+      ],
+      "feedback": "El comando dmesg muestra el contenido del buffer de anillo del kernel."
+    },
+        {
+      "id": 11,
+      "type": "single",
+      "question": "Durante el proceso de inicialización de un sistema Linux usando SysVinit, ¿qué runlevel corresponde al modo monousuario?",
+      "options": [
+        { "label": "a", "text": "Runlevel 5", "correct": false },
+        { "label": "b", "text": "Runlevel SU", "correct": false },
+        { "label": "c", "text": "Runlevel 1", "correct": true },
+        { "label": "d", "text": "Runlevel 6", "correct": false }
+      ],
+      "feedback": "El Runlevel 1, a veces mostrado como runlevel s o S, es el modo monousuario donde muchos servicios no se inician."
+    },
+    {
+      "id": 12,
+      "type": "single",
+      "question": "En un sistema que usa SysVinit, ¿en qué directorio se almacenan los scripts de inicio y apagado de servicios?",
+      "options": [
+        { "label": "a", "text": "/etc/init-d", "correct": false },
+        { "label": "b", "text": "/etc/init", "correct": false },
+        { "label": "c", "text": "/etc/sysV", "correct": false },
+        { "label": "d", "text": "/etc/init.d", "correct": true }
+      ],
+      "feedback": "Los scripts se almacenan en /etc/init.d en sistemas que usan SysVinit."
+    },
+    {
+      "id": 13,
+      "type": "single",
+      "question": "¿Qué comando se puede usar para reiniciar un sistema?",
+      "options": [
+        { "label": "a", "text": "init 6", "correct": true },
+        { "label": "b", "text": "shutdown -h -t now", "correct": false },
+        { "label": "c", "text": "init 1", "correct": false },
+        { "label": "d", "text": "refresh-system", "correct": false }
+      ],
+      "feedback": "El comando init puede usarse para acceder a diferentes runlevels. El Runlevel 6 se usa para reiniciar el sistema."
+    },
+    {
+      "id": 14,
+      "type": "single",
+      "question": "¿Qué comando usarías si haces cambios en el archivo /etc/inittab y quieres que se recarguen sin reiniciar?",
+      "options": [
+        { "label": "a", "text": "init-refresh", "correct": false },
+        { "label": "b", "text": "init 6", "correct": false },
+        { "label": "c", "text": "telinit", "correct": true },
+        { "label": "d", "text": "reload-inittab", "correct": false }
+      ],
+      "feedback": "El comando telinit puede usarse para refrescar el sistema después de cambios en /etc/inittab."
+    },
+    {
+      "id": 15,
+      "type": "single",
+      "question": "¿Qué comando muestra el runlevel actual de un sistema?",
+      "options": [
+        { "label": "a", "text": "show-level", "correct": false },
+        { "label": "b", "text": "init --level", "correct": false },
+        { "label": "c", "text": "sudo init", "correct": false },
+        { "label": "d", "text": "runlevel", "correct": true }
+      ],
+      "feedback": "El comando runlevel muestra el runlevel actual del sistema."
+    },
+    {
+      "id": 16,
+      "type": "single",
+      "question": "¿En qué carpeta se almacenan los archivos de configuración de unidades de systemd?",
+      "options": [
+        { "label": "a", "text": "/etc/system.conf.d", "correct": false },
+        { "label": "b", "text": "/lib/system.conf.d", "correct": false },
+        { "label": "c", "text": "/lib/systemd/system", "correct": true },
+        { "label": "d", "text": "/etc/sysconfd", "correct": false }
+      ],
+      "feedback": "Los archivos de configuración de unidades se almacenan en /lib/systemd/system."
+    },
+    {
+      "id": 17,
+      "type": "single",
+      "question": "¿Qué descripción explica mejor lo siguiente, obtenido con el comando ls -la?\nlrwxrwxrwx. 1 root root 35 Jul 8 2014 .fetchmailrc -> .configs/fetchmail/.fetchmailrc",
+      "options": [
+        { "label": "a", "text": "Es un archivo llamado .fetchmailrc, enlazado mediante un enlace simbólico.", "correct": true },
+        { "label": "b", "text": "Es un archivo llamado .configs/fetchmail/.fetchmailrc, propiedad de lrwxrwxrwx.", "correct": false },
+        { "label": "c", "text": "Es un directorio llamado .fetchmailrc, propiedad del usuario Jul.", "correct": false },
+        { "label": "d", "text": "Es un directorio local llamado .configs/fetchmail/.fetchmailrc.", "correct": false }
+      ],
+      "feedback": "El listado muestra un archivo con enlace simbólico ubicado en el directorio actual, enlazado a .configs/fetchmail/.fetchmailrc."
+    },
+    {
+      "id": 18,
+      "type": "single",
+      "question": "¿Qué comando se usa con systemd para listar las unidades de servicio disponibles?",
+      "options": [
+        { "label": "a", "text": "systemd list-units", "correct": false },
+        { "label": "b", "text": "systemctl list-units", "correct": true },
+        { "label": "c", "text": "systemd unit-list", "correct": false },
+        { "label": "d", "text": "systemctl show-units", "correct": false }
+      ],
+      "feedback": "El comando systemctl se usa para trabajar con servicios y targets. list-units lista los targets."
+    },
+    {
+      "id": 19,
+      "type": "single",
+      "question": "¿Qué opción de lspci se usa para mostrar tanto códigos numéricos como nombres de dispositivos?",
+      "options": [
+        { "label": "a", "text": "-numdev", "correct": false },
+        { "label": "b", "text": "-n", "correct": false },
+        { "label": "c", "text": "-nn", "correct": true },
+        { "label": "d", "text": "-devnum", "correct": false }
+      ],
+      "feedback": "La opción -nn muestra tanto números como nombres de dispositivos."
+    },
+    {
+      "id": 20,
+      "type": "single",
+      "question": "¿Qué comando se puede usar para obtener una lista de módulos del kernel actualmente cargados?",
+      "options": [
+        { "label": "a", "text": "insmod", "correct": false },
+        { "label": "b", "text": "modlist", "correct": false },
+        { "label": "c", "text": "ls --modules", "correct": false },
+        { "label": "d", "text": "lsmod", "correct": true }
+      ],
+      "feedback": "El comando lsmod lista los módulos del kernel actualmente cargados."
+    },
+        {
+      "id": 21,
+      "type": "single",
+      "question": "¿Qué opción del comando modprobe muestra las dependencias de un módulo específico?",
+      "options": [
+        { "label": "a", "text": "--show-options", "correct": false },
+        { "label": "b", "text": "--list-deps", "correct": false },
+        { "label": "c", "text": "--show-depends", "correct": true },
+        { "label": "d", "text": "--list-all", "correct": false }
+      ],
+      "feedback": "La opción --show-depends muestra los módulos que dependen del módulo especificado."
+    },
+    {
+      "id": 22,
+      "type": "single",
+      "question": "¿Qué comando puedes usar para enviar un mensaje a todos los usuarios actualmente conectados al sistema?",
+      "options": [
+        { "label": "a", "text": "cat", "correct": false },
+        { "label": "b", "text": "wall", "correct": true },
+        { "label": "c", "text": "tee", "correct": false },
+        { "label": "d", "text": "ssh", "correct": false }
+      ],
+      "feedback": "El comando wall se usa para enviar mensajes a todos los usuarios."
+    },
+    {
+      "id": 23,
+      "type": "single",
+      "question": "¿Cuál es un buen primer paso para solucionar problemas cuando el kernel Linux no detecta un disco duro?",
+      "options": [
+        { "label": "a", "text": "Desconectar el disco", "correct": false },
+        { "label": "b", "text": "Verificar el BIOS del sistema", "correct": true },
+        { "label": "c", "text": "Reiniciar el servidor web", "correct": false },
+        { "label": "d", "text": "Ejecutar el comando disk-detect", "correct": false }
+      ],
+      "feedback": "Verificar que el BIOS detecte el disco es el primer paso recomendado."
+    },
+    {
+      "id": 24,
+      "type": "single",
+      "question": "¿En qué directorio se almacena información sobre dispositivos USB?",
+      "options": [
+        { "label": "a", "text": "/etc/usbdevices", "correct": false },
+        { "label": "b", "text": "/var/usb", "correct": false },
+        { "label": "c", "text": "/lib/sys/usb", "correct": false },
+        { "label": "d", "text": "/proc/bus/usb", "correct": true }
+      ],
+      "feedback": "El directorio /proc/bus/usb contiene información sobre dispositivos USB."
+    },
+    {
+      "id": 25,
+      "type": "single",
+      "question": "¿Qué opción se puede añadir a una línea de configuración GRUB para establecer /dev/sda2 como partición raíz al arrancar?",
+      "options": [
+        { "label": "a", "text": "rootpartition={hd0,2}", "correct": false },
+        { "label": "b", "text": "root=/dev/sda2", "correct": true },
+        { "label": "c", "text": "root={hd0,3}", "correct": false },
+        { "label": "d", "text": "rootpartition=/dev/sda2", "correct": false }
+      ],
+      "feedback": "La opción root=/dev/sda2 hará que el kernel use /dev/sda2 como partición raíz."
+    },
+    {
+      "id": 26,
+      "type": "single",
+      "question": "¿Qué combinación de teclas permite editar opciones del kernel y luego arrancar en GRUB Legacy?",
+      "options": [
+        { "label": "a", "text": "ESC para editar y Enter para arrancar", "correct": false },
+        { "label": "b", "text": "V para editar y luego Enter para arrancar", "correct": false },
+        { "label": "c", "text": "E para editar y luego B para arrancar", "correct": true },
+        { "label": "d", "text": "V para editar y luego B para arrancar", "correct": false }
+      ],
+      "feedback": "Con la opción de arranque seleccionada, presiona E para editar y luego B para arrancar."
+    },
+    {
+      "id": 27,
+      "type": "single",
+      "question": "En el prompt grub>, ¿qué comando muestra las particiones actuales según GRUB?",
+      "options": [
+        { "label": "a", "text": "ls", "correct": true },
+        { "label": "b", "text": "showPart", "correct": false },
+        { "label": "c", "text": "partitionList", "correct": false },
+        { "label": "d", "text": "ps", "correct": false }
+      ],
+      "feedback": "El comando ls en el prompt grub> muestra las particiones disponibles en formato (hd0,1)."
+    },
+    {
+      "id": 28,
+      "type": "single",
+      "question": "Si el buffer de anillo del kernel ha sido sobrescrito, ¿en qué archivo puedes buscar mensajes de arranque?",
+      "options": [
+        { "label": "a", "text": "/var/log/bootmessages", "correct": false },
+        { "label": "b", "text": "/var/log/mail.info", "correct": false },
+        { "label": "c", "text": "/var/adm/log/boot.info", "correct": false },
+        { "label": "d", "text": "/var/log/dmesg", "correct": true }
+      ],
+      "feedback": "El archivo /var/log/dmesg contiene mensajes históricos del arranque actual del sistema."
+    },
+    {
+      "id": 29,
+      "type": "single",
+      "question": "¿Qué comando y opción pueden usarse para determinar si un servicio específico está actualmente cargado?",
+      "options": [
+        { "label": "a", "text": "systemctl --ls", "correct": false },
+        { "label": "b", "text": "telinit", "correct": false },
+        { "label": "c", "text": "systemctl status", "correct": true },
+        { "label": "d", "text": "sysctl -a", "correct": false }
+      ],
+      "feedback": "El comando systemctl status es el apropiado para verificar el estado de un servicio."
+    },
+    {
+      "id": 30,
+      "type": "single",
+      "question": "¿Qué comando en un sistema controlado por systemd colocaría el sistema en modo monousuario?",
+      "options": [
+        { "label": "a", "text": "systemctl one", "correct": false },
+        { "label": "b", "text": "systemctl isolate rescue.target", "correct": true },
+        { "label": "c", "text": "systemctl single-user", "correct": false },
+        { "label": "d", "text": "systemctl runlevel one", "correct": false }
+      ],
+      "feedback": "La opción isolate mueve el sistema al target especificado (rescue.target para modo monousuario)."
+    },
+        {
+      "id": 31,
+      "type": "single",
+      "question": "¿Qué comando en un sistema controlado por Upstart recargará los archivos de configuración?",
+      "options": [
+        { "label": "a", "text": "initctl reload", "correct": true },
+        { "label": "b", "text": "systemd reload", "correct": false },
+        { "label": "c", "text": "upstart --reload", "correct": false },
+        { "label": "d", "text": "ups -reload", "correct": false }
+      ],
+      "feedback": "El comando initctl reload hace que Upstart vuelva a leer sus archivos de configuración."
+    },
+    {
+      "id": 32,
+      "type": "single",
+      "question": "En un sistema SysV, ¿qué opción de chkconfig mostrará todos los servicios y sus runlevels?",
+      "options": [
+        { "label": "a", "text": "--reload", "correct": false },
+        { "label": "b", "text": "--list", "correct": true },
+        { "label": "c", "text": "--all", "correct": false },
+        { "label": "d", "text": "--ls", "correct": false }
+      ],
+      "feedback": "La opción --list muestra todos los servicios en el sistema junto con su estado para cada runlevel."
+    },
+    {
+      "id": 33,
+      "type": "single",
+      "question": "¿Qué tipo de dispositivo se considera una unidad conectada por USB?",
+      "options": [
+        { "label": "a", "text": "Medium", "correct": false },
+        { "label": "b", "text": "Coldplug", "correct": false },
+        { "label": "c", "text": "Hotplug", "correct": true },
+        { "label": "d", "text": "Sideplug", "correct": false }
+      ],
+      "feedback": "Los dispositivos USB generalmente se consideran dispositivos hotplug (conectables en caliente)."
+    },
+    {
+      "id": 34,
+      "type": "single",
+      "question": "Durante el proceso de arranque, ¿cuál es el siguiente paso después de que el kernel toma el control e inicializa los dispositivos?",
+      "options": [
+        { "label": "a", "text": "El BIOS del sistema inicializa los dispositivos", "correct": false },
+        { "label": "b", "text": "El sistema entra en modo multiusuario", "correct": false },
+        { "label": "c", "text": "El cargador de arranque inicializa el kernel", "correct": false },
+        { "label": "d", "text": "Se monta la partición raíz", "correct": true }
+      ],
+      "feedback": "La partición raíz se monta después de la inicialización de dispositivos."
+    },
+    {
+      "id": 35,
+      "type": "single",
+      "question": "Un disco PATA heredado se usa para arrancar el sistema. Recientemente añadiste una unidad DVD interna y ahora el sistema no arranca. ¿Cuál es la causa más probable?",
+      "options": [
+        { "label": "a", "text": "El BIOS identificó la unidad DVD como primer disco, por lo que no encuentra las particiones Linux", "correct": true },
+        { "label": "b", "text": "El disco duro se corrompió al instalar la unidad DVD", "correct": false },
+        { "label": "c", "text": "La opción hot swap no está habilitada en el BIOS", "correct": false },
+        { "label": "d", "text": "La unidad DVD no es detectada y necesita habilitarse primero en el BIOS", "correct": false }
+      ],
+      "feedback": "Con cable select, los discos ATA se detectan en el orden en que están conectados en el cable."
+    },
+    {
+      "id": 36,
+      "type": "single",
+      "question": "El sistema usa un disco USB flash temporal montado en /dev/sda1. Necesitas quitarlo. ¿Qué comando permite removerlo de forma segura?",
+      "options": [
+        { "label": "a", "text": "usbstop /dev/sda", "correct": false },
+        { "label": "b", "text": "umount /dev/sda1", "correct": true },
+        { "label": "c", "text": "unmount /dev/sda1", "correct": false },
+        { "label": "d", "text": "dev-eject /dev/sda1", "correct": false }
+      ],
+      "feedback": "El comando umount se usa para desmontar unidades en un sistema en funcionamiento."
+    },
+    {
+      "id": 37,
+      "type": "single",
+      "question": "¿En qué partición se monta típicamente la partición del sistema EFI?",
+      "options": [
+        { "label": "a", "text": "/etc/efi", "correct": false },
+        { "label": "b", "text": "/efi", "correct": false },
+        { "label": "c", "text": "/sys/efi", "correct": false },
+        { "label": "d", "text": "/boot/efi", "correct": true }
+      ],
+      "feedback": "La partición EFI (ESP) típicamente se monta en /boot/efi."
+    },
+    {
+      "id": 38,
+      "type": "single",
+      "question": "Asumiendo que un disco USB tiene una partición (/dev/sdb), ¿qué comando lo monta en /media/usb?",
+      "options": [
+        { "label": "a", "text": "mount /dev/sdb1 /media/usb", "correct": true },
+        { "label": "b", "text": "usbconnect /dev/sdb0 /media/usb", "correct": false },
+        { "label": "c", "text": "mount /dev/sdb0 /media/usb", "correct": false },
+        { "label": "d", "text": "usbmount /dev/sdb1 /media/usb", "correct": false }
+      ],
+      "feedback": "El comando mount monta unidades en Linux, usando la partición 1 (/dev/sdb1) como origen."
+    },
+    {
+      "id": 39,
+      "type": "single",
+      "question": "Has conectado un disco USB y necesitas encontrar su punto de conexión en el sistema. ¿Cuál es el mejor método?",
+      "options": [
+        { "label": "a", "text": "Reiniciar el sistema", "correct": false },
+        { "label": "b", "text": "Ver /var/log/usb.log", "correct": false },
+        { "label": "c", "text": "Conectarlo a un puerto USB conocido", "correct": false },
+        { "label": "d", "text": "Ejecutar dmesg y buscar el disco", "correct": true }
+      ],
+      "feedback": "Ejecutar dmesg es la forma común de encontrar la ubicación asignada al disco por el kernel."
+    },
+    {
+      "id": 40,
+      "type": "single",
+      "question": "¿Qué comando iniciará un apagado inmediato del sistema?",
+      "options": [
+        { "label": "a", "text": "shutdown -c", "correct": false },
+        { "label": "b", "text": "halt", "correct": true },
+        { "label": "c", "text": "systemd stop", "correct": false },
+        { "label": "d", "text": "stop-system", "correct": false }
+      ],
+      "feedback": "De estas opciones, solo halt apagará el sistema inmediatamente."
+    },
+    {
+          "id": 41,
+      "type": "single",
+      "question": "¿Qué opción en un archivo de servicio de systemd indica el programa a ejecutar?",
+      "options": [
+        { "label": "a", "text": "StartProgram", "correct": false },
+        { "label": "b", "text": "ShortCut", "correct": false },
+        { "label": "c", "text": "ExecStart", "correct": true },
+        { "label": "d", "text": "Startup", "correct": false }
+      ],
+      "feedback": "La opción ExecStart indica el comando a ejecutar al iniciar un servicio de systemd."
+    },
+    {
+      "id": 42,
+      "type": "single",
+      "question": "¿Qué comando muestra el target predeterminado en un sistema con systemd?",
+      "options": [
+        { "label": "a", "text": "systemctl defaults", "correct": false },
+        { "label": "b", "text": "update-rc-d defaults", "correct": false },
+        { "label": "c", "text": "systemctl runlevel", "correct": false },
+        { "label": "d", "text": "systemctl get-default", "correct": true }
+      ],
+      "feedback": "El comando systemctl get-default muestra el target predeterminado."
+    },
+    {
+      "id": 43,
+      "type": "single",
+      "question": "¿Qué opción del comando systemctl cambia un servicio para que se ejecute en el próximo arranque?",
+      "options": [
+        { "label": "a", "text": "enable", "correct": true },
+        { "label": "b", "text": "startonboot", "correct": false },
+        { "label": "c", "text": "loadonboot", "correct": false },
+        { "label": "d", "text": "start", "correct": false }
+      ],
+      "feedback": "La opción enable configura el servicio para iniciar en el arranque."
+    },
+    {
+      "id": 44,
+      "type": "single",
+      "question": "¿Qué describe mejor el sistema de archivos /proc?",
+      "options": [
+        { "label": "a", "text": "/proc contiene información sobre archivos a procesar", "correct": false },
+        { "label": "b", "text": "/proc contiene archivos de configuración para procesos", "correct": false },
+        { "label": "c", "text": "/proc contiene información sobre procesos en ejecución, incluyendo el kernel", "correct": true },
+        { "label": "d", "text": "/proc contiene datos variables como correo y archivos web", "correct": false }
+      ],
+      "feedback": "El sistema de archivos /proc contiene información sobre procesos en ejecución y detalles del kernel."
+    },
+    {
+      "id": 45,
+      "type": "single",
+      "question": "¿Qué comando muestra información sobre conexiones USB en formato de árbol?",
+      "options": [
+        { "label": "a", "text": "lsusb -tree", "correct": false },
+        { "label": "b", "text": "lsusb --tree", "correct": false },
+        { "label": "c", "text": "lsusb -t", "correct": true },
+        { "label": "d", "text": "usblist --tree", "correct": false }
+      ],
+      "feedback": "La opción -t de lsusb muestra la salida en formato de árbol."
+    },
+    {
+      "id": 46,
+      "type": "single",
+      "question": "¿Cuántos dispositivos SCSI se admiten por bus?",
+      "options": [
+        { "label": "a", "text": "7 a 15", "correct": true },
+        { "label": "b", "text": "2 a 4", "correct": false },
+        { "label": "c", "text": "12", "correct": false },
+        { "label": "d", "text": "4", "correct": false }
+      ],
+      "feedback": "SCSI soporta de 7 a 15 dispositivos por bus, dependiendo del tipo."
+    },
+    {
+      "id": 47,
+      "type": "single",
+      "question": "¿Por qué un controlador de dispositivo no aparece en lsmod aunque el dispositivo funcione correctamente?",
+      "options": [
+        { "label": "a", "text": "systemd elimina la necesidad de controladores", "correct": false },
+        { "label": "b", "text": "initramfs habilita el soporte por defecto", "correct": false },
+        { "label": "c", "text": "El sistema no necesita controlador", "correct": false },
+        { "label": "d", "text": "El soporte está compilado directamente en el kernel", "correct": true }
+      ],
+      "feedback": "Si un dispositivo funciona pero no aparece en lsmod, normalmente significa que su controlador está compilado en el kernel."
+    },
+    {
+      "id": 48,
+      "type": "single",
+      "question": "¿Qué opción de rmmod hace que el módulo espere a no estar en uso para descargarlo?",
+      "options": [
+        { "label": "a", "text": "-test", "correct": false },
+        { "label": "b", "text": "-f", "correct": false },
+        { "label": "c", "text": "-w", "correct": true },
+        { "label": "d", "text": "-unload", "correct": false }
+      ],
+      "feedback": "La opción -w hace que el módulo espere hasta que no sea necesario antes de descargarse."
+    }
+  ]
+}

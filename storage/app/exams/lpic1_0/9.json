@@ -1,0 +1,626 @@
+{
+    "id": "9",
+    "title": "102:C - Linux Installation and Package Management",
+    "questions": [
+        {
+            "id": 45,
+            "type": "single",
+            "question": "¿Qué comando muestra información sobre un volumen físico en LVM?",
+            "options": [
+                { "label": "a", "text": "pvdisp", "correct": false },
+                { "label": "b", "text": "pvlist", "correct": false },
+                { "label": "c", "text": "pvdisplay", "correct": true },
+                { "label": "d", "text": "pvl", "correct": false }
+            ],
+            "feedback": "El comando pvdisplay muestra información sobre un volumen físico determinado. Puede usar pvdisplay para ver el dispositivo donde se creó el PV, junto con su tamaño de extensión. Los demás comandos mostrados no son válidos."
+        },
+        {
+            "id": 46,
+            "type": "single",
+            "question": "¿Qué comando crea un volumen lógico con LVM?",
+            "options": [
+                { "label": "a", "text": "lvc", "correct": false },
+                { "label": "b", "text": "lvcreate", "correct": true },
+                { "label": "c", "text": "lvlist", "correct": false },
+                { "label": "d", "text": "lvmake", "correct": false }
+            ],
+            "feedback": "El comando lvcreate se utiliza para crear un volumen lógico a partir de dispositivos físicos y grupos de volúmenes creados previamente. Este comando es el último de los tres pasos del proceso de uso de LVM, antes de usar el volumen lógico."
+        },
+        {
+            "id": 47,
+            "type": "single",
+            "question": "¿Qué comando busca volúmenes físicos y grupos en LVM?",
+            "options": [
+                { "label": "a", "text": "vgscan", "correct": true },
+                { "label": "b", "text": "lvmscan", "correct": false },
+                { "label": "c", "text": "lvlist", "correct": false },
+                { "label": "d", "text": "pvlist", "correct": false }
+            ],
+            "feedback": "El comando vgscan busca volúmenes físicos y grupos de volúmenes relacionados con una configuración LVM. Se ejecuta al iniciar el sistema, pero también puede ejecutarse manualmente. Los demás comandos no son válidos."
+        },
+        {
+            "id": 48,
+            "type": "single",
+            "question": "¿Dónde se monta típicamente la partición EFI (ESP)?",
+            "options": [
+                { "label": "a", "text": "/etc/efi", "correct": false },
+                { "label": "b", "text": "/efi", "correct": false },
+                { "label": "c", "text": "/sys/efi", "correct": false },
+                { "label": "d", "text": "/boot/efi", "correct": true }
+            ],
+            "feedback": "El ESP normalmente se monta en /boot/efi."
+        },
+        {
+            "id": 49,
+            "type": "single",
+            "question": "¿Qué comando lista volúmenes físicos en LVM?",
+            "options": [
+                { "label": "a", "text": "pvdisp", "correct": false },
+                { "label": "b", "text": "pvlist", "correct": false },
+                { "label": "c", "text": "pvscan", "correct": true },
+                { "label": "d", "text": "pvmm", "correct": false }
+            ],
+            "feedback": "El comando pvscan muestra una lista de volúmenes físicos en un servidor determinado. Los PV mostrados son aquellos que se inicializaron con pvcreate para su uso con LVM."
+        },
+        {
+            "id": 50,
+            "type": "single",
+            "question": "¿Qué opción de lvchange controla disponibilidad del volumen lógico?",
+            "options": [
+                { "label": "a", "text": "-a", "correct": true },
+                { "label": "b", "text": "-b", "correct": false },
+                { "label": "c", "text": "-c", "correct": false },
+                { "label": "d", "text": "-d", "correct": false }
+            ],
+            "feedback": "La opción -a o --activate establece si se puede usar el volumen lógico. No existe la opción -b ni -c, y la opción -d se utiliza para la depuración."
+        },
+        {
+            "id": 51,
+            "type": "single",
+            "question": "Un script no encuentra /srv/vhosts aunque existe. ¿Cuál es el problema probable?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "El script no es ejecutable",
+                    "correct": false
+                },
+                {
+                    "label": "b",
+                    "text": "El script no tiene el bit setuid",
+                    "correct": false
+                },
+                {
+                    "label": "c",
+                    "text": "El script usa una ruta relativa",
+                    "correct": true
+                },
+                {
+                    "label": "d",
+                    "text": "El script es propiedad de root",
+                    "correct": false
+                }
+            ],
+            "feedback": "El script utiliza una ruta relativa para buscar srv/vhosts en lugar de /srv/vhosts con una ruta absoluta al directorio raíz del sistema."
+        },
+        {
+            "id": 52,
+            "type": "single",
+            "question": "¿Qué diferencia hay entre contenedores y máquinas virtuales?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "Los contenedores solo ejecutan una aplicación",
+                    "correct": false
+                },
+                {
+                    "label": "b",
+                    "text": "Los contenedores comparten el kernel del host",
+                    "correct": true
+                },
+                {
+                    "label": "c",
+                    "text": "Los contenedores son solo para aplicaciones pequeñas",
+                    "correct": false
+                },
+                {
+                    "label": "d",
+                    "text": "Los contenedores son solo para pruebas",
+                    "correct": false
+                }
+            ],
+            "feedback": "Los contenedores de aplicaciones comparten el kernel y otros recursos con el sistema operativo subyacente y utilizan un demonio de contenedor para la comunicación entre el sistema operativo host y el contenedor de aplicaciones. Las máquinas virtuales tienen su propio kernel y son máquinas autónomas que se ejecutan sobre un sistema operativo host o un kernel host. Los contenedores de Linux también ofrecen una experiencia similar a la de una máquina virtual en contenedores, pero son distintos de los contenedores de aplicaciones."
+        },
+        {
+            "id": 53,
+            "type": "single",
+            "question": "Además de /lib y /usr/lib, ¿dónde busca ldconfig directorios para la ruta de bibliotecas?",
+            "options": [
+                { "label": "a", "text": "/etc/lib.conf", "correct": false },
+                { "label": "b", "text": "/etc/ldconf", "correct": false },
+                { "label": "c", "text": "/etc/lib.cfg", "correct": false },
+                { "label": "d", "text": "/etc/ld.so.conf", "correct": true }
+            ],
+            "feedback": "El directorio /etc/ld.so.conf se utiliza, además de /lib y /usr/lib, para configurar las ubicaciones de las bibliotecas. Las demás rutas y archivos mostrados no existen."
+        },
+        {
+            "id": 54,
+            "type": "single",
+            "question": "¿Qué recurso agregarías a una VM lenta en la nube para mejorar rendimiento?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "Capacidad de cómputo",
+                    "correct": true
+                },
+                {
+                    "label": "b",
+                    "text": "Almacenamiento en bloque",
+                    "correct": false
+                },
+                { "label": "c", "text": "Redes", "correct": false },
+                { "label": "d", "text": "Disco", "correct": false }
+            ],
+            "feedback": "Entre estas opciones, la más probable sería aumentar los recursos de cómputo, como añadir más CPU. Añadir RAM también podría justificarse, pero no era una de las opciones disponibles para esta pregunta. La pregunta no indica que la red sea lenta, ni que añadir espacio en disco o almacenamiento en bloque (que son básicamente lo mismo en este contexto) sea útil."
+        },
+        {
+            "id": 55,
+            "type": "single",
+            "question": "¿Qué archivo indica que un sistema usa GRUB2?",
+            "options": [
+                { "label": "a", "text": "grub.cfg", "correct": true },
+                { "label": "b", "text": "grub.conf", "correct": false },
+                { "label": "c", "text": "menu.lst", "correct": false },
+                { "label": "d", "text": "grub2.conf", "correct": false }
+            ],
+            "feedback": "GRUB 2 utiliza grub.cfg mientras que GRUB utiliza menu.lst y grub.conf, lo que hace que la opción A sea la elección correcta."
+        },
+        {
+            "id": 56,
+            "type": "single",
+            "question": "Al crear plantillas de VM, ¿qué elemento será único en cada despliegue?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "Directorios del sistema",
+                    "correct": false
+                },
+                { "label": "b", "text": "Dirección MAC", "correct": true },
+                {
+                    "label": "c",
+                    "text": "Controladores del guest",
+                    "correct": false
+                },
+                { "label": "d", "text": "Pilot homing", "correct": false }
+            ],
+            "feedback": "La dirección MAC será única para cada máquina virtual implementada con la imagen. Los controladores invitados no suelen ser exclusivos de una máquina virtual, pero sí pueden serlo por plantilla o por imagen. Los directorios del sistema no son únicos por máquina virtual, y en este contexto no existe el retorno a la ubicación original."
+        },
+        {
+            "id": 57,
+            "type": "single",
+            "question": "¿Qué programa despliega imágenes Ubuntu en la nube?",
+            "options": [
+                { "label": "a", "text": "dep-image", "correct": false },
+                { "label": "b", "text": "cloud-init", "correct": true },
+                { "label": "c", "text": "init-cloud", "correct": false },
+                { "label": "d", "text": "image-dep", "correct": false }
+            ],
+            "feedback": "El programa cloud-init está disponible en Ubuntu y otras distribuciones y se puede utilizar para implementar imágenes en proveedores de nube populares."
+        },
+        {
+            "id": 58,
+            "type": "single",
+            "question": "¿Qué archivo configura principal de yum?",
+            "options": [
+                { "label": "a", "text": "/etc/yum.cfg", "correct": false },
+                { "label": "b", "text": "/etc/yum.d", "correct": false },
+                { "label": "c", "text": "/etc/yum.conf", "correct": true },
+                { "label": "d", "text": "/etc/yum.config", "correct": false }
+            ],
+            "feedback": "El archivo de configuración del gestor de paquetes yum es /etc/yum.conf. Los demás archivos mencionados no existen."
+        },
+        {
+            "id": 59,
+            "type": "single",
+            "question": "Para un servidor de correo Postfix, ¿qué partición debe ser más grande?",
+            "options": [
+                { "label": "a", "text": "/etc", "correct": false },
+                { "label": "b", "text": "/usr/bin", "correct": false },
+                { "label": "c", "text": "/mail", "correct": false },
+                { "label": "d", "text": "/var", "correct": true }
+            ],
+            "feedback": "La partición que contiene /var debe ser la más grande para un servidor de correo, ya que los spools de correo se almacenan dentro de esta jerarquía. La jerarquía /etc/ suele ser pequeña, al igual que /usr/bin. El directorio /mail no existe por defecto."
+        },
+        {
+            "id": 60,
+            "type": "single",
+            "question": "¿Qué comando lista archivos de un paquete en Debian?",
+            "options": [
+                { "label": "a", "text": "apt -L", "correct": false },
+                { "label": "b", "text": "dpkg -L", "correct": true },
+                { "label": "c", "text": "dpkg -f", "correct": false },
+                { "label": "d", "text": "apt-get show", "correct": false }
+            ],
+            "feedback": "La opción -L de dpkg lista los archivos incluidos en un paquete determinado. La opción -f de dpkg muestra un campo de una entrada de paquete; las demás opciones no existen."
+        },
+        {
+            "id": 61,
+            "type": "single",
+            "question": "¿Qué clave SSH se despliega en la VM para conexión desde el host?",
+            "options": [
+                { "label": "a", "text": "La clave pública", "correct": false },
+                {
+                    "label": "b",
+                    "text": "El archivo de firma",
+                    "correct": false
+                },
+                { "label": "c", "text": "La clave privada", "correct": true },
+                { "label": "d", "text": "Ambas claves", "correct": false }
+            ],
+            "feedback": "La clave pública se implementa en el archivo 'authorized_keys' de cada imagen, y la clave privada se utiliza desde el host para conectarse a cada máquina virtual. No es necesario implementar la clave privada en la máquina virtual para establecer una conexión."
+        },
+        {
+            "id": 62,
+            "type": "single",
+            "question": "¿Qué partición necesita un disco GPT para arrancar Linux?",
+            "options": [
+                { "label": "a", "text": "/boot/efi", "correct": true },
+                { "label": "b", "text": "/boot/gpt", "correct": false },
+                { "label": "c", "text": "/gpt", "correct": false },
+                { "label": "d", "text": "/vmgpt", "correct": false }
+            ],
+            "feedback": "La partición /boot/efi debe existir para la partición EFI y normalmente tiene un tamaño de entre 100 MB y 250 MB, aunque ese tamaño puede variar."
+        },
+        {
+            "id": 63,
+            "type": "single",
+            "question": "¿Qué opción de zypper instala paquetes?",
+            "options": [
+                { "label": "a", "text": "install", "correct": true },
+                { "label": "b", "text": "retr", "correct": false },
+                { "label": "c", "text": "get", "correct": false },
+                { "label": "d", "text": "ref", "correct": false }
+            ],
+            "feedback": "La opción de instalación, o simplemente 'in', instalará un paquete en un sistema que utilice zypper para la gestión de paquetes. Entre las demás opciones, la opción 'ref' actualiza el repositorio. Las demás opciones no son válidas con zypper."
+        },
+        {
+            "id": 64,
+            "type": "single",
+            "question": "¿Qué gestor de paquetes usa Fedora 22 por defecto?",
+            "options": [
+                { "label": "a", "text": "yum", "correct": false },
+                { "label": "b", "text": "apt", "correct": false },
+                { "label": "c", "text": "dpkg", "correct": false },
+                { "label": "d", "text": "dnf", "correct": true }
+            ],
+            "feedback": "Un sistema con Fedora 22 usará el gestor de paquetes dnf por defecto. El gestor de paquetes yum se usa en CentOS y Red Hat, y apt y dpkg en Debian."
+        },
+        {
+            "id": 65,
+            "type": "single",
+            "question": "¿Qué comando lista archivos de un paquete en CentOS?",
+            "options": [
+                { "label": "a", "text": "repoquery -l", "correct": true },
+                { "label": "b", "text": "pkgquery -l", "correct": false },
+                { "label": "c", "text": "dpkg -L", "correct": false },
+                { "label": "d", "text": "pkglist", "correct": false }
+            ],
+            "feedback": "Para este fin, se utiliza el comando repoquery con la opción -l. El comando dpkg -L es adecuado para este fin en sistemas Debian. Los demás comandos no existen."
+        },
+        {
+            "id": 66,
+            "type": "single",
+            "question": "¿Qué directorios incluir en backup de homes (incluyendo root)?",
+            "options": [
+                { "label": "a", "text": "/home", "correct": false },
+                {
+                    "label": "b",
+                    "text": "/home y /home/root",
+                    "correct": false
+                },
+                { "label": "c", "text": "/home y /root", "correct": true },
+                { "label": "d", "text": "/home y /root/home", "correct": false }
+            ],
+            "feedback": "Los directorios de inicio para usuarios normales están en /home y el directorio de inicio para root está en /root, lo que hace que la opción C sea correcta."
+        },
+        {
+            "id": 67,
+            "type": "single",
+            "question": "¿Dónde está el ID único D-Bus de la máquina?",
+            "options": [
+                { "label": "a", "text": "/etc/machine-id", "correct": true },
+                { "label": "b", "text": "/etc/machineID", "correct": false },
+                { "label": "c", "text": "/etc/mch.conf", "correct": false },
+                {
+                    "label": "d",
+                    "text": "/etc/machine.id.conf",
+                    "correct": false
+                }
+            ],
+            "feedback": "El archivo /etc/machine-id contiene el identificador único para una máquina determinada."
+        },
+        {
+            "id": 68,
+            "type": "single",
+            "question": "¿Qué opción de ldconfig procesa solo directorios especificados?",
+            "options": [
+                { "label": "a", "text": "-n", "correct": true },
+                { "label": "b", "text": "-i", "correct": false },
+                { "label": "c", "text": "-v", "correct": false },
+                { "label": "d", "text": "-r", "correct": false }
+            ],
+            "feedback": "La opción -n indica a ldconfig que procese solo los directorios indicados en la línea de comandos. La opción -i ignora el archivo de caché auxiliar. La opción -v es detallada y -r cambia el directorio raíz desde el que se inicia el procesamiento."
+        },
+        {
+            "id": 69,
+            "type": "single",
+            "question": "¿Qué opción de apt-cache muestra el número de paquetes disponibles?",
+            "options": [
+                { "label": "a", "text": "packagenum", "correct": false },
+                { "label": "b", "text": "status", "correct": false },
+                { "label": "c", "text": "stats", "correct": true },
+                { "label": "d", "text": "liststatus", "correct": false }
+            ],
+            "feedback": "La opción 'stats' muestra el total de nombres de paquetes junto con información sobre la caché de paquetes. Las demás opciones no son válidas para apt-cache."
+        },
+        {
+            "id": 70,
+            "type": "single",
+            "question": "En GRUB Legacy, ¿qué opción indica partición raíz con kernel no-Linux?",
+            "options": [
+                { "label": "a", "text": "initrd", "correct": false },
+                { "label": "b", "text": "non-linux", "correct": false },
+                { "label": "c", "text": "rootnoverify", "correct": true },
+                { "label": "d", "text": "root-win", "correct": false }
+            ],
+            "feedback": "La opción rootnoverify se usa para especificar un kernel distinto de Linux, uno que GRUB no debería intentar cargar. La opción initrd se usa para especificar el disco RAM inicial, lo que hace que la opción A sea incorrecta. Las opciones restantes, B y D, no son válidas para GRUB."
+        },
+        {
+            "id": 71,
+            "type": "single",
+            "question": "¿Qué opción de grub-install especifica la ubicación de la partición EFI?",
+            "options": [
+                { "label": "a", "text": "--boot-dir", "correct": false },
+                { "label": "b", "text": "--efi", "correct": false },
+                { "label": "c", "text": "--efi-boot", "correct": false },
+                { "label": "d", "text": "--efi-directory", "correct": true }
+            ],
+            "feedback": "La opción --efi-directory se utiliza para especificar la ubicación de la partición EFI, normalmente /boot/efi."
+        },
+        {
+            "id": 72,
+            "type": "single",
+            "question": "¿Qué archivo contiene puntos de montaje del sistema?",
+            "options": [
+                { "label": "a", "text": "/etc/fstab", "correct": true },
+                { "label": "b", "text": "/etc/mtab", "correct": false },
+                {
+                    "label": "c",
+                    "text": "/etc/partitions.list",
+                    "correct": false
+                },
+                { "label": "d", "text": "/etc/disk.conf", "correct": false }
+            ],
+            "feedback": "El archivo /etc/fstab contiene una lista de particiones del sistema. El archivo /etc/mtab contiene las particiones actualmente montadas. Los demás archivos no existen."
+        },
+        {
+            "id": 73,
+            "type": "single",
+            "question": "¿Qué opción de rpm lista archivos de un paquete?",
+            "options": [
+                { "label": "a", "text": "lf", "correct": false },
+                { "label": "b", "text": "qlp", "correct": true },
+                { "label": "c", "text": "qf", "correct": false },
+                { "label": "d", "text": "eps", "correct": false }
+            ],
+            "feedback": "Las opciones qlp listan los archivos de un paquete rpm. Las demás opciones no son válidas para el propósito descrito en la pregunta."
+        },
+        {
+            "id": 74,
+            "type": "single",
+            "question": "¿Qué comando muestra la versión de un paquete en CentOS?",
+            "options": [
+                { "label": "a", "text": "dpkg -i", "correct": false },
+                { "label": "b", "text": "yum info", "correct": true },
+                { "label": "c", "text": "yum search", "correct": false },
+                { "label": "d", "text": "apt search", "correct": false }
+            ],
+            "feedback": "Entre los comandos y opciones mostrados, la opción 'info' de yum se utiliza para este propósito. Los gestores de paquetes dpkg y apt se utilizan en sistemas Debian y, por lo tanto, no serían apropiados para un sistema CentOS."
+        },
+        {
+            "id": 75,
+            "type": "single",
+            "question": "¿Qué buscar en /proc/cpuinfo para ver soporte de virtualización?",
+            "options": [
+                { "label": "a", "text": "vmx", "correct": true },
+                { "label": "b", "text": "virt", "correct": false },
+                { "label": "c", "text": "envirt", "correct": false },
+                { "label": "d", "text": "vtcapable", "correct": false }
+            ],
+            "feedback": "La presencia de la cadena vmx en la sección de indicadores indica que un procesador Intel es capaz de virtualizar. Esta extensión se denomina svm en una arquitectura AMD."
+        },
+        {
+            "id": 76,
+            "type": "single",
+            "question": "¿Qué archivo configura filtros para vgscan?",
+            "options": [
+                { "label": "a", "text": "lvm.conf", "correct": true },
+                { "label": "b", "text": "vg.conf", "correct": false },
+                { "label": "c", "text": "vgscan.conf", "correct": false },
+                { "label": "d", "text": "lv.cfg", "correct": false }
+            ],
+            "feedback": "El archivo lvm.conf es un archivo de configuración principal para LVM. En lvm.conf, que suele encontrarse en /etc/ o /etc/lvm/, puede configurar, por ejemplo, filtros para incluir o excluir dispositivos del proceso vgscan. Los demás archivos mostrados no son válidos."
+        },
+        {
+            "id": 77,
+            "type": "single",
+            "question": "¿Qué opción de swapon muestra tamaño y uso de swap?",
+            "options": [
+                { "label": "a", "text": "--list", "correct": false },
+                { "label": "b", "text": "-a", "correct": false },
+                { "label": "c", "text": "--show", "correct": true },
+                { "label": "d", "text": "-h", "correct": false }
+            ],
+            "feedback": "La opción --show muestra información sobre los espacios de intercambio del equipo, incluyendo la cantidad de intercambio que se está utilizando actualmente. La opción -a activa todos los espacios de intercambio. No existe la opción --list, y la opción -h muestra ayuda."
+        },
+        {
+            "id": 78,
+            "type": "single",
+            "question": "¿Qué comando genera y guarda la configuración GRUB2?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "update-grub > /boot/grub/grub.cfg",
+                    "correct": true
+                },
+                {
+                    "label": "b",
+                    "text": "update-grub boot > /boot/grub.cfg",
+                    "correct": false
+                },
+                { "label": "c", "text": "grub-rc.d", "correct": false },
+                { "label": "d", "text": "grub-boot", "correct": false }
+            ],
+            "feedback": "El comando update-grub envía su salida a la salida estándar (STDOUT). Por lo tanto, debe redirigir usando > y enviar dicha salida al archivo correcto. Las demás opciones no son válidas para este propósito. Las opciones C y D no son comandos válidos, y la opción B contiene opciones no válidas, así como una ubicación no válida para el archivo de destino."
+        },
+        {
+            "id": 79,
+            "type": "single",
+            "question": "¿Cuántas particiones primarias permite MBR?",
+            "options": [
+                { "label": "a", "text": "2", "correct": false },
+                { "label": "b", "text": "4", "correct": true },
+                { "label": "c", "text": "1", "correct": false },
+                { "label": "d", "text": "5", "correct": false }
+            ],
+            "feedback": "Los discos basados en MBR se pueden particionar con hasta cuatro particiones primarias, una de las cuales se puede particionar o extender en particiones lógicas."
+        },
+        {
+            "id": 80,
+            "type": "single",
+            "question": "¿Qué comando actualiza caché de bibliotecas compartidas?",
+            "options": [
+                { "label": "a", "text": "ldcache", "correct": false },
+                { "label": "b", "text": "cache-update", "correct": false },
+                { "label": "c", "text": "link-update", "correct": false },
+                { "label": "d", "text": "ldconfig", "correct": true }
+            ],
+            "feedback": "El comando ldconfig actualiza la caché y la lista de bibliotecas compartidas actuales. ldconfig lee /etc/ld.so.conf e incorpora los cambios que encuentre. Los demás comandos que aparecen como opciones para esta pregunta no existen."
+        },
+        {
+            "id": 81,
+            "type": "single",
+            "question": "¿Qué opción en GRUB arranca en modo monousuario?",
+            "options": [
+                { "label": "a", "text": "single-user", "correct": false },
+                { "label": "b", "text": "su", "correct": false },
+                { "label": "c", "text": "single", "correct": true },
+                { "label": "d", "text": "root", "correct": false }
+            ],
+            "feedback": "La palabra clave single, dada en la línea de comandos del kernel de Linux, arranca el sistema en modo monousuario. Las demás opciones no son válidas."
+        },
+        {
+            "id": 82,
+            "type": "single",
+            "question": "¿Qué comando actualiza un sistema Debian?",
+            "options": [
+                { "label": "a", "text": "apt-update", "correct": false },
+                { "label": "b", "text": "apt-get upgrade", "correct": true },
+                { "label": "c", "text": "dpkg -U", "correct": false },
+                { "label": "d", "text": "apt-cache clean", "correct": false }
+            ],
+            "feedback": "La opción de actualización de apt-get actualiza el sistema a la última versión del software de los paquetes ya instalados. El comando apt-update no existe, ni tampoco la opción -U de dpkg. El comando apt-cache se utiliza para trabajar con la caché de paquetes."
+        },
+        {
+            "id": 83,
+            "type": "single",
+            "question": "¿Qué opción de yum instala paquetes?",
+            "options": [
+                { "label": "a", "text": "update", "correct": false },
+                { "label": "b", "text": "configure", "correct": false },
+                { "label": "c", "text": "install", "correct": true },
+                { "label": "d", "text": "get", "correct": false }
+            ],
+            "feedback": "El comando yum install instalará un paquete determinado. La opción update actualizará un paquete. Las demás opciones mencionadas no existen."
+        },
+        {
+            "id": 84,
+            "type": "single",
+            "question": "¿Dónde está el directorio home del usuario root?",
+            "options": [
+                { "label": "a", "text": "/home/root", "correct": false },
+                { "label": "b", "text": "/home/su", "correct": false },
+                { "label": "c", "text": "/root", "correct": true },
+                { "label": "d", "text": "/", "correct": false }
+            ],
+            "feedback": "En un sistema Linux, el directorio de inicio de root es /root. Si bien el directorio /home existe, no hay ningún usuario root ni su dentro de esa jerarquía por defecto. El directorio / es la raíz del sistema de archivos, pero no el directorio de inicio de root."
+        },
+        {
+            "id": 85,
+            "type": "single",
+            "question": "¿A dónde envía su salida rpm2cpio por defecto?",
+            "options": [
+                { "label": "a", "text": "STDOUT", "correct": true },
+                {
+                    "label": "b",
+                    "text": "El archivo cpio.out",
+                    "correct": false
+                },
+                { "label": "c", "text": "El archivo a.out", "correct": false },
+                {
+                    "label": "d",
+                    "text": "El archivo /tmp/cpi.out",
+                    "correct": false
+                }
+            ],
+            "feedback": "rpm2cpio envía su salida a STDOUT de forma predeterminada y, por lo tanto, esa salida debe redirigirse a un archivo en la mayoría de los casos."
+        },
+        {
+            "id": 86,
+            "type": "single",
+            "question": "¿Qué partición/directorio contiene la mayoría de programas en Linux?",
+            "options": [
+                { "label": "a", "text": "/etc", "correct": false },
+                { "label": "b", "text": "/usr", "correct": true },
+                { "label": "c", "text": "/home", "correct": false },
+                { "label": "d", "text": "/var", "correct": false }
+            ],
+            "feedback": "La jerarquía /usr contiene muchos de los programas que se ejecutan en un sistema Linux. Otros directorios importantes para programas son /bin y /sbin."
+        },
+        {
+            "id": 87,
+            "type": "single",
+            "question": "En GRUB Legacy, ¿qué valor de \"default\" arranca Linux en una configuración dual-boot?",
+            "options": [
+                { "label": "a", "text": "default=linux", "correct": false },
+                { "label": "b", "text": "default=0", "correct": true },
+                { "label": "c", "text": "default=1", "correct": false },
+                { "label": "d", "text": "default=other", "correct": false }
+            ],
+            "feedback": "GRUB empieza su conteo en 0 y, en este escenario, hay dos sistemas operativos. Por lo tanto, como Linux ocupa el primer lugar en el archivo de configuración, su número sería 0, que se envía a la opción `default=`."
+        },
+        {
+            "id": 88,
+            "type": "single",
+            "question": "¿Qué archivo editar para configurar timeout en GRUB2?",
+            "options": [
+                { "label": "a", "text": "/etc/default/grub", "correct": true },
+                { "label": "b", "text": "/etc/grub/boot", "correct": false },
+                { "label": "c", "text": "/etc/boot/grub.d", "correct": false },
+                { "label": "d", "text": "/grub.d/boot", "correct": false }
+            ],
+            "feedback": "El archivo /etc/default/grub se puede usar para este propósito. También puede editar /boot/grub/grub.cfg, pero no se ofreció esta opción para esta pregunta."
+        },
+        {
+            "id": 89,
+            "type": "single",
+            "question": "¿Qué opción de yum muestra dependencias de un paquete?",
+            "options": [
+                { "label": "a", "text": "list", "correct": false },
+                { "label": "b", "text": "deplist", "correct": true },
+                { "label": "c", "text": "dependencies", "correct": false },
+                { "label": "d", "text": "listdeps", "correct": false }
+            ],
+            "feedback": "La opción 'deplist' muestra las dependencias del paquete dado. La opción 'list' muestra información sobre un paquete específico, mientras que las otras dos opciones no son válidas."
+        }
+    ]
+}

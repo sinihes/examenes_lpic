@@ -1,0 +1,474 @@
+{
+  "id": "1",
+  "title": "105:A - Shells and Shell Scripting",
+  "questions": [
+    {
+      "id": 1,
+      "type": "single",
+      "question": "¿Cuál de las siguientes opciones describe mejor la variable de entorno PS1?",
+      "options": [
+        { "label": "a", "text": "PS1 se usa para establecer la ubicación del comando PostScript.", "correct": false },
+        { "label": "b", "text": "PS1 se usa para definir el prompt predeterminado de la shell bash.", "correct": true },
+        { "label": "c", "text": "PS1 se usa como una variable por sistema.", "correct": false },
+        { "label": "d", "text": "PS1 está definida por el usuario y no tiene un valor o configuración predeterminada.", "correct": false }
+      ],
+      "feedback": "La variable PS1 generalmente tiene su valor predeterminado en /etc/profile y se usa como el prompt de la shell. Los usuarios pueden personalizarlo para incluir el nombre del host, el directorio de trabajo y otros elementos."
+    },
+    {
+      "id": 2,
+      "type": "single",
+      "question": "Suponiendo que se ha definido una lista de valores separados por espacios como LIST=\"uno dos tres cuatro\", ¿cuál de los siguientes bucles for iterará a través de los elementos de la lista?",
+      "options": [
+        { "label": "a", "text": "for LIST", "correct": false },
+        { "label": "b", "text": "for VAR in LIST", "correct": false },
+        { "label": "c", "text": "for VAR in $LIST", "correct": true },
+        { "label": "d", "text": "for $LIST -> $VAR", "correct": false }
+      ],
+      "feedback": "El bucle for en este caso requiere que el nombre de la variable LIST esté precedido por un signo de dólar ($), por lo que la opción C es correcta. Las otras opciones no funcionarán para el propósito descrito."
+    },
+    {
+      "id": 3,
+      "type": "single",
+      "question": "¿Qué prueba dentro de un bucle while en un script de shell examinará si un valor es menor que otro?",
+      "options": [
+        { "label": "a", "text": "-less", "correct": false },
+        { "label": "b", "text": "-lessThan", "correct": false },
+        { "label": "c", "text": "-lt", "correct": true },
+        { "label": "d", "text": "-lthan", "correct": false }
+      ],
+      "feedback": "El operador -lt se usa para probar condiciones de \"menor que\" dentro de un script. Los otros operadores no son válidos para usar en un script de shell."
+    },
+    {
+      "id": 4,
+      "type": "single",
+      "question": "Necesitas que un comando se ejecute al cerrar sesión para todos los usuarios. ¿En qué archivo debería colocarse esto (asumiendo que todos los usuarios usan Bash)?",
+      "options": [
+        { "label": "a", "text": "∼/.bash_logout", "correct": false },
+        { "label": "b", "text": "/etc/bash.bash_logout", "correct": true },
+        { "label": "c", "text": "/home/.bash_logout", "correct": false },
+        { "label": "d", "text": "/etc/bash_logout", "correct": false }
+      ],
+      "feedback": "Si bien es cierto que cada usuario tiene un .bash_logout en su directorio home, ese archivo aún puede ser editado por el usuario. Por lo tanto, para asegurar que el comando requerido se ejecute al cerrar sesión, se debe usar el archivo /etc/bash.bash_logout."
+    },
+    {
+      "id": 5,
+      "type": "single",
+      "question": "¿Cuál de las siguientes pruebas determinará si un archivo existe en el contexto de un script de shell?",
+      "options": [
+        { "label": "a", "text": "-a", "correct": false },
+        { "label": "b", "text": "-e", "correct": true },
+        { "label": "c", "text": "-m", "correct": false },
+        { "label": "d", "text": "-i", "correct": false }
+      ],
+      "feedback": "La prueba -e verifica que un archivo exista y se usa típicamente en el contexto de un condicional dentro de un script de shell. Las otras opciones pueden funcionar dentro de scripts de shell pero no son pruebas para la existencia de archivos."
+    },
+    {
+      "id": 6,
+      "type": "single",
+      "question": "¿En qué directorio deberías colocar archivos para que se copien automáticamente al directorio home de un usuario cuando se crea el usuario?",
+      "options": [
+        { "label": "a", "text": "/etc/userhome", "correct": false },
+        { "label": "b", "text": "/etc/templateuser", "correct": false },
+        { "label": "c", "text": "/etc/skel", "correct": true },
+        { "label": "d", "text": "/home/skel", "correct": false }
+      ],
+      "feedback": "El directorio /etc/skel contiene archivos que se copiarán al directorio home del usuario. Los otros directorios listados para esta pregunta no existen por defecto."
+    },
+    {
+      "id": 7,
+      "type": "single",
+      "question": "¿Qué opción de bash hará que la shell se ejecute sin leer los archivos de inicialización?",
+      "options": [
+        { "label": "a", "text": "--no-rc", "correct": false },
+        { "label": "b", "text": "--no-init", "correct": false },
+        { "label": "c", "text": "--norc", "correct": true },
+        { "label": "d", "text": "--rc-none", "correct": false }
+      ],
+      "feedback": "La opción --norc hace que bash se ejecute sin leer el archivo /etc/bash.bashrc ni el archivo local ~/.bashrc. Las otras opciones listadas no existen como opciones para bash."
+    },
+    {
+      "id": 8,
+      "type": "single",
+      "question": "¿Cuál de las siguientes opciones crea un array en un script de Bash?",
+      "options": [
+        { "label": "a", "text": "ARRAY=(val1 val2)", "correct": true },
+        { "label": "b", "text": "ARRAY = \"val1 val2\"", "correct": false },
+        { "label": "c", "text": "ARRAY_PUSH($ARRAY,\"val1\",\"val2\");", "correct": false },
+        { "label": "d", "text": "ARRAY{0} = \"val1\"", "correct": false }
+      ],
+      "feedback": "La creación de arrays en un script de shell implica el uso de paréntesis cuando se usa de esta manera. También puedes usar corchetes para definir elementos individuales, como en ARRAY[0] = \"val1\"."
+    },
+    {
+      "id": 9,
+      "type": "single",
+      "question": "¿Qué opción de declare muestra la salida de una manera que podría usarse como entrada para otro comando?",
+      "options": [
+        { "label": "a", "text": "-o", "correct": false },
+        { "label": "b", "text": "-n", "correct": false },
+        { "label": "c", "text": "-p", "correct": true },
+        { "label": "d", "text": "-m", "correct": false }
+      ],
+      "feedback": "La opción -p de declare muestra declaraciones de shell completamente calificadas de manera que dichas declaraciones podrían usarse como entrada para otro comando, ya sea mediante piping o redireccionamiento a un script."
+    },
+    {
+      "id": 10,
+      "type": "single",
+      "question": "Necesitas crear una función que esté disponible cada vez que inicies sesión en el sistema. ¿En qué archivo deberías colocar esta función?",
+      "options": [
+        { "label": "a", "text": ".bash_profile", "correct": true },
+        { "label": "b", "text": ".rc", "correct": false },
+        { "label": "c", "text": "/etc/profile", "correct": false },
+        { "label": "d", "text": ".bash_run", "correct": false }
+      ],
+      "feedback": "El archivo .bash_profile, si existe en tu directorio home, se ejecutará al iniciar sesión. Nota que colocar la función en /etc/profile técnicamente funcionaría, pero entonces la función estaría disponible para todos los usuarios, lo cual no es lo que pregunta la pregunta."
+    },
+    {
+      "id": 11,
+      "type": "single",
+      "question": "¿Qué comando interno de la shell se usa para mostrar una lista de variables de solo lectura?",
+      "options": [
+        { "label": "a", "text": "ro", "correct": false },
+        { "label": "b", "text": "readonly", "correct": true },
+        { "label": "c", "text": "env-ro", "correct": false },
+        { "label": "d", "text": "ro-env", "correct": false }
+      ],
+      "feedback": "El comando readonly muestra la lista de variables de solo lectura que se han declarado en la sesión actual. Los otros comandos listados no existen."
+    },
+    {
+      "id": 12,
+      "type": "single",
+      "question": "¿Qué caracteres se usan para denotar el inicio y fin de la parte de prueba de un bucle while en un script de shell?",
+      "options": [
+        { "label": "a", "text": "Paréntesis ( )", "correct": false },
+        { "label": "b", "text": "Llaves { }", "correct": false },
+        { "label": "c", "text": "Corchetes [ ]", "correct": true },
+        { "label": "d", "text": "Comillas dobles \" \"", "correct": false }
+      ],
+      "feedback": "Los corchetes se usan para denotar el inicio y fin de la parte de prueba de un bucle while en un script de shell. Otros lenguajes generalmente usan paréntesis para este propósito."
+    },
+    {
+      "id": 13,
+      "type": "single",
+      "question": "Cuando se usa el comando interno test con un argumento, ¿qué se devolverá si su argumento no es nulo?",
+      "options": [
+        { "label": "a", "text": "false", "correct": false },
+        { "label": "b", "text": "true", "correct": true },
+        { "label": "c", "text": "unknown", "correct": false },
+        { "label": "d", "text": "-1", "correct": false }
+      ],
+      "feedback": "El comando test devolverá true y puede usarse para verificar que el valor de una variable no sea nulo. Nota que el comportamiento de test difiere dependiendo del número de argumentos."
+    },
+    {
+      "id": 14,
+      "type": "single",
+      "question": "¿Qué variable de entorno se usa al cambiar de directorio con el carácter tilde, como en cd ~?",
+      "options": [
+        { "label": "a", "text": "HOMEDIR", "correct": false },
+        { "label": "b", "text": "HOMEPATH", "correct": false },
+        { "label": "c", "text": "HOME", "correct": true },
+        { "label": "d", "text": "MAILPATH", "correct": false }
+      ],
+      "feedback": "La variable HOME, establecida automáticamente en el directorio home del usuario, se consulta cuando se ingresa el comando cd ~. Las otras opciones no existen por defecto."
+    },
+    {
+      "id": 15,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos elimina una variable de entorno que ha sido establecida?",
+      "options": [
+        { "label": "a", "text": "profile --unset", "correct": false },
+        { "label": "b", "text": "env -u", "correct": true },
+        { "label": "c", "text": "set -u", "correct": false },
+        { "label": "d", "text": "import", "correct": false }
+      ],
+      "feedback": "El comando env -u eliminará una variable de entorno para la sesión actual. El comando unset también puede usarse para este propósito."
+    },
+    {
+      "id": 16,
+      "type": "single",
+      "question": "¿Qué variable de entorno puede establecerse si deseas cerrar automáticamente la sesión de los usuarios después de un período de inactividad?",
+      "options": [
+        { "label": "a", "text": "TIMEOUT", "correct": false },
+        { "label": "b", "text": "TMOUT", "correct": true },
+        { "label": "c", "text": "TO", "correct": false },
+        { "label": "d", "text": "IDLETIME", "correct": false }
+      ],
+      "feedback": "La variable TMOUT puede establecerse en la shell de un usuario y este será desconectado después del valor dado (en segundos) de inactividad."
+    },
+    {
+      "id": 17,
+      "type": "single",
+      "question": "Cuando se usa una sentencia case dentro de un script de shell, ¿qué secuencia denota el final de la sentencia case/switch?",
+      "options": [
+        { "label": "a", "text": "caseend", "correct": false },
+        { "label": "b", "text": "esac", "correct": true },
+        { "label": "c", "text": "endcase", "correct": false },
+        { "label": "d", "text": "}", "correct": false }
+      ],
+      "feedback": "Al igual que con una sentencia if que termina con fi, una sentencia case termina con la palabra case escrita al revés (esac)."
+    },
+    {
+      "id": 18,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos obtendrá la fecha en segundos desde la época y la colocará en una variable llamada DATE dentro de un script de shell?",
+      "options": [
+        { "label": "a", "text": "DATE=\"$(date +%s)\"", "correct": true },
+        { "label": "b", "text": "DATE=\"date\"", "correct": false },
+        { "label": "c", "text": "DATE=\"$(date)\"", "correct": false },
+        { "label": "d", "text": "DATE=\"$date %s\"", "correct": false }
+      ],
+      "feedback": "La respuesta correcta realiza sustitución de comandos y coloca el valor resultante en una variable. El formato +%s en date devuelve los segundos desde la época."
+    },
+    {
+      "id": 19,
+      "type": "single",
+      "question": "Supón que tienes una variable llamada $FILEPATH en un script de Bash. ¿Qué caracteres pueden usarse para asegurar que la variable se interpolará correctamente sin importar dónde aparezca en el script?",
+      "options": [
+        { "label": "a", "text": "Signo de dólar: $FILEPATH", "correct": false },
+        { "label": "b", "text": "Llaves: ${FILEPATH}", "correct": true },
+        { "label": "c", "text": "Paréntesis: $(FILEPATH)", "correct": false },
+        { "label": "d", "text": "Corchetes: $[FILEPATH]", "correct": false }
+      ],
+      "feedback": "Envolver una variable con llaves, como ${FILEPATH}, asegura que se interpole correctamente incluso en contextos donde normalmente no se expandiría."
+    },
+    {
+      "id": 20,
+      "type": "single",
+      "question": "¿Cuál de las siguientes pruebas determinará si un archivo existe y puede ser leído por el usuario que ejecuta la prueba?",
+      "options": [
+        { "label": "a", "text": "-e", "correct": false },
+        { "label": "b", "text": "-m", "correct": false },
+        { "label": "c", "text": "-a", "correct": false },
+        { "label": "d", "text": "-r", "correct": true }
+      ],
+      "feedback": "La prueba -r determina si un archivo existe y puede ser leído por el usuario actual. La prueba -e solo verifica la existencia del archivo."
+    },
+        {
+      "id": 21,
+      "type": "single",
+      "question": "¿Qué opción del comando declare creará una variable de solo lectura?",
+      "options": [
+        { "label": "a", "text": "-r", "correct": true },
+        { "label": "b", "text": "-ro", "correct": false },
+        { "label": "c", "text": "-p", "correct": false },
+        { "label": "d", "text": "-x", "correct": false }
+      ],
+      "feedback": "La opción -r de declare marcará la variable como de solo lectura. La opción -p muestra el output en formato reusable, y -x declara la variable para exportación."
+    },
+    {
+      "id": 22,
+      "type": "single",
+      "question": "¿Qué secuencia de caracteres se usa para proporcionar un caso por defecto en una sentencia case dentro de un script de shell?",
+      "options": [
+        { "label": "a", "text": "default:", "correct": false },
+        { "label": "b", "text": "=)", "correct": false },
+        { "label": "c", "text": "-->", "correct": false },
+        { "label": "d", "text": "*)", "correct": true }
+      ],
+      "feedback": "La secuencia *) denota el conjunto de sentencias que se ejecutarán si ningún otro caso coincide."
+    },
+    {
+      "id": 23,
+      "type": "single",
+      "question": "¿Qué secuencia de caracteres puede usarse para sustitución de comandos en Bash?",
+      "options": [
+        { "label": "a", "text": "Backticks: ` `", "correct": true },
+        { "label": "b", "text": "Comillas simples: ' '", "correct": false },
+        { "label": "c", "text": "Comillas dobles: \"\"", "correct": false },
+        { "label": "d", "text": "Barras invertidas: \\", "correct": false }
+      ],
+      "feedback": "Los backticks (` `) pueden usarse para sustitución de comandos en Bash. Las otras opciones no son válidas para este propósito."
+    },
+    {
+      "id": 24,
+      "type": "single",
+      "question": "Cuando se usa un bucle while en Bash, ¿qué secuencia de caracteres marca el final del bucle?",
+      "options": [
+        { "label": "a", "text": "elihw", "correct": false },
+        { "label": "b", "text": "done", "correct": true },
+        { "label": "c", "text": "end", "correct": false },
+        { "label": "d", "text": "od", "correct": false }
+      ],
+      "feedback": "La palabra 'done' marca el final de un bucle while en Bash."
+    },
+    {
+      "id": 25,
+      "type": "single",
+      "question": "¿Qué opción del comando unset indica explícitamente que el nombre dado se refiere a una variable de shell y no a una función?",
+      "options": [
+        { "label": "a", "text": "-a", "correct": false },
+        { "label": "b", "text": "-s", "correct": false },
+        { "label": "c", "text": "-v", "correct": true },
+        { "label": "d", "text": "-e", "correct": false }
+      ],
+      "feedback": "La opción -v (que es la predeterminada) indica que el nombre es una variable de shell y no una función."
+    },
+    {
+      "id": 26,
+      "type": "single",
+      "question": "¿Qué operador se usa para probar si un valor es mayor o igual que otro en un script de Bash?",
+      "options": [
+        { "label": "a", "text": "!=", "correct": false },
+        { "label": "b", "text": "=>", "correct": false },
+        { "label": "c", "text": ">=", "correct": true },
+        { "label": "d", "text": ">>", "correct": false }
+      ],
+      "feedback": "El operador >= prueba 'mayor o igual que'. El operador != prueba desigualdad."
+    },
+    {
+      "id": 27,
+      "type": "single",
+      "question": "Estás trabajando con un script llamado listusers que no se ejecuta y muestra el error 'permission denied'. ¿Cuál podría ser la causa?",
+      "options": [
+        { "label": "a", "text": "El script debería tener extensión .sh", "correct": false },
+        { "label": "b", "text": "El script contiene un error de sintaxis", "correct": false },
+        { "label": "c", "text": "El script no tiene permisos de ejecución configurados correctamente", "correct": true },
+        { "label": "d", "text": "El script usa letras minúsculas en su nombre", "correct": false }
+      ],
+      "feedback": "El bit de ejecución no está activado en el script, resultando en el error de permiso denegado. La extensión del archivo y el uso de mayúsculas/minúsculas no afectan la ejecución."
+    },
+    {
+      "id": 28,
+      "type": "single",
+      "question": "¿Qué opción del comando export hace que los nombres estén disponibles como funciones para procesos hijos?",
+      "options": [
+        { "label": "a", "text": "-m", "correct": false },
+        { "label": "b", "text": "-e", "correct": false },
+        { "label": "c", "text": "-w", "correct": false },
+        { "label": "d", "text": "-f", "correct": true }
+      ],
+      "feedback": "La opción -f exporta nombres como funciones para procesos hijos."
+    },
+    {
+      "id": 29,
+      "type": "single",
+      "question": "Si una variable fue creada usando el comando set, ¿qué comando puede usarse para eliminarla?",
+      "options": [
+        { "label": "a", "text": "remove", "correct": false },
+        { "label": "b", "text": "del", "correct": false },
+        { "label": "c", "text": "delete", "correct": false },
+        { "label": "d", "text": "unset", "correct": true }
+      ],
+      "feedback": "El comando unset elimina una variable. Los otros comandos mostrados no existen."
+    },
+    {
+      "id": 30,
+      "type": "single",
+      "question": "¿Cuál de los siguientes archivos es un script de inicialización systemwide para Bash?",
+      "options": [
+        { "label": "a", "text": "/etc/bash.bashrc", "correct": true },
+        { "label": "b", "text": "/etc/bash.init", "correct": false },
+        { "label": "c", "text": "/etc/bash.cfg", "correct": false },
+        { "label": "d", "text": "/etc/bash/bash.init", "correct": false }
+      ],
+      "feedback": "El archivo /etc/bash.bashrc es un archivo de configuración systemwide para el entorno Bash. /etc/profile es otro archivo systemwide con propósitos similares."
+    },
+        {
+      "id": 31,
+      "type": "single",
+      "question": "¿Qué opción del comando set habilita la salida de depuración?",
+      "options": [
+        { "label": "a", "text": "-d", "correct": false },
+        { "label": "b", "text": "+d", "correct": false },
+        { "label": "c", "text": "-x", "correct": false },
+        { "label": "d", "text": "+x", "correct": true }
+      ],
+      "feedback": "La opción +x habilita la salida de depuración y se usa frecuentemente al depurar scripts de shell. La opción -x la deshabilita. Las opciones -d y +d no existen."
+    },
+    {
+      "id": 32,
+      "type": "single",
+      "question": "¿Cuál de los siguientes archivos se ejecuta con cada invocación interactiva de Bash?",
+      "options": [
+        { "label": "a", "text": "/etc/bash.d", "correct": false },
+        { "label": "b", "text": "/etc/bash.interactive", "correct": false },
+        { "label": "c", "text": "∼/.bash_inter", "correct": false },
+        { "label": "d", "text": "∼/.bashrc", "correct": true }
+      ],
+      "feedback": "El archivo .bashrc en el directorio home del usuario se ejecuta para logins interactivos. Los otros archivos mostrados no existen."
+    },
+    {
+      "id": 33,
+      "type": "single",
+      "question": "¿Qué palabra clave declara un bloque de código como función en un script de Bash?",
+      "options": [
+        { "label": "a", "text": "function", "correct": true },
+        { "label": "b", "text": "repeat", "correct": false },
+        { "label": "c", "text": "func", "correct": false },
+        { "label": "d", "text": "block", "correct": false }
+      ],
+      "feedback": "La palabra clave 'function' declara un bloque de código como función en Bash. Nota que en muchos casos puede omitirse. Las otras opciones no son válidas."
+    },
+    {
+      "id": 34,
+      "type": "single",
+      "question": "¿Cuál de las siguientes sentencias añade la ruta /srv/bin al PATH para una shell Bash?",
+      "options": [
+        { "label": "a", "text": "PATH=/srv/bin", "correct": false },
+        { "label": "b", "text": "PATH=$PATH:/srv/bin", "correct": true },
+        { "label": "c", "text": "PATH = /srv/bin", "correct": false },
+        { "label": "d", "text": "PATH=/srv/bin;$PATH", "correct": false }
+      ],
+      "feedback": "La sintaxis correcta es PATH=$PATH:/srv/bin. La opción A sobrescribiría el PATH existente, la C tiene espacios inválidos, y la D usa punto y coma como delimitador."
+    },
+    {
+      "id": 35,
+      "type": "single",
+      "question": "¿Qué variable está disponible en un script Bash y contiene el nombre del script mismo?",
+      "options": [
+        { "label": "a", "text": "$SCR", "correct": false },
+        { "label": "b", "text": "$SCRIPT", "correct": false },
+        { "label": "c", "text": "$CMD", "correct": false },
+        { "label": "d", "text": "$0", "correct": true }
+      ],
+      "feedback": "La variable $0 está definida automáticamente y contiene el nombre del script. Las otras opciones no existen por defecto."
+    },
+    {
+      "id": 36,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos asegura que se usen las opciones -la cuando se ejecute el comando ls sin otras opciones?",
+      "options": [
+        { "label": "a", "text": "alias ls=\"ls -la\"", "correct": true },
+        { "label": "b", "text": "ln -s ls ls -la", "correct": false },
+        { "label": "c", "text": "alias \"ls -la\" = ls", "correct": false },
+        { "label": "d", "text": "set ls", "correct": false }
+      ],
+      "feedback": "El comando alias con formato nombre=valor es el correcto (opción A). ln no puede usarse para este propósito."
+    },
+    {
+      "id": 37,
+      "type": "single",
+      "question": "¿Qué opción del comando seq establece un delimitador de espacio entre los números del 1 al 5?",
+      "options": [
+        { "label": "a", "text": "seq -s ' ' 1 5", "correct": true },
+        { "label": "b", "text": "seq -d ' ' 1 5", "correct": false },
+        { "label": "c", "text": "seq 1 5", "correct": false },
+        { "label": "d", "text": "seq -m 1 5", "correct": false }
+      ],
+      "feedback": "El argumento -s permite establecer un delimitador. Las opciones -m y -d no existen."
+    },
+    {
+      "id": 38,
+      "type": "single",
+      "question": "¿Qué prueba de archivo se usa para determinar si eres el propietario del archivo que se está probando?",
+      "options": [
+        { "label": "a", "text": "-m", "correct": false },
+        { "label": "b", "text": "-k", "correct": false },
+        { "label": "c", "text": "-w", "correct": false },
+        { "label": "d", "text": "-O", "correct": true }
+      ],
+      "feedback": "La opción -O verifica si el usuario que ejecuta la prueba es el propietario del archivo. La opción -k verifica el sticky bit."
+    },
+    {
+      "id": 39,
+      "type": "single",
+      "question": "Al probar un valor de retorno en un script Bash, ¿qué código de salida indica éxito?",
+      "options": [
+        { "label": "a", "text": "0", "correct": true },
+        { "label": "b", "text": "1", "correct": false },
+        { "label": "c", "text": "2", "correct": false },
+        { "label": "d", "text": "C", "correct": false }
+      ],
+      "feedback": "Un retorno exitoso es 0. Códigos 1 o superiores típicamente indican errores. No existe condición 'C'."
+    }
+  ]
+}

@@ -1,0 +1,518 @@
+{
+    "id": "5",
+    "title": "Extra: - New Questions",
+    "questions": [
+        {
+            "id": 1,
+            "type": "single",
+            "question": "¿Cuál de los siguientes comandos lista las dependencias de un paquete dpkg dado?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "apt-cache depends-onpackage",
+                    "correct": false
+                },
+                {
+                    "label": "b",
+                    "text": "apt-cache dependencies package",
+                    "correct": false
+                },
+                {
+                    "label": "c",
+                    "text": "apt-cache depends package",
+                    "correct": true
+                },
+                {
+                    "label": "d",
+                    "text": "apt-cache requires package",
+                    "correct": false
+                }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 2,
+            "type": "single",
+            "question": "¿Cuál de las siguientes afirmaciones es correcta sobre los puntos de montaje?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "Cualquier directorio existente puede usarse como punto de montaje.",
+                    "correct": true
+                },
+                {
+                    "label": "b",
+                    "text": "Solo directorios vacíos pueden usarse como puntos de montaje.",
+                    "correct": false
+                },
+                {
+                    "label": "c",
+                    "text": "Los directorios necesitan tener el flag SetUID para ser puntos de montaje.",
+                    "correct": false
+                },
+                {
+                    "label": "d",
+                    "text": "Los archivos dentro de un directorio se eliminan al usarlo como punto de montaje.",
+                    "correct": false
+                }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 3,
+            "type": "single",
+            "question": "¿A qué variable de entorno asignarías un valor para indicar al enlazador dinámico que busque en un directorio específico las bibliotecas compartidas de un programa?",
+            "options": [
+                { "label": "a", "text": "LD_LOAD_PATH", "correct": false },
+                { "label": "b", "text": "LD_LIB_PATH", "correct": false },
+                { "label": "c", "text": "LD_LIBRARY_PATH", "correct": true },
+                { "label": "d", "text": "LD_SHARE_PATH", "correct": false },
+                { "label": "e", "text": "LD_RUN_PATH", "correct": false }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 4,
+            "type": "single",
+            "question": "Después de modificar el archivo de configuración de GNU GRUB, ¿qué comando debe ejecutarse para aplicar los cambios?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "kill -HUP $(pidof grub)",
+                    "correct": false
+                },
+                { "label": "b", "text": "grub-install", "correct": false },
+                { "label": "c", "text": "grub", "correct": false },
+                {
+                    "label": "d",
+                    "text": "No se requiere ninguna acción.",
+                    "correct": true
+                }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 5,
+            "type": "single",
+            "question": "¿Qué comando de RPM mostrará el nombre del paquete que proporcionó el archivo /etc/exports?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "rpm -F /etc/exports",
+                    "correct": false
+                },
+                {
+                    "label": "b",
+                    "text": "rpm -qf /etc/exports",
+                    "correct": true
+                },
+                {
+                    "label": "c",
+                    "text": "rpm -Kl /etc/exports",
+                    "correct": false
+                },
+                {
+                    "label": "d",
+                    "text": "rpm -qp /etc/exports",
+                    "correct": false
+                },
+                {
+                    "label": "e",
+                    "text": "rpm -qi /etc/exports",
+                    "correct": false
+                }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 6,
+            "type": "single",
+            "question": "¿Cuál de los siguientes comandos sobrescribe el gestor de arranque en /dev/sda sin afectar la tabla de particiones?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "dd if=/dev/zero of=/dev/sda bs=512",
+                    "correct": false
+                },
+                {
+                    "label": "b",
+                    "text": "dd if=/dev/zero of=/dev/sda bs=512 count=1",
+                    "correct": false
+                },
+                {
+                    "label": "c",
+                    "text": "dd if=/dev/zero of=/dev/sda bs=440 count=1",
+                    "correct": true
+                },
+                {
+                    "label": "d",
+                    "text": "dd if=/dev/zero of=/dev/sda bs=440",
+                    "correct": false
+                }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 7,
+            "type": "single",
+            "question": "¿Qué variable de entorno extiende o sobrescribe la lista de directorios que contienen bibliotecas compartidas?",
+            "options": [
+                { "label": "a", "text": "LD_LOAD_PATH", "correct": false },
+                { "label": "b", "text": "LD_LIB_PATH", "correct": false },
+                { "label": "c", "text": "LD_LIBRARY_PATH", "correct": true },
+                { "label": "d", "text": "LD_SHARE_PATH", "correct": false },
+                { "label": "e", "text": "LD_RUN_PATH", "correct": false }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 8,
+            "type": "single",
+            "question": "¿Qué archivo debe editarse para seleccionar las ubicaciones de red de donde se cargan los paquetes de instalación de Debian?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "/etc/dpkg/dpkg.cfg",
+                    "correct": false
+                },
+                { "label": "b", "text": "/etc/apt/apt.conf", "correct": false },
+                {
+                    "label": "c",
+                    "text": "/etc/apt/apt.conf.d",
+                    "correct": false
+                },
+                {
+                    "label": "d",
+                    "text": "/etc/apt/sources.list",
+                    "correct": true
+                },
+                {
+                    "label": "e",
+                    "text": "/etc/dpkg/dselect.cfg",
+                    "correct": false
+                }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 9,
+            "type": "single",
+            "question": "¿Qué comando lista todos los paquetes instalados en un sistema con gestión de paquetes RPM?",
+            "options": [
+                { "label": "a", "text": "yum --query --all", "correct": false },
+                {
+                    "label": "b",
+                    "text": "yum --list --installed",
+                    "correct": false
+                },
+                { "label": "c", "text": "rpm --query --all", "correct": true },
+                {
+                    "label": "d",
+                    "text": "rpm --list --installed",
+                    "correct": false
+                }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 10,
+            "type": "single",
+            "question": "¿Qué opción en un archivo de configuración de GRUB Legacy define el tiempo que se muestra el menú de GRUB?",
+            "options": [
+                { "label": "a", "text": "hidemenu", "correct": false },
+                { "label": "b", "text": "splash", "correct": false },
+                { "label": "c", "text": "timeout", "correct": true },
+                { "label": "d", "text": "showmenu", "correct": false }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 11,
+            "type": "single",
+            "question": "¿Cuál es la diferencia entre las acciones --remove y --purge en el comando dpkg?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "--remove elimina el programa; --purge también elimina los archivos de configuración.",
+                    "correct": true
+                },
+                {
+                    "label": "b",
+                    "text": "--remove solo elimina el programa; --purge solo elimina los archivos de configuración.",
+                    "correct": false
+                },
+                {
+                    "label": "c",
+                    "text": "--remove elimina un paquete; --purge también elimina los paquetes dependientes.",
+                    "correct": false
+                },
+                {
+                    "label": "d",
+                    "text": "--remove solo elimina el paquete; --purge elimina todos los archivos relacionados.",
+                    "correct": false
+                }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 12,
+            "type": "single",
+            "question": "¿Cuál de los siguientes comandos actualiza la lista de paquetes disponibles en sistemas basados en dpkg?",
+            "options": [
+                { "label": "a", "text": "apt-get update", "correct": true },
+                { "label": "b", "text": "apt-get upgrade", "correct": false },
+                { "label": "c", "text": "apt-cache update", "correct": false },
+                { "label": "d", "text": "apt-get refresh", "correct": false },
+                { "label": "e", "text": "apt-cache upgrade", "correct": false }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 13,
+            "type": "single",
+            "question": "¿Qué tecla de función se usa para iniciar Windows NT en Modo Seguro?",
+            "options": [
+                { "label": "a", "text": "F10", "correct": false },
+                { "label": "b", "text": "F8", "correct": false },
+                { "label": "c", "text": "F6", "correct": false },
+                {
+                    "label": "d",
+                    "text": "Windows NT no soporta Modo Seguro.",
+                    "correct": true
+                }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 14,
+            "type": "single",
+            "question": "¿Qué comando de apt-get instala las versiones más nuevas de todos los paquetes instalados sin eliminar ni agregar nuevos?",
+            "options": [
+                { "label": "a", "text": "auto-update", "correct": false },
+                { "label": "b", "text": "upgrade", "correct": true },
+                { "label": "c", "text": "dist-upgrade", "correct": false },
+                { "label": "d", "text": "install", "correct": false },
+                { "label": "e", "text": "update", "correct": false }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 15,
+            "type": "single",
+            "question": "Al eliminar un paquete, ¿qué opción de dpkg elimina completamente los archivos, incluidos los de configuración?",
+            "options": [
+                { "label": "a", "text": "--clean", "correct": false },
+                { "label": "b", "text": "--delete", "correct": false },
+                { "label": "c", "text": "--purge", "correct": true },
+                { "label": "d", "text": "--remove", "correct": false }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 16,
+            "type": "multiple",
+            "question": "Cuando se usa rpm --verify para verificar archivos, ¿qué información se considera?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "Marcas de tiempo (timestamps).",
+                    "correct": true
+                },
+                {
+                    "label": "b",
+                    "text": "Sumas de verificación MD5.",
+                    "correct": true
+                },
+                { "label": "c", "text": "Inodos.", "correct": false },
+                {
+                    "label": "d",
+                    "text": "Tamaños de archivo.",
+                    "correct": true
+                },
+                { "label": "e", "text": "Firmas GnuPG.", "correct": false }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 17,
+            "type": "single",
+            "question": "¿Qué comando permite buscar texto completo en todos los paquetes disponibles en Debian?",
+            "options": [
+                { "label": "a", "text": "apt", "correct": false },
+                { "label": "b", "text": "apt-cache", "correct": true },
+                { "label": "c", "text": "apt-get", "correct": false },
+                { "label": "d", "text": "apt-search", "correct": false },
+                { "label": "e", "text": "dpkg", "correct": false }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 18,
+            "type": "single",
+            "question": "¿Qué comando muestra dónde se instalarán los archivos del paquete apache-xml.i386.rpm antes de instalarlo?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "rpm -qp apache-xml.i386.rpm",
+                    "correct": false
+                },
+                {
+                    "label": "b",
+                    "text": "rpm -qv apache-xml.i386.rpm",
+                    "correct": false
+                },
+                {
+                    "label": "c",
+                    "text": "rpm -ql apache-xml.i386.rpm",
+                    "correct": false
+                },
+                {
+                    "label": "d",
+                    "text": "rpm -qpl apache-xml.i386.rpm",
+                    "correct": true
+                }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 19,
+            "type": "multiple",
+            "question": "¿Para qué se puede usar el Administrador de Volúmenes Lógicos (LVM)?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "Crear arreglos RAID 9.",
+                    "correct": false
+                },
+                {
+                    "label": "b",
+                    "text": "Cambiar dinámicamente el tamaño de volúmenes lógicos.",
+                    "correct": true
+                },
+                {
+                    "label": "c",
+                    "text": "Encriptar volúmenes lógicos.",
+                    "correct": false
+                },
+                {
+                    "label": "d",
+                    "text": "Crear instantáneas (snapshots).",
+                    "correct": true
+                },
+                {
+                    "label": "e",
+                    "text": "Crear o eliminar volúmenes lógicos dinámicamente.",
+                    "correct": true
+                }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 20,
+            "type": "single",
+            "question": "¿Qué comando descarga el paquete RPM kernel sin instalarlo?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "yum download --no-install kernel",
+                    "correct": false
+                },
+                {
+                    "label": "b",
+                    "text": "yumdownloader kernel",
+                    "correct": true
+                },
+                {
+                    "label": "c",
+                    "text": "rpm --download --package kernel",
+                    "correct": false
+                },
+                { "label": "d", "text": "rpmdownload kernel", "correct": false }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 21,
+            "type": "single",
+            "question": "¿Qué comando actualiza la caché del enlazador de bibliotecas compartidas?",
+            "options": [
+                { "label": "a", "text": "mkcache", "correct": false },
+                { "label": "b", "text": "soconfig", "correct": false },
+                { "label": "c", "text": "mkldconfig", "correct": false },
+                { "label": "d", "text": "lddconfig", "correct": false },
+                { "label": "e", "text": "ldconfig", "correct": true }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 22,
+            "type": "text",
+            "question": "¿Qué comando desactiva el swapping en un dispositivo? (Solo el comando, sin parámetros)",
+            "answer": "swapoff",
+            "feedback": ""
+        },
+        {
+            "id": 23,
+            "type": "text",
+            "question": "¿Cuál es el nombre del archivo principal de configuración de GNU GRUB? (Solo el nombre del archivo, sin ruta)",
+            "answer": "menu.lst",
+            "feedback": ""
+        },
+        {
+            "id": 24,
+            "type": "text",
+            "question": "¿En qué directorio deben colocarse los archivos de definición para agregar repositorios adicionales a YUM?",
+            "answer": "/etc/yum.repos.d",
+            "feedback": ""
+        },
+        {
+            "id": 25,
+            "type": "text",
+            "question": "El comando dpkg-____ hace preguntas de configuración para un paquete, como si se instalara por primera vez.",
+            "answer": "reconfigure",
+            "feedback": ""
+        },
+        {
+            "id": 26,
+            "type": "text",
+            "question": "¿Qué herramienta de gestión de paquetes Debian pregunta sobre configuración para un paquete ya instalado? (Solo el comando)",
+            "answer": "dpkg-reconfigure",
+            "feedback": ""
+        },
+        {
+            "id": 27,
+            "type": "text",
+            "question": "¿Qué opción de yum actualiza todo el sistema? (Solo el nombre de la opción)",
+            "answer": "update",
+            "feedback": ""
+        },
+        {
+            "id": 28,
+            "type": "text",
+            "question": "Para evitar que los usuarios llenen la partición /, el directorio ____ debe estar en una partición separada (escribible por todos).",
+            "answer": "/tmp",
+            "feedback": ""
+        },
+        {
+            "id": 29,
+            "type": "text",
+            "question": "Tras ejecutar grub-install --root-directory=/custom-grub /dev/sda, ¿en qué directorio estarán los nuevos archivos de configuración? (Ruta completa)",
+            "answer": "/custom-grub/boot/grub/",
+            "feedback": ""
+        },
+        {
+            "id": 30,
+            "type": "text",
+            "question": "¿Qué directorio escribible por todos debe estar en una partición separada para evitar que se llene la partición raíz (/)? (Ruta completa)",
+            "answer": "/tmp",
+            "feedback": ""
+        },
+        {
+            "id": 31,
+            "type": "text",
+            "question": "¿Qué directorio del sistema se usa para archivos y datos que cambian regularmente y persisten entre reinicios? (Solo el directorio raíz)",
+            "answer": "/var",
+            "feedback": ""
+        }
+    ]
+}

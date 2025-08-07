@@ -1,0 +1,547 @@
+{
+    "id": "7",
+    "title": "101:C - System Architecture",
+    "questions": [
+    {
+      "id": 44,
+      "type": "single",
+      "question": "¿Qué comando en el shell UEFI controla la configuración de arranque?",
+      "options": [
+        { "label": "a", "text": "bootcfg", "correct": false },
+        { "label": "b", "text": "bcfg", "correct": true },
+        { "label": "c", "text": "grub-install", "correct": false },
+        { "label": "d", "text": "grcfg", "correct": false }
+      ],
+"feedback":"El comando bcfg, dentro del shell UEFI, se utiliza para configurar los cargadores de arranque en un sistema basado en UEFI. El comando acepta varios parámetros para configurar cómo se cargarán el cargador de arranque y el kernel durante el arranque. De los otros comandos mostrados, grub-install es válido, pero no dentro del shell UEFI."
+    },
+    {
+      "id": 45,
+      "type": "single",
+      "question": "¿Qué archivo debe existir en /tftpboot para sistemas que usan PXELINUX?",
+      "options": [
+        { "label": "a", "text": "pxelinux.tftp", "correct": false },
+        { "label": "b", "text": "pxelinux.boot", "correct": false },
+        { "label": "c", "text": "pxelinux.conf", "correct": false },
+        { "label": "d", "text": "pxelinux.0", "correct": true }
+      ],
+"feedback":"El archivo pxelinux.0 debe estar dentro de /tftpboot en el servidor TFTP para que un sistema pueda usar PXELINUX para el arranque. Los demás archivos no son válidos ni necesarios para PXELINUX."
+    },
+    {
+      "id": 46,
+      "type": "single",
+      "question": "¿Qué utilidad gestiona scripts SysV init en Debian/Ubuntu?",
+      "options": [
+        { "label": "a", "text": "bootorder", "correct": false },
+        { "label": "b", "text": "bootloader", "correct": false },
+        { "label": "c", "text": "configchk", "correct": false },
+        { "label": "d", "text": "update-rc.d", "correct": true }
+      ],
+"feedback":"La utilidad update-rc.d permite administrar scripts de inicio de SysV en Debian, Ubuntu y otras distribuciones. Al usar update-rc.d, se proporciona el nombre del script y la utilidad se encargará de crear enlaces simbólicos a los niveles de ejecución correspondientes."
+    },
+    {
+      "id": 47,
+      "type": "single",
+      "question": "¿Qué tecla edita parámetros de arranque en el menú GRUB?",
+      "options": [
+        { "label": "a", "text": "v", "correct": false },
+        { "label": "b", "text": "e", "correct": true },
+        { "label": "c", "text": "r", "correct": false },
+        { "label": "d", "text": "y", "correct": false }
+      ],
+"feedback":"La tecla e, cuando se presiona en el momento adecuado durante el arranque, lo enviará al shell GRUB, donde puede cambiar los parámetros relacionados con el arranque, como las opciones del kernel y otros parámetros relacionados."
+    },
+    {
+      "id": 48,
+      "type": "single",
+      "question": "¿Qué comando muestra el buffer del kernel para diagnosticar arranque?",
+      "options": [
+        { "label": "a", "text": "lsboot", "correct": false },
+        { "label": "b", "text": "boot-log", "correct": false },
+        { "label": "c", "text": "krblog", "correct": false },
+        { "label": "d", "text": "dmesg", "correct": true }
+      ],
+"feedback":"El comando dmesg muestra el contenido del búfer circular del núcleo. En muchas distribuciones de Linux, este registro también se guarda en /var/log/dmesg. Las demás opciones mostradas para esta pregunta no son comandos válidos."
+    },
+    {
+      "id": 49,
+      "type": "single",
+      "question": "¿Qué subcomando de systemctl cambia niveles de ejecución?",
+      "options": [
+        { "label": "a", "text": "switch", "correct": false },
+        { "label": "b", "text": "move", "correct": false },
+        { "label": "c", "text": "runlevel", "correct": false },
+        { "label": "d", "text": "isolate", "correct": true }
+      ],
+"feedback":"El subcomando 'isolate' seguido del objetivo deseado se utiliza para cambiar entre niveles de ejecución en un sistema basado en systemd. Los demás subcomandos mostrados no son válidos para systemctl."
+    },
+    {
+      "id": 50,
+      "type": "single",
+      "question": "En /etc/inittab, ¿qué opción indica el nivel de ejecución predeterminado?",
+      "options": [
+        { "label": "a", "text": "default", "correct": false },
+        { "label": "b", "text": "defaultboot", "correct": false },
+        { "label": "c", "text": "initdefault", "correct": true },
+        { "label": "d", "text": "defaultlvl", "correct": false }
+      ],
+"feedback":"El nivel de ejecución definido como initdefault es el predeterminado del sistema. Las demás opciones mostradas no existen."
+    },
+        {
+      "id": 51,
+      "type": "single",
+      "question": "¿Qué se usa en lugar de initrd para proporcionar un sistema de archivos inicial para controladores esenciales?",
+      "options": [
+        { "label": "a", "text": "initnext", "correct": false },
+        { "label": "b", "text": "initramfs", "correct": true },
+        { "label": "c", "text": "initialize", "correct": false },
+        { "label": "d", "text": "initfs", "correct": false }
+      ],
+"feedback":"Se utiliza el sistema initramfs en lugar de initrd para crear el proceso de carga basado en el sistema de archivos para los controladores clave que se necesitan para el arranque."
+    },
+    {
+      "id": 52,
+      "type": "single",
+      "question": "¿Qué comando establece el target predeterminado de systemd a multi-usuario?",
+      "options": [
+        { "label": "a", "text": "systemctl set-default multi-user.target", "correct": true },
+        { "label": "b", "text": "systemd set-default multi-user.target", "correct": false },
+        { "label": "c", "text": "systemctl set-def muser.target", "correct": false },
+        { "label": "d", "text": "systemd set-def muser.target", "correct": false }
+      ],
+"feedback":"Para ello, se utilizará el comando systemctl, y el subcomando set-default es necesario para lograr el comportamiento deseado. El archivo de destino se llama simplemente multi-user.target."
+    },
+    {
+      "id": 53,
+      "type": "single",
+      "question": "Al usar shim en sistemas UEFI, ¿qué archivo se carga después de shim.efi?",
+      "options": [
+        { "label": "a", "text": "grubx64.cfg", "correct": false },
+        { "label": "b", "text": "grub.conf", "correct": false },
+        { "label": "c", "text": "grubx64.efi", "correct": true },
+        { "label": "d", "text": "efi.boot", "correct": false }
+      ],
+"feedback":"El gestor de arranque shim.efi carga otro gestor de arranque, que por defecto es grubx64.efi. Las demás opciones no son nombres de archivo válidos para el propósito descrito."
+    },
+    {
+      "id": 54,
+      "type": "single",
+      "question": "¿Dónde se enlazan los scripts de /etc/init.d para ejecutarse en diferentes runlevels en SysV?",
+      "options": [
+        { "label": "a", "text": "/etc/rc.S", "correct": false },
+        { "label": "b", "text": "/etc/rc", "correct": false },
+        { "label": "c", "text": "/etc/boot/rc", "correct": false },
+        { "label": "d", "text": "/etc/rc.d", "correct": true }
+      ],
+"feedback":"La jerarquía de /etc/rc.d contiene enlaces simbólicos a los archivos de /etc/init.d. Estos enlaces simbólicos se utilizan para ejecutar los scripts en el nivel de ejecución correspondiente. Por ejemplo, al arrancar, el sistema ejecutará los scripts del directorio de nivel de ejecución para cada nivel de ejecución ejecutado al arrancar."
+    },
+    {
+      "id": 55,
+      "type": "single",
+      "question": "¿Cómo se llama la unidad systemd que inicia otros niveles al arrancar?",
+      "options": [
+        { "label": "a", "text": "default.target", "correct": true },
+        { "label": "b", "text": "init.target", "correct": false },
+        { "label": "c", "text": "initial.target", "correct": false },
+        { "label": "d", "text": "load.target", "correct": false }
+      ],
+"feedback":"El `default.target` es la unidad de destino predeterminada que systemd activa al arrancar. Este destino predeterminado inicia otros servicios según las dependencias."
+    },
+    {
+      "id": 56,
+      "type": "single",
+      "question": "¿Qué nombre de archivo en /dev/disk/by-path representa una LUN de Fibre Channel?",
+      "options": [
+        { "label": "a", "text": "/dev/fc0", "correct": false },
+        { "label": "b", "text": "pci-0000:1a:00.0-fc-0x500601653ee0025f:0x0000000000000000", "correct": true },
+        { "label": "c", "text": "pci-0000:1a:00.0-scsi-0x500601653ee0025f:0x0000000000000000", "correct": false },
+        { "label": "d", "text": "/dev/fibre0", "correct": false }
+      ],
+"feedback":"Los LUN que contienen los caracteres fc se encuentran a través del Canal de Fibra. Esta es la diferencia entre las opciones B y C: la opción C contiene las letras scsi, que normalmente representan un disco local. Las demás opciones no son válidas."
+    },
+    {
+      "id": 57,
+      "type": "single",
+      "question": "¿Dónde se encuentran discos NVMe en lugar de /dev/sd*?",
+      "options": [
+        { "label": "a", "text": "/dev/nd*", "correct": false },
+        { "label": "b", "text": "/dev/nvme*", "correct": false },
+        { "label": "c", "text": "/dev/nv*", "correct": false },
+        { "label": "d", "text": "/dev/nvme/*", "correct": true }
+      ],
+"feedback":"Las unidades compatibles con NVMe se denominan /dev/nvme*. No se necesitan controladores especiales aparte de los que se encuentran en el kernel nativo de un sistema moderno. Las demás opciones no existen como rutas predeterminadas."
+    },
+    {
+      "id": 58,
+      "type": "single",
+      "question": "¿Qué archivo contiene la configuración actual de RAID md?",
+      "options": [
+        { "label": "a", "text": "/proc/raidinfo", "correct": false },
+        { "label": "b", "text": "/proc/rhyinfo", "correct": false },
+        { "label": "c", "text": "/proc/mdraid", "correct": false },
+        { "label": "d", "text": "/proc/mdstat", "correct": true }
+      ],
+"feedback":"El archivo /proc/mdstat contiene información sobre las matrices RAID, incluyendo las personalidades RAID presentes en el sistema, los dispositivos que componen la matriz y otra información pertinente. Los demás archivos mostrados no son válidos."
+    },
+    {
+      "id": 59,
+      "type": "single",
+      "question": "¿Qué runlevel en SysV init corresponde al modo monousuario?",
+      "options": [
+        { "label": "a", "text": "Runlevel 5", "correct": false },
+        { "label": "b", "text": "Runlevel SU", "correct": false },
+        { "label": "c", "text": "Runlevel 1", "correct": true },
+        { "label": "d", "text": "Runlevel 6", "correct": false }
+      ],
+"feedback":"El nivel de ejecución 1, a veces mostrado como nivel de ejecución s o S, corresponde al modo monousuario, en el que muchos servicios no se inician. Los niveles de ejecución 5 y 6 se utilizan para otros fines, y el nivel de ejecución SU no es una opción válida."
+    },
+    {
+      "id": 60,
+      "type": "single",
+      "question": "¿Qué jerarquía de directorios contiene información como el WWN para Fibre Channel?",
+      "options": [
+        { "label": "a", "text": "/sys/class/wwn", "correct": false },
+        { "label": "b", "text": "/sys/class/fc_host", "correct": true },
+        { "label": "c", "text": "/sys/class/fclist", "correct": false },
+        { "label": "d", "text": "/sys/class/fc/wwn", "correct": false }
+      ],
+"feedback":"El directorio /sys/class/fc_host contiene otros directorios según las conexiones de canal de fibra disponibles. Dentro de estos directorios de host se encontrará el WWN en un archivo llamado port_name. Las demás jerarquías de directorios no son válidas."
+    },
+    {
+      "id": 61,
+      "type": "single",
+      "question": "¿En qué directorio se encuentra información sobre volúmenes lógicos?",
+      "options": [
+        { "label": "a", "text": "/dev/lvinfo", "correct": false },
+        { "label": "b", "text": "/dev/map", "correct": false },
+        { "label": "c", "text": "/dev/mapper", "correct": true },
+        { "label": "d", "text": "/dev/lvmap", "correct": false }
+      ],
+"feedback":"El directorio /dev/mapper contiene información sobre dispositivos multirruta, como volúmenes lógicos. Los demás directorios no son válidos."
+    },
+    {
+      "id": 62,
+      "type": "single",
+      "question": "¿Qué comando examina el subsistema PCI para dispositivos NVMe?",
+      "options": [
+        { "label": "a", "text": "psnvme", "correct": false },
+        { "label": "b", "text": "lsnvme", "correct": false },
+        { "label": "c", "text": "lspci | grep scsi", "correct": false },
+        { "label": "d", "text": "lspci | grep -i nvme", "correct": true }
+      ],
+"feedback":"Para ello, se usará el comando lspci. Los dispositivos NVMe se listan con el nombre nVME o NVMe; por lo tanto, añadir -i a grep hará que la búsqueda no distinga entre mayúsculas y minúsculas. Esto se usaría para garantizar la detección de los dispositivos. Los demás comandos no son válidos, excepto el comando lspci, pero no se puede buscar SCSI con grep en este caso."
+    },
+    {
+      "id": 63,
+      "type": "single",
+      "question": "¿Qué dispositivo representa la primera unidad de cinta SCSI detectada al arrancar?",
+      "options": [
+        { "label": "a", "text": "/dev/st1", "correct": false },
+        { "label": "b", "text": "/dev/sd0", "correct": false },
+        { "label": "c", "text": "/dev/sd1", "correct": false },
+        { "label": "d", "text": "/dev/st0", "correct": true }
+      ],
+"feedback":"Los dispositivos de cinta se encuentran dentro de /dev/st*, lo que hace que st0 sea el primer dispositivo."
+    },
+    {
+      "id": 64,
+      "type": "single",
+      "question": "¿Qué archivo muestra un mensaje a usuarios antes del login local?",
+      "options": [
+        { "label": "a", "text": "/etc/loginmesg", "correct": false },
+        { "label": "b", "text": "/etc/logmessage.txt", "correct": false },
+        { "label": "c", "text": "/etc/issue", "correct": true },
+        { "label": "d", "text": "/etc/banner", "correct": false }
+      ],
+"feedback":"El archivo /etc/issue se utiliza para enviar un mensaje a los usuarios, como un banner de inicio de sesión, antes del inicio de sesión local. Los demás archivos mostrados no son válidos para el propósito descrito."
+    },
+    {
+      "id": 65,
+      "type": "single",
+      "question": "¿Qué archivo contiene el mensaje que se muestra después de un login exitoso?",
+      "options": [
+        { "label": "a", "text": "/etc/loginbanner", "correct": false },
+        { "label": "b", "text": "/etc/issue", "correct": false },
+        { "label": "c", "text": "/etc/motd", "correct": true },
+        { "label": "d", "text": "/etc/message", "correct": false }
+      ],
+"feedback":"El contenido del archivo motd (abreviatura de Mensaje del Día) se muestra cuando un usuario inicia sesión correctamente. Entre otras opciones, el contenido de /etc/issue se muestra antes del inicio de sesión local. Los demás nombres de archivo no son válidos para este propósito."
+    },
+    {
+      "id": 66,
+      "type": "single",
+      "question": "¿Qué archivo proporciona mensajes para usuarios que inician sesión remotamente (ej. telnet)?",
+      "options": [
+        { "label": "a", "text": "/etc/telnet.msg", "correct": false },
+        { "label": "b", "text": "/etc/issue.net", "correct": true },
+        { "label": "c", "text": "/etc/login.msg", "correct": false },
+        { "label": "d", "text": "/etc/telnet.login", "correct": false }
+      ],
+"feedback":"El archivo /etc/issue.net se utiliza para enviar un mensaje para inicios de sesión remotos, como Telnet. Los demás archivos mencionados no son válidos para el propósito descrito."
+    },
+    {
+      "id": 67,
+      "type": "single",
+      "question": "¿Qué comando apaga el equipo incluyendo corte de energía (si es posible)?",
+      "options": [
+        { "label": "a", "text": "systemctl halt", "correct": false },
+        { "label": "b", "text": "systemctl reboot", "correct": false },
+        { "label": "c", "text": "systemctl stop", "correct": false },
+        { "label": "d", "text": "systemctl poweroff", "correct": true }
+      ],
+"feedback":"El objetivo 'poweroff' de systemd, al que se accede mediante el comando systemctl, se utiliza para detener el sistema e intentar desconectarlo de la alimentación en sistemas compatibles. El objetivo 'halt' detiene el sistema, pero no intenta desconectarlo, mientras que 'reboot' simplemente lo reinicia. No existe un objetivo 'stop'."
+    },
+    {
+      "id": 68,
+      "type": "single",
+      "question": "¿Qué comando de shutdown reinicia el sistema en 15 minutos?",
+      "options": [
+        { "label": "a", "text": "shutdown -r +15", "correct": true },
+        { "label": "b", "text": "shutdown +15", "correct": false },
+        { "label": "c", "text": "shutdown -15", "correct": false },
+        { "label": "d", "text": "shutdown -r 00:15", "correct": false }
+      ],
+"feedback":"La opción -r es necesaria para especificar el reinicio, y el formato para contar el tiempo a partir de ahora se antepone con un signo más (+), lo que hace que la opción A sea correcta. De los demás comandos, especificar +15 sin la opción -r simplemente apaga el ordenador en 15 minutos, y especificar las 00:15, como en la opción D, apagará el ordenador a las 00:15."
+    },
+    {
+      "id": 69,
+      "type": "single",
+      "question": "En sistemas SysV init, ¿qué comando detiene un proceso?",
+      "options": [
+        { "label": "a", "text": "service", "correct": true },
+        { "label": "b", "text": "sysv", "correct": false },
+        { "label": "c", "text": "syscl", "correct": false },
+        { "label": "d", "text": "servc", "correct": false }
+      ],
+"feedback":"El comando 'service' se utiliza para trabajar con servicios, como iniciarlos y detenerlos. En sistemas más recientes, el comando 'systemctl' ha reemplazado al comando 'service'."
+    },
+    {
+      "id": 70,
+      "type": "single",
+      "question": "¿Dónde se almacenan los scripts de inicio/parada de servicios en sistemas SysV init?",
+      "options": [
+        { "label": "a", "text": "/etc/init-d", "correct": false },
+        { "label": "b", "text": "/etc/init", "correct": false },
+        { "label": "c", "text": "/etc/sysV", "correct": false },
+        { "label": "d", "text": "/etc/init.d", "correct": true }
+      ],
+"feedback":"Los scripts se almacenan en /etc/init.d en un sistema que usa SysV init. A veces, también se pueden encontrar enlazados desde /etc/rc.d/init.d. Las demás opciones no son válidas para esta pregunta."
+    },
+        {
+      "id": 71,
+      "type": "single",
+      "question": "¿Qué comando muestra los mensajes de arranque capturados por systemd?",
+      "options": [
+        { "label": "a", "text": "journalctl -b", "correct": true },
+        { "label": "b", "text": "systemctl -b", "correct": false },
+        { "label": "c", "text": "journalctl -bm", "correct": false },
+        { "label": "d", "text": "journalctl -l", "correct": false }
+      ],
+"feedback":"El comando journalctl con la opción -b muestra mensajes de arranque."
+    },
+    {
+      "id": 72,
+      "type": "single",
+      "question": "¿Qué opción del comando shutdown detiene el sistema?",
+      "options": [
+        { "label": "a", "text": "-h", "correct": true },
+        { "label": "b", "text": "-s", "correct": false },
+        { "label": "c", "text": "-f", "correct": false },
+        { "label": "d", "text": "-t", "correct": false }
+      ],
+"feedback":"La opción -h detiene el sistema, incluido el apagado del hardware relacionado con acpid."
+    },
+    {
+      "id": 73,
+      "type": "single",
+      "question": "¿Qué número de señal corresponde a SIGKILL en el comando kill?",
+      "options": [
+        { "label": "a", "text": "1", "correct": false },
+        { "label": "b", "text": "4", "correct": false },
+        { "label": "c", "text": "9", "correct": true },
+        { "label": "d", "text": "11", "correct": false }
+      ],
+"feedback":"El número 9 corresponde a SIGKILL y puede utilizarse para el comando kill para emitir dicha señal. El número 1 es SIGHUP. Encontrará más información en el manual del comando kill."
+    },
+    {
+      "id": 74,
+      "type": "single",
+      "question": "¿Qué directorio contiene scripts rc de inicio en sistemas Debian antiguos?",
+      "options": [
+        { "label": "a", "text": "/etc/init", "correct": false },
+        { "label": "b", "text": "/etc/inittab", "correct": false },
+        { "label": "c", "text": "/etc/init.d", "correct": true },
+        { "label": "d", "text": "/etc/rc.init", "correct": false }
+      ],
+"feedback":"El directorio /etc/init.d contiene los scripts de inicio y apagado de los servicios en un sistema Debian que no ejecuta systemd."
+    },
+    {
+      "id": 75,
+      "type": "single",
+      "question": "¿Cómo verificar si un periférico está habilitado en BIOS?",
+      "options": [
+        { "label": "a", "text": "Examinar mensajes de arranque para detectar el periférico", "correct": true },
+        { "label": "b", "text": "Revisar /var/log/auth.log", "correct": false },
+        { "label": "c", "text": "Reiniciar el sistema", "correct": false },
+        { "label": "d", "text": "Eliminar el módulo de la lista negra", "correct": false }
+      ],
+"feedback":"Entre las opciones, examinar los mensajes de arranque sería un primer paso lógico y evitaría tener que reiniciar el sistema. Reiniciar podría ser el siguiente paso para examinar el estado del periférico en la BIOS."
+    },
+    {
+      "id": 76,
+      "type": "single",
+      "question": "¿Qué opción de wall omite el banner \"Broadcast message\"?",
+      "options": [
+        { "label": "a", "text": "-b", "correct": false },
+        { "label": "b", "text": "-a", "correct": false },
+        { "label": "c", "text": "-n", "correct": true },
+        { "label": "d", "text": "-d", "correct": false }
+      ],
+"feedback":"La opción -n impide que se muestre el banner al usar el comando 'wall'. Las demás opciones mostradas no se utilizan con el comando 'wall'."
+    },
+    {
+      "id": 77,
+      "type": "single",
+      "question": "¿Qué comando reinicia el sistema?",
+      "options": [
+        { "label": "a", "text": "init 6", "correct": true },
+        { "label": "b", "text": "shutdown -h -t now", "correct": false },
+        { "label": "c", "text": "init 1", "correct": false },
+        { "label": "d", "text": "refresh-system", "correct": false }
+      ],
+"feedback":"El comando init permite acceder a diferentes niveles de ejecución. El nivel de ejecución 6 se utiliza para reiniciar el sistema. La opción B apagará el sistema por completo, no lo reiniciará. La opción C activará el modo monousuario. La opción D no es válida."
+    },
+    {
+      "id": 78,
+      "type": "single",
+      "question": "En sistemas SysV init, ¿qué comando recarga /etc/inittab sin reiniciar?",
+      "options": [
+        { "label": "a", "text": "init-refresh", "correct": false },
+        { "label": "b", "text": "init 6", "correct": false },
+        { "label": "c", "text": "telinit", "correct": true },
+        { "label": "d", "text": "reload-inittab", "correct": false }
+      ],
+"feedback":"El comando telinit puede usarse para actualizar el sistema después de realizar cambios en /etc/inittab. Cabe destacar que la opción B reiniciará el sistema, pero no se incluyó en la pregunta. Las opciones A y D no son comandos válidos."
+    },
+    {
+      "id": 79,
+      "type": "single",
+      "question": "¿Qué comando muestra el nivel de ejecución actual?",
+      "options": [
+        { "label": "a", "text": "show-level", "correct": false },
+        { "label": "b", "text": "init --level", "correct": false },
+        { "label": "c", "text": "sudo init", "correct": false },
+        { "label": "d", "text": "runlevel", "correct": true }
+      ],
+"feedback":"El comando runlevel muestra el nivel de ejecución actual de un sistema. La opción B no es válida para el comando init, y añadir sudo antes del comando init no supone ninguna diferencia. La opción A no es válida."
+    },
+    {
+      "id": 80,
+      "type": "single",
+      "question": "¿Qué comando muestra las asignaciones actuales de IRQ?",
+      "options": [
+        { "label": "a", "text": "view /proc/irq", "correct": false },
+        { "label": "b", "text": "cat /proc/interrupts", "correct": true },
+        { "label": "c", "text": "cat /dev/irq", "correct": false },
+        { "label": "d", "text": "less /dev/irq", "correct": false }
+      ],
+"feedback":"Las asignaciones de IRQ actuales se encuentran en el archivo /proc/interrupts. Por lo tanto, ver el contenido del archivo con un comando como cat funcionará. No existe el comando 'view', lo que hace que la opción A sea incorrecta. Asimismo, no existe el archivo /dev/irq, lo que hace que las opciones C y D sean incorrectas."
+    },
+    {
+      "id": 81,
+      "type": "single",
+      "question": "¿En qué directorio se almacenan los archivos de configuración de unidades systemd?",
+      "options": [
+        { "label": "a", "text": "/etc/system.conf.d", "correct": false },
+        { "label": "b", "text": "/lib/system.conf.d", "correct": false },
+        { "label": "c", "text": "/lib/systemd/system", "correct": true },
+        { "label": "d", "text": "/etc/sysconfd", "correct": false }
+      ],
+"feedback":"Los archivos de configuración de la unidad se almacenan en /lib/systemd/system. Las demás opciones de directorio para esta pregunta no son relevantes o no existen por defecto."
+    },
+    {
+      "id": 82,
+      "type": "single",
+      "question": "¿Qué comando lista las unidades de servicio disponibles en systemd?",
+      "options": [
+        { "label": "a", "text": "systemd list-units", "correct": false },
+        { "label": "b", "text": "systemctl list-units", "correct": true },
+        { "label": "c", "text": "systemd unit-list", "correct": false },
+        { "label": "d", "text": "systemctl show-units", "correct": false }
+      ],
+"feedback":"El comando systemctl se utiliza para trabajar con servicios y destinos. El comando list-units se utiliza para listar destinos. Los demás comandos no se utilizan para este fin o no existen con la opción requerida."
+    },
+    {
+      "id": 83,
+      "type": "single",
+      "question": "¿Qué opción de lspci muestra códigos numéricos y nombres de dispositivos?",
+      "options": [
+        { "label": "a", "text": "-numdev", "correct": false },
+        { "label": "b", "text": "-n", "correct": false },
+        { "label": "c", "text": "-nn", "correct": true },
+        { "label": "d", "text": "-devnum", "correct": false }
+      ],
+"feedback":"La opción -nn muestra tanto números como nombres de dispositivos, lo que hace que la opción C sea correcta. La opción -n (opción B) solo muestra números. Las otras dos opciones no existen."
+    },
+    {
+      "id": 84,
+      "type": "single",
+      "question": "¿Qué comando lista los módulos del kernel actualmente cargados?",
+      "options": [
+        { "label": "a", "text": "insmod", "correct": false },
+        { "label": "b", "text": "modlist", "correct": false },
+        { "label": "c", "text": "ls --modules", "correct": false },
+        { "label": "d", "text": "lsmod", "correct": true }
+      ],
+"feedback":"El comando lsmod se usa para listar los módulos del kernel actualmente cargados, por lo que la opción D es la correcta para esta pregunta. El comando insmod (opción A) se usa para cargar módulos. La opción C es válida, pero no es una opción válida para ese comando, y la opción B no existe."
+    },
+    {
+      "id": 85,
+      "type": "single",
+      "question": "¿Qué opción de modprobe muestra las dependencias de un módulo?",
+      "options": [
+        { "label": "a", "text": "--show-options", "correct": false },
+        { "label": "b", "text": "--list-deps", "correct": false },
+        { "label": "c", "text": "--show-depends", "correct": true },
+        { "label": "d", "text": "--list-all", "correct": false }
+      ],
+"feedback":"La opción --show-depends muestra los módulos que dependen del módulo especificado. Las demás opciones no existen."
+    },
+    {
+      "id": 86,
+      "type": "single",
+      "question": "¿Qué comando envía mensajes a todos los usuarios conectados?",
+      "options": [
+        { "label": "a", "text": "cat", "correct": false },
+        { "label": "b", "text": "wall", "correct": true },
+        { "label": "c", "text": "tee", "correct": false },
+        { "label": "d", "text": "ssh", "correct": false }
+      ],
+"feedback":"El comando 'wall' se usa para enviar un mensaje a todos los usuarios, lo que hace que la opción B sea correcta. El comando 'cat' se usa para concatenar o visualizar archivos, y 'tee' se usa para enviar la salida a la salida estándar y un archivo. Finalmente, 'ssh' es el comando del cliente de Secure Shell y no se usa para el propósito especificado."
+    },
+    {
+      "id": 87,
+      "type": "single",
+      "question": "¿Cuál es el primer paso para solucionar problemas cuando no se detecta un disco duro?",
+      "options": [
+        { "label": "a", "text": "Desconectar el disco", "correct": false },
+        { "label": "b", "text": "Verificar la BIOS", "correct": true },
+        { "label": "c", "text": "Reiniciar el servicio web", "correct": false },
+        { "label": "d", "text": "Ejecutar disk-detect", "correct": false }
+      ],
+"feedback":"Comprobar que el disco se detecta en el sistema básico de entrada/salida (BIOS) es un buen primer paso para solucionar problemas. La opción A, desconectar el disco, no ayudará a detectarlo. Reiniciar el servidor web tampoco ayudará a detectarlo, y el comando disk-detect no existe."
+    },
+    {
+      "id": 88,
+      "type": "single",
+      "question": "¿En qué directorio se almacena información sobre dispositivos USB?",
+      "options": [
+        { "label": "a", "text": "/etc/usbdevices", "correct": false },
+        { "label": "b", "text": "/var/usb", "correct": false },
+        { "label": "c", "text": "/lib/sys/usb", "correct": false },
+        { "label": "d", "text": "/sys/bus/usb/devices", "correct": true }
+      ],
+"feedback":"El directorio /sys/bus/usb/devices contiene información sobre los dispositivos USB. Los demás directorios no son válidos para este propósito."
+    }
+    ]
+
+}

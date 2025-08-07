@@ -1,0 +1,570 @@
+{
+  "id": "12",
+  "title": "105 - Working with Shells, Scripting, and Data Management",
+  "questions": [
+        {
+      "id": 1,
+      "type": "single",
+      "question": "¿Qué comando se utiliza para leer y ejecutar comandos desde un archivo en el shell Bash?",
+      "options": [
+        { "label": "a", "text": "run", "correct": false },
+        { "label": "b", "text": "execute", "correct": false },
+        { "label": "c", "text": "source", "correct": true },
+        { "label": "d", "text": "func", "correct": false }
+      ],
+      "feedback": "El comando 'source' se utiliza para ejecutar comandos desde un archivo. Un caso de uso típico es crear funciones o variables que luego están disponibles para su uso en la sesión actual. Los otros comandos listados no existen."
+    },
+    {
+      "id": 2,
+      "type": "single",
+      "question": "Necesitas que un comando se ejecute al cerrar sesión para todos los usuarios. ¿En qué archivo debe colocarse esto (asumiendo que todos los usuarios usan Bash)?",
+      "options": [
+        { "label": "a", "text": "~/.bash_logout", "correct": false },
+        { "label": "b", "text": "/etc/bash.bash_logout", "correct": true },
+        { "label": "c", "text": "/home/.bash_logout", "correct": false },
+        { "label": "d", "text": "/etc/bash_logout", "correct": false }
+      ],
+      "feedback": "Si bien es cierto que cada usuario tiene un .bash_logout, el archivo existe en su directorio personal y, por lo tanto, puede ser editado por el usuario. Por lo tanto, para asegurar que el comando requerido se ejecute al cerrar sesión, se debe usar el archivo /etc/bash.bash_logout."
+    },
+    {
+      "id": 3,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos elimina una variable de entorno que ha sido establecida?",
+      "options": [
+        { "label": "a", "text": "profile --unset", "correct": false },
+        { "label": "b", "text": "env -u", "correct": true },
+        { "label": "c", "text": "set -u", "correct": false },
+        { "label": "d", "text": "import", "correct": false }
+      ],
+      "feedback": "El comando 'env -u' eliminará una variable de entorno para la sesión actual. El comando 'unset' también puede usarse para este propósito."
+    },
+    {
+      "id": 4,
+      "type": "single",
+      "question": "Al establecer la línea shebang de un script de shell, ¿cuál de los siguientes comandos ayuda a determinar automáticamente la ubicación del intérprete?",
+      "options": [
+        { "label": "a", "text": "#!/usr/bin/env bash", "correct": true },
+        { "label": "b", "text": "#!/bin/bash", "correct": false },
+        { "label": "c", "text": "#!env", "correct": false },
+        { "label": "d", "text": "/bin/int bash", "correct": false }
+      ],
+      "feedback": "El comando 'env', cuando se usa como '#!/usr/bin/env bash', determinará automáticamente la ubicación del intérprete Bash. Esto hace que el script resultante sea más portable para sistemas donde Bash puede no estar ubicado en /bin/. Puedes usar este comando como una forma de personalizar scripts de shell para uso multiplataforma."
+    },
+    {
+      "id": 5,
+      "type": "single",
+      "question": "Al consultar una base de datos, ¿cuál de las siguientes sentencias SQL recupera todos los datos de una tabla llamada 'users'?",
+      "options": [
+        { "label": "a", "text": "SELECT ALL_DATA FROM users;", "correct": false },
+        { "label": "b", "text": "QUERY ALL FROM users;", "correct": false },
+        { "label": "c", "text": "SELECT * Table: Users;", "correct": false },
+        { "label": "d", "text": "SELECT * FROM users;", "correct": true }
+      ],
+      "feedback": "El comando 'SELECT' se usa para este propósito, y la selección '*' recupera todos los datos. Las sentencias SELECT incluyen la parte de consulta seguida de la palabra clave FROM y luego la fuente de datos, que en este caso es una tabla llamada 'users'."
+    },
+    {
+      "id": 6,
+      "type": "single",
+      "question": "¿Cuál de las siguientes opciones describe mejor la variable de entorno PS1?",
+      "options": [
+        { "label": "a", "text": "PS1 se usa para establecer la ubicación del comando PostScript.", "correct": false },
+        { "label": "b", "text": "PS1 se usa para definir el prompt predeterminado del shell Bash.", "correct": true },
+        { "label": "c", "text": "PS1 se usa como una variable por sistema.", "correct": false },
+        { "label": "d", "text": "PS1 es definida por el usuario y no tiene un valor o configuración predeterminada.", "correct": false }
+      ],
+      "feedback": "La variable PS1 generalmente tiene su valor predeterminado establecido en /etc/profile y se usa como el prompt del shell. Los usuarios pueden personalizar el prompt para incluir el nombre del host, el directorio de trabajo y otros elementos."
+    },
+    {
+      "id": 7,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos asegura que las opciones -la se usen cuando el comando 'ls' se ejecuta sin otras opciones?",
+      "options": [
+        { "label": "a", "text": "alias ls=\"ls -la\"", "correct": true },
+        { "label": "b", "text": "ln -s ls ls -la", "correct": false },
+        { "label": "c", "text": "alias \"ls -la\" = ls", "correct": false },
+        { "label": "d", "text": "set ls", "correct": false }
+      ],
+      "feedback": "El comando 'alias' se usa para este propósito, y su formato es nombre=valor, por lo que la opción A es correcta. El comando 'ln' no puede usarse para este propósito porque no aceptará argumentos de línea de comandos para el destino en un formato como el mostrado en las opciones."
+    },
+    {
+      "id": 8,
+      "type": "single",
+      "question": "¿Cuál es el orden en que se ubican los archivos de configuración de usuario al iniciar sesión en un shell Bash?",
+      "options": [
+        { "label": "a", "text": ".bash_login, .profile, /etc/profile", "correct": false },
+        { "label": "b", "text": ".bash_profile, .bash_login, .profile", "correct": true },
+        { "label": "c", "text": ".profile, .bash_login, .bash_profile", "correct": false },
+        { "label": "d", "text": ".bash_login, .bash_profile, .profile", "correct": false }
+      ],
+      "feedback": "Los archivos de configuración basados en usuario se ubican en el orden .bash_profile, .bash_login y .profile. Solo se ejecuta el primer archivo encontrado y los otros son ignorados."
+    },
+    {
+      "id": 9,
+      "type": "single",
+      "question": "¿Qué variable dentro de un script Bash se usa para acceder al primer parámetro de la línea de comandos?",
+      "options": [
+        { "label": "a", "text": "$ARG", "correct": false },
+        { "label": "b", "text": "$0", "correct": false },
+        { "label": "c", "text": "$1", "correct": true },
+        { "label": "d", "text": "$ARG0", "correct": false }
+      ],
+      "feedback": "La variable $1 está automáticamente disponible dentro de los scripts Bash y representa el primer argumento de la línea de comandos. La variable $0 es el script en sí mismo. Las otras variables listadas en esta pregunta no existen por defecto."
+    },
+    {
+      "id": 10,
+      "type": "single",
+      "question": "¿Cuál de las siguientes opciones proporciona el final para un condicional 'if' en un script Bash?",
+      "options": [
+        { "label": "a", "text": "ex", "correct": false },
+        { "label": "b", "text": "}", "correct": false },
+        { "label": "c", "text": "]", "correct": false },
+        { "label": "d", "text": "fi", "correct": true }
+      ],
+      "feedback": "El constructo 'fi' se usa para indicar el final de un condicional 'if' dentro de un script Bash. En muchos lenguajes, los condicionales 'if' tienen alcance definido por llaves como { }, pero en scripts de shell, 'fi' se usa para denotar el final del condicional."
+    },
+        {
+      "id": 11,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos eliminará todos los datos de una tabla llamada 'virtualusers' en MySQL en Linux?",
+      "options": [
+        { "label": "a", "text": "DELETE FROM VIRTUALUSERS;", "correct": false },
+        { "label": "b", "text": "DELETE FROM virtualusers;", "correct": true },
+        { "label": "c", "text": "DELETE * FROM virtualusers;", "correct": false },
+        { "label": "d", "text": "DELETE ALL FROM virtualusers;", "correct": false }
+      ],
+      "feedback": "La sentencia DELETE FROM elimina todos los datos de la tabla dada. Nota que MySQL típicamente distingue mayúsculas/minúsculas, por lo que es necesario seguir el mismo caso para el objeto de tabla 'virtualusers'."
+    },
+    {
+      "id": 12,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos muestra las columnas y tipos de columnas dentro de una tabla dada?",
+      "options": [
+        { "label": "a", "text": "DESC", "correct": true },
+        { "label": "b", "text": "ASK", "correct": false },
+        { "label": "c", "text": "SELECT", "correct": false },
+        { "label": "d", "text": "DISPLAY", "correct": false }
+      ],
+      "feedback": "El comando DESC o DESCRIBE se usa para proporcionar una descripción de las columnas y tipos de columna para una tabla. De los otros comandos mostrados como opciones, solo SELECT es un comando SQL válido, y se usa para recuperar datos y no una descripción de la tabla en sí."
+    },
+    {
+      "id": 13,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos imprimirá una lista de seis números comenzando en 0?",
+      "options": [
+        { "label": "a", "text": "list 0-5", "correct": false },
+        { "label": "b", "text": "seq 0 1 5", "correct": true },
+        { "label": "c", "text": "echo 0-5", "correct": false },
+        { "label": "d", "text": "seq 0 1 6", "correct": false }
+      ],
+      "feedback": "El comando 'seq' se usa para imprimir una secuencia de números en varios formatos. La respuesta para esta pregunta proporciona un punto de inicio (0), un incremento (1) y el número final (5), lo que resulta en seis números mostrados como salida."
+    },
+    {
+      "id": 14,
+      "type": "single",
+      "question": "Al crear un script de shell, ¿cuál de los siguientes comandos se usa para mostrar el contenido de variables?",
+      "options": [
+        { "label": "a", "text": "var_dump", "correct": false },
+        { "label": "b", "text": "echo", "correct": true },
+        { "label": "c", "text": "ls", "correct": false },
+        { "label": "d", "text": "env", "correct": false }
+      ],
+      "feedback": "El comando 'echo' se usa para mostrar su argumento, independientemente de si el comando se usa dentro de un script de shell o desde la línea de comandos misma. El comando 'env' se usa para mostrar variables de entorno y por lo tanto no cumple con la necesidad especificada en la pregunta."
+    },
+    {
+      "id": 15,
+      "type": "single",
+      "question": "Un comando tiene el siguiente listado obtenido con ls -la: -rwsr-xr-x 1 suehring suehring 21 Nov 2 13:53 script.sh ¿Qué denota la 's' dentro de los permisos de usuario en el listado?",
+      "options": [
+        { "label": "a", "text": "El bit SUID ha sido establecido para este programa.", "correct": true },
+        { "label": "b", "text": "Esto es un enlace simbólico.", "correct": false },
+        { "label": "c", "text": "El archivo no será ejecutable.", "correct": false },
+        { "label": "d", "text": "El archivo es un archivo especial del sistema.", "correct": false }
+      ],
+      "feedback": "El bit SUID permite que el programa se ejecute como el usuario que posee el archivo, independientemente de quién ejecute el programa. Usar SUID típicamente no se recomienda por razones de seguridad."
+    },
+    {
+      "id": 16,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos ejecutará un script y luego saldrá del shell?",
+      "options": [
+        { "label": "a", "text": "run", "correct": false },
+        { "label": "b", "text": "source", "correct": false },
+        { "label": "c", "text": "./", "correct": false },
+        { "label": "d", "text": "exec", "correct": true }
+      ],
+      "feedback": "El comando 'exec' ejecuta el script dado como su argumento y luego saldrá del shell. El comando 'source' no sale del shell."
+    },
+    {
+      "id": 17,
+      "type": "single",
+      "question": "¿Qué secuencia de caracteres ejecutará dos comandos pero solo si el primer comando termina exitosamente?",
+      "options": [
+        { "label": "a", "text": "--", "correct": false },
+        { "label": "b", "text": "&*", "correct": false },
+        { "label": "c", "text": "&&", "correct": true },
+        { "label": "d", "text": "&", "correct": false }
+      ],
+      "feedback": "La secuencia de doble-ampersand ejecuta comandos solo si el comando anterior dentro de la línea de comandos terminó correctamente."
+    },
+    {
+      "id": 18,
+      "type": "single",
+      "question": "¿Qué comando dentro de un script de shell espera la entrada del usuario y coloca esa entrada en una variable?",
+      "options": [
+        { "label": "a", "text": "exec", "correct": false },
+        { "label": "b", "text": "get", "correct": false },
+        { "label": "c", "text": "read", "correct": true },
+        { "label": "d", "text": "prompt", "correct": false }
+      ],
+      "feedback": "El comando 'read' espera la entrada del usuario y coloca esa entrada en la variable especificada. El comando 'exec' se usa para ejecutar comandos, y las otras opciones no son válidas para el propósito descrito."
+    },
+    {
+      "id": 19,
+      "type": "single",
+      "question": "¿Qué caracteres se usan para marcar una secuencia de comandos como una función dentro de un script de shell?",
+      "options": [
+        { "label": "a", "text": "Paréntesis para declarar la función (opcional) y llaves para contener los comandos", "correct": true },
+        { "label": "b", "text": "Llaves para declarar la función y paréntesis para contener los comandos", "correct": false },
+        { "label": "c", "text": "Corchetes para declarar la función y llaves para contener los comandos", "correct": false },
+        { "label": "d", "text": "Comillas para denotar la función", "correct": false }
+      ],
+      "feedback": "Los paréntesis se usan para denotar una función, como miFuncion(). Los paréntesis son opcionales pero luego son seguidos por llaves que contienen los comandos a ejecutar cuando se llama a la función."
+    },
+    {
+      "id": 20,
+      "type": "single",
+      "question": "Supón que estás recuperando datos de una base de datos MySQL y necesitas que los datos se muestren en orden numérico ascendente basado en una columna llamada 'id'. ¿Cuál de los siguientes comandos agregados a la sentencia SELECT logra esta tarea?",
+      "options": [
+        { "label": "a", "text": "ORDER BY id ASC;", "correct": true },
+        { "label": "b", "text": "ORDER BY id;", "correct": false },
+        { "label": "c", "text": "GROUP BY id;", "correct": false },
+        { "label": "d", "text": "GROUP BY id ASC;", "correct": false }
+      ],
+      "feedback": "La cláusula ORDER BY se usa para este propósito, y la palabra clave ASC debe agregarse para que la visualización sea en orden ascendente."
+    },
+        {
+      "id": 21,
+      "type": "single",
+      "question": "¿Qué secuencia de caracteres denota un comando alternativo para ejecutar si el comando precedente no termina exitosamente?",
+      "options": [
+        { "label": "a", "text": "&&", "correct": false },
+        { "label": "b", "text": "--", "correct": false },
+        { "label": "c", "text": "||", "correct": true },
+        { "label": "d", "text": "EL", "correct": false }
+      ],
+      "feedback": "La secuencia || indica un comando alternativo para ejecutar si el comando inicial precedente no termina correctamente. La secuencia && ejecuta solo cuando el comando precedente termina correctamente, por lo que es lo opuesto a lo que preguntaba la pregunta."
+    },
+    {
+      "id": 22,
+      "type": "single",
+      "question": "¿Qué palabra(s) clave se usa(n) para comenzar una condición alternativa dentro de un script Bash?",
+      "options": [
+        { "label": "a", "text": "if", "correct": false },
+        { "label": "b", "text": "elseif", "correct": false },
+        { "label": "c", "text": "elif", "correct": true },
+        { "label": "d", "text": "elsif", "correct": false }
+      ],
+      "feedback": "La palabra clave 'elif' se usa para crear una ruta de ejecución alternativa dentro de un script de shell. Los otros constructos como 'else if' y 'elsif' se usan en otros lenguajes."
+    },
+    {
+      "id": 23,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos elimina un comando con alias definido actualmente?",
+      "options": [
+        { "label": "a", "text": "remove", "correct": false },
+        { "label": "b", "text": "rm", "correct": false },
+        { "label": "c", "text": "unalias", "correct": true },
+        { "label": "d", "text": "delete", "correct": false }
+      ],
+      "feedback": "El comando 'unalias' se usa para eliminar un alias definido previamente. El comando 'rm' eliminará archivos regulares pero no alias. Los otros comandos no existen."
+    },
+    {
+      "id": 24,
+      "type": "single",
+      "question": "Al cargar (source) un archivo en Bash, ¿qué comando chmod sería necesario para proporcionar los privilegios mínimos para que el archivo se cargue correctamente, asumiendo que tu usuario actual es dueño del archivo?",
+      "options": [
+        { "label": "a", "text": "chmod 600", "correct": false },
+        { "label": "b", "text": "chmod 755", "correct": false },
+        { "label": "c", "text": "chmod 777", "correct": false },
+        { "label": "d", "text": "chmod 400", "correct": true }
+      ],
+      "feedback": "Mínimamente necesitas poder leer el archivo que se está cargando; por lo tanto, chmod 400 configurará correctamente los permisos. Cualquier chmod que dé permisos adicionales no es necesario."
+    },
+    {
+      "id": 25,
+      "type": "single",
+      "question": "Asumiendo que se ha definido una lista de valores separados por espacios como LIST=\"one two three four\", ¿cuál de los siguientes constructos de bucle for iterará a través de los elementos en la lista?",
+      "options": [
+        { "label": "a", "text": "for LIST", "correct": false },
+        { "label": "b", "text": "for VAR in LIST", "correct": false },
+        { "label": "c", "text": "for VAR in $LIST", "correct": true },
+        { "label": "d", "text": "FOR $LIST > $VAR", "correct": false }
+      ],
+      "feedback": "El constructo del bucle for en este caso requerirá que el nombre de la variable LIST esté precedido por un signo de dólar ($), por lo que la opción C es correcta. Las otras opciones no funcionarán para el propósito descrito."
+    },
+    {
+      "id": 26,
+      "type": "single",
+      "question": "¿Qué tipo de join se usará en SQL cuando veas una declaración como table1.id = table2.id?",
+      "options": [
+        { "label": "a", "text": "Inner", "correct": true },
+        { "label": "b", "text": "Outer", "correct": false },
+        { "label": "c", "text": "Left outer", "correct": false },
+        { "label": "d", "text": "Right outer", "correct": false }
+      ],
+      "feedback": "Un inner join es el tipo de join predeterminado realizado por SQL cuando las columnas se unen de la manera especificada. Un outer join, ya sea left, right o ambos, se usa para devolver filas que no están en una tabla particular también."
+    },
+    {
+      "id": 27,
+      "type": "single",
+      "question": "¿Qué prueba dentro de un bucle while en un script de shell examinará un valor para ver si es menor que otro?",
+      "options": [
+        { "label": "a", "text": "-less", "correct": false },
+        { "label": "b", "text": "-lessThan", "correct": false },
+        { "label": "c", "text": "-lt", "correct": true },
+        { "label": "d", "text": "-lthan", "correct": false }
+      ],
+      "feedback": "El operador -lt se usa para probar condiciones 'menor que' dentro de un script. Los otros operadores no son válidos para usar en un script de shell."
+    },
+    {
+      "id": 28,
+      "type": "single",
+      "question": "¿Cuál de las siguientes pruebas determinará si un archivo existe en el contexto de un script de shell?",
+      "options": [
+        { "label": "a", "text": "-a", "correct": false },
+        { "label": "b", "text": "-e", "correct": true },
+        { "label": "c", "text": "-m", "correct": false },
+        { "label": "d", "text": "-i", "correct": false }
+      ],
+      "feedback": "La opción -e verifica que un archivo exista, y típicamente se usa en el contexto de un condicional dentro de un script de shell. Las otras opciones pueden funcionar dentro de scripts de shell pero no son pruebas de existencia de archivos."
+    },
+    {
+      "id": 29,
+      "type": "single",
+      "question": "¿En qué directorio deberías colocar archivos para que se copien automáticamente al directorio home de un usuario cuando se crea el usuario?",
+      "options": [
+        { "label": "a", "text": "/etc/userhome", "correct": false },
+        { "label": "b", "text": "/etc/templateuser", "correct": false },
+        { "label": "c", "text": "/etc/skel", "correct": true },
+        { "label": "d", "text": "/home/skel", "correct": false }
+      ],
+      "feedback": "El directorio /etc/skel contiene archivos para copiar al directorio home del usuario. Los otros directorios listados para esta pregunta no existen por defecto."
+    },
+    {
+      "id": 30,
+      "type": "single",
+      "question": "¿Cuál de las siguientes opciones representa la sintaxis correcta para una sentencia SQL UPDATE?",
+      "options": [
+        { "label": "a", "text": "UPDATE <table> SET <column> = <newvalue> WHERE <column> = <value>", "correct": true },
+        { "label": "b", "text": "UPDATE <table> WHERE <column> = <newvalue>", "correct": false },
+        { "label": "c", "text": "UPDATE WHERE <column> = <newvalue>", "correct": false },
+        { "label": "d", "text": "UPDATE FROM <table> VALUE (<value>)", "correct": false }
+      ],
+      "feedback": "La sentencia UPDATE usa la palabra clave SET para indicar la columna o columnas a cambiar. La cláusula WHERE es opcional."
+    },
+        {
+      "id": 31,
+      "type": "single",
+      "question": "Asume que una tabla MySQL llamada AUTHENTICATION tiene tres columnas (id, username, password). ¿Cuál de las siguientes sentencias inserta una fila en la tabla?",
+      "options": [
+        { "label": "a", "text": "INSERT id,username,password INTO AUTHENTICATION;", "correct": false },
+        { "label": "b", "text": "INSERT INTO AUTHENTICATION VALUES ('user','pass');", "correct": false },
+        { "label": "c", "text": "INSERT AUTHENTICATION ('', 'user','pass');", "correct": false },
+        { "label": "d", "text": "INSERT INTO AUTHENTICATION (username,password) VALUES ('user','pass')", "correct": true }
+      ],
+      "feedback": "La sintaxis comienza con INSERT INTO <tabla>. Esta sintaxis es seguida opcionalmente por los nombres de las columnas a las que se insertarán valores, seguido por la palabra clave VALUES y finalmente los valores a insertar."
+    },
+    {
+      "id": 32,
+      "type": "single",
+      "question": "¿Qué opción de Bash hará que el shell se ejecute sin leer los archivos de inicialización?",
+      "options": [
+        { "label": "a", "text": "--no-rc", "correct": false },
+        { "label": "b", "text": "--no-init", "correct": false },
+        { "label": "c", "text": "--norc", "correct": true },
+        { "label": "d", "text": "--rc-none", "correct": false }
+      ],
+      "feedback": "La opción --norc hace que Bash se ejecute sin leer el archivo /etc/bash.bashrc o el archivo local ~/.bashrc. Las otras opciones listadas no existen como opciones para Bash."
+    },
+    {
+      "id": 33,
+      "type": "single",
+      "question": "¿Cuál de las siguientes opciones crea un array en un script bash?",
+      "options": [
+        { "label": "a", "text": "ARRAY=(val1 val2)", "correct": true },
+        { "label": "b", "text": "ARRAY = \"val1 val2\"", "correct": false },
+        { "label": "c", "text": "ARRAY_PUSH($ARRAY,\"val1\",\"val2\")", "correct": false },
+        { "label": "d", "text": "ARRAY{0} = \"val1\"", "correct": false }
+      ],
+      "feedback": "La creación de arrays en un script de shell involucra paréntesis cuando se usa de esta manera. También puedes usar corchetes para definir elementos individuales, como en ARRAY[0] = \"val1\"."
+    },
+    {
+      "id": 34,
+      "type": "single",
+      "question": "¿Qué opción de las declaraciones 'declare' muestra la salida de una manera que podría usarse como entrada para otro comando?",
+      "options": [
+        { "label": "a", "text": "-o", "correct": false },
+        { "label": "b", "text": "-n", "correct": false },
+        { "label": "c", "text": "-p", "correct": true },
+        { "label": "d", "text": "-m", "correct": false }
+      ],
+      "feedback": "La opción -p muestra las declaraciones 'declare' de una manera que los comandos están completamente calificados y podrían usarse como entrada para otro comando, ya sea mediante piping o redireccionamiento a un script."
+    },
+    {
+      "id": 35,
+      "type": "single",
+      "question": "Necesitas crear una función que estará disponible cada vez que inicies sesión en el sistema. ¿En qué archivo debería colocarse esta función?",
+      "options": [
+        { "label": "a", "text": ".bash_profile", "correct": true },
+        { "label": "b", "text": ".rc0", "correct": false },
+        { "label": "c", "text": "/etc/profile", "correct": false },
+        { "label": "d", "text": ".bash_run", "correct": false }
+      ],
+      "feedback": "El archivo .bash_profile, si existe en tu directorio home, se ejecutará al iniciar sesión. Nota que colocar la función en /etc/profile técnicamente funcionaría, pero entonces la función estaría disponible para todos los usuarios, lo cual no es lo que pregunta la pregunta."
+    },
+    {
+      "id": 36,
+      "type": "single",
+      "question": "¿Qué comando integrado del shell se usa para mostrar una lista de variables de solo lectura?",
+      "options": [
+        { "label": "a", "text": "ro", "correct": false },
+        { "label": "b", "text": "readonly", "correct": true },
+        { "label": "c", "text": "env-ro", "correct": false },
+        { "label": "d", "text": "ro-env", "correct": false }
+      ],
+      "feedback": "El comando 'readonly' muestra la lista de variables de solo lectura que han sido declaradas en la sesión actual. Los otros comandos listados para esta pregunta no existen."
+    },
+    {
+      "id": 37,
+      "type": "single",
+      "question": "¿Cuál de las siguientes palabras clave SQL puede usarse con una cláusula GROUP BY?",
+      "options": [
+        { "label": "a", "text": "SELECT", "correct": true },
+        { "label": "b", "text": "INSERT", "correct": false },
+        { "label": "c", "text": "UPDATE", "correct": false },
+        { "label": "d", "text": "DELETE", "correct": false }
+      ],
+      "feedback": "La única sentencia SQL que puede utilizar una cláusula GROUP BY es la sentencia SELECT. Los otros comandos listados son válidos pero no para usar con GROUP BY."
+    },
+    {
+      "id": 38,
+      "type": "single",
+      "question": "¿Qué caracteres se usan para denotar el inicio y fin de la parte de prueba de un bucle while en un script de shell?",
+      "options": [
+        { "label": "a", "text": "Paréntesis ( )", "correct": false },
+        { "label": "b", "text": "Llaves { }", "correct": false },
+        { "label": "c", "text": "Corchetes [ ]", "correct": true },
+        { "label": "d", "text": "Comillas dobles \"", "correct": false }
+      ],
+      "feedback": "Los corchetes se usan para denotar el inicio y fin de la parte de prueba de un bucle while en un script de shell. Otros lenguajes generalmente usan paréntesis para este propósito."
+    },
+    {
+      "id": 39,
+      "type": "single",
+      "question": "Cuando se usa el comando integrado 'test' con un argumento, ¿qué devolverá si su argumento no es nulo?",
+      "options": [
+        { "label": "a", "text": "false", "correct": false },
+        { "label": "b", "text": "true", "correct": true },
+        { "label": "c", "text": "unknown", "correct": false },
+        { "label": "d", "text": "-1", "correct": false }
+      ],
+      "feedback": "El comando integrado 'test' devolverá true y puede usarse para probar que el valor de una variable no sea nulo. Nota que el comportamiento del comando 'test' difiere dependiendo del número de argumentos."
+    },
+    {
+      "id": 40,
+      "type": "single",
+      "question": "¿Qué variable de entorno se usa cuando se cambia de directorio con el carácter tilde, como en cd ~ ?",
+      "options": [
+        { "label": "a", "text": "HOMEDIR", "correct": false },
+        { "label": "b", "text": "HOMEPATH", "correct": false },
+        { "label": "c", "text": "HOME", "correct": true },
+        { "label": "d", "text": "MAILPATH", "correct": false }
+      ],
+      "feedback": "La variable de entorno HOME, establecida automáticamente en el directorio home del usuario, se consulta cuando se ingresa el comando cd ~. Las otras rutas que comienzan con HOME no existen por defecto, y la variable de entorno MAILPATH mostrada contiene una lista de ubicaciones donde se verifica el correo cuando se usa el shell interactivamente."
+    },
+        {
+      "id": 42,
+      "type": "single",
+      "question": "Cuando se usa una sentencia 'case' dentro de un script de shell, ¿qué secuencia denota el final de la sentencia case/switch?",
+      "options": [
+        { "label": "a", "text": "caseend", "correct": false },
+        { "label": "b", "text": "esac", "correct": true },
+        { "label": "c", "text": "endcase", "correct": false },
+        { "label": "d", "text": "}", "correct": false }
+      ],
+      "feedback": "Así como con una sentencia 'if' que termina con 'fi', una sentencia 'case' termina con la palabra 'case' escrita al revés. La llave mostrada como opción D se usa para cerrar sentencias case en muchos lenguajes pero no en scripts de shell."
+    },
+    {
+      "id": 43,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos obtendrá la fecha en segundos desde la época y la colocará en una variable llamada DATE dentro de un script de shell?",
+      "options": [
+        { "label": "a", "text": "DATE=\"$(date +%s)\"", "correct": true },
+        { "label": "b", "text": "DATE=\"date\"", "correct": false },
+        { "label": "c", "text": "DATE=\"$(date)\";", "correct": false },
+        { "label": "d", "text": "DATE=\"$date %s\"", "correct": false }
+      ],
+      "feedback": "La respuesta proporcionada realiza sustitución de comandos y coloca el valor del comando resultante en una variable. Nota el uso del formato +%s en date, que luego formatea la salida como segundos desde la época, como se especifica en la pregunta. La opción C proporcionará la fecha dentro de la variable DATE pero no la formateará como se especifica."
+    },
+    {
+      "id": 44,
+      "type": "single",
+      "question": "Asume que tienes una variable llamada $FILEPATH dentro de un script de shell Bash. ¿Qué caracteres se pueden usar para asegurar que la variable se interpole correctamente sin importar dónde aparezca la variable dentro del script?",
+      "options": [
+        { "label": "a", "text": "Signo de dólar $FILEPATH", "correct": false },
+        { "label": "b", "text": "Llaves ${FILEPATH}", "correct": true },
+        { "label": "c", "text": "Paréntesis $(FILEPATH)", "correct": false },
+        { "label": "d", "text": "Corchetes $[FILEPATH]", "correct": false }
+      ],
+      "feedback": "Envolver una variable en llaves, ${FILEPATH}, asegurará que la variable se interpole o expanda correctamente, incluso cuando se use en un lugar donde normalmente no se expandiría, como dentro de una cadena entre comillas."
+    },
+    {
+      "id": 45,
+      "type": "single",
+      "question": "¿Qué secuencia se usa para marcar el inicio y fin de los comandos a ejecutar dentro de un bucle for en un script de shell?",
+      "options": [
+        { "label": "a", "text": "Llaves { }", "correct": false },
+        { "label": "b", "text": "Las palabras clave do y done", "correct": true },
+        { "label": "c", "text": "Punto y coma ;", "correct": false },
+        { "label": "d", "text": "Tabulaciones", "correct": false }
+      ],
+      "feedback": "En scripts de shell, los comandos a ejecutar comienzan con la palabra clave 'do' y terminan con la palabra clave 'done'. Otros lenguajes generalmente usan llaves o tabulaciones."
+    },
+    {
+      "id": 46,
+      "type": "single",
+      "question": "¿Cuál de las siguientes pruebas determinará si un archivo existe y puede ser leído por el usuario que ejecuta la prueba?",
+      "options": [
+        { "label": "a", "text": "-e", "correct": false },
+        { "label": "b", "text": "-s", "correct": false },
+        { "label": "c", "text": "-a", "correct": false },
+        { "label": "d", "text": "-r", "correct": true }
+      ],
+      "feedback": "La prueba -r determina si un archivo dado existe y puede ser leído por el usuario actual. La prueba -e solo verifica si el archivo existe, mientras que -s determina si el archivo existe y tiene un tamaño mayor que cero. No existe una prueba de archivo -a."
+    },
+    {
+      "id": 47,
+      "type": "single",
+      "question": "¿Qué opción del comando 'declare' creará una variable que sea de solo lectura?",
+      "options": [
+        { "label": "a", "text": "-r", "correct": true },
+        { "label": "b", "text": "-ro", "correct": false },
+        { "label": "c", "text": "-p", "correct": false },
+        { "label": "d", "text": "-x", "correct": false }
+      ],
+      "feedback": "La opción -r de declare creará o marcará la variable como de solo lectura. La opción -p imprime la salida en un formato que puede reutilizarse. La opción -x declara la variable para exportación."
+    },
+    {
+      "id": 48,
+      "type": "single",
+      "question": "¿Qué secuencia de caracteres se usa para proporcionar un caso predeterminado cuando se usa dentro de una sentencia case en un script de shell?",
+      "options": [
+        { "label": "a", "text": "default:", "correct": false },
+        { "label": "b", "text": "=)", "correct": false },
+        { "label": "c", "text": "-->", "correct": false },
+        { "label": "d", "text": "*)", "correct": true }
+      ],
+      "feedback": "La secuencia *) se usa para denotar un conjunto predeterminado de sentencias que se ejecutarán si ningún otro caso coincide dentro del conjunto."
+    }
+  ]
+}

@@ -1,0 +1,535 @@
+{
+  "id": "6",
+  "title": "107:B - Administrative Tasks",
+  "questions": [
+
+    {
+      "id": 45,
+      "type": "single",
+      "question": "¿En qué puerto escucha LDAP sobre SSL?",
+      "options": [
+        { "label": "a", "text": "389", "correct": false },
+        { "label": "b", "text": "443", "correct": false },
+        { "label": "c", "text": "636", "correct": true },
+        { "label": "d", "text": "3128", "correct": false }
+      ],
+      "feedback": "LDAPS (LDAP sobre SSL) usa el puerto 636. El puerto 389 es para LDAP estándar, 443 para HTTPS y 3128 para proxies Squid."
+    },
+    {
+      "id": 46,
+      "type": "single",
+      "question": "¿Qué programa planifica comandos para ejecutarse una vez en un momento específico?",
+      "options": [
+        { "label": "a", "text": "at", "correct": true },
+        { "label": "b", "text": "cron", "correct": false },
+        { "label": "c", "text": "job", "correct": false },
+        { "label": "d", "text": "jobctl", "correct": false }
+      ],
+      "feedback": "'at' ejecuta comandos una vez en un momento dado. 'cron' es para tareas recurrentes. Los otros comandos no existen."
+    },
+    {
+      "id": 47,
+      "type": "single",
+      "question": "¿Qué archivo lista usuarios autorizados para crear trabajos 'at'?",
+      "options": [
+        { "label": "a", "text": "/etc/at.users", "correct": false },
+        { "label": "b", "text": "/etc/at.scheduler", "correct": false },
+        { "label": "c", "text": "/etc/at.conf", "correct": false },
+        { "label": "d", "text": "/etc/at.allow", "correct": true }
+      ],
+      "feedback": "/etc/at.allow controla qué usuarios pueden crear trabajos 'at'. Los otros archivos no son válidos."
+    },
+    {
+      "id": 48,
+      "type": "single",
+      "question": "¿Qué comando programa comandos para ejecutarse en 1 hora?",
+      "options": [
+        { "label": "a", "text": "atq +1hr", "correct": false },
+        { "label": "b", "text": "at now + 1 hour", "correct": true },
+        { "label": "c", "text": "atq", "correct": false },
+        { "label": "d", "text": "at -1", "correct": false }
+      ],
+      "feedback": "'at now + 1 hour' programa comandos para dentro de una hora. 'atq' solo lista trabajos, y las otras sintaxis son inválidas."
+    },
+    {
+      "id": 49,
+      "type": "single",
+      "question": "¿Qué extensión tienen los archivos de temporizador de systemd?",
+      "options": [
+        { "label": "a", "text": ".conf", "correct": false },
+        { "label": "b", "text": ".timer", "correct": true },
+        { "label": "c", "text": ".timerd", "correct": false },
+        { "label": "d", "text": ".timeevent", "correct": false }
+      ],
+      "feedback": "Los temporizadores de systemd usan la extensión .timer. Las otras extensiones no son válidas para este propósito."
+    },
+    {
+      "id": 50,
+      "type": "single",
+      "question": "¿En qué directorio están los archivos de usuarios con trabajos cron activos?",
+      "options": [
+        { "label": "a", "text": "/var/spool/cron/crontabs", "correct": true },
+        { "label": "b", "text": "/var/spool/jobs", "correct": false },
+        { "label": "c", "text": "/etc/cron", "correct": false },
+        { "label": "d", "text": "/etc/cron.users", "correct": false }
+      ],
+      "feedback": "/var/spool/cron/crontabs contiene un archivo por usuario con trabajos cron activos. Los otros directorios no existen o son incorrectos."
+    },
+        {
+      "id": 51,
+      "type": "single",
+      "question": "Cuando se usa 'slapadd' para una importación grande y falla al 90%, ¿qué opción permite reiniciar desde un número de línea específico?",
+      "options": [
+        { "label": "a", "text": "-l", "correct": false },
+        { "label": "b", "text": "-f", "correct": false },
+        { "label": "c", "text": "-q", "correct": false },
+        { "label": "d", "text": "-j", "correct": true }
+      ],
+      "feedback": "La opción '-j' reinicia la importación desde una línea específica. '-f' especifica un archivo de configuración alternativo, '-q' es el modo rápido, y '-l' define el archivo de entrada."
+    },
+    {
+      "id": 52,
+      "type": "single",
+      "question": "¿Qué argumento del comando 'locale' muestra los locales disponibles en el sistema?",
+      "options": [
+        { "label": "a", "text": "-c", "correct": false },
+        { "label": "b", "text": "-a", "correct": true },
+        { "label": "c", "text": "-p", "correct": false },
+        { "label": "d", "text": "-s", "correct": false }
+      ],
+      "feedback": "La opción '-a' lista todos los locales disponibles. Las otras opciones no generan esta información."
+    },
+    {
+      "id": 53,
+      "type": "single",
+      "question": "¿Qué opción de 'timedatectl' ajusta el reloj del sistema?",
+      "options": [
+        { "label": "a", "text": "--adjust-system-clock", "correct": true },
+        { "label": "b", "text": "-s", "correct": false },
+        { "label": "c", "text": "-c", "correct": false },
+        { "label": "d", "text": "-a", "correct": false }
+      ],
+      "feedback": "'--adjust-system-clock' ajusta el reloj del sistema cuando se usa con 'set-local-rtc'. Las otras opciones son inválidas."
+    },
+    {
+      "id": 54,
+      "type": "single",
+      "question": "¿Qué opción del comando 'file' muestra el tipo MIME de un archivo?",
+      "options": [
+        { "label": "a", "text": "-i", "correct": true },
+        { "label": "b", "text": "-m", "correct": false },
+        { "label": "c", "text": "-l", "correct": false },
+        { "label": "d", "text": "-a", "correct": false }
+      ],
+      "feedback": "La opción '-i' muestra el tipo MIME (ej: text/plain). '-m' especifica archivos 'magic', '-l' lista patrones, y '-a' no es válida."
+    },
+    {
+      "id": 55,
+      "type": "single",
+      "question": "¿Qué variable de entorno establece el tamaño de papel?",
+      "options": [
+        { "label": "a", "text": "LC_PAPERSIZE", "correct": false },
+        { "label": "b", "text": "LC_PAPER", "correct": true },
+        { "label": "c", "text": "LC_PRINTERQ", "correct": false },
+        { "label": "d", "text": "LC_PRINTSIZE", "correct": false }
+      ],
+      "feedback": "La variable 'LC_PAPER' define el tamaño de papel para impresión. Las otras no existen por defecto."
+    },
+    {
+      "id": 56,
+      "type": "single",
+      "question": "¿Cuál de estos archivos funciona como cron a nivel de sistema?",
+      "options": [
+        { "label": "a", "text": "/etc/cron.d", "correct": false },
+        { "label": "b", "text": "/etc/cron.sys", "correct": false },
+        { "label": "c", "text": "/etc/crontab", "correct": true },
+        { "label": "d", "text": "/etc/cron.tab", "correct": false }
+      ],
+      "feedback": "'/etc/crontab' es el archivo de configuración global para cron. Los demás no son estándar o no existen."
+    },
+    {
+      "id": 57,
+      "type": "single",
+      "question": "¿Qué comando muestra zonas horarias disponibles y su salida puede usarse en scripts?",
+      "options": [
+        { "label": "a", "text": "tzd", "correct": false },
+        { "label": "b", "text": "/etc/locale", "correct": false },
+        { "label": "c", "text": "tzdata", "correct": false },
+        { "label": "d", "text": "tzselect", "correct": true }
+      ],
+      "feedback": "'tzselect' muestra zonas horarias en formato región/ciudad (ej: America/Mexico_City), útil para scripts."
+    },
+    {
+      "id": 58,
+      "type": "single",
+      "question": "¿Qué opción en un temporizador de systemd inicia un servicio 90 minutos después del arranque?",
+      "options": [
+        { "label": "a", "text": "OnBootSec=90min", "correct": true },
+        { "label": "b", "text": "OnBoot=90min", "correct": false },
+        { "label": "c", "text": "OnBootHour=1.5", "correct": false },
+        { "label": "d", "text": "StartOnBoot=90min", "correct": false }
+      ],
+      "feedback": "'OnBootSec=' es la opción válida para retrasos post-arranque (acepta unidades como 'min' o 'h'). Las otras son sintaxis inválidas."
+    },
+    {
+      "id": 59,
+      "type": "single",
+      "question": "¿Qué comando elimina un usuario junto con su directorio home?",
+      "options": [
+        { "label": "a", "text": "userdel", "correct": false },
+        { "label": "b", "text": "userdel -r", "correct": true },
+        { "label": "c", "text": "userdel -R", "correct": false },
+        { "label": "d", "text": "deluser", "correct": false }
+      ],
+      "feedback": "'userdel -r' elimina el usuario, su home y buzón de correo. '-R' es para entornos chroot, y 'deluser' no es estándar."
+    },
+    {
+      "id": 60,
+      "type": "single",
+      "question": "¿Cómo se llama la información de contacto del usuario en /etc/passwd (nombre completo, teléfono, etc.)?",
+      "options": [
+        { "label": "a", "text": "USERINFO", "correct": false },
+        { "label": "b", "text": "GECOS", "correct": true },
+        { "label": "c", "text": "HOMEINFO", "correct": false },
+        { "label": "d", "text": "CDATA", "correct": false }
+      ],
+      "feedback": "GECOS es el nombre histórico para este campo en /etc/passwd. Los otros términos no son válidos."
+    },
+        {
+      "id": 61,
+      "type": "single",
+      "question": "¿Qué opción de 'groupadd' especifica el GID para el nuevo grupo?",
+      "options": [
+        { "label": "a", "text": "-g", "correct": true },
+        { "label": "b", "text": "-a", "correct": false },
+        { "label": "c", "text": "-h", "correct": false },
+        { "label": "d", "text": "-k", "correct": false }
+      ],
+      "feedback": "La opción '-g' define el ID numérico del grupo (GID). '-h' muestra ayuda, y las otras opciones no existen en 'groupadd'."
+    },
+    {
+      "id": 62,
+      "type": "single",
+      "question": "¿Qué opción de 'systemctl' muestra los temporizadores activos de systemd?",
+      "options": [
+        { "label": "a", "text": "list-timerunits", "correct": false },
+        { "label": "b", "text": "show-timers", "correct": false },
+        { "label": "c", "text": "list-timers", "correct": true },
+        { "label": "d", "text": "list-activetimers", "correct": false }
+      ],
+      "feedback": "'systemctl list-timers' lista temporizadores activos. Las otras opciones son inválidas."
+    },
+    {
+      "id": 63,
+      "type": "single",
+      "question": "¿Qué palabra clave en systemd ejecuta un temporizador semanalmente?",
+      "options": [
+        { "label": "a", "text": "OnceAWeek", "correct": false },
+        { "label": "b", "text": "weekly", "correct": true },
+        { "label": "c", "text": "everyweek", "correct": false },
+        { "label": "d", "text": "oneperweek", "correct": false }
+      ],
+      "feedback": "La directiva 'OnCalendar=weekly' en systemd programa ejecuciones semanales. Las otras opciones no son válidas."
+    },
+    {
+      "id": 64,
+      "type": "single",
+      "question": "¿Qué opción de 'crontab' elimina el archivo cron actual?",
+      "options": [
+        { "label": "a", "text": "-r", "correct": true },
+        { "label": "b", "text": "-l", "correct": false },
+        { "label": "c", "text": "-g", "correct": false },
+        { "label": "d", "text": "-f", "correct": false }
+      ],
+      "feedback": "'crontab -r' borra el crontab del usuario. Puede usarse con '-i' para confirmación interactiva."
+    },
+    {
+      "id": 65,
+      "type": "single",
+      "question": "¿Qué variable en /etc/default/useradd define la plantilla para directorios home?",
+      "options": [
+        { "label": "a", "text": "SKELETON", "correct": false },
+        { "label": "b", "text": "SKEL", "correct": true },
+        { "label": "c", "text": "SKELDIR", "correct": false },
+        { "label": "d", "text": "SKELLOC", "correct": false }
+      ],
+      "feedback": "La variable 'SKEL' apunta a /etc/skel/ por defecto, que contiene archivos base para nuevos usuarios."
+    },
+    {
+      "id": 66,
+      "type": "single",
+      "question": "¿Qué opción de 'getent' lista la base de datos de contraseñas del sistema?",
+      "options": [
+        { "label": "a", "text": "password", "correct": false },
+        { "label": "b", "text": "listpass", "correct": false },
+        { "label": "c", "text": "passwd", "correct": true },
+        { "label": "d", "text": "showpassdb", "correct": false }
+      ],
+      "feedback": "'getent passwd' muestra entradas de /etc/passwd. Las otras opciones no son comandos válidos."
+    },
+    {
+      "id": 67,
+      "type": "single",
+      "question": "¿Qué directorio almacena trabajos programados con 'at'?",
+      "options": [
+        { "label": "a", "text": "/var/spool/cron/atjobs", "correct": true },
+        { "label": "b", "text": "/var/spool/at", "correct": false },
+        { "label": "c", "text": "/var/spool/cron/at", "correct": false },
+        { "label": "d", "text": "/var/spool/atjobs", "correct": false }
+      ],
+      "feedback": "Los trabajos 'at' se guardan en /var/spool/cron/atjobs. Los otros directorios no existen por defecto."
+    },
+    {
+      "id": 68,
+      "type": "single",
+      "question": "¿Qué variable en /etc/login.defs establece el GID mínimo para nuevos grupos?",
+      "options": [
+        { "label": "a", "text": "GIDMIN", "correct": false },
+        { "label": "b", "text": "GROUPID_MIN", "correct": false },
+        { "label": "c", "text": "GID_MIN", "correct": true },
+        { "label": "d", "text": "MIN_GID", "correct": false }
+      ],
+      "feedback": "'GID_MIN' define el número mínimo para GIDs de grupos. Las otras variables no son estándar."
+    },
+    {
+      "id": 69,
+      "type": "single",
+      "question": "¿Qué variable en /etc/login.defs especifica la ubicación del buzón de correo de usuarios?",
+      "options": [
+        { "label": "a", "text": "EMAILDIR", "correct": false },
+        { "label": "b", "text": "DIR_EMAIL", "correct": false },
+        { "label": "c", "text": "MAILDIR", "correct": false },
+        { "label": "d", "text": "MAIL_DIR", "correct": true }
+      ],
+      "feedback": "'MAIL_DIR' (ej: /var/mail/) define donde se almacenan los buzones. Usada por comandos como 'userdel -r'."
+    },
+    {
+      "id": 70,
+      "type": "single",
+      "question": "¿Qué archivo contiene nombres de usuario, UIDs y contraseñas encriptadas?",
+      "options": [
+        { "label": "a", "text": "/etc/passwd", "correct": false },
+        { "label": "b", "text": "/etc/shadow", "correct": true },
+        { "label": "c", "text": "/etc/encpass", "correct": false },
+        { "label": "d", "text": "/etc/grouppass", "correct": false }
+      ],
+      "feedback": "/etc/shadow almacena contraseñas encriptadas y solo es accesible por root. /etc/passwd contiene UIDs pero no contraseñas."
+    },
+        {
+      "id": 71,
+      "type": "single",
+      "question": "¿Qué archivo contiene información de usuarios (nombre, nombre real) y es legible por todos?",
+      "options": [
+        { "label": "a", "text": "/etc/pass", "correct": false },
+        { "label": "b", "text": "/etc/shadow", "correct": false },
+        { "label": "c", "text": "/etc/passwd", "correct": true },
+        { "label": "d", "text": "/etc/userinfo", "correct": false }
+      ],
+      "feedback": "/etc/passwd contiene UIDs, shells y nombres reales, y es legible públicamente. /etc/shadow guarda contraseñas encriptadas (solo root)."
+    },
+    {
+      "id": 72,
+      "type": "single",
+      "question": "¿Qué palabra clave en cron ejecuta un trabajo al reiniciar el sistema?",
+      "options": [
+        { "label": "a", "text": "@restart", "correct": false },
+        { "label": "b", "text": "@startup", "correct": false },
+        { "label": "c", "text": "@reboot", "correct": true },
+        { "label": "d", "text": "@onboot", "correct": false }
+      ],
+      "feedback": "La directiva '@reboot' en cron ejecuta el trabajo una vez durante el arranque del sistema. Las otras opciones no son válidas."
+    },
+    {
+      "id": 73,
+      "type": "single",
+      "question": "¿Qué opción de 'groupadd' crea un grupo del sistema?",
+      "options": [
+        { "label": "a", "text": "-r", "correct": true },
+        { "label": "b", "text": "-m", "correct": false },
+        { "label": "c", "text": "-j", "correct": false },
+        { "label": "d", "text": "-b", "correct": false }
+      ],
+      "feedback": "La opción '-r' crea un grupo del sistema (con GID bajo, según /etc/login.defs). '-m' no existe en groupadd."
+    },
+    {
+      "id": 74,
+      "type": "single",
+      "question": "¿Dónde se almacenan las bases de datos de OpenLDAP?",
+      "options": [
+        { "label": "a", "text": "/var/lib/ldap", "correct": true },
+        { "label": "b", "text": "/var/cache/openldap", "correct": false },
+        { "label": "c", "text": "/var/share/ldap", "correct": false },
+        { "label": "d", "text": "/usr/share/openldap", "correct": false }
+      ],
+      "feedback": "OpenLDAP guarda sus archivos de base de datos en /var/lib/ldap/. Los otros directorios no son estándar."
+    },
+    {
+      "id": 75,
+      "type": "single",
+      "question": "¿Qué opción de 'systemctl list-timers' muestra temporizadores inactivos?",
+      "options": [
+        { "label": "a", "text": "--all", "correct": true },
+        { "label": "b", "text": "--active-and-inactive", "correct": false },
+        { "label": "c", "text": "--inactive", "correct": false },
+        { "label": "d", "text": "Todos se muestran por defecto.", "correct": false }
+      ],
+      "feedback": "Por defecto solo se muestran temporizadores activos. '--all' incluye los inactivos."
+    },
+    {
+      "id": 76,
+      "type": "single",
+      "question": "¿Qué archivo lista usuarios bloqueados para usar 'at'?",
+      "options": [
+        { "label": "a", "text": "/etc/at.allow", "correct": false },
+        { "label": "b", "text": "/etc/at.deny", "correct": true },
+        { "label": "c", "text": "/etc/at.denyusers", "correct": false },
+        { "label": "d", "text": "/etc/at.conf.deny", "correct": false }
+      ],
+      "feedback": "/etc/at.deny bloquea usuarios específicos para 'at'. /etc/at.allow hace lo opuesto (lista permitidos)."
+    },
+    {
+      "id": 77,
+      "type": "single",
+      "question": "¿Qué programador de tareas usar si el equipo se apaga frecuentemente?",
+      "options": [
+        { "label": "a", "text": "cron.d", "correct": false },
+        { "label": "b", "text": "cron.hourly", "correct": false },
+        { "label": "c", "text": "anacron", "correct": true },
+        { "label": "d", "text": "at", "correct": false }
+      ],
+      "feedback": "anacron ejecuta tareas pendientes al reiniciar, ideal para equipos no siempre encendidos. cron depende de horarios fijos."
+    },
+    {
+      "id": 78,
+      "type": "single",
+      "question": "¿Qué comando muestra la fecha en segundos desde el epoch (1/1/1970)?",
+      "options": [
+        { "label": "a", "text": "date +%seconds", "correct": false },
+        { "label": "b", "text": "date +%s", "correct": true },
+        { "label": "c", "text": "date --seconds", "correct": false },
+        { "label": "d", "text": "date --now", "correct": false }
+      ],
+      "feedback": "'date +%s' devuelve segundos desde el epoch (útil para scripts). '+%seconds' no es una opción válida."
+    },
+    {
+      "id": 79,
+      "type": "single",
+      "question": "¿Qué opción de 'iconv' lista los juegos de caracteres disponibles?",
+      "options": [
+        { "label": "a", "text": "--showchar", "correct": false },
+        { "label": "b", "text": "--show", "correct": false },
+        { "label": "c", "text": "--list", "correct": true },
+        { "label": "d", "text": "--all", "correct": false }
+      ],
+      "feedback": "'iconv --list' muestra codificaciones soportadas (ej: UTF-8, ISO-8859-1). Las otras opciones no existen."
+    },
+    {
+      "id": 80,
+      "type": "single",
+      "question": "¿Qué expresión cron ejecuta un trabajo a las 12:15 a.m. y 12:15 p.m. diariamente?",
+      "options": [
+        { "label": "a", "text": "0,12 15 * * *", "correct": false },
+        { "label": "b", "text": "15 0,12 * * *", "correct": true },
+        { "label": "c", "text": "15 * * * 0/12", "correct": false },
+        { "label": "d", "text": "*/12 * * * 15", "correct": false }
+      ],
+      "feedback": "Formato cron: [minuto hora día-del-mes mes día-de-la-semana]. '15 0,12 * * *' significa 15 minutos después de las 0 y 12 horas."
+    },
+        {
+      "id": 81,
+      "type": "single",
+      "question": "¿Qué variable de entorno controla el formato de fecha/hora (12h/24h)?",
+      "options": [
+        { "label": "a", "text": "LOCALE_DATE", "correct": false },
+        { "label": "b", "text": "DATE_FORMAT", "correct": false },
+        { "label": "c", "text": "LC_TIME", "correct": true },
+        { "label": "d", "text": "LC_DATE", "correct": false }
+      ],
+      "feedback": "La variable LC_TIME define el formato de hora (12/24h) y formatos de fecha según la localización. Las otras opciones no son estándar."
+    },
+    {
+      "id": 82,
+      "type": "single",
+      "question": "¿Qué comando configura OpenLDAP (versiones 2.3+)?",
+      "options": [
+        { "label": "a", "text": "slapd-conf", "correct": false },
+        { "label": "b", "text": "config-slapd", "correct": false },
+        { "label": "c", "text": "openldap-config", "correct": false },
+        { "label": "d", "text": "slapd-config", "correct": true }
+      ],
+      "feedback": "'slapd-config' es el método de configuración para OpenLDAP 2.3+. Los otros comandos no existen."
+    },
+    {
+      "id": 83,
+      "type": "single",
+      "question": "¿Qué palabra clave en cron ejecuta una tarea diariamente a medianoche?",
+      "options": [
+        { "label": "a", "text": "@daily", "correct": true },
+        { "label": "b", "text": "@daybegin", "correct": false },
+        { "label": "c", "text": "@topday", "correct": false },
+        { "label": "d", "text": "@beginday", "correct": false }
+      ],
+      "feedback": "La directiva '@daily' en cron equivale a '0 0 * * *' (medianoche cada día). Las otras opciones son inválidas."
+    },
+    {
+      "id": 84,
+      "type": "single",
+      "question": "¿Qué codificación representa caracteres usando múltiples bytes?",
+      "options": [
+        { "label": "a", "text": "ISO-8859", "correct": false },
+        { "label": "b", "text": "UTF-8", "correct": true },
+        { "label": "c", "text": "ISO-L", "correct": false },
+        { "label": "d", "text": "UFTMulti", "correct": false }
+      ],
+      "feedback": "UTF-8 es un estándar multibyte para caracteres Unicode. ISO-8859 usa un solo byte (solo caracteres occidentales)."
+    },
+    {
+      "id": 85,
+      "type": "single",
+      "question": "¿Qué comando renombra un grupo de 'DomainAdmins' a 'DomainUsers'?",
+      "options": [
+        { "label": "a", "text": "groupmod -n DomainAdmins DomainUsers", "correct": true },
+        { "label": "b", "text": "groupchg DomainAdmins DomainUsers", "correct": false },
+        { "label": "c", "text": "chgroup DomainAdmins DomainUsers", "correct": false },
+        { "label": "d", "text": "group -N DomainAdmins DomainUsers", "correct": false }
+      ],
+      "feedback": "'groupmod -n' renombra grupos. El orden es: nombre_actual nuevo_nombre. Los otros comandos no existen."
+    },
+    {
+      "id": 86,
+      "type": "single",
+      "question": "¿Qué archivo almacena información de grupos en Linux?",
+      "options": [
+        { "label": "a", "text": "/etc/groupinfo", "correct": false },
+        { "label": "b", "text": "/etc/groups", "correct": false },
+        { "label": "c", "text": "/etc/roles", "correct": false },
+        { "label": "d", "text": "/etc/group", "correct": true }
+      ],
+      "feedback": "/etc/group contiene nombres de grupos, GIDs y miembros. Los otros archivos no son estándar."
+    },
+    {
+      "id": 87,
+      "type": "single",
+      "question": "¿Qué comando genera un archivo LDIF desde la base de datos LDAP actual?",
+      "options": [
+        { "label": "a", "text": "slapdump", "correct": false },
+        { "label": "b", "text": "ldapdump", "correct": false },
+        { "label": "c", "text": "slapcat", "correct": true },
+        { "label": "d", "text": "catldap", "correct": false }
+      ],
+      "feedback": "'slapcat' exporta la base de datos LDAP a formato LDIF (para backup/migración). Los otros comandos no existen."
+    },
+    {
+      "id": 88,
+      "type": "single",
+      "question": "Si un trabajo programado no está en /etc/crontab, systemd ni /var/spool/cron, ¿dónde podría estar?",
+      "options": [
+        { "label": "a", "text": "/etc/crontabs", "correct": false },
+        { "label": "b", "text": "/etc/cron.conf", "correct": false },
+        { "label": "c", "text": "/etc/cron.d/", "correct": true },
+        { "label": "d", "text": "/etc/sked", "correct": false }
+      ],
+      "feedback": "/etc/cron.d/ puede contener archivos de configuración cron adicionales. Los otros directorios no son estándar."
+    }
+  ]
+}

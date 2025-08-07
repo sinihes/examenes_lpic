@@ -1,0 +1,534 @@
+{
+  "id": "10",
+  "title": "103:B - GNU and Unix Commands",
+    "questions": [
+    {
+      "id": 1,
+      "type": "single",
+      "question": "Suponiendo que estás usando el shell Bash y quieres evitar que las redirecciones de salida sobrescriban archivos existentes accidentalmente. ¿Qué comando y opción se pueden usar para activar este comportamiento?",
+      "options": [
+        { "label": "a", "text": "setoutput -f", "correct": false },
+        { "label": "b", "text": "overwrite=no", "correct": false },
+        { "label": "c", "text": "overwrite -n", "correct": false },
+        { "label": "d", "text": "set -C", "correct": true }
+      ],
+      "feedback": "El comando set puede usarse para cambiar el comportamiento del entorno del shell. La opción -C evita que redirecciones de salida (como >) sobrescriban un archivo si ya existe."
+    },
+    {
+      "id": 2,
+      "type": "single",
+      "question": "¿Qué comando se usa para llevar un comando al primer plano después de haberlo enviado al segundo plano con &?",
+      "options": [
+        { "label": "a", "text": "bg", "correct": false },
+        { "label": "b", "text": "fore", "correct": false },
+        { "label": "c", "text": "4g", "correct": false },
+        { "label": "d", "text": "fg", "correct": true }
+      ],
+      "feedback": "El comando fg recupera un proceso en segundo plano (background) y lo lleva al primer plano (foreground)."
+    },
+    {
+      "id": 3,
+      "type": "single",
+      "question": "Necesitas escribir un script que obtenga todos los IDs de proceso (PIDs) de las instancias de Apache en ejecución. ¿Cuál de los siguientes comandos lo lograría?",
+      "options": [
+        { "label": "a", "text": "ps auwx | grep apache", "correct": false },
+        { "label": "b", "text": "pgrep apache", "correct": true },
+        { "label": "c", "text": "processlist apache", "correct": false },
+        { "label": "d", "text": "ls -p apache", "correct": false }
+      ],
+      "feedback": "pgrep muestra solo los IDs de proceso (PIDs) de los procesos que coinciden con \"apache\", mientras que ps con grep da información adicional innecesaria."
+    },
+    {
+      "id": 4,
+      "type": "single",
+      "question": "¿Qué comando se usa para acceder a la documentación en un sistema Linux sobre un comando específico?",
+      "options": [
+        { "label": "a", "text": "doc", "correct": false },
+        { "label": "b", "text": "heredoc", "correct": false },
+        { "label": "c", "text": "man", "correct": true },
+        { "label": "d", "text": "manual", "correct": false }
+      ],
+      "feedback": "El comando man (manual) muestra la documentación oficial de un comando en Linux."
+    },
+    {
+      "id": 5,
+      "type": "single",
+      "question": "¿Cuál de las siguientes líneas de comando monitorearía continuamente un proceso llamado nagios?",
+      "options": [
+        { "label": "a", "text": "top -n 1", "correct": false },
+        { "label": "b", "text": "top -p 23", "correct": false },
+        { "label": "c", "text": "ps -nagios", "correct": false },
+        { "label": "d", "text": "top -p\\pidof nagios``", "correct": true }
+      ],
+      "feedback": "top -p monitorea un PID específico, y `pidof nagios` obtiene el PID del proceso nagios."
+    },
+    {
+      "id": 6,
+      "type": "single",
+      "question": "Los usuarios reportan que varios programas se cierran inesperadamente en el servidor. Al revisar los logs, ves que algunos procesos indican falta de memoria. ¿Qué comando puedes usar para ver el uso general de memoria, incluyendo el espacio de intercambio (swap)?",
+      "options": [
+        { "label": "a", "text": "tree", "correct": false },
+        { "label": "b", "text": "pgrep", "correct": false },
+        { "label": "c", "text": "uptime", "correct": false },
+        { "label": "d", "text": "free", "correct": true }
+      ],
+      "feedback": "free muestra el uso de memoria RAM y swap, ayudando a identificar problemas de memoria."
+    },
+    {
+      "id": 7,
+      "type": "single",
+      "question": "Estás usando el editor Vi y necesitas guardar cambios antes de salir. Si recibes el mensaje \"No write since last change\", ¿qué comando guardará los cambios y saldrá?",
+      "options": [
+        { "label": "a", "text": ":wq", "correct": true },
+        { "label": "b", "text": ":q!", "correct": false },
+        { "label": "c", "text": "dd", "correct": false },
+        { "label": "d", "text": "x", "correct": false }
+      ],
+      "feedback": ":wq guarda (write) y sale (quit). :q! fuerza la salida sin guardar, dd borra una línea y x borra un carácter."
+    },
+    {
+      "id": 8,
+      "type": "single",
+      "question": "¿Qué opción cambia el número de líneas mostradas por los comandos head y tail?",
+      "options": [
+        { "label": "a", "text": "-l", "correct": false },
+        { "label": "b", "text": "-f", "correct": false },
+        { "label": "c", "text": "-g", "correct": false },
+        { "label": "d", "text": "-n", "correct": true }
+      ],
+      "feedback": "-n define el número de líneas (ejemplo: head -n 5 archivo.txt muestra las primeras 5 líneas)."
+    },
+    {
+      "id": 9,
+      "type": "single",
+      "question": "¿Qué comando muestra el load average actual y el tiempo transcurrido desde el último arranque del sistema?",
+      "options": [
+        { "label": "a", "text": "uptime", "correct": true },
+        { "label": "b", "text": "sysinfo", "correct": false },
+        { "label": "c", "text": "bash", "correct": false },
+        { "label": "d", "text": "ls -u", "correct": false }
+      ],
+      "feedback": "uptime muestra el tiempo de actividad, la carga del sistema y los usuarios conectados."
+    },
+    {
+      "id": 10,
+      "type": "single",
+      "question": "Debes iniciar un proceso largo que requiere terminal, pero no puedes dejar la ventana abierta por restricciones de seguridad. ¿Qué comando te permite iniciarlo y retomar la sesión más tarde?",
+      "options": [
+        { "label": "a", "text": "fg", "correct": false },
+        { "label": "b", "text": "bg", "correct": false },
+        { "label": "c", "text": "kill", "correct": false },
+        { "label": "d", "text": "screen", "correct": true }
+      ],
+      "feedback": "screen crea una terminal virtual que puedes desconectar y reconectar sin interrumpir el proceso en ejecución."
+    },
+    {
+      "id": 11,
+      "type": "single",
+      "question": "Has intentado detener un proceso usando su comando de servicio y también el comando kill. ¿Qué señal se puede enviar con kill para forzar la terminación del proceso?",
+      "options": [
+        { "label": "a", "text": "-15", "correct": false },
+        { "label": "b", "text": "-f", "correct": false },
+        { "label": "c", "text": "-9", "correct": true },
+        { "label": "d", "text": "-stop", "correct": false }
+      ],
+      "feedback": "La señal -9 (SIGKILL) termina el proceso de manera forzosa. -15 (SIGTERM) es la señal por defecto (no siempre efectiva), mientras que -f y -stop no son opciones válidas."
+    },
+    {
+      "id": 12,
+      "type": "single",
+      "question": "En el shell Bash, ¿qué comando redirige tanto STDOUT como STDERR?",
+      "options": [
+        { "label": "a", "text": "1>2", "correct": false },
+        { "label": "b", "text": ">2", "correct": false },
+        { "label": "c", "text": "2>&1", "correct": true },
+        { "label": "d", "text": ">>", "correct": false }
+      ],
+      "feedback": "2>&1 redirige STDERR (2) a STDOUT (1). Ejemplo: comando > archivo.log 2>&1 guarda ambas salidas en el archivo."
+    },
+    {
+      "id": 13,
+      "type": "single",
+      "question": "¿Qué comando muestra la prioridad por defecto de los procesos creados por el usuario actual?",
+      "options": [
+        { "label": "a", "text": "prio", "correct": false },
+        { "label": "b", "text": "nice", "correct": true },
+        { "label": "c", "text": "renice", "correct": false },
+        { "label": "d", "text": "defpriority", "correct": false }
+      ],
+      "feedback": "nice sin argumentos muestra la prioridad base (normalmente 0). renice modifica la prioridad de procesos en ejecución."
+    },
+    {
+      "id": 14,
+      "type": "single",
+      "question": "¿Cuál de estos comandos egrep busca en /etc/passwd usuarios que usen /bin/bash o /usr/bin/zsh como shell?",
+      "options": [
+        { "label": "a", "text": "grep sh /etc/passwd", "correct": false },
+        { "label": "b", "text": "egrep '/*/.sh$' /etc/passwd", "correct": false },
+        { "label": "c", "text": "grep '/*/.=sh$' /etc/passwd", "correct": false },
+        { "label": "d", "text": "egrep '/*/..?sh$' /etc/passwd", "correct": true }
+      ],
+      "feedback": "Este patrón busca rutas que terminen en sh (como bash o zsh). ..?sh$ coincide con ambos shells, ignorando directorios previos."
+    },
+    {
+      "id": 15,
+      "type": "single",
+      "question": "¿Qué comando muestra información del kernel, arquitectura y otros detalles del sistema?",
+      "options": [
+        { "label": "a", "text": "info --sys", "correct": false },
+        { "label": "b", "text": "man sys", "correct": false },
+        { "label": "c", "text": "sysinfo", "correct": false },
+        { "label": "d", "text": "uname -a", "correct": true }
+      ],
+      "feedback": "uname -a muestra toda la información disponible (kernel, nombre del host, versión, etc.). Las otras opciones no son comandos válidos."
+    },
+    {
+      "id": 16,
+      "type": "single",
+      "question": "¿Qué opción de man accede a documentación de nivel 2 (llamadas al sistema)?",
+      "options": [
+        { "label": "a", "text": "man 2", "correct": true },
+        { "label": "b", "text": "progman", "correct": false },
+        { "label": "c", "text": "man --sys", "correct": false },
+        { "label": "d", "text": "man --list sys", "correct": false }
+      ],
+      "feedback": "Los niveles de man se especifican con un número. Ejemplo: man 2 open muestra la llamada al sistema open."
+    },
+    {
+      "id": 17,
+      "type": "single",
+      "question": "En Vi, ¿qué comando cambia a modo inserción y abre una línea nueva debajo del cursor?",
+      "options": [
+        { "label": "a", "text": "f", "correct": false },
+        { "label": "b", "text": "a", "correct": false },
+        { "label": "c", "text": "o", "correct": true },
+        { "label": "d", "text": "i", "correct": false }
+      ],
+      "feedback": "o abre una línea abajo e inicia modo inserción. i inserta en la posición actual, a después del cursor, y f busca caracteres."
+    },
+    {
+      "id": 18,
+      "type": "single",
+      "question": "¿Qué señal de kill reinicia un proceso?",
+      "options": [
+        { "label": "a", "text": "-HUP", "correct": true },
+        { "label": "b", "text": "-RESTART", "correct": false },
+        { "label": "c", "text": "-9", "correct": false },
+        { "label": "d", "text": "-SIG", "correct": false }
+      ],
+      "feedback": "kill -HUP (SIGHUP) reinicia procesos (ejemplo: servicios que recargan configuraciones). -9 (SIGKILL) los termina abruptamente."
+    },
+    {
+      "id": 19,
+      "type": "single",
+      "question": "¿Qué comando muestra las últimas 50 líneas del historial de Bash, incluyendo la sesión actual?",
+      "options": [
+        { "label": "a", "text": "bashhist 50", "correct": false },
+        { "label": "b", "text": "history 50", "correct": true },
+        { "label": "c", "text": "cat .bash_history", "correct": false },
+        { "label": "d", "text": "tail -f .bash_history", "correct": false }
+      ],
+      "feedback": "history N muestra las últimas N órdenes ejecutadas. .bash_history no incluye la sesión actual hasta cerrar el terminal."
+    },
+    {
+      "id": 20,
+      "type": "single",
+      "question": "Has enviado tareas al segundo plano con &. ¿Qué comando lista las tareas en segundo plano?",
+      "options": [
+        { "label": "a", "text": "procs", "correct": false },
+        { "label": "b", "text": "plist", "correct": false },
+        { "label": "c", "text": "jobs", "correct": true },
+        { "label": "d", "text": "free", "correct": false }
+      ],
+      "feedback": "jobs muestra el estado y número de trabajos en segundo plano. free muestra memoria, y las otras opciones no existen."
+    },
+    {
+      "id": 21,
+      "type": "single",
+      "question": "¿Qué comando busca en los archivos .bash_history de cada usuario para determinar si han usado el comando sudo?",
+      "options": [
+        { "label": "a", "text": "find /home -name \"bash_history\" | grep sudo", "correct": false },
+        { "label": "b", "text": "find /home -name \".bash_history\" | xargs grep sudo", "correct": true },
+        { "label": "c", "text": "find /home/.bash_history | xargs grep sudo", "correct": false },
+        { "label": "d", "text": "find /home -type history | xargs grep sudo", "correct": false }
+      ],
+      "feedback": "find busca archivos .bash_history en /home, y xargs grep sudo busca el texto \"sudo\" en ellos.\n⚠️ Nota: Asume que todos los usuarios usan Bash y tienen historial activado."
+    },
+    {
+      "id": 22,
+      "type": "single",
+      "question": "¿Qué comando monitorea continuamente el archivo de log /var/log/httpd/access.log a medida que se añaden nuevas entradas?",
+      "options": [
+        { "label": "a", "text": "watch /var/log/httpd/access.log", "correct": false },
+        { "label": "b", "text": "tail /var/log/httpd/access.log", "correct": false },
+        { "label": "c", "text": "tail -f /var/log/httpd/access.log", "correct": true },
+        { "label": "d", "text": "mon /var/log/httpd/access.log", "correct": false }
+      ],
+      "feedback": "tail -f muestra las últimas líneas del archivo y actualiza la salida en tiempo real."
+    },
+    {
+      "id": 23,
+      "type": "single",
+      "question": "Estás depurando un archivo de configuración y el demonio indica un error en la línea 932. ¿Qué comando añade números de línea al archivo?",
+      "options": [
+        { "label": "a", "text": "lines", "correct": false },
+        { "label": "b", "text": "wc -l", "correct": false },
+        { "label": "c", "text": "newline", "correct": false },
+        { "label": "d", "text": "nl", "correct": true }
+      ],
+      "feedback": "nl numera las líneas del archivo. wc -l solo cuenta líneas, no las enumera."
+    },
+    {
+      "id": 24,
+      "type": "single",
+      "question": "Recibes un archivo con extensión .lzma. ¿Qué comando lo descomprime?",
+      "options": [
+        { "label": "a", "text": "xz", "correct": true },
+        { "label": "b", "text": "lz", "correct": false },
+        { "label": "c", "text": "gz", "correct": false },
+        { "label": "d", "text": "bzip", "correct": false }
+      ],
+      "feedback": "xz soporta descompresión de archivos .lzma. Ejemplo: xz -d archivo.lzma."
+    },
+    {
+      "id": 25,
+      "type": "single",
+      "question": "¿Qué comando find busca archivos modificados en las últimas 24 horas dentro del directorio actual?",
+      "options": [
+        { "label": "a", "text": "find ./ -type f -mtime 0", "correct": true },
+        { "label": "b", "text": "find ./ -type f -mtime 24", "correct": false },
+        { "label": "c", "text": "find ./ -type f -mtime +1", "correct": false },
+        { "label": "d", "text": "find ./ type -f time 24", "correct": false }
+      ],
+      "feedback": "-mtime 0 busca archivos modificados en el último día (24 horas). -mtime +1 buscaría archivos con más de 1 día de antigüedad."
+    },
+    {
+      "id": 26,
+      "type": "single",
+      "question": "En sed, ¿qué opción hace que una sustitución aplique a toda la línea y no solo a la primera coincidencia?",
+      "options": [
+        { "label": "a", "text": "g", "correct": true },
+        { "label": "b", "text": "a", "correct": false },
+        { "label": "c", "text": "r", "correct": false },
+        { "label": "d", "text": "y", "correct": false }
+      ],
+      "feedback": "Ejemplo: sed 's/foo/bar/g' archivo reemplaza todas las instancias de \"foo\" por \"bar\"."
+    },
+    {
+      "id": 27,
+      "type": "single",
+      "question": "¿Qué comando mueve todos los archivos .txt al directorio /tmp?",
+      "options": [
+        { "label": "a", "text": "mv txt* tmp", "correct": false },
+        { "label": "b", "text": "move *.txt /temp", "correct": false },
+        { "label": "c", "text": "mv *.txt /tmp", "correct": true },
+        { "label": "d", "text": "mv *.txt tmp", "correct": false }
+      ],
+      "feedback": "*.txt selecciona todos los archivos .txt, y /tmp es la ruta absoluta del destino."
+    },
+    {
+      "id": 28,
+      "type": "single",
+      "question": "¿Qué comando imprime el directorio actual?",
+      "options": [
+        { "label": "a", "text": "cwd", "correct": false },
+        { "label": "b", "text": "curdur", "correct": false },
+        { "label": "c", "text": "cd", "correct": false },
+        { "label": "d", "text": "pwd", "correct": true }
+      ],
+      "feedback": "pwd (Print Working Directory) muestra la ruta actual. cd cambia de directorio."
+    },
+    {
+      "id": 29,
+      "type": "single",
+      "question": "Tienes un archivo zips.txt con códigos postales. ¿Qué comando cuenta los códigos únicos?",
+      "options": [
+        { "label": "a", "text": "sort zips.txt | uniq -c", "correct": true },
+        { "label": "b", "text": "uniq zips.txt", "correct": false },
+        { "label": "c", "text": "count zips.txt", "correct": false },
+        { "label": "d", "text": "cat zips.txt | uniq -c", "correct": false }
+      ],
+      "feedback": "Primero sort agrupa los códigos repetidos, luego uniq -c los cuenta y muestra únicos."
+    },
+    {
+      "id": 30,
+      "type": "single",
+      "question": "En Bash, ¿cómo ejecutas el último comando que empieza con una cadena específica, aunque no sea el último usado?",
+      "options": [
+        { "label": "a", "text": "!cadena", "correct": true },
+        { "label": "b", "text": "Buscar el comando en el historial.", "correct": false },
+        { "label": "c", "text": "?cadena", "correct": false },
+        { "label": "d", "text": "No es posible en Bash.", "correct": false }
+      ],
+      "feedback": "Ejemplo: !vi ejecuta el último comando que empezó con \"vi\". 🔍 Alternativa: Usar Ctrl + R para buscar en el historial interactivamente."
+    },
+        {
+      "id": 31,
+      "type": "single",
+      "question": "¿Qué comando se usa para terminar todos los procesos por su nombre?",
+      "options": [
+        { "label": "a", "text": "killproc", "correct": false },
+        { "label": "b", "text": "killname", "correct": false },
+        { "label": "c", "text": "killall", "correct": true },
+        { "label": "d", "text": "kill -f", "correct": false }
+      ],
+      "feedback": "Ejemplo: killall apache2 termina todos los procesos llamados \"apache2\"."
+    },
+    {
+      "id": 32,
+      "type": "single",
+      "question": "En Vi, ¿qué tecla busca hacia atrás en el archivo?",
+      "options": [
+        { "label": "a", "text": "/", "correct": false },
+        { "label": "b", "text": "h", "correct": false },
+        { "label": "c", "text": "?", "correct": true },
+        { "label": "d", "text": "x", "correct": false }
+      ],
+      "feedback": "?patrón busca hacia atrás, mientras que /patrón busca hacia adelante. h mueve el cursor a la izquierda y x borra un carácter."
+    },
+    {
+      "id": 33,
+      "type": "single",
+      "question": "¿Qué comando declara una variable de entorno local que estará disponible para procesos hijos?",
+      "options": [
+        { "label": "a", "text": "ex", "correct": false },
+        { "label": "b", "text": "echo", "correct": false },
+        { "label": "c", "text": "dec", "correct": false },
+        { "label": "d", "text": "export", "correct": true }
+      ],
+      "feedback": "Ejemplo: export MI_VAR=valor hace que MI_VAR sea accesible para subprocesos."
+    },
+    {
+      "id": 34,
+      "type": "single",
+      "question": "En un script Bash, ¿qué comando imprime el nombre del script actual?",
+      "options": [
+        { "label": "a", "text": "cat", "correct": false },
+        { "label": "b", "text": "echo $0", "correct": true },
+        { "label": "c", "text": "echo $SCRIPT", "correct": false },
+        { "label": "d", "text": "echo $PS1", "correct": false }
+      ],
+      "feedback": "$0 contiene el nombre del script. $PS1 define el prompt de la terminal."
+    },
+    {
+      "id": 35,
+      "type": "single",
+      "question": "¿Qué comando descomprime un archivo con extensión .gz?",
+      "options": [
+        { "label": "a", "text": "unz", "correct": false },
+        { "label": "b", "text": "gunzip", "correct": true },
+        { "label": "c", "text": "hunzip", "correct": false },
+        { "label": "d", "text": "gzunzip", "correct": false }
+      ],
+      "feedback": "También se puede usar: gzip -d archivo.gz."
+    },
+    {
+      "id": 36,
+      "type": "single",
+      "question": "¿Qué opción de rm pide confirmación antes de borrar un archivo?",
+      "options": [
+        { "label": "a", "text": "-a", "correct": false },
+        { "label": "b", "text": "-e", "correct": false },
+        { "label": "c", "text": "-i", "correct": true },
+        { "label": "d", "text": "-o", "correct": false }
+      ],
+      "feedback": "Ejemplo: rm -i archivo.txt pregunta antes de borrar."
+    },
+    {
+      "id": 37,
+      "type": "single",
+      "question": "¿Qué opción de wc cuenta el número de líneas?",
+      "options": [
+        { "label": "a", "text": "-f", "correct": false },
+        { "label": "b", "text": "-a", "correct": false },
+        { "label": "c", "text": "-l (lines)", "correct": true },
+        { "label": "d", "text": "-o", "correct": false }
+      ],
+      "feedback": "Ejemplo: wc -l archivo.txt muestra las líneas del archivo."
+    },
+    {
+      "id": 38,
+      "type": "single",
+      "question": "¿Qué comando busca archivos de más de 1GB?",
+      "options": [
+        { "label": "a", "text": "find / -size +1G", "correct": true },
+        { "label": "b", "text": "find / -size 10000M", "correct": false },
+        { "label": "c", "text": "find / +1M", "correct": false },
+        { "label": "d", "text": "find / -size +1B", "correct": false }
+      ],
+      "feedback": "+1G = archivos >1GB. También se puede usar -size +1024M."
+    },
+    {
+      "id": 39,
+      "type": "single",
+      "question": "¿Qué opción de cpio lista los archivos mientras opera?",
+      "options": [
+        { "label": "a", "text": "-l", "correct": false },
+        { "label": "b", "text": "-v (verbose)", "correct": true },
+        { "label": "c", "text": "-k", "correct": false },
+        { "label": "d", "text": "-s", "correct": false }
+      ],
+      "feedback": "Muestra el progreso en tiempo real (útil para depuración)."
+    },
+    {
+      "id": 40,
+      "type": "single",
+      "question": "¿Qué comando envía el contenido de un archivo .bz2 a STDOUT?",
+      "options": [
+        { "label": "a", "text": "bzout", "correct": false },
+        { "label": "b", "text": "bzcat", "correct": true },
+        { "label": "c", "text": "bz2cat", "correct": false },
+        { "label": "d", "text": "bz2echo", "correct": false }
+      ],
+      "feedback": "Equivalente a bzip2 -dc archivo.bz2."
+    },
+        {
+      "id": 41,
+      "type": "single",
+      "question": "Quieres información sobre el comando jobs, pero no encuentras su página man. ¿Qué página man debes consultar?",
+      "options": [
+        { "label": "a", "text": "jbs", "correct": false },
+        { "label": "b", "text": "procctl", "correct": false },
+        { "label": "c", "text": "bash", "correct": true },
+        { "label": "d", "text": "ps", "correct": false }
+      ],
+      "feedback": "jobs es un comando interno del shell Bash. Para ver su documentación, usa man bash y busca la sección \"SHELL BUILTIN COMMANDS\"."
+    },
+    {
+      "id": 42,
+      "type": "single",
+      "question": "¿Qué comando inicia un proceso que ignora la señal SIGHUP (útil para evitar que se cierre al salir de la terminal)?",
+      "options": [
+        { "label": "a", "text": "nosig", "correct": false },
+        { "label": "b", "text": "nohup", "correct": true },
+        { "label": "c", "text": "nokill", "correct": false },
+        { "label": "d", "text": "noproc", "correct": false }
+      ],
+      "feedback": "Ejemplo: nohup comando_largo & evita que el proceso termine al cerrar la terminal."
+    },
+    {
+      "id": 43,
+      "type": "single",
+      "question": "¿Qué comando ejecuta periódicamente otro comando y muestra su salida en tiempo real?",
+      "options": [
+        { "label": "a", "text": "mon", "correct": false },
+        { "label": "b", "text": "procmon", "correct": false },
+        { "label": "c", "text": "pgrep", "correct": false },
+        { "label": "d", "text": "watch", "correct": true }
+      ],
+      "feedback": "Ejemplo: watch -n 1 \"ls -l\" actualiza la salida de ls -l cada segundo."
+    },
+    {
+      "id": 44,
+      "type": "single",
+      "question": "¿Qué comando permite dividir una terminal en múltiples sesiones (ejemplo: monitorear un log y editar un archivo simultáneamente)?",
+      "options": [
+        { "label": "a", "text": "screen", "correct": false },
+        { "label": "b", "text": "tmux", "correct": true },
+        { "label": "c", "text": "sess", "correct": false },
+        { "label": "d", "text": "termse", "correct": false }
+      ],
+      "feedback": "tmux es más moderno que screen y permite paneles divididos. Ejemplo:\n1. Inicia tmux: tmux\n2. Divide verticalmente: Ctrl+B %\n3. Divide horizontalmente: Ctrl+B \""
+    }
+  ]
+}

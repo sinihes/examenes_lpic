@@ -1,0 +1,533 @@
+{
+  "id": "13",
+  "title": "104:C - Device, Linux Filesystem, Filesystem Hierarchy Standard",
+  "questions": [
+     {
+      "id": 45,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos añade un journal a un sistema de archivos ext2 existente?",
+      "options": [
+        { "label": "a", "text": "tune2fs -jrn", "correct": false },
+        { "label": "b", "text": "e2fs -x", "correct": false },
+        { "label": "c", "text": "tune3fs", "correct": false },
+        { "label": "d", "text": "tune2fs -j", "correct": true }
+      ],
+      "feedback": "El comando tune2fs se utiliza para trabajar con sistemas de archivos ext2, ext3 y ext4. La opción -j añade un journal. Los otros comandos no son válidos."
+    },
+    {
+      "id": 46,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos crea un snapshot de un subvolumen btrfs?",
+      "options": [
+        { "label": "a", "text": "btrfs subvolume snapshot", "correct": true },
+        { "label": "b", "text": "btrfs snapshot --create", "correct": false },
+        { "label": "c", "text": "btrfs create snapshot", "correct": false },
+        { "label": "d", "text": "btrfs --create", "correct": false }
+      ],
+      "feedback": "El subcomando snapshot de btrfs subvolume crea un snapshot. Los otros comandos mostrados no son válidos."
+    },
+    {
+      "id": 47,
+      "type": "single",
+      "question": "¿Qué opción de xfs_repair forzará el reinicio del log incluso si puede haber metadatos dentro del log?",
+      "options": [
+        { "label": "a", "text": "-L", "correct": true },
+        { "label": "b", "text": "-v", "correct": false },
+        { "label": "c", "text": "-d", "correct": false },
+        { "label": "d", "text": "-V", "correct": false }
+      ],
+      "feedback": "La opción -L fuerza que el log sea limpiado o reiniciado, lo que puede causar pérdida de datos. La opción -v establece salida detallada; -V imprime la versión. La opción -d realiza una reparación peligrosa, que puede usarse en un sistema de archivos de solo lectura."
+    },{
+      "id": 48,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos cambiará correctamente el grupo propietario del archivo llamado a.out a 'users'?",
+      "options": [
+        { "label": "a", "text": "chgrp users a.out", "correct": true },
+        { "label": "b", "text": "chgrp a.out users", "correct": false },
+        { "label": "c", "text": "groupchg a.out users", "correct": false },
+        { "label": "d", "text": "grpchg users a.out", "correct": false }
+      ],
+      "feedback": "El comando chgrp puede usarse para cambiar el grupo propietario de un archivo. El orden correcto es chgrp <grupo> <archivo>."
+    },
+    {
+      "id": 49,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos monta un sistema de archivos en modo solo lectura?",
+      "options": [
+        { "label": "a", "text": "mount read-only", "correct": false },
+        { "label": "b", "text": "mount --read", "correct": false },
+        { "label": "c", "text": "mount -o ro", "correct": true },
+        { "label": "d", "text": "mount -or", "correct": false }
+      ],
+      "feedback": "La opción -o permite configurar una o más opciones para el comando mount, y 'ro' significa solo lectura. Nota que la opción -r también montará en modo solo lectura. Las otras opciones mostradas no son válidas."
+    },
+    {
+      "id": 50,
+      "type": "single",
+      "question": "Cuando usas tune2fs para establecer una opción extendida como stripe_width, ¿qué opción de línea de comandos se necesita para indicar que sigue una opción extendida?",
+      "options": [
+        { "label": "a", "text": "-extend", "correct": false },
+        { "label": "b", "text": "-E", "correct": true },
+        { "label": "c", "text": "-e", "correct": false },
+        { "label": "d", "text": "-f", "correct": false }
+      ],
+      "feedback": "La opción -E indica que sigue una opción extendida, como stripe_width. La opción -f fuerza una operación pero no debería ser necesaria para esta solución, y la opción -e establece el comportamiento ante errores. No existe una opción -extend."
+    },
+        {
+      "id": 51,
+      "type": "single",
+      "question": "¿Qué utilidad se utiliza para formatear discos GPT?",
+      "options": [
+        { "label": "a", "text": "gdisk", "correct": true },
+        { "label": "b", "text": "gptdisk", "correct": false },
+        { "label": "c", "text": "gpdisk", "correct": false },
+        { "label": "d", "text": "pgdisk", "correct": false }
+      ],
+      "feedback": "La utilidad gdisk es el equivalente de fdisk para trabajar con particiones GPT. Versiones más recientes de fdisk también pueden usarse para gestionar particiones GPT."
+    },
+    {
+      "id": 52,
+      "type": "single",
+      "question": "¿Cuál es el tamaño máximo de una partición en un disco formateado con MBR?",
+      "options": [
+        { "label": "a", "text": "2TB", "correct": true },
+        { "label": "b", "text": "4TB", "correct": false },
+        { "label": "c", "text": "2MB", "correct": false },
+        { "label": "d", "text": "512TB", "correct": false }
+      ],
+      "feedback": "El tamaño máximo para una partición en un disco MBR es de 2 terabytes. GPT ha reemplazado en gran medida a MBR en sistemas Linux más nuevos."
+    },
+    {
+      "id": 53,
+      "type": "single",
+      "question": "¿Qué opción de mkfs.ext4 puede usarse para evitar la reserva de bloques para uso del sistema o superusuario?",
+      "options": [
+        { "label": "a", "text": "-r 0", "correct": false },
+        { "label": "b", "text": "-r 0b", "correct": false },
+        { "label": "c", "text": "-m 0", "correct": true },
+        { "label": "d", "text": "-m 0b", "correct": false }
+      ],
+      "feedback": "La opción -m con 0 formateará la partición sin bloques reservados para superusuario o uso del sistema. La opción -r establece la revisión del sistema de archivos."
+    },
+    {
+      "id": 54,
+      "type": "single",
+      "question": "¿Cuál es el tiempo predeterminado en segundos que xfs_fsr usará para reorganizar un sistema de archivos?",
+      "options": [
+        { "label": "a", "text": "3600", "correct": false },
+        { "label": "b", "text": "7200", "correct": true },
+        { "label": "c", "text": "86400", "correct": false },
+        { "label": "d", "text": "5150", "correct": false }
+      ],
+      "feedback": "El tiempo predeterminado para la reorganización del sistema de archivos es de dos horas, o 7200 segundos."
+    },
+    {
+      "id": 55,
+      "type": "single",
+      "question": "Un usuario que es miembro del grupo personalizado 'admins' intenta leer el contenido de un archivo pero no es su propietario. En lugar de conceder acceso sudo a este archivo, ¿qué otra forma hay de conceder acceso de lectura, suponiendo que el archivo tiene actualmente permisos 640? Nota: debe elegir la respuesta más apropiada para satisfacer la necesidad minimizando privilegios adicionales.",
+      "options": [
+        { "label": "a", "text": "Conceder acceso root al usuario", "correct": false },
+        { "label": "b", "text": "Ejecutar chmod 777 en el archivo", "correct": false },
+        { "label": "c", "text": "Usar chgrp para cambiar la propiedad del grupo a 'admins'", "correct": true },
+        { "label": "d", "text": "Usar chown para cambiar la propiedad del archivo al usuario individual", "correct": false }
+      ],
+      "feedback": "Los permisos del archivo son 640, lo que significa que el grupo propietario puede leer el archivo. Por lo tanto, cambiar la propiedad del grupo debería tener menos efectos secundarios. Conceder acceso root no es preferible, especialmente porque el problema indicaba que no se prefería conceder sudo. Aunque usar chown en el archivo para cambiar el propietario también funcionaría, es probable que tenga efectos secundarios adicionales que podrían impedir que el propietario actual del archivo lo lea o escriba, y no hay suficiente información en el problema para eso. Finalmente, ejecutar chmod 777 casi nunca es la solución correcta para ningún problema en Linux."
+    },
+    {
+      "id": 56,
+      "type": "single",
+      "question": "¿Qué opción de lsblk muestra dispositivos vacíos?",
+      "options": [
+        { "label": "a", "text": "-g", "correct": false },
+        { "label": "b", "text": "-a", "correct": true },
+        { "label": "c", "text": "-r", "correct": false },
+        { "label": "d", "text": "-y", "correct": false }
+      ],
+      "feedback": "La opción -a muestra todos los dispositivos, incluso aquellos que están vacíos. La opción -r es para dispositivos raw, y las otras opciones no existen."
+    },
+    {
+      "id": 57,
+      "type": "single",
+      "question": "¿Para qué tipos de dispositivos se usa frecuentemente el punto de montaje /media/?",
+      "options": [
+        { "label": "a", "text": "Discos duros", "correct": false },
+        { "label": "b", "text": "SAN", "correct": false },
+        { "label": "c", "text": "NAS", "correct": false },
+        { "label": "d", "text": "Dispositivos USB", "correct": true }
+      ],
+      "feedback": "Los dispositivos USB y otros medios extraíbles normalmente se pueden encontrar en el punto de montaje /media/."
+    },
+    {
+      "id": 58,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos se usa para formatear un sistema de archivos exFAT?",
+      "options": [
+        { "label": "a", "text": "mkexfat", "correct": false },
+        { "label": "b", "text": "mkfat.ex", "correct": false },
+        { "label": "c", "text": "mkfs.exfat", "correct": true },
+        { "label": "d", "text": "mkfs2.exf", "correct": false }
+      ],
+      "feedback": "Los comandos relacionados con mkfs se usan típicamente para formatear sistemas de archivos en Linux. En este caso, mkfs.exfat es la opción correcta para formatear sistemas de archivos exFAT."
+    },
+    {
+      "id": 59,
+      "type": "single",
+      "question": "Otro administrador hizo un cambio en uno de los scripts locales utilizados para fines administrativos. El cambio también se reflejó inmediatamente en tu copia del script. Sin embargo, al examinar el archivo con ls, ves que parece ser un archivo normal. ¿Cuál es la causa probable de este escenario?",
+      "options": [
+        { "label": "a", "text": "El archivo se ejecutó después de editar", "correct": false },
+        { "label": "b", "text": "El administrador copió el archivo al tuyo", "correct": false },
+        { "label": "c", "text": "Tu archivo es un enlace duro al original", "correct": true },
+        { "label": "d", "text": "El archivo ha sido restaurado desde una copia de seguridad", "correct": false }
+      ],
+      "feedback": "El archivo casi seguro es un enlace duro al script original. Aunque ls no mostrará esta información, el comando stat mostrará que es un enlace y también mostrará el inodo al que está vinculado el archivo."
+    },
+    {
+      "id": 60,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos se usa para depurar un sistema de archivos formateado con XFS?",
+      "options": [
+        { "label": "a", "text": "debug_xfs", "correct": false },
+        { "label": "b", "text": "xfs_debug", "correct": false },
+        { "label": "c", "text": "xfs_db", "correct": true },
+        { "label": "d", "text": "debugxfs", "correct": false }
+      ],
+      "feedback": "El comando xfs_db se usa para depurar sistemas de archivos formateados con XFS."
+    },
+        {
+      "id": 61,
+      "type": "single",
+      "question": "Estás trabajando con un sistema de archivos ext2 y sospechas que el superbloque está corrupto. ¿Qué opción de e2fsck te permite especificar la ubicación de un superbloque alternativo?",
+      "options": [
+        { "label": "a", "text": "-B", "correct": false },
+        { "label": "b", "text": "-s", "correct": false },
+        { "label": "c", "text": "-b", "correct": true },
+        { "label": "d", "text": "-o", "correct": false }
+      ],
+      "feedback": "La opción -b se usa para especificar un superbloque alternativo y ayuda en el escenario descrito, donde el superbloque ha sido dañado. La opción -B especifica el tamaño del bloque. No existen las opciones -s o -o para e2fsck."
+    },
+    {
+      "id": 62,
+      "type": "single",
+      "question": "¿Qué opción de df muestra la salida numérica en incrementos de tamaño más grandes (MB, GB, TB, etc.) en lugar de en bytes?",
+      "options": [
+        { "label": "a", "text": "-h", "correct": true },
+        { "label": "b", "text": "-m", "correct": false },
+        { "label": "c", "text": "-n", "correct": false },
+        { "label": "d", "text": "-s", "correct": false }
+      ],
+      "feedback": "La opción -h es la bandera para formato legible por humanos y muestra la salida numérica en incrementos de tamaño más grandes en lugar de bytes. Las otras opciones no son válidas para df."
+    },
+    {
+      "id": 63,
+      "type": "single",
+      "question": "Asumiendo el uso de Bash como shell, ¿en qué archivo se puede configurar el umask para que la máscara de creación de archivos se establezca automáticamente al iniciar sesión?",
+      "options": [
+        { "label": "a", "text": "/etc/umask.def", "correct": false },
+        { "label": "b", "text": "/etc/profile", "correct": true },
+        { "label": "c", "text": "/etc/bash.d/umask", "correct": false },
+        { "label": "d", "text": "/etc/bash.umask", "correct": false }
+      ],
+      "feedback": "El archivo /etc/profile es una de las pocas ubicaciones donde se pueden establecer opciones predeterminadas para usuarios de Bash. Las otras ubicaciones de archivos mostradas no existen."
+    },
+    {
+      "id": 64,
+      "type": "single",
+      "question": "Necesitas que dos usuarios editen el mismo archivo pero mantengan sus cambios individuales. Otro administrador sugirió crear un enlace simbólico para el archivo. ¿Es un enlace simbólico la solución apropiada para este escenario y, si no, cuál sería?",
+      "options": [
+        { "label": "a", "text": "Un enlace simbólico no es apropiado porque los usuarios no pueden mantener sus propios cambios. Una copia sería una mejor opción.", "correct": true },
+        { "label": "b", "text": "Un enlace simbólico es apropiado aquí porque cada usuario puede acceder al archivo, asumiendo permisos de escritura.", "correct": false },
+        { "label": "c", "text": "Un enlace simbólico no es apropiado dado que los usuarios no tendrán permisos en enlaces simbólicos. Linux no puede cumplir con el escenario descrito.", "correct": false },
+        { "label": "d", "text": "Un enlace simbólico es apropiado porque los enlaces simbólicos tienen la capacidad de hacer control de versiones, permitiendo así el escenario.", "correct": false }
+      ],
+      "feedback": "Un enlace simbólico no funcionará. Los usuarios estarían editando el mismo archivo y, sin guardar con un nombre de archivo diferente, no podrían mantener sus propias ediciones."
+    },
+    {
+      "id": 65,
+      "type": "single",
+      "question": "Has eliminado un usuario del sistema y quieres determinar si este usuario todavía tiene archivos en el sistema. ¿Qué comando cumplirá este escenario?",
+      "options": [
+        { "label": "a", "text": "locate", "correct": false },
+        { "label": "b", "text": "find -uid", "correct": true },
+        { "label": "c", "text": "find -user", "correct": false },
+        { "label": "d", "text": "fileloc -user", "correct": false }
+      ],
+      "feedback": "El comando find se usará para este propósito, y la opción -uid será necesaria porque el usuario ya ha sido eliminado. Si el usuario no hubiera sido eliminado, entonces la opción -user seguiría funcionando."
+    },
+    {
+      "id": 66,
+      "type": "single",
+      "question": "Necesitas actualizar la base de datos de locate. ¿Cuál de los siguientes comandos se usa para este propósito?",
+      "options": [
+        { "label": "a", "text": "updatedb", "correct": true },
+        { "label": "b", "text": "locatedb", "correct": false },
+        { "label": "c", "text": "updlocdb", "correct": false },
+        { "label": "d", "text": "locdbupd", "correct": false }
+      ],
+      "feedback": "El comando updatedb se usa para actualizar la base de datos de locate. Los otros comandos no son válidos."
+    },
+    {
+      "id": 67,
+      "type": "single",
+      "question": "¿Qué opción de lsblk muestra el UUID de cada sistema de archivos?",
+      "options": [
+        { "label": "a", "text": "-u", "correct": false },
+        { "label": "b", "text": "-f", "correct": true },
+        { "label": "c", "text": "-o", "correct": false },
+        { "label": "d", "text": "-a", "correct": false }
+      ],
+      "feedback": "La opción -f muestra los UUIDs de los sistemas de archivos montados en el sistema. La opción -a muestra todos los dispositivos, la opción -o permite especificar columnas de salida, y la opción -u no existe."
+    },
+    {
+      "id": 68,
+      "type": "single",
+      "question": "¿Qué opción de mkswap verifica el dispositivo en busca de bloques defectuosos antes de formatear?",
+      "options": [
+        { "label": "a", "text": "-b", "correct": false },
+        { "label": "b", "text": "-B", "correct": false },
+        { "label": "c", "text": "-c", "correct": true },
+        { "label": "d", "text": "-d", "correct": false }
+      ],
+      "feedback": "La opción -c verifica bloques defectuosos antes de formatear. Las otras opciones no son válidas con mkswap."
+    },
+    {
+      "id": 69,
+      "type": "single",
+      "question": "Estás examinando la salida de ls -la y un archivo contiene los permisos -rwSrw-r--. ¿A qué se refiere la S?",
+      "options": [
+        { "label": "a", "text": "Ejecución específica", "correct": false },
+        { "label": "b", "text": "Formateo de fuente", "correct": false },
+        { "label": "c", "text": "Ejecución selectiva", "correct": false },
+        { "label": "d", "text": "Sticky bit", "correct": true }
+      ],
+      "feedback": "El sticky bit ha sido establecido en el archivo como lo denota una S mayúscula."
+    },
+        {
+      "id": 70,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos muestra el uso de inodos en todos los sistemas de archivos?",
+      "options": [
+        { "label": "a", "text": "df -i", "correct": true },
+        { "label": "b", "text": "ls -i", "correct": false },
+        { "label": "c", "text": "du -i", "correct": false },
+        { "label": "d", "text": "dm -i", "correct": false }
+      ],
+      "feedback": "La opción -i para df produce información sobre inodos en todos los sistemas de archivos. La opción ls -i mostrará listados de inodos, pero solo para el directorio actual. La opción -i no es válida para du, y dm no existe como comando."
+    },
+    {
+      "id": 71,
+      "type": "single",
+      "question": "Necesitas cambiar los permisos de un archivo llamado sync.sh para que tenga setgid. El archivo normalmente tiene permisos 755. ¿Cuál de los siguientes comandos realiza esta tarea?",
+      "options": [
+        { "label": "a", "text": "chmod 2775 sync.sh", "correct": false },
+        { "label": "b", "text": "chmod u+s sync.sh", "correct": false },
+        { "label": "c", "text": "chmod 2755 sync.sh", "correct": true },
+        { "label": "d", "text": "chmod 4755 sync.sh", "correct": false }
+      ],
+      "feedback": "Usando formato octal, 4 es para usuario, 2 para grupo y 1 para sticky bit. Por lo tanto, 2755 establecería setgid para el archivo."
+    },
+    {
+      "id": 72,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos encuentra archivos con extensión .sql en todo el sistema de archivos?",
+      "options": [
+        { "label": "a", "text": "find . -name \"*.sql\"", "correct": false },
+        { "label": "b", "text": "find /root -ext sql", "correct": false },
+        { "label": "c", "text": "find / -name \"*.sql\"", "correct": true },
+        { "label": "d", "text": "find / -exten \".sql\"", "correct": false }
+      ],
+      "feedback": "La opción -name se usa para este propósito, y / indica la raíz del sistema. Se usa un comodín * para indicar todos los nombres de archivo que terminan en .sql, como se describe en el escenario."
+    },
+    {
+      "id": 73,
+      "type": "single",
+      "question": "Cuando se trabaja con /etc/fstab para montar por UUID, ¿qué sintaxis es correcta como primera columna en /etc/fstab, asumiendo un UUID denotado por <UUID>?",
+      "options": [
+        { "label": "a", "text": "<UUID>", "correct": false },
+        { "label": "b", "text": "UUID=<UUID>", "correct": true },
+        { "label": "c", "text": "ID=<UUID>", "correct": false },
+        { "label": "d", "text": "GPT=<UUID>", "correct": false }
+      ],
+      "feedback": "La sintaxis UUID= es correcta para el archivo /etc/fstab."
+    },
+    {
+      "id": 74,
+      "type": "single",
+      "question": "¿Qué opción de du muestra información sobre el uso de inodos?",
+      "options": [
+        { "label": "a", "text": "-i", "correct": false },
+        { "label": "b", "text": "-h", "correct": false },
+        { "label": "c", "text": "--inodes", "correct": true },
+        { "label": "d", "text": "-d", "correct": false }
+      ],
+      "feedback": "La opción --inodes muestra el uso de inodos con du. La opción -h es legible por humanos, y -d establece la profundidad máxima. No existe una opción -i para du."
+    },
+    {
+      "id": 75,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos find buscará archivos que tengan un tamaño superior a 1GB?",
+      "options": [
+        { "label": "a", "text": "find -size +1G", "correct": true },
+        { "label": "b", "text": "find -size 1GB", "correct": false },
+        { "label": "c", "text": "find -fssize +1GB", "correct": false },
+        { "label": "d", "text": "find -filesize +1G", "correct": false }
+      ],
+      "feedback": "La opción -size se usa con find para este propósito, y el argumento +1G buscará archivos mayores a 1 gigabyte. Nota que si se omite el +, solo se encontrarán archivos del tamaño exacto."
+    },
+    {
+      "id": 76,
+      "type": "single",
+      "question": "Tienes un conjunto de bibliotecas instaladas en /usr/local/lib y te gustaría asegurarte de que también estén disponibles en /usr/lib. ¿Cuál es la forma preferida de hacer que las bibliotecas estén disponibles en esta ubicación?",
+      "options": [
+        { "label": "a", "text": "Copiar las bibliotecas", "correct": false },
+        { "label": "b", "text": "Crear un enlace simbólico", "correct": true },
+        { "label": "c", "text": "Mover las bibliotecas", "correct": false },
+        { "label": "d", "text": "Crear un script para sincronizar las bibliotecas entre las dos ubicaciones con rsync", "correct": false }
+      ],
+      "feedback": "Un enlace simbólico es el método preferido porque no requiere el mantenimiento adicional que necesitaría un script o la copia para mantener las bibliotecas actualizadas. Mover las bibliotecas puede tener consecuencias no deseadas si otro programa depende de ellas en esa ubicación."
+    },
+    {
+      "id": 77,
+      "type": "single",
+      "question": "Estás ejecutando fsck en un sistema de archivos ext3, y el proceso está tardando más de lo esperado y requiere entrada del administrador para corregir problemas. ¿Qué opción podría agregarse a fsck la próxima vez para que el comando intente corregir errores automáticamente sin intervención?",
+      "options": [
+        { "label": "a", "text": "-o", "correct": false },
+        { "label": "b", "text": "-V", "correct": false },
+        { "label": "c", "text": "-y", "correct": true },
+        { "label": "d", "text": "-f", "correct": false }
+      ],
+      "feedback": "La opción -y intentará reparar automáticamente, esencialmente respondiendo y o yes en lugar de solicitar entrada. De las otras opciones, solo -V es válida y producirá salida detallada."
+    },
+    {
+      "id": 78,
+      "type": "single",
+      "question": "¿Cuál de las siguientes describe una diferencia principal entre los sistemas de archivos ext2 y ext3?",
+      "options": [
+        { "label": "a", "text": "ext3 fue principalmente una actualización de corrección de errores para ext2", "correct": false },
+        { "label": "b", "text": "ext3 incluye journaling para el sistema de archivos", "correct": true },
+        { "label": "c", "text": "ext3 cambió completamente las herramientas necesarias para la gestión de discos", "correct": false },
+        { "label": "d", "text": "Los sistemas de archivos ext3 no tienen diferencias significativas", "correct": false }
+      ],
+      "feedback": "La adición de journaling en ext3 aumentó la confiabilidad y el rendimiento del sistema de archivos."
+    },
+    {
+      "id": 79,
+      "type": "single",
+      "question": "¿Qué opción de umask mostrará los permisos que se usarán en formato POSIX (Portable Operating System Interface)?",
+      "options": [
+        { "label": "a", "text": "-P", "correct": false },
+        { "label": "b", "text": "-p", "correct": false },
+        { "label": "c", "text": "-S", "correct": true },
+        { "label": "d", "text": "-v", "correct": false }
+      ],
+      "feedback": "La opción -S muestra la salida en un formato como u=rwx,g=rx,o=rx. Las otras opciones enumeradas no realizan la operación deseada."
+    },
+    {
+      "id": 80,
+      "type": "single",
+      "question": "Asumiendo que un disco USB contiene una sola partición y está disponible en /dev/sdb, ¿qué comando monta el disco en /media/usb?",
+      "options": [
+        { "label": "a", "text": "mount /dev/sdb1 /media/usb", "correct": true },
+        { "label": "b", "text": "usbconnect /dev/sdb0 /media/usb", "correct": false },
+        { "label": "c", "text": "mount /dev/sdb0 /media/usb", "correct": false },
+        { "label": "d", "text": "usbmount /dev/sdb1 /media/usb", "correct": false }
+      ],
+      "feedback": "El comando mount se usa para montar unidades en Linux. Se esperan como argumentos los puntos de origen y destino del montaje. Las particiones de disco comienzan en el número 1, por lo que la primera partición es la número 1."
+    },
+        {
+      "id": 81,
+      "type": "single",
+      "question": "¿Qué opción de ln crea un enlace simbólico a otro archivo?",
+      "options": [
+        { "label": "a", "text": "-sl", "correct": false },
+        { "label": "b", "text": "-s", "correct": true },
+        { "label": "c", "text": "-l", "correct": false },
+        { "label": "d", "text": "--ln", "correct": false }
+      ],
+      "feedback": "La opción -s de ln crea un enlace simbólico o symlink."
+    },
+    {
+      "id": 82,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos puede usarse si necesitas localizar varios elementos de un comando dado, como sus binarios y páginas man?",
+      "options": [
+        { "label": "a", "text": "whatis", "correct": false },
+        { "label": "b", "text": "find", "correct": false },
+        { "label": "c", "text": "whereis", "correct": true },
+        { "label": "d", "text": "ls", "correct": false }
+      ],
+      "feedback": "El comando whereis muestra información pertinente sobre el comando dado como argumento. Por ejemplo, escribir whereis apache2 en un sistema Debian mostrará la ubicación del binario, la ubicación del archivo de configuración y otros detalles relevantes."
+    },
+    {
+      "id": 83,
+      "type": "single",
+      "question": "¿Qué opción en /etc/updatedb.conf eliminará una ruta de los resultados de búsqueda?",
+      "options": [
+        { "label": "a", "text": "PRUNEPATHS", "correct": true },
+        { "label": "b", "text": "EXCLUDEPATHS", "correct": false },
+        { "label": "c", "text": "INCLUDEEXCLUDE", "correct": false },
+        { "label": "d", "text": "SEPARATEPATH", "correct": false }
+      ],
+      "feedback": "La opción PRUNEPATHS acepta una lista de rutas separadas por espacios para eliminar de los resultados. Las otras opciones listadas no existen."
+    },
+    {
+      "id": 84,
+      "type": "single",
+      "question": "Según el estándar de jerarquía del sistema de archivos (FHS), ¿cuál es la ubicación correcta para datos específicos del sitio de un servidor?",
+      "options": [
+        { "label": "a", "text": "/etc", "correct": false },
+        { "label": "b", "text": "/var", "correct": false },
+        { "label": "c", "text": "/tmp", "correct": false },
+        { "label": "d", "text": "/srv", "correct": true }
+      ],
+      "feedback": "La jerarquía /srv se utiliza para datos de programas de servidor. La jerarquía /etc es para información de configuración; /var también contiene archivos de datos pero variables, como archivos de correo. El directorio /tmp es para archivos temporales."
+    },
+    {
+      "id": 85,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos habilita el sticky bit para un usuario en un archivo llamado homescript.sh?",
+      "options": [
+        { "label": "a", "text": "chmod +sticky homescript.sh", "correct": false },
+        { "label": "b", "text": "chmod 755 homescript.sh", "correct": false },
+        { "label": "c", "text": "chmod u+s homescript.sh", "correct": true },
+        { "label": "d", "text": "chown u+sticky homescript.sh", "correct": false }
+      ],
+      "feedback": "El comando chmod se usa para este propósito, y la opción u+s establece el sticky bit para el usuario en el objetivo especificado."
+    },
+    {
+      "id": 86,
+      "type": "single",
+      "question": "¿Qué opción del comando mount montará todos los sistemas de archivos actualmente disponibles en /etc/fstab?",
+      "options": [
+        { "label": "a", "text": "-g", "correct": false },
+        { "label": "b", "text": "-a", "correct": true },
+        { "label": "c", "text": "-r", "correct": false },
+        { "label": "d", "text": "-y", "correct": false }
+      ],
+      "feedback": "La opción -a monta todos los sistemas de archivos en /etc/fstab que estén actualmente disponibles. Esta opción se usa típicamente si los puntos de montaje no se montan al arrancar o si se agrega otro punto de montaje al sistema después de que se haya iniciado."
+    },
+    {
+      "id": 87,
+      "type": "single",
+      "question": "¿Qué comando se usa para formatear una partición de swap?",
+      "options": [
+        { "label": "a", "text": "fdisk", "correct": false },
+        { "label": "b", "text": "mkswap", "correct": true },
+        { "label": "c", "text": "formatswap", "correct": false },
+        { "label": "d", "text": "format -s", "correct": false }
+      ],
+      "feedback": "El comando mkswap formatea una partición de swap. El comando fdisk se usa para crear la partición en sí pero no para formatearla. Las otras dos opciones no existen."
+    },
+    {
+      "id": 88,
+      "type": "single",
+      "question": "¿Qué comando y opción se usan para mostrar el número de veces que se ha montado un sistema de archivos?",
+      "options": [
+        { "label": "a", "text": "tune2fs -l", "correct": true },
+        { "label": "b", "text": "cat /etc/fstab", "correct": false },
+        { "label": "c", "text": "mount -a", "correct": false },
+        { "label": "d", "text": "less /etc/fsmnt", "correct": false }
+      ],
+      "feedback": "El comando tune2fs muestra mucha información sobre sistemas de archivos, y cuando se usa con la opción -l, la salida incluye el número de veces que se ha montado el sistema de archivos."
+    }
+  ]
+}

@@ -1,0 +1,584 @@
+{
+  "id": "17",
+  "title": "104:D - Devices, Linux Filesystems, and the Filesystem Hierarchy Standard",
+  "questions": [
+    {
+      "id": 1,
+      "type": "single",
+      "question": "¿Qué comando se puede usar para determinar la ubicación de un ejecutable que se ejecutaría si se escribe en el entorno y ubicación actual?",
+      "options": [
+        { "label": "a", "text": "which", "correct": true },
+        { "label": "b", "text": "what", "correct": false },
+        { "label": "c", "text": "whatis", "correct": false },
+        { "label": "d", "text": "when", "correct": false }
+      ],
+      "feedback": "El comando 'which' devuelve la ruta completa al comando dado, y es útil para determinar tanto si un comando está disponible como la ubicación desde la cual se ejecutará."
+    },
+    {
+      "id": 2,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos cambiará correctamente la propiedad del grupo del archivo llamado 'a.out' a 'users'?",
+      "options": [
+        { "label": "a", "text": "chgrp users a.out", "correct": true },
+        { "label": "b", "text": "chgrp a.out users", "correct": false },
+        { "label": "c", "text": "groupchg a.out users", "correct": false },
+        { "label": "d", "text": "grpchg users a.out", "correct": false }
+      ],
+      "feedback": "El comando 'chgrp' se puede usar para cambiar la propiedad del grupo de un archivo. El orden es 'chgrp <nombre_grupo> <objetivo>'."
+    },
+    {
+      "id": 3,
+      "type": "single",
+      "question": "Otro administrador hizo un cambio en uno de los scripts locales usados para fines administrativos. El cambio también se reflejó inmediatamente en tu copia del script. Sin embargo, al examinar el archivo con 'ls', parece ser un archivo normal. ¿Cuál es la causa probable de este escenario?",
+      "options": [
+        { "label": "a", "text": "El archivo se ejecutó después de la edición.", "correct": false },
+        { "label": "b", "text": "El administrador copió el archivo al tuyo.", "correct": false },
+        { "label": "c", "text": "Tu archivo es un enlace duro al original.", "correct": true },
+        { "label": "d", "text": "El archivo ha sido restaurado desde una copia de seguridad.", "correct": false }
+      ],
+      "feedback": "El archivo es casi con seguridad un enlace duro al script original. Aunque 'ls' no muestra esta información, el comando 'stat' mostrará que es un enlace y también mostrará el inodo al que está vinculado el archivo."
+    },
+    {
+      "id": 4,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos muestra el uso de inodos en todos los sistemas de archivos?",
+      "options": [
+        { "label": "a", "text": "df -i", "correct": true },
+        { "label": "b", "text": "ls -i", "correct": false },
+        { "label": "c", "text": "du -i", "correct": false },
+        { "label": "d", "text": "dm -i", "correct": false }
+      ],
+      "feedback": "La opción '-i' en 'df' produce información sobre inodos en todos los sistemas de archivos. La opción 'ls -i' lista inodos pero solo para el directorio actual. La opción '-i' no es válida para 'du', y 'dm' no existe como comando."
+    },
+    {
+      "id": 5,
+      "type": "single",
+      "question": "Al ejecutar 'fsck' en un sistema de archivos ext3, el proceso está tardando más de lo esperado y requiere intervención del administrador para corregir problemas. ¿Qué opción podría agregarse a 'fsck' la próxima vez para que el comando intente corregir errores automáticamente sin intervención?",
+      "options": [
+        { "label": "a", "text": "-o", "correct": false },
+        { "label": "b", "text": "-V", "correct": false },
+        { "label": "c", "text": "-y", "correct": true },
+        { "label": "d", "text": "-f", "correct": false }
+      ],
+      "feedback": "La opción '-y' intentará reparar automáticamente, respondiendo 'y' (sí) en lugar de solicitar confirmación. De las otras opciones, solo '-V' es válida y produce una salida detallada."
+    },
+    {
+      "id": 6,
+      "type": "single",
+      "question": "Después de insertar un nuevo disco duro en el sistema, ¿cuál es el orden correcto para preparar el disco para su uso en Linux?",
+      "options": [
+        { "label": "a", "text": "Usar 'fdisk' para crear particiones y luego montar las particiones.", "correct": false },
+        { "label": "b", "text": "Montar las particiones.", "correct": false },
+        { "label": "c", "text": "Usar 'fdisk' para crear particiones y 'mount -a' para montar todas las particiones recién creadas.", "correct": false },
+        { "label": "d", "text": "Usar 'fdisk' para crear particiones, luego formatear las particiones con algo como 'mkfs', y finalmente montar las particiones.", "correct": true }
+      ],
+      "feedback": "El primer paso es usar 'fdisk' para crear una o más particiones, luego formatear las particiones, y finalmente montarlas para su uso. El comando 'fdisk' se usa con varios tipos de discos, incluyendo particiones basadas en MBR."
+    },
+    {
+      "id": 7,
+      "type": "single",
+      "question": "Estás usando un SAN (red de área de almacenamiento) que sigue causando errores en tu sistema Linux debido a un módulo del kernel inapropiado creado por el vendedor del SAN. Cuando el SAN envía actualizaciones, hace que el sistema de archivos se monte como solo lectura. ¿Qué comando y opción puedes usar para cambiar el comportamiento del sistema de archivos para tener en cuenta el error del SAN?",
+      "options": [
+        { "label": "a", "text": "mount --continue", "correct": false },
+        { "label": "b", "text": "tune2fs -e continue", "correct": true },
+        { "label": "c", "text": "mkfs --no-remount", "correct": false },
+        { "label": "d", "text": "mount -o remount", "correct": false }
+      ],
+      "feedback": "El comando 'tune2fs' puede usarse para este propósito, pero debe usarse con cuidado porque puede resultar en corrupción de datos."
+    },
+    {
+      "id": 8,
+      "type": "single",
+      "question": "¿Cuál de las siguientes opciones describe una diferencia principal entre los sistemas de archivos ext2 y ext3?",
+      "options": [
+        { "label": "a", "text": "ext3 fue principalmente una actualización de corrección de errores para ext2.", "correct": false },
+        { "label": "b", "text": "ext3 incluye journaling para el sistema de archivos.", "correct": true },
+        { "label": "c", "text": "ext3 cambió completamente las herramientas necesarias para la gestión de discos.", "correct": false },
+        { "label": "d", "text": "ext3 no tiene diferencias significativas.", "correct": false }
+      ],
+      "feedback": "La adición de journaling en ext3 aumentó la confiabilidad y el rendimiento del sistema de archivos."
+    },
+    {
+      "id": 9,
+      "type": "single",
+      "question": "¿Qué opción de 'umask' mostrará los permisos en formato POSIX?",
+      "options": [
+        { "label": "a", "text": "-P", "correct": false },
+        { "label": "b", "text": "-p", "correct": false },
+        { "label": "c", "text": "-S", "correct": true },
+        { "label": "d", "text": "-v", "correct": false }
+      ],
+      "feedback": "La opción '-S' muestra la salida en un formato como 'u=rwx,g=rx,o=rx'. Las otras opciones enumeradas en este problema no existen."
+    },
+    {
+      "id": 10,
+      "type": "single",
+      "question": "¿Qué opción de 'ln' crea un enlace simbólico a otro archivo?",
+      "options": [
+        { "label": "a", "text": "-sl", "correct": false },
+        { "label": "b", "text": "-s", "correct": true },
+        { "label": "c", "text": "-l", "correct": false },
+        { "label": "d", "text": "--ln", "correct": false }
+      ],
+      "feedback": "La opción '-s' en 'ln' crea un enlace simbólico o symlink."
+    },
+        {
+      "id": 11,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos se puede usar si necesitas ubicar varios elementos de un comando dado, como sus binarios y páginas man?",
+      "options": [
+        { "label": "a", "text": "whatis", "correct": false },
+        { "label": "b", "text": "find", "correct": false },
+        { "label": "c", "text": "whereis", "correct": true },
+        { "label": "d", "text": "ls", "correct": false }
+      ],
+      "feedback": "El comando 'whereis' muestra información pertinente sobre el comando dado como argumento. Por ejemplo, al ingresar 'whereis apache2' en un sistema Debian mostrará la ubicación del binario, la ubicación del archivo de configuración y otros detalles relevantes."
+    },
+    {
+      "id": 12,
+      "type": "single",
+      "question": "¿Qué opción en /etc/updatedb.conf eliminará una ruta de inclusión en los resultados?",
+      "options": [
+        { "label": "a", "text": "PRUNEPATHS", "correct": true },
+        { "label": "b", "text": "EXCLUDEPATHS", "correct": false },
+        { "label": "c", "text": "INCLUDEEXCLUDE", "correct": false },
+        { "label": "d", "text": "SEPARATEPATH", "correct": false }
+      ],
+      "feedback": "La opción PRUNEPATHS acepta una lista de rutas separadas por espacios para eliminar de los resultados. Las otras opciones enumeradas en esta pregunta no existen."
+    },
+    {
+      "id": 13,
+      "type": "single",
+      "question": "Según el FHS, ¿cuál es la ubicación correcta para datos específicos del sitio de un servidor?",
+      "options": [
+        { "label": "a", "text": "/etc", "correct": false },
+        { "label": "b", "text": "/var", "correct": false },
+        { "label": "c", "text": "/tmp", "correct": false },
+        { "label": "d", "text": "/srv", "correct": true }
+      ],
+      "feedback": "La jerarquía /srv se utiliza para datos de programas de servidor. La jerarquía /etc es para información de configuración, mientras que /var también se usa para archivos de datos pero variables como archivos de correo. El directorio /tmp es para archivos temporales."
+    },
+    {
+      "id": 14,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos habilita el sticky bit para un usuario en un archivo llamado homescript.sh?",
+      "options": [
+        { "label": "a", "text": "chmod +sticky homescript.sh", "correct": false },
+        { "label": "b", "text": "chmod 755 homescript.sh", "correct": false },
+        { "label": "c", "text": "chmod u+s homescript.sh", "correct": true },
+        { "label": "d", "text": "chown u+sticky homescript.sh", "correct": false }
+      ],
+      "feedback": "El comando chmod se usa para este propósito, y la opción u+s establece el sticky bit para el usuario en el objetivo especificado."
+    },
+    {
+      "id": 15,
+      "type": "single",
+      "question": "¿Qué opción del comando mount montará todos los sistemas de archivos actualmente disponibles en /etc/fstab?",
+      "options": [
+        { "label": "a", "text": "-f", "correct": false },
+        { "label": "b", "text": "-d", "correct": false },
+        { "label": "c", "text": "-a", "correct": true },
+        { "label": "d", "text": "-m", "correct": false }
+      ],
+      "feedback": "La opción -a monta todos los sistemas de archivos en /etc/fstab que están actualmente disponibles. De las otras opciones listadas, solo la opción -f está disponible y es un atajo para la opción 'fake' que no hace nada excepto realizar una prueba simulada del montaje."
+    },
+    {
+      "id": 16,
+      "type": "single",
+      "question": "¿Qué comando se usa para formatear una partición swap?",
+      "options": [
+        { "label": "a", "text": "fdisk", "correct": false },
+        { "label": "b", "text": "mkswap", "correct": true },
+        { "label": "c", "text": "formatswap", "correct": false },
+        { "label": "d", "text": "format -s", "correct": false }
+      ],
+      "feedback": "El comando mkswap formatea una partición swap. El comando fdisk se usa para crear la partición en sí pero no para formatearla. Las otras dos opciones no existen."
+    },
+    {
+      "id": 17,
+      "type": "single",
+      "question": "¿Qué comando y opción se usan para mostrar el número de veces que se ha montado un sistema de archivos?",
+      "options": [
+        { "label": "a", "text": "tune2fs -h", "correct": true },
+        { "label": "b", "text": "cat /etc/fstab", "correct": false },
+        { "label": "c", "text": "mount -a", "correct": false },
+        { "label": "d", "text": "less /etc/fsmnt", "correct": false }
+      ],
+      "feedback": "El comando tune2fs muestra mucha información sobre sistemas de archivos, incluido el número de veces que se ha montado el sistema de archivos."
+    },
+    {
+      "id": 18,
+      "type": "single",
+      "question": "¿Qué opción de xfs_metadump muestra un indicador de progreso?",
+      "options": [
+        { "label": "a", "text": "-g", "correct": true },
+        { "label": "b", "text": "-p", "correct": false },
+        { "label": "c", "text": "-f", "correct": false },
+        { "label": "d", "text": "-v", "correct": false }
+      ],
+      "feedback": "La opción -g muestra el progreso del volcado. Las otras opciones listadas no existen."
+    },
+    {
+      "id": 19,
+      "type": "single",
+      "question": "¿Qué comando se usa para ejecutar una verificación de cuotas de usuario en el sistema de archivos?",
+      "options": [
+        { "label": "a", "text": "quota -u", "correct": false },
+        { "label": "b", "text": "runquota -u", "correct": false },
+        { "label": "c", "text": "qcheck -u", "correct": false },
+        { "label": "d", "text": "quotacheck -u", "correct": true }
+      ],
+      "feedback": "El comando quotacheck se usa para actualizar el archivo de cuotas para el sistema de archivos dado. El comando quota -u mostrará la cuota actual para un usuario dado. Los otros comandos no existen."
+    },
+    {
+      "id": 20,
+      "type": "single",
+      "question": "El sistema se está quedando sin espacio en disco dentro de la partición del directorio home y no se han habilitado cuotas. ¿Qué comando puedes usar para determinar los directorios que podrían contener archivos grandes?",
+      "options": [
+        { "label": "a", "text": "du", "correct": true },
+        { "label": "b", "text": "df", "correct": false },
+        { "label": "c", "text": "ls", "correct": false },
+        { "label": "d", "text": "locate", "correct": false }
+      ],
+      "feedback": "El comando du informará sobre el uso del disco de manera recursiva, a diferencia de los otros comandos mostrados aquí."
+    },
+        {
+      "id": 21,
+      "type": "single",
+      "question": "¿Qué archivo contiene información sobre los sistemas de archivos a montar, sus particiones y las opciones que se deben usar para montarlos?",
+      "options": [
+        { "label": "a", "text": "/etc/filesystems", "correct": false },
+        { "label": "b", "text": "/etc/mounts", "correct": false },
+        { "label": "c", "text": "/etc/fstab", "correct": true },
+        { "label": "d", "text": "/srv/mounts", "correct": false }
+      ],
+      "feedback": "El archivo /etc/fstab se utiliza para almacenar información sobre los sistemas de archivos que se deben montar dentro del sistema."
+    },
+    {
+      "id": 22,
+      "type": "single",
+      "question": "Según el FHS, ¿cuál es el punto de montaje adecuado para medios removibles?",
+      "options": [
+        { "label": "a", "text": "/etc", "correct": false },
+        { "label": "b", "text": "/srv", "correct": false },
+        { "label": "c", "text": "/tmp", "correct": false },
+        { "label": "d", "text": "/media", "correct": true }
+      ],
+      "feedback": "El punto de montaje /media se utiliza para medios removibles. Consulte https://wiki.linuxfoundation.org/en/FHS para obtener más información sobre el FHS."
+    },
+    {
+      "id": 23,
+      "type": "single",
+      "question": "¿Qué archivo contiene información sobre los sistemas de archivos actualmente montados, incluyendo sus opciones de montaje?",
+      "options": [
+        { "label": "a", "text": "/etc/mtab", "correct": true },
+        { "label": "b", "text": "/etc/fstab", "correct": false },
+        { "label": "c", "text": "/tmp/files", "correct": false },
+        { "label": "d", "text": "/etc/filesystems", "correct": false }
+      ],
+      "feedback": "El archivo /etc/mtab contiene los sistemas de archivos actualmente montados. Nota: /etc/fstab contiene información del sistema de archivos pero no sobre qué sistemas de archivos están montados actualmente."
+    },
+    {
+      "id": 24,
+      "type": "single",
+      "question": "¿Qué opción de umount hará que el comando intente volver a montar el sistema de archivos en modo solo lectura si falla el proceso de desmontaje?",
+      "options": [
+        { "label": "a", "text": "-o", "correct": false },
+        { "label": "b", "text": "-r", "correct": true },
+        { "label": "c", "text": "-f", "correct": false },
+        { "label": "d", "text": "-v", "correct": false }
+      ],
+      "feedback": "La opción -r hace que umount intente volver a montar en modo solo lectura. La opción -v es el modo verbose, y la opción -f fuerza la operación. La opción -o no existe."
+    },
+    {
+      "id": 25,
+      "type": "single",
+      "question": "El comando umask reporta la máscara como 022. ¿Qué permiso tendrá un archivo no ejecutable recién creado?",
+      "options": [
+        { "label": "a", "text": "u+rw, g+r, w+r", "correct": false },
+        { "label": "b", "text": "755", "correct": false },
+        { "label": "c", "text": "644", "correct": true },
+        { "label": "d", "text": "a+r", "correct": false }
+      ],
+      "feedback": "El valor de umask 022 se traducirá en permisos 644 en un nuevo archivo no ejecutable."
+    },
+    {
+      "id": 26,
+      "type": "single",
+      "question": "Al usar ls -la para obtener un listado de directorio, ves un objeto con permisos lrwxrwxrwx. ¿Qué tipo de objeto es este?",
+      "options": [
+        { "label": "a", "text": "Es un directorio.", "correct": false },
+        { "label": "b", "text": "Es un enlace simbólico.", "correct": true },
+        { "label": "c", "text": "Es un archivo temporal.", "correct": false },
+        { "label": "d", "text": "Es un archivo local.", "correct": false }
+      ],
+      "feedback": "La 'l' en el listado indica un enlace simbólico. No hay forma de saber si un archivo o directorio es temporal. Un directorio mostrará una 'd' en lugar de una 'l'. Los enlaces simbólicos no son copias de archivos sino más bien similares a accesos directos. Los cambios en el contenido del enlace simbólico también cambian el archivo fuente."
+    },
+    {
+      "id": 27,
+      "type": "single",
+      "question": "¿Qué comando y opción mostrarán un resumen del uso de cuotas en todos los sistemas de archivos que actualmente están en modo lectura-escritura con cuotas habilitadas?",
+      "options": [
+        { "label": "a", "text": "repq -a", "correct": false },
+        { "label": "b", "text": "repquota -a", "correct": true },
+        { "label": "c", "text": "quotarun -a", "correct": false },
+        { "label": "d", "text": "quota -u", "correct": false }
+      ],
+      "feedback": "El comando repquota se utiliza para este propósito, y la opción -a mostrará información para todos los sistemas de archivos."
+    },
+    {
+      "id": 28,
+      "type": "single",
+      "question": "El comando locate está mostrando información desactualizada. ¿Qué comando se debe ejecutar para que el comando locate actualice su base de datos?",
+      "options": [
+        { "label": "a", "text": "locatedb -u", "correct": false },
+        { "label": "b", "text": "locate -u", "correct": false },
+        { "label": "c", "text": "updatedb", "correct": true },
+        { "label": "d", "text": "updatelocat", "correct": false }
+      ],
+      "feedback": "El comando updatedb actualizará la base de datos utilizada por el comando locate."
+    },
+    {
+      "id": 29,
+      "type": "single",
+      "question": "¿Qué comando interno del shell se puede usar para determinar qué comando se ejecutará?",
+      "options": [
+        { "label": "a", "text": "type", "correct": true },
+        { "label": "b", "text": "when", "correct": false },
+        { "label": "c", "text": "find", "correct": false },
+        { "label": "d", "text": "help", "correct": false }
+      ],
+      "feedback": "El comando interno type devuelve la ubicación que el shell usará para ejecutar el comando dado. El comando find no puede usarse para este propósito, y los otros comandos no existen."
+    },
+    {
+      "id": 30,
+      "type": "single",
+      "question": "¿Qué opción de chown cambia recursivamente la propiedad?",
+      "options": [
+        { "label": "a", "text": "-f", "correct": false },
+        { "label": "b", "text": "-R", "correct": true },
+        { "label": "c", "text": "-a", "correct": false },
+        { "label": "d", "text": "-m", "correct": false }
+      ],
+      "feedback": "La opción -R realizará el cambio de propiedad de manera recursiva."
+    },
+        {
+      "id": 31,
+      "type": "single",
+      "question": "¿Cuál de las siguientes opciones representa el formato correcto para el archivo /etc/fstab?",
+      "options": [
+        { "label": "a", "text": "<directorio> <dispositivo> <tipo> <opciones>", "correct": false },
+        { "label": "b", "text": "<dispositivo> <tipo> <opciones>", "correct": false },
+        { "label": "c", "text": "<dispositivo> <tipo> <opciones> <directorio> <dump> <fsck>", "correct": false },
+        { "label": "d", "text": "<dispositivo> <directorio> <tipo> <opciones> <dump> <fsck>", "correct": true }
+      ],
+      "feedback": "El orden correcto es: dispositivo (UUID o partición), seguido del directorio donde montar ese dispositivo, luego su tipo y opciones, y finalmente las configuraciones dump y fsck."
+    },
+    {
+      "id": 32,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos se usa para identificar el UUID de las particiones?",
+      "options": [
+        { "label": "a", "text": "blkid", "correct": true },
+        { "label": "b", "text": "ls", "correct": false },
+        { "label": "c", "text": "find", "correct": false },
+        { "label": "d", "text": "cat", "correct": false }
+      ],
+      "feedback": "El comando blkid mostrará los UUID de las particiones. También puedes obtener esta información con el comando 'lsblk -no UUID <partición>'. Los otros comandos mostrados en esta pregunta no realizan la tarea requerida."
+    },
+    {
+      "id": 33,
+      "type": "single",
+      "question": "El comando xfs_info es funcionalmente equivalente a qué comando y opción?",
+      "options": [
+        { "label": "a", "text": "xfs_test -n", "correct": false },
+        { "label": "b", "text": "xfs_list", "correct": false },
+        { "label": "c", "text": "tunexfs -i", "correct": false },
+        { "label": "d", "text": "xfs_growfs -n", "correct": true }
+      ],
+      "feedback": "El comando xfs_info es equivalente a 'xfs_growfs -n'."
+    },
+    {
+      "id": 34,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos creará un sistema de archivos btrfs en el primer disco SATA?",
+      "options": [
+        { "label": "a", "text": "mkfs /dev/sda1", "correct": false },
+        { "label": "b", "text": "mkfs.btrfs /dev/sda", "correct": true },
+        { "label": "c", "text": "mkfs.btr2fs /dev/sda1", "correct": false },
+        { "label": "d", "text": "mkfs –b /dev/sda", "correct": false }
+      ],
+      "feedback": "El comando mkfs.btrfs se usa para crear sistemas de archivos btrfs y no requiere que el disco esté particionado."
+    },
+    {
+      "id": 35,
+      "type": "single",
+      "question": "¿Qué opción se establece en un sistema de archivos para habilitar cuotas a nivel de usuario?",
+      "options": [
+        { "label": "a", "text": "quotaon", "correct": false },
+        { "label": "b", "text": "enquota=user", "correct": false },
+        { "label": "c", "text": "usrquota", "correct": true },
+        { "label": "d", "text": "userquota", "correct": false }
+      ],
+      "feedback": "La opción usrquota habilitará cuotas a nivel de usuario en el punto de montaje dado. Esto normalmente se establece dentro de /etc/fstab."
+    },
+    {
+      "id": 36,
+      "type": "single",
+      "question": "Necesitas habilitar el servidor web (que se ejecuta como usuario y grupo www-data) para escribir en un directorio llamado /home/webfiles. ¿Qué comandos realizarán esta tarea de la manera más segura?",
+      "options": [
+        { "label": "a", "text": "chgrp www-data /home/webfiles; chmod 775 /home/webfiles", "correct": true },
+        { "label": "b", "text": "chmod 777 /home/webfiles", "correct": false },
+        { "label": "c", "text": "chgrp www-data /home/webfiles; chmod 711 /home/webfiles", "correct": false },
+        { "label": "d", "text": "chmod 707 /home/webfiles", "correct": false }
+      ],
+      "feedback": "La mejor opción entre estas alternativas es cambiar el grupo a www-data y cambiar los permisos para que el grupo pueda escribir en el directorio. La opción B nunca debe usarse porque permite escritura mundial en el directorio. Las otras opciones no permitirán que el grupo del servidor web escriba en el directorio."
+    },
+    {
+      "id": 37,
+      "type": "single",
+      "question": "¿Qué comando y opción se usan para establecer el número máximo de veces que se puede montar un sistema de archivos entre ejecuciones de fsck?",
+      "options": [
+        { "label": "a", "text": "tune2fs -c", "correct": true },
+        { "label": "b", "text": "tune2fs -f", "correct": false },
+        { "label": "c", "text": "tune2fs -m", "correct": false },
+        { "label": "d", "text": "setmount", "correct": false }
+      ],
+      "feedback": "El comando tune2fs se usa para este propósito, y la opción -c establece el conteo de montajes para la partición especificada."
+    },
+    {
+      "id": 38,
+      "type": "single",
+      "question": "¿Qué comando se puede usar para cambiar el esquema de partición de un disco, como para cambiar el tamaño de particiones existentes sin eliminarlas?",
+      "options": [
+        { "label": "a", "text": "resizefs", "correct": false },
+        { "label": "b", "text": "parted", "correct": true },
+        { "label": "c", "text": "mkfs", "correct": false },
+        { "label": "d", "text": "rfdisk", "correct": false }
+      ],
+      "feedback": "El comando parted puede usarse para redimensionar particiones de esta manera. El comando mkfs no se usa para este propósito, y las otras dos opciones no existen."
+    },
+    {
+      "id": 39,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos montará un dispositivo USB en /dev/sdb1 en el directorio /media/usb, asumiendo un sistema de archivos VFAT para la unidad USB?",
+      "options": [
+        { "label": "a", "text": "mount -t vfat /dev/sdb1 /mnt", "correct": false },
+        { "label": "b", "text": "usbmount /dev/sdb1 /mnt/usb", "correct": false },
+        { "label": "c", "text": "mount -t vfat /dev/sdb1 /media/usb", "correct": true },
+        { "label": "d", "text": "mount -t usb /dev/sdb1 /mnt/usb", "correct": false }
+      ],
+      "feedback": "El sistema de archivos VFAT se conoce como vfat para el comando mount, y los otros elementos del comando mount son estándar."
+    },
+    {
+      "id": 40,
+      "type": "single",
+      "question": "¿Qué opción dentro de gdisk cambiará el nombre de la partición?",
+      "options": [
+        { "label": "a", "text": "n", "correct": false },
+        { "label": "b", "text": "b", "correct": false },
+        { "label": "c", "text": "v", "correct": false },
+        { "label": "d", "text": "c", "correct": true }
+      ],
+      "feedback": "La opción c en gdisk se usa para cambiar el nombre de la partición. La opción n crea una nueva partición, la opción v verifica el disco y la opción b crea una copia de seguridad de los datos GPT en un archivo."
+    },
+
+    {
+      "id": 41,
+      "type": "single",
+      "question": "¿Qué opción del comando dumpe2fs se puede usar para mostrar bloques reservados por estar marcados como defectuosos?",
+      "options": [
+        { "label": "a", "text": "-v", "correct": false },
+        { "label": "b", "text": "-f", "correct": false },
+        { "label": "c", "text": "-b", "correct": true },
+        { "label": "d", "text": "-m", "correct": false }
+      ],
+      "feedback": "La opción -b muestra los bloques defectuosos conocidos. La opción -f se usa para forzar la visualización de información, y las otras opciones no existen."
+    },
+    {
+      "id": 42,
+      "type": "single",
+      "question": "¿Qué opciones de fsck se pueden usar para verificar todos los sistemas de archivos listados en /etc/fstab excluyendo la partición raíz?",
+      "options": [
+        { "label": "a", "text": "-NR", "correct": false },
+        { "label": "b", "text": "-AM", "correct": true },
+        { "label": "c", "text": "-X", "correct": false },
+        { "label": "d", "text": "-C", "correct": false }
+      ],
+      "feedback": "La opción -A verifica todos los sistemas de archivos en /etc/fstab, mientras que la opción -M excluye el sistema de archivos raíz. El fsck que se ejecutará dependerá del tipo de sistema de archivos. Por ejemplo, e2fsck se ejecutará para particiones ext2."
+    },
+    {
+      "id": 43,
+      "type": "single",
+      "question": "¿Qué comando se usa para habilitar cuotas en un sistema de archivos que ha sido configurado previamente para uso de cuotas?",
+      "options": [
+        { "label": "a", "text": "quotaenable", "correct": false },
+        { "label": "b", "text": "quotaon", "correct": true },
+        { "label": "c", "text": "quotau", "correct": false },
+        { "label": "d", "text": "enquota", "correct": false }
+      ],
+      "feedback": "El comando quotaon indica que se deben habilitar cuotas para el sistema de archivos dado. Esto implicaría que ya se ha creado un archivo de cuotas. Las cuotas se pueden editar con el comando edquota."
+    },
+    {
+      "id": 44,
+      "type": "single",
+      "question": "¿Qué opción en /etc/fstab establece el orden en que se verifica el dispositivo durante el arranque?",
+      "options": [
+        { "label": "a", "text": "options", "correct": false },
+        { "label": "b", "text": "dump", "correct": false },
+        { "label": "c", "text": "fsck", "correct": true },
+        { "label": "d", "text": "checkorder", "correct": false }
+      ],
+      "feedback": "La opción fsck, que se representa como un número en el archivo /etc/fstab, establece el orden en que se verifica el dispositivo durante el arranque."
+    },
+    {
+      "id": 45,
+      "type": "single",
+      "question": "¿Qué opción de quotacheck se usa para crear los archivos por primera vez?",
+      "options": [
+        { "label": "a", "text": "-f", "correct": false },
+        { "label": "b", "text": "-u", "correct": false },
+        { "label": "c", "text": "-m", "correct": false },
+        { "label": "d", "text": "-c", "correct": true }
+      ],
+      "feedback": "La opción -c crea los archivos por primera vez. La opción -f se usa para forzar la verificación, -u para cuotas de usuario y -m para no intentar remontar como solo lectura."
+    },
+    {
+      "id": 46,
+      "type": "single",
+      "question": "El SAN ha fallado y uno de los sistemas de archivos en un servidor Linux se ha corrompido significativamente como resultado. ¿Qué comando y opción se pueden usar para intentar examinar el contenido del disco sin causar más daño?",
+      "options": [
+        { "label": "a", "text": "fdisk -f", "correct": false },
+        { "label": "b", "text": "mke2fs -c", "correct": false },
+        { "label": "c", "text": "debugfs -c", "correct": true },
+        { "label": "d", "text": "ls -a", "correct": false }
+      ],
+      "feedback": "El comando debugfs puede usarse para este propósito. Cuando se abre con -c, el sistema de archivos se abrirá en modo catastrófico, lo que significa que se abrirá en solo lectura y no leerá inodos al abrir."
+    },
+    {
+      "id": 47,
+      "type": "single",
+      "question": "¿Qué opción del comando find buscará archivos por su número de inodo?",
+      "options": [
+        { "label": "a", "text": "-inode", "correct": false },
+        { "label": "b", "text": "-type", "correct": false },
+        { "label": "c", "text": "-in", "correct": false },
+        { "label": "d", "text": "-inum", "correct": true }
+      ],
+      "feedback": "La opción -inum busca archivos por su número de inodo. Esto puede ser útil cuando se buscan archivos involucrados en enlaces duros."
+    },
+    {
+      "id": 48,
+      "type": "single",
+      "question": "¿Qué opción de chgrp cambiará la propiedad del grupo de todos los archivos dentro de un directorio dado?",
+      "options": [
+        { "label": "a", "text": "-directory", "correct": false },
+        { "label": "b", "text": "-d", "correct": false },
+        { "label": "c", "text": "-R", "correct": true },
+        { "label": "d", "text": "-V", "correct": false }
+      ],
+      "feedback": "La opción -R establece la opción recursiva, lo que significa que chgrp recorrerá el directorio dado y realizará la operación de cambio de propiedad del grupo en toda la jerarquía especificada."
+    }
+
+  ]
+}

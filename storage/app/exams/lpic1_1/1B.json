@@ -1,0 +1,462 @@
+{
+  "id": "2",
+  "title": "105:B - Shells and Shell Scripting",
+  "questions": [
+    {
+      "id": 40,
+      "type": "single",
+      "question": "Has creado un archivo README en /etc/skel para que los usuarios lo reciban en sus directorios home, pero falta en algunos. ¿Cuál es la mejor explicación?",
+      "options": [
+        { "label": "a", "text": "El archivo no se copia automáticamente para usuarios existentes", "correct": true },
+        { "label": "b", "text": "El archivo es demasiado grande", "correct": false },
+        { "label": "c", "text": "El archivo ya existe", "correct": false },
+        { "label": "d", "text": "El archivo necesita extensión", "correct": false }
+      ],
+      "feedback": "El archivo solo se copia a nuevos usuarios, no a usuarios existentes. El tamaño y las extensiones no son factores relevantes en este caso."
+    },
+    {
+      "id": 41,
+      "type": "single",
+      "question": "Tienes un script Bash que usa el comando: find . -name \".git\" -type d. Cuando otro administrador lo usa, no encuentra todos los directorios. ¿Cuál es la mejor explicación?",
+      "options": [
+        { "label": "a", "text": "El comando find está vinculado a usuarios específicos", "correct": false },
+        { "label": "b", "text": "find no puede encontrar directorios que comienzan con punto", "correct": false },
+        { "label": "c", "text": "find comienza la búsqueda en el directorio actual", "correct": true },
+        { "label": "d", "text": "find no puede encontrar directorios", "correct": false }
+      ],
+      "feedback": "El comando find inicia la búsqueda en el directorio actual, lo cual es problemático en scripts. Sí puede encontrar directorios (inclusos ocultos que comienzan con punto)."
+    },
+    {
+      "id": 42,
+      "type": "single",
+      "question": "Tienes software especializado que necesita instalarse con un entorno vacío. ¿Qué opción del comando env cumple este requisito?",
+      "options": [
+        { "label": "a", "text": "-e", "correct": false },
+        { "label": "b", "text": "-i", "correct": true },
+        { "label": "c", "text": "-f", "correct": false },
+        { "label": "d", "text": "-c", "correct": false }
+      ],
+      "feedback": "La opción -i ignora el entorno actual. Las otras opciones no son válidas para env."
+    },
+    {
+      "id": 43,
+      "type": "single",
+      "question": "¿Qué opción habilita depuración cuando se usa en la línea del intérprete (#!) en un script Bash?",
+      "options": [
+        { "label": "a", "text": "-x", "correct": true },
+        { "label": "b", "text": "-d", "correct": false },
+        { "label": "c", "text": "-a", "correct": false },
+        { "label": "d", "text": "-f", "correct": false }
+      ],
+      "feedback": "La opción -x habilita modo depuración cuando se pasa en la línea del intérprete. Las otras opciones no cumplen este propósito."
+    },
+    {
+      "id": 44,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos mostrará el número 5 como parte de un script Bash?",
+      "options": [
+        { "label": "a", "text": "echo 2+3", "correct": false },
+        { "label": "b", "text": "echo 2 + 3", "correct": false },
+        { "label": "c", "text": "echo $[2+3]", "correct": true },
+        { "label": "d", "text": "echo ${2+3}", "correct": false }
+      ],
+      "feedback": "Las operaciones matemáticas en Bash requieren sintaxis especial. $[2+3] realiza la suma correctamente. El comando bc también puede usarse para cálculos."
+    },
+    {
+      "id": 45,
+      "type": "single",
+      "question": "Necesitas pedir al usuario dos valores en un script Bash y guardarlos en variables VAL1 y VAL2. ¿Qué comando usarías?",
+      "options": [
+        { "label": "a", "text": "read VAL1 VAL2", "correct": true },
+        { "label": "b", "text": "prompt VAL1 VAL2", "correct": false },
+        { "label": "c", "text": "VAL1=$0 VAL2=$1", "correct": false },
+        { "label": "d", "text": "(VAL1 VAL2) = prompt", "correct": false }
+      ],
+      "feedback": "El comando read con esta sintaxis captura múltiples valores. No existe un comando prompt en Bash."
+    },
+    {
+      "id": 46,
+      "type": "single",
+      "question": "¿Qué opción del comando export elimina una variable de las variables exportadas?",
+      "options": [
+        { "label": "a", "text": "-m", "correct": false },
+        { "label": "b", "text": "-o", "correct": false },
+        { "label": "c", "text": "-r", "correct": false },
+        { "label": "d", "text": "-n", "correct": true }
+      ],
+      "feedback": "La opción -n elimina una variable de las exportadas. Las otras opciones no existen para este comando."
+    },
+    {
+      "id": 47,
+      "type": "single",
+      "question": "¿En qué orden se buscan los archivos de configuración de usuario al iniciar sesión en Bash?",
+      "options": [
+        { "label": "a", "text": ".bash_login, .profile, /etc/profile", "correct": false },
+        { "label": "b", "text": ".bash_profile, .bash_login, .profile", "correct": true },
+        { "label": "c", "text": ".profile, .bash_login, .bash_profile", "correct": false },
+        { "label": "d", "text": ".bash_login, .bash_profile, .profile", "correct": false }
+      ],
+      "feedback": "El orden es .bash_profile, .bash_login, .profile. Solo se ejecuta el primero que se encuentre."
+    },
+    {
+      "id": 48,
+      "type": "single",
+      "question": "¿Cuál de las siguientes pruebas verifica si el comando anterior fue exitoso?",
+      "options": [
+        { "label": "a", "text": "if [ $? -eq 0 ];", "correct": true },
+        { "label": "b", "text": "if [ $? = 0 ];", "correct": false },
+        { "label": "c", "text": "if ($PREV == 0) {", "correct": false },
+        { "label": "d", "text": "if [ $RETV === 0 ];", "correct": false }
+      ],
+      "feedback": "$? contiene el código de salida del último comando. La comparación numérica en Bash usa -eq."
+    },
+    {
+      "id": 49,
+      "type": "single",
+      "question": "Tienes un archivo con funciones Bash. ¿Qué comando las añade al entorno actual?",
+      "options": [
+        { "label": "a", "text": "function", "correct": false },
+        { "label": "b", "text": "include", "correct": false },
+        { "label": "c", "text": "require", "correct": false },
+        { "label": "d", "text": "source", "correct": true }
+      ],
+      "feedback": "El comando source (o su equivalente .) importa funciones al entorno actual. Los comandos include y require no existen en Bash."
+    },
+    {
+      "id": 50,
+      "type": "single",
+      "question": "¿Qué comando chmod otorga permiso de ejecución al usuario en un script?",
+      "options": [
+        { "label": "a", "text": "chmod user += exec", "correct": false },
+        { "label": "b", "text": "chmod u+x", "correct": true },
+        { "label": "c", "text": "chmod 644", "correct": false },
+        { "label": "d", "text": "chmod u+all", "correct": false }
+      ],
+      "feedback": "u+x añade permiso de ejecución para el usuario. chmod 644 solo da permisos de lectura/escritura."
+    },
+        {
+      "id": 51,
+      "type": "single",
+      "question": "¿Qué comando find localizará todos los archivos con extensión .sh?",
+      "options": [
+        { "label": "a", "text": "find / -name \"*.sh\"", "correct": false },
+        { "label": "b", "text": "find / -name \"*.sh\" -type f", "correct": true },
+        { "label": "c", "text": "find / -name \"*.sh\" -type d", "correct": false },
+        { "label": "d", "text": "find ./ -name \"*.sh\"", "correct": false }
+      ],
+      "feedback": "La pregunta especifica archivos (no directorios), haciendo la opción B la mejor respuesta. La opción A también encontraría directorios."
+    },
+    {
+      "id": 52,
+      "type": "single",
+      "question": "¿Qué opción de unset puede usarse para eliminar una función definida?",
+      "options": [
+        { "label": "a", "text": "-r", "correct": false },
+        { "label": "b", "text": "-a", "correct": false },
+        { "label": "c", "text": "-f", "correct": true },
+        { "label": "d", "text": "-g", "correct": false }
+      ],
+      "feedback": "La opción -f elimina una función. Las otras opciones no existen para el comando unset."
+    },
+    {
+      "id": 53,
+      "type": "single",
+      "question": "Al configurar la línea shebang en un script, ¿cuál de los siguientes comandos ayuda a determinar automáticamente la ubicación del intérprete?",
+      "options": [
+        { "label": "a", "text": "#!/usr/bin/env bash", "correct": true },
+        { "label": "b", "text": "#!/bin/bash", "correct": false },
+        { "label": "c", "text": "#!env", "correct": false },
+        { "label": "d", "text": "/bin/int bash", "correct": false }
+      ],
+      "feedback": "El comando env usado como #!/usr/bin/env bash determina automáticamente la ubicación de bash, haciendo el script más portable para sistemas donde bash no esté en /bin/."
+    },
+    {
+      "id": 54,
+      "type": "single",
+      "question": "Necesitas enviar un email al superusuario si un comando tiene éxito. ¿Qué comando puede enviar correo desde un script Bash?",
+      "options": [
+        { "label": "a", "text": "smtpsend", "correct": false },
+        { "label": "b", "text": "mailx", "correct": true },
+        { "label": "c", "text": "sendm", "correct": false },
+        { "label": "d", "text": "mailsend", "correct": false }
+      ],
+      "feedback": "mailx es el comando estándar para enviar correos desde línea de comandos. Los otros comandos no existen por defecto."
+    },
+    {
+      "id": 55,
+      "type": "single",
+      "question": "¿Qué operador de prueba de archivos se usa para determinar si un archivo no está vacío?",
+      "options": [
+        { "label": "a", "text": "-d", "correct": false },
+        { "label": "b", "text": "-e", "correct": false },
+        { "label": "c", "text": "-f", "correct": false },
+        { "label": "d", "text": "-s", "correct": true }
+      ],
+      "feedback": "La opción -s verifica que el archivo existe y tiene tamaño mayor que cero."
+    },
+    {
+      "id": 56,
+      "type": "single",
+      "question": "Has creado un alias pero desaparece al reiniciar sesión. ¿Cuál es la mejor explicación?",
+      "options": [
+        { "label": "a", "text": "El alias no se colocó en un script de inicialización", "correct": true },
+        { "label": "b", "text": "El alias era inválido", "correct": false },
+        { "label": "c", "text": "El comando del alias no es válido", "correct": false },
+        { "label": "d", "text": "El alias creó un enlace simbólico inválido", "correct": false }
+      ],
+      "feedback": "Los alias solo existen durante la sesión actual. Para hacerlos permanentes deben incluirse en scripts de inicialización como .bashrc."
+    },
+    {
+      "id": 57,
+      "type": "single",
+      "question": "¿Cuál es la sintaxis válida para crear una variable FILENAME en un script Bash y asignarle el segundo argumento de línea de comandos?",
+      "options": [
+        { "label": "a", "text": "$FILENAME = $2", "correct": false },
+        { "label": "b", "text": "FILENAME=1", "correct": false },
+        { "label": "c", "text": "FILENAME = $(2)", "correct": false },
+        { "label": "d", "text": "FILENAME=$2", "correct": true }
+      ],
+      "feedback": "La sintaxis correcta es FILENAME=$2 sin espacios alrededor del =. $2 contiene el segundo argumento."
+    },
+    {
+      "id": 58,
+      "type": "single",
+      "question": "¿Qué variable en un script Bash contiene el primer parámetro de línea de comandos?",
+      "options": [
+        { "label": "a", "text": "$ARG", "correct": false },
+        { "label": "b", "text": "$CMD", "correct": false },
+        { "label": "c", "text": "$1", "correct": true },
+        { "label": "d", "text": "$ARG0", "correct": false }
+      ],
+      "feedback": "La variable $1 contiene automáticamente el primer argumento. Las otras variables no existen por defecto."
+    },
+    {
+      "id": 59,
+      "type": "single",
+      "question": "Un usuario reporta que no tiene ciertas variables definidas en su entorno, mientras otros usuarios sí. ¿Cuál es la explicación más probable?",
+      "options": [
+        { "label": "a", "text": "El usuario inició sesión desde consola", "correct": false },
+        { "label": "b", "text": "El usuario usa un shell diferente", "correct": true },
+        { "label": "c", "text": "El usuario eliminó las variables manualmente", "correct": false },
+        { "label": "d", "text": "El usuario inició sesión en otro sistema", "correct": false }
+      ],
+      "feedback": "Diferentes shells cargan diferentes scripts de inicialización, por lo que probablemente el usuario usa un shell distinto."
+    },
+    {
+      "id": 60,
+      "type": "single",
+      "question": "¿Qué variable de entorno contiene el nombre de usuario de la sesión actual?",
+      "options": [
+        { "label": "a", "text": "LOGNAME", "correct": true },
+        { "label": "b", "text": "LOGIN", "correct": false },
+        { "label": "c", "text": "LOGGEDIN", "correct": false },
+        { "label": "d", "text": "LOGINUSER", "correct": false }
+      ],
+      "feedback": "La variable LOGNAME contiene el nombre del usuario actualmente logueado."
+    },
+        {
+      "id": 61,
+      "type": "single",
+      "question": "¿Qué operador de prueba de archivos se usa para determinar si un archivo es un enlace simbólico?",
+      "options": [
+        { "label": "a", "text": "-h", "correct": true },
+        { "label": "b", "text": "-p", "correct": false },
+        { "label": "c", "text": "-S", "correct": false },
+        { "label": "d", "text": "-t", "correct": false }
+      ],
+      "feedback": "El operador -h verifica si el archivo existe y es un enlace simbólico."
+    },
+    {
+      "id": 62,
+      "type": "single",
+      "question": "¿Qué opción del comando readonly marca una función como de solo lectura?",
+      "options": [
+        { "label": "a", "text": "-a", "correct": false },
+        { "label": "b", "text": "-r", "correct": false },
+        { "label": "c", "text": "-f", "correct": true },
+        { "label": "d", "text": "-p", "correct": false }
+      ],
+      "feedback": "La opción -f se usa para marcar una función de shell como de solo lectura."
+    },
+    {
+      "id": 63,
+      "type": "single",
+      "question": "¿Qué comando find localizará todos los archivos donde los usuarios tienen el bit de ejecución activado?",
+      "options": [
+        { "label": "a", "text": "find ./ -type f -perm 700", "correct": false },
+        { "label": "b", "text": "find / -type f -perm -u+x", "correct": true },
+        { "label": "c", "text": "find / -type f -perm 777", "correct": false },
+        { "label": "d", "text": "find / -type f -perm -execuser", "correct": false }
+      ],
+      "feedback": "La opción -perm con -u+x busca archivos con permiso de ejecución para el usuario."
+    },
+    {
+      "id": 64,
+      "type": "single",
+      "question": "Según el FHS, ¿qué directorio se usa para binarios locales?",
+      "options": [
+        { "label": "a", "text": "/usr/local/bin", "correct": true },
+        { "label": "b", "text": "/usr/bin", "correct": false },
+        { "label": "c", "text": "/usr/sbin", "correct": false },
+        { "label": "d", "text": "/home/scripts", "correct": false }
+      ],
+      "feedback": "/usr/local/bin es la ruta estándar para binarios locales según el Filesystem Hierarchy Standard (FHS)."
+    },
+    {
+      "id": 65,
+      "type": "single",
+      "question": "¿Qué combinación de teclas puede usarse para terminar un script Bash?",
+      "options": [
+        { "label": "a", "text": "Ctrl+d", "correct": false },
+        { "label": "b", "text": "Ctrl+l", "correct": false },
+        { "label": "c", "text": "Ctrl+a", "correct": false },
+        { "label": "d", "text": "Ctrl+c", "correct": true }
+      ],
+      "feedback": "Ctrl+c envía una señal SIGTERM para terminar el script Bash."
+    },
+    {
+      "id": 66,
+      "type": "single",
+      "question": "¿Qué opción del comando env muestra las variables de entorno en una sola línea?",
+      "options": [
+        { "label": "a", "text": "-n", "correct": false },
+        { "label": "b", "text": "-0", "correct": true },
+        { "label": "c", "text": "-c", "correct": false },
+        { "label": "d", "text": "-e", "correct": false }
+      ],
+      "feedback": "La opción -0 reemplaza saltos de línea por caracteres nulos, mostrando todo en una línea."
+    },
+    {
+      "id": 67,
+      "type": "single",
+      "question": "El comando cp pide confirmación antes de sobrescribir archivos. ¿Cuál es la causa más probable?",
+      "options": [
+        { "label": "a", "text": "cp fue compilado para pedir confirmación", "correct": false },
+        { "label": "b", "text": "cp siempre pide confirmación", "correct": false },
+        { "label": "c", "text": "cp no puede usarse para este propósito", "correct": false },
+        { "label": "d", "text": "cp tiene un alias que incluye la opción -i", "correct": true }
+      ],
+      "feedback": "La opción -i fuerza a cp a pedir confirmación. Lo más probable es que exista un alias con esta opción."
+    },
+    {
+      "id": 68,
+      "type": "single",
+      "question": "¿Qué significa el código de salida 1 del comando grep en un script Bash?",
+      "options": [
+        { "label": "a", "text": "Error", "correct": true },
+        { "label": "b", "text": "Éxito", "correct": false },
+        { "label": "c", "text": "Patrón no encontrado", "correct": true },
+        { "label": "d", "text": "Patrón encontrado", "correct": false }
+      ],
+      "feedback": "El código 1 indica que no se encontró el patrón de búsqueda (y por tanto se considera un error). El código 0 indica éxito (patrón encontrado)."
+    },
+    {
+      "id": 69,
+      "type": "single",
+      "question": "¿Qué cierra un condicional if en un script Bash?",
+      "options": [
+        { "label": "a", "text": "ex", "correct": false },
+        { "label": "b", "text": "}", "correct": false },
+        { "label": "c", "text": "]", "correct": false },
+        { "label": "d", "text": "fi", "correct": true }
+      ],
+      "feedback": "La construcción 'fi' marca el final de un condicional if en Bash (a diferencia de otros lenguajes que usan llaves)."
+    },
+    {
+      "id": 70,
+      "type": "single",
+      "question": "¿Qué operador de prueba de archivos determina si un archivo es un directorio?",
+      "options": [
+        { "label": "a", "text": "-e", "correct": false },
+        { "label": "b", "text": "-d", "correct": true },
+        { "label": "c", "text": "-w", "correct": false },
+        { "label": "d", "text": "-a", "correct": false }
+      ],
+      "feedback": "El operador -d verifica si el archivo es un directorio."
+    },
+        {
+      "id": 81,
+      "type": "single",
+      "question": "¿Qué secuencia de caracteres ejecuta dos comandos solo si el primero termina exitosamente?",
+      "options": [
+        { "label": "a", "text": "--", "correct": false },
+        { "label": "b", "text": "&*", "correct": false },
+        { "label": "c", "text": "&&", "correct": true },
+        { "label": "d", "text": "&", "correct": false }
+      ],
+      "feedback": "El doble ampersand (&&) ejecuta comandos solo si el anterior terminó correctamente."
+    },
+    {
+      "id": 82,
+      "type": "single",
+      "question": "¿Qué comando en un script espera entrada del usuario y la guarda en una variable?",
+      "options": [
+        { "label": "a", "text": "exec", "correct": false },
+        { "label": "b", "text": "get", "correct": false },
+        { "label": "c", "text": "read", "correct": true },
+        { "label": "d", "text": "prompt", "correct": false }
+      ],
+      "feedback": "El comando read espera entrada del usuario y la almacena en la variable especificada."
+    },
+    {
+      "id": 83,
+      "type": "single",
+      "question": "¿Qué caracteres se usan para definir una función en un script Bash?",
+      "options": [
+        { "label": "a", "text": "Paréntesis para declarar (opcional) y llaves para contener los comandos", "correct": true },
+        { "label": "b", "text": "Llaves para declarar y paréntesis para contener comandos", "correct": false },
+        { "label": "c", "text": "Corchetes para declarar y llaves para contener comandos", "correct": false },
+        { "label": "d", "text": "Comillas invertidas para denotar la función", "correct": false }
+      ],
+      "feedback": "Los paréntesis (opcionales) declaran la función (ej: miFuncion()) y las llaves {} contienen los comandos a ejecutar."
+    },
+    {
+      "id": 84,
+      "type": "single",
+      "question": "¿Qué secuencia de caracteres ejecuta un comando alterno si el anterior falla?",
+      "options": [
+        { "label": "a", "text": "&&", "correct": false },
+        { "label": "b", "text": "--", "correct": false },
+        { "label": "c", "text": "||", "correct": true },
+        { "label": "d", "text": "EL", "correct": false }
+      ],
+      "feedback": "La doble barra vertical || ejecuta el siguiente comando solo si el anterior falló."
+    },
+    {
+      "id": 85,
+      "type": "single",
+      "question": "¿Qué palabra clave inicia una condición alternativa en un script Bash?",
+      "options": [
+        { "label": "a", "text": "if", "correct": false },
+        { "label": "b", "text": "else if", "correct": false },
+        { "label": "c", "text": "elif", "correct": true },
+        { "label": "d", "text": "elsif", "correct": false }
+      ],
+      "feedback": "La palabra clave elif (else if) crea una ruta de ejecución alternativa en Bash."
+    },
+    {
+      "id": 86,
+      "type": "single",
+      "question": "¿Qué comando elimina un alias definido actualmente?",
+      "options": [
+        { "label": "a", "text": "remove", "correct": false },
+        { "label": "b", "text": "rm", "correct": false },
+        { "label": "c", "text": "unalias", "correct": true },
+        { "label": "d", "text": "delete", "correct": false }
+      ],
+      "feedback": "El comando unalias elimina un alias previamente definido."
+    },
+    {
+      "id": 87,
+      "type": "single",
+      "question": "Al importar (source) un archivo en Bash, ¿qué permisos mínimos necesita el archivo si eres su dueño?",
+      "options": [
+        { "label": "a", "text": "chmod 600", "correct": false },
+        { "label": "b", "text": "chmod 755", "correct": false },
+        { "label": "c", "text": "chmod 777", "correct": false },
+        { "label": "d", "text": "chmod 400", "correct": true }
+      ],
+      "feedback": "Solo se necesitan permisos de lectura (400) para ejecutar source en un archivo que posees."
+    }
+  ]
+}

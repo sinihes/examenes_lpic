@@ -1,0 +1,534 @@
+{
+  "id": "9",
+  "title": "109:B - Networking Fundamentals",
+  "questions": [
+    {
+      "id": 45,
+      "type": "single",
+      "question": "¿Qué comando muestra sockets de red y su memoria asignada?",
+      "options": [
+        {"label": "a", "text": "ss -m", "correct": true},
+        {"label": "b", "text": "mpas", "correct": false},
+        {"label": "c", "text": "mem", "correct": false},
+        {"label": "d", "text": "free", "correct": false}
+      ],
+      "feedback": "El comando ss provee funciones similares a netstat pero puede mostrar información extendida como asignación de memoria por socket. free muestra uso de memoria general pero no por socket. Los otros comandos no existen."
+    },
+    {
+      "id": 46,
+      "type": "single",
+      "question": "Al diagnosticar un problema de hardware, ¿qué opción de ping inunda la interfaz con paquetes ECHO_REQUEST para monitorear los LEDs de actividad?",
+      "options": [
+        {"label": "a", "text": "-e", "correct": false},
+        {"label": "b", "text": "-a", "correct": false},
+        {"label": "c", "text": "-c", "correct": false},
+        {"label": "d", "text": "-f", "correct": true}
+      ],
+      "feedback": "La opción -f realiza un ping flood, generando mucho tráfico que facilita identificar la interfaz física. -a hace ping audible, -c limita el número de pings, y no existe -e."
+    },
+    {
+      "id": 47,
+      "type": "single",
+      "question": "¿Qué comando puede probar conectividad a nivel TCP como alternativa a telnet?",
+      "options": [
+        {"label": "a", "text": "netstat", "correct": false},
+        {"label": "b", "text": "nc", "correct": true},
+        {"label": "c", "text": "nettest", "correct": false},
+        {"label": "d", "text": "ping", "correct": false}
+      ],
+      "feedback": "El comando netcat (nc) permite comunicación TCP bidireccional evitando problemas de caracteres especiales de telnet. netstat no prueba conectividad, ping no opera a nivel TCP, y nettest no existe."
+    },
+    {
+      "id": 48,
+      "type": "single",
+      "question": "¿Qué opción de ping permite elegir la interfaz de origen para los paquetes ICMP?",
+      "options": [
+        {"label": "a", "text": "-i", "correct": false},
+        {"label": "b", "text": "-I", "correct": true},
+        {"label": "c", "text": "-t", "correct": false},
+        {"label": "d", "text": "-a", "correct": false}
+      ],
+      "feedback": "La opción -I (i mayúscula) selecciona la interfaz. -i (minúscula) establece el intervalo, -a hace ping audible, y -t configura TTL."
+    },
+    {
+      "id": 49,
+      "type": "single",
+      "question": "¿Qué opción de tcpdump muestra las interfaces disponibles para capturar tráfico?",
+      "options": [
+        {"label": "a", "text": "-a", "correct": false},
+        {"label": "b", "text": "-d", "correct": false},
+        {"label": "c", "text": "-D", "correct": true},
+        {"label": "d", "text": "-i", "correct": false}
+      ],
+      "feedback": "La opción -D lista las interfaces disponibles. -d muestra código de filtro compilado, -i selecciona una interfaz, y no existe -a."
+    },
+    {
+      "id": 50,
+      "type": "single",
+      "question": "¿Qué comando envía solicitudes ICMP para IPv6?",
+      "options": [
+        {"label": "a", "text": "ping6", "correct": true},
+        {"label": "b", "text": "pingv6", "correct": false},
+        {"label": "c", "text": "tracert", "correct": false},
+        {"label": "d", "text": "6ping", "correct": false}
+      ],
+      "feedback": "ping6 es el equivalente IPv6 del comando ping tradicional. Los otros comandos no existen en Linux."
+    },
+    {
+      "id": 51,
+      "type": "single",
+      "question": "¿Qué comando muestra solo direcciones IPv6 en uso en el equipo?",
+      "options": [
+        {"label": "a", "text": "ip addr", "correct": false},
+        {"label": "b", "text": "ip -6 addr", "correct": true},
+        {"label": "c", "text": "ip6add", "correct": false},
+        {"label": "d", "text": "ipv6addr", "correct": false}
+      ],
+      "feedback": "ip -6 addr muestra exclusivamente direcciones IPv6. ip addr muestra todas las direcciones (IPv4 e IPv6). Los otros comandos no son válidos."
+    },
+        {
+      "id": 52,
+      "type": "single",
+      "question": "¿Qué comando desactiva ARP en la interfaz eth0?",
+      "options": [
+        {"label": "a", "text": "ifconfig eth0 -arp", "correct": true},
+        {"label": "b", "text": "ip eth0 noarp", "correct": false},
+        {"label": "c", "text": "ifconfig eth0 noarp", "correct": false},
+        {"label": "d", "text": "if eth0 disable arp", "correct": false}
+      ],
+      "feedback": "El comando ifconfig con -arp desactiva ARP para la interfaz. Sin el signo menos, ARP se activaría. Los otros comandos no funcionan para este propósito."
+    },
+    {
+      "id": 53,
+      "type": "single",
+      "question": "¿Qué opción del comando route fuerza al kernel a usar un dispositivo específico para la ruta?",
+      "options": [
+        {"label": "a", "text": "inet", "correct": false},
+        {"label": "b", "text": "addr", "correct": false},
+        {"label": "c", "text": "dev", "correct": true},
+        {"label": "d", "text": "device", "correct": false}
+      ],
+      "feedback": "La opción dev especifica el dispositivo a usar para la ruta, evitando que el kernel intente determinar el dispositivo correcto. Las otras opciones no son válidas."
+    },
+    {
+      "id": 54,
+      "type": "single",
+      "question": "¿Qué opción del comando ss muestra los IDs de proceso asociados a un socket?",
+      "options": [
+        {"label": "a", "text": "-l", "correct": false},
+        {"label": "b", "text": "-a", "correct": false},
+        {"label": "c", "text": "-p", "correct": true},
+        {"label": "d", "text": "-f", "correct": false}
+      ],
+      "feedback": "La opción -p muestra los IDs de proceso relacionados con sockets. -a muestra todos los sockets, -l solo los de escucha, y -f especifica familia de protocolos."
+    },
+    {
+      "id": 55,
+      "type": "single",
+      "question": "¿Qué opción de traceroute hace que use ICMP para las solicitudes?",
+      "options": [
+        {"label": "a", "text": "-T", "correct": false},
+        {"label": "b", "text": "-A", "correct": false},
+        {"label": "c", "text": "-I", "correct": true},
+        {"label": "d", "text": "-i", "correct": false}
+      ],
+      "feedback": "La opción -I hace que traceroute use ICMP. -T usa TCP SYN, -A busca rutas AS, y -i especifica la interfaz a usar."
+    },
+    {
+      "id": 56,
+      "type": "single",
+      "question": "¿Qué función programática usa internamente el comando hostname?",
+      "options": [
+        {"label": "a", "text": "getaddr", "correct": false},
+        {"label": "b", "text": "gethost", "correct": false},
+        {"label": "c", "text": "gethostname", "correct": true},
+        {"label": "d", "text": "getname", "correct": false}
+      ],
+      "feedback": "El comando hostname usa internamente gethostname, información útil para diagnosticar problemas de resolución de nombres. Las otras funciones no existen."
+    },
+    {
+      "id": 57,
+      "type": "single",
+      "question": "¿Qué comando busca información sobre actividad DHCP en los logs del sistema?",
+      "options": [
+        {"label": "a", "text": "grep -i dhcp /var/log/syslog", "correct": true},
+        {"label": "b", "text": "grep -v dhcp /var/log/syslog", "correct": false},
+        {"label": "c", "text": "grep -vi dhcp /var/log/kern.log", "correct": false},
+        {"label": "d", "text": "dmesg | grep dhcp", "correct": false}
+      ],
+      "feedback": "grep -i busca 'dhcp' insensible a mayúsculas en syslog. -v excluiría DHCP, kern.log no suele tener info DHCP, y dmesg muestra buffer del kernel."
+    },
+    {
+      "id": 58,
+      "type": "single",
+      "question": "¿Qué caracteres son válidos para nombres de host en /etc/hosts?",
+      "options": [
+        {"label": "a", "text": "Alfanuméricos, guión, guión bajo y punto", "correct": false},
+        {"label": "b", "text": "Alfanuméricos, guión y punto", "correct": true},
+        {"label": "c", "text": "Alfanuméricos y punto", "correct": false},
+        {"label": "d", "text": "Alfanuméricos", "correct": false}
+      ],
+      "feedback": "Solo se permiten caracteres alfanuméricos, guión (-) y punto (.) en nombres de host en /etc/hosts."
+    },
+    {
+      "id": 59,
+      "type": "single",
+      "question": "¿Qué máscara de subred en notación CIDR permite dividir una red en 4 subredes con hasta 30 hosts cada una?",
+      "options": [
+        {"label": "a", "text": "/25", "correct": false},
+        {"label": "b", "text": "/24", "correct": false},
+        {"label": "c", "text": "/32", "correct": false},
+        {"label": "d", "text": "/27", "correct": true}
+      ],
+      "feedback": "Una máscara /27 (255.255.255.224) divide una red en 4 segmentos de 32 direcciones (30 usables). /24 da 254 hosts, /25 126 hosts, y /32 es una sola dirección."
+    },
+    {
+      "id": 60,
+      "type": "single",
+      "question": "¿Qué línea en /etc/resolv.conf activa el modo de depuración?",
+      "options": [
+        {"label": "a", "text": "debug", "correct": false},
+        {"label": "b", "text": "options debug", "correct": true},
+        {"label": "c", "text": "option debug", "correct": false},
+        {"label": "d", "text": "enable-debug", "correct": false}
+      ],
+      "feedback": "Las opciones en /etc/resolv.conf usan la palabra clave 'options' seguida de una o más opciones como 'debug'."
+    },
+        {
+      "id": 61,
+      "type": "single",
+      "question": "¿Qué comando muestra entradas del journal de systemd para la unidad NetworkManager?",
+      "options": [
+        {"label": "a", "text": "systemd NetworkManager", "correct": false},
+        {"label": "b", "text": "systemd NetworkCtl", "correct": false},
+        {"label": "c", "text": "systemctl NetworkManager", "correct": false},
+        {"label": "d", "text": "journalctl -u NetworkManager", "correct": true}
+      ],
+      "feedback": "El comando journalctl con la opción -u especifica la unidad cuyas entradas de journal se desean ver."
+    },
+    {
+      "id": 62,
+      "type": "single",
+      "question": "¿Qué archivo se lee al arrancar para establecer el hostname local?",
+      "options": [
+        {"label": "a", "text": "/etc/hostname", "correct": true},
+        {"label": "b", "text": "/etc/hosts", "correct": false},
+        {"label": "c", "text": "/etc/localhost", "correct": false},
+        {"label": "d", "text": "/etc/networkhost", "correct": false}
+      ],
+      "feedback": "/etc/hostname contiene solo el nombre del equipo local y se lee al arrancar. /etc/hosts contiene información de resolución de nombres. Los otros archivos no existen."
+    },
+    {
+      "id": 63,
+      "type": "single",
+      "question": "¿Qué comando traceroute se usa exclusivamente para IPv6?",
+      "options": [
+        {"label": "a", "text": "trace6", "correct": false},
+        {"label": "b", "text": "traceroute6", "correct": true},
+        {"label": "c", "text": "tracert6", "correct": false},
+        {"label": "d", "text": "6trace", "correct": false}
+      ],
+      "feedback": "traceroute6 es el comando específico para trazar rutas IPv6. Los otros comandos no existen."
+    },
+    {
+      "id": 64,
+      "type": "single",
+      "question": "¿Qué tipo se usa con dig para probar una transferencia de zona?",
+      "options": [
+        {"label": "a", "text": "xfr", "correct": false},
+        {"label": "b", "text": "transfer", "correct": false},
+        {"label": "c", "text": "zxfr", "correct": false},
+        {"label": "d", "text": "axfr", "correct": true}
+      ],
+      "feedback": "El tipo axfr en dig solicita una transferencia de zona. El cliente debe estar autorizado para realizar la transferencia."
+    },
+    {
+      "id": 65,
+      "type": "single",
+      "question": "¿Qué opción del comando host establece el tipo de consulta a ANY?",
+      "options": [
+        {"label": "a", "text": "-a", "correct": true},
+        {"label": "b", "text": "-b", "correct": false},
+        {"label": "c", "text": "-c", "correct": false},
+        {"label": "d", "text": "-d", "correct": false}
+      ],
+      "feedback": "La opción -a establece el tipo de consulta a ANY. -c establece la clase, -d activa depuración, y no existe -b."
+    },
+    {
+      "id": 66,
+      "type": "single",
+      "question": "¿En qué archivo se pueden configurar opciones por usuario para el comando dig?",
+      "options": [
+        {"label": "a", "text": "/etc/dig.cfg", "correct": false},
+        {"label": "b", "text": "/etc/dig.conf", "correct": false},
+        {"label": "c", "text": "~/.digrc", "correct": true},
+        {"label": "d", "text": "~/dig.conf", "correct": false}
+      ],
+      "feedback": "El archivo .digrc en el home del usuario configura opciones por defecto para dig. No existe archivo de configuración de dig en /etc."
+    },
+    {
+      "id": 67,
+      "type": "single",
+      "question": "¿Qué tipo de registro DNS especifica un servidor POP3?",
+      "options": [
+        {"label": "a", "text": "POP", "correct": false},
+        {"label": "b", "text": "PO", "correct": false},
+        {"label": "c", "text": "MX", "correct": false},
+        {"label": "d", "text": "No hay un tipo específico para servidores POP3", "correct": true}
+      ],
+      "feedback": "No existe un tipo específico para servidores POP3 en DNS. MX indica servidores de correo (SMTP)."
+    },
+    {
+      "id": 68,
+      "type": "single",
+      "question": "¿Qué comando iproute2 cambia la dirección de eth0 a 192.168.1.1 con máscara 255.255.255.0?",
+      "options": [
+        {"label": "a", "text": "ip addr add 192.168.1.1/24 dev eth0", "correct": true},
+        {"label": "b", "text": "ip addr eth0 192.168.1.1 255.255.255.0", "correct": false},
+        {"label": "c", "text": "ip addr dev eth0 192.168.1.1 255.255.255.0", "correct": false},
+        {"label": "d", "text": "ip addr 192.168.1.1/255.255.255.0 eth0", "correct": false}
+      ],
+      "feedback": "ip addr add usa la sintaxis mostrada en la opción A para añadir direcciones IP. Las otras opciones tienen sintaxis incorrecta."
+    },
+    {
+      "id": 69,
+      "type": "single",
+      "question": "¿Qué comando muestra la configuración DNS de systemd-resolved?",
+      "options": [
+        {"label": "a", "text": "systemctl resolvers", "correct": false},
+        {"label": "b", "text": "resolvectl status", "correct": true},
+        {"label": "c", "text": "systemctl --resolvers", "correct": false},
+        {"label": "d", "text": "resolvectl --view-status", "correct": false}
+      ],
+      "feedback": "resolvectl status muestra la configuración DNS de systemd-resolved. Si no está disponible, puede usarse systemd-resolve --status."
+    },
+    {
+      "id": 70,
+      "type": "single",
+      "question": "¿Qué comando consulta los servidores de correo del dominio example.com?",
+      "options": [
+        {"label": "a", "text": "dig example.com mx", "correct": true},
+        {"label": "b", "text": "dig example.com", "correct": false},
+        {"label": "c", "text": "host -t smtp example.com", "correct": false},
+        {"label": "d", "text": "dig example.com smtp", "correct": false}
+      ],
+      "feedback": "Los comandos host o dig con tipo mx consultan los servidores de correo (mail exchangers) de un dominio. No existe tipo smtp."
+    },
+        {
+      "id": 71,
+      "type": "single",
+      "question": "¿Qué comando activa NetworkManager para configurar dispositivos de red Ethernet y Wi-Fi?",
+      "options": [
+        {"label": "a", "text": "nmcli networking on", "correct": true},
+        {"label": "b", "text": "netman enable", "correct": false},
+        {"label": "c", "text": "NetworkManager --enable", "correct": false},
+        {"label": "d", "text": "nmti --enable networking", "correct": false}
+      ],
+      "feedback": "nmcli networking on hace que NetworkManager controle las interfaces de red. Si se desactiva con networking off, todas las interfaces gestionadas se deshabilitan."
+    },
+    {
+      "id": 72,
+      "type": "single",
+      "question": "Al usar dig para resolver un problema DNS, recibes 'status: NXDOMAIN'. ¿Qué significa?",
+      "options": [
+        {"label": "a", "text": "Respuesta no autoritativa", "correct": false},
+        {"label": "b", "text": "Dominio/host no encontrado", "correct": true},
+        {"label": "c", "text": "Consulta exitosa", "correct": false},
+        {"label": "d", "text": "Nuevo registro de dominio añadido", "correct": false}
+      ],
+      "feedback": "NXDOMAIN indica que el dominio o host consultado no existe. Un estado normal sin errores sería NOERROR."
+    },
+    {
+      "id": 73,
+      "type": "single",
+      "question": "¿Qué daemon systemd gestiona interfaces de red?",
+      "options": [
+        {"label": "a", "text": "networker", "correct": false},
+        {"label": "b", "text": "networked", "correct": false},
+        {"label": "c", "text": "networkd", "correct": true},
+        {"label": "d", "text": "netwrkd", "correct": false}
+      ],
+      "feedback": "systemd-networkd es el daemon de systemd para gestión de red. Las otras opciones no existen."
+    },
+    {
+      "id": 74,
+      "type": "single",
+      "question": "¿Qué comando de hostnamectl establece el nombre del equipo?",
+      "options": [
+        {"label": "a", "text": "set-host", "correct": false},
+        {"label": "b", "text": "set-hostname", "correct": true},
+        {"label": "c", "text": "set-name", "correct": false},
+        {"label": "d", "text": "hostname", "correct": false}
+      ],
+      "feedback": "hostnamectl set-hostname configura el nombre del equipo. Los otros comandos no son válidos."
+    },
+    {
+      "id": 75,
+      "type": "single",
+      "question": "¿En qué puerto escucha IMAP sobre SSL (IMAPS)?",
+      "options": [
+        {"label": "a", "text": "993", "correct": true},
+        {"label": "b", "text": "995", "correct": false},
+        {"label": "c", "text": "465", "correct": false},
+        {"label": "d", "text": "514", "correct": false}
+      ],
+      "feedback": "IMAPS usa el puerto 993 por defecto. 995 es para POP3S, 465 para SMTPS y 514 para syslog."
+    },
+    {
+      "id": 76,
+      "type": "single",
+      "question": "¿Qué opción del comando ip elimina saltos de línea para procesar la salida con grep?",
+      "options": [
+        {"label": "a", "text": "-n", "correct": false},
+        {"label": "b", "text": "-o", "correct": true},
+        {"label": "c", "text": "-l", "correct": false},
+        {"label": "d", "text": "-f", "correct": false}
+      ],
+      "feedback": "La opción -o de ip elimina saltos de línea, facilitando el procesamiento con grep. -l establece loops para ip addr flush, -f especifica familia de protocolos, y no existe -n."
+    },
+    {
+      "id": 77,
+      "type": "single",
+      "question": "¿Qué dirección representa localhost en IPv6?",
+      "options": [
+        {"label": "a", "text": "0:1", "correct": false},
+        {"label": "b", "text": "::1", "correct": true},
+        {"label": "c", "text": "127:0:1", "correct": false},
+        {"label": "d", "text": ":127:0:0:1", "correct": false}
+      ],
+      "feedback": "::1 es la dirección IPv6 para localhost. Las opciones con 127 pertenecen a IPv4 pero están mal escritas."
+    },
+    {
+      "id": 78,
+      "type": "single",
+      "question": "¿Qué opción de traceroute usa paquetes TCP SYN para trazar rutas?",
+      "options": [
+        {"label": "a", "text": "-T", "correct": true},
+        {"label": "b", "text": "-t", "correct": false},
+        {"label": "c", "text": "-s", "correct": false},
+        {"label": "d", "text": "-i", "correct": false}
+      ],
+      "feedback": "-T usa paquetes TCP (requiere root). -i selecciona interfaz, -s dirección origen, y -t minúscula establece el flag ToS."
+    },
+    {
+      "id": 79,
+      "type": "single",
+      "question": "¿Qué comando activa todas las interfaces marcadas como auto en la configuración de red?",
+      "options": [
+        {"label": "a", "text": "ifconfig -a", "correct": false},
+        {"label": "b", "text": "ifup auto", "correct": false},
+        {"label": "c", "text": "ifup -a", "correct": true},
+        {"label": "d", "text": "ifstat", "correct": false}
+      ],
+      "feedback": "ifup -a activa interfaces marcadas como auto. ifconfig -a muestra información, y ifstat no existe."
+    },
+    {
+      "id": 80,
+      "type": "single",
+      "question": "Si una interfaz está caída (sin fallo hardware), ¿qué comando muestra su información?",
+      "options": [
+        {"label": "a", "text": "ifconfig -a", "correct": true},
+        {"label": "b", "text": "ifup", "correct": false},
+        {"label": "c", "text": "netstat -n", "correct": false},
+        {"label": "d", "text": "ifconfig", "correct": false}
+      ],
+      "feedback": "ifconfig -a muestra información incluso de interfaces caídas. ifup activa interfaces pero no muestra información, y netstat -n muestra conexiones numéricas."
+    },
+        {
+      "id": 81,
+      "type": "single",
+      "question": "En un script, ¿qué comando devuelve el nombre de dominio configurado para el servidor?",
+      "options": [
+        {"label": "a", "text": "dnsname", "correct": false},
+        {"label": "b", "text": "fqdn", "correct": false},
+        {"label": "c", "text": "hostname", "correct": false},
+        {"label": "d", "text": "hostname -d", "correct": true}
+      ],
+      "feedback": "El comando hostname con la opción -d devuelve solo el nombre de dominio a STDOUT, haciéndolo ideal para scripts."
+    },
+    {
+      "id": 82,
+      "type": "single",
+      "question": "¿Qué comando puede escuchar mensajes netlink en una red?",
+      "options": [
+        {"label": "a", "text": "ip monitor", "correct": true},
+        {"label": "b", "text": "netlink -a", "correct": false},
+        {"label": "c", "text": "ip netlink", "correct": false},
+        {"label": "d", "text": "route", "correct": false}
+      ],
+      "feedback": "El comando ip con la opción monitor muestra mensajes netlink en tiempo real. No existe un subcomando netlink para ip."
+    },
+    {
+      "id": 83,
+      "type": "single",
+      "question": "Si traceroute6 no está disponible, ¿qué opción de traceroute realiza un traceroute IPv6?",
+      "options": [
+        {"label": "a", "text": "-ipv6", "correct": false},
+        {"label": "b", "text": "-net6", "correct": false},
+        {"label": "c", "text": "-v6", "correct": false},
+        {"label": "d", "text": "-6", "correct": true}
+      ],
+      "feedback": "traceroute -6 realiza un traceroute IPv6. Es raro que traceroute6 no esté disponible pero sí esta opción."
+    },
+    {
+      "id": 84,
+      "type": "single",
+      "question": "¿Qué línea en /etc/nsswitch.conf hace que las búsquedas de grupos usen primero archivos locales y luego LDAP?",
+      "options": [
+        {"label": "a", "text": "group: files ldap", "correct": true},
+        {"label": "b", "text": "lookup: group [local ldap]", "correct": false},
+        {"label": "c", "text": "group: [local ldap]", "correct": false},
+        {"label": "d", "text": "group: localfiles ldap", "correct": false}
+      ],
+      "feedback": "La sintaxis correcta es 'database: fuente1 fuente2'. Para grupos: 'group: files ldap'."
+    },
+    {
+      "id": 85,
+      "type": "single",
+      "question": "¿Qué comando dig envía la consulta para example.com directamente al servidor 192.168.2.5?",
+      "options": [
+        {"label": "a", "text": "dig example.com @192.168.2.5", "correct": true},
+        {"label": "b", "text": "dig -t 192.168.2.5 example.com", "correct": false},
+        {"label": "c", "text": "dig -s 192.168.2.5 example.com", "correct": false},
+        {"label": "d", "text": "dig server=192.168.2.5 example.com", "correct": false}
+      ],
+      "feedback": "El símbolo @ especifica el servidor DNS al que enviar la consulta directamente. -t establece el tipo de registro."
+    },
+    {
+      "id": 86,
+      "type": "single",
+      "question": "¿Qué puertos deben permitirse en el firewall para tráfico SNMP?",
+      "options": [
+        {"label": "a", "text": "Puertos 23 y 25", "correct": false},
+        {"label": "b", "text": "Puertos 110 y 143", "correct": false},
+        {"label": "c", "text": "Puertos 80 y 443", "correct": false},
+        {"label": "d", "text": "Puertos 161 y 162", "correct": true}
+      ],
+      "feedback": "SNMP usa los puertos 161 y 162 (generalmente UDP). 23/25 son telnet/SMTP, 110/143 POP3/IMAP, 80/443 HTTP/HTTPS."
+    },
+    {
+      "id": 87,
+      "type": "single",
+      "question": "¿Qué comando enumera la base de datos de hosts?",
+      "options": [
+        {"label": "a", "text": "getent hosts", "correct": true},
+        {"label": "b", "text": "gethosts", "correct": false},
+        {"label": "c", "text": "nslookup", "correct": false},
+        {"label": "d", "text": "host", "correct": false}
+      ],
+      "feedback": "getent hosts muestra los hosts usando las fuentes configuradas en /etc/nsswitch.conf."
+    },
+    {
+      "id": 88,
+      "type": "single",
+      "question": "¿Qué máscara de red corresponde a una subred /25 en notación CIDR?",
+      "options": [
+        {"label": "a", "text": "255.255.255.0", "correct": false},
+        {"label": "b", "text": "255.255.0.0", "correct": false},
+        {"label": "c", "text": "255.255.255.192", "correct": false},
+        {"label": "d", "text": "255.255.255.128", "correct": true}
+      ],
+      "feedback": "/25 es la mitad de un /24, por lo que su máscara es 255.255.255.128. /24=255.255.255.0, /26=255.255.255.192, /16=255.255.0.0."
+    }
+  ]
+}

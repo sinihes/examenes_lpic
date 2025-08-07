@@ -1,0 +1,534 @@
+{
+  "id": "12",
+  "title": "104:B - Devices, Linux Filesystems, Filesystem Hierarchy Standard",
+  "questions": [
+    {
+      "id": 1,
+      "type": "single",
+      "question": "¿Qué opción describe mejor la siguiente salida del comando ls -la: lrwxrwxrwx. 1 root root 35 Jul 8 2014 .fetchmailrc -> .configs/fetchmail/.fetchmailrc?",
+      "options": [
+        { "label": "a", "text": "Es un archivo llamado .fetchmailrc que está enlazado mediante un enlace simbólico.", "correct": true },
+        { "label": "b", "text": "Es un archivo llamado .configs/fetchmail/.fetchmailrc que es propiedad de lrwxrwxrwx.", "correct": false },
+        { "label": "c", "text": "Es un directorio llamado .fetchmailrc que es propiedad del usuario Jul.", "correct": false },
+        { "label": "d", "text": "Es un directorio local llamado .configs/fetchmail/.fetchmailrc.", "correct": false }
+      ],
+      "feedback": "El listado muestra un archivo enlazado simbólicamente ubicado en el directorio actual, enlazado a .configs/fetchmail/.fetchmailrc. El archivo es propiedad del usuario root y del grupo root y fue creado el 8 de julio de 2014."
+    },
+    {
+      "id": 2,
+      "type": "single",
+      "question": "¿Qué opción de xfs_metadump muestra un indicador de progreso?",
+      "options": [
+        { "label": "a", "text": "-g", "correct": true },
+        { "label": "b", "text": "-p", "correct": false },
+        { "label": "c", "text": "-f", "correct": false },
+        { "label": "d", "text": "-v", "correct": false }
+      ],
+      "feedback": "La opción -g muestra el progreso del volcado. Las otras opciones listadas no existen."
+    },
+    {
+      "id": 3,
+      "type": "single",
+      "question": "El sistema se está quedando sin espacio en disco en la partición del directorio home y no se han habilitado cuotas. ¿Qué comando puedes usar para determinar los directorios que podrían contener archivos grandes?",
+      "options": [
+        { "label": "a", "text": "du", "correct": true },
+        { "label": "b", "text": "df", "correct": false },
+        { "label": "c", "text": "ls", "correct": false },
+        { "label": "d", "text": "locate", "correct": false }
+      ],
+      "feedback": "El comando du informará sobre el uso del disco de manera recursiva, a diferencia de los otros comandos mostrados aquí."
+    },
+    {
+      "id": 4,
+      "type": "single",
+      "question": "¿Qué opción dentro de un comando de montaje de partición hará que la partición se monte de manera que impida la ejecución de programas?",
+      "options": [
+        { "label": "a", "text": "execless", "correct": false },
+        { "label": "b", "text": "stoprun", "correct": false },
+        { "label": "c", "text": "noexec", "correct": true },
+        { "label": "d", "text": "norun", "correct": false }
+      ],
+      "feedback": "La opción noexec evitará que se ejecuten programas que residan en la partición. La opción noexec se usa frecuentemente para montar la partición /tmp."
+    },
+    {
+      "id": 5,
+      "type": "single",
+      "question": "¿Qué archivo contiene información sobre los sistemas de archivos a montar, sus particiones y las opciones que se deben usar para montarlos?",
+      "options": [
+        { "label": "a", "text": "/etc/filesystems", "correct": false },
+        { "label": "b", "text": "/etc/mounts", "correct": false },
+        { "label": "c", "text": "/etc/fstab", "correct": true },
+        { "label": "d", "text": "/srv/mounts", "correct": false }
+      ],
+      "feedback": "El archivo /etc/fstab se utiliza para almacenar información sobre los sistemas de archivos a montar dentro del sistema."
+    },
+    {
+      "id": 6,
+      "type": "single",
+      "question": "Según el FHS, ¿cuál es el punto de montaje adecuado para medios extraíbles?",
+      "options": [
+        { "label": "a", "text": "/etc", "correct": false },
+        { "label": "b", "text": "/srv", "correct": false },
+        { "label": "c", "text": "/tmp", "correct": false },
+        { "label": "d", "text": "/media", "correct": true }
+      ],
+      "feedback": "El punto de montaje /media se utiliza para medios extraíbles. Consulta https://wiki.linuxfoundation.org/lsb/fhs-30 para más información sobre el FHS."
+    },
+    {
+      "id": 7,
+      "type": "single",
+      "question": "¿Qué archivo contiene información sobre los sistemas de archivos actualmente montados, incluyendo sus opciones de montaje?",
+      "options": [
+        { "label": "a", "text": "/etc/mtab", "correct": true },
+        { "label": "b", "text": "/etc/fstab", "correct": false },
+        { "label": "c", "text": "/tmp/files", "correct": false },
+        { "label": "d", "text": "/etc/filesystems", "correct": false }
+      ],
+      "feedback": "El archivo /etc/mtab contiene los sistemas de archivos actualmente montados. Nota que /etc/fstab contiene información sobre sistemas de archivos pero no informa cuáles están montados actualmente."
+    },
+    {
+      "id": 8,
+      "type": "single",
+      "question": "¿Qué opción de umount hará que el comando intente volver a montar el sistema de archivos en modo solo lectura si falla el proceso de desmontaje?",
+      "options": [
+        { "label": "a", "text": "-o", "correct": false },
+        { "label": "b", "text": "-r", "correct": true },
+        { "label": "c", "text": "-f", "correct": false },
+        { "label": "d", "text": "-v", "correct": false }
+      ],
+      "feedback": "La opción -r hace que umount intente volver a montar en modo solo lectura. La opción -v es el modo verbose, y la opción -f fuerza la operación. La opción -o no existe."
+    },
+    {
+      "id": 9,
+      "type": "single",
+      "question": "El umask reporta 022. ¿Qué permiso tendrá un nuevo archivo no ejecutable recién creado?",
+      "options": [
+        { "label": "a", "text": "u+rw, g+r, w+r", "correct": true },
+        { "label": "b", "text": "755", "correct": false },
+        { "label": "c", "text": "022", "correct": false },
+        { "label": "d", "text": "a+r", "correct": false }
+      ],
+      "feedback": "El umask 022 se traducirá en permisos 644 para un nuevo archivo no ejecutable."
+    },
+    {
+      "id": 10,
+      "type": "single",
+      "question": "El comando locate está reportando información desactualizada. ¿Qué comando se debe ejecutar para que locate actualice su base de datos?",
+      "options": [
+        { "label": "a", "text": "locatedb -u", "correct": false },
+        { "label": "b", "text": "locate -u", "correct": false },
+        { "label": "c", "text": "updatedb", "correct": true },
+        { "label": "d", "text": "updatelocate", "correct": false }
+      ],
+      "feedback": "El comando updatedb actualizará la base de datos utilizada por el comando locate."
+    },
+    {
+      "id": 11,
+      "type": "single",
+      "question": "¿Qué comando interno del shell puede usarse para determinar qué comando se ejecutará?",
+      "options": [
+        { "label": "a", "text": "type", "correct": true },
+        { "label": "b", "text": "when", "correct": false },
+        { "label": "c", "text": "find", "correct": false },
+        { "label": "d", "text": "help", "correct": false }
+      ],
+      "feedback": "El comando interno type devuelve la ubicación que el shell usará para ejecutar el comando dado. El comando find no puede usarse para este propósito, y los otros comandos no existen."
+    },
+    {
+      "id": 12,
+      "type": "single",
+      "question": "¿Qué opción de chown cambia recursivamente la propiedad?",
+      "options": [
+        { "label": "a", "text": "-f", "correct": false },
+        { "label": "b", "text": "-R", "correct": true },
+        { "label": "c", "text": "-a", "correct": false },
+        { "label": "d", "text": "-m", "correct": false }
+      ],
+      "feedback": "La opción -R realizará el cambio de propiedad de manera recursiva."
+    },
+    {
+      "id": 13,
+      "type": "single",
+      "question": "¿Cuál de las siguientes representa el formato correcto para el archivo /etc/fstab?",
+      "options": [
+        { "label": "a", "text": "<directorio> <dispositivo> <tipo> <opciones>", "correct": false },
+        { "label": "b", "text": "<dispositivo> <tipo> <opciones>", "correct": false },
+        { "label": "c", "text": "<dispositivo> <tipo> <opciones> <directorio> <dump> <fsck>", "correct": false },
+        { "label": "d", "text": "<sistema_de_archivos> <punto_de_montaje> <tipo> <opciones> <dump> <pass>", "correct": true }
+      ],
+      "feedback": "El orden correcto es: el dispositivo (UUID o partición) o sistema de archivos a montar, seguido del punto de montaje o directorio donde montarlo, luego su tipo y opciones, y finalmente las configuraciones dump y pass."
+    },
+    {
+      "id": 14,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos se usa para identificar el UUID de las particiones?",
+      "options": [
+        { "label": "a", "text": "blkid", "correct": true },
+        { "label": "b", "text": "ls", "correct": false },
+        { "label": "c", "text": "find", "correct": false },
+        { "label": "d", "text": "cat", "correct": false }
+      ],
+      "feedback": "El comando blkid mostrará los UUIDs de las particiones. También puedes obtener esta información con el comando lsblk -no UUID. Los otros comandos mostrados no realizan esta tarea."
+    },
+    {
+      "id": 15,
+      "type": "single",
+      "question": "Cuando trabajas con particiones en disco, ves el tipo 0x82. ¿Qué tipo de partición es esta?",
+      "options": [
+        { "label": "a", "text": "Linux", "correct": false },
+        { "label": "b", "text": "Linux swap", "correct": true },
+        { "label": "c", "text": "NTFS", "correct": false },
+        { "label": "d", "text": "FAT", "correct": false }
+      ],
+      "feedback": "0x82 es Linux swap, y 0x83 es Linux. NTFS es 0x07, y FAT es 0.0c."
+    },
+    {
+      "id": 16,
+      "type": "single",
+      "question": "¿Cuál de las siguientes describe el orden de prioridad para los archivos de configuración con systemd?",
+      "options": [
+        { "label": "a", "text": "Archivos en /etc/, archivos en /run, y luego archivos en /lib", "correct": true },
+        { "label": "b", "text": "Archivos en /run, archivos en /etc/, y luego archivos en /lib", "correct": false },
+        { "label": "c", "text": "Archivos en /lib, archivos en /run, y luego archivos en /etc", "correct": false },
+        { "label": "d", "text": "Archivos en /lib, archivos en /etc, y luego archivos en /run", "correct": false }
+      ],
+      "feedback": "El orden de prioridad para los archivos de configuración de systemd son aquellos dentro de la jerarquía /etc/, seguidos por archivos en la jerarquía /run/, y luego archivos en la jerarquía /lib/."
+    },
+    {
+      "id": 17,
+      "type": "single",
+      "question": "¿Qué opciones del comando fsck encontrarán y asumirán automáticamente que debe reparar los errores que encuentre?",
+      "options": [
+        { "label": "a", "text": "-y", "correct": true },
+        { "label": "b", "text": "-vy", "correct": false },
+        { "label": "c", "text": "-my", "correct": false },
+        { "label": "d", "text": "-xy", "correct": false }
+      ],
+      "feedback": "La opción -y hace que fsck asuma 'sí' en lugar de preguntar al reparar un sistema de archivos. La opción -v es para verbosidad. No existen las opciones -m o -x para fsck."
+    },
+    {
+      "id": 18,
+      "type": "single",
+      "question": "¿Qué opción de mke2fs establece el tipo de sistema de archivos a crear?",
+      "options": [
+        { "label": "a", "text": "-F", "correct": false },
+        { "label": "b", "text": "-a", "correct": false },
+        { "label": "c", "text": "-t", "correct": true },
+        { "label": "d", "text": "-e", "correct": false }
+      ],
+      "feedback": "La opción -t establece el tipo de sistema de archivos como ext2, ext3 o ext4. El comando mke2fs típicamente tiene enlaces simbólicos como /sbin/mkfs.ext2, /sbin/mkfs.ext3 y /sbin/mkfs.ext4. La opción -F fuerza a mke2fs a crear un sistema de archivos, y las opciones -a y -e no existen."
+    },
+    {
+      "id": 19,
+      "type": "single",
+      "question": "¿Cuál de los siguientes archivos es el archivo de configuración predeterminado para el automontador autofs?",
+      "options": [
+        { "label": "a", "text": "/etc/autofs", "correct": false },
+        { "label": "b", "text": "/etc/auto.master", "correct": true },
+        { "label": "c", "text": "/etc/autofs.conf", "correct": false },
+        { "label": "d", "text": "/etc/automounter.conf", "correct": false }
+      ],
+      "feedback": "El archivo /etc/auto.master contiene la configuración para autofs. Los otros archivos listados no son válidos para este escenario."
+    },
+    {
+      "id": 20,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos se usa para crear un sistema de archivos ISO?",
+      "options": [
+        { "label": "a", "text": "mkiso", "correct": false },
+        { "label": "b", "text": "mkfsiso", "correct": false },
+        { "label": "c", "text": "mkisofs", "correct": true },
+        { "label": "d", "text": "isofs-mk", "correct": false }
+      ],
+      "feedback": "El comando mkisofs crea un sistema de archivos ISO, que luego puede escribirse en un CD o DVD. Los otros comandos listados no son válidos."
+    },
+        {
+      "id": 21,
+      "type": "single",
+      "question": "¿Qué opción del comando tune2fs establece el conteo máximo de montajes antes de que el sistema ejecute automáticamente fsck en la partición al arrancar?",
+      "options": [
+        { "label": "a", "text": "-b", "correct": false },
+        { "label": "b", "text": "-c", "correct": true },
+        { "label": "c", "text": "-C", "correct": false },
+        { "label": "d", "text": "-a", "correct": false }
+      ],
+      "feedback": "La opción -c establece el conteo máximo de montajes. La opción -C establece el número actual de montajes. Las opciones -b y -a no existen."
+    },
+    {
+      "id": 22,
+      "type": "single",
+      "question": "¿Qué opción del comando mount puede usarse para simular el proceso de montaje sin realmente montar el sistema de archivos?",
+      "options": [
+        { "label": "a", "text": "-q", "correct": false },
+        { "label": "b", "text": "-v", "correct": false },
+        { "label": "c", "text": "-l", "correct": false },
+        { "label": "d", "text": "-f", "correct": true }
+      ],
+      "feedback": "La opción -f, también conocida como 'fake', es útil para depurar el proceso de montaje o cuando necesitas añadir una entrada a /etc/mtab para un sistema de archivos previamente montado. La opción -l muestra etiquetas, y -v es modo verbose. No existe la opción -q."
+    },
+    {
+      "id": 23,
+      "type": "single",
+      "question": "Al ver /proc/mounts, ves un sistema de archivos con las letras 'ro' en la cuarta columna. ¿A qué se refieren las letras 'ro'?",
+      "options": [
+        { "label": "a", "text": "opción relativa", "correct": false },
+        { "label": "b", "text": "opción en tiempo real", "correct": false },
+        { "label": "c", "text": "solo lectura", "correct": true },
+        { "label": "d", "text": "solo relativo", "correct": false }
+      ],
+      "feedback": "Las letras 'ro' indican que el sistema de archivos se ha montado en modo solo lectura, lo que significa que no es posible realizar escrituras. La otra opción posible es 'rw', indicando que el sistema de archivos se montó en modo lectura-escritura."
+    },
+    {
+      "id": 24,
+      "type": "single",
+      "question": "¿Qué opción de dumpe2fs muestra los bloques defectuosos para una partición dada?",
+      "options": [
+        { "label": "a", "text": "-bb", "correct": false },
+        { "label": "b", "text": "-C", "correct": false },
+        { "label": "c", "text": "-b", "correct": true },
+        { "label": "d", "text": "-f", "correct": false }
+      ],
+      "feedback": "Los bloques defectuosos se muestran con la opción -b. La opción -f fuerza a dumpe2fs a realizar la operación solicitada, y las otras opciones no existen."
+    },
+    {
+      "id": 25,
+      "type": "single",
+      "question": "¿Cuál de los siguientes tipos de sistemas de archivos utiliza copy-on-write?",
+      "options": [
+        { "label": "a", "text": "ext3", "correct": false },
+        { "label": "b", "text": "ext4", "correct": false },
+        { "label": "c", "text": "FAT", "correct": false },
+        { "label": "d", "text": "Btrfs", "correct": true }
+      ],
+      "feedback": "Btrfs se basa en el principio copy-on-write y generalmente se considera más avanzado que ext4 y sus predecesores. FAT es un sistema de archivos heredado usado principalmente para DOS y sus sucesores como Windows."
+    },
+    {
+      "id": 26,
+      "type": "single",
+      "question": "¿Qué tipo de partición debería crearse para un sistema Linux que no sea de swap?",
+      "options": [
+        { "label": "a", "text": "82", "correct": false },
+        { "label": "b", "text": "83", "correct": true },
+        { "label": "c", "text": "84", "correct": false },
+        { "label": "d", "text": "L", "correct": false }
+      ],
+      "feedback": "El tipo de partición 0x83 debería crearse para una partición Linux normal. El tipo 82 se usa para swap; 84 es una partición OS/2. No existe el tipo L."
+    },
+    {
+      "id": 27,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos muestra la geometría del sistema de archivos para un sistema XFS?",
+      "options": [
+        { "label": "a", "text": "xfsinfo", "correct": false },
+        { "label": "b", "text": "xfs_info", "correct": true },
+        { "label": "c", "text": "xfs -info", "correct": false },
+        { "label": "d", "text": "xfs --info", "correct": false }
+      ],
+      "feedback": "El comando xfs_info, que es funcionalmente equivalente a xfs_grow -n, muestra información sobre un sistema de archivos formateado con XFS."
+    },
+    {
+      "id": 28,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos puede usarse para mostrar información como el UUID de particiones en un sistema?",
+      "options": [
+        { "label": "a", "text": "blkid", "correct": true },
+        { "label": "b", "text": "blockdev", "correct": false },
+        { "label": "c", "text": "devinfo", "correct": false },
+        { "label": "d", "text": "uuidinfo", "correct": false }
+      ],
+      "feedback": "El comando blkid muestra información sobre particiones incluyendo su tipo, UUID y otra información básica. Los otros comandos mostrados no existen."
+    },
+    {
+      "id": 29,
+      "type": "single",
+      "question": "¿Qué opción del comando umount hará que solo desmonte sistemas de archivos del tipo especificado?",
+      "options": [
+        { "label": "a", "text": "-v", "correct": false },
+        { "label": "b", "text": "-f", "correct": false },
+        { "label": "c", "text": "-t", "correct": true },
+        { "label": "d", "text": "-a", "correct": false }
+      ],
+      "feedback": "La opción -t, que puede aceptar una lista separada por comas de tipos, especifica que solo se desmontarán sistemas de archivos del tipo listado. Esto es útil junto con la opción -a, que desmonta todos los sistemas de archivos excepto /proc. La opción -v es verbose, y -f fuerza la operación."
+    },
+    {
+      "id": 30,
+      "type": "single",
+      "question": "¿Qué comando hace que los datos no escritos se escriban en el disco inmediatamente?",
+      "options": [
+        { "label": "a", "text": "write", "correct": false },
+        { "label": "b", "text": "wrnow", "correct": false },
+        { "label": "c", "text": "connwrite", "correct": false },
+        { "label": "d", "text": "sync", "correct": true }
+      ],
+      "feedback": "El comando sync escribe los datos no escritos en el disco inmediatamente y es útil para ejecutar justo antes de intentar una operación de desmontaje."
+    },
+    {
+      "id": 31,
+      "type": "single",
+      "question": "¿Qué opción de xfs_check se usa para verificar un sistema de archivos almacenado en un archivo?",
+      "options": [
+        { "label": "a", "text": "-v", "correct": false },
+        { "label": "b", "text": "-a", "correct": false },
+        { "label": "c", "text": "-f", "correct": true },
+        { "label": "d", "text": "-d", "correct": false }
+      ],
+      "feedback": "La opción -f especifica que xfs_check debe verificar el contenido del archivo nombrado para consistencia. La opción -v establece verbosidad, y no existen las opciones -d o -a."
+    },
+    {
+      "id": 32,
+      "type": "single",
+      "question": "¿Qué opción de debugfs hace que el sistema de archivos se abra en modo lectura-escritura en lugar del modo predeterminado solo lectura?",
+      "options": [
+        { "label": "a", "text": "-rw", "correct": false },
+        { "label": "b", "text": "-w", "correct": true },
+        { "label": "c", "text": "-r", "correct": false },
+        { "label": "d", "text": "-n", "correct": false }
+      ],
+      "feedback": "La opción -w hace que debugfs abra el sistema de archivos en modo lectura-escritura. También existe una opción -c para abrir en modo catastrófico para sistemas de archivos con daños significativos. Las opciones -rw, -r y -n no son válidas."
+    },
+    {
+      "id": 33,
+      "type": "single",
+      "question": "¿Qué demonio es responsable de monitorear discos duros compatibles con SMART (Self-Monitoring, Analysis, and Reporting Technology)?",
+      "options": [
+        { "label": "a", "text": "smartmon", "correct": false },
+        { "label": "b", "text": "smarty", "correct": false },
+        { "label": "c", "text": "sartd", "correct": false },
+        { "label": "d", "text": "smartd", "correct": true }
+      ],
+      "feedback": "El demonio smartd monitorea discos compatibles con SMART para eventos notables y puede configurarse para enviar alertas cuando ocurren eventos. Los otros comandos listados no son válidos para este escenario."
+    },
+    {
+      "id": 34,
+      "type": "single",
+      "question": "Al verificar un sistema de archivos ext3, ¿qué opción del comando fsck.ext3 hace que ejecute la verificación incluso si el sistema de archivos está marcado como limpio?",
+      "options": [
+        { "label": "a", "text": "-f", "correct": true },
+        { "label": "b", "text": "-m", "correct": false },
+        { "label": "c", "text": "-a", "correct": false },
+        { "label": "d", "text": "-c", "correct": false }
+      ],
+      "feedback": "La opción -f fuerza a fsck a ejecutarse en un sistema de archivos que de otra manera estaría limpio para sistemas ext3. Esto puede ser útil cuando sospechas que hay un error en el sistema de archivos y necesitas verificar su integridad como parte del proceso de solución de problemas. También puede ser útil para preparar el sistema de archivos para conversión, como podría ser el caso con una herramienta como btrfs-convert."
+    },
+    {
+      "id": 35,
+      "type": "single",
+      "question": "Estás realizando un xfsrestore. El xfsdump se ejecutó con un tamaño de bloque de 4MB. ¿Qué opción necesitas invocar en xfsrestore para que use exitosamente este volcado?",
+      "options": [
+        { "label": "a", "text": "-b 4M", "correct": true },
+        { "label": "b", "text": "-g 1M", "correct": false },
+        { "label": "c", "text": "-i 1M", "correct": false },
+        { "label": "d", "text": "-k 1028K", "correct": false }
+      ],
+      "feedback": "El tamaño de bloque para importar o restaurar debe coincidir con el tamaño de bloque usado en la exportación o volcado. El tamaño de bloque se especifica con la opción -b, haciendo que la opción A sea correcta. Las otras opciones no son válidas para xfsrestore."
+    },
+    {
+      "id": 36,
+      "type": "single",
+      "question": "Ves la palabra 'defaults' dentro de /etc/fstab. ¿Qué opciones están incluidas dentro de 'defaults'?",
+      "options": [
+        { "label": "a", "text": "ro, exec, auto", "correct": false },
+        { "label": "b", "text": "rw, suid, dev, exec, auto, nouser, async", "correct": true },
+        { "label": "c", "text": "rw, exec, auto, nouser, async", "correct": false },
+        { "label": "d", "text": "rw, exec, nouser, async, noauto, suid", "correct": false }
+      ],
+      "feedback": "Un sistema de archivos con la palabra 'defaults' para sus opciones de montaje se montará en lectura-escritura (rw), permitirá suid y la ejecución de binarios (exec). El sistema de archivos se montará automáticamente (auto), pero los usuarios no podrán montarlo (nouser). Se interpretarán dispositivos especiales de bloque y caracteres (dev), y las operaciones en el disco se realizarán de manera asíncrona (async)."
+    },
+    {
+      "id": 37,
+      "type": "single",
+      "question": "¿Qué comando puede usarse para determinar la ubicación de un ejecutable que se ejecutaría si se tecleara desde tu entorno y ubicación actual?",
+      "options": [
+        { "label": "a", "text": "which", "correct": true },
+        { "label": "b", "text": "what", "correct": false },
+        { "label": "c", "text": "whatis", "correct": false },
+        { "label": "d", "text": "when", "correct": false }
+      ],
+      "feedback": "El comando which devuelve la ruta completa al comando dado y es útil para determinar tanto si un comando está disponible como la ubicación desde la cual se ejecutará el comando."
+    },
+    {
+      "id": 38,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos crea un subvolumen btrfs?",
+      "options": [
+        { "label": "a", "text": "btrfs create subvolume", "correct": false },
+        { "label": "b", "text": "btrfs subvolume create", "correct": true },
+        { "label": "c", "text": "btrfs sv create", "correct": false },
+        { "label": "d", "text": "btrfs svcreate", "correct": false }
+      ],
+      "feedback": "El comando 'btrfs subvolume create' crea un subvolumen btrfs. Los otros comandos no son válidos."
+    },
+    {
+      "id": 39,
+      "type": "single",
+      "question": "¿Cuál de las siguientes opciones de xfsdump establece el tamaño máximo para archivos a incluir en el volcado?",
+      "options": [
+        { "label": "a", "text": "-p", "correct": false },
+        { "label": "b", "text": "-s", "correct": false },
+        { "label": "c", "text": "-z", "correct": true },
+        { "label": "d", "text": "-b", "correct": false }
+      ],
+      "feedback": "La opción -z establece el tamaño máximo para archivos a incluir en el volcado. La opción -b establece el tamaño de bloque pero no está relacionada con lo que se pregunta en este escenario. La opción -s establece la ruta para inclusión en el volcado, y -p establece el intervalo para indicadores de progreso."
+    },
+    {
+      "id": 40,
+      "type": "single",
+      "question": "¿Qué opción del comando tune2fs establece el comportamiento cuando ocurre un error en el sistema de archivos?",
+      "options": [
+        { "label": "a", "text": "-f", "correct": false },
+        { "label": "b", "text": "-d", "correct": false },
+        { "label": "c", "text": "-e", "correct": true },
+        { "label": "d", "text": "-k", "correct": false }
+      ],
+      "feedback": "La opción -e establece el comportamiento, como continuar, remontar en solo lectura o entrar en pánico, cuando ocurre un error a nivel del sistema de archivos. La opción -f fuerza a que la operación solicitada continúe incluso si hay errores. Las opciones -d y -k no son válidas."
+    },
+        {
+      "id": 41,
+      "type": "single",
+      "question": "El sistema de archivos /etc ha sido montado como solo lectura para un proceso de recuperación. Necesitas montar otra partición. ¿Qué opción del comando mount hace que no escriba en /etc/mtab?",
+      "options": [
+        { "label": "a", "text": "-a", "correct": false },
+        { "label": "b", "text": "-m", "correct": false },
+        { "label": "c", "text": "-b", "correct": false },
+        { "label": "d", "text": "-n", "correct": true }
+      ],
+      "feedback": "La opción -n hace que mount no escriba en /etc/mtab y es particularmente útil para el escenario descrito. La opción -a monta todos los sistemas de archivos en /etc/fstab. No existen las opciones -b o -a."
+    },
+    {
+      "id": 42,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos desactiva el espacio de intercambio (swap)?",
+      "options": [
+        { "label": "a", "text": "swapoff", "correct": true },
+        { "label": "b", "text": "swap -off", "correct": false },
+        { "label": "c", "text": "unmountswap", "correct": false },
+        { "label": "d", "text": "uswap", "correct": false }
+      ],
+      "feedback": "El comando swapoff desactiva el espacio de intercambio, haciéndolo no disponible como memoria virtual en el sistema. Los otros comandos mostrados como opciones no son válidos."
+    },
+    {
+      "id": 43,
+      "type": "single",
+      "question": "Dentro de la sección [mount] de una unidad de montaje systemd, ¿qué directiva especifica la ubicación para montar el sistema de archivos elegido?",
+      "options": [
+        { "label": "a", "text": "Where=", "correct": true },
+        { "label": "b", "text": "Location=", "correct": false },
+        { "label": "c", "text": "List=", "correct": false },
+        { "label": "d", "text": "Dest=", "correct": false }
+      ],
+      "feedback": "La directiva Where= especifica la ubicación para el sistema de archivos montado final."
+    },
+    {
+      "id": 44,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos puede usarse para formatear un sistema de archivos FAT?",
+      "options": [
+        { "label": "a", "text": "mkfs.fat", "correct": true },
+        { "label": "b", "text": "mkfs -f", "correct": false },
+        { "label": "c", "text": "mkfs --fat", "correct": false },
+        { "label": "d", "text": "mkfat", "correct": false }
+      ],
+      "feedback": "Los comandos mkfs.fat o mkfs.vfat son válidos para la creación de sistemas de archivos FAT. No existe una opción -f para mkfs, y no existe el comando mkfat."
+    }
+  ]
+}

@@ -1,0 +1,583 @@
+{
+  "id": "14",
+  "title": "107 - Administrative Tasks",
+  "questions": [
+    {
+      "id": 1,
+      "type": "single",
+      "question": "¿Qué archivo contiene información de usuarios, como nombre de usuario y nombre real, y es legible por todos los usuarios del sistema?",
+      "options": [
+        { "label": "a", "text": "/etc/pass", "correct": false },
+        { "label": "b", "text": "/etc/shadow", "correct": false },
+        { "label": "c", "text": "/etc/passwd", "correct": true },
+        { "label": "d", "text": "/etc/userinfo", "correct": false }
+      ],
+      "feedback": "El archivo /etc/passwd contiene varias piezas de información sobre los usuarios de un sistema, como nombre de usuario y nombre real, junto con el ID de usuario (UID) y el shell de inicio. El archivo es legible por todos."
+    },
+    {
+      "id": 2,
+      "type": "single",
+      "question": "¿Cuál de los siguientes ejecutará un trabajo a través de cron a las 12:15 a.m. y 12:15 p.m. todos los días?",
+      "options": [
+        { "label": "a", "text": "0,12 15 * * *", "correct": false },
+        { "label": "b", "text": "15 0,12 * * *", "correct": true },
+        { "label": "c", "text": "15 * * * 0/12", "correct": false },
+        { "label": "d", "text": "*/12 * * * 15", "correct": false }
+      ],
+      "feedback": "El formato para cron es [minuto hora día-del-mes mes-del-año día-de-la-semana], por lo que la opción B es correcta para esta pregunta."
+    },
+    {
+      "id": 3,
+      "type": "single",
+      "question": "¿Qué archivo se utiliza para indicar la zona horaria local en un servidor Linux?",
+      "options": [
+        { "label": "a", "text": "/etc/timez", "correct": false },
+        { "label": "b", "text": "/etc/timezoneconfig", "correct": false },
+        { "label": "c", "text": "/etc/localtime", "correct": true },
+        { "label": "d", "text": "/etc/localtz", "correct": false }
+      ],
+      "feedback": "El archivo /etc/localtime, que puede ser un archivo real o un enlace simbólico, se utiliza para indicar la zona horaria local. Los otros archivos listados como opciones no existen."
+    },
+    {
+      "id": 4,
+      "type": "single",
+      "question": "¿Qué archivo se utiliza para proporcionar una lista de usuarios que pueden agregar y eliminar trabajos cron?",
+      "options": [
+        { "label": "a", "text": "/etc/cron.job", "correct": false },
+        { "label": "b", "text": "/etc/cron.allow", "correct": true },
+        { "label": "c", "text": "/etc/cron.users", "correct": false },
+        { "label": "d", "text": "/etc/crontab", "correct": false }
+      ],
+      "feedback": "El archivo /etc/cron.allow es una lista de usuarios que tienen permiso para crear y eliminar sus propios trabajos cron. El archivo /etc/crontab se utiliza para almacenar trabajos cron, y los otros archivos no existen."
+    },
+    {
+      "id": 5,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos elimina la expiración de una cuenta?",
+      "options": [
+        { "label": "a", "text": "sudo chage -l username", "correct": false },
+        { "label": "b", "text": "sudo chage -E -l username", "correct": true },
+        { "label": "c", "text": "sudo chage -E now username", "correct": false },
+        { "label": "d", "text": "sudo chage --noexpire username", "correct": false }
+      ],
+      "feedback": "El comando chage se utiliza para este propósito, específicamente con la opción -E. Cuando se proporciona una fecha, chage expirará la cuenta en esa fecha. Cuando se proporciona -1, se eliminará la expiración."
+    },
+    {
+      "id": 6,
+      "type": "single",
+      "question": "¿Dentro de qué directorio encontrarás archivos relacionados con la zona horaria para varias regiones?",
+      "options": [
+        { "label": "a", "text": "/etc/timezoneinfo", "correct": false },
+        { "label": "b", "text": "/etc/zoneinfo", "correct": false },
+        { "label": "c", "text": "/var/zoneinfo", "correct": false },
+        { "label": "d", "text": "/usr/share/zoneinfo", "correct": true }
+      ],
+      "feedback": "Dentro de la jerarquía /usr/share/zoneinfo encontrarás información sobre las diversas regiones y zonas horarias disponibles. Los archivos dentro de esta jerarquía pueden ser enlazados simbólicamente a /etc/localtime."
+    },
+    {
+      "id": 7,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos programa una serie de comandos para ejecutarse dentro de una hora?",
+      "options": [
+        { "label": "a", "text": "atq +1hr", "correct": false },
+        { "label": "b", "text": "at now + 1 hour", "correct": true },
+        { "label": "c", "text": "atq", "correct": false },
+        { "label": "d", "text": "at -1", "correct": false }
+      ],
+      "feedback": "El comando at se utiliza para ejecutar una serie de comandos que ingresas. A diferencia de cron, puedes programar comandos desde la línea de comandos para que se ejecuten en el mismo orden en que se ingresaron, en lugar de tener que crear un script específico para los comandos. La sintaxis mostrada en la opción B establece el tiempo para que sea dentro de una hora."
+    },
+    {
+      "id": 8,
+      "type": "single",
+      "question": "Necesitas eliminar un usuario del sistema, incluyendo su directorio home. ¿Cuál de los siguientes comandos realiza esta tarea?",
+      "options": [
+        { "label": "a", "text": "userdel", "correct": false },
+        { "label": "b", "text": "userdel -r", "correct": true },
+        { "label": "c", "text": "userdel -R", "correct": false },
+        { "label": "d", "text": "deluser", "correct": false }
+      ],
+      "feedback": "El comando userdel se utiliza para este propósito y la opción -r (minúscula) elimina tanto el directorio home como los archivos de correo. La opción -R (mayúscula) informa al comando userdel que use un directorio chroot."
+    },
+    {
+      "id": 9,
+      "type": "single",
+      "question": "¿Dentro de qué directorio debes colocar archivos para que se copien al directorio home de un usuario cuando se crea el usuario?",
+      "options": [
+        { "label": "a", "text": "/etc/skel", "correct": true },
+        { "label": "b", "text": "/etc/homedir", "correct": false },
+        { "label": "c", "text": "/home/usertemplate", "correct": false },
+        { "label": "d", "text": "/tec/template", "correct": false }
+      ],
+      "feedback": "El directorio /etc/skel contiene archivos que se copian automáticamente al directorio home de un usuario cuando se crea ese usuario. Los otros directorios listados para esta pregunta no existen por defecto."
+    },
+    {
+      "id": 10,
+      "type": "single",
+      "question": "¿Qué programador de trabajos deberías usar si la computadora en la que necesitas programar el trabajo se apaga en varios momentos?",
+      "options": [
+        { "label": "a", "text": "cron.d", "correct": false },
+        { "label": "b", "text": "cron.hourly", "correct": false },
+        { "label": "c", "text": "anacron", "correct": true },
+        { "label": "d", "text": "at", "correct": false }
+      ],
+      "feedback": "Usa anacron cuando necesites programar un trabajo en una computadora que podría estar apagada cuando el trabajo está programado. anacron se encargará de ejecutar el trabajo en su próximo tiempo disponible."
+    },
+        {
+      "id": 11,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos proporciona la fecha y hora actual en formato de segundos desde la época (epoch)?",
+      "options": [
+        { "label": "a", "text": "date +%seconds", "correct": false },
+        { "label": "b", "text": "date +%s", "correct": true },
+        { "label": "c", "text": "date --seconds", "correct": false },
+        { "label": "d", "text": "date --now", "correct": false }
+      ],
+      "feedback": "La opción +%s formateará la fecha como segundos desde el 1 de enero de 1970. Esta opción se usa frecuentemente en scripts para obtener una marca de tiempo única que pueda parsearse fácilmente como entero."
+    },
+    {
+      "id": 12,
+      "type": "single",
+      "question": "¿Qué opción del comando iconv muestra los conjuntos de caracteres disponibles en un sistema?",
+      "options": [
+        { "label": "a", "text": "--showchar", "correct": false },
+        { "label": "b", "text": "--show", "correct": false },
+        { "label": "c", "text": "--list", "correct": true },
+        { "label": "d", "text": "--all", "correct": false }
+      ],
+      "feedback": "La opción --list muestra los conjuntos de caracteres disponibles en el sistema. Las otras opciones no existen."
+    },
+    {
+      "id": 13,
+      "type": "single",
+      "question": "¿Qué variable de entorno controla el formato de fechas y horas, como un reloj de 12 o 24 horas?",
+      "options": [
+        { "label": "a", "text": "LOCALE_DATE", "correct": false },
+        { "label": "b", "text": "DATE_FORMAT", "correct": false },
+        { "label": "c", "text": "LC_TIME", "correct": true },
+        { "label": "d", "text": "LC_DATE", "correct": false }
+      ],
+      "feedback": "La variable LC_TIME controla la visualización y comportamiento de fecha y hora, y puede cambiarse a una localidad diferente para lograr el formato deseado."
+    },
+    {
+      "id": 14,
+      "type": "single",
+      "question": "¿Qué comando muestra una lista de trabajos programados actualmente con 'at'?",
+      "options": [
+        { "label": "a", "text": "atlist", "correct": false },
+        { "label": "b", "text": "atq", "correct": true },
+        { "label": "c", "text": "atl", "correct": false },
+        { "label": "d", "text": "at --jobs", "correct": false }
+      ],
+      "feedback": "El comando atq muestra los trabajos programados con 'at'. Los otros comandos no existen (excepto la opción D, que usa una opción inválida --jobs)."
+    },
+    {
+      "id": 15,
+      "type": "single",
+      "question": "¿A qué shell debe asignarse un usuario si no se le permite iniciar sesión interactivamente?",
+      "options": [
+        { "label": "a", "text": "/bin/bash", "correct": false },
+        { "label": "b", "text": "/bin/tcsh", "correct": false },
+        { "label": "c", "text": "/bin/zsh", "correct": false },
+        { "label": "d", "text": "/bin/false", "correct": true }
+      ],
+      "feedback": "Asignar /bin/false como shell evita el inicio de sesión interactivo (ej. via ssh). Las otras opciones son shells válidos que permitirían el acceso."
+    },
+    {
+      "id": 16,
+      "type": "single",
+      "question": "¿Cuál de los siguientes codificaciones proporciona representación multibyte de caracteres?",
+      "options": [
+        { "label": "a", "text": "ISO-8859", "correct": false },
+        { "label": "b", "text": "UTF-8", "correct": true },
+        { "label": "c", "text": "ISO-L", "correct": false },
+        { "label": "d", "text": "UFTMulti", "correct": false }
+      ],
+      "feedback": "UTF-8 usa codificación multibyte y es el estándar actual. ISO-8859 es single-byte. Las otras opciones no son válidas."
+    },
+    {
+      "id": 17,
+      "type": "single",
+      "question": "¿Qué comando cambia el nombre de un grupo llamado DomainAdmins a DomainUsers?",
+      "options": [
+        { "label": "a", "text": "groupmod -n DomainAdmins DomainUsers", "correct": true },
+        { "label": "b", "text": "groupchg DomainAdmins DomainUsers", "correct": false },
+        { "label": "c", "text": "chgroup DomainAdmins DomainUsers", "correct": false },
+        { "label": "d", "text": "group -N DomainAdmins DomainUsers", "correct": false }
+      ],
+      "feedback": "El comando groupmod con la opción -n renombra grupos. Los otros comandos no existen."
+    },
+    {
+      "id": 18,
+      "type": "single",
+      "question": "¿En qué directorio se encuentran archivos correspondientes a usuarios con trabajos cron activos?",
+      "options": [
+        { "label": "a", "text": "/var/spool/cron/crontabs", "correct": true },
+        { "label": "b", "text": "/var/spool/jobs", "correct": false },
+        { "label": "c", "text": "/etc/cron", "correct": false },
+        { "label": "d", "text": "/etc/cron.users", "correct": false }
+      ],
+      "feedback": "/var/spool/cron/crontabs contiene un archivo por usuario con trabajos cron activos. Los otros directorios no son válidos."
+    },
+    {
+      "id": 19,
+      "type": "single",
+      "question": "¿Qué comando elimina un trabajo 'at' con ID 3?",
+      "options": [
+        { "label": "a", "text": "atq", "correct": false },
+        { "label": "b", "text": "at -l", "correct": false },
+        { "label": "c", "text": "atrm 3", "correct": true },
+        { "label": "d", "text": "rmat 3", "correct": false }
+      ],
+      "feedback": "atrm elimina trabajos por ID (obtenible con atq). atq y at -l solo listan trabajos. rmat no existe."
+    },
+    {
+      "id": 20,
+      "type": "single",
+      "question": "¿Qué comando muestra zonas horarias disponibles y proporciona salida usable en scripts?",
+      "options": [
+        { "label": "a", "text": "tzd", "correct": false },
+        { "label": "b", "text": "/etc/locale", "correct": false },
+        { "label": "c", "text": "tzdata", "correct": false },
+        { "label": "d", "text": "tzselect", "correct": true }
+      ],
+      "feedback": "tzselect muestra un menú interactivo y devuelve una cadena como 'America/Chicago' usable en scripts."
+    },
+        {
+      "id": 21,
+      "type": "single",
+      "question": "Necesitas verificar la integración LDAP. ¿Qué comando lista usuarios según /etc/nsswitch.conf?",
+      "options": [
+        { "label": "a", "text": "getuser", "correct": false },
+        { "label": "b", "text": "getent", "correct": true },
+        { "label": "c", "text": "usermod", "correct": false },
+        { "label": "d", "text": "userlist", "correct": false }
+      ],
+      "feedback": "getent muestra entradas basadas en /etc/nsswitch.conf. Es útil para verificar conexiones con LDAP/Active Directory. usermod es válido pero no sirve para este propósito."
+    },
+    {
+      "id": 22,
+      "type": "single",
+      "question": "¿Qué archivo contiene rangos de IDs mínimos/máximos para usuarios y grupos?",
+      "options": [
+        { "label": "a", "text": "/etc/groupinfo", "correct": false },
+        { "label": "b", "text": "/etc/login.defs", "correct": true },
+        { "label": "c", "text": "/etc/login.info", "correct": false },
+        { "label": "d", "text": "/etc/loginlist", "correct": false }
+      ],
+      "feedback": "/etc/login.defs almacena configuraciones como rangos de IDs para usuarios/grupos nuevos."
+    },
+    {
+      "id": 23,
+      "type": "single",
+      "question": "¿Cuál es el archivo cron de sistema global?",
+      "options": [
+        { "label": "a", "text": "/etc/cron.d", "correct": false },
+        { "label": "b", "text": "/etc/cron.sys", "correct": false },
+        { "label": "c", "text": "/etc/crontab", "correct": true },
+        { "label": "d", "text": "/etc/cron.tab", "correct": false }
+      ],
+      "feedback": "/etc/crontab es un archivo de texto plano que funciona como cronfile global, no asociado a un usuario específico."
+    },
+    {
+      "id": 24,
+      "type": "single",
+      "question": "¿Qué línea en .profile configura la zona horaria como Central (EE.UU.)?",
+      "options": [
+        { "label": "a", "text": "TZ=/Central; export TZ", "correct": false },
+        { "label": "b", "text": "TIMEZONE='America/Chicago'; export TIMEZONE", "correct": false },
+        { "label": "c", "text": "set TZ=/Central", "correct": false },
+        { "label": "d", "text": "TZ='America/Chicago'; export TZ", "correct": true }
+      ],
+      "feedback": "La variable TZ usa el formato 'Región/Ciudad' (ej: 'America/Chicago') y debe exportarse."
+    },
+    {
+      "id": 25,
+      "type": "single",
+      "question": "¿En qué directorio están los scripts que cron ejecuta diariamente?",
+      "options": [
+        { "label": "a", "text": "/etc/cron.daily", "correct": true },
+        { "label": "b", "text": "/etc/cron.weekly", "correct": false },
+        { "label": "c", "text": "/etc/cron.hourly24", "correct": false },
+        { "label": "d", "text": "/etc/crontab", "correct": false }
+      ],
+      "feedback": "/etc/cron.daily contiene scripts ejecutados cada 24 horas. Existen equivalentes para hourly/weekly/monthly."
+    },
+    {
+      "id": 26,
+      "type": "single",
+      "question": "¿Qué valor de LANG desactiva traducciones de localización?",
+      "options": [
+        { "label": "a", "text": "LANG=COMPAT", "correct": false },
+        { "label": "b", "text": "LANG=NONE", "correct": false },
+        { "label": "c", "text": "LANG=C", "correct": true },
+        { "label": "d", "text": "LANG=END", "correct": false }
+      ],
+      "feedback": "LANG=C es un alias para compatibilidad POSIX que evita traducciones de localización."
+    },
+    {
+      "id": 27,
+      "type": "single",
+      "question": "¿Qué opción de useradd crea el directorio home del usuario?",
+      "options": [
+        { "label": "a", "text": "-h", "correct": false },
+        { "label": "b", "text": "-m", "correct": true },
+        { "label": "c", "text": "-x", "correct": false },
+        { "label": "d", "text": "-a", "correct": false }
+      ],
+      "feedback": "La opción -m crea el directorio home. Por defecto (sin -m y sin CREATE_HOME configurado), no se crea."
+    },
+    {
+      "id": 28,
+      "type": "single",
+      "question": "¿Qué comando bloquea el login por contraseña pero permite otros métodos (ej: clave SSH)?",
+      "options": [
+        { "label": "a", "text": "usermod -L", "correct": true },
+        { "label": "b", "text": "userdel -r", "correct": false },
+        { "label": "c", "text": "useradd -h", "correct": false },
+        { "label": "d", "text": "userlock", "correct": false }
+      ],
+      "feedback": "usermod -L agrega un '!' al inicio de la contraseña encriptada, bloqueando solo el login por contraseña. Usado comúnmente en cuentas especiales."
+    },
+    {
+      "id": 29,
+      "type": "single",
+      "question": "¿Qué variable reconfigura TODAS las variables de localización temporalmente?",
+      "options": [
+        { "label": "a", "text": "LC_LIST", "correct": false },
+        { "label": "b", "text": "LC_GLOBAL", "correct": false },
+        { "label": "c", "text": "LC_ALL", "correct": true },
+        { "label": "d", "text": "ALL_LOCALE", "correct": false }
+      ],
+      "feedback": "LC_ALL sobrescribe todas las variables de localización. Ideal para cambios temporales."
+    },
+    {
+      "id": 30,
+      "type": "single",
+      "question": "¿Qué línea en /etc/crontab ejecutará /usr/local/bin/changehome.sh como usuario www-data?",
+      "options": [
+        { "label": "a", "text": "1 1 * * * www-data /usr/local/bin/changehome.sh", "correct": true },
+        { "label": "b", "text": "www-data changehome.sh", "correct": false },
+        { "label": "c", "text": "*/1 www-data changehome.sh", "correct": false },
+        { "label": "d", "text": "* * */ww-data /usr/local/bin/changehome.sh", "correct": false }
+      ],
+      "feedback": "El formato correcto es: [schedule] [usuario] [comando]. La opción A especifica ejecución diaria a la 1:01 AM."
+    },
+        {
+      "id": 31,
+      "type": "single",
+      "question": "¿Qué comando genera un reporte de la última fecha de cambio de contraseña para todos los usuarios?",
+      "options": [
+        { "label": "a", "text": "passwd -a", "correct": false },
+        { "label": "b", "text": "passwd -S", "correct": false },
+        { "label": "c", "text": "passwd -a -S", "correct": true },
+        { "label": "d", "text": "passwd --all", "correct": false }
+      ],
+      "feedback": "El comando passwd requiere la combinación -a (todos los usuarios) y -S (estado) para mostrar esta información. --all es un alias de -a."
+    },
+    {
+      "id": 32,
+      "type": "single",
+      "question": "Si las contraseñas deben cambiarse cada 60 días, ¿qué comando actualiza la fecha del último cambio sin requerir que el usuario la modifique?",
+      "options": [
+        { "label": "a", "text": "chage -f", "correct": false },
+        { "label": "b", "text": "chage -W", "correct": false },
+        { "label": "c", "text": "chage -l", "correct": false },
+        { "label": "d", "text": "chage -d", "correct": true }
+      ],
+      "feedback": "chage -d establece los días desde el último cambio (calculados desde el 1/1/1970). -W configura días de advertencia y -l solo muestra información."
+    },
+    {
+      "id": 33,
+      "type": "single",
+      "question": "¿Qué archivo usa anacron para leer la configuración de trabajos programados?",
+      "options": [
+        { "label": "a", "text": "/etc/anacron.d", "correct": false },
+        { "label": "b", "text": "/etc/anacrontab", "correct": true },
+        { "label": "c", "text": "/etc/anacron.config", "correct": false },
+        { "label": "d", "text": "/etc/anacron.conf", "correct": false }
+      ],
+      "feedback": "/etc/anacrontab almacena detalles como nombres de trabajos y retardos. Los otros archivos no existen por defecto."
+    },
+    {
+      "id": 34,
+      "type": "single",
+      "question": "¿Qué comando configura la zona horaria global del sistema como America/Los_Angeles?",
+      "options": [
+        { "label": "a", "text": "ln -sf /usr/share/zoneinfo/America/Los_Angeles /etc/localtime", "correct": true },
+        { "label": "b", "text": "ln -sf America/Los_Angeles; /etc/localtime", "correct": false },
+        { "label": "c", "text": "ln -sd /etc/localtime /usr/share/timezone/America/Los_Angeles", "correct": false },
+        { "label": "d", "text": "ln -sf /etc/localtime /usr/share/zoneinfo/America/Los_Angeles", "correct": false }
+      ],
+      "feedback": "Se debe crear un enlace simbólico (-s) forzado (-f) desde la zona horaria elegida hacia /etc/localtime. El orden y las opciones son cruciales."
+    },
+    {
+      "id": 35,
+      "type": "single",
+      "question": "¿Qué archivo lista usuarios que NO pueden crear tareas cron?",
+      "options": [
+        { "label": "a", "text": "/etc/cron.users", "correct": false },
+        { "label": "b", "text": "/etc/cron.deny", "correct": true },
+        { "label": "c", "text": "/etc/cron.allow", "correct": false },
+        { "label": "d", "text": "/etc/cron.userlist", "correct": false }
+      ],
+      "feedback": "/etc/cron.deny restringe acceso, mientras que /etc/cron.allow permite acceso explícito. Los otros archivos no son estándar."
+    },
+    {
+      "id": 36,
+      "type": "single",
+      "question": "¿Qué archivo contiene nombres de usuario, UIDs y contraseñas encriptadas?",
+      "options": [
+        { "label": "a", "text": "/etc/passwd", "correct": false },
+        { "label": "b", "text": "/etc/shadow", "correct": true },
+        { "label": "c", "text": "/etc/encpass", "correct": false },
+        { "label": "d", "text": "/etc/grouppass", "correct": false }
+      ],
+      "feedback": "/etc/shadow almacena contraseñas encriptadas y solo es accesible por root. /etc/passwd contiene UIDs pero no contraseñas."
+    },
+    {
+      "id": 37,
+      "type": "single",
+      "question": "¿Cuál describe mejor la relación entre UIDs y GIDs en Linux?",
+      "options": [
+        { "label": "a", "text": "UID y GID son idénticos para cada usuario en el sistema.", "correct": false },
+        { "label": "b", "text": "Cada usuario tiene UID y GID idénticos al crearse.", "correct": false },
+        { "label": "c", "text": "UID identifica al usuario, mientras GID es un ID global único.", "correct": false },
+        { "label": "d", "text": "No hay relación directa entre UIDs y GIDs.", "correct": true }
+      ],
+      "feedback": "Aunque algunos sistemas asignan UID y GID coincidentes para usuarios regulares, esto no es obligatorio. UIDs identifican usuarios y GIDs grupos, sin correlación inherente."
+    },
+    {
+      "id": 38,
+      "type": "single",
+      "question": "¿Qué comando en sistemas basados en Debian cambia la zona horaria usando herramientas de paquetes?",
+      "options": [
+        { "label": "a", "text": "dpkg-reconfigure time", "correct": false },
+        { "label": "b", "text": "dpkg-reconfigure tzdata", "correct": true },
+        { "label": "c", "text": "apt-select tzdata", "correct": false },
+        { "label": "d", "text": "apt-config timezone", "correct": false }
+      ],
+      "feedback": "dpkg-reconfigure tzdata reactiva el asistente de configuración del paquete tzdata. Las opciones con apt no son comandos válidos."
+    },
+    {
+      "id": 39,
+      "type": "single",
+      "question": "¿Qué comando cambia el directorio home de un usuario a /srv/data/username y migra su contenido?",
+      "options": [
+        { "label": "a", "text": "usermod -d /srv/data/username -m", "correct": true },
+        { "label": "b", "text": "homedir -m /srv/data/username", "correct": false },
+        { "label": "c", "text": "userex -m /srv/data/username", "correct": false },
+        { "label": "d", "text": "userchg /m /srv/data/username -d", "correct": false }
+      ],
+      "feedback": "usermod con -d (nuevo directorio) y -m (mover contenido) realiza esta acción. Los otros comandos no existen."
+    },
+    {
+      "id": 40,
+      "type": "single",
+      "question": "¿Qué opción de useradd agrega grupos adicionales a un usuario?",
+      "options": [
+        { "label": "a", "text": "-g", "correct": false },
+        { "label": "b", "text": "-x", "correct": false },
+        { "label": "c", "text": "-l", "correct": false },
+        { "label": "d", "text": "-G", "correct": true }
+      ],
+      "feedback": "-G especifica grupos suplementarios. -g define el GID primario, -l evita registro en lastlog/faillog, y -x no existe."
+    },
+        {
+      "id": 41,
+      "type": "single",
+      "question": "¿Qué comando lista las entradas cron de un usuario específico (<username>)?",
+      "options": [
+        { "label": "a", "text": "crontab -l -u <username>", "correct": true },
+        { "label": "b", "text": "crontab -u <username>", "correct": false },
+        { "label": "c", "text": "cron -u <username>", "correct": false },
+        { "label": "d", "text": "cronent -u <username>", "correct": false }
+      ],
+      "feedback": "crontab con -l lista entradas y -u especifica el usuario. Las otras opciones son comandos inválidos."
+    },
+    {
+      "id": 42,
+      "type": "single",
+      "question": "¿Qué opción de useradd crea un usuario de sistema en lugar de uno normal?",
+      "options": [
+        { "label": "a", "text": "-r", "correct": true },
+        { "label": "b", "text": "-s", "correct": false },
+        { "label": "c", "text": "-a", "correct": false },
+        { "label": "d", "text": "-S", "correct": false }
+      ],
+      "feedback": "-r crea usuarios de sistema (sin directorio home, UID <1000). -s define el shell. -a y -S no existen."
+    },
+    {
+      "id": 43,
+      "type": "single",
+      "question": "¿Qué archivo contiene contraseñas encriptadas de grupos?",
+      "options": [
+        { "label": "a", "text": "/etc/group", "correct": false },
+        { "label": "b", "text": "/etc/shadow", "correct": false },
+        { "label": "c", "text": "/etc/gsecure", "correct": false },
+        { "label": "d", "text": "/etc/group.conf", "correct": false },
+        { "label": "e", "text": "/etc/gshadow", "correct": true }
+      ],
+      "feedback": "/etc/gshadow almacena contraseñas encriptadas de grupos. /etc/group solo tiene información básica. Las otras opciones no existen."
+    },
+    {
+      "id": 44,
+      "type": "single",
+      "question": "¿Qué variable de localización controla el formato de moneda?",
+      "options": [
+        { "label": "a", "text": "LC_MONE", "correct": false },
+        { "label": "b", "text": "LC_CURRENCY", "correct": false },
+        { "label": "c", "text": "LC_MONETARY", "correct": true },
+        { "label": "d", "text": "LC_CURR", "correct": false }
+      ],
+      "feedback": "LC_MONETARY define formatos monetarios (símbolo, decimales). Las otras variables no son estándar."
+    },
+    {
+      "id": 45,
+      "type": "single",
+      "question": "¿Cuál describe mejor el uso de groupdel?",
+      "options": [
+        { "label": "a", "text": "Puedes forzar la eliminación con -f.", "correct": false },
+        { "label": "b", "text": "Si se elimina el grupo primario de un usuario, este debe borrarse o cambiar su grupo primario primero.", "correct": true },
+        { "label": "c", "text": "groupdel puede ejecutarse en cualquier momento, sin importar miembros.", "correct": false },
+        { "label": "d", "text": "La opción -r cambia recursivamente los GIDs de usuarios tras eliminar el grupo.", "correct": false }
+      ],
+      "feedback": "groupdel no elimina grupos si son primarios de algún usuario. No tiene opciones -f o -r."
+    },
+    {
+      "id": 46,
+      "type": "single",
+      "question": "¿Qué comando muestra el UID, grupo primario y grupos suplementarios de un usuario?",
+      "options": [
+        { "label": "a", "text": "id", "correct": true },
+        { "label": "b", "text": "getid", "correct": false },
+        { "label": "c", "text": "passwd", "correct": false },
+        { "label": "d", "text": "chage", "correct": false }
+      ],
+      "feedback": "id muestra identidad del usuario (UID, GIDs). getid no existe. passwd y chage gestionan contraseñas."
+    },
+    {
+      "id": 47,
+      "type": "single",
+      "question": "¿Qué opción de usermod cambia el nombre real de un usuario?",
+      "options": [
+        { "label": "a", "text": "-R", "correct": false },
+        { "label": "b", "text": "-n", "correct": false },
+        { "label": "c", "text": "-d", "correct": false },
+        { "label": "d", "text": "-c", "correct": true }
+      ],
+      "feedback": "-c modifica el campo 'comentario' en /etc/passwd (típicamente el nombre real). -R define chroot, -d cambia el directorio home."
+    },
+    {
+      "id": 48,
+      "type": "single",
+      "question": "Tras eliminar un usuario (UID 1501) con la opción -r, ¿qué comando buscaría archivos residuales de su propiedad?",
+      "options": [
+        { "label": "a", "text": "find -id 1501", "correct": false },
+        { "label": "b", "text": "grep 1501 *", "correct": false },
+        { "label": "c", "text": "grep -u 1501 *", "correct": false },
+        { "label": "d", "text": "find / -uid 1501", "correct": true }
+      ],
+      "feedback": "find / -uid 1501 busca en todo el sistema archivos pertenecientes al UID 1501. grep busca texto, no metadatos de archivos."
+    }
+  ]
+}

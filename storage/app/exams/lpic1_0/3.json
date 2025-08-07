@@ -1,0 +1,669 @@
+{
+  "id": "3",
+  "title": "103:A - GNU and Unix Commands",
+  "questions": [
+    {
+      "id": 1,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos reducirá todos los espacios consecutivos a un solo espacio?",
+      "options": [
+        { "label": "a", "text": "tr '\\s' ' ' < a.txt > b.txt", "correct": false },
+        { "label": "b", "text": "tr -c ' ' < a.txt > b.txt", "correct": false },
+        { "label": "c", "text": "tr -d ' ' < a.txt > b.txt", "correct": false },
+        { "label": "d", "text": "tr -r ' ' '\\n' < a.txt > b.txt", "correct": false },
+        { "label": "e", "text": "tr -s ' ' < a.txt > b.txt", "correct": true }
+      ],
+"feedback":""
+    },
+    {
+      "id": 2,
+      "type": "single",
+      "question": "¿Qué sucede al ejecutar el comando vi sin parámetros adicionales?",
+      "options": [
+        { "label": "a", "text": "vi inicia y carga el último archivo usado, colocando el cursor en la posición donde estaba al salir.", "correct": false },
+        { "label": "b", "text": "vi inicia y exige al usuario crear un archivo nuevo o cargar uno existente explícitamente.", "correct": false },
+        { "label": "c", "text": "vi muestra un error porque no se especificó un archivo.", "correct": false },
+        { "label": "d", "text": "vi inicia en modo comando y abre un archivo nuevo vacío.", "correct": true },
+        { "label": "e", "text": "vi inicia y abre un archivo nuevo con el contenido del búfer si este tenía texto.", "correct": false }
+      ],
+"feedback":""
+    },
+    {
+      "id": 3,
+      "type": "multiple",
+      "question": "¿Qué comandos determinan cuánto tiempo lleva el sistema funcionando?",
+      "options": [
+        { "label": "a", "text": "uptime", "correct": true },
+        { "label": "b", "text": "up", "correct": false },
+        { "label": "c", "text": "top", "correct": true },
+        { "label": "d", "text": "uname -u", "correct": false },
+        { "label": "e", "text": "time -up", "correct": false }
+      ],
+"feedback":""
+    },
+    {
+      "id": 4,
+      "type": "single",
+      "question": "Al ejecutar echo \"foo bar\" | tee bar | cat, ¿qué se muestra en la salida?",
+      "options": [
+        { "label": "a", "text": "cat", "correct": false },
+        { "label": "b", "text": "foo bar", "correct": true },
+        { "label": "c", "text": "tee bar", "correct": false },
+        { "label": "d", "text": "bar", "correct": false },
+        { "label": "e", "text": "foo", "correct": false }
+      ],
+"feedback":""
+    },
+    {
+      "id": 5,
+      "type": "single",
+      "question": "¿Qué comando imprime las últimas 10 líneas de un archivo de texto?",
+      "options": [
+        { "label": "a", "text": "cat -n 10 filename", "correct": false },
+        { "label": "b", "text": "dump -n 10 filename", "correct": false },
+        { "label": "c", "text": "head -n 10 filename", "correct": false },
+        { "label": "d", "text": "tail -n 10 filename", "correct": true }
+      ],
+"feedback":""
+    },
+    {
+      "id": 6,
+      "type": "single",
+      "question": "¿Qué comando envía la salida de myapp tanto a la salida estándar como al archivo file1.log?",
+      "options": [
+        { "label": "a", "text": "cat < myapp | cat > file1.log", "correct": false },
+        { "label": "b", "text": "myapp 0>&1 | cat > file1.log", "correct": false },
+        { "label": "c", "text": "myapp | cat > file1.log", "correct": false },
+        { "label": "d", "text": "myapp | tee file1.log", "correct": true },
+        { "label": "e", "text": "tee myapp file1.log", "correct": false }
+      ],
+"feedback":""
+    },
+    {
+      "id": 7,
+      "type": "single",
+      "question": "¿Cuál es la diferencia entre los comandos i y a en el editor vi?",
+      "options": [
+        { "label": "a", "text": "i (interactivo) requiere cambiar modos manualmente, mientras que a (automático) lo hace automáticamente.", "correct": false },
+        { "label": "b", "text": "i (insertar) añade texto antes del cursor; a (añadir) lo hace después.", "correct": true },
+        { "label": "c", "text": "i inicia cada línea en el primer carácter; a mantiene la sangría de la línea anterior.", "correct": false },
+        { "label": "d", "text": "i (interrumpir) suspende la edición; a (abortar) la termina.", "correct": false }
+      ],
+"feedback":""
+    },
+    {
+      "id": 8,
+      "type": "single",
+      "question": "¿Qué comando determina el tipo de un archivo usando una base de datos de definiciones?",
+      "options": [
+        { "label": "a", "text": "magic", "correct": false },
+        { "label": "b", "text": "type", "correct": false },
+        { "label": "c", "text": "file", "correct": true },
+        { "label": "d", "text": "pmagic", "correct": false },
+        { "label": "e", "text": "hash", "correct": false }
+      ],
+"feedback":""
+    },
+    {
+      "id": 9,
+      "type": "single",
+      "question": "¿Qué comando muestra el contenido de un archivo tar comprimido con gzip?",
+      "options": [
+        { "label": "a", "text": "gzip archive.tgz | tar xvf -", "correct": false },
+        { "label": "b", "text": "tar ztf archive.tgz", "correct": true },
+        { "label": "c", "text": "gzip -d archive.tgz | tar tvf -", "correct": false },
+        { "label": "d", "text": "tar cf archive.tgz", "correct": false }
+      ],
+"feedback":""
+    },
+    {
+      "id": 10,
+      "type": "single",
+      "question": "En Bash, 1>&2 después de un comando redirige:",
+      "options": [
+        { "label": "a", "text": "Error estándar a entrada estándar.", "correct": false },
+        { "label": "b", "text": "Entrada estándar a error estándar.", "correct": false },
+        { "label": "c", "text": "Salida estándar a error estándar.", "correct": true },
+        { "label": "d", "text": "Error estándar a salida estándar.", "correct": false },
+        { "label": "e", "text": "Salida estándar a entrada estándar.", "correct": false }
+      ],
+"feedback":""
+    },
+    {
+      "id": 11,
+      "type": "single",
+      "question": "¿Qué variable define los directorios donde Bash busca comandos ejecutables?",
+      "options": [
+        { "label": "a", "text": "BASHEXEC", "correct": false },
+        { "label": "b", "text": "BASHRC", "correct": false },
+        { "label": "c", "text": "PATH", "correct": true },
+        { "label": "d", "text": "EXECPATH", "correct": false },
+        { "label": "e", "text": "PATHRC", "correct": false }
+      ],
+"feedback":""
+    },
+    {
+      "id": 12,
+      "type": "single",
+      "question": "En el editor vi, ¿qué comando copia la línea actual al búfer?",
+      "options": [
+        { "label": "a", "text": "c", "correct": false },
+        { "label": "b", "text": "cc", "correct": false },
+        { "label": "c", "text": "1c", "correct": false },
+        { "label": "d", "text": "yy", "correct": true },
+        { "label": "e", "text": "1y", "correct": false }
+      ],
+"feedback":""
+    },
+    {
+      "id": 13,
+      "type": "single",
+      "question": "¿Qué comando grep imprime solo las líneas que NO terminan con / en el archivo foo?",
+      "options": [
+        { "label": "a", "text": "grep '/$' foo", "correct": false },
+        { "label": "b", "text": "grep '/#' foo", "correct": false },
+        { "label": "c", "text": "grep -v '/$' foo", "correct": true },
+        { "label": "d", "text": "grep -v '/#' foo", "correct": false }
+      ],
+"feedback":""
+    },
+    {
+      "id": 14,
+      "type": "single",
+      "question": "¿Qué archivo en el home del usuario almacena el historial de Bash?",
+      "options": [
+        { "label": "a", "text": ".bash_history", "correct": true },
+        { "label": "b", "text": ".bash_histfile", "correct": false },
+        { "label": "c", "text": ".history", "correct": false },
+        { "label": "d", "text": ".bashrc_history", "correct": false },
+        { "label": "e", "text": ".history_bash", "correct": false }
+      ],
+"feedback":""
+    },
+    {
+      "id": 15,
+      "type": "single",
+      "question": "¿Qué representa el símbolo ? en expresiones regulares?",
+      "options": [
+        { "label": "a", "text": "Coincide con el calificador anterior una o más veces", "correct": false },
+        { "label": "b", "text": "Coincide con el calificador anterior cero o más veces", "correct": false },
+        { "label": "c", "text": "Coincide con el calificador anterior cero o una vez", "correct": true },
+        { "label": "d", "text": "Coincide con un carácter literal", "correct": false }
+      ],
+"feedback":""
+    },
+    {
+      "id": 16,
+      "type": "single",
+      "question": "¿Qué comando reanuda en segundo plano el último trabajo detenido?",
+      "options": [
+        { "label": "a", "text": "run", "correct": false },
+        { "label": "b", "text": "bg", "correct": true },
+        { "label": "c", "text": "fg", "correct": false },
+        { "label": "d", "text": "back", "correct": false }
+      ],
+"feedback":""
+    },
+    {
+      "id": 17,
+      "type": "single",
+      "question": "¿Qué comando genera una lista de usuarios y sus shells desde /etc/passwd?",
+      "options": [
+        { "label": "a", "text": "column -s : 1,7 /etc/passwd", "correct": false },
+        { "label": "b", "text": "chop -c 1,7 /etc/passwd", "correct": false },
+        { "label": "c", "text": "colrm 1,7 /etc/passwd", "correct": false },
+        { "label": "d", "text": "cut -d: -f1,7 /etc/passwd", "correct": true }
+      ],
+"feedback":""
+    },
+    {
+      "id": 18,
+      "type": "single",
+      "question": "¿Qué efecto tiene el flag -v en egrep?",
+      "options": [
+        { "label": "a", "text": "Habilita colores para resaltar coincidencias", "correct": false },
+        { "label": "b", "text": "Solo muestra líneas que no coinciden", "correct": true },
+        { "label": "c", "text": "Muestra información de versión", "correct": false },
+        { "label": "d", "text": "Cambia el orden mostrando última coincidencia primero", "correct": false }
+      ],
+"feedback":""
+    },
+    {
+      "id": 19,
+      "type": "single",
+      "question": "Según FHS, ¿dónde se encuentran las páginas man?",
+      "options": [
+        { "label": "a", "text": "/usr/share/man", "correct": true },
+        { "label": "b", "text": "/opt/man", "correct": false },
+        { "label": "c", "text": "/usr/doc/", "correct": false },
+        { "label": "d", "text": "/var/pkg/man", "correct": false },
+        { "label": "e", "text": "/var/man", "correct": false }
+      ],
+"feedback":""
+    },
+    {
+      "id": 20,
+      "type": "single",
+      "question": "En find, ¿qué opción limita la búsqueda a cierto número de subdirectorios?",
+      "options": [
+        { "label": "a", "text": "-dirmax", "correct": false },
+        { "label": "b", "text": "-maxdepth", "correct": true },
+        { "label": "c", "text": "-maxlevels", "correct": false },
+        { "label": "d", "text": "-n", "correct": false },
+        { "label": "e", "text": "-s", "correct": false }
+      ],
+"feedback":""
+    },
+    {
+      "id": 21,
+      "type": "single",
+      "question": "¿Qué nivel nice tiene por defecto un proceso iniciado con nice?",
+      "options": [
+        { "label": "a", "text": "-10", "correct": false },
+        { "label": "b", "text": "10", "correct": true },
+        { "label": "c", "text": "20", "correct": false },
+        { "label": "d", "text": "0", "correct": false }
+      ],
+"feedback":""
+    },
+    {
+      "id": 22,
+      "type": "single",
+      "question": "¿Qué señal se envía al presionar Ctrl+C?",
+      "options": [
+        { "label": "a", "text": "SIGTERM", "correct": false },
+        { "label": "b", "text": "SIGINT", "correct": true },
+        { "label": "c", "text": "SIGSTOP", "correct": false },
+        { "label": "d", "text": "SIGKILL", "correct": false }
+      ],
+"feedback":""
+    },
+        {
+      "id": 23,
+      "type": "single",
+      "question": "¿Qué comando muestra usuarios y sus grupos primarios desde /etc/passwd?",
+      "options": [
+        { "label": "a", "text": "fmt -f 1,4 /etc/passwd", "correct": false },
+        { "label": "b", "text": "split -c 1,4 /etc/passwd", "correct": false },
+        { "label": "c", "text": "cut -d : -f 1,4 /etc/passwd", "correct": true },
+        { "label": "d", "text": "paste -f 1,4 /etc/passwd", "correct": false }
+      ],
+"feedback":""
+    },
+    {
+      "id": 24,
+      "type": "single",
+      "question": "¿Qué comando reemplaza 'bob' por 'Bob' en el archivo letter?",
+      "options": [
+        { "label": "a", "text": "sed '/bob/Bob' letter > newletter", "correct": false },
+        { "label": "b", "text": "sed s/bob/Bob/ letter < newletter", "correct": false },
+        { "label": "c", "text": "sed's/bob/Bob' letter > newletter", "correct": false },
+        { "label": "d", "text": "sed 's/bob/Bob/g' letter > newletter", "correct": true },
+        { "label": "e", "text": "sed 's/bob, Bob/' letter > newletter", "correct": false }
+      ],
+"feedback":""
+    },
+    {
+      "id": 25,
+      "type": "single",
+      "question": "¿Cuál es el valor máximo de nice que un usuario normal puede asignar?",
+      "options": [
+        { "label": "a", "text": "9", "correct": false },
+        { "label": "b", "text": "19", "correct": true },
+        { "label": "c", "text": "49", "correct": false },
+        { "label": "d", "text": "99", "correct": false }
+      ],
+"feedback":""
+    },
+    {
+      "id": 26,
+      "type": "single",
+      "question": "Mientras editas un archivo en vi, este cambia por otro proceso. ¿Cómo reabrir el archivo con el nuevo contenido sin salir de vi?",
+      "options": [
+        { "label": "a", "text": ":r", "correct": false },
+        { "label": "b", "text": ":n", "correct": false },
+        { "label": "c", "text": ":w", "correct": false },
+        { "label": "d", "text": ":e", "correct": true }
+      ],
+"feedback":""
+    },
+    {
+      "id": 27,
+      "type": "multiple",
+      "question": "¿Qué comandos muestran archivos/directorios en /tmp propiedad de root?",
+      "options": [
+        { "label": "a", "text": "find /tmp -uid root -print", "correct": true },
+        { "label": "b", "text": "find -path /tmp -uid root", "correct": false },
+        { "label": "c", "text": "find /tmp -user root -print", "correct": true },
+        { "label": "d", "text": "find /tmp -user root", "correct": false },
+        { "label": "e", "text": "find -path /tmp -user root –print", "correct": false }
+      ],
+"feedback":""
+    },
+    {
+      "id": 28,
+      "type": "single",
+      "question": "En vi, ¿cómo aplicar comandos a múltiples líneas?",
+      "options": [
+        { "label": "a", "text": "Usando :repeat seguido del número y comando", "correct": false },
+        { "label": "b", "text": "Especificando el número antes del comando (ej. 4l o 2yj)", "correct": true },
+        { "label": "c", "text": "Seleccionando líneas con Shift + teclas antes de aplicar", "correct": false },
+        { "label": "d", "text": "Con :set repetition=4 para repetir comandos 4 veces", "correct": false }
+      ],
+"feedback":""
+    },
+    {
+      "id": 29,
+      "type": "single",
+      "question": "¿Qué comando continúa la ejecución en segundo plano de un comando suspendido?",
+      "options": [
+        { "label": "a", "text": "&", "correct": false },
+        { "label": "b", "text": "bg", "correct": true },
+        { "label": "c", "text": "cont", "correct": false },
+        { "label": "d", "text": "exec", "correct": false },
+        { "label": "e", "text": ":&", "correct": false }
+      ],
+"feedback":""
+    },
+    {
+      "id": 30,
+      "type": "single",
+      "question": "¿Para qué sirve el comando export en Bash?",
+      "options": [
+        { "label": "a", "text": "Montar discos remotos", "correct": false },
+        { "label": "b", "text": "Ejecutar comandos en subshells", "correct": false },
+        { "label": "c", "text": "Compartir historial con subshells", "correct": false },
+        { "label": "d", "text": "Configurar variables de entorno", "correct": true },
+        { "label": "e", "text": "Compartir particiones NFS", "correct": false }
+      ],
+"feedback":""
+    },
+    {
+      "id": 31,
+      "type": "single",
+      "question": "¿Qué carácter lee hasta encontrar un separador en una línea sin espacios?",
+      "options": [
+        { "label": "a", "text": "<<", "correct": false },
+        { "label": "b", "text": "<|", "correct": false },
+        { "label": "c", "text": "!<", "correct": false },
+        { "label": "d", "text": "&<", "correct": false }
+      ],
+"feedback":""
+    },
+    {
+      "id": 32,
+      "type": "multiple",
+      "question": "¿Qué secuencias en vi guardan y salen?",
+      "options": [
+        { "label": "a", "text": "esc ZZ", "correct": true },
+        { "label": "b", "text": "ctrl :w!", "correct": false },
+        { "label": "c", "text": "esc zz", "correct": false },
+        { "label": "d", "text": "esc :wq!", "correct": true },
+        { "label": "e", "text": "ctrl XX", "correct": false }
+      ],
+"feedback":""
+    },
+    {
+      "id": 33,
+      "type": "single",
+      "question": "¿Qué comando crea medios USB desde una imagen de disco?",
+      "options": [
+        { "label": "a", "text": "gdisk", "correct": false },
+        { "label": "b", "text": "dd", "correct": true },
+        { "label": "c", "text": "cc", "correct": false },
+        { "label": "d", "text": "fdisk", "correct": false },
+        { "label": "e", "text": "mount", "correct": false }
+      ],
+"feedback":""
+    },
+    {
+      "id": 34,
+      "type": "single",
+      "question": "¿Qué comando cambia opciones y parámetros en Bash?",
+      "options": [
+        { "label": "a", "text": "history", "correct": false },
+        { "label": "b", "text": "set", "correct": true },
+        { "label": "c", "text": "bashconf", "correct": false },
+        { "label": "d", "text": "setsh", "correct": false },
+        { "label": "e", "text": "envsetup", "correct": false }
+      ],
+"feedback":""
+    },
+    {
+      "id": 35,
+      "type": "single",
+      "question": "¿Por qué /tmp/file queda vacío al ejecutar sed -e \"s/a/b/\" /tmp/file >/tmp/file?",
+      "options": [
+        { "label": "a", "text": "Orden incorrecto de archivos", "correct": false },
+        { "label": "b", "text": "Sed no encontró coincidencias", "correct": false },
+        { "label": "c", "text": "La redirección sobrescribe el archivo antes que sed lo lea", "correct": true },
+        { "label": "d", "text": "El carácter > no funciona en redirecciones", "correct": false }
+      ],
+"feedback":""
+    },
+    {
+      "id": 36,
+      "type": "multiple",
+      "question": "¿Qué operadores de redirección son válidos en Bash?",
+      "options": [
+        { "label": "a", "text": "<", "correct": true },
+        { "label": "b", "text": "<<<", "correct": true },
+        { "label": "c", "text": ">", "correct": true },
+        { "label": "d", "text": ">>>", "correct": false },
+        { "label": "e", "text": "%>", "correct": false }
+      ],
+"feedback":""
+    },
+    {
+      "id": 37,
+      "type": "single",
+      "question": "¿Qué devuelve echo \"Hello World\" | tr -d aieou?",
+      "options": [
+        { "label": "a", "text": "Hello World", "correct": false },
+        { "label": "b", "text": "eoo", "correct": false },
+        { "label": "c", "text": "Hll Wrld", "correct": true },
+        { "label": "d", "text": "eoo Hll Wrld", "correct": false }
+      ],
+"feedback":""
+    },
+    {
+      "id": 38,
+      "type": "multiple",
+      "question": "¿Qué comandos ejecutan /usr/local/bin/runme.sh sin subshell?",
+      "options": [
+        { "label": "a", "text": "source /usr/local/bin/runme.sh", "correct": true },
+        { "label": "b", "text": ". /usr/local/bin/runme.sh", "correct": true },
+        { "label": "c", "text": "/bin/bash /usr/local/bin/runme.sh", "correct": false },
+        { "label": "d", "text": "/usr/local/bin/runme.sh", "correct": false },
+        { "label": "e", "text": "run /usr/local/bin/runme.sh", "correct": false }
+      ],
+"feedback":""
+    },
+    {
+      "id": 39,
+      "type": "single",
+      "question": "¿Qué redirección escribe stdout y stderr en un archivo?",
+      "options": [
+        { "label": "a", "text": "2>&1 >filename", "correct": false },
+        { "label": "b", "text": ">filename 2>&1", "correct": true },
+        { "label": "c", "text": "1>&2>filename", "correct": false },
+        { "label": "d", "text": ">>filename", "correct": false },
+        { "label": "e", "text": "1&2>filename", "correct": false }
+      ],
+"feedback":""
+    },
+    {
+      "id": 40,
+      "type": "single",
+      "question": "¿Por qué ejecutar un comando en segundo plano?",
+      "options": [
+        { "label": "a", "text": "No necesita ejecución inmediata", "correct": true },
+        { "label": "b", "text": "Debe ejecutarse ahora pero el usuario cerrará sesión", "correct": false },
+        { "label": "c", "text": "El sistema se reiniciará y debe continuar después", "correct": false },
+        { "label": "d", "text": "Prioridad más baja que otros comandos", "correct": false }
+      ],
+"feedback":""
+    },
+    {
+      "id": 41,
+      "type": "single",
+      "question": "¿Qué comando elimina el subdirectorio \\dir en el home?",
+      "options": [
+        { "label": "a", "text": "rmdir '~/\\dir'", "correct": false },
+        { "label": "b", "text": "rmdir \"~/\\dir\"", "correct": false },
+        { "label": "c", "text": "rmdir ~/'dir'", "correct": false },
+        { "label": "d", "text": "rmdir ~/\\dir", "correct": false },
+        { "label": "e", "text": "rmdir ~/\\\\dir", "correct": true }
+      ],
+"feedback":""
+    },
+    {
+      "id": 42,
+      "type": "single",
+      "question": "Sobre nice -5 /usr/bin/prog, ¿qué es correcto?",
+      "options": [
+        { "label": "a", "text": "Se ejecuta con nice -5", "correct": false },
+        { "label": "b", "text": "Se ejecuta con nice 5", "correct": false },
+        { "label": "c", "text": "Prioridad -5", "correct": true },
+        { "label": "d", "text": "Prioridad 5", "correct": false }
+      ],
+"feedback":""
+    },
+    {
+      "id": 43,
+      "type": "single",
+      "question": "En vi, tras borrar 3 líneas, ¿qué comando las inserta bajo la línea actual?",
+      "options": [
+        { "label": "a", "text": "i (minúscula)", "correct": false },
+        { "label": "b", "text": "P (mayúscula)", "correct": false },
+        { "label": "c", "text": "p (minúscula)", "correct": true },
+        { "label": "d", "text": "U (mayúscula)", "correct": false },
+        { "label": "e", "text": "u (minúscula)", "correct": false }
+      ],
+"feedback":""
+    },
+    {
+      "id": 44,
+      "type": "single",
+      "question": "¿Qué nivel nice tiene por defecto un proceso con nice?",
+      "options": [
+        { "label": "a", "text": "-10", "correct": false },
+        { "label": "b", "text": "0", "correct": false },
+        { "label": "c", "text": "10", "correct": true },
+        { "label": "d", "text": "20", "correct": false }
+      ],
+"feedback":""
+    },
+    {
+      "id": 45,
+      "type": "single",
+      "question": "En grep '^d[aei]\\+d$', ¿qué significa +?",
+      "options": [
+        { "label": "a", "text": "Coincide [aei] una o más veces", "correct": true },
+        { "label": "b", "text": "Coincide [aei] cero o más veces", "correct": false },
+        { "label": "c", "text": "Coincide [aei] cero o una vez", "correct": false },
+        { "label": "d", "text": "Coincide con + literal", "correct": false }
+      ],
+"feedback":""
+    },
+    {
+      "id": 46,
+      "type": "single",
+      "question": "¿Qué hace split por defecto?",
+      "options": [
+        { "label": "a", "text": "Divide en archivos de 1,024 bytes", "correct": false },
+        { "label": "b", "text": "Divide en archivos de 1,000 líneas", "correct": true },
+        { "label": "c", "text": "Divide en archivos de 1,024 KB", "correct": false },
+        { "label": "d", "text": "Divide en archivos del 5% del original", "correct": false }
+      ],
+"feedback":""
+    },
+    {
+      "id": 47,
+      "type": "single",
+      "question": "Sobre foo 1> bar, ¿qué es correcto?",
+      "options": [
+        { "label": "a", "text": "Anexa stdout de foo a bar", "correct": false },
+        { "label": "b", "text": "Sobrescribe bar con stdout de foo", "correct": true },
+        { "label": "c", "text": "foo recibe stdin desde bar", "correct": false },
+        { "label": "d", "text": "foo recibe stdin desde stdout de bar", "correct": false },
+        { "label": "e", "text": "Guarda stderr de foo en bar", "correct": false }
+      ],
+"feedback":""
+    },
+    {
+      "id": 48,
+      "type": "single",
+      "question": "¿Qué comando mata el proceso 123 permitiendo limpieza?",
+      "options": [
+        { "label": "a", "text": "kill -PIPE 123", "correct": false },
+        { "label": "b", "text": "kill -KILL 123", "correct": false },
+        { "label": "c", "text": "kill -STOP 123", "correct": false },
+        { "label": "d", "text": "kill -TERM 123", "correct": true }
+      ],
+"feedback":""
+    },
+    {
+      "id": 49,
+      "type": "single",
+      "question": "¿Qué evita crear un hard link?",
+      "options": [
+        { "label": "a", "text": "Archivo origen oculto", "correct": false },
+        { "label": "b", "text": "Archivo origen de solo lectura", "correct": false },
+        { "label": "c", "text": "Archivo origen es shell script", "correct": false },
+        { "label": "d", "text": "No eres dueño del archivo", "correct": false },
+        { "label": "e", "text": "Origen y destino en diferentes filesystems", "correct": true }
+      ],
+"feedback":""
+    },
+    {
+      "id": 50,
+      "type": "single",
+      "question": "¿Qué comando asigna FOO a la variable TEST?",
+      "options": [
+        { "label": "a", "text": "set TEST=\"FOO\"", "correct": false },
+        { "label": "b", "text": "TEST = \"FOO\"", "correct": false },
+        { "label": "c", "text": "var TEST=\"FOO\"", "correct": false },
+        { "label": "d", "text": "TEST=\"FOO\"", "correct": true }
+      ],
+"feedback":""
+    },
+    {
+      "id": 51,
+      "type": "single",
+      "question": "¿Qué carácter ejecuta un comando en segundo plano?",
+      "options": [
+        { "label": "a", "text": "!", "correct": false },
+        { "label": "b", "text": "+", "correct": false },
+        { "label": "c", "text": "&", "correct": true },
+        { "label": "d", "text": "%", "correct": false },
+        { "label": "e", "text": "#", "correct": false }
+      ],
+"feedback":""
+    },
+    {
+      "id": 52,
+      "type": "text",
+      "question": "El archivo /etc/____ lista dispositivos montados.",
+      "answer": "mtab"
+    },
+    {
+      "id": 53,
+      "type": "text",
+      "question": "¿Qué comando muestra trabajos en segundo plano?",
+      "answer": "jobs"
+    },
+    {
+      "id": 54,
+      "type": "text",
+      "question": "¿Qué comando crea directorios?",
+      "answer": "mkdir"
+    },
+    {
+      "id": 55,
+      "type": "text",
+      "question": "¿Qué señal falta en killall -s ____ daemon para reiniciar un daemon?",
+      "answer": "hub"
+    }
+  ]
+}

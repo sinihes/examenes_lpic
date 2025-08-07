@@ -1,0 +1,533 @@
+{
+  "id": "3",
+  "title": "106:A - User Interface and Desktops",
+  "questions": [
+    {
+      "id": 1,
+      "type": "single",
+      "question": "¿En qué archivo de configuración se configura el greeter para LightDM?",
+      "options": [
+        { "label": "a", "text": "/etc/lightdm/lightdm.conf", "correct": true },
+        { "label": "b", "text": "/etc/lightdm/greeter.conf", "correct": false },
+        { "label": "c", "text": "/etc/lightdm.conf", "correct": false },
+        { "label": "d", "text": "/var/lib/lightdm/lightdm.conf", "correct": false }
+      ],
+      "feedback": "El greeter se configura a través de /etc/lightdm/lightdm.conf usando la opción greeter-session. Las otras opciones proporcionadas no son válidas."
+    },
+    {
+      "id": 2,
+      "type": "single",
+      "question": "¿En qué archivo se configura el acceso a hosts controlados con XDMCP?",
+      "options": [
+        { "label": "a", "text": "xdmcp.access.conf", "correct": false },
+        { "label": "b", "text": "XDMCPAccess.cfg", "correct": false },
+        { "label": "c", "text": "Xaccess", "correct": true },
+        { "label": "d", "text": "XDaccess.conf", "correct": false }
+      ],
+      "feedback": "El archivo Xaccess se utiliza para controlar el acceso cuando se usa XDMCP. Los otros archivos no son válidos para este propósito."
+    },
+    {
+      "id": 3,
+      "type": "single",
+      "question": "Cuando se usa KDE, ¿qué programa proporciona funcionalidad de magnificación?",
+      "options": [
+        { "label": "a", "text": "xmag", "correct": false },
+        { "label": "b", "text": "mag", "correct": false },
+        { "label": "c", "text": "pmag", "correct": false },
+        { "label": "d", "text": "kmag", "correct": true }
+      ],
+      "feedback": "El programa kmag magnifica elementos en el escritorio y se utiliza como tecnología de asistencia. En general, kmag se puede usar con otros gestores de ventanas también."
+    },
+    {
+      "id": 4,
+      "type": "single",
+      "question": "Cuando configuras las opciones de frecuencia para un monitor dado, ¿cuál de las siguientes no es una unidad de frecuencia disponible?",
+      "options": [
+        { "label": "a", "text": "uHz", "correct": true },
+        { "label": "b", "text": "MHz", "correct": false },
+        { "label": "c", "text": "kHz", "correct": false },
+        { "label": "d", "text": "M", "correct": false }
+      ],
+      "feedback": "Las opciones de frecuencia son Hz, k, kHz, M o MHz, lo que hace que uHz sea una opción no disponible."
+    },
+    {
+      "id": 5,
+      "type": "single",
+      "question": "¿Qué señal utiliza un servidor X para causar una salida limpia?",
+      "options": [
+        { "label": "a", "text": "SIGTERM", "correct": true },
+        { "label": "b", "text": "SIGKILL", "correct": false },
+        { "label": "c", "text": "SIGCLEAN", "correct": false },
+        { "label": "d", "text": "SIGEX", "correct": false }
+      ],
+      "feedback": "La señal SIGTERM hace que el servidor X salga limpiamente. SIGKILL no sería una salida limpia. Las otras señales mostradas como opciones no son señales válidas."
+    },
+    {
+      "id": 6,
+      "type": "single",
+      "question": "Dentro de GNOME, ¿qué sección del Centro de Control de GNOME se utiliza para elegir un tema de alto contraste?",
+      "options": [
+        { "label": "a", "text": "Display", "correct": false },
+        { "label": "b", "text": "Appearance", "correct": true },
+        { "label": "c", "text": "Locale", "correct": false },
+        { "label": "d", "text": "Contrast", "correct": false }
+      ],
+      "feedback": "La sección Appearance del Centro de Control de GNOME se utiliza para establecer muchos aspectos de cómo aparece y se comporta el escritorio, incluida la elección de un tema de alto contraste."
+    },
+    {
+      "id": 7,
+      "type": "single",
+      "question": "¿Cuál de las siguientes opciones describe mejor el concepto de un gesto del ratón?",
+      "options": [
+        { "label": "a", "text": "Un gesto del ratón permite clics especiales, como un menú contextual con clic derecho.", "correct": false },
+        { "label": "b", "text": "Un gesto del ratón facilita el uso de programas moviendo el ratón de cierta manera.", "correct": true },
+        { "label": "c", "text": "Un gesto del ratón se utiliza para propósitos de inicio de sesión.", "correct": false },
+        { "label": "d", "text": "Un gesto del ratón se utiliza para capturar capturas de pantalla.", "correct": false }
+      ],
+      "feedback": "Los gestos del ratón comúnmente se asocian con tecnologías de asistencia y ayudan a facilitar el uso de programas moviendo el ratón de cierta manera. Los gestos del ratón podrían usarse para inicio de sesión y para capturar capturas de pantalla, pero esos no son descriptivos adecuados o generales de su uso."
+    },
+    {
+      "id": 8,
+      "type": "single",
+      "question": "En GNOME 3.9 o posterior, ¿qué atajo de teclado activa el lector de pantalla?",
+      "options": [
+        { "label": "a", "text": "Super+R", "correct": false },
+        { "label": "b", "text": "Super+S", "correct": false },
+        { "label": "c", "text": "Ctrl+Super+S", "correct": false },
+        { "label": "d", "text": "Alt+Super+S", "correct": true }
+      ],
+      "feedback": "El atajo de teclado Alt+Super+S activa el lector de pantalla en GNOME 3.9 o posterior. El atajo Super+S entra en Overview, y los otros atajos proporcionados no tienen un significado especial por defecto. Nota: la tecla Super también se llama tecla Windows o tecla Command."
+    },
+    {
+      "id": 9,
+      "type": "single",
+      "question": "Supón que el gestor de pantalla ha sido deshabilitado al arrancar. ¿Qué comando se puede usar después del inicio de sesión para iniciar el servidor X?",
+      "options": [
+        { "label": "a", "text": "xs", "correct": false },
+        { "label": "b", "text": "xstart", "correct": false },
+        { "label": "c", "text": "X -start", "correct": false },
+        { "label": "d", "text": "startx", "correct": true }
+      ],
+      "feedback": "El comando startx inicia el gestor de pantalla después del inicio de sesión en una terminal local. Los otros comandos mostrados no existen o no funcionarán para el propósito descrito."
+    },
+    {
+      "id": 10,
+      "type": "single",
+      "question": "¿Qué opción en un archivo xorg.conf configura la cantidad de tiempo antes de que la pantalla entre en modo en blanco pero no entre en espera y está disponible en monitores que no son compatibles con Display Power Management Signaling (DPMS)?",
+      "options": [
+        { "label": "a", "text": "StandbyTime", "correct": false },
+        { "label": "b", "text": "BlankTime", "correct": true },
+        { "label": "c", "text": "SuspendTime", "correct": false },
+        { "label": "d", "text": "OffTime", "correct": false }
+      ],
+      "feedback": "La opción BlankTime, que está configurada en 10 minutos por defecto, hace que el monitor se ponga en blanco pero no entre realmente en modo de espera u otros modos de ahorro de energía."
+    },
+        {
+      "id": 11,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos te ayuda a determinar información sobre una ventana específica dentro de una sesión X, incluyendo información sobre el tamaño de la ventana y su posición?",
+      "options": [
+        { "label": "a", "text": "xkbinfo", "correct": false },
+        { "label": "b", "text": "xdspy", "correct": false },
+        { "label": "c", "text": "xwininfo", "correct": true },
+        { "label": "d", "text": "xver", "correct": false }
+      ],
+      "feedback": "El comando xwininfo muestra información sobre una ventana específica dentro de una sesión X. Los otros comandos listados para esta pregunta no son válidos."
+    },
+    {
+      "id": 12,
+      "type": "single",
+      "question": "¿Qué opción/botón en el Teclado en Pantalla de GNOME (GOK) se usa para mostrar las teclas que se usarían en lugar de un ratón?",
+      "options": [
+        { "label": "a", "text": "Mouse", "correct": true },
+        { "label": "b", "text": "MouseKeys", "correct": false },
+        { "label": "c", "text": "Movement", "correct": false },
+        { "label": "d", "text": "Compose", "correct": false }
+      ],
+      "feedback": "El botón Mouse muestra teclas para mover el ratón. El botón Compose muestra un teclado de composición, y las otras opciones no son válidas."
+    },
+    {
+      "id": 13,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos permite que un host llamado 'cwa' se conecte al servidor X?",
+      "options": [
+        { "label": "a", "text": "xconnect cwa", "correct": false },
+        { "label": "b", "text": "xterm +cwa", "correct": false },
+        { "label": "c", "text": "xhost +cwa", "correct": true },
+        { "label": "d", "text": "xf cwa", "correct": false }
+      ],
+      "feedback": "El comando xhost se usa para controlar el acceso al servidor X. Un host se añade con el signo +."
+    },
+    {
+      "id": 14,
+      "type": "single",
+      "question": "¿Cuál de las siguientes opciones en el archivo de configuración del cliente SSH debe habilitarse para que las sesiones X puedan enviarse a través de una conexión SSH?",
+      "options": [
+        { "label": "a", "text": "X11Connect yes", "correct": false },
+        { "label": "b", "text": "ForwardX11 yes", "correct": true },
+        { "label": "c", "text": "ForwardX yes", "correct": false },
+        { "label": "d", "text": "XForward yes", "correct": false }
+      ],
+      "feedback": "La opción ForwardX11 debe estar habilitada en el cliente para que las conexiones X o ventanas generadas desde el servidor X se envíen a través de una conexión SSH."
+    },
+    {
+      "id": 15,
+      "type": "single",
+      "question": "¿Qué comando en un sistema basado en systemd se usa para deshabilitar el arranque en una GUI?",
+      "options": [
+        { "label": "a", "text": "systemctl gui-boot disable", "correct": false },
+        { "label": "b", "text": "systemctl set-default boot-gui false", "correct": false },
+        { "label": "c", "text": "systemctl set-default multi-user.target", "correct": true },
+        { "label": "d", "text": "systemctl set-default-multi false", "correct": false }
+      ],
+      "feedback": "El comando systemctl set-default se usa para este propósito, y el target multi-user se usa para arrancar en la línea de comandos. También necesitarás eliminar la palabra 'splash' de /etc/default/grub y ejecutar update-grub."
+    },
+    {
+      "id": 16,
+      "type": "single",
+      "question": "¿Qué opción de configuración en una sección Files de un archivo de configuración xorg.conf puede usarse para añadir una ruta en la que el servidor buscará fuentes?",
+      "options": [
+        { "label": "a", "text": "FontSection", "correct": false },
+        { "label": "b", "text": "Fonts", "correct": false },
+        { "label": "c", "text": "FontLoc", "correct": false },
+        { "label": "d", "text": "FontPath", "correct": true }
+      ],
+      "feedback": "La directiva FontPath proporciona otra ubicación en la que el servidor puede encontrar fuentes. Las otras opciones no existen en el contexto de un archivo de configuración xorg.conf."
+    },
+    {
+      "id": 17,
+      "type": "single",
+      "question": "¿Qué tecnología de asistencia se usa para proporcionar un método de entrada para usuarios que no pueden teclear pero pueden usar un puntero, como un ratón?",
+      "options": [
+        { "label": "a", "text": "Keyboard", "correct": false },
+        { "label": "b", "text": "Sticky keys", "correct": false },
+        { "label": "c", "text": "Mouse keys", "correct": false },
+        { "label": "d", "text": "On-screen keyboard", "correct": true }
+      ],
+      "feedback": "Con un teclado en pantalla, los usuarios pueden utilizar un puntero como un ratón para seleccionar teclas en el teclado."
+    },
+    {
+      "id": 18,
+      "type": "single",
+      "question": "¿Qué variable de entorno puede usarse para especificar la ubicación del archivo de autoridad xauth de un usuario?",
+      "options": [
+        { "label": "a", "text": "XAUTH", "correct": false },
+        { "label": "b", "text": "USERXAUTH", "correct": false },
+        { "label": "c", "text": "XAUTHORITY", "correct": true },
+        { "label": "d", "text": "xauthloc", "correct": false }
+      ],
+      "feedback": "La variable de entorno XAUTHORITY puede usarse para especificar la ubicación del archivo de autoridad xauth."
+    },
+    {
+      "id": 19,
+      "type": "single",
+      "question": "Cuando se usa LightDM, ¿qué combinación de teclas se usa para volver a una terminal?",
+      "options": [
+        { "label": "a", "text": "Alt+Ctrl+F2", "correct": false },
+        { "label": "b", "text": "Alt+Ctrl+F1", "correct": true },
+        { "label": "c", "text": "Ctrl+F1", "correct": false },
+        { "label": "d", "text": "Ctrl+Esc", "correct": false }
+      ],
+      "feedback": "La combinación Alt+Ctrl+F1 se usa para llegar a un prompt de terminal y es útil en situaciones donde el servidor X no se inicia correctamente."
+    },
+    {
+      "id": 20,
+      "type": "single",
+      "question": "¿Qué opción en la configuración de LightDM habilita el inicio de sesión automático para un usuario específico?",
+      "options": [
+        { "label": "a", "text": "auto-login", "correct": false },
+        { "label": "b", "text": "autologin-user", "correct": true },
+        { "label": "c", "text": "autologin", "correct": false },
+        { "label": "d", "text": "auto-login-user", "correct": false }
+      ],
+      "feedback": "La opción autologin-user se usa para definir un usuario que iniciará sesión automáticamente en el sistema. Las otras opciones dadas en esta pregunta no existen."
+    },    {
+      "id": 21,
+      "type": "single",
+      "question": "¿Cuál de los siguientes es una utilidad heredada que puede usarse para configurar opciones de accesibilidad en sistemas antiguos?",
+      "options": [
+        { "label": "a", "text": "Xaccessibility", "correct": false },
+        { "label": "b", "text": "Xas", "correct": false },
+        { "label": "c", "text": "AccessX", "correct": true },
+        { "label": "d", "text": "setX", "correct": false }
+      ],
+      "feedback": "La utilidad AccessX se usa en sistemas heredados o antiguos para configurar muchas de las opciones de accesibilidad. La funcionalidad proporcionada por AccessX normalmente se puede encontrar en una de las utilidades proporcionadas por el gestor de ventanas X nativo, dependiendo del gestor de ventanas en uso."
+    },
+    {
+      "id": 22,
+      "type": "single",
+      "question": "¿Qué comando, cuando se ejecuta en un host remoto, enviará la visualización de programas X al cliente local? (Asume que se usa Bash como shell.)",
+      "options": [
+        { "label": "a", "text": "export DISPLAY", "correct": true },
+        { "label": "b", "text": "env DISPLAY", "correct": false },
+        { "label": "c", "text": "setx HOST", "correct": false },
+        { "label": "d", "text": "export XHOST", "correct": false }
+      ],
+      "feedback": "El comando export del shell establece una variable de entorno. En este caso, la variable de entorno DISPLAY necesita ser configurada. El comando env mostrado no establecerá la variable."
+    },
+    {
+      "id": 23,
+      "type": "single",
+      "question": "¿Qué opción en GOK se usa para mostrar las teclas que corresponden al menú de una aplicación dada?",
+      "options": [
+        { "label": "a", "text": "Menus", "correct": true },
+        { "label": "b", "text": "Activate", "correct": false },
+        { "label": "c", "text": "MenuKeys", "correct": false },
+        { "label": "d", "text": "Keys", "correct": false }
+      ],
+      "feedback": "La opción Menus muestra las opciones de menú para una aplicación dada para que esas opciones puedan manipularse con el teclado. La opción Activate ayuda a trabajar con el escritorio y otras aplicaciones. Las otras opciones mostradas para esta pregunta no son válidas."
+    },
+    {
+      "id": 24,
+      "type": "single",
+      "question": "¿Qué directorio se usa para almacenar archivos de configuración individuales relacionados con LightDM?",
+      "options": [
+        { "label": "a", "text": "/etc/light", "correct": false },
+        { "label": "b", "text": "/etc/lightdm/lightdm.conf.d", "correct": true },
+        { "label": "c", "text": "/usr/lightdm", "correct": false },
+        { "label": "d", "text": "/etc/lightdm.conf", "correct": false }
+      ],
+      "feedback": "El directorio /etc/lightdm/lightdm.conf.d contiene archivos de configuración *.conf individuales para varios ajustes y normalmente se analiza junto con el archivo /etc/lightdm/lightdm.conf."
+    },
+    {
+      "id": 25,
+      "type": "single",
+      "question": "¿Qué variable de entorno es utilizada por Xsession para especificar el ancho de un dispositivo terminal?",
+      "options": [
+        { "label": "a", "text": "TERMCHAR", "correct": false },
+        { "label": "b", "text": "COLUMNS", "correct": true },
+        { "label": "c", "text": "CHARACTERWIDTH", "correct": false },
+        { "label": "d", "text": "TERMCOL", "correct": false }
+      ],
+      "feedback": "La variable de entorno COLUMNS especifica el ancho en caracteres de un dispositivo terminal. Las otras variables de entorno no son válidas."
+    },
+    {
+      "id": 26,
+      "type": "single",
+      "question": "Asumiendo que el reenvío X ha sido habilitado en el servidor SSH, ¿qué variable de entorno se usa para establecer la ubicación para nuevas ventanas generadas desde dentro de una sesión SSH?",
+      "options": [
+        { "label": "a", "text": "DISPLAY", "correct": true },
+        { "label": "b", "text": "XTERMINAL", "correct": false },
+        { "label": "c", "text": "XTERM", "correct": false },
+        { "label": "d", "text": "XDISP", "correct": false }
+      ],
+      "feedback": "La variable DISPLAY puede usarse para enviar remotamente las ventanas de una sesión X a otra computadora cuando se usan protocolos como SSH. No existe una variable de entorno XTERMINAL o XDISP, y XTERM es típicamente una ventana de terminal y no una variable de entorno."
+    },
+    {
+      "id": 27,
+      "type": "single",
+      "question": "¿Qué opción dentro de la sección Device para una tarjeta de video establecerá la cantidad de RAM disponible en la tarjeta?",
+      "options": [
+        { "label": "a", "text": "VRAM", "correct": false },
+        { "label": "b", "text": "RAM", "correct": false },
+        { "label": "c", "text": "VideoRam", "correct": true },
+        { "label": "d", "text": "vRam", "correct": false }
+      ],
+      "feedback": "La opción VideoRam, que puede expresarse en bytes, configura la cantidad de RAM disponible para la tarjeta de video."
+    },
+    {
+      "id": 28,
+      "type": "single",
+      "question": "Al configurar una sección Screen en un archivo de configuración X, la subsección Display puede contener la profundidad de color. ¿Cuál es el nombre de la opción para establecer la profundidad de color de la pantalla dada?",
+      "options": [
+        { "label": "a", "text": "ColorDepth", "correct": false },
+        { "label": "b", "text": "Depth", "correct": true },
+        { "label": "c", "text": "CDepth", "correct": false },
+        { "label": "d", "text": "colorDep", "correct": false }
+      ],
+      "feedback": "La opción Depth establece la profundidad de color para una pantalla de monitor dada. Un valor típico para esta opción podría ser 24."
+    },
+    {
+      "id": 29,
+      "type": "single",
+      "question": "Se pueden crear múltiples diseños de servidor dentro de un archivo de configuración X. ¿Qué opción se usa para diferenciar entre las diferentes opciones de diseño de servidor?",
+      "options": [
+        { "label": "a", "text": "ID", "correct": false },
+        { "label": "b", "text": "Identifier", "correct": true },
+        { "label": "c", "text": "LayoutName", "correct": false },
+        { "label": "d", "text": "Layout", "correct": false }
+      ],
+      "feedback": "La opción Identifier proporciona una descripción única de cada uno de los diseños de servidor en una configuración X. Las otras opciones mostradas para esta pregunta no existen."
+    },
+    {
+      "id": 30,
+      "type": "single",
+      "question": "¿Qué comando puede usarse para crear una definición de archivo fonts.scale cuando se ejecuta contra el directorio actual?",
+      "options": [
+        { "label": "a", "text": "mkfontsscale", "correct": true },
+        { "label": "b", "text": "mk.fonts", "correct": false },
+        { "label": "c", "text": "mkfontfile", "correct": false },
+        { "label": "d", "text": "fontmk", "correct": false }
+      ],
+      "feedback": "El comando mkfontscale creará un archivo fonts.scale, que describe las fuentes de contorno en el sistema y se usa para la configuración de fuentes que se añaden manualmente al sistema."
+    },
+        {
+      "id": 31,
+      "type": "single",
+      "question": "¿Qué abreviatura usada en X significa una pantalla que utiliza capacidades adicionales como capacidades extendidas de ahorro de energía?",
+      "options": [
+        { "label": "a", "text": "DPMS", "correct": true },
+        { "label": "b", "text": "XPMS", "correct": false },
+        { "label": "c", "text": "DISPPWR", "correct": false },
+        { "label": "d", "text": "PWRD", "correct": false }
+      ],
+      "feedback": "Display Power Management Signaling (DPMS) permite modos adicionales de ahorro de energía, como un modo de suspensión completo, que permiten una mayor eficiencia energética para la pantalla."
+    },
+    {
+      "id": 32,
+      "type": "single",
+      "question": "¿Cuál es el nombre de la función de accesibilidad que proporciona una alternativa al programa Orca para ayudar a usuarios con discapacidades visuales?",
+      "options": [
+        { "label": "a", "text": "Viz", "correct": false },
+        { "label": "b", "text": "emacspeak", "correct": true },
+        { "label": "c", "text": "Ahleah", "correct": false },
+        { "label": "d", "text": "vAssist", "correct": false }
+      ],
+      "feedback": "El programa emacspeak proporciona otra tecnología de asistencia visual como alternativa a Orca. Las otras tecnologías listadas aquí no están relacionadas con visualización o tecnologías de asistencia."
+    },
+    {
+      "id": 33,
+      "type": "single",
+      "question": "¿Cuál de los siguientes es una implementación de referencia del protocolo Wayland?",
+      "options": [
+        { "label": "a", "text": "Wlnd", "correct": false },
+        { "label": "b", "text": "Weston", "correct": true },
+        { "label": "c", "text": "Wausau", "correct": false },
+        { "label": "d", "text": "Wittenberg", "correct": false }
+      ],
+      "feedback": "Weston es una implementación de referencia del protocolo Wayland."
+    },
+    {
+      "id": 34,
+      "type": "single",
+      "question": "Dentro de un archivo de configuración xorg, ¿qué opción establece el tiempo de inactividad para el modo de suspensión de un monitor compatible con DPMS?",
+      "options": [
+        { "label": "a", "text": "InactTimeout", "correct": false },
+        { "label": "b", "text": "InactivityTime", "correct": false },
+        { "label": "c", "text": "SuspendTime", "correct": true },
+        { "label": "d", "text": "InTmout", "correct": false }
+      ],
+      "feedback": "SuspendTime establece el tiempo, en minutos, para que el monitor entre en modo de suspensión. Las otras opciones mostradas no son válidas."
+    },
+    {
+      "id": 35,
+      "type": "single",
+      "question": "Cuando el servidor X se inicia como un usuario normal, ¿qué archivos de configuración de qué directorio también se incluyen?",
+      "options": [
+        { "label": "a", "text": "/etc/X", "correct": false },
+        { "label": "b", "text": "/etc/X11/UserConfig", "correct": false },
+        { "label": "c", "text": "/etc/X11/xorg.conf.d", "correct": true },
+        { "label": "d", "text": "/etc/X/UserConf.d/", "correct": false }
+      ],
+      "feedback": "Los archivos en /etc/X11/xorg.conf.d/ se incluyen cuando X está iniciando."
+    },
+    {
+      "id": 36,
+      "type": "single",
+      "question": "¿Cuál de los siguientes protocolos de escritorio remoto no usa compresión ni cifrado de transporte/sesión?",
+      "options": [
+        { "label": "a", "text": "SSH", "correct": false },
+        { "label": "b", "text": "XDMCP", "correct": true },
+        { "label": "c", "text": "XR", "correct": false },
+        { "label": "d", "text": "RD", "correct": false }
+      ],
+      "feedback": "XDMCP, que normalmente está deshabilitado por defecto, no usa compresión ni seguridad de transporte. Por lo tanto, XDMCP no suele ser preferido para acceso remoto. De las otras opciones, SSH ofrece cifrado de la sesión, y XR y RD no son protocolos válidos."
+    },
+    {
+      "id": 37,
+      "type": "single",
+      "question": "Dentro de la sección greeter de un gestor de pantalla como GNOME Display Manager (GDM), ¿qué opción establece el mensaje de bienvenida para usuarios que inician sesión localmente?",
+      "options": [
+        { "label": "a", "text": "LoginMessage", "correct": false },
+        { "label": "b", "text": "Login", "correct": false },
+        { "label": "c", "text": "WinGreet", "correct": false },
+        { "label": "d", "text": "Welcome", "correct": true }
+      ],
+      "feedback": "La opción Welcome establece el mensaje que se mostrará a los usuarios dentro del gestor de pantalla cuando inicien sesión. Para usuarios remotos, se puede usar el mensaje RemoteWelcome para el mismo propósito."
+    },
+    {
+      "id": 38,
+      "type": "single",
+      "question": "¿Dentro de qué implementación de escritorio encontrarías el gestor de ventanas xfwm4?",
+      "options": [
+        { "label": "a", "text": "XWin", "correct": false },
+        { "label": "b", "text": "KDXF", "correct": false },
+        { "label": "c", "text": "Exf", "correct": false },
+        { "label": "d", "text": "Xfce", "correct": true }
+      ],
+      "feedback": "El entorno de escritorio Xfce usa xfwm4 como su gestor de ventanas. Las otras opciones no son entornos de escritorio."
+    },
+    {
+      "id": 39,
+      "type": "single",
+      "question": "¿Qué opción al inicio de Spice desactiva la autenticación simple?",
+      "options": [
+        { "label": "a", "text": "disable-auth", "correct": false },
+        { "label": "b", "text": "disable-ticketing", "correct": true },
+        { "label": "c", "text": "disable-authentication", "correct": false },
+        { "label": "d", "text": "disable-simpleauth", "correct": false }
+      ],
+      "feedback": "La opción disable-ticketing desactiva la autenticación simple para clientes con Spice."
+    },
+    {
+      "id": 40,
+      "type": "single",
+      "question": "¿Qué software de reconocimiento de voz está incluido con el entorno de escritorio KDE?",
+      "options": [
+        { "label": "a", "text": "Alvin", "correct": false },
+        { "label": "b", "text": "Simon", "correct": true },
+        { "label": "c", "text": "Theodore", "correct": false },
+        { "label": "d", "text": "Zeppo", "correct": false }
+      ],
+      "feedback": "Simon es el software de reconocimiento de voz que es parte del proyecto KDE."
+    },
+        {
+      "id": 41,
+      "type": "single",
+      "question": "Dentro del entorno de escritorio GNOME 3, ¿en qué panel de Configuración se encuentran las opciones para teclas lentas?",
+      "options": [
+        { "label": "a", "text": "Access", "correct": false },
+        { "label": "b", "text": "Typing Settings", "correct": false },
+        { "label": "c", "text": "Keyboard", "correct": false },
+        { "label": "d", "text": "Universal Access", "correct": true }
+      ],
+      "feedback": "El único panel válido listado en las opciones para esta pregunta se llama Universal Access, haciendo que la opción D sea correcta."
+    },
+    {
+      "id": 42,
+      "type": "single",
+      "question": "Cuando una sesión X ya está en ejecución, ¿qué comando se puede usar para habilitar las teclas de puntero?",
+      "options": [
+        { "label": "a", "text": "setxkbmap", "correct": true },
+        { "label": "b", "text": "ptrkeys", "correct": false },
+        { "label": "c", "text": "pointerkeys", "correct": false },
+        { "label": "d", "text": "keypad -ptrkeys", "correct": false }
+      ],
+      "feedback": "El comando setxkbmap se puede usar para habilitar Xkboptions cuando X ya está en ejecución. Los otros comandos mostrados no existen."
+    },
+    {
+      "id": 43,
+      "type": "single",
+      "question": "¿Cuál de los siguientes proporciona una implementación del lado del servidor de Escritorio Remoto (RDP) para Linux?",
+      "options": [
+        { "label": "a", "text": "lrdp", "correct": false },
+        { "label": "b", "text": "xrdp", "correct": true },
+        { "label": "c", "text": "rdp-linux", "correct": false },
+        { "label": "d", "text": "lindp", "correct": false }
+      ],
+      "feedback": "El programa xrdp es una implementación de código abierto de un servidor RDP. Los otros programas mostrados no son válidos."
+    },
+    {
+      "id": 44,
+      "type": "single",
+      "question": "Estás intentando editar el archivo sudoers con visudo sobre una conexión SSH en un sistema que tiene GNOME instalado y recibes un error indicando que gedit no puede ejecutarse. ¿Cuál de los siguientes comandos puede usarse para resolver este problema?",
+      "options": [
+        { "label": "a", "text": "export VISUAL=\"/bin/vim\"", "correct": true },
+        { "label": "b", "text": "export DISPLAY", "correct": false },
+        { "label": "c", "text": "subst DISPLAY=local", "correct": false },
+        { "label": "d", "text": "env VISUAL=ssh", "correct": false }
+      ],
+      "feedback": "Cambiar la variable de entorno VISUAL a un editor que pueda ejecutarse sobre una sesión SSH solucionará el problema. En este caso, se usó /bin/vim."
+    }
+  ]
+}

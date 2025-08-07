@@ -1,0 +1,570 @@
+{
+  "id": "15",
+  "title": "102:D - Linux Istallation and Package Management",
+  "questions": [
+      {
+      "id": 1,
+      "type": "single",
+      "question": "Al particionar un disco para un servidor de correo ejecutando Postfix, ¿qué partición/directorio montado debería ser el más grande para permitir el almacenamiento de correo?",
+      "options": [
+        { "label": "a", "text": "/etc", "correct": false },
+        { "label": "b", "text": "/usr/bin", "correct": false },
+        { "label": "c", "text": "/mail", "correct": false },
+        { "label": "d", "text": "/var", "correct": true }
+      ],
+      "feedback": "La partición que contiene /var debería ser la más grande para un servidor de correo porque los buzones de correo se almacenan dentro de esta jerarquía. La jerarquía /etc/ suele ser pequeña, al igual que /usr/bin. El directorio /mail no existe por defecto."
+    },
+    {
+      "id": 2,
+      "type": "single",
+      "question": "¿Qué opción en GRUB Legacy se usa para indicar que una partición raíz contiene un kernel no-Linux?",
+      "options": [
+        { "label": "a", "text": "initrd", "correct": false },
+        { "label": "b", "text": "non-linux", "correct": false },
+        { "label": "c", "text": "rootnoverify", "correct": true },
+        { "label": "d", "text": "root-win", "correct": false }
+      ],
+      "feedback": "La opción rootnoverify se usa para especificar un kernel no-Linux, uno que GRUB no debe intentar cargar. La opción initrd se usa para especificar el disco RAM inicial, por lo que la opción A es incorrecta. Las opciones restantes, B y D, no son válidas para GRUB."
+    },
+    {
+      "id": 3,
+      "type": "single",
+      "question": "¿Qué opción en un comando de montaje de partición hará que la partición se monte de manera que evite la ejecución de programas?",
+      "options": [
+        { "label": "a", "text": "execless", "correct": false },
+        { "label": "b", "text": "stoprun", "correct": false },
+        { "label": "c", "text": "noexec", "correct": true },
+        { "label": "d", "text": "norun", "correct": false }
+      ],
+      "feedback": "La opción noexec evitará que se ejecuten programas que residan en la partición. La opción noexec se usa frecuentemente para montar la partición /tmp."
+    },
+    {
+      "id": 4,
+      "type": "single",
+      "question": "¿Qué comando generará un nuevo archivo de configuración para GRUB 2 y enviará la salida a la ubicación correcta para el arranque?",
+      "options": [
+        { "label": "a", "text": "update-grub > /boot/grub/grub.cfg", "correct": true },
+        { "label": "b", "text": "update-grub boot > /boot/grub.cfg", "correct": false },
+        { "label": "c", "text": "grub-rc.d", "correct": false },
+        { "label": "d", "text": "grub-boot", "correct": false }
+      ],
+      "feedback": "El comando update-grub envía su salida a STDOUT. Por lo tanto, debes redirigir usando > y enviar esa salida al archivo correcto. Las otras opciones no son válidas para este propósito. Las respuestas C y D no son comandos válidos, mientras que la respuesta B contiene opciones inválidas y una ubicación incorrecta para el archivo destino."
+    },
+    {
+      "id": 5,
+      "type": "single",
+      "question": "¿Cuál es el número máximo de particiones primarias disponibles en un sistema de particionamiento MBR?",
+      "options": [
+        { "label": "a", "text": "Dos", "correct": false },
+        { "label": "b", "text": "Cuatro", "correct": true },
+        { "label": "c", "text": "Uno", "correct": false },
+        { "label": "d", "text": "Cinco", "correct": false }
+      ],
+      "feedback": "Los discos basados en MBR pueden particionarse con hasta cuatro particiones primarias, una de las cuales puede particionarse o extenderse adicionalmente en particiones lógicas."
+    },
+    {
+      "id": 6,
+      "type": "single",
+      "question": "¿Qué comando se usa para actualizar los enlaces y la caché de las bibliotecas compartidas en el sistema?",
+      "options": [
+        { "label": "a", "text": "ldcache", "correct": false },
+        { "label": "b", "text": "cache-update", "correct": false },
+        { "label": "c", "text": "link-update", "correct": false },
+        { "label": "d", "text": "ldconfig", "correct": true }
+      ],
+      "feedback": "El comando ldconfig actualiza la caché y la lista actual de bibliotecas compartidas. ldconfig lee /etc/ld.so.conf e incorpora cualquier cambio encontrado en él. Los otros comandos listados como opciones para esta pregunta no existen."
+    },
+    {
+      "id": 7,
+      "type": "single",
+      "question": "¿Qué comando y opción se usan para actualizar un sistema Debian al software más reciente?",
+      "options": [
+        { "label": "a", "text": "apt-update", "correct": false },
+        { "label": "b", "text": "apt-get upgrade", "correct": true },
+        { "label": "c", "text": "dpkg -U", "correct": false },
+        { "label": "d", "text": "apt-cache clean", "correct": false }
+      ],
+      "feedback": "La opción upgrade para apt-get actualizará el sistema a la última versión del software para los paquetes ya instalados. El comando apt-update no existe, ni la opción -U para dpkg. El comando apt-cache se usa para trabajar con la caché de paquetes."
+    },
+    {
+      "id": 8,
+      "type": "single",
+      "question": "¿Qué opción dada a un comando yum instalará un paquete determinado?",
+      "options": [
+        { "label": "a", "text": "update", "correct": false },
+        { "label": "b", "text": "configure", "correct": false },
+        { "label": "c", "text": "install", "correct": true },
+        { "label": "d", "text": "get", "correct": false }
+      ],
+      "feedback": "El comando yum install instalará un paquete determinado. La opción update actualizará un paquete. Las otras opciones listadas no existen."
+    },
+    {
+      "id": 9,
+      "type": "single",
+      "question": "¿Cuál es la ubicación del directorio home para el usuario root?",
+      "options": [
+        { "label": "a", "text": "/home/root", "correct": false },
+        { "label": "b", "text": "/home/su", "correct": false },
+        { "label": "c", "text": "/root", "correct": true },
+        { "label": "d", "text": "/", "correct": false }
+      ],
+      "feedback": "El directorio home de root es /root en un sistema Linux. Aunque el directorio /home existe, no hay un usuario root o su dentro de esa jerarquía por defecto. El directorio / es la raíz del sistema de archivos pero no el directorio home de root."
+    },
+    {
+      "id": 10,
+      "type": "single",
+      "question": "Cuando se usa rpm2cpio, ¿a qué ubicación se envía la salida por defecto?",
+      "options": [
+        { "label": "a", "text": "STDOUT", "correct": true },
+        { "label": "b", "text": "El archivo cpio.out", "correct": false },
+        { "label": "c", "text": "El archivo a.out", "correct": false },
+        { "label": "d", "text": "El archivo /tmp/cpi.out", "correct": false }
+      ],
+      "feedback": "rpm2cpio envía su salida a STDOUT por defecto, y por lo tanto esa salida necesita ser redirigida a un archivo en la mayoría de los casos."
+    },
+        {
+      "id": 11,
+      "type": "single",
+      "question": "Cuando trabajas con particiones en disco, ves el tipo 0x82. ¿Qué tipo de partición es esta?",
+      "options": [
+        { "label": "a", "text": "Linux", "correct": false },
+        { "label": "b", "text": "Linux swap", "correct": true },
+        { "label": "c", "text": "NTFS", "correct": false },
+        { "label": "d", "text": "FAT32", "correct": false }
+      ],
+      "feedback": "0x82 es Linux swap mientras que 0x83 es Linux. NTFS es 0x07 y FAT32 es 0.0c."
+    },
+    {
+      "id": 12,
+      "type": "single",
+      "question": "¿Qué partición o estructura de directorios típicamente contiene la mayoría de los programas para un sistema Linux?",
+      "options": [
+        { "label": "a", "text": "/etc", "correct": false },
+        { "label": "b", "text": "/usr", "correct": true },
+        { "label": "c", "text": "/home", "correct": false },
+        { "label": "d", "text": "/var", "correct": false }
+      ],
+      "feedback": "La jerarquía /usr contiene muchos de los programas que se ejecutan en un sistema Linux. Otros directorios notables para programas son /bin y /sbin."
+    },
+    {
+      "id": 13,
+      "type": "single",
+      "question": "Tu configuración de GRUB Legacy incluye una opción de arranque dual con Linux primero y otro sistema operativo listado segundo. ¿Cuál de las siguientes opciones arrancará en la partición Linux por defecto?",
+      "options": [
+        { "label": "a", "text": "default=linux", "correct": false },
+        { "label": "b", "text": "default=0", "correct": true },
+        { "label": "c", "text": "default=1", "correct": false },
+        { "label": "d", "text": "default=other", "correct": false }
+      ],
+      "feedback": "GRUB comienza su conteo en 0, y en este escenario hay dos sistemas operativos. Por lo tanto, como Linux es primero en el archivo de configuración, su número sería 0, que luego se envía a la opción default=."
+    },
+    {
+      "id": 14,
+      "type": "single",
+      "question": "¿Qué archivo deberías editar cuando usas GRUB 2 para configurar cosas como el tiempo de espera (timeout)?",
+      "options": [
+        { "label": "a", "text": "/etc/default/grub", "correct": true },
+        { "label": "b", "text": "/etc/grub/boot", "correct": false },
+        { "label": "c", "text": "/etc/boot/grub.d", "correct": false },
+        { "label": "d", "text": "/grub.d/boot", "correct": false }
+      ],
+      "feedback": "El archivo /etc/default/grub puede usarse para este propósito. También podrías editar /boot/grub/grub.cfg, pero esta no era una opción dada en esta pregunta."
+    },
+    {
+      "id": 15,
+      "type": "single",
+      "question": "¿Qué opción de yum muestra las dependencias del paquete especificado?",
+      "options": [
+        { "label": "a", "text": "list", "correct": false },
+        { "label": "b", "text": "deplist", "correct": true },
+        { "label": "c", "text": "dependencies", "correct": false },
+        { "label": "d", "text": "listdeps", "correct": false }
+      ],
+      "feedback": "La opción deplist muestra las dependencias para el paquete dado. La opción list muestra información sobre un paquete específico, mientras que las otras dos opciones no son válidas."
+    },
+    {
+      "id": 16,
+      "type": "single",
+      "question": "¿Qué opciones para un comando rpm mostrarán salida detallada durante una instalación junto con el progreso de la misma?",
+      "options": [
+        { "label": "a", "text": "-ivh", "correct": true },
+        { "label": "b", "text": "-wvh", "correct": false },
+        { "label": "c", "text": "--avh", "correct": false },
+        { "label": "d", "text": "--ins-verbose", "correct": false }
+      ],
+      "feedback": "Las opciones -ivh instalarán un archivo usando rpm, mostrando tanto salida detallada como marcas de hash para el progreso. Las otras opciones presentadas no existen o no cumplen con la tarea especificada."
+    },
+    {
+      "id": 17,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos agrega /usr/local/lib al LD_LIBRARY_PATH cuando se usa el shell Bash?",
+      "options": [
+        { "label": "a", "text": "set PATH=/usr/local/lib", "correct": false },
+        { "label": "b", "text": "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib", "correct": true },
+        { "label": "c", "text": "LD_LIBRARY_PATH=/usr/local/lib", "correct": false },
+        { "label": "d", "text": "connectpath LD_LIBRARY_PATH=/usr/local/lib", "correct": false }
+      ],
+      "feedback": "El comando export se usa para establecer variables de entorno en Bash. Los otros comandos no son válidos para este propósito."
+    },
+    {
+      "id": 18,
+      "type": "single",
+      "question": "¿Qué comando puede usarse para descargar un paquete RPM sin instalarlo?",
+      "options": [
+        { "label": "a", "text": "yumdl", "correct": false },
+        { "label": "b", "text": "yumdownloadonly", "correct": false },
+        { "label": "c", "text": "yumdown", "correct": false },
+        { "label": "d", "text": "yumdownloader", "correct": true }
+      ],
+      "feedback": "La utilidad yumdownloader descargará un paquete RPM pero no lo instalará. La utilidad yumdownloader es parte del paquete yum-utils. Las otras opciones listadas para esta pregunta no existen."
+    },
+    {
+      "id": 19,
+      "type": "single",
+      "question": "¿Qué comando buscará un paquete llamado zsh en un sistema Debian?",
+      "options": [
+        { "label": "a", "text": "apt-cache search zsh", "correct": true },
+        { "label": "b", "text": "apt-get search zsh", "correct": false },
+        { "label": "c", "text": "apt-cache locate zsh", "correct": false },
+        { "label": "d", "text": "apt search zsh", "correct": false }
+      ],
+      "feedback": "El comando apt-cache se usa para trabajar con la caché de paquetes, y la opción search se usa para buscar en la caché el argumento proporcionado, en este caso zsh. El comando apt-get se usa para trabajar con los paquetes mismos, mientras que el comando apt-search no existe."
+    },
+    {
+      "id": 20,
+      "type": "single",
+      "question": "¿Qué opción dentro de /etc/default/grub se usa para configurar el sistema operativo predeterminado para el arranque?",
+      "options": [
+        { "label": "a", "text": "GRUB_OS", "correct": false },
+        { "label": "b", "text": "GRUB_ON", "correct": false },
+        { "label": "c", "text": "GRUB_DEFAULT", "correct": true },
+        { "label": "d", "text": "DEFAULT_OS", "correct": false }
+      ],
+      "feedback": "La opción GRUB_DEFAULT, cuando está en el archivo /etc/default/grub, se usa para configurar el sistema operativo que arrancará por defecto. Las otras opciones no existen en este contexto."
+    },
+        {
+      "id": 21,
+      "type": "single",
+      "question": "Cuando se encuentra en un archivo de configuración de GRUB, ¿qué indica la opción 'ro'?",
+      "options": [
+        { "label": "a", "text": "Montar inicialmente la partición raíz como solo lectura", "correct": true },
+        { "label": "b", "text": "Montar el kernel como solo lectura", "correct": false },
+        { "label": "c", "text": "Iniciar el programa init como 'read-once'", "correct": false },
+        { "label": "d", "text": "Montar la partición raíz en modo 'Raised Object'", "correct": false }
+      ],
+      "feedback": "La opción ro, que es la predeterminada para GRUB, montará inicialmente la partición raíz como solo lectura y luego la volverá a montar como lectura/escritura."
+    },
+    {
+      "id": 22,
+      "type": "single",
+      "question": "¿Dentro de qué directorio encontrarás los repositorios utilizados por YUM?",
+      "options": [
+        { "label": "a", "text": "/etc/yum.conf", "correct": false },
+        { "label": "b", "text": "/etc/repos", "correct": false },
+        { "label": "c", "text": "/etc/yum.conf.d", "correct": false },
+        { "label": "d", "text": "/etc/yum.repos.d", "correct": true }
+      ],
+      "feedback": "Los archivos de configuración relacionados con los repositorios para YUM se encuentran en /etc/yum.repos.d. De las otras opciones, /etc/yum.conf es un archivo y no un directorio, y los otros directorios no existen."
+    },
+    {
+      "id": 23,
+      "type": "single",
+      "question": "¿Qué opción de rpm puede usarse para verificar que ningún archivo ha sido alterado desde la instalación?",
+      "options": [
+        { "label": "a", "text": "-V", "correct": true },
+        { "label": "b", "text": "-v", "correct": false },
+        { "label": "c", "text": "--verbose", "correct": false },
+        { "label": "d", "text": "--filesum", "correct": false }
+      ],
+      "feedback": "La opción -V o --verify verificará los archivos en un paquete dado contra las versiones (o checksums) en la base de datos del paquete. Si ningún archivo ha sido alterado, no se produce salida. Nota que puede haber salida para archivos que se cambian durante la instalación o por otras razones. Nota también el uso de V mayúscula para esta opción en contraste con v minúscula para verbose."
+    },
+    {
+      "id": 24,
+      "type": "single",
+      "question": "¿Qué opción para el comando grub-mkconfig envía la salida a un archivo en lugar de a STDOUT?",
+      "options": [
+        { "label": "a", "text": "-STDOUT", "correct": false },
+        { "label": "b", "text": "--fileout", "correct": false },
+        { "label": "c", "text": "-o", "correct": true },
+        { "label": "d", "text": "-f", "correct": false }
+      ],
+      "feedback": "La opción -o puede usarse para especificar un archivo destino al que se enviará la salida en lugar de a STDOUT. Las otras opciones listadas en esta pregunta no existen."
+    },
+    {
+      "id": 25,
+      "type": "single",
+      "question": "¿Qué condición indica típicamente la presencia de menu.lst en el sistema de archivos?",
+      "options": [
+        { "label": "a", "text": "GRUB Legacy está en uso en el sistema.", "correct": true },
+        { "label": "b", "text": "GRUB 2 está en uso en el sistema.", "correct": false },
+        { "label": "c", "text": "Ha ocurrido un error al crear la salida a menu.lst.", "correct": false },
+        { "label": "d", "text": "Las opciones para arranque de rescate han sido cambiadas.", "correct": false }
+      ],
+      "feedback": "Los archivos menu.lst y grub.conf se usan en GRUB Legacy, es decir, antes de GRUB 2. Esto hace que la respuesta B sea incorrecta."
+    },
+    {
+      "id": 26,
+      "type": "single",
+      "question": "¿Qué comando se usa para determinar las bibliotecas de las que depende un comando dado?",
+      "options": [
+        { "label": "a", "text": "ldconfig", "correct": false },
+        { "label": "b", "text": "librarylist", "correct": false },
+        { "label": "c", "text": "listdeps", "correct": false },
+        { "label": "d", "text": "ldd", "correct": true }
+      ],
+      "feedback": "El comando ldd listará las bibliotecas de las que depende el argumento del comando."
+    },
+    {
+      "id": 27,
+      "type": "single",
+      "question": "¿Cuál de las siguientes afirmaciones es verdadera sobre el espacio de intercambio (swap) en Linux?",
+      "options": [
+        { "label": "a", "text": "Swap se usa para contener tablas temporales de bases de datos.", "correct": false },
+        { "label": "b", "text": "Swap se usa como memoria adicional cuando no hay suficiente RAM.", "correct": true },
+        { "label": "c", "text": "Swap es usado por el servidor de correo para seguridad.", "correct": false },
+        { "label": "d", "text": "Swap se usa para limpiar datos temporalmente de la red.", "correct": false }
+      ],
+      "feedback": "El espacio de intercambio (swap) se usa cuando no hay suficiente RAM en un sistema."
+    },
+    {
+      "id": 28,
+      "type": "single",
+      "question": "¿Cuál de los siguientes no se usa típicamente para almacenar bibliotecas?",
+      "options": [
+        { "label": "a", "text": "/lib", "correct": false },
+        { "label": "b", "text": "/etc/lib", "correct": true },
+        { "label": "c", "text": "/usr/lib", "correct": false },
+        { "label": "d", "text": "/usr/local/lib", "correct": false }
+      ],
+      "feedback": "El directorio /etc/lib no está típicamente asociado con archivos de biblioteca y no existe típicamente en un sistema Linux a menos que se cree manualmente. Las otras opciones contienen bibliotecas del sistema o pueden usarse para ese propósito."
+    },
+    {
+      "id": 29,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos actualiza la caché de paquetes para un sistema Debian?",
+      "options": [
+        { "label": "a", "text": "apt-get cache-update", "correct": false },
+        { "label": "b", "text": "apt-cache update", "correct": false },
+        { "label": "c", "text": "apt-get update", "correct": true },
+        { "label": "d", "text": "apt-get upgrade", "correct": false }
+      ],
+      "feedback": "El comando apt-get update hará que la caché de paquetes se actualice recuperando la última lista de paquetes de las fuentes de paquetes. No existe una opción cache-update ni una opción update para apt-cache. La opción upgrade se usa para actualizar los paquetes del sistema y no la caché."
+    },
+    {
+      "id": 30,
+      "type": "single",
+      "question": "¿Dentro de qué archivo se almacenan los detalles de los repositorios de paquetes actuales en un sistema Debian?",
+      "options": [
+        { "label": "a", "text": "/etc/apt.list", "correct": false },
+        { "label": "b", "text": "/etc/sources.list", "correct": false },
+        { "label": "c", "text": "/etc/apt/sources.list", "correct": true },
+        { "label": "d", "text": "/etc/apt.d/sources.list", "correct": false }
+      ],
+      "feedback": "El archivo sources.list ubicado en /etc/apt contiene la lista de repositorios para paquetes Debian. Las otras ubicaciones de archivos no existen por defecto."
+    },
+        {
+      "id": 31,
+      "type": "single",
+      "question": "De las siguientes opciones, ¿qué tamaño sería más apropiado para la partición /boot de un sistema Linux?",
+      "options": [
+        { "label": "a", "text": "Entre 100 MB y 500 MB", "correct": true },
+        { "label": "b", "text": "Entre 1 GB y 10 GB", "correct": false },
+        { "label": "c", "text": "/boot no debería particionarse por separado", "correct": false },
+        { "label": "d", "text": "Menos de 5 MB", "correct": false }
+      ],
+      "feedback": "La partición /boot típicamente será mucho menor que 500 MB pero no debería ser demasiado pequeña. El espacio usado en /boot aumentará a medida que se añadan más kernels, como durante un proceso de actualización."
+    },
+    {
+      "id": 32,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos inicializa una partición de disco físico para su uso con LVM?",
+      "options": [
+        { "label": "a", "text": "lvmcreate", "correct": false },
+        { "label": "b", "text": "pvcreate", "correct": true },
+        { "label": "c", "text": "fvcreate", "correct": false },
+        { "label": "d", "text": "lvinit", "correct": false }
+      ],
+      "feedback": "El comando pvcreate inicializa una partición física para su uso futuro como volumen lógico con LVM."
+    },
+    {
+      "id": 33,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos instala GRUB en el MBR del segundo disco SATA?",
+      "options": [
+        { "label": "a", "text": "grub-install /dev/hdb2", "correct": false },
+        { "label": "b", "text": "grub-install /dev/sda2", "correct": false },
+        { "label": "c", "text": "grub-config /dev/sda", "correct": false },
+        { "label": "d", "text": "grub-install /dev/sdb", "correct": true }
+      ],
+      "feedback": "El comando grub-install se usa para instalar GRUB en un disco y el segundo disco SATA sería /dev/sdb, por lo que la opción D es la correcta. Puedes usar grub-install en diferentes discos para proporcionar una opción de arranque alternativa o de respaldo."
+    },
+    {
+      "id": 34,
+      "type": "single",
+      "question": "¿Qué comando debería usarse para modificar las elecciones realizadas cuando se instaló un paquete Debian?",
+      "options": [
+        { "label": "a", "text": "dpkg-reconfigure", "correct": true },
+        { "label": "b", "text": "dpkg -r", "correct": false },
+        { "label": "c", "text": "dpkg --reconf", "correct": false },
+        { "label": "d", "text": "apt-get reinstall", "correct": false }
+      ],
+      "feedback": "El programa dpkg-reconfigure hará que un paquete ya instalado sea reconfigurado o modificado. La opción -r para dpkg es para eliminar un paquete, por lo que la respuesta B es incorrecta. No existe una opción reconf para dpkg ni una opción reinstall para apt-get."
+    },
+    {
+      "id": 35,
+      "type": "single",
+      "question": "¿Qué comando se usa para crear un volumen lógico con LVM?",
+      "options": [
+        { "label": "a", "text": "pvcreate", "correct": false },
+        { "label": "b", "text": "lvmcreate", "correct": false },
+        { "label": "c", "text": "lvcreate", "correct": true },
+        { "label": "d", "text": "volcreate", "correct": false }
+      ],
+      "feedback": "El comando lvcreate se usa para crear volúmenes lógicos con LVM. El comando pvcreate inicializa volúmenes físicos antes de crear volúmenes lógicos. Los comandos en las otras dos opciones de esta pregunta no existen."
+    },
+    {
+      "id": 36,
+      "type": "single",
+      "question": "¿Cuál es el orden lógico para la creación de un volumen lógico LVM?",
+      "options": [
+        { "label": "a", "text": "Creación de volumen físico, creación de grupo de volúmenes, creación de volumen lógico", "correct": true },
+        { "label": "b", "text": "Creación de volumen físico, creación de volumen lógico, creación de grupo de volúmenes", "correct": false },
+        { "label": "c", "text": "Creación de volumen lógico, creación de volumen físico, creación de grupo de volúmenes", "correct": false },
+        { "label": "d", "text": "Creación LVM, formateo, partición", "correct": false }
+      ],
+      "feedback": "Primero se inicializan los volúmenes físicos, seguido de la creación del grupo de volúmenes, y luego la creación del volumen lógico."
+    },
+    {
+      "id": 37,
+      "type": "single",
+      "question": "¿Cuál de las herramientas de gestión de paquetes Debian proporciona una interfaz basada en terminal para la gestión?",
+      "options": [
+        { "label": "a", "text": "apt-get", "correct": false },
+        { "label": "b", "text": "dpkg", "correct": false },
+        { "label": "c", "text": "apt-cache", "correct": false },
+        { "label": "d", "text": "aptitude", "correct": true }
+      ],
+      "feedback": "aptitude proporciona la interfaz basada en terminal en lugar de la interfaz de línea de comandos estándar de las otras herramientas listadas en esta pregunta."
+    },
+    {
+      "id": 38,
+      "type": "single",
+      "question": "¿Qué opción para yum realiza una búsqueda en la caché de paquetes?",
+      "options": [
+        { "label": "a", "text": "seek", "correct": false },
+        { "label": "b", "text": "query", "correct": false },
+        { "label": "c", "text": "--search", "correct": false },
+        { "label": "d", "text": "search", "correct": true }
+      ],
+      "feedback": "La opción search realiza una búsqueda en varios campos como el nombre del paquete y la descripción."
+    },
+    {
+      "id": 39,
+      "type": "single",
+      "question": "¿Qué opción de comando para rpm puede usarse para mostrar la versión del kernel?",
+      "options": [
+        { "label": "a", "text": "rpm kernel", "correct": false },
+        { "label": "b", "text": "rpm -q kernel", "correct": true },
+        { "label": "c", "text": "rpm search kernel", "correct": false },
+        { "label": "d", "text": "rpm --list kern", "correct": false }
+      ],
+      "feedback": "El comando rpm -q kernel mostrará la versión del kernel. También puedes usar uname -r para el mismo propósito."
+    },
+    {
+      "id": 40,
+      "type": "single",
+      "question": "Asumiendo una entrada de menú 'Debian' en tu configuración GRUB, ¿qué opción en /etc/default/grub establecería ese como el sistema operativo predeterminado para arrancar?",
+      "options": [
+        { "label": "a", "text": "GRUB_OS", "correct": false },
+        { "label": "b", "text": "GRUB_OS_DEF", "correct": false },
+        { "label": "c", "text": "GRUB_DEFAULT", "correct": true },
+        { "label": "d", "text": "GRUB_CONF", "correct": false }
+      ],
+      "feedback": "La opción GRUB_DEFAULT en /etc/default/grub establecerá el sistema operativo que arrancará por defecto."
+    },
+        {
+      "id": 41,
+      "type": "single",
+      "question": "¿Qué opción en /etc/yum.conf se usa para asegurar que el kernel no se actualice cuando el sistema se actualice?",
+      "options": [
+        { "label": "a", "text": "exclude=kernel*", "correct": true },
+        { "label": "b", "text": "exclude-kernel", "correct": false },
+        { "label": "c", "text": "updatekernel=false", "correct": false },
+        { "label": "d", "text": "include-except=kernel", "correct": false }
+      ],
+      "feedback": "La opción exclude puede usarse para excluir ciertos paquetes. El argumento acepta comodines, y por lo tanto excluir todos los updates kernel* creará el comportamiento deseado."
+    },
+    {
+      "id": 42,
+      "type": "single",
+      "question": "¿Qué comando debería ejecutarse después de hacer un cambio al archivo /etc/default/grub?",
+      "options": [
+        { "label": "a", "text": "grub", "correct": false },
+        { "label": "b", "text": "grub-mkconfig", "correct": true },
+        { "label": "c", "text": "grub-inst", "correct": false },
+        { "label": "d", "text": "reboot", "correct": false }
+      ],
+      "feedback": "El comando grub-mkconfig debería ejecutarse después de hacer un cambio al archivo /etc/default/grub para que se pueda crear un nuevo archivo de configuración con las opciones modificadas."
+    },
+    {
+      "id": 43,
+      "type": "single",
+      "question": "¿Qué comando busca y proporciona información sobre un paquete dado en un sistema Debian, incluyendo si el paquete está actualmente instalado o no?",
+      "options": [
+        { "label": "a", "text": "dpkg -i", "correct": false },
+        { "label": "b", "text": "dpkg -s", "correct": true },
+        { "label": "c", "text": "apt-cache", "correct": false },
+        { "label": "d", "text": "apt-info", "correct": false }
+      ],
+      "feedback": "La opción -s para dpkg busca el paquete dado y proporciona información sobre su estado actual en el sistema. El comando apt-cache no se usa para este propósito, y la opción -i para dpkg instala un paquete. El comando apt-info no existe."
+    },
+    {
+      "id": 44,
+      "type": "single",
+      "question": "¿Qué comando se usa para buscar volúmenes físicos para usar con LVM?",
+      "options": [
+        { "label": "a", "text": "lvmcreate", "correct": false },
+        { "label": "b", "text": "pvcreate", "correct": false },
+        { "label": "c", "text": "lvmdiskscan", "correct": true },
+        { "label": "d", "text": "lvmscan", "correct": false }
+      ],
+      "feedback": "El comando lvmdiskscan busca volúmenes físicos que han sido inicializados para usar con LVM."
+    },
+    {
+      "id": 45,
+      "type": "single",
+      "question": "¿Qué opción agregada a yumdownloader también descargará las dependencias?",
+      "options": [
+        { "label": "a", "text": "--deps", "correct": false },
+        { "label": "b", "text": "--resolve", "correct": true },
+        { "label": "c", "text": "--resdeps", "correct": false },
+        { "label": "d", "text": "-d", "correct": false }
+      ],
+      "feedback": "La opción --resolve descargará las dependencias del paquete que se está descargando. Las otras opciones mostradas en esta pregunta no son válidas para el comando yumdownloader."
+    },
+    {
+      "id": 46,
+      "type": "single",
+      "question": "¿Cuál de los siguientes instala un paquete Debian previamente descargado?",
+      "options": [
+        { "label": "a", "text": "dpkg -i <nombre del paquete>", "correct": true },
+        { "label": "b", "text": "apt-install <nombre del paquete>", "correct": false },
+        { "label": "c", "text": "apt-slash <nombre del paquete>", "correct": false },
+        { "label": "d", "text": "dpkg -U <nombre del paquete>", "correct": false }
+      ],
+      "feedback": "La opción -i para dpkg instalará un paquete previamente descargado. Los otros comandos no existen, y la opción -U para dpkg no existe."
+    },
+    {
+      "id": 47,
+      "type": "single",
+      "question": "Un disco duro se reporta como hd(0,0) por el archivo de configuración de GRUB Legacy. ¿A cuál de los siguientes discos y particiones corresponde esto?",
+      "options": [
+        { "label": "a", "text": "/dev/hda2", "correct": false },
+        { "label": "b", "text": "/dev/hda0", "correct": false },
+        { "label": "c", "text": "/dev/disk1", "correct": false },
+        { "label": "d", "text": "/dev/sda1", "correct": true }
+      ],
+      "feedback": "GRUB Legacy comienza a contar en 0 y separa la letra del disco y la partición con una coma, por lo que 0,0 es la primera partición en el primer disco. La respuesta A no es el primer disco en el sistema y las respuestas B y C contienen particiones o dispositivos inexistentes."
+    }
+  ]
+}

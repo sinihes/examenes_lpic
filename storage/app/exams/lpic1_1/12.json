@@ -1,0 +1,582 @@
+{
+  "id": "18",
+  "title": "110 - Security 2",
+  "questions": [
+    {
+      "id": 1,
+      "type": "single",
+      "question": "Necesitas evitar temporalmente que los usuarios inicien sesión en el sistema usando ssh u otros medios. ¿Cuál de las siguientes opciones describe un método para lograr esta tarea?",
+      "options": [
+        { "label": "a", "text": "Usar el comando 'touch /etc/nologin'", "correct": true },
+        { "label": "b", "text": "Deshabilitar sshd", "correct": false },
+        { "label": "c", "text": "Eliminar /etc/login", "correct": false },
+        { "label": "d", "text": "Añadir un archivo shadow", "correct": false }
+      ],
+      "feedback": "Si existe /etc/nologin, los usuarios no podrán iniciar sesión en el sistema. El usuario root aún puede iniciar sesión, asumiendo que los inicios de sesión root están habilitados en la configuración de ssh."
+    },
+    {
+      "id": 2,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos busca en todo el sistema de archivos los archivos con el bit setuid activado?",
+      "options": [
+        { "label": "a", "text": "find ./ -perm suid", "correct": false },
+        { "label": "b", "text": "find / -perm 4000", "correct": true },
+        { "label": "c", "text": "find / -type suid", "correct": false },
+        { "label": "d", "text": "find / -type f -perm setuid", "correct": false }
+      ],
+      "feedback": "El comando find se usa para este propósito, y el permiso puede describirse como 4000 para indicar la presencia del bit setuid. La opción -type se usa para cambiar el tipo de objeto a devolver, pero no es relevante para el escenario descrito."
+    },
+    {
+      "id": 3,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos muestra los puertos abiertos actualmente y el proceso que los está usando?",
+      "options": [
+        { "label": "a", "text": "netstat -a", "correct": false },
+        { "label": "b", "text": "lsof -i", "correct": true },
+        { "label": "c", "text": "ps auwx", "correct": false },
+        { "label": "d", "text": "netlist", "correct": false }
+      ],
+      "feedback": "El comando lsof puede usarse para este propósito, y con la opción -i mostrará los puertos de red junto con su proceso. El comando netstat muestra puertos de red pero no el proceso con la opción -a. El comando ps se usa para procesos pero no para puertos de red. Finalmente, no existe el comando netlist."
+    },
+    {
+      "id": 4,
+      "type": "single",
+      "question": "Estás intentando desmontar un sistema de archivos usando el comando umount. Sin embargo, recibes un mensaje indicando que el sistema de archivos está en uso. ¿Cuál de los siguientes comandos puede usarse para determinar qué proceso está manteniendo abierto el sistema de archivos?",
+      "options": [
+        { "label": "a", "text": "fuser", "correct": true },
+        { "label": "b", "text": "ls", "correct": false },
+        { "label": "c", "text": "find", "correct": false },
+        { "label": "d", "text": "ps", "correct": false }
+      ],
+      "feedback": "El comando fuser puede usarse para determinar qué proceso está usando un archivo dado. El comando ls muestra archivos, y find puede usarse para buscar archivos pero no específicamente para este propósito. El comando ps muestra procesos pero no está necesariamente vinculado a un archivo en particular."
+    },
+    {
+      "id": 5,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos muestra información de la cuenta como fecha de expiración, último cambio de contraseña y otros detalles relacionados?",
+      "options": [
+        { "label": "a", "text": "usermod -l", "correct": false },
+        { "label": "b", "text": "userinfo -a", "correct": false },
+        { "label": "c", "text": "chageuser -l", "correct": false },
+        { "label": "d", "text": "chage -l", "correct": true }
+      ],
+      "feedback": "El comando chage se usa para trabajar con información de envejecimiento de cuentas como fecha de expiración, cambio de contraseña, días entre cambios de contraseña, etc. La opción -l lista información para la cuenta dada. El comando usermod se usa para hacer cambios en una cuenta, y los otros dos comandos no son válidos."
+    },
+    {
+      "id": 6,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos escanea la dirección IP 192.168.1.154 en busca de puertos abiertos?",
+      "options": [
+        { "label": "a", "text": "nmap 192.168.1.154", "correct": true },
+        { "label": "b", "text": "lsof 192.168.1.154", "correct": false },
+        { "label": "c", "text": "netstat 192.168.1.154", "correct": false },
+        { "label": "d", "text": "netmap 192.168.1.154", "correct": false }
+      ],
+      "feedback": "El comando nmap se usa para escanear puertos abiertos. El comando nmap escaneará puertos TCP abiertos en la dirección o direcciones especificadas. Los otros comandos mostrados no escanean puertos abiertos en direcciones IP externas (fuera del host)."
+    },
+    {
+      "id": 7,
+      "type": "single",
+      "question": "¿Qué comando se usa para crear un par de claves pública/privada para usar con ssh?",
+      "options": [
+        { "label": "a", "text": "ssh -k", "correct": false },
+        { "label": "b", "text": "ssh-keygen", "correct": true },
+        { "label": "c", "text": "ssh-genkey", "correct": false },
+        { "label": "d", "text": "ssh -key", "correct": false }
+      ],
+      "feedback": "El comando ssh-keygen se usa para crear un par de claves para usar con ssh en lugar de una contraseña. De las otras opciones, el comando ssh existe pero la opción -k se usa para deshabilitar el reenvío de credenciales GSSAPI y no para el propósito descrito."
+    },
+    {
+      "id": 8,
+      "type": "single",
+      "question": "¿Cuál de las siguientes opciones de configuración establece un límite estricto de 25 procesos para un usuario llamado suehring en /etc/security/limits.conf?",
+      "options": [
+        { "label": "a", "text": "suehring hard proc 25", "correct": false },
+        { "label": "b", "text": "suehring hard nproc 25", "correct": true },
+        { "label": "c", "text": "suehring proc 25 hard-limit", "correct": false },
+        { "label": "d", "text": "proc 25 suehring hard", "correct": false }
+      ],
+      "feedback": "El formato es nombre de usuario (u otro especificador) seguido de hard o soft, dependiendo del tipo de límite, luego la palabra clave seguida del valor para esa palabra clave dada."
+    },
+    {
+      "id": 9,
+      "type": "single",
+      "question": "¿En qué archivo deberías colocar las claves públicas de los servidores desde los cuales aceptarás autenticación ssh basada en claves?",
+      "options": [
+        { "label": "a", "text": "~/.ssh/authorized_keys", "correct": true },
+        { "label": "b", "text": "~/.ssh/keys", "correct": false },
+        { "label": "c", "text": "~/.ssh/keyauth", "correct": false },
+        { "label": "d", "text": "~/.sshd/authkeys", "correct": false }
+      ],
+      "feedback": "El archivo authorized_keys, almacenado en el directorio .ssh de tu directorio home, contiene claves públicas autorizadas para iniciar sesión en el servidor usando su clave privada correspondiente."
+    },
+    {
+      "id": 10,
+      "type": "single",
+      "question": "El sistema en el que estás trabajando no tiene instalado el comando lsof, y no tienes permiso para instalar software sin pasar por cuatro niveles de aprobación y programar la instalación con semanas de anticipación. Sin embargo, el comando netstat está disponible. ¿Qué opción de netstat mostrará el ID del proceso al que está conectado un puerto de red dado?",
+      "options": [
+        { "label": "a", "text": "-a", "correct": false },
+        { "label": "b", "text": "-n", "correct": false },
+        { "label": "c", "text": "-p", "correct": true },
+        { "label": "d", "text": "-l", "correct": false }
+      ],
+      "feedback": "La opción -p muestra el ID del proceso al que está conectado un puerto dado, y es útil para mostrar información sobre qué proceso está escuchando en un puerto dado. La opción -a muestra sockets que escuchan y no escuchan, mientras que -n deshabilita las búsquedas de nombres. La opción -l muestra solo sockets que escuchan."
+    },
+       {
+      "id": 11,
+      "type": "single",
+      "question": "Necesitas ver información de inicios de sesión más allá de lo capturado por el archivo de registro actual para el último comando. ¿Qué opción del comando last puede usarse para cargar información de un archivo alternativo?",
+      "options": [
+        { "label": "a", "text": "-a", "correct": false },
+        { "label": "b", "text": "-t", "correct": false },
+        { "label": "c", "text": "-e", "correct": false },
+        { "label": "d", "text": "-f", "correct": true }
+      ],
+      "feedback": "La carga de archivos alternativos se realiza usando la opción -f. Esto permite examinar inicios de sesión de archivos de registro antiguos. La opción -a controla la ubicación de visualización del host, mientras que -t controla la visualización de inicios de sesión según la fecha y hora especificadas. No existe una opción -e."
+    },
+    {
+      "id": 12,
+      "type": "single",
+      "question": "Necesitas examinar quién ha iniciado sesión actualmente en el sistema. ¿Cuál de los siguientes comandos mostrará esta información?",
+      "options": [
+        { "label": "a", "text": "listuser", "correct": false },
+        { "label": "b", "text": "fuser", "correct": false },
+        { "label": "c", "text": "ls -u", "correct": false },
+        { "label": "d", "text": "w", "correct": true }
+      ],
+      "feedback": "El comando w muestra los usuarios actualmente conectados junto con información como el tiempo de actividad y la carga promedio. El comando fuser muestra archivos abiertos, y la opción -u de ls controla la visualización de listados de archivos. No existe el comando listuser."
+    },
+    {
+      "id": 13,
+      "type": "single",
+      "question": "Necesitas ejecutar un comando como un usuario específico. ¿Cuál de los siguientes comandos permite hacer esto?",
+      "options": [
+        { "label": "a", "text": "sudo -u", "correct": true },
+        { "label": "b", "text": "sudo -U", "correct": false },
+        { "label": "c", "text": "sudo -s", "correct": false },
+        { "label": "d", "text": "sudo -H", "correct": false }
+      ],
+      "feedback": "La opción -u es correcta para este propósito. Una opción -U en mayúscula establece el contexto de usuario para listar privilegios. La opción -s establece el shell, y la opción -H establece el directorio home."
+    },
+    {
+      "id": 14,
+      "type": "single",
+      "question": "¿Qué opción en /etc/sudoers hará que el comando especificado no solicite una contraseña?",
+      "options": [
+        { "label": "a", "text": "PASSWORD=NO", "correct": false },
+        { "label": "b", "text": "NOPASSWD", "correct": true },
+        { "label": "c", "text": "NOPASSWORD", "correct": false },
+        { "label": "d", "text": "NOPROMPT", "correct": false }
+      ],
+      "feedback": "La opción NOPASSWD hace que sudo no solicite una contraseña para un comando sudo dado. Esto es útil para escenarios con scripts donde un mensaje de contraseña causaría problemas."
+    },
+    {
+      "id": 15,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos mostrará los límites de tiempo de CPU, memoria y otros para el usuario actualmente conectado?",
+      "options": [
+        { "label": "a", "text": "reslimit", "correct": false },
+        { "label": "b", "text": "limitres -a", "correct": false },
+        { "label": "c", "text": "ulimit -a", "correct": true },
+        { "label": "d", "text": "proclimit -n", "correct": false }
+      ],
+      "feedback": "El comando ulimit muestra dichos límites, y la opción -a muestra todos los límites para el usuario actualmente conectado. Los otros comandos no son válidos."
+    },
+    {
+      "id": 16,
+      "type": "single",
+      "question": "¿Qué línea dentro del archivo /etc/hosts.deny evitará que cualquier host dentro de la red 192.168.1.0/24 acceda a servicios que operan desde xinetd?",
+      "options": [
+        { "label": "a", "text": "BLOCK: 192.168.1.0/24", "correct": false },
+        { "label": "b", "text": "REJECT: 192.168.1.0", "correct": false },
+        { "label": "c", "text": "ALL: 192.168.1.0/255.255.255.0", "correct": true },
+        { "label": "d", "text": "NONE: 192.168.1/255.255.255.0", "correct": false }
+      ],
+      "feedback": "La sintaxis para bloquear el acceso a cada servicio usa la palabra clave ALL seguida de la dirección o red a la que se aplicará la política."
+    },
+    {
+      "id": 17,
+      "type": "single",
+      "question": "Al expirar una cuenta de usuario con usermod -e, ¿cuál de los siguientes representa el formato de fecha correcto?",
+      "options": [
+        { "label": "a", "text": "YYYY-MM-DD", "correct": true },
+        { "label": "b", "text": "MM/DD/YYYY", "correct": false },
+        { "label": "c", "text": "DD/MM/YY", "correct": false },
+        { "label": "d", "text": "MM/DD/YY HH:MM:SS", "correct": false }
+      ],
+      "feedback": "El formato correcto es YYYY-MM-DD para el comando usermod."
+    },
+    {
+      "id": 18,
+      "type": "single",
+      "question": "¿Cuál de las siguientes directivas en un archivo de configuración dentro de /etc/xinetd.d evitará que el servicio se inicie?",
+      "options": [
+        { "label": "a", "text": "enable no", "correct": false },
+        { "label": "b", "text": "start no", "correct": false },
+        { "label": "c", "text": "disable yes", "correct": true },
+        { "label": "d", "text": "boot no", "correct": false }
+      ],
+      "feedback": "La opción disable se usa para el propósito descrito y puede establecerse en yes o no. Las otras opciones no son válidas para este escenario. La configuración para xinetd se controla mediante /etc/xinetd.conf."
+    },
+    {
+      "id": 19,
+      "type": "single",
+      "question": "Estás usando un par de claves basado en RSA para SSH. Por defecto, ¿cuál es el nombre del archivo de clave privada en ~/.ssh?",
+      "options": [
+        { "label": "a", "text": "id_rsa", "correct": true },
+        { "label": "b", "text": "id_rsa.priv", "correct": false },
+        { "label": "c", "text": "id_rsa.key", "correct": false },
+        { "label": "d", "text": "rsa_key.priv", "correct": false }
+      ],
+      "feedback": "El archivo se llama id_rsa por defecto, y la clave pública se llama id_rsa.pub. Para claves DSA, los nombres son id_dsa e id_dsa.pub."
+    },
+    {
+      "id": 20,
+      "type": "single",
+      "question": "¿Qué opción del comando su ejecutará un solo comando con una sesión no interactiva?",
+      "options": [
+        { "label": "a", "text": "-s", "correct": false },
+        { "label": "b", "text": "-u", "correct": false },
+        { "label": "c", "text": "-c", "correct": true },
+        { "label": "d", "text": "-e", "correct": false }
+      ],
+      "feedback": "La opción -c ejecuta un solo comando pero lo hace sin una sesión interactiva. La opción -s especifica el shell a usar. No existen las opciones -u o -e para el comando su."
+    },
+        {
+      "id": 21,
+      "type": "single",
+      "question": "Después de especificar el servidor de claves, ¿qué opción de gpg se usa para especificar la clave que se enviará al servidor de claves?",
+      "options": [
+        { "label": "a", "text": "key-name", "correct": false },
+        { "label": "b", "text": "keyname", "correct": false },
+        { "label": "c", "text": "send-key", "correct": true },
+        { "label": "d", "text": "sendkey", "correct": false }
+      ],
+      "feedback": "La opción send-key seguida del nombre de la clave envía la clave al servidor de claves especificado por la opción keyserver. Este es un escenario típico para enviar una clave pública generada localmente a un servidor público para que otros la usen. Las otras opciones mostradas como respuestas potenciales no existen."
+    },
+    {
+      "id": 22,
+      "type": "single",
+      "question": "¿Cuál de las siguientes opciones describe mejor el método para usar con ssh con el fin de ejecutar un solo comando en un servidor remoto?",
+      "options": [
+        { "label": "a", "text": "Usar la opción -e seguida del comando.", "correct": false },
+        { "label": "b", "text": "Enviar el comando después de las otras opciones como parte de la línea de comandos.", "correct": true },
+        { "label": "c", "text": "Usar la opción --execute seguida del comando.", "correct": false },
+        { "label": "d", "text": "Usar la opción -s seguida del comando.", "correct": false }
+      ],
+      "feedback": "No se necesita ninguna opción especial para ejecutar un solo comando en un host remoto con ssh. La opción -s solicita un subsistema y no está relacionada con este escenario. La opción -e especifica un carácter de escape."
+    },
+    {
+      "id": 23,
+      "type": "single",
+      "question": "Cuando se usa ssh-agent, ¿qué comando y opción lista las claves actualmente cargadas?",
+      "options": [
+        { "label": "a", "text": "ssh-agent -l", "correct": false },
+        { "label": "b", "text": "ssh -l", "correct": false },
+        { "label": "c", "text": "ssh-list-keys", "correct": false },
+        { "label": "d", "text": "ssh-add -l", "correct": true }
+      ],
+      "feedback": "El comando ssh-add se usa para listar las claves actualmente cargadas, y se usa junto con ssh-agent. No existe una opción -l para ssh-agent y la opción -l para ssh especifica el nombre de inicio de sesión a usar. No existe el comando ssh-list-keys."
+    },
+    {
+      "id": 24,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos debería usarse para editar el archivo /etc/sudoers?",
+      "options": [
+        { "label": "a", "text": "Cualquier editor de texto como vi o emacs", "correct": false },
+        { "label": "b", "text": "editsudo", "correct": false },
+        { "label": "c", "text": "visudo", "correct": true },
+        { "label": "d", "text": "visudoers", "correct": false }
+      ],
+      "feedback": "Aunque se puede usar cualquier editor de texto, se recomienda encarecidamente usar el comando visudo para editar /etc/sudoers. Usar visudo permite la verificación de sintaxis, lo que ayudará a evitar problemas con una configuración inválida que cause problemas para aquellos que dependen de sudo."
+    },
+    {
+      "id": 25,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos puede usarse para evitar que un servicio determinado, como httpd.service, se inicie al arrancar en un sistema basado en systemd?",
+      "options": [
+        { "label": "a", "text": "systemctl disable httpdservice", "correct": false },
+        { "label": "b", "text": "systemctl stop httpd.service", "correct": false },
+        { "label": "c", "text": "systemctl disable httpd.service", "correct": true },
+        { "label": "d", "text": "systemctl enable httpd.service boot=no", "correct": false }
+      ],
+      "feedback": "El comando systemctl se usará para este propósito, y el subcomando es disable. Existe un subcomando stop, pero solo detendrá el servicio dado en lugar de evitar que se inicie al arrancar. Las otras opciones son inválidas por varias razones, incluido que usan systemd como nombre de comando en lugar de systemctl."
+    },
+    {
+      "id": 26,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos establecerá que una cuenta expire según el número de días transcurridos desde el 1 de enero de 1970?",
+      "options": [
+        { "label": "a", "text": "passwd -e", "correct": false },
+        { "label": "b", "text": "chage -E", "correct": true },
+        { "label": "c", "text": "usermod -l", "correct": false },
+        { "label": "d", "text": "chguser", "correct": false }
+      ],
+      "feedback": "El comando chage puede usarse para este propósito, y la opción -E acepta días desde el 1/1/1970. No existe una opción -e para passwd, y -l para usermod no realizará la acción descrita. No existe el comando chguser."
+    },
+    {
+      "id": 27,
+      "type": "single",
+      "question": "Estás usando nmap para escanear un host en busca de puertos abiertos. Sin embargo, el servidor está bloqueando las solicitudes de eco ICMP. ¿Qué opción de nmap puedes configurar para continuar con el escaneo?",
+      "options": [
+        { "label": "a", "text": "-P0", "correct": true },
+        { "label": "b", "text": "-no-ping", "correct": false },
+        { "label": "c", "text": "-s0", "correct": false },
+        { "label": "d", "text": "-ping-0", "correct": false }
+      ],
+      "feedback": "Configurar -P0 hará que no se envíen solicitudes de ping antes del escaneo, y es útil para el escenario descrito. Existe una opción -s, pero no se usa para este propósito. Las otras opciones no son válidas."
+    },
+    {
+      "id": 28,
+      "type": "single",
+      "question": "¿Qué opción dentro de /etc/security/limits.conf se usa para controlar el número de veces que una cuenta determinada puede iniciar sesión simultáneamente?",
+      "options": [
+        { "label": "a", "text": "nlogins", "correct": false },
+        { "label": "b", "text": "loginmax", "correct": false },
+        { "label": "c", "text": "maxlogins", "correct": true },
+        { "label": "d", "text": "loginlimit", "correct": false }
+      ],
+      "feedback": "El parámetro maxlogins se usa para controlar el número de inicios de sesión simultáneos para una cuenta dada."
+    },
+    {
+      "id": 29,
+      "type": "single",
+      "question": "¿Qué archivo puede usarse para almacenar una caché a nivel de servidor de hosts cuyas claves son conocidas para ssh?",
+      "options": [
+        { "label": "a", "text": "/etc/sshd_known_hosts", "correct": false },
+        { "label": "b", "text": "/etc/ssh_known_hosts", "correct": true },
+        { "label": "c", "text": "~/.ssh/known_hosts", "correct": false },
+        { "label": "d", "text": "/root/ssh_known_hosts", "correct": false }
+      ],
+      "feedback": "El archivo ssh_known_hosts, típicamente guardado en /etc/, se usa para el propósito descrito. Nota que en algunos sistemas este archivo y otras configuraciones relacionadas con ssh pueden encontrarse en /etc/ssh/. Las respuestas que indican ~ o dentro de /root son incorrectas porque la pregunta especifica una lista a nivel de servidor."
+    },
+    {
+      "id": 30,
+      "type": "single",
+      "question": "En la siguiente entrada en /etc/shadow, ¿a qué se refiere el número 15853?\nmail:*:15853:0:99999:7:::",
+      "options": [
+        { "label": "a", "text": "El UID del usuario mail", "correct": false },
+        { "label": "b", "text": "El número de archivos propiedad de mail", "correct": false },
+        { "label": "c", "text": "La fecha del último cambio de contraseña (desde el 1/1/1970)", "correct": true },
+        { "label": "d", "text": "El número de días hasta que la cuenta expire", "correct": false }
+      ],
+      "feedback": "La fecha del último cambio de contraseña, medida en días desde el 1 de enero de 1970, está contenida en el tercer campo de una entrada en shadow. La fecha de expiración sería el octavo campo, separado por dos puntos."
+    },
+        {
+      "id": 31,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos configura una sesión de reenvío de puerto local en el puerto local 5150 al puerto remoto 80 de www.example.com?",
+      "options": [
+        { "label": "a", "text": "ssh -L 5150:www.example.com:80", "correct": true },
+        { "label": "b", "text": "ssh 5150:www.example.com", "correct": false },
+        { "label": "c", "text": "ssh -p 5150 www.example.com", "correct": false },
+        { "label": "d", "text": "ssh -e 5150 www.example.com:80", "correct": false }
+      ],
+      "feedback": "El formato para reenvío local usa la opción -L seguida del puerto local y luego la combinación host:puerto remoto. Esto típicamente va seguido de la información de credenciales user@host y destino para la conexión ssh en sí."
+    },
+    {
+      "id": 32,
+      "type": "single",
+      "question": "¿Qué opción debe estar habilitada en /etc/sshd_config en el servidor de destino para que funcione el reenvío X11?",
+      "options": [
+        { "label": "a", "text": "XForward yes", "correct": false },
+        { "label": "b", "text": "Xenable yes", "correct": false },
+        { "label": "c", "text": "X11Forwarding yes", "correct": true },
+        { "label": "d", "text": "Xconnection yes", "correct": false }
+      ],
+      "feedback": "La opción se llama X11Forwarding, y debe establecerse en yes para que el servidor de destino reenvíe ventanas basadas en X a la computadora cliente local. Las otras opciones mostradas no son válidas."
+    },
+    {
+      "id": 33,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos genera un par de claves GnuPG?",
+      "options": [
+        { "label": "a", "text": "gpg --gen-key", "correct": true },
+        { "label": "b", "text": "gpg --key", "correct": false },
+        { "label": "c", "text": "gpg --send-key", "correct": false },
+        { "label": "d", "text": "gpg --create-key", "correct": false }
+      ],
+      "feedback": "El subcomando --gen-key se usa para el propósito descrito. Las otras opciones mostradas no existen."
+    },
+    {
+      "id": 34,
+      "type": "single",
+      "question": "¿Cuál de las siguientes opciones representa un grupo llamado admins dentro de /etc/sudoers?",
+      "options": [
+        { "label": "a", "text": "@admins", "correct": false },
+        { "label": "b", "text": "admins", "correct": false },
+        { "label": "c", "text": "-admins", "correct": false },
+        { "label": "d", "text": "%admins", "correct": true }
+      ],
+      "feedback": "El símbolo % se usa para denotar un grupo dentro de /etc/sudoers, y proporciona una excelente manera de facilitar un grupo con privilegios administrativos."
+    },
+    {
+      "id": 35,
+      "type": "single",
+      "question": "¿Qué opción de ssh se usa para establecer el puerto para el host remoto?",
+      "options": [
+        { "label": "a", "text": "-p", "correct": true },
+        { "label": "b", "text": "-P", "correct": false },
+        { "label": "c", "text": "-l", "correct": false },
+        { "label": "d", "text": "@", "correct": false }
+      ],
+      "feedback": "La opción -p establece el puerto para el inicio de sesión, y es útil para escenarios donde no se puede usar la sintaxis host:puerto. No existe una opción -P o @ con ssh, y la opción -l especifica el nombre de inicio de sesión."
+    },
+    {
+      "id": 36,
+      "type": "single",
+      "question": "¿Qué opción de nmap establece el escaneo para usar paquetes TCP SYN para encontrar puertos abiertos?",
+      "options": [
+        { "label": "a", "text": "-sS", "correct": true },
+        { "label": "b", "text": "-sT", "correct": false },
+        { "label": "c", "text": "-sY", "correct": false },
+        { "label": "d", "text": "-type SYN", "correct": false }
+      ],
+      "feedback": "La opción -s establece el tipo de escaneo, y cuando va seguida de una S mayúscula, establece la opción a SYN. La opción T es un escaneo Connect(). No existe una opción Y ni una opción -type para nmap."
+    },
+    {
+      "id": 37,
+      "type": "single",
+      "question": "¿Cuál de los siguientes registros es usado por el comando last para detallar inicios de sesión recientes?",
+      "options": [
+        { "label": "a", "text": "/var/log/last", "correct": false },
+        { "label": "b", "text": "/var/log/all.log", "correct": false },
+        { "label": "c", "text": "/var/log/wtmp", "correct": true },
+        { "label": "d", "text": "/var/log/logins", "correct": false }
+      ],
+      "feedback": "El archivo wtmp, almacenado en /var/log, se usa para almacenar información de inicios de sesión recientes y debe leerse con el comando last debido a su formato. Los otros registros listados para esta pregunta no son registros predeterminados encontrados en un sistema Linux."
+    },
+    {
+      "id": 38,
+      "type": "single",
+      "question": "¿Qué opción de ssh habilita el uso de una clave para autenticación?",
+      "options": [
+        { "label": "a", "text": "-i", "correct": true },
+        { "label": "b", "text": "-k", "correct": false },
+        { "label": "c", "text": "-f", "correct": false },
+        { "label": "d", "text": "--key", "correct": false }
+      ],
+      "feedback": "La opción -i para ssh va seguida de la clave privada a usar para autenticación. Hacer esto implica que la clave pública está en el archivo authorized_keys en el host remoto. La opción -k deshabilita el envío de credenciales GSSAPI, mientras que -f se usa para solicitar que ssh se ejecute en segundo plano. No existe una opción --key."
+    },
+    {
+      "id": 39,
+      "type": "single",
+      "question": "En un escenario de scripting, necesitas evitar que sudo solicite credenciales o por cualquier otra razón. ¿Qué opción de sudo se usa para indicar esto?",
+      "options": [
+        { "label": "a", "text": "-n", "correct": true },
+        { "label": "b", "text": "--noprompt", "correct": false },
+        { "label": "c", "text": "-i", "correct": false },
+        { "label": "d", "text": "-q", "correct": false }
+      ],
+      "feedback": "La opción -n facilita el escenario descrito, y saldrá con un código distinto de cero en lugar de solicitar. La opción -i establece el nombre de inicio de sesión, y no es válida para este escenario. Las opciones -q y --noprompt no existen."
+    },
+    {
+      "id": 40,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos genera una clave RSA para usar con ssh?",
+      "options": [
+        { "label": "a", "text": "ssh -key rsa", "correct": false },
+        { "label": "b", "text": "ssh --gen-key rsa", "correct": false },
+        { "label": "c", "text": "ssh-keygen -t rsa", "correct": true },
+        { "label": "d", "text": "ssh-keygen rsa", "correct": false }
+      ],
+      "feedback": "El comando ssh-keygen se usa para este propósito, y la opción -t especifica el tipo de clave a generar. No hay opciones relacionadas con generación de claves para el comando ssh. Las claves de host generales se almacenan en /etc/ssh/ssh_host_rsa_key y /etc/ssh/ssh_host_rsa_key.pub para claves RSA, y /etc/ssh/ssh_host_dsa_key y /etc/ssh/ssh_host_dsa_key.pub para claves DSA."
+    },
+        {
+      "id": 41,
+      "type": "single",
+      "question": "Necesitas deshabilitar un servicio encontrado en /etc/inetd.conf. ¿Cuál de los siguientes se usa como carácter de comentario en ese archivo?",
+      "options": [
+        { "label": "a", "text": "-", "correct": false },
+        { "label": "b", "text": "#", "correct": true },
+        { "label": "c", "text": "/", "correct": false },
+        { "label": "d", "text": "%", "correct": false }
+      ],
+      "feedback": "Las líneas pueden comentarse en /etc/inetd.conf con un signo de numeral o hash (#). Después de hacer cambios en /etc/inetd.conf, deberías reiniciar el servicio. Muchos sistemas también utilizan /etc/inetd.d/ para almacenar archivos de configuración relacionados con servicios específicos."
+    },
+    {
+      "id": 42,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos puede usarse para bloquear una cuenta?",
+      "options": [
+        { "label": "a", "text": "usermod -L", "correct": true },
+        { "label": "b", "text": "usermod -l", "correct": false },
+        { "label": "c", "text": "passwdlock", "correct": false },
+        { "label": "d", "text": "lockacct", "correct": false }
+      ],
+      "feedback": "La opción -L de usermod puede usarse para bloquear una cuenta. La versión en minúscula, -l, se usa para cambiar un nombre de usuario. Los otros comandos no existen."
+    },
+    {
+      "id": 43,
+      "type": "single",
+      "question": "¿Qué archivo se usa como almacenamiento predeterminado para los anillos de claves públicas de gpg?",
+      "options": [
+        { "label": "a", "text": "publickeys.gpg", "correct": false },
+        { "label": "b", "text": "pubring.gpg", "correct": true },
+        { "label": "c", "text": "public.gpg", "correct": false },
+        { "label": "d", "text": "pubkeys.gpg", "correct": false }
+      ],
+      "feedback": "El archivo pubring.gpg, encontrado en ~/.gnupg, contiene el anillo de claves públicas."
+    },
+    {
+      "id": 44,
+      "type": "single",
+      "question": "¿Qué archivo en ~/.gnupg, si está presente, indica que los archivos han sido migrados a gpg versión 2.1 o posterior?",
+      "options": [
+        { "label": "a", "text": ".gpg-v21", "correct": false },
+        { "label": "b", "text": ".gpg-updated", "correct": false },
+        { "label": "c", "text": ".gpg-v21-migrated", "correct": true },
+        { "label": "d", "text": ".gpg-files-v21", "correct": false }
+      ],
+      "feedback": "El archivo .gpg-v21-migrated, cuando está presente, indica que se está usando gpg versión 2.1 o posterior y que los archivos han sido migrados para esa versión o una versión posterior."
+    },
+    {
+      "id": 45,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos busca en un servidor archivos con el bit setgid habilitado?",
+      "options": [
+        { "label": "a", "text": "find / -perm 4000", "correct": false },
+        { "label": "b", "text": "find ./ -perm setgid", "correct": false },
+        { "label": "c", "text": "grep setgid *", "correct": false },
+        { "label": "d", "text": "find / -perm 2000", "correct": true }
+      ],
+      "feedback": "El comando find se usa para este propósito, y se necesita la opción -perm, específicamente como el permiso 2000 para indicar setgid. Nota el uso de / para indicar que se buscará en todo el servidor. El comando grep mostrado no puede usarse para este propósito porque busca la presencia de la cadena setgid dentro de archivos ubicados solo en el directorio actual."
+    },
+    {
+      "id": 46,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos crea enlaces dentro de /etc/rc.d/* para iniciar y detener servicios en un sistema Debian?",
+      "options": [
+        { "label": "a", "text": "createsym", "correct": false },
+        { "label": "b", "text": "startstop-service", "correct": false },
+        { "label": "c", "text": "update-rc.d", "correct": true },
+        { "label": "d", "text": "createconfig", "correct": false }
+      ],
+      "feedback": "El comando update-rc.d crea enlaces simbólicos desde un archivo de servicio en /etc/init.d/ a las ubicaciones apropiadas en /etc/rc.d/* para cada nivel de ejecución. Los otros comandos mostrados no son válidos."
+    },
+    {
+      "id": 47,
+      "type": "single",
+      "question": "¿Qué nivel de ejecución se usa típicamente para modo monousuario, como se indica en /etc/inittab?",
+      "options": [
+        { "label": "a", "text": "1", "correct": true },
+        { "label": "b", "text": "2", "correct": false },
+        { "label": "c", "text": "5", "correct": false },
+        { "label": "d", "text": "6", "correct": false }
+      ],
+      "feedback": "El modo monousuario es típicamente el nivel de ejecución 1. En el nivel de ejecución 1, no se inician servicios de red. El nivel de ejecución 2 tiene red pero típicamente no servicios. El nivel de ejecución 5 es multiusuario completo con red, y el nivel de ejecución 6 es reinicio."
+    },
+    {
+      "id": 48,
+      "type": "single",
+      "question": "¿Qué opción del comando su se usa para obtener el entorno de inicio de sesión normal?",
+      "options": [
+        { "label": "a", "text": "-u", "correct": false },
+        { "label": "b", "text": "-U", "correct": false },
+        { "label": "c", "text": "-", "correct": true },
+        { "label": "d", "text": "-login", "correct": false }
+      ],
+      "feedback": "El guion simple - es la opción típica pasada a su para inicio de sesión. No hay opción -u o -U, y la opción -login no existe. Hay una opción --login (con dos guiones), pero no es lo que se muestra."
+    }
+  ]
+}

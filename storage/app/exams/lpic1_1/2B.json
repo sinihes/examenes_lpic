@@ -1,0 +1,534 @@
+{
+  "id": "4",
+  "title": "106:B - User Interface and Desktops",
+  "questions": [
+    {
+      "id": 45,
+      "type": "single",
+      "question": "¿Qué opción de x11vnc establece la contraseña que se usará para los clientes que se conectan al servidor?",
+      "options": [
+        { "label": "a", "text": "-password", "correct": false },
+        { "label": "b", "text": "-passwd", "correct": true },
+        { "label": "c", "text": "-pass", "correct": false },
+        { "label": "d", "text": "-auth", "correct": false }
+      ],
+      "feedback": "La opción -passwd se usa para establecer la contraseña en el servidor para x11vnc."
+    },
+    {
+      "id": 46,
+      "type": "single",
+      "question": "¿Qué programa se usa para añadir entradas al archivo de autoridad X?",
+      "options": [
+        { "label": "a", "text": "xf", "correct": false },
+        { "label": "b", "text": "xauthen", "correct": false },
+        { "label": "c", "text": "authx", "correct": false },
+        { "label": "d", "text": "xauth", "correct": true }
+      ],
+      "feedback": "La utilidad xauth se usa para trabajar con el archivo de autoridad X. Las otras opciones mostradas no son válidas."
+    },
+    {
+      "id": 47,
+      "type": "single",
+      "question": "¿Qué tecnología de asistencia ignorará las teclas que se presionan en sucesión o se mantienen presionadas?",
+      "options": [
+        { "label": "a", "text": "Sticky keys", "correct": false },
+        { "label": "b", "text": "Mouse keys", "correct": false },
+        { "label": "c", "text": "Bounce keys", "correct": true },
+        { "label": "d", "text": "On-screen keyboard", "correct": false }
+      ],
+      "feedback": "Bounce keys hace que la interfaz no reaccione cuando las teclas se presionan accidentalmente en sucesión o se mantienen presionadas."
+    },
+    {
+      "id": 48,
+      "type": "single",
+      "question": "Dentro de GNOME, ¿habilitar sticky keys puede hacerse presionando qué tecla cinco veces seguidas?",
+      "options": [
+        { "label": "a", "text": "Ctrl", "correct": false },
+        { "label": "b", "text": "Enter", "correct": false },
+        { "label": "c", "text": "Shift", "correct": true },
+        { "label": "d", "text": "Tab", "correct": false }
+      ],
+      "feedback": "La tecla Shift puede usarse para habilitar y deshabilitar sticky keys dentro de GNOME y otros sistemas operativos con fines de accesibilidad."
+    },
+    {
+      "id": 49,
+      "type": "single",
+      "question": "¿Qué variable de entorno es usada por Xsession si el archivo de errores Xsession no puede abrirse en su ubicación predeterminada?",
+      "options": [
+        { "label": "a", "text": "XLOG", "correct": false },
+        { "label": "b", "text": "TMPDIR", "correct": true },
+        { "label": "c", "text": "SESSLOG", "correct": false },
+        { "label": "d", "text": "LOGTMP", "correct": false }
+      ],
+      "feedback": "La variable de entorno TMPDIR se usa si la ubicación normal del directorio home, ~/.xsession-errors, no puede abrirse. Las otras variables de entorno no son válidas."
+    },
+    {
+      "id": 50,
+      "type": "single",
+      "question": "Desde dentro de una sesión X, ¿cuál de los siguientes comandos muestra información sobre la pantalla, incluyendo resolución y profundidad de color?",
+      "options": [
+        { "label": "a", "text": "xinfo", "correct": false },
+        { "label": "b", "text": "xterm", "correct": false },
+        { "label": "c", "text": "xwin", "correct": false },
+        { "label": "d", "text": "xdpyinfo", "correct": true }
+      ],
+      "feedback": "El comando xdpyinfo muestra varios elementos sobre la(s) pantalla(s) actual(es) junto con información sobre X mismo."
+    },
+        {
+      "id": 51,
+      "type": "single",
+      "question": "¿Cuál de los siguientes archivos es el archivo de configuración para Weston?",
+      "options": [
+        { "label": "a", "text": "∼/.config/weston.cfg", "correct": false },
+        { "label": "b", "text": "∼/.config/weston.ini", "correct": true },
+        { "label": "c", "text": "∼/weston.cfg", "correct": false },
+        { "label": "d", "text": "∼/.westoncfg", "correct": false }
+      ],
+      "feedback": "El archivo de configuración de Weston se llama weston.ini y se encuentra en ~/.config. Los otros archivos no son válidos."
+    },
+    {
+      "id": 52,
+      "type": "single",
+      "question": "¿Cuál de los siguientes programas de escritorio remoto ofrece seguridad a nivel de transporte?",
+      "options": [
+        { "label": "a", "text": "x11vnc", "correct": true },
+        { "label": "b", "text": "xrd", "correct": false },
+        { "label": "c", "text": "tls", "correct": false },
+        { "label": "d", "text": "x11rtm", "correct": false }
+      ],
+      "feedback": "El programa x11vnc, una implementación de VNC, ofrece capacidades SSL/TLS integradas. Los otros programas mostrados no son válidos."
+    },
+    {
+      "id": 53,
+      "type": "single",
+      "question": "¿Qué complemento de Orca habilita soporte para pantallas braille?",
+      "options": [
+        { "label": "a", "text": "brl", "correct": false },
+        { "label": "b", "text": "brltty", "correct": true },
+        { "label": "c", "text": "brldis", "correct": false },
+        { "label": "d", "text": "dispbrl", "correct": false }
+      ],
+      "feedback": "El programa brltty habilita una pantalla braille en modo texto. Los otros programas no son válidos."
+    },
+    {
+      "id": 54,
+      "type": "single",
+      "question": "¿Cuál de los siguientes es un programa de lupa de pantalla?",
+      "options": [
+        { "label": "a", "text": "xmag", "correct": false },
+        { "label": "b", "text": "xzoom", "correct": true },
+        { "label": "c", "text": "xzmag", "correct": false },
+        { "label": "d", "text": "scrmag", "correct": false }
+      ],
+      "feedback": "El programa xzoom se usa para magnificación de pantalla. Los otros programas mostrados no son válidos."
+    },
+    {
+      "id": 55,
+      "type": "single",
+      "question": "¿Qué variable de GRUB puede usarse para emitir un pitido cuando el prompt de GRUB está listo para aceptar entrada?",
+      "options": [
+        { "label": "a", "text": "GRUB_BEEP", "correct": false },
+        { "label": "b", "text": "BEEP_START", "correct": false },
+        { "label": "c", "text": "GRUB_START_TONE", "correct": false },
+        { "label": "d", "text": "GRUB_INIT_TUNE", "correct": true }
+      ],
+      "feedback": "La variable GRUB_INIT_TUNE puede usarse dentro de la configuración de GRUB para emitir un pitido cuando GRUB está listo para entrada."
+    },
+    {
+      "id": 56,
+      "type": "single",
+      "question": "Necesitas eliminar la capacidad de un host para conectarse al servidor X. ¿Cuál de los siguientes eliminará la capacidad de un host llamado cwa para conectarse?",
+      "options": [
+        { "label": "a", "text": "xrem cwa", "correct": false },
+        { "label": "b", "text": "xhost -cwa", "correct": true },
+        { "label": "c", "text": "xhost -rem:cwa", "correct": false },
+        { "label": "d", "text": "xrem -host cwa", "correct": false }
+      ],
+      "feedback": "El comando xhost se usará para este propósito, y el signo menos elimina la capacidad de un host para conectarse."
+    },
+    {
+      "id": 57,
+      "type": "single",
+      "question": "El X Display Manager, xdm, ejecuta varios scripts como parte del proceso de inicio de sesión. ¿Cuál de los siguientes scripts se ejecuta como el usuario que inicia sesión?",
+      "options": [
+        { "label": "a", "text": "Xstart", "correct": false },
+        { "label": "b", "text": "Xsession", "correct": true },
+        { "label": "c", "text": "Xstartup", "correct": false },
+        { "label": "d", "text": "Xuser.conf", "correct": false }
+      ],
+      "feedback": "El script Xsession se ejecuta como el usuario que inicia sesión, haciendo que la opción B sea correcta. El script Xstartup se ejecuta como root antes de la ejecución de Xsession. Los otros archivos no son válidos como parte del proceso de inicio de sesión de xdm."
+    },
+    {
+      "id": 58,
+      "type": "single",
+      "question": "¿Qué opción del servidor X desactiva la escucha de conexiones TCP?",
+      "options": [
+        { "label": "a", "text": "-nolisten tcp", "correct": true },
+        { "label": "b", "text": "-notcp", "correct": false },
+        { "label": "c", "text": "-noconn tcp", "correct": false },
+        { "label": "d", "text": "-noconnect tcp", "correct": false }
+      ],
+      "feedback": "La opción -nolisten tcp desactiva la escucha de conexiones TCP para un servidor X. Las otras opciones no son válidas."
+    },
+    {
+      "id": 59,
+      "type": "single",
+      "question": "¿Qué opción en la sección Module del archivo de configuración xorg.conf hace que un módulo predeterminado no se cargue o se descargue por defecto?",
+      "options": [
+        { "label": "a", "text": "Disable", "correct": true },
+        { "label": "b", "text": "Unload", "correct": false },
+        { "label": "c", "text": "LoadDisable", "correct": false },
+        { "label": "d", "text": "DisableLoad", "correct": false }
+      ],
+      "feedback": "La palabra clave Disable se usa para asegurar que un módulo dado no se cargue. Nota que una declaración Load para el mismo módulo tiene precedencia sobre la declaración Disable, pero Disable puede usarse para descargar módulos que se cargan por defecto."
+    },
+    {
+      "id": 60,
+      "type": "single",
+      "question": "¿Qué señal se usa para cerrar conexiones existentes, liberar recursos y restaurar valores predeterminados para un servidor X?",
+      "options": [
+        { "label": "a", "text": "SIGKILL", "correct": false },
+        { "label": "b", "text": "SIGHUP", "correct": true },
+        { "label": "c", "text": "SIGN4", "correct": false },
+        { "label": "d", "text": "SIGALL", "correct": false }
+      ],
+      "feedback": "SIGHUP se usa para el propósito descrito, típicamente cuando un usuario cierra sesión. SIGKILL no reinicia el servidor ni prepara para una nueva conexión. Los otros nombres de señal dados como opciones no son señales válidas."
+    },
+        {
+      "id": 61,
+      "type": "single",
+      "question": "¿Qué opción en la sección SeatDefaults del archivo de configuración lightdm.conf se usa para desactivar la visualización de nombres de usuario para el inicio de sesión?",
+      "options": [
+        { "label": "a", "text": "greeter-disable-user", "correct": false },
+        { "label": "b", "text": "greeter-enable-login", "correct": false },
+        { "label": "c", "text": "greeter-show-manual-login", "correct": true },
+        { "label": "d", "text": "greeter-disable-auto-login", "correct": false }
+      ],
+      "feedback": "La opción greeter-show-manual-login, cuando se establece en true, requerirá que el usuario ingrese un nombre de usuario para iniciar sesión en lugar de seleccionarlo de una lista."
+    },
+    {
+      "id": 62,
+      "type": "single",
+      "question": "¿Qué opción del programa xauth desactiva la resolución de nombres de host?",
+      "options": [
+        { "label": "a", "text": "-r", "correct": false },
+        { "label": "b", "text": "-n", "correct": true },
+        { "label": "c", "text": "-h", "correct": false },
+        { "label": "d", "text": "-m", "correct": false }
+      ],
+      "feedback": "La opción -n desactiva las búsquedas de nombres de host. Las otras opciones mostradas no son válidas."
+    },
+    {
+      "id": 63,
+      "type": "single",
+      "question": "¿Qué comando cambiará el sistema a un init en el que el servidor X no se ejecuta típicamente?",
+      "options": [
+        { "label": "a", "text": "telinit 6", "correct": false },
+        { "label": "b", "text": "telinit 1", "correct": false },
+        { "label": "c", "text": "telinit 3", "correct": true },
+        { "label": "d", "text": "telinit 5", "correct": false }
+      ],
+      "feedback": "En el nivel de ejecución 3, accedido a través del comando telinit, el servidor X no se ejecuta típicamente. El nivel de ejecución 6 apagará el sistema. El nivel de ejecución 1 cambia a modo monousuario, y el nivel de ejecución 5 es un modo multiusuario en el que X normalmente está en ejecución."
+    },
+    {
+      "id": 64,
+      "type": "single",
+      "question": "¿Cuál es la ubicación predeterminada para el registro de errores si el servidor X se ejecuta con xdm?",
+      "options": [
+        { "label": "a", "text": "/etc/X11.log", "correct": false },
+        { "label": "b", "text": "/var/log/Xdm.log", "correct": false },
+        { "label": "c", "text": "/usr/lib/X11/xdm/xdm-errors", "correct": true },
+        { "label": "d", "text": "/var/log/xdmerrors", "correct": false }
+      ],
+      "feedback": "Según la documentación del servidor X en https://www.x.org/releases/X11R7.7/doc/man/man1/Xserver.1.xhtml, la ubicación predeterminada está dentro de la ruta /usr/lib, pero vale la pena señalar que las distribuciones de Linux pueden cambiar esta ubicación para que esté dentro de la jerarquía /var/log/."
+    },
+    {
+      "id": 65,
+      "type": "single",
+      "question": "¿Qué script se puede usar para la inicialización por usuario de xinit?",
+      "options": [
+        { "label": "a", "text": "∼/.xinit.conf", "correct": false },
+        { "label": "b", "text": "∼/.xinitrc", "correct": true },
+        { "label": "c", "text": "∼/.xinit.rc", "correct": false },
+        { "label": "d", "text": "∼/.xinit.cfg", "correct": false }
+      ],
+      "feedback": "El archivo ~/.xinitrc se puede usar para inicialización por usuario. Los otros archivos no se usan por defecto para este propósito."
+    },
+    {
+      "id": 66,
+      "type": "single",
+      "question": "¿Qué opción evita que los sockets abstractos escuchen con X11?",
+      "options": [
+        { "label": "a", "text": "-nolisten sock", "correct": false },
+        { "label": "b", "text": "-nolisten absock", "correct": false },
+        { "label": "c", "text": "-nolisten local", "correct": true },
+        { "label": "d", "text": "-nolisten socklocal", "correct": false }
+      ],
+      "feedback": "La opción -nolisten local se puede agregar para evitar que el servidor X escuche en sockets abstractos."
+    },
+    {
+      "id": 67,
+      "type": "single",
+      "question": "¿Qué opción para XDMCP habilita el envío de paquetes BroadcastQuery?",
+      "options": [
+        { "label": "a", "text": "-bcast", "correct": false },
+        { "label": "b", "text": "-bcastQ", "correct": false },
+        { "label": "c", "text": "-broadcastQuery", "correct": false },
+        { "label": "d", "text": "-broadcast", "correct": true }
+      ],
+      "feedback": "La opción -broadcast para XDMCP habilita el envío de paquetes BroadcastQuery. Las otras opciones mostradas no son opciones válidas con XDMCP."
+    },
+    {
+      "id": 68,
+      "type": "single",
+      "question": "Cuando se usa GDM como gestor de pantalla, ¿qué programa GUI se puede usar para establecer opciones para la ventana de inicio de sesión?",
+      "options": [
+        { "label": "a", "text": "gdmlogin", "correct": false },
+        { "label": "b", "text": "gdmconfig", "correct": false },
+        { "label": "c", "text": "gdmsetup", "correct": true },
+        { "label": "d", "text": "gdm", "correct": false }
+      ],
+      "feedback": "El programa gdmsetup se usa para configurar varias opciones para la ventana y el entorno de inicio de sesión, incluidas las de usuarios locales y remotos. Las otras opciones no se usan para este propósito o no existen."
+    },
+    {
+      "id": 69,
+      "type": "single",
+      "question": "Dentro del archivo de configuración de acceso XDMCP, hay una línea como la siguiente: *.example.com. ¿Cuál de las siguientes describe cómo se tratará el acceso para hosts de example.com?",
+      "options": [
+        { "label": "a", "text": "Solo el host llamado *.example.com puede conectarse.", "correct": false },
+        { "label": "b", "text": "Ningún host de example.com puede conectarse.", "correct": false },
+        { "label": "c", "text": "Cualquier host dentro de example.com puede conectarse.", "correct": true },
+        { "label": "d", "text": "Los hosts que comienzan con answers.txt questions_clean.txt questions.txt salida.txt dentro de example.com pueden conectarse.", "correct": false }
+      ],
+      "feedback": "Cualquier host dentro del dominio example.com puede conectarse."
+    },
+    {
+      "id": 70,
+      "type": "single",
+      "question": "¿Qué programa se usa en un entorno GNOME como lector de pantalla?",
+      "options": [
+        { "label": "a", "text": "Orca", "correct": true },
+        { "label": "b", "text": "Screed", "correct": false },
+        { "label": "c", "text": "Screen", "correct": false },
+        { "label": "d", "text": "Reader", "correct": false }
+      ],
+      "feedback": "El proyecto Orca proporciona capacidades de lectura de pantalla asistiva dentro de GNOME. De las otras opciones dadas, el programa screen es válido pero no se usa para este propósito."
+    },
+        {
+      "id": 71,
+      "type": "single",
+      "question": "Cuando se usa xhost, ¿cuál es la sintaxis para habilitar que un host llamado san se conecte usando IPv6?",
+      "options": [
+        { "label": "a", "text": "xhost +ipv6:san", "correct": false },
+        { "label": "b", "text": "xhost -enablev6 san", "correct": false },
+        { "label": "c", "text": "xhost +inet6:san", "correct": true },
+        { "label": "d", "text": "xhost +enablev6 san", "correct": false }
+      ],
+      "feedback": "La familia inet6 permite que el host especificado se conecte con IPv6. Los otros métodos mostrados no funcionarán."
+    },
+    {
+      "id": 72,
+      "type": "single",
+      "question": "¿Dentro de qué archivo se colocan los errores para los procesos Xsession y X client?",
+      "options": [
+        { "label": "a", "text": "∼/.xsession-error.log", "correct": false },
+        { "label": "b", "text": "∼/.xsession-errors", "correct": true },
+        { "label": "c", "text": "∼/.xclient.log", "correct": false },
+        { "label": "d", "text": "∼/.xclient.errorlog", "correct": false }
+      ],
+      "feedback": "El archivo ~/.xsession-errors es el archivo de registro predeterminado para Xsession y clientes X. Los otros archivos no son válidos para este propósito."
+    },
+    {
+      "id": 73,
+      "type": "single",
+      "question": "GNOME incluye funcionalidad nativa de teclado en pantalla. ¿Cuál de los siguientes comandos inicia el teclado en pantalla?",
+      "options": [
+        { "label": "a", "text": "gok", "correct": true },
+        { "label": "b", "text": "osk", "correct": false },
+        { "label": "c", "text": "kb", "correct": false },
+        { "label": "d", "text": "oskb", "correct": false }
+      ],
+      "feedback": "El comando gok, abreviatura de GNOME On-screen Keyboard, es el programa para iniciar el teclado en pantalla. El programa Caribou será el sucesor de GOK."
+    },
+    {
+      "id": 74,
+      "type": "single",
+      "question": "¿Qué opción del programa xauth especifica el archivo de autoridad a usar?",
+      "options": [
+        { "label": "a", "text": "-a", "correct": false },
+        { "label": "b", "text": "-f", "correct": true },
+        { "label": "c", "text": "-a", "correct": false },
+        { "label": "d", "text": "-v", "correct": false }
+      ],
+      "feedback": "La opción -f permite la especificación de archivo para el archivo de autoridad X. La opción -v habilita la salida detallada. Las otras opciones no son válidas."
+    },
+    {
+      "id": 75,
+      "type": "single",
+      "question": "¿Qué opción de accesibilidad es útil si a veces se presionan varias teclas o si hay dificultad para presionar consistentemente la tecla correcta en el teclado?",
+      "options": [
+        { "label": "a", "text": "Key toggle", "correct": false },
+        { "label": "b", "text": "Slow keys", "correct": true },
+        { "label": "c", "text": "KeyAssist", "correct": false },
+        { "label": "d", "text": "UniversalKeys", "correct": false }
+      ],
+      "feedback": "Slow keys es el nombre usado para describir esta tecnología de asistencia."
+    },
+    {
+      "id": 76,
+      "type": "single",
+      "question": "¿En qué puerto escucha RDP por defecto?",
+      "options": [
+        { "label": "a", "text": "389", "correct": false },
+        { "label": "b", "text": "8080", "correct": false },
+        { "label": "c", "text": "3389", "correct": true },
+        { "label": "d", "text": "3306", "correct": false }
+      ],
+      "feedback": "RDP escucha en el puerto 3389 por defecto. El puerto 389 es LDAP, y 3306 es usualmente MySQL."
+    },
+    {
+      "id": 77,
+      "type": "single",
+      "question": "Asumiendo un monitor que actualmente está configurado a 1024×768, ¿qué comando cambiará la resolución de pantalla para que los íconos y otros elementos aparezcan más grandes?",
+      "options": [
+        { "label": "a", "text": "xterm -r 0", "correct": false },
+        { "label": "b", "text": "xset res 1024x768", "correct": false },
+        { "label": "c", "text": "xrandr -s 800x600", "correct": true },
+        { "label": "d", "text": "xVGA", "correct": false }
+      ],
+      "feedback": "El comando xrandr puede usarse para cambiar la resolución, y cambiar la resolución a algo como 800×600 haría que los íconos y otros elementos aparezcan más grandes."
+    },
+    {
+      "id": 78,
+      "type": "single",
+      "question": "LightDM típicamente permite inicio de sesión de invitado por defecto. ¿Qué opción de configuración dentro de SeatDefaults cambia esto para no permitir invitados?",
+      "options": [
+        { "label": "a", "text": "guest-login=false", "correct": false },
+        { "label": "b", "text": "guest=false", "correct": false },
+        { "label": "c", "text": "allowg=false", "correct": false },
+        { "label": "d", "text": "allow-guest=false", "correct": true }
+      ],
+      "feedback": "La opción allow-guest cambia el comportamiento del inicio de sesión de invitado para LightDM, y no permitir el inicio de sesión de invitado generalmente haría la computadora algo más segura. Sin embargo, si alguien tiene acceso físico al dispositivo, podría obtener acceso de otras maneras."
+    },
+    {
+      "id": 79,
+      "type": "single",
+      "question": "Cuando se usa XFree86 como servidor X, ¿qué comando hará que el servidor X consulte el hardware y cree un nuevo archivo de configuración?",
+      "options": [
+        { "label": "a", "text": "XFree86 --newconfig", "correct": false },
+        { "label": "b", "text": "XFree86 --query", "correct": false },
+        { "label": "c", "text": "XFree96 -configure", "correct": true },
+        { "label": "d", "text": "xf -config", "correct": false }
+      ],
+      "feedback": "El comando XFree86 -configure le dice al servidor XFree86 que consulte el hardware y cree una configuración para el hardware reconocido. Nota que aún podrías necesitar editar el archivo de configuración resultante debido a hardware no reconocido o para tener en cuenta elementos de configuración específicos."
+    },
+    {
+      "id": 80,
+      "type": "single",
+      "question": "¿Qué sección en /etc/X11/xorg.conf se usa para describir configuraciones para un par dado de tarjeta gráfica y monitor?",
+      "options": [
+        { "label": "a", "text": "Server", "correct": false },
+        { "label": "b", "text": "Screen", "correct": true },
+        { "label": "c", "text": "VidMode", "correct": false },
+        { "label": "d", "text": "Video", "correct": false }
+      ],
+      "feedback": "La sección Screen de xorg.conf se usa para vincular lógicamente una tarjeta gráfica y un monitor dados, cada uno de los cuales estaría definido en su propia sección respectiva en el archivo de configuración. Las otras opciones mostradas para esta pregunta no existen."
+    },
+        {
+      "id": 81,
+      "type": "single",
+      "question": "¿Qué opción de configuración para X se usa para configurar el modelo de teclado?",
+      "options": [
+        { "label": "a", "text": "XkbLayout", "correct": false },
+        { "label": "b", "text": "XkbModel", "correct": true },
+        { "label": "c", "text": "XkbType", "correct": false },
+        { "label": "d", "text": "XkbInput", "correct": false }
+      ],
+      "feedback": "La opción de configuración XkbModel se usa para establecer el tipo de teclado que se está usando, como pc105 para un teclado de 105 teclas. La opción XkbLayout define la distribución del teclado, como US para teclados estilo Estados Unidos."
+    },
+    {
+      "id": 82,
+      "type": "single",
+      "question": "¿Qué línea de configuración dentro de una sección Monitor de un archivo de configuración del servidor X establecerá la tasa de refresco vertical entre 55 y 75 hertz?",
+      "options": [
+        { "label": "a", "text": "Vert 55-75", "correct": false },
+        { "label": "b", "text": "VertRefresh 55.0 - 75.0", "correct": true },
+        { "label": "c", "text": "VertSync 55.0 - 75.0", "correct": false },
+        { "label": "d", "text": "RefreshMode 55.0 - 75.0", "correct": false }
+      ],
+      "feedback": "La opción VertRefresh se usa para este propósito y acepta un rango de valores de la manera mostrada. Las otras opciones dadas para esta pregunta no son válidas para el propósito descrito."
+    },
+    {
+      "id": 83,
+      "type": "single",
+      "question": "¿Dentro de qué archivo puede un usuario colocar comandos para ejecutar clientes X?",
+      "options": [
+        { "label": "a", "text": "∼/.xclients", "correct": false },
+        { "label": "b", "text": "∼/.xsess.rc", "correct": false },
+        { "label": "c", "text": "∼/.xsessrc", "correct": false },
+        { "label": "d", "text": "∼/.xsession", "correct": true }
+      ],
+      "feedback": "El archivo ~/.xsession puede usarse para comandos que ejecutan clientes X. Los otros archivos no son válidos para el propósito descrito."
+    },
+    {
+      "id": 84,
+      "type": "single",
+      "question": "¿Qué AccelerationProfile para un dispositivo de entrada como un mouse permite aceleración lineal (más velocidad y más aceleración)?",
+      "options": [
+        { "label": "a", "text": "0", "correct": false },
+        { "label": "b", "text": "–1", "correct": false },
+        { "label": "c", "text": "6", "correct": true },
+        { "label": "d", "text": "7", "correct": false }
+      ],
+      "feedback": "El perfil de aceleración lineal se habilita estableciendo AccelerationProfile en 6 dentro de xorg.conf. El ajuste 0 se conoce como clásico, mientras que -1 proporciona aceleración constante (sin perfil) y 7 se conoce como limitado, que funciona igual que lineal pero con una cantidad máxima de velocidad y aceleración."
+    },
+    {
+      "id": 85,
+      "type": "single",
+      "question": "¿Cuál de los siguientes directorios es usado por un servidor basado en Xorg para almacenamiento de fuentes?",
+      "options": [
+        { "label": "a", "text": "/usr/share/fonts", "correct": true },
+        { "label": "b", "text": "/usr/X11/fonts", "correct": false },
+        { "label": "c", "text": "/etc/fonts", "correct": false },
+        { "label": "d", "text": "/var/font/xorg", "correct": false }
+      ],
+      "feedback": "La jerarquía /usr/share/fonts se usa para almacenamiento de fuentes. Otra ruta que podría contener información de fuentes es /usr/share/X11/fonts, pero esa no estaba entre las opciones dadas para esta pregunta."
+    },
+    {
+      "id": 86,
+      "type": "single",
+      "question": "El soporte nativo para una pantalla Braille requiere un mínimo de ¿qué versión del kernel?",
+      "options": [
+        { "label": "a", "text": "2.2.0", "correct": false },
+        { "label": "b", "text": "2.4.22", "correct": false },
+        { "label": "c", "text": "2.6.26", "correct": true },
+        { "label": "d", "text": "3.2.1", "correct": false }
+      ],
+      "feedback": "Las versiones del kernel a partir de 2.6.26 incluyen soporte nativo para pantallas Braille en Linux."
+    },
+    {
+      "id": 87,
+      "type": "single",
+      "question": "¿Qué opción de configuración en un archivo xorg.conf puede establecerse para evitar que un usuario cambie modos de video usando Ctrl+Alt+Keypad-Plus y Ctrl+Alt+Keypad-Minus?",
+      "options": [
+        { "label": "a", "text": "DontZoom", "correct": true },
+        { "label": "b", "text": "Modes=No", "correct": false },
+        { "label": "c", "text": "NoModeSwitch", "correct": false },
+        { "label": "d", "text": "DontZap", "correct": false }
+      ],
+      "feedback": "La opción DontZoom evita que las combinaciones de teclas especificadas cambien el modo de video. De las otras opciones, la opción DontZap cambia el comportamiento de la combinación de teclas Ctrl+Alt+Backspace. Las otras opciones no tienen ningún efecto y no son válidas en xorg.conf."
+    },
+    {
+      "id": 88,
+      "type": "single",
+      "question": "¿En qué ubicación busca la utilidad xauth el archivo de autoridad X?",
+      "options": [
+        { "label": "a", "text": "∼/.Xauth", "correct": false },
+        { "label": "b", "text": "∼/.xauth.cfg", "correct": false },
+        { "label": "c", "text": "∼/.Xauthority", "correct": true },
+        { "label": "d", "text": "∼/.xau", "correct": false }
+      ],
+      "feedback": "El programa xauth busca el archivo de configuración en el directorio home del usuario en el archivo .Xauthority. Los otros archivos no existen por defecto."
+    }
+  ]
+}

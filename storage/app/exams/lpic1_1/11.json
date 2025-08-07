@@ -1,0 +1,535 @@
+{
+  "id": "16",
+  "title": "109 - Networking Fundamentals",
+  "questions": [
+    {
+      "id": 1,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos muestra la ruta predeterminada actual sin realizar búsquedas DNS en las direcciones IP involucradas?",
+      "options": [
+        { "label": "a", "text": "netstat -rn", "correct": true },
+        { "label": "b", "text": "netstat -n", "correct": false },
+        { "label": "c", "text": "netstat -r", "correct": false },
+        { "label": "d", "text": "netstat -f", "correct": false }
+      ],
+      "feedback": "El comando netstat puede usarse para este propósito, y la opción -r muestra las rutas actuales. La adición de -n evita las búsquedas DNS, lo que puede ayudar con el rendimiento."
+    },
+    {
+      "id": 2,
+      "type": "single",
+      "question": "¿Cuál de las siguientes líneas de configuración establecerá el servidor DNS en 192.168.1.4 usando /etc/resolv.conf?",
+      "options": [
+        { "label": "a", "text": "dns 192.168.1.4", "correct": false },
+        { "label": "b", "text": "dns-server 192.168.1.4", "correct": false },
+        { "label": "c", "text": "nameserver 192.168.1.4", "correct": true },
+        { "label": "d", "text": "name-server 192.168.1.4", "correct": false }
+      ],
+      "feedback": "La opción de configuración se llama nameserver, y el valor de la opción es la dirección IP del servidor de nombres deseado. Hay varias opciones que afectan cómo se realiza la resolución de nombres, como el número de intentos y el tiempo de espera."
+    },
+    {
+      "id": 3,
+      "type": "single",
+      "question": "Cuando examinas puertos abiertos en el servidor, ves que el puerto TCP 3000 aparece sin un nombre de protocolo correspondiente. ¿En qué archivo encontrarías una lista de traducciones de puerto a protocolo que podría personalizarse para agregar este nuevo puerto?",
+      "options": [
+        { "label": "a", "text": "/etc/ports", "correct": false },
+        { "label": "b", "text": "/etc/p2p", "correct": false },
+        { "label": "c", "text": "/etc/ppp", "correct": false },
+        { "label": "d", "text": "/etc/services", "correct": true }
+      ],
+      "feedback": "El archivo /etc/services contiene información estándar de puerto a protocolo basada en los puertos conocidos asignados por la IANA. Si deseas proporcionar un nombre personalizado para el servicio, puedes hacerlo editando este archivo."
+    },
+    {
+      "id": 4,
+      "type": "single",
+      "question": "¿Cuál de las siguientes no se usa como dirección privada para uso interno, no-Internet?",
+      "options": [
+        { "label": "a", "text": "172.16.4.2", "correct": false },
+        { "label": "b", "text": "192.168.40.3", "correct": false },
+        { "label": "c", "text": "10.74.5.244", "correct": false },
+        { "label": "d", "text": "143.236.32.231", "correct": true }
+      ],
+      "feedback": "Las direcciones IP privadas se encuentran dentro de los rangos 10.0.0.0/8, 172.16.0.0/12 y 192.168.0.0/16, lo que hace que una dirección en el rango 143 sea una IP pública."
+    },
+    {
+      "id": 5,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos agrega una ruta al servidor para la red 192.168.51.0/24 a través de su puerta de enlace 192.168.51.1?",
+      "options": [
+        { "label": "a", "text": "route add -net 192.168.51.0 netmask 255.255.255.0 gw 192.168.51.1", "correct": true },
+        { "label": "b", "text": "route add -net 192.168.51/24 gw 192.168.1.51", "correct": false },
+        { "label": "c", "text": "route -net 192.168.51.0/24 192.168.51.1", "correct": false },
+        { "label": "d", "text": "route add 192.168.51.1 -n 192.168.51.0//255.255.255.0", "correct": false }
+      ],
+      "feedback": "El comando route puede usarse para este propósito, y la sintaxis incluye el rango de red, denotado con la opción -net, seguido de la palabra netmask y los bits enmascarados, seguido de las letras gw y la IP de la puerta de enlace."
+    },
+    {
+      "id": 6,
+      "type": "single",
+      "question": "¿Cuál de las siguientes opciones de netstat muestra las colas de envío y recepción para cada socket?",
+      "options": [
+        { "label": "a", "text": "-r", "correct": false },
+        { "label": "b", "text": "-M", "correct": false },
+        { "label": "c", "text": "-a", "correct": true },
+        { "label": "d", "text": "-v", "correct": false }
+      ],
+      "feedback": "La opción -a muestra estadísticas para cada socket, tanto de escucha como de no-escucha. Incluido en esta información están las colas de envío y recepción. Esta información puede usarse para medir el rendimiento y posibles cuellos de botella."
+    },
+    {
+      "id": 7,
+      "type": "single",
+      "question": "¿Cuál de las siguientes representa una línea de configuración correcta para /etc/hosts?",
+      "options": [
+        { "label": "a", "text": "192.168.1.4 cwa.braingia.org cwa", "correct": true },
+        { "label": "b", "text": "cwa.braingia.org cwa 192.168.1.4", "correct": false },
+        { "label": "c", "text": "cwa.braingia.org 192.168.1.8 alias cwa", "correct": false },
+        { "label": "d", "text": "alias cwa.braingia.org cwa 192.168.1.4", "correct": false }
+      ],
+      "feedback": "El formato correcto es la dirección IP seguida del nombre canónico del host y luego cualquier alias para el host. Puedes usar entradas en /etc/hosts para anular búsquedas DNS, lo que puede ser útil para evitar que esos nombres se resuelvan o para proporcionar una resolución diferente."
+    },
+    {
+      "id": 8,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos configura el dispositivo eth0 con una dirección IP de 192.168.1.1 en una red /24?",
+      "options": [
+        { "label": "a", "text": "ifconfig eth0 192.168.1.1/24", "correct": false },
+        { "label": "b", "text": "ifconfig eth0 192.168.1.1/255.255.255.0", "correct": false },
+        { "label": "c", "text": "ifconfig eth0 192.168.1.1 netmask 255.255.255.0", "correct": true },
+        { "label": "d", "text": "ifconfig 192.168.1.1 netmask 255.255.255.0 eth0", "correct": false }
+      ],
+      "feedback": "El comando ifconfig para configurar interfaces comienza con el dispositivo seguido de la dirección IP, que luego es seguido por la palabra netmask y la máscara de red que deseas agregar. Debido a que es una /24, la máscara de red es 255.255.255.0."
+    },
+    {
+      "id": 9,
+      "type": "single",
+      "question": "¿Cuál de las siguientes describe una diferencia principal entre IPv4 e IPv6?",
+      "options": [
+        { "label": "a", "text": "IPv4 es solo para redes internas, mientras que IPv6 es para redes públicas.", "correct": false },
+        { "label": "b", "text": "IPv4 es para redes públicas, mientras que IPv6 es para redes internas.", "correct": false },
+        { "label": "c", "text": "IPv4 usa una dirección de 32 bits, mientras que IPv6 usa una de 128 bits.", "correct": true },
+        { "label": "d", "text": "Con IPv6, no es necesario el subnetting.", "correct": false }
+      ],
+      "feedback": "Las direcciones IPv4 tienen 32 bits de longitud y las direcciones IPv6 tienen 128 bits. Tanto IPv4 como IPv6 pueden usarse en redes internas y externas por igual, y el subnetting es necesario con IPv6."
+    },
+    {
+      "id": 10,
+      "type": "single",
+      "question": "¿En qué puerto opera ICMP?",
+      "options": [
+        { "label": "a", "text": "TCP/43", "correct": false },
+        { "label": "b", "text": "UDP/111", "correct": false },
+        { "label": "c", "text": "UDP/69", "correct": false },
+        { "label": "d", "text": "ICMP no usa puertos.", "correct": true }
+      ],
+      "feedback": "ICMP es un protocolo de capa 3, lo que significa que no usa puertos para la comunicación. TCP/43 se usa para whois, mientras que el puerto 111 se usa para sunrpc. UDP/69 se usa para el protocolo TFTP."
+    },
+        {
+      "id": 11,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos cambiará la puerta de enlace predeterminada a 192.168.1.1 usando eth0?",
+      "options": [
+        { "label": "a", "text": "ip route default gw 192.168.1.1", "correct": false },
+        { "label": "b", "text": "ip route change default via 192.168.1.1 dev eth0", "correct": true },
+        { "label": "c", "text": "ip route default gw update 192.168.1.1", "correct": false },
+        { "label": "d", "text": "ip route update default 192.168.1.1 eth0", "correct": false }
+      ],
+      "feedback": "El comando ip route puede usarse para este propósito, y su sintaxis utiliza un comando change y la palabra clave via. La misma operación podría completarse con el comando route pero requeriría eliminar primero la puerta de enlace existente y luego volver a agregar una nueva puerta de enlace predeterminada."
+    },
+    {
+      "id": 12,
+      "type": "single",
+      "question": "¿Cuál de los siguientes puertos se utiliza para la comunicación Secure Shell?",
+      "options": [
+        { "label": "a", "text": "TCP/23", "correct": false },
+        { "label": "b", "text": "TCP/25", "correct": false },
+        { "label": "c", "text": "TCP/22", "correct": true },
+        { "label": "d", "text": "TCP/2200", "correct": false }
+      ],
+      "feedback": "Secure Shell (SSH) opera en el puerto TCP 22 por defecto. TCP/23 se usa para telnet, TCP/25 se usa para SMTP y TCP/2200 no está asociado con un servicio bien conocido."
+    },
+    {
+      "id": 13,
+      "type": "single",
+      "question": "¿Qué opciones para netcat crearán un servidor escuchando en el puerto 8080?",
+      "options": [
+        { "label": "a", "text": "netcat -p 8080", "correct": false },
+        { "label": "b", "text": "nc -l -p 8080", "correct": true },
+        { "label": "c", "text": "nc -p 8080", "correct": false },
+        { "label": "d", "text": "nc -s 8080", "correct": false }
+      ],
+      "feedback": "El comando nc se usa para iniciar netcat y la opción -l hace que escuche. La opción -p se usa para especificar el puerto en el que netcat escuchará. La opción -s especifica la dirección de origen local y no se usa para este escenario."
+    },
+    {
+      "id": 14,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos muestra la información Start of Authority para el dominio example.com?",
+      "options": [
+        { "label": "a", "text": "dig example.com soa", "correct": true },
+        { "label": "b", "text": "dig example.com authority", "correct": false },
+        { "label": "c", "text": "dig example.com -auth", "correct": false },
+        { "label": "d", "text": "dig -t auth example.com", "correct": false }
+      ],
+      "feedback": "El tipo soa se usa para consultar registros Start of Authority de un dominio. En muchos casos, dig intentará buscar el dominio dentro de un comando dado y puede parecer que no hubo un error."
+    },
+    {
+      "id": 15,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos agrega una puerta de enlace predeterminada de 192.168.1.1 para la interfaz eth0?",
+      "options": [
+        { "label": "a", "text": "route add default gateway 192.168.1.1 eth0", "correct": false },
+        { "label": "b", "text": "eth0 --dg 192.168.1.1", "correct": false },
+        { "label": "c", "text": "route add default gw 192.168.1.1 eth0", "correct": true },
+        { "label": "d", "text": "route define eth0 192.168.1.1", "correct": false }
+      ],
+      "feedback": "El comando route se usa para este propósito, y agregar una ruta se hace con la opción add. La puerta de enlace predeterminada se agrega usando las palabras clave default gw seguidas de la IP de la puerta de enlace y el adaptador."
+    },
+    {
+      "id": 16,
+      "type": "single",
+      "question": "¿Qué opción en /etc/resolv.conf permitirá que los servicios locales accedan a hosts sin necesidad de calificar completamente el nombre con el dominio (example.com o example.org)?",
+      "options": [
+        { "label": "a", "text": "search", "correct": true },
+        { "label": "b", "text": "domain", "correct": false },
+        { "label": "c", "text": "local-domain", "correct": false },
+        { "label": "d", "text": "local-order", "correct": false }
+      ],
+      "feedback": "La opción search se usa para este propósito y puede proporcionarse con múltiples nombres de dominio, separados por un espacio o tabulador. La opción domain es válida dentro de /etc/resolv.conf pero no permite múltiples nombres de dominio."
+    },
+    {
+      "id": 17,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos envía un ping IPv6 a una dirección local única?",
+      "options": [
+        { "label": "a", "text": "ping -6 127.0.0.1", "correct": false },
+        { "label": "b", "text": "ping6 fddi/128", "correct": false },
+        { "label": "c", "text": "ping6 fdd6:551:b09f::", "correct": true },
+        { "label": "d", "text": "ping -6 fdd6:551:b09f::", "correct": false }
+      ],
+      "feedback": "El comando ping6 se usa para hacer ping a direcciones IPv6. Las direcciones locales únicas son el equivalente IPv6 de las direcciones privadas RFC 1918 en IPv4."
+    },
+    {
+      "id": 18,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos evita que el tráfico llegue al host 192.168.1.3?",
+      "options": [
+        { "label": "a", "text": "route add -host 192.168.1.3 reject", "correct": true },
+        { "label": "b", "text": "route -nullroute 192.168.1.3", "correct": false },
+        { "label": "c", "text": "route add -null 192.168.1.3", "correct": false },
+        { "label": "d", "text": "route add -block 192.168.1.3", "correct": false }
+      ],
+      "feedback": "El comando route puede usarse para este propósito, y en el escenario descrito, se usa un destino reject para la ruta. Las otras opciones mostradas son incorrectas porque usan opciones inválidas para el comando route."
+    },
+    {
+      "id": 19,
+      "type": "single",
+      "question": "¿Cuál de las siguientes describe una diferencia principal entre traceroute y tracepath?",
+      "options": [
+        { "label": "a", "text": "El comando traceroute requiere privilegios de root.", "correct": false },
+        { "label": "b", "text": "El comando tracepath proporciona el MTU para cada salto, mientras que traceroute no.", "correct": true },
+        { "label": "c", "text": "El comando tracepath no puede usarse para rastrear una ruta en una red externa.", "correct": false },
+        { "label": "d", "text": "El comando traceroute no es compatible con IPv6.", "correct": false }
+      ],
+      "feedback": "El comando tracepath proporciona la unidad máxima de transmisión (MTU) de los saltos donde sea posible. Tanto traceroute como tracepath pueden usarse interna o externamente, y ambos proporcionan capacidades IPv6."
+    },
+    {
+      "id": 20,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos emulará el comando ping de Microsoft Windows, donde el ping se envía en cuatro paquetes y luego el comando termina?",
+      "options": [
+        { "label": "a", "text": "ping -n 4", "correct": false },
+        { "label": "b", "text": "ping -t 4", "correct": false },
+        { "label": "c", "text": "ping -p 4", "correct": false },
+        { "label": "d", "text": "ping -c 4", "correct": true }
+      ],
+      "feedback": "La opción -c proporciona el conteo del número de pings a enviar. La opción -n especifica solo salida numérica, mientras que -p especifica el patrón a usar para el contenido del paquete. Finalmente, la opción -t establece el TTL."
+    },
+        {
+      "id": 21,
+      "type": "single",
+      "question": "¿Qué comando proporciona una interfaz para NetworkManager que funciona desde una terminal?",
+      "options": [
+        { "label": "a", "text": "nmcli", "correct": true },
+        { "label": "b", "text": "nmui", "correct": false },
+        { "label": "c", "text": "nm", "correct": false },
+        { "label": "d", "text": "nman", "correct": false }
+      ],
+      "feedback": "El comando nmcli proporciona una interfaz de línea de comandos adecuada para trabajar con NetworkManager a través de una terminal o conexión SSH."
+    },
+    {
+      "id": 22,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos configura eth1 con una dirección IPv6 adicional de fdd6:551:b09e::?",
+      "options": [
+        { "label": "a", "text": "ifconfig eth1 inet6 add fdd6:551:b09e::/128", "correct": true },
+        { "label": "b", "text": "ifconfig add fdd6:551:b09e::", "correct": false },
+        { "label": "c", "text": "ifconfig fdd6:551:b09e:: eth1", "correct": false },
+        { "label": "d", "text": "ifconfig eth1 fdd6:551:b09e", "correct": false }
+      ],
+      "feedback": "La sintaxis para ifconfig utiliza el dispositivo (en este caso eth1) seguido del protocolo inet6, luego la palabra clave add para indicar que se agrega una dirección IP adicional, y finalmente la dirección misma."
+    },
+    {
+      "id": 23,
+      "type": "single",
+      "question": "¿En qué puerto opera LDAP sobre SSL?",
+      "options": [
+        { "label": "a", "text": "Puerto 53", "correct": false },
+        { "label": "b", "text": "Puerto 389", "correct": false },
+        { "label": "c", "text": "Puerto 636", "correct": true },
+        { "label": "d", "text": "Puerto 443", "correct": false }
+      ],
+      "feedback": "LDAP sobre SSL (LDAPS) opera en el puerto 636. El puerto 53 se usa para DNS, el 389 para LDAP normal sin SSL, y el 443 para HTTP sobre SSL."
+    },
+    {
+      "id": 24,
+      "type": "single",
+      "question": "¿Cuál de los siguientes métodos permite anular búsquedas DNS para www.example.com y redirigirlo a localhost?",
+      "options": [
+        { "label": "a", "text": "Agregar una entrada en el firewall para la IP de www.example.com", "correct": false },
+        { "label": "b", "text": "Eliminar www.example.com de la tabla de rutas", "correct": false },
+        { "label": "c", "text": "Agregar una ruta nula para la IP de www.example.com", "correct": false },
+        { "label": "d", "text": "Agregar una entrada para www.example.com en /etc/hosts apuntando a 127.0.0.1", "correct": true }
+      ],
+      "feedback": "La mejor opción es agregar una entrada en /etc/hosts, lo que hará que las consultas DNS siempre resuelvan a 127.0.0.1. Las otras opciones no son tan robustas."
+    },
+    {
+      "id": 25,
+      "type": "single",
+      "question": "¿Qué comando debe ejecutarse después de cambiar rutas con ip route change?",
+      "options": [
+        { "label": "a", "text": "ip route flush cache", "correct": true },
+        { "label": "b", "text": "ip route reload", "correct": false },
+        { "label": "c", "text": "ip route cache reload", "correct": false },
+        { "label": "d", "text": "ip route restart", "correct": false }
+      ],
+      "feedback": "El comando ip route flush cache debe ejecutarse después de cambiar las rutas. Los otros comandos mostrados no son válidos."
+    },
+    {
+      "id": 26,
+      "type": "single",
+      "question": "¿Qué opción del comando host consultará los servidores de nombres autoritativos para un dominio dado?",
+      "options": [
+        { "label": "a", "text": "-t ns", "correct": true },
+        { "label": "b", "text": "-t all", "correct": false },
+        { "label": "c", "text": "-ns", "correct": false },
+        { "label": "d", "text": "-named", "correct": false }
+      ],
+      "feedback": "El comando host permite cambiar el tipo de consulta con la opción -t. Usar ns como tipo consultará los servidores de nombres para un dominio dado."
+    },
+    {
+      "id": 27,
+      "type": "single",
+      "question": "¿Qué opción debe usarse para enviar una consulta DNS para un registro SPF (Sender Policy Framework) con dig?",
+      "options": [
+        { "label": "a", "text": "-t txt", "correct": true },
+        { "label": "b", "text": "-t spf", "correct": false },
+        { "label": "c", "text": "-t mx", "correct": false },
+        { "label": "d", "text": "-t mailspf", "correct": false }
+      ],
+      "feedback": "Los registros SPF se almacenan en el tipo de registro txt en DNS, haciendo que -t txt sea la opción correcta."
+    },
+    {
+      "id": 28,
+      "type": "single",
+      "question": "¿Cuál de los siguientes protocolos usa un three-way handshake?",
+      "options": [
+        { "label": "a", "text": "ICMP", "correct": false },
+        { "label": "b", "text": "TCP", "correct": true },
+        { "label": "c", "text": "UDP", "correct": false },
+        { "label": "d", "text": "IP", "correct": false }
+      ],
+      "feedback": "TCP es un protocolo orientado a conexión que usa un three-way handshake para establecer una conexión."
+    },
+    {
+      "id": 29,
+      "type": "single",
+      "question": "¿Cuántas direcciones IP están disponibles en el rango privado 172.16.0.0 en IPv4?",
+      "options": [
+        { "label": "a", "text": "/32", "correct": false },
+        { "label": "b", "text": "16,777,216", "correct": false },
+        { "label": "c", "text": "65,536", "correct": false },
+        { "label": "d", "text": "1,048,576", "correct": true }
+      ],
+      "feedback": "Hay 1,048,576 direcciones IP en el rango privado 172.16.0.0."
+    },
+    {
+      "id": 30,
+      "type": "single",
+      "question": "Si puedes acceder a un servidor web pero no hacerle ping, ¿cuál es la causa más probable?",
+      "options": [
+        { "label": "a", "text": "El tráfico TCP está bloqueado por el firewall", "correct": false },
+        { "label": "b", "text": "Falló la búsqueda DNS", "correct": false },
+        { "label": "c", "text": "El tráfico ICMP está bloqueado", "correct": true },
+        { "label": "d", "text": "Hay una ruta reject configurada", "correct": false }
+      ],
+      "feedback": "La única posibilidad viable es que el tráfico ICMP esté bloqueado. El tráfico TCP obviamente está pasando (por el acceso HTTP) y DNS también debe estar funcionando."
+    },
+        {
+      "id": 31,
+      "type": "single",
+      "question": "Al ver las rutas disponibles con el comando route, una ruta tiene flags UG y otras tienen U. ¿Qué significan las letras UG en la tabla de rutas?",
+      "options": [
+        { "label": "a", "text": "La G significa que la ruta es buena", "correct": false },
+        { "label": "b", "text": "La G significa que la ruta no está disponible", "correct": false },
+        { "label": "c", "text": "La G significa que es una puerta de enlace", "correct": true },
+        { "label": "d", "text": "La G significa que la ruta es un agregado", "correct": false }
+      ],
+      "feedback": "La G significa una puerta de enlace dentro de la tabla de rutas."
+    },
+    {
+      "id": 32,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos solicita una transferencia de zona de example.org desde el servidor en 192.168.1.4?",
+      "options": [
+        { "label": "a", "text": "dig example.org @192.168.1.4 axfr", "correct": true },
+        { "label": "b", "text": "dig example.org @192.168.1.4", "correct": false },
+        { "label": "c", "text": "dig example.org @192.168.1.4 xfer", "correct": false },
+        { "label": "d", "text": "dig example.org", "correct": false }
+      ],
+      "feedback": "El tipo axfr es para transferencia de zona, y el símbolo @ especifica el servidor al que se enviará la consulta."
+    },
+    {
+      "id": 33,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos muestra el número de paquetes reenviados por el kernel?",
+      "options": [
+        { "label": "a", "text": "ls", "correct": false },
+        { "label": "b", "text": "ipstat", "correct": false },
+        { "label": "c", "text": "ifconfig -a", "correct": false },
+        { "label": "d", "text": "netstat -s", "correct": true }
+      ],
+      "feedback": "El comando netstat -s muestra información estadística agregada de red, incluyendo paquetes recibidos y reenviados."
+    },
+    {
+      "id": 34,
+      "type": "single",
+      "question": "Cuando se usa el comando ip, ¿qué familia de protocolo se usa por defecto si no se especifica otra?",
+      "options": [
+        { "label": "a", "text": "tcpip", "correct": false },
+        { "label": "b", "text": "ip", "correct": false },
+        { "label": "c", "text": "inet", "correct": true },
+        { "label": "d", "text": "arp", "correct": false }
+      ],
+      "feedback": "El comando ip usa por defecto la familia inet si no se especifica otra con la opción -f."
+    },
+    {
+      "id": 35,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos cambia la dirección MAC de eth0?",
+      "options": [
+        { "label": "a", "text": "ifmac eth0", "correct": false },
+        { "label": "b", "text": "ifconfig eth0 hw ether", "correct": true },
+        { "label": "c", "text": "ifconfig eth0 mac", "correct": false },
+        { "label": "d", "text": "ifconfig eth0 hw mac", "correct": false }
+      ],
+      "feedback": "El comando ifconfig usa la palabra clave hw para la dirección hardware, seguida de la clase de hardware (ether en este caso)."
+    },
+    {
+      "id": 36,
+      "type": "single",
+      "question": "¿Qué opción del comando route evita que realice resolución de nombres?",
+      "options": [
+        { "label": "a", "text": "-d", "correct": false },
+        { "label": "b", "text": "-e", "correct": false },
+        { "label": "c", "text": "-f", "correct": false },
+        { "label": "d", "text": "-n", "correct": true }
+      ],
+      "feedback": "La opción -n hace que route use solo valores numéricos, sin resolución de nombres."
+    },
+    {
+      "id": 37,
+      "type": "single",
+      "question": "¿Qué puerto(s) y protocolo(s) deben abrirse en un firewall para que los servidores de nombres primario y secundario se comuniquen?",
+      "options": [
+        { "label": "a", "text": "udp/53", "correct": false },
+        { "label": "b", "text": "tcp/53 y udp/53", "correct": true },
+        { "label": "c", "text": "tcp/53", "correct": false },
+        { "label": "d", "text": "udp/53 y tcp/503", "correct": false }
+      ],
+      "feedback": "Normalmente udp/53 se usa para consultas DNS, pero entre servidores primario/secundario también se necesita tcp/53 para transferencias de zona."
+    },
+    {
+      "id": 38,
+      "type": "single",
+      "question": "¿Qué comando elimina una entrada MAC de la tabla ARP para forzar nueva resolución?",
+      "options": [
+        { "label": "a", "text": "arp -d", "correct": true },
+        { "label": "b", "text": "netstat -rn", "correct": false },
+        { "label": "c", "text": "hostname", "correct": false },
+        { "label": "d", "text": "dig", "correct": false }
+      ],
+      "feedback": "El comando arp -d elimina una entrada de la tabla ARP para que se realice nueva resolución de dirección MAC."
+    },
+    {
+      "id": 39,
+      "type": "single",
+      "question": "¿Qué comando muestra información como el estado del enlace para el dispositivo wifi wlan0?",
+      "options": [
+        { "label": "a", "text": "iw dev wlan0 link", "correct": true },
+        { "label": "b", "text": "wlan0 list", "correct": false },
+        { "label": "c", "text": "iw wlan0 -l", "correct": false },
+        { "label": "d", "text": "iw dev link", "correct": false }
+      ],
+      "feedback": "El comando iw con dev [dispositivo] link muestra información del enlace wifi."
+    },
+    {
+      "id": 40,
+      "type": "single",
+      "question": "¿Qué comando se usa para configurar parámetros como ESSID, canal y otras opciones para dispositivos wifi?",
+      "options": [
+        { "label": "a", "text": "ifconfig", "correct": false },
+        { "label": "b", "text": "iwconfig", "correct": true },
+        { "label": "c", "text": "wlancfg", "correct": false },
+        { "label": "d", "text": "iconf", "correct": false }
+      ],
+      "feedback": "El comando iwconfig es similar a ifconfig pero específico para interfaces inalámbricas."
+    },
+        {
+      "id": 41,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos se puede usar para escanear redes inalámbricas disponibles?",
+      "options": [
+        { "label": "a", "text": "iwlist get", "correct": false },
+        { "label": "b", "text": "iwconfig scan", "correct": false },
+        { "label": "c", "text": "iwlist scan", "correct": true },
+        { "label": "d", "text": "iw-scan", "correct": false }
+      ],
+      "feedback": "El comando iwlist con el subcomando scan se usa para buscar puntos de acceso y redes inalámbricas locales. Se requieren privilegios de superusuario para un escaneo completo."
+    },
+    {
+      "id": 42,
+      "type": "single",
+      "question": "¿En qué protocolo y puerto escucha el servicio NTP para ofrecer servicios internos?",
+      "options": [
+        { "label": "a", "text": "TCP/20 y TCP/21", "correct": false },
+        { "label": "b", "text": "UDP/123", "correct": true },
+        { "label": "c", "text": "TCP/139", "correct": false },
+        { "label": "d", "text": "UDP/5150", "correct": false }
+      ],
+      "feedback": "NTP escucha en el puerto UDP 123 por defecto."
+    },
+    {
+      "id": 43,
+      "type": "single",
+      "question": "¿Qué opción de ifconfig permite establecer el valor MTU para una interfaz de red?",
+      "options": [
+        { "label": "a", "text": "-mtu", "correct": false },
+        { "label": "b", "text": "mtu", "correct": true },
+        { "label": "c", "text": "metric", "correct": false },
+        { "label": "d", "text": "addrmtu", "correct": false }
+      ],
+      "feedback": "La opción mtu permite establecer el valor de la unidad máxima de transmisión (MTU) para una interfaz dada."
+    },
+    {
+      "id": 44,
+      "type": "single",
+      "question": "¿Qué opción del comando arp crea una nueva entrada para un par dirección IP-dirección MAC?",
+      "options": [
+        { "label": "a", "text": "-s", "correct": true },
+        { "label": "b", "text": "-c", "correct": false },
+        { "label": "c", "text": "-d", "correct": false },
+        { "label": "d", "text": "--add", "correct": false }
+      ],
+      "feedback": "La opción -s crea una entrada en la tabla ARP."
+    }
+
+  ]
+}

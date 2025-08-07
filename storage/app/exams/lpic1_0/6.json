@@ -1,0 +1,646 @@
+{
+    "id": "6",
+    "title": "101:B - System Architecture",
+    "questions": [
+        {
+            "id": 1,
+            "type": "single",
+            "question": "¿Qué comando se utiliza para ver eventos udev relacionados con el kernel en tiempo real?",
+            "options": [
+                { "label": "a", "text": "udevls all", "correct": false },
+                { "label": "b", "text": "lsudev -f", "correct": false },
+                { "label": "c", "text": "udevmon -a", "correct": false },
+                { "label": "d", "text": "udevadm monitor", "correct": true }
+            ],
+            "feedback": "El comando udevadm se utiliza para trabajar con la interfaz udev del kernel, y el subcomando monitor muestra los eventos del kernel y otros eventos udev en tiempo real."
+        },
+        {
+            "id": 2,
+            "type": "single",
+            "question": "Si el buffer circular del kernel ha sido sobrescrito, ¿en qué archivo puedes buscar mensajes de arranque?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "/var/log/bootmessages",
+                    "correct": false
+                },
+                {
+                    "label": "b",
+                    "text": "/var/log/mail.info",
+                    "correct": false
+                },
+                {
+                    "label": "c",
+                    "text": "/var/adm/log/boot.info",
+                    "correct": false
+                },
+                { "label": "d", "text": "/var/log/dmesg", "correct": true }
+            ],
+            "feedback": "El archivo /var/log/dmesg suele contener mensajes históricos del arranque actual del sistema. En algunas distribuciones de Linux, esta información también se encuentra en /var/log/boot.log."
+        },
+        {
+            "id": 3,
+            "type": "single",
+            "question": "¿Qué comando y opción se pueden usar para determinar si un servicio específico está actualmente cargado?",
+            "options": [
+                { "label": "a", "text": "systemctl --ls", "correct": false },
+                { "label": "b", "text": "telinit", "correct": false },
+                { "label": "c", "text": "systemctl status", "correct": true },
+                { "label": "d", "text": "sysctl -a", "correct": false }
+            ],
+            "feedback": "De las opciones proporcionadas, el comando y la opción systemctl status son los más adecuados. Los comandos telinit y sysctl no se utilizan para este propósito. Asimismo, la opción --ls no es válida para systemctl."
+        },
+        {
+            "id": 4,
+            "type": "single",
+            "question": "¿En qué directorio se configuran los dispositivos udev?",
+            "options": [
+                { "label": "a", "text": "/udev/devices", "correct": false },
+                { "label": "b", "text": "/devices/", "correct": false },
+                { "label": "c", "text": "/udev/config", "correct": false },
+                { "label": "d", "text": "/etc/udev", "correct": true }
+            ],
+            "feedback": "Los archivos de configuración de udev se encuentran en /etc/udev, lo que hace que la opción D sea correcta. Las otras opciones no existen."
+        },
+        {
+            "id": 5,
+            "type": "single",
+            "question": "¿Qué comando en un sistema controlado por systemd pondría al sistema en modo monousuario?",
+            "options": [
+                { "label": "a", "text": "systemctl one", "correct": false },
+                {
+                    "label": "b",
+                    "text": "systemctl isolate rescue.target",
+                    "correct": true
+                },
+                {
+                    "label": "c",
+                    "text": "systemctl single-user",
+                    "correct": false
+                },
+                {
+                    "label": "d",
+                    "text": "systemctl runlevel one",
+                    "correct": false
+                }
+            ],
+            "feedback": "La opción de aislamiento se utiliza para mover el sistema al destino especificado, lo que hace que la opción B sea la correcta. Las demás opciones no existen."
+        },
+        {
+            "id": 6,
+            "type": "single",
+            "question": "¿Qué comando en un sistema controlado por Upstart recargará los archivos de configuración?",
+            "options": [
+                { "label": "a", "text": "initctl reload", "correct": true },
+                { "label": "b", "text": "systemd reload", "correct": false },
+                { "label": "c", "text": "upstart --reload", "correct": false },
+                { "label": "d", "text": "ups -reload", "correct": false }
+            ],
+            "feedback": "El comando initctl reload hace que Upstart vuelva a leer sus archivos de configuración."
+        },
+        {
+            "id": 7,
+            "type": "single",
+            "question": "Al trabajar con un sistema SysV, ¿qué opción de chkconfig mostrará todos los servicios y sus niveles de ejecución?",
+            "options": [
+                { "label": "a", "text": "--reload", "correct": false },
+                { "label": "b", "text": "--list", "correct": true },
+                { "label": "c", "text": "--all", "correct": false },
+                { "label": "d", "text": "--ls", "correct": false }
+            ],
+            "feedback": "La opción --list mostrará todos los servicios en un sistema junto con su estado para cada nivel de ejecución"
+        },
+        {
+            "id": 8,
+            "type": "single",
+            "question": "¿Cómo se considera un disco conectado por USB?",
+            "options": [
+                { "label": "a", "text": "Medium", "correct": false },
+                { "label": "b", "text": "Coldplug", "correct": false },
+                { "label": "c", "text": "Hotplug", "correct": true },
+                { "label": "d", "text": "Sideplug", "correct": false }
+            ],
+            "feedback": "Los dispositivos USB generalmente se consideran dispositivos hot-plug. Estos dispositivos se pueden insertar y extraer mientras el sistema está encendido, mientras que los dispositivos cold-plug se insertan y extraen cuando el sistema está apagado."
+        },
+        {
+            "id": 9,
+            "type": "single",
+            "question": "El sistema está usando un disco USB flash temporal montado en /dev/sda1. Necesitas quitarlo. ¿Qué comando permite remover el disco de forma segura?",
+            "options": [
+                { "label": "a", "text": "usbstop /dev/sda", "correct": false },
+                { "label": "b", "text": "umount /dev/sda1", "correct": true },
+                { "label": "c", "text": "unmount /dev/sda1", "correct": false },
+                {
+                    "label": "d",
+                    "text": "dev-eject /dev/sda1",
+                    "correct": false
+                }
+            ],
+            "feedback": "El comando umount se usa para desmontar unidades dentro de un sistema en ejecución. Los demás comandos no existen."
+        },
+        {
+            "id": 10,
+            "type": "single",
+            "question": "Has conectado un disco USB al sistema y necesitas encontrar su punto de conexión. ¿Cuál es el mejor método?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "Reiniciar el sistema",
+                    "correct": false
+                },
+                {
+                    "label": "b",
+                    "text": "Ver el contenido de /var/log/usb.log",
+                    "correct": false
+                },
+                {
+                    "label": "c",
+                    "text": "Conectar el disco a un puerto USB cuyo número conozcas",
+                    "correct": false
+                },
+                {
+                    "label": "d",
+                    "text": "Ejecutar dmesg y buscar el disco",
+                    "correct": true
+                }
+            ],
+            "feedback": "De las opciones presentadas, ejecutar dmesg es una forma común de determinar la ubicación asignada por el kernel a la unidad. Reiniciar el sistema no es una buena opción, aunque funcionaría. No existe el archivo /var/log/usb.log, y la ubicación de la unidad puede cambiar independientemente del puerto, dependiendo de cómo se detecte en el sistema."
+        },
+        {
+            "id": 11,
+            "type": "single",
+            "question": "¿Cuál de los siguientes comandos iniciará un apagado inmediato del sistema?",
+            "options": [
+                { "label": "a", "text": "shutdown -c", "correct": false },
+                { "label": "b", "text": "halt", "correct": true },
+                { "label": "c", "text": "systemd stop", "correct": false },
+                { "label": "d", "text": "stop-system", "correct": false }
+            ],
+            "feedback": "De estas opciones, solo la B apagará el sistema inmediatamente. La opción A cancelará el apagado."
+        },
+        {
+            "id": 12,
+            "type": "single",
+            "question": "¿Qué opción dentro de un archivo de servicio systemd indica el programa a ejecutar?",
+            "options": [
+                { "label": "a", "text": "StartProgram", "correct": false },
+                { "label": "b", "text": "ShortCut", "correct": false },
+                { "label": "c", "text": "ExecStart", "correct": true },
+                { "label": "d", "text": "Startup", "correct": false }
+            ],
+            "feedback": "La opción ExecStart indica el comando que se ejecutará al iniciar un servicio systemd."
+        },
+        {
+            "id": 13,
+            "type": "single",
+            "question": "¿Qué comando mostrará el target predeterminado en un sistema con systemd?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "systemctl defaults",
+                    "correct": false
+                },
+                {
+                    "label": "b",
+                    "text": "update-rc.d defaults",
+                    "correct": false
+                },
+                {
+                    "label": "c",
+                    "text": "systemctl runlevel",
+                    "correct": false
+                },
+                {
+                    "label": "d",
+                    "text": "systemctl get-default",
+                    "correct": true
+                }
+            ],
+            "feedback": "El comando `systemctl get-default` mostrará el destino predeterminado. Los demás comandos y opciones no son válidos."
+        },
+        {
+            "id": 14,
+            "type": "single",
+            "question": "¿Qué opción del comando systemctl cambiará un servicio para que se ejecute en el próximo arranque?",
+            "options": [
+                { "label": "a", "text": "enable", "correct": true },
+                { "label": "b", "text": "startonboot", "correct": false },
+                { "label": "c", "text": "loadonboot", "correct": false },
+                { "label": "d", "text": "start", "correct": false }
+            ],
+            "feedback": "La opción de habilitación configura el servicio para que se inicie al arrancar. La opción de inicio, D, se utiliza para iniciar un servicio inmediatamente. Las demás opciones no son válidas para este comando."
+        },
+        {
+            "id": 15,
+            "type": "single",
+            "question": "¿Qué comando se usa para cargar automáticamente un módulo y sus dependencias?",
+            "options": [
+                { "label": "a", "text": "modprobe", "correct": true },
+                { "label": "b", "text": "lsmod", "correct": false },
+                { "label": "c", "text": "insmod", "correct": false },
+                { "label": "d", "text": "rmmod", "correct": false }
+            ],
+            "feedback": "El comando modprobe carga el módulo y sus dependencias, si corresponde. El comando lsmod se usa para listar los módulos cargados actualmente, lo que hace que la opción B sea incorrecta. El comando insmod cargará un módulo dado, pero no sus dependencias. La opción D, rmmod, se usa para eliminar un módulo de la memoria."
+        },
+        {
+            "id": 16,
+            "type": "single",
+            "question": "¿Cuál de las siguientes describe mejor el sistema de archivos /proc?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "/proc contiene información sobre archivos a procesar",
+                    "correct": false
+                },
+                {
+                    "label": "b",
+                    "text": "/proc contiene archivos de configuración para procesos",
+                    "correct": false
+                },
+                {
+                    "label": "c",
+                    "text": "/proc contiene información sobre procesos en ejecución, incluyendo el kernel",
+                    "correct": true
+                },
+                {
+                    "label": "d",
+                    "text": "/proc contiene datos variables como correo y archivos web",
+                    "correct": false
+                }
+            ],
+            "feedback": "El sistema de archivos /proc contiene información sobre los procesos que se están ejecutando actualmente e información adicional sobre el kernel y el arranque actual del sistema."
+        },
+        {
+            "id": 17,
+            "type": "single",
+            "question": "¿Qué comando mostrará información sobre conexiones USB en formato de árbol?",
+            "options": [
+                { "label": "a", "text": "lsusb -tree", "correct": false },
+                { "label": "b", "text": "lsusb --tree", "correct": false },
+                { "label": "c", "text": "lsusb -t", "correct": true },
+                { "label": "d", "text": "usblist --tree", "correct": false }
+            ],
+            "feedback": "La opción -t de lsusb imprimirá la salida en formato de árbol para que pueda ver qué dispositivos están conectados a cada bus. Los demás argumentos de lsusb no son válidos y el comando usblist no es real."
+        },
+        {
+            "id": 18,
+            "type": "single",
+            "question": "¿Por qué un controlador de dispositivo no aparece en lsmod aunque esté cargado y funcionando?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "systemd elimina la necesidad de controladores para la mayoría de dispositivos",
+                    "correct": false
+                },
+                {
+                    "label": "b",
+                    "text": "initramfs habilita el soporte por defecto",
+                    "correct": false
+                },
+                {
+                    "label": "c",
+                    "text": "El sistema no necesita controlador para el dispositivo",
+                    "correct": false
+                },
+                {
+                    "label": "d",
+                    "text": "El soporte está compilado directamente en el kernel",
+                    "correct": true
+                }
+            ],
+            "feedback": "Si un dispositivo funcional no aparece en lsmod, generalmente significa que el kernel ya tiene un controlador cargado, ya que se ha compilado en el propio kernel en lugar de cargarse mediante un módulo. El uso de systemd (opción A) o initramfs (opción B) no tiene ningún efecto."
+        },
+        {
+            "id": 19,
+            "type": "single",
+            "question": "¿Qué opción de rmmod hará que el módulo espere hasta no estar en uso para descargarse?",
+            "options": [
+                { "label": "a", "text": "-test", "correct": false },
+                { "label": "b", "text": "-f", "correct": false },
+                { "label": "c", "text": "-w", "correct": true },
+                { "label": "d", "text": "-unload", "correct": false }
+            ],
+            "feedback": "La opción -w hace que el módulo espere hasta que ya no sea necesario antes de descargarse. La opción -f fuerza la eliminación inmediata y debe usarse con precaución. Las demás opciones no son válidas para rmmod."
+        },
+        {
+            "id": 20,
+            "type": "single",
+            "question": "Estás usando una SAN que causa errores por un módulo defectuoso, montando el sistema de archivos como solo lectura. ¿Qué comando puede cambiar este comportamiento?",
+            "options": [
+                { "label": "a", "text": "mount --continue", "correct": false },
+                {
+                    "label": "b",
+                    "text": "tune2fs -e continue",
+                    "correct": true
+                },
+                { "label": "c", "text": "mkfs --no-remount", "correct": false },
+                { "label": "d", "text": "mount -o remount", "correct": false }
+            ],
+            "feedback": "El comando tune2fs se puede utilizar para este propósito, pero debe utilizarse con cuidado porque puede provocar corrupción de datos."
+        },
+        {
+            "id": 21,
+            "type": "single",
+            "question": "¿En qué directorio se almacenan las reglas relacionadas con udev?",
+            "options": [
+                { "label": "a", "text": "/etc/udev.conf", "correct": false },
+                { "label": "b", "text": "/etc/udev.conf.d", "correct": false },
+                { "label": "c", "text": "/etc/udev/rules.d", "correct": true },
+                { "label": "d", "text": "/etc/udev.d", "correct": false }
+            ],
+            "feedback": "Las reglas relacionadas con udev se almacenan en /etc/udev/rules.d. La jerarquía de /etc/udev contiene el archivo de configuración udev.conf junto con otros componentes relacionados con la configuración de udev."
+        },
+        {
+            "id": 22,
+            "type": "single",
+            "question": "¿Qué opción de lspci muestra el controlador del kernel en uso para dispositivos PCI?",
+            "options": [
+                { "label": "a", "text": "-t", "correct": false },
+                { "label": "b", "text": "-k", "correct": true },
+                { "label": "c", "text": "-n", "correct": false },
+                { "label": "d", "text": "-a", "correct": false }
+            ],
+            "feedback": "La opción -k muestra el controlador del kernel asociado a un dispositivo PCI y puede ser útil al planificar una nueva compilación del kernel. La opción -t muestra la información en una estructura de árbol, y la opción -n usa números en lugar de nombres de dispositivo. No existe la opción -a."
+        },
+        {
+            "id": 23,
+            "type": "single",
+            "question": "¿En cuál de los siguientes directorios se encuentra la información de lista negra para módulos cargados con modprobe?",
+            "options": [
+                { "label": "a", "text": "/etc/blacklist", "correct": false },
+                { "label": "b", "text": "/etc/modprobe.d", "correct": true },
+                {
+                    "label": "c",
+                    "text": "/etc/blacklist.mod",
+                    "correct": false
+                },
+                { "label": "d", "text": "/etc/modprobe", "correct": false }
+            ],
+            "feedback": "El directorio /etc/modprobe.d se utiliza para almacenar información de configuración relacionada con los módulos, como la que se utiliza para fines de listas negras, pero también para otra información de configuración, como udev y opciones del módulo."
+        },
+        {
+            "id": 24,
+            "type": "single",
+            "question": "Al trabajar con CentOS 6, ¿qué comando se usa para crear el disco RAM inicial?",
+            "options": [
+                { "label": "a", "text": "mkinit", "correct": false },
+                { "label": "b", "text": "dracut", "correct": true },
+                { "label": "c", "text": "mkraminit", "correct": false },
+                { "label": "d", "text": "mkinitfs", "correct": false }
+            ],
+            "feedback": "El comando dracut se utiliza para crear el disco RAM inicial para sistemas más nuevos y ha reemplazado al comando mkinitrd heredado utilizado para el mismo propósito."
+        },
+        {
+            "id": 25,
+            "type": "single",
+            "question": "¿En qué archivo se encuentra la lista de símbolos del kernel actualmente disponibles?",
+            "options": [
+                { "label": "a", "text": "/proc/kernelsyms", "correct": false },
+                { "label": "b", "text": "/etc/kernel.conf", "correct": false },
+                { "label": "c", "text": "/etc/lsyms", "correct": false },
+                { "label": "d", "text": "/proc/kallsyms", "correct": true }
+            ],
+            "feedback": "El archivo /proc/kallsyms permite ver los símbolos del kernel cargados actualmente. Esto puede ser útil para resolver las dependencias de los módulos. Tenga en cuenta que, en sistemas antiguos, este archivo podría llamarse /proc/ksyms."
+        },
+        {
+            "id": 26,
+            "type": "single",
+            "question": "¿Qué comando se utiliza para obtener una lista de dispositivos USB?",
+            "options": [
+                { "label": "a", "text": "usb-list", "correct": false },
+                { "label": "b", "text": "lsusb", "correct": true },
+                { "label": "c", "text": "ls-usb", "correct": false },
+                { "label": "d", "text": "ls --usb", "correct": false }
+            ],
+            "feedback": "El comando lsusb se utiliza para obtener una lista básica de dispositivos USB en un sistema. Los demás comandos no son válidos. En el caso de la opción D, el comando ls es válido, pero no existe la opción --usb."
+        },
+        {
+            "id": 27,
+            "type": "single",
+            "question": "¿Cuál de los siguientes comandos muestra información detallada sobre un módulo cargado (tamaño del núcleo, configuraciones)?",
+            "options": [
+                { "label": "a", "text": "systool -v -m", "correct": true },
+                { "label": "b", "text": "modinfo -r", "correct": false },
+                { "label": "c", "text": "lsmod", "correct": false },
+                { "label": "d", "text": "infmod", "correct": false }
+            ],
+            "feedback": "La utilidad systool permite mostrar las opciones cargadas actualmente para un módulo. El comando modinfo -r no es válido y, aunque modinfo muestra información sobre un módulo, no incluye el tamaño del núcleo ni otras configuraciones. El comando lsmod no se puede usar para este propósito y no existe el comando infmod."
+        },
+        {
+            "id": 28,
+            "type": "single",
+            "question": "¿Qué directorio contiene información de configuración del kernel (versión, nombre de dominio, ubicación de modprobe)?",
+            "options": [
+                { "label": "a", "text": "/proc/sys/kmod", "correct": false },
+                { "label": "b", "text": "/proc/sys/kernel", "correct": true },
+                { "label": "c", "text": "/proc/kernel", "correct": false },
+                { "label": "d", "text": "/proc/kernel/sys", "correct": false }
+            ],
+            "feedback": "La jerarquía /proc/sys/kernel contiene información vital sobre la configuración del kernel. Esta configuración se puede modificar en un sistema en ejecución."
+        },
+        {
+            "id": 29,
+            "type": "single",
+            "question": "¿En qué directorio deben guardarse los archivos unit de systemd creados por el usuario?",
+            "options": [
+                { "label": "a", "text": "/etc/system", "correct": false },
+                {
+                    "label": "b",
+                    "text": "/etc/systemd/system",
+                    "correct": true
+                },
+                {
+                    "label": "c",
+                    "text": "/usr/share/systemd",
+                    "correct": false
+                },
+                { "label": "d", "text": "/usr/share/system", "correct": false }
+            ],
+            "feedback": "Se recomienda almacenar los archivos de unidad de systemd en el directorio /etc/systemd/system. Las demás ubicaciones no son válidas."
+        },
+        {
+            "id": 30,
+            "type": "single",
+            "question": "¿Qué comando debe ejecutarse después de modificar configuraciones de servicios systemd?",
+            "options": [
+                { "label": "a", "text": "systemd reload", "correct": false },
+                { "label": "b", "text": "reboot", "correct": false },
+                {
+                    "label": "c",
+                    "text": "systemctl daemon-reload",
+                    "correct": true
+                },
+                { "label": "d", "text": "systemctl reboot", "correct": false }
+            ],
+            "feedback": "El comando systemctl se usará para este propósito con el subcomando daemon-reload. La opción 'reboot' funcionaría para recargar la configuración de systemd, pero no es correcta, ya que requiere que se reinicie todo el servidor, lo cual no se plantea en esta pregunta."
+        },
+        {
+            "id": 31,
+            "type": "single",
+            "question": "¿Qué archivo contiene los niveles de ejecución (runlevels) del sistema con referencia al archivo rc correspondiente?",
+            "options": [
+                { "label": "a", "text": "/etc/runlevels", "correct": false },
+                { "label": "b", "text": "/etc/inittab", "correct": true },
+                { "label": "c", "text": "/etc/rc", "correct": false },
+                { "label": "d", "text": "/etc/runlevel", "correct": false }
+            ],
+            "feedback": "El archivo /etc/inittab contiene los distintos niveles de ejecución y qué se debe ejecutar en cada nivel. Por ejemplo, el nivel de ejecución 1 es monousuario, el nivel de ejecución 6 es reinicio, y así sucesivamente. Los demás archivos mencionados no existen."
+        },
+        {
+            "id": 32,
+            "type": "single",
+            "question": "¿Qué gestor de arranque puede usarse con sistemas de archivos FAT y podría usarse en discos de rescate?",
+            "options": [
+                { "label": "a", "text": "SYSBOOT", "correct": false },
+                { "label": "b", "text": "SYSLINUX", "correct": true },
+                { "label": "c", "text": "TIELINUX", "correct": false },
+                { "label": "d", "text": "FATLINUX", "correct": false }
+            ],
+            "feedback": "El gestor de arranque SYSLINUX se utiliza en sistemas de archivos FAT para crear discos de rescate y facilitar la instalación de Linux en general. SYSLINUX también describe un proyecto general que contiene otros gestores de arranque especializados. Sin embargo, las demás opciones mencionadas en esta pregunta no son gestores de arranque válidos."
+        },
+        {
+            "id": 33,
+            "type": "single",
+            "question": "¿Qué componente proporciona carga temprana de controladores necesarios para continuar el proceso de arranque?",
+            "options": [
+                { "label": "a", "text": "bootrd", "correct": false },
+                { "label": "b", "text": "driverload", "correct": false },
+                { "label": "c", "text": "initrd", "correct": true },
+                { "label": "d", "text": "initdrv", "correct": false }
+            ],
+            "feedback": "initrd se utiliza para un sistema de archivos raíz inicial para los primeros controladores. initrd está configurado para cargarse dentro del archivo de configuración de GRUB para un sistema operativo determinado."
+        },
+        {
+            "id": 34,
+            "type": "single",
+            "question": "Al recibir el error \"No init found\" en initramfs, ¿qué comando verifica errores en particiones de disco?",
+            "options": [
+                { "label": "a", "text": "defrag", "correct": false },
+                { "label": "b", "text": "fsck", "correct": true },
+                { "label": "c", "text": "checkfs", "correct": false },
+                { "label": "d", "text": "chkfs", "correct": false }
+            ],
+            "feedback": "El comando fsck se utiliza para diagnosticar y reparar problemas del disco duro en Linux. El comando defrag no está disponible en Linux."
+        },
+        {
+            "id": 35,
+            "type": "single",
+            "question": "¿Qué comando coloca el sistema en modo monousuario?",
+            "options": [
+                { "label": "a", "text": "tellinit 1", "correct": false },
+                { "label": "b", "text": "chginit 1", "correct": false },
+                { "label": "c", "text": "telinet 1", "correct": false },
+                { "label": "d", "text": "telinit 1", "correct": true }
+            ],
+            "feedback": "El comando telinit se puede usar para este propósito; al pasar 1 como argumento, el sistema pasará al modo monousuario. Los demás comandos mostrados no son válidos."
+        },
+        {
+            "id": 36,
+            "type": "single",
+            "question": "¿Qué comando cambia el orden de arranque para el próximo inicio?",
+            "options": [
+                { "label": "a", "text": "efibootmgr -c", "correct": false },
+                { "label": "b", "text": "efibootmgr -b -B", "correct": false },
+                { "label": "c", "text": "efibootmgr -o", "correct": false },
+                { "label": "d", "text": "efibootmgr -n", "correct": true }
+            ],
+            "feedback": "La opción -n cambia el orden de arranque solo para el siguiente arranque y arranca desde la partición especificada. La opción -b, junto con la opción -B, modifica y luego elimina la opción. La opción -o establece el orden de arranque. La opción -c crea un número de arranque."
+        },
+        {
+            "id": 37,
+            "type": "single",
+            "question": "¿Qué comando de udevadm consulta información sobre dispositivos hotplug?",
+            "options": [
+                { "label": "a", "text": "query", "correct": false },
+                { "label": "b", "text": "info", "correct": true },
+                { "label": "c", "text": "getinfo", "correct": false },
+                { "label": "d", "text": "devinfo", "correct": false }
+            ],
+            "feedback": "El comando info para udevadm permite consultar información adicional sobre un dispositivo hotplug administrado con udev."
+        },
+        {
+            "id": 38,
+            "type": "single",
+            "question": "¿Qué gestor de arranque funciona con CD-ROMs ISO9660?",
+            "options": [
+                { "label": "a", "text": "ISOLINUX", "correct": true },
+                { "label": "b", "text": "EFIBOOT", "correct": false },
+                { "label": "c", "text": "ISOFS", "correct": false },
+                { "label": "d", "text": "BOOTISO", "correct": false }
+            ],
+            "feedback": "ISOLINUX permite el arranque de CD-ROM formateados como ISO 9660. Es muy común tener Live CD o CD de rescate/recuperación que utilizan ISOLINUX para el arranque. Los demás cargadores de arranque no son válidos para este propósito o no existen."
+        },
+        {
+            "id": 39,
+            "type": "single",
+            "question": "¿En qué directorio se colocan los archivos unit de systemd para usuarios?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "/usr/lib/systemd/user",
+                    "correct": true
+                },
+                {
+                    "label": "b",
+                    "text": "/usr/lib/systemd/system",
+                    "correct": false
+                },
+                { "label": "c", "text": "/usr/systemd", "correct": false },
+                { "label": "d", "text": "/usr/system", "correct": false }
+            ],
+            "feedback": "La jerarquía /usr/lib/systemd contiene archivos relacionados con la configuración de systemd. El directorio de usuario dentro de la jerarquía se utiliza para los archivos de unidad de usuario, y los archivos del sistema se almacenan en /usr/lib/systemd/system."
+        },
+        {
+            "id": 40,
+            "type": "single",
+            "question": "En sistemas UEFI, ¿qué archivo puede actuar como gestor de arranque?",
+            "options": [
+                { "label": "a", "text": "shim.uefi", "correct": false },
+                { "label": "b", "text": "shim.efi", "correct": true },
+                { "label": "c", "text": "shim.fx", "correct": false },
+                { "label": "d", "text": "efi.shim", "correct": false }
+            ],
+            "feedback": "Debido a las decisiones decididamente inseguras tomadas en el diseño de la UEFI de Microsoft, a menudo se requiere una corrección de compatibilidad (shim) para que Linux arranque en un sistema con UEFI. El archivo shim.efi puede usarse como gestor de arranque inicial para este propósito."
+        },
+        {
+            "id": 41,
+            "type": "single",
+            "question": "¿Qué directorio en sistemas basados en SysV init contiene scripts para iniciar/detener servicios?",
+            "options": [
+                { "label": "a", "text": "/etc/rc.int", "correct": false },
+                { "label": "b", "text": "/etc/boot", "correct": false },
+                { "label": "c", "text": "/etc/bootscripts", "correct": false },
+                { "label": "d", "text": "/etc/init.d", "correct": true }
+            ],
+            "feedback": "Los scripts para iniciar y detener servicios se encuentran en /etc/init.d en un sistema basado en SysV init. Los demás directorios mencionados en esta pregunta no son válidos."
+        },
+        {
+            "id": 42,
+            "type": "single",
+            "question": "¿Qué comando encuentra archivos de configuración anulados en sistemas systemd?",
+            "options": [
+                { "label": "a", "text": "diff", "correct": false },
+                { "label": "b", "text": "systemctl -diff", "correct": false },
+                { "label": "c", "text": "systemd-delta", "correct": true },
+                {
+                    "label": "d",
+                    "text": "systemctl configoverride",
+                    "correct": false
+                }
+            ],
+            "feedback": "El comando systemd-delta se utiliza para determinar los archivos de configuración anulados. De los demás comandos, diff es válido, pero no para este fin. El comando systemctl también es válido, pero, de nuevo, no para el fin descrito."
+        },
+        {
+            "id": 43,
+            "type": "single",
+            "question": "¿Qué comando en Red Hat lista servicios SysV configurados para ejecutarse al arranque?",
+            "options": [
+                { "label": "a", "text": "rlevel", "correct": false },
+                { "label": "b", "text": "chkconfig --list", "correct": true },
+                { "label": "c", "text": "bootldr --list", "correct": false },
+                { "label": "d", "text": "init --bootlist", "correct": false }
+            ],
+            "feedback": "El comando chkconfig --list muestra todos los servicios que se ejecutarán al arrancar, junto con la configuración de cada servicio para cada nivel de ejecución. De los demás comandos, el comando init es válido, pero no incluye la opción --bootlist. Los demás comandos no son válidos."
+        }
+    ]
+}

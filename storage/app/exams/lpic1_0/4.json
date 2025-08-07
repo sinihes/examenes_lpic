@@ -1,0 +1,992 @@
+{
+    "id": "4",
+    "title": "104:A - Devices, Linux Filesystems, Filesystem Hierarchy Standard",
+    "questions": [
+        {
+            "id": 2,
+            "type": "multiple",
+            "question": "¿Cuáles de los siguientes comandos se utilizan para modificar configuraciones de cuotas?",
+            "options": [
+                { "label": "a", "text": "editquota", "correct": false },
+                { "label": "b", "text": "setquota", "correct": true },
+                { "label": "c", "text": "edquota", "correct": true },
+                { "label": "d", "text": "quotaedit", "correct": false },
+                { "label": "e", "text": "quotaset", "correct": false }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 3,
+            "type": "single",
+            "question": "¿Cuál de los siguientes comandos le indica a SysVinit que recargue su archivo de configuración?",
+            "options": [
+                { "label": "a", "text": "reinit", "correct": false },
+                { "label": "b", "text": "initreload", "correct": false },
+                { "label": "c", "text": "telinit 7", "correct": false },
+                { "label": "d", "text": "telinit q", "correct": true },
+                { "label": "e", "text": "init reinit", "correct": false }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 4,
+            "type": "single",
+            "question": "¿Qué comando convierte pares CR-LF en un archivo de texto importado (userlist.txt) al estándar LF de Linux y lo guarda como newlist.txt?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "tr '\\r\\n' '' < userlist.txt > newlist.txt",
+                    "correct": false
+                },
+                {
+                    "label": "b",
+                    "text": "tr –c '\\n\\r' '' < newlist.txt > userlist.txt",
+                    "correct": false
+                },
+                {
+                    "label": "c",
+                    "text": "tr –d '\\r' < userlist.txt > newlist.txt",
+                    "correct": true
+                },
+                {
+                    "label": "d",
+                    "text": "tr '\\r' '\\n' userlist.txt newlist.txt",
+                    "correct": false
+                },
+                {
+                    "label": "e",
+                    "text": "tr –s '^M' '^J' userlist.txt newlist.txt",
+                    "correct": false
+                }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 5,
+            "type": "single",
+            "question": "¿Qué comando se usa para modificar metadatos y opciones en sistemas de archivos ext3?",
+            "options": [
+                { "label": "a", "text": "mod3fs", "correct": false },
+                { "label": "b", "text": "tune3fs", "correct": false },
+                { "label": "c", "text": "mod2fs", "correct": false },
+                { "label": "d", "text": "tune2fs", "correct": true },
+                { "label": "e", "text": "dump2fs", "correct": false }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 6,
+            "type": "single",
+            "question": "¿Qué hace el comando mount -a?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "Monta todos los sistemas de archivos disponibles en el directorio actual.",
+                    "correct": false
+                },
+                {
+                    "label": "b",
+                    "text": "Muestra todos los sistemas de archivos montados.",
+                    "correct": false
+                },
+                {
+                    "label": "c",
+                    "text": "Monta todos los sistemas de archivos montables por el usuario actual.",
+                    "correct": false
+                },
+                {
+                    "label": "d",
+                    "text": "Monta todos los sistemas de archivos listados en /etc/fstab con la opción auto.",
+                    "correct": true
+                },
+                {
+                    "label": "e",
+                    "text": "Monta todos los sistemas de archivos listados en /etc/fstab con la opción noauto.",
+                    "correct": false
+                }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 7,
+            "type": "multiple",
+            "question": "¿Qué comandos muestran todos los sistemas de archivos montados actualmente?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "cat /proc/self/mounts",
+                    "correct": true
+                },
+                { "label": "b", "text": "free", "correct": false },
+                { "label": "c", "text": "mount", "correct": true },
+                { "label": "d", "text": "lsmounts", "correct": false },
+                {
+                    "label": "e",
+                    "text": "cat /proc/filesystems",
+                    "correct": false
+                }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 8,
+            "type": "multiple",
+            "question": "Después de mover datos a un nuevo sistema de archivos, ¿cómo se puede mantener la ruta original para evitar reconfigurar aplicaciones?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "Creando una redirección ACL de la ruta antigua a la nueva.",
+                    "correct": false
+                },
+                {
+                    "label": "b",
+                    "text": "Creando un hard link de la ruta antigua a la nueva.",
+                    "correct": false
+                },
+                {
+                    "label": "c",
+                    "text": "Creando un symbolic link de la ruta antigua a la nueva.",
+                    "correct": true
+                },
+                {
+                    "label": "d",
+                    "text": "Ejecutando el comando touch en la ruta antigua.",
+                    "correct": false
+                },
+                {
+                    "label": "e",
+                    "text": "Montando el nuevo sistema de archivos en la ruta original.",
+                    "correct": true
+                }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 9,
+            "type": "single",
+            "question": "¿Cuál de estas afirmaciones describe una diferencia entre GRUB Legacy y GRUB 2?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "GRUB 2 ya no requiere un archivo de configuración.",
+                    "correct": false
+                },
+                {
+                    "label": "b",
+                    "text": "Los números de partición comienzan en 0 en GRUB Legacy y en 1 en GRUB 2.",
+                    "correct": true
+                },
+                {
+                    "label": "c",
+                    "text": "grub-mkconfig solo funciona con GRUB Legacy usando la opción --version 1.",
+                    "correct": false
+                },
+                {
+                    "label": "d",
+                    "text": "El archivo menu.lst (y grub.conf) ha sido reemplazado por grub.config.",
+                    "correct": false
+                }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 10,
+            "type": "single",
+            "question": "¿Cuál de los siguientes comandos puede localizar programas junto con sus páginas man y archivos de configuración?",
+            "options": [
+                { "label": "a", "text": "dirname", "correct": false },
+                { "label": "b", "text": "which", "correct": false },
+                { "label": "c", "text": "basename", "correct": false },
+                { "label": "d", "text": "query", "correct": false },
+                { "label": "e", "text": "whereis", "correct": true }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 11,
+            "type": "single",
+            "question": "¿Qué valor de umask asegura que los nuevos archivos tengan permisos -rw-r----- por defecto?",
+            "options": [
+                { "label": "a", "text": "0017", "correct": false },
+                { "label": "b", "text": "0640", "correct": false },
+                { "label": "c", "text": "0038", "correct": false },
+                { "label": "d", "text": "0027", "correct": true }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 12,
+            "type": "single",
+            "question": "Tras crear un hard link llamado bar al archivo foo, si foo se elimina:",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "foo y bar se eliminarían.",
+                    "correct": false
+                },
+                {
+                    "label": "b",
+                    "text": "foo se elimina pero bar sigue accesible.",
+                    "correct": true
+                },
+                {
+                    "label": "c",
+                    "text": "foo se elimina y bar queda inutilizable.",
+                    "correct": false
+                },
+                {
+                    "label": "d",
+                    "text": "Ambos siguen accesibles.",
+                    "correct": false
+                },
+                {
+                    "label": "e",
+                    "text": "Se pregunta si bar debe eliminarse también.",
+                    "correct": false
+                }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 13,
+            "type": "single",
+            "question": "¿Qué comando carga un módulo del kernel junto con sus dependencias?",
+            "options": [
+                { "label": "a", "text": "depmod", "correct": false },
+                { "label": "b", "text": "insmod", "correct": false },
+                { "label": "c", "text": "modprobe", "correct": true },
+                { "label": "d", "text": "module install", "correct": false },
+                { "label": "e", "text": "loadmod", "correct": false }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 14,
+            "type": "single",
+            "question": "¿Qué significan los permisos -rwSr-xr-x en un binario ejecutable?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "Es SetUID y se ejecuta con los derechos del propietario.",
+                    "correct": true
+                },
+                {
+                    "label": "b",
+                    "text": "Se ejecuta con derechos del grupo, no del propietario.",
+                    "correct": false
+                },
+                {
+                    "label": "c",
+                    "text": "El flag SetUID se ignora porque el dueño no tiene x.",
+                    "correct": false
+                },
+                {
+                    "label": "d",
+                    "text": "Se ejecuta con derechos de dueño y grupo.",
+                    "correct": false
+                }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 15,
+            "type": "single",
+            "question": "En Bash, 2>&1 después de un comando redirige:",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "Error estándar a entrada estándar.",
+                    "correct": false
+                },
+                {
+                    "label": "b",
+                    "text": "Entrada estándar a error estándar.",
+                    "correct": false
+                },
+                {
+                    "label": "c",
+                    "text": "Salida estándar a error estándar.",
+                    "correct": false
+                },
+                {
+                    "label": "d",
+                    "text": "Error estándar a salida estándar.",
+                    "correct": true
+                },
+                {
+                    "label": "e",
+                    "text": "Salida estándar a entrada estándar.",
+                    "correct": false
+                }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 16,
+            "type": "single",
+            "question": "¿Cuál es el propósito del Filesystem Hierarchy Standard (FHS)?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "Modelo de seguridad para organizar archivos por permisos.",
+                    "correct": false
+                },
+                {
+                    "label": "b",
+                    "text": "Herramientas unificadas para gestionar sistemas de archivos.",
+                    "correct": false
+                },
+                {
+                    "label": "c",
+                    "text": "Estructura interna de inodos para sistemas de archivos.",
+                    "correct": false
+                },
+                {
+                    "label": "d",
+                    "text": "Descripción neutral de ubicaciones de archivos/directorios.",
+                    "correct": true
+                }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 17,
+            "type": "single",
+            "question": "¿Qué comando habilita el permiso setuid en /bin/foo?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "chmod 1755 /bin/foo",
+                    "correct": false
+                },
+                {
+                    "label": "b",
+                    "text": "chmod 4755 /bin/foo",
+                    "correct": true
+                },
+                {
+                    "label": "c",
+                    "text": "chmod u-s /bin/foo",
+                    "correct": false
+                },
+                {
+                    "label": "d",
+                    "text": "chmod 755+s /bin/foo",
+                    "correct": false
+                }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 18,
+            "type": "single",
+            "question": "Si una línea de comandos termina con &, ¿qué ocurre?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "Su salida se redirige a /dev/null.",
+                    "correct": false
+                },
+                {
+                    "label": "b",
+                    "text": "Su resultado determina si se ejecuta el siguiente comando.",
+                    "correct": false
+                },
+                {
+                    "label": "c",
+                    "text": "Se ejecuta en segundo plano en la shell actual.",
+                    "correct": true
+                },
+                {
+                    "label": "d",
+                    "text": "Se ejecuta como hijo directo de init.",
+                    "correct": false
+                }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 19,
+            "type": "multiple",
+            "question": "¿Qué comandos asignan el sticky bit al directorio /tmp?",
+            "options": [
+                { "label": "a", "text": "chmod +s /tmp", "correct": false },
+                { "label": "b", "text": "chmod +t /tmp", "correct": true },
+                { "label": "c", "text": "chmod 1775 /tmp", "correct": true },
+                { "label": "d", "text": "chmod 4775 /tmp", "correct": false },
+                { "label": "e", "text": "chmod 2775 /tmp", "correct": false }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 20,
+            "type": "single",
+            "question": "¿Qué comando lista actualizaciones disponibles en sistemas RPM?",
+            "options": [
+                { "label": "a", "text": "dpkg list", "correct": false },
+                { "label": "b", "text": "yum list", "correct": false },
+                { "label": "c", "text": "dpkg check-update", "correct": false },
+                { "label": "d", "text": "yum check-update", "correct": true },
+                { "label": "e", "text": "yum list-update", "correct": false }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 21,
+            "type": "single",
+            "question": "¿Qué utilidad se usa para cambiar la frecuencia de verificación de un sistema de archivos ext2 sin perder datos?",
+            "options": [
+                { "label": "a", "text": "mod2fs", "correct": false },
+                { "label": "b", "text": "fsck", "correct": false },
+                { "label": "c", "text": "tune2fs", "correct": true },
+                { "label": "d", "text": "mke2fs", "correct": false },
+                { "label": "e", "text": "fixe2fs", "correct": false }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 22,
+            "type": "multiple",
+            "question": "¿Qué sistemas de archivos Linux preasignan un número fijo de inodos al crearse?",
+            "options": [
+                { "label": "a", "text": "ext3", "correct": true },
+                { "label": "b", "text": "JFS", "correct": false },
+                { "label": "c", "text": "ext2", "correct": true },
+                { "label": "d", "text": "XFS", "correct": false },
+                { "label": "e", "text": "procfs", "correct": false }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 23,
+            "type": "single",
+            "question": "¿Qué comando consulta información sobre paquetes disponibles en Debian?",
+            "options": [
+                { "label": "a", "text": "apt-cache", "correct": true },
+                { "label": "b", "text": "apt-get", "correct": false },
+                { "label": "c", "text": "apt-search", "correct": false },
+                { "label": "d", "text": "dpkg", "correct": false },
+                { "label": "e", "text": "dpkg-search", "correct": false }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 24,
+            "type": "single",
+            "question": "¿Qué comando cambia el propietario de file.txt al usuario dan y grupo staff?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "chown dan/staff file.txt",
+                    "correct": false
+                },
+                {
+                    "label": "b",
+                    "text": "chown dan:staff file.txt",
+                    "correct": true
+                },
+                {
+                    "label": "c",
+                    "text": "chown -u dan -g staff file.txt",
+                    "correct": false
+                },
+                {
+                    "label": "d",
+                    "text": "chown dan -g staff file.txt",
+                    "correct": false
+                }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 25,
+            "type": "single",
+            "question": "¿Qué tipo de sistema de archivos crea mkfs al ejecutarse solo con el nombre del dispositivo?",
+            "options": [
+                { "label": "a", "text": "ext2", "correct": true },
+                { "label": "b", "text": "ext3", "correct": false },
+                { "label": "c", "text": "ext4", "correct": false },
+                { "label": "d", "text": "XFS", "correct": false },
+                { "label": "e", "text": "VFAT", "correct": false }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 26,
+            "type": "single",
+            "question": "¿Cuál es una limitación del comando cut?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "Solo puede seleccionar campos por posición.",
+                    "correct": false
+                },
+                {
+                    "label": "b",
+                    "text": "No puede reordenar campos.",
+                    "correct": true
+                },
+                {
+                    "label": "c",
+                    "text": "Solo funciona con texto ASCII.",
+                    "correct": false
+                },
+                {
+                    "label": "d",
+                    "text": "No puede usar delimitadores diferentes en entrada/salida.",
+                    "correct": false
+                }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 27,
+            "type": "single",
+            "question": "¿Qué comando reemplaza todas las ocurrencias de \"bob\" por \"Bob\" en el archivo data?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "sed '/bob/Bob' data",
+                    "correct": false
+                },
+                {
+                    "label": "b",
+                    "text": "sed 's/bob/Bob/g' data",
+                    "correct": true
+                },
+                {
+                    "label": "c",
+                    "text": "sed 's/bob/Bob/' data",
+                    "correct": false
+                },
+                {
+                    "label": "d",
+                    "text": "sed '/bob/Bob/' data",
+                    "correct": false
+                },
+                {
+                    "label": "e",
+                    "text": "sed 's/bob,Bob/' data",
+                    "correct": false
+                }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 28,
+            "type": "single",
+            "question": "¿Qué opción en /etc/fstab permite montar un sistema de archivos sin privilegios de root?",
+            "options": [
+                { "label": "a", "text": "auto", "correct": false },
+                { "label": "b", "text": "norestrict", "correct": false },
+                { "label": "c", "text": "noauto", "correct": false },
+                { "label": "d", "text": "user", "correct": true }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 29,
+            "type": "multiple",
+            "question": "¿Qué comandos muestran información del sistema como versión del kernel y arquitectura?",
+            "options": [
+                { "label": "a", "text": "sysinfo", "correct": false },
+                { "label": "b", "text": "uname", "correct": true },
+                { "label": "c", "text": "lspci", "correct": true },
+                { "label": "d", "text": "arch", "correct": false },
+                { "label": "e", "text": "info", "correct": false }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 30,
+            "type": "single",
+            "question": "¿Cuántos campos tiene una línea correcta en /etc/fstab?",
+            "options": [
+                { "label": "a", "text": "3", "correct": false },
+                { "label": "b", "text": "4", "correct": false },
+                { "label": "c", "text": "5", "correct": false },
+                { "label": "d", "text": "6", "correct": true },
+                { "label": "e", "text": "7", "correct": false }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 31,
+            "type": "single",
+            "question": "Al crear un hard link a un archivo normal, se recibe un error. ¿Cuál podría ser la razón?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "El archivo fuente está oculto",
+                    "correct": false
+                },
+                {
+                    "label": "b",
+                    "text": "El archivo fuente es de solo lectura",
+                    "correct": false
+                },
+                {
+                    "label": "c",
+                    "text": "El archivo fuente es un script de shell",
+                    "correct": false
+                },
+                {
+                    "label": "d",
+                    "text": "El archivo fuente ya es un hard link",
+                    "correct": false
+                },
+                {
+                    "label": "e",
+                    "text": "El origen y el destino están en diferentes sistemas de archivos",
+                    "correct": true
+                }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 32,
+            "type": "single",
+            "question": "¿Qué comando hace que /bin/foo sea ejecutable por todos pero solo modificable por su dueño?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "chmod u=rwx,go=rx /bin/foo",
+                    "correct": true
+                },
+                {
+                    "label": "b",
+                    "text": "chmod o+rwx,a+rx /bin/foo",
+                    "correct": false
+                },
+                {
+                    "label": "c",
+                    "text": "chmod 577 /bin/foo",
+                    "correct": false
+                },
+                { "label": "d", "text": "chmod 775 /bin/foo", "correct": false }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 33,
+            "type": "single",
+            "question": "¿Dónde busca el BIOS el gestor de arranque?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "En todos los medios de almacenamiento conectados, sin importar el orden de arranque",
+                    "correct": false
+                },
+                {
+                    "label": "b",
+                    "text": "En todos los medios de almacenamiento conectados según el orden de arranque definido",
+                    "correct": true
+                },
+                {
+                    "label": "c",
+                    "text": "Solo en discos duros según el orden de arranque",
+                    "correct": false
+                },
+                {
+                    "label": "d",
+                    "text": "Solo en el último medio de almacenamiento conectado",
+                    "correct": false
+                },
+                {
+                    "label": "e",
+                    "text": "El BIOS no es responsable de buscar el gestor de arranque",
+                    "correct": false
+                }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 34,
+            "type": "single",
+            "question": "¿Cómo se puede previsualizar la lista de archivos que instalaría el paquete RPM apache-xml.rpm?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "rpm -qp apache-xml.rpm",
+                    "correct": false
+                },
+                {
+                    "label": "b",
+                    "text": "rpm -qv apache-xml.rpm",
+                    "correct": false
+                },
+                {
+                    "label": "c",
+                    "text": "rpm -ql apache-xml.rpm",
+                    "correct": false
+                },
+                {
+                    "label": "d",
+                    "text": "rpm -qpl apache-xml.rpm",
+                    "correct": true
+                }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 35,
+            "type": "single",
+            "question": "En expresiones regulares, ¿qué carácter coincide con el inicio de una línea?",
+            "options": [
+                { "label": "a", "text": "^", "correct": true },
+                { "label": "b", "text": "?", "correct": false },
+                { "label": "c", "text": "*", "correct": false },
+                { "label": "d", "text": "+", "correct": false },
+                { "label": "e", "text": "$", "correct": false }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 36,
+            "type": "single",
+            "question": "¿Qué comando monta un CD-ROM (/dev/sr0) en /mnt/cdrom con privilegios root?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "mount /dev/cdrom /mnt/cdrom",
+                    "correct": false
+                },
+                {
+                    "label": "b",
+                    "text": "mount /dev/sr0 /mnt/cdrom",
+                    "correct": false
+                },
+                {
+                    "label": "c",
+                    "text": "mount -t cdrom /dev/sr0 /mnt/cdrom",
+                    "correct": true
+                },
+                {
+                    "label": "d",
+                    "text": "mount -l cdrom /dev/sr0 /mnt/cdrom",
+                    "correct": false
+                },
+                {
+                    "label": "e",
+                    "text": "mount -f /dev/sr0 /mnt/cdrom",
+                    "correct": false
+                }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 67,
+            "type": "multiple",
+            "question": "¿Qué comandos crean un sistema de archivos ext3 en /dev/sdb1?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "/sbin/mke2fs -j /dev/sdb1",
+                    "correct": true
+                },
+                {
+                    "label": "b",
+                    "text": "/sbin/mkfs -t ext3 /dev/sdb1",
+                    "correct": true
+                },
+                {
+                    "label": "c",
+                    "text": "/sbin/mkfs -c ext3 /dev/sdb1",
+                    "correct": false
+                },
+                {
+                    "label": "d",
+                    "text": "/sbin/mke3fs -j /dev/sdb1",
+                    "correct": false
+                }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 68,
+            "type": "single",
+            "question": "¿Qué comando busca el archivo ejecutable foo si no está en $PATH?",
+            "options": [
+                { "label": "a", "text": "apropos", "correct": false },
+                { "label": "b", "text": "which", "correct": false },
+                {
+                    "label": "c",
+                    "text": "find (Ej: find / -name foo -type f -executable)",
+                    "correct": true
+                },
+                { "label": "d", "text": "query", "correct": false },
+                { "label": "e", "text": "whereis", "correct": false }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 69,
+            "type": "single",
+            "question": "¿Qué comando cambia los días antes de que ext3 en /dev/sda1 requiera un chequeo completo al arrancar?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "tune2fs -d 200 /dev/sda1",
+                    "correct": false
+                },
+                {
+                    "label": "b",
+                    "text": "tune2fs -c 200 /dev/sda1",
+                    "correct": false
+                },
+                {
+                    "label": "c",
+                    "text": "tune2fs -i 200 /dev/sda1 (-i define el intervalo entre chequeos)",
+                    "correct": true
+                },
+                {
+                    "label": "d",
+                    "text": "tune2fs -n 200 /dev/sda1",
+                    "correct": false
+                },
+                {
+                    "label": "e",
+                    "text": "tune2fs --days 200 /dev/sda1",
+                    "correct": false
+                }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 70,
+            "type": "single",
+            "question": "¿Qué comando muestra el uso de inodos en cada sistema de archivos montado?",
+            "options": [
+                { "label": "a", "text": "du -i", "correct": false },
+                {
+                    "label": "b",
+                    "text": "df -i (Muestra inodos libres y usados)",
+                    "correct": true
+                },
+                { "label": "c", "text": "lsfs -i", "correct": false },
+                { "label": "d", "text": "printfs -i", "correct": false }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 71,
+            "type": "single",
+            "question": "¿Qué comando actualiza un paquete RPM ya instalado (rpmname)?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "rpm --update rpmname",
+                    "correct": false
+                },
+                {
+                    "label": "b",
+                    "text": "rpm –U rpmname (-U actualiza o instala si no existe)",
+                    "correct": true
+                },
+                { "label": "c", "text": "rpm –q rpmname", "correct": false },
+                {
+                    "label": "d",
+                    "text": "rpm --force rpmname",
+                    "correct": false
+                },
+                { "label": "e", "text": "rpm –u rpmname", "correct": false }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 72,
+            "type": "single",
+            "question": "¿Qué permisos tiene un enlace simbólico?",
+            "options": [
+                { "label": "a", "text": "-rwxrwxrwx", "correct": false },
+                { "label": "b", "text": "+rwxrwxrwx", "correct": false },
+                {
+                    "label": "c",
+                    "text": "lrwxrwxrwx (La l inicial indica enlace simbólico)",
+                    "correct": true
+                },
+                { "label": "d", "text": "srwxrwxrwx", "correct": false }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 73,
+            "type": "single",
+            "question": "¿Cuál es el archivo de dispositivo para la segunda partición del único disco SCSI?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "/dev/hda1 (IDE, no SCSI)",
+                    "correct": false
+                },
+                {
+                    "label": "b",
+                    "text": "/dev/sda2 (SCSI/SATA, primera letra a, segunda partición 2)",
+                    "correct": true
+                },
+                { "label": "c", "text": "/dev/sd0a2", "correct": false },
+                { "label": "d", "text": "/dev/sd1p2", "correct": false }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 74,
+            "type": "single",
+            "question": "¿Qué señal envía Ctrl+C a un proceso en primer plano?",
+            "options": [
+                { "label": "a", "text": "1 (SIGHUP)", "correct": false },
+                {
+                    "label": "b",
+                    "text": "2 (SIGINT) (Interrupción desde teclado)",
+                    "correct": true
+                },
+                { "label": "c", "text": "3 (SIGQUIT)", "correct": false },
+                { "label": "d", "text": "9 (SIGKILL)", "correct": false },
+                { "label": "e", "text": "15 (SIGTERM)", "correct": false }
+            ],
+            "feedback": ""
+        },
+        {
+            "id": 75,
+            "type": "text",
+            "question": "¿Qué valor umask da permisos 600 (archivos) y 700 (directorios)?",
+            "answer": "0077",
+            "feedback": ""
+        },
+        {
+            "id": 76,
+            "type": "text",
+            "question": "Según el FHS, ¿dónde deben colocarse binarios compilados por el administrador?",
+            "answer": "/usr/local/bin",
+            "feedback": ""
+        },
+        {
+            "id": 77,
+            "type": "text",
+            "question": "¿Qué comando inicializa archivos para almacenar información de cuotas?",
+            "answer": "quotacheck",
+            "feedback": ""
+        },
+        {
+            "id": 78,
+            "type": "text",
+            "question": "¿Qué comando crea un espacio de intercambio (swap)?",
+            "answer": "mkswap",
+            "feedback": ""
+        },
+        {
+            "id": 79,
+            "type": "text",
+            "question": "¿Qué archivo de configuración de SysV init establece el nivel de ejecución predeterminado?",
+            "answer": "/etc/inittab",
+            "feedback": ""
+        },
+        {
+            "id": 80,
+            "type": "text",
+            "question": "¿Qué comando muestra el contenido del Kernel Ring Buffer?",
+            "answer": "dmesg",
+            "feedback": ""
+        }
+    ]
+}

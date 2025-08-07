@@ -1,0 +1,269 @@
+{
+  "id": "1",
+  "title": "101:A - System Architecture",
+  "questions": [
+    {
+      "id": 1,
+      "type": "single",
+      "question": "¿Cuál de las siguientes afirmaciones es correcta al hablar de /proc/?",
+      "options": [
+        { "label": "a", "text": "Todos los cambios en los archivos de /proc/ se almacenan en /etc/proc.d/ y se restauran al reiniciar.", "correct": false },
+        { "label": "b", "text": "Todos los archivos de /proc/ son de solo lectura y su contenido no se puede modificar.", "correct": false },
+        { "label": "c", "text": "El kernel reconoce inmediatamente todos los cambios en los archivos de /proc/.", "correct": true },
+        { "label": "d", "text": "Todos los archivos de /proc/ solo son legibles por el usuario root.", "correct": false }
+      ],
+      "feedback":""
+    },
+    {
+      "id": 2,
+      "type": "multiple",
+      "question": "¿Qué información puede mostrar el comando lspci sobre el hardware del sistema? (Seleccione tres respuestas correctas).",
+      "options": [
+        { "label": "a", "text": "Configuración de IRQ del dispositivo", "correct": true },
+        { "label": "b", "text": "Velocidad del bus PCI", "correct": true },
+        { "label": "c", "text": "Tipo de batería del sistema", "correct": false },
+        { "label": "d", "text": "Identificación del proveedor del dispositivo", "correct": true },
+        { "label": "e", "text": "Dirección MAC de Ethernet", "correct": false }
+      ],
+      "feedback":""
+    },
+    {
+      "id": 3,
+      "type": "single",
+      "question": "Durante un ciclo de arranque del sistema, ¿qué programa se ejecuta después de que la BIOS complete sus tareas?",
+      "options": [
+        { "label": "a", "text": "El gestor de arranque", "correct": true },
+        { "label": "b", "text": "El programa inetd", "correct": false },
+        { "label": "c", "text": "El programa init", "correct": false },
+        { "label": "d", "text": "El kernel", "correct": false }
+      ],
+      "feedback":""
+    },
+    {
+      "id": 4,
+      "type": "single",
+      "question": "¿Cuál es el primer programa que suele iniciar el kernel de Linux al arrancar el sistema al usar SysV init?",
+      "options": [
+        { "label": "a", "text": "/lib/init.so", "correct": false },
+        { "label": "b", "text": "/sbin/init", "correct": true },
+        { "label": "c", "text": "/boot/init", "correct": false },
+        { "label": "d", "text": "/etc/rc.d/rcinit", "correct": false },
+        { "label": "e", "text": "/proc/sys/kernel/init", "correct": false }
+      ],
+      "feedback":""
+    },
+    {
+      "id": 5,
+      "type": "single",
+      "question": "Durante un ciclo de arranque del sistema, ¿cuál es el programa que se ejecuta después de que la BIOS completa sus tareas?",
+      "options": [
+        { "label": "a", "text": "El gestor de arranque", "correct": true },
+        { "label": "b", "text": "El programa inetd", "correct": false },
+        { "label": "c", "text": "El programa init", "correct": false },
+        { "label": "d", "text": "El núcleo", "correct": false }
+      ],
+      "feedback":""
+    },
+    {
+      "id": 6,
+      "type": "single",
+      "question": "Tiene problemas con una partición de disco y necesita realizar tareas de mantenimiento, pero los directorios personales de sus usuarios están en ella y varios han iniciado sesión. ¿Qué comando desconectaría a los usuarios y le permitiría realizar tareas de mantenimiento de forma segura?",
+      "options": [
+        { "label": "a", "text": "telinit 1", "correct": true },
+        { "label": "b", "text": "shutdown -r now", "correct": false },
+        { "label": "c", "text": "killall -9 inetd", "correct": false },
+        { "label": "d", "text": "/bin/netstop --maint", "correct": false },
+        { "label": "e", "text": "/etc/rc.d/init.d/network stop", "correct": false }
+      ],
+      "feedback":""
+    },
+    {
+      "id": 7,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos escribirá un mensaje en las terminales de todos los usuarios conectados?",
+      "options": [
+        { "label": "a", "text": "bcast", "correct": false },
+        { "label": "b", "text": "mesg", "correct": false },
+        { "label": "c", "text": "print", "correct": false },
+        { "label": "d", "text": "wall", "correct": true },
+        { "label": "e", "text": "yell", "correct": false }
+      ],
+      "feedback":""
+    },
+    {
+      "id": 8,
+      "type": "single",
+      "question": "¿Qué archivo de configuración de inicio de SysV se debe modificar para deshabilitar la combinación de teclas Ctrl-Alt-Supr?",
+      "options": [
+        { "label": "a", "text": "/etc/keys", "correct": false },
+        { "label": "b", "text": "/proc/keys", "correct": false },
+        { "label": "c", "text": "/etc/inittab", "correct": true },
+        { "label": "d", "text": "/proc/inittab", "correct": false },
+        { "label": "e", "text": "/etc/reboot", "correct": false }
+      ],
+      "feedback":""
+    },
+    {
+      "id": 9,
+      "type": "multiple",
+      "question": "¿Cuál de la siguiente información se almacena en la BIOS? (Elija dos respuestas correctas).",
+      "options": [
+        { "label": "a", "text": "Orden de los dispositivos de arranque", "correct": true },
+        { "label": "b", "text": "Versión del kernel de Linux", "correct": false },
+        { "label": "c", "text": "Zona horaria", "correct": false },
+        { "label": "d", "text": "Información del hardware", "correct": true },
+        { "label": "e", "text": "El nombre de host del sistema", "correct": false }
+      ],
+      "feedback":""
+    },
+    {
+      "id": 10,
+      "type": "single",
+      "question": "¿Cuál de los siguientes parámetros del kernel le indica que suprima la mayoría de los mensajes de arranque?",
+      "options": [
+        { "label": "a", "text": "silent", "correct": false },
+        { "label": "b", "text": "verbose=0", "correct": false },
+        { "label": "c", "text": "nomesg", "correct": false },
+        { "label": "d", "text": "quiet", "correct": true }
+      ],
+      "feedback":""
+    },
+    {
+      "id": 11,
+      "type": "single",
+      "question": "El sistema tiene problemas y el ingeniero quiere omitir el inicio habitual de /sbin/init y ejecutar /bin/sh. ¿Cuál es la forma habitual de pasar este cambio al kernel desde el gestor de arranque?",
+      "options": [
+        { "label": "a", "text": "Iniciar en el nivel de ejecución 1.", "correct": false },
+        { "label": "b", "text": "Pasar init=/bin/sh en la línea de parámetros del kernel.", "correct": true },
+        { "label": "c", "text": "Pasar /bin/sh en la línea de parámetros del kernel.", "correct": false },
+        { "label": "d", "text": "Pasar start=/bin/sh en la línea de parámetros del kernel.", "correct": false }
+      ],
+      "feedback":""
+    },
+    {
+      "id": 12,
+      "type": "multiple",
+      "question": "¿Cuál de los siguientes comandos reinicia el sistema al usar SysV init? (Elija dos respuestas correctas).",
+      "options": [
+        { "label": "a", "text": "shutdown -r now", "correct": true },
+        { "label": "b", "text": "shutdown -r \"rebooting\"", "correct": false },
+        { "label": "c", "text": "telinit 6", "correct": true },
+        { "label": "d", "text": "telinit 0", "correct": false },
+        { "label": "e", "text": "shutdown -k now \"rebooting\"", "correct": false }
+      ],
+      "feedback":""
+    },
+    {
+      "id": 13,
+      "type": "multiple",
+      "question": "¿Cuál de los siguientes comandos permite realizar tareas de mantenimiento de forma segura en un sistema que ejecuta SysV init? (Elija dos respuestas correctas).",
+      "options": [
+        { "label": "a", "text": "shutdown -R 1 now", "correct": false },
+        { "label": "b", "text": "shutdown -single now", "correct": false },
+        { "label": "c", "text": "init 1", "correct": true },
+        { "label": "d", "text": "telinit 1", "correct": true },
+        { "label": "e", "text": "runlevel 1", "correct": false }
+      ],
+      "feedback":""
+    },
+    {
+      "id": 14,
+      "type": "single",
+      "question": "El mensaje \"Error de disco duro\" se muestra en pantalla durante la primera etapa del proceso de arranque de GRUB. ¿Qué indica esto?",
+      "options": [
+        { "label": "a", "text": "El kernel no pudo ejecutar /bin/init.", "correct": false },
+        { "label": "b", "text": "La siguiente etapa no se puede leer desde el disco duro porque GRUB no pudo determinar el tamaño ni la geometría del disco.", "correct": true },
+        { "label": "c", "text": "Uno o más sistemas de archivos del disco duro presentan errores y se debe ejecutar una comprobación del sistema de archivos.", "correct": false },
+        { "label": "d", "text": "El BIOS no pudo leer los datos necesarios del Registro Maestro de Arranque (MBR) para iniciar el proceso de arranque.", "correct": false }
+      ],
+      "feedback":""
+    },
+    {
+      "id": 15,
+      "type": "multiple",
+      "question": "¿Qué niveles de ejecución nunca deben declararse como predeterminados al usar SysV init? (Elija dos respuestas correctas).",
+      "options": [
+        { "label": "a", "text": "0", "correct": true },
+        { "label": "b", "text": "1", "correct": false },
+        { "label": "c", "text": "3", "correct": false },
+        { "label": "d", "text": "5", "correct": false },
+        { "label": "e", "text": "6", "correct": true }
+      ],
+      "feedback":""
+    },
+    {
+      "id": 16,
+      "type": "single",
+      "question": "¿Cuál de las siguientes opciones para la línea de comandos del kernel cambia el destino de arranque de systemd a rescue.target en lugar del destino predeterminado?",
+      "options": [
+        { "label": "a", "text": "systemd.target=rescue.target", "correct": false },
+        { "label": "b", "text": "systemd.runlevel=rescue.target", "correct": false },
+        { "label": "c", "text": "systemd.service=rescue.target", "correct": false },
+        { "label": "d", "text": "systemd.default=rescue.target", "correct": false },
+        { "label": "e", "text": "systemd.unit=rescue.target", "correct": true }
+      ],
+      "feedback":""
+    },
+    {
+      "id": 17,
+      "type": "multiple",
+      "question": "¿Cuáles de los siguientes son sistemas de inicio utilizados en sistemas Linux? (Elija tres respuestas correctas).",
+      "options": [
+        { "label": "a", "text": "startd", "correct": false },
+        { "label": "b", "text": "systemd", "correct": true },
+        { "label": "c", "text": "Upstart", "correct": true },
+        { "label": "d", "text": "SysInit", "correct": false },
+        { "label": "e", "text": "SysV Init", "correct": true }
+      ],
+      "feedback":""
+    },
+    {
+      "id": 18,
+      "type": "multiple",
+      "question": "¿Cuáles de las siguientes afirmaciones son verdaderas con respecto a /dev/ al usar udev? (Elija dos respuestas correctas).",
+      "options": [
+        { "label": "a", "text": "Las entradas para todos los dispositivos posibles se crean al arrancar, incluso si no están conectados.", "correct": false },
+        { "label": "b", "text": "Se pueden crear reglas adicionales para udev añadiéndolas a /etc/udev/rules.d/.", "correct": true },
+        { "label": "c", "text": "Al usar udev, no es posible crear dispositivos de bloque o de caracteres en /dev/ con mknod.", "correct": false },
+        { "label": "d", "text": "El directorio /dev/ es un sistema de archivos de tipo tmpfs y udev lo monta durante el inicio del sistema.", "correct": true },
+        { "label": "e", "text": "El contenido de /dev/ se almacena en /etc/udev/dev y se restaura durante el inicio del sistema.", "correct": false }
+      ],
+      "feedback":""
+    },
+    {
+      "id": 19,
+      "type": "text",
+      "question": "¿Qué comando mostrará los mensajes del kernel que se generaron durante la secuencia de arranque normal?",
+      "answer": "dmesg",
+      "feedback":""
+    },
+    {
+      "id": 20,
+      "type": "text",
+      "question": "El sistema de archivos del dispositivo USB se encuentra en /proc/____/usb/.",
+      "answer": "bus",
+      "feedback":""
+    },
+    {
+      "id": 21,
+      "type": "text",
+      "question": "¿Qué comando muestra el contenido del búfer de anillo del núcleo en la línea de comandos?",
+      "answer": "dmesg",
+      "feedback":""
+    },
+    {
+      "id": 22,
+      "type": "text",
+      "question": "Sospecha que una nueva tarjeta Ethernet podría estar en conflicto con otro dispositivo. ¿Qué archivo debería revisar dentro del árbol /proc para saber qué IRQ utilizan los controladores del kernel?",
+      "answer": "interrupts",
+      "feedback":""
+    },
+    {
+      "id": 23,
+      "type": "text",
+      "question": "¿Qué archivo del sistema de archivos /proc contiene los parámetros transferidos del gestor de arranque al kernel?",
+      "answer": "cmdline",
+      "feedback":""
+    }
+  ]
+}

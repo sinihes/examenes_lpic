@@ -1,0 +1,746 @@
+{
+    "id": "8",
+    "title": "102:B - Linux Installation and Package Management",
+    "questions": [
+        {
+            "id": 1,
+            "type": "single",
+            "question": "¿Qué identificador usa un disco SATA (Serial ATA)?",
+            "options": [
+                { "label": "a", "text": "/dev/hdX", "correct": false },
+                { "label": "b", "text": "/dev/sataX", "correct": false },
+                { "label": "c", "text": "/dev/sdX", "correct": true },
+                { "label": "d", "text": "/disk/sataX", "correct": false }
+            ],
+            "feedback": "Los discos SATA se direccionan como /dev/sdX, al igual que un disco SCSI (Interfaz de Sistema de Computadora Pequeña). /dev/hdX es un disco ATA tradicional. Las demás opciones no existen."
+        },
+        {
+            "id": 2,
+            "type": "single",
+            "question": "¿Qué opciones de rpm muestran salida detallada durante la instalación?",
+            "options": [
+                { "label": "a", "text": "-ivh", "correct": true },
+                { "label": "b", "text": "-wvh", "correct": false },
+                { "label": "c", "text": "--avh", "correct": false },
+                { "label": "d", "text": "--ins-verbose", "correct": false }
+            ],
+            "feedback": "La opción -ivh instalará un archivo mediante rpm, mostrando tanto la salida detallada como las marcas de progreso. Las demás opciones presentadas no existen o no realizan la tarea especificada."
+        },
+        {
+            "id": 3,
+            "type": "single",
+            "question": "¿Qué comando agrega /usr/local/lib a LD_LIBRARY_PATH en BASH?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "set PATH=/usr/local/lib",
+                    "correct": false
+                },
+                {
+                    "label": "b",
+                    "text": "LD_LIBRARY_PATH=/usr/local/lib",
+                    "correct": false
+                },
+                {
+                    "label": "c",
+                    "text": "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib",
+                    "correct": true
+                },
+                {
+                    "label": "d",
+                    "text": "connectpath LD_LIBRARY_PATH=/usr/local/lib",
+                    "correct": false
+                }
+            ],
+            "feedback": "El comando de exportación se utiliza para configurar variables de entorno en BASH. Los demás comandos no son válidos para este propósito."
+        },
+        {
+            "id": 4,
+            "type": "single",
+            "question": "¿Qué tecla muestra el menú GRUB durante el arranque?",
+            "options": [
+                { "label": "a", "text": "Shift", "correct": true },
+                { "label": "b", "text": "E", "correct": false },
+                { "label": "c", "text": "V", "correct": false },
+                { "label": "d", "text": "H", "correct": false }
+            ],
+            "feedback": "La tecla Shift, si se presiona cuando se ha transferido por primera vez el control a GRUB, hará que se muestre el menú de GRUB."
+        },
+        {
+            "id": 5,
+            "type": "single",
+            "question": "¿Qué comando descarga un paquete RPM sin instalarlo?",
+            "options": [
+                { "label": "a", "text": "yumdl", "correct": false },
+                { "label": "b", "text": "yumdownloadonly", "correct": false },
+                { "label": "c", "text": "yumdown", "correct": false },
+                { "label": "d", "text": "yumdownloader", "correct": true }
+            ],
+            "feedback": "La utilidad yumdownloader descargará un paquete RPM, pero no lo instalará. Forma parte del paquete yum-utils. Las demás opciones de esta pregunta no existen."
+        },
+        {
+            "id": 6,
+            "type": "single",
+            "question": "¿Qué comando busca el paquete \"zsh\" en Debian?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "apt-cache search zsh",
+                    "correct": true
+                },
+                {
+                    "label": "b",
+                    "text": "apt-get search zsh",
+                    "correct": false
+                },
+                {
+                    "label": "c",
+                    "text": "apt-cache locate zsh",
+                    "correct": false
+                },
+                { "label": "d", "text": "apt search zsh", "correct": false }
+            ],
+            "feedback": "El comando apt-cache se usa para trabajar con la caché de paquetes y la opción de búsqueda se usa para buscar en ella el argumento proporcionado, en este caso, zsh. El comando apt-get se usa para trabajar con los propios paquetes, y el comando apt search no existe."
+        },
+        {
+            "id": 7,
+            "type": "single",
+            "question": "¿Qué opción en /etc/default/grub configura el SO predeterminado?",
+            "options": [
+                { "label": "a", "text": "GRUB_OS", "correct": false },
+                { "label": "b", "text": "GRUB_ON", "correct": false },
+                { "label": "c", "text": "GRUB_DEFAULT", "correct": true },
+                { "label": "d", "text": "DEFAULT_OS", "correct": false }
+            ],
+            "feedback": "La opción GRUB_DEFAULT, en el archivo /etc/default/grub, se utiliza para configurar el sistema operativo que arrancará por defecto. Las demás opciones no existen en este contexto."
+        },
+        {
+            "id": 8,
+            "type": "single",
+            "question": "¿Qué indica la opción \"ro\" en GRUB?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "Montar la partición root como solo lectura",
+                    "correct": true
+                },
+                {
+                    "label": "b",
+                    "text": "Montar el kernel como solo lectura",
+                    "correct": false
+                },
+                {
+                    "label": "c",
+                    "text": "Iniciar init en modo \"read-once\"",
+                    "correct": false
+                },
+                {
+                    "label": "d",
+                    "text": "Montar root en modo \"Raised Object\"",
+                    "correct": false
+                }
+            ],
+            "feedback": "La opción ro, que es la predeterminada para GRUB, montará inicialmente la partición raíz como de solo lectura y luego la volverá a montar como de lectura y escritura."
+        },
+        {
+            "id": 9,
+            "type": "single",
+            "question": "¿Dónde se encuentran los repositorios usados por yum?",
+            "options": [
+                { "label": "a", "text": "/etc/yum.conf", "correct": false },
+                { "label": "b", "text": "/etc/repos", "correct": false },
+                { "label": "c", "text": "/etc/yum.conf.d", "correct": false },
+                { "label": "d", "text": "/etc/yum.repos.d", "correct": true }
+            ],
+            "feedback": "Los archivos de configuración relacionados con los repositorios de yum se encuentran en /etc/yum.repos.d. De las demás opciones, /etc/yum.conf es un archivo, no un directorio, y los demás directorios no existen."
+        },
+        {
+            "id": 10,
+            "type": "single",
+            "question": "¿Qué opción de rpm verifica si los archivos fueron modificados?",
+            "options": [
+                { "label": "a", "text": "-V", "correct": true },
+                { "label": "b", "text": "-v", "correct": false },
+                { "label": "c", "text": "--verbose", "correct": false },
+                { "label": "d", "text": "--filesum", "correct": false }
+            ],
+            "feedback": "La opción -V o --verify compara los archivos de un paquete con las versiones (o sumas de comprobación) de la base de datos. Si no se han modificado archivos, no se genera ninguna salida. Tenga en cuenta que se puede generar una salida para archivos modificados durante la instalación o por otros motivos. Observe también el uso de una V mayúscula para esta opción, a diferencia de la v minúscula para verbose."
+        },
+        {
+            "id": 11,
+            "type": "single",
+            "question": "¿Qué opción de grub-mkconfig envía la salida a un archivo en lugar de STDOUT?",
+            "options": [
+                { "label": "a", "text": "-stdout", "correct": false },
+                { "label": "b", "text": "--fileout", "correct": false },
+                { "label": "c", "text": "-o", "correct": true },
+                { "label": "d", "text": "-f", "correct": false }
+            ],
+            "feedback": "La opción -o permite especificar un archivo de destino al que se enviará la salida en lugar de STDOUT. Las demás opciones mencionadas en esta pregunta no existen."
+        },
+        {
+            "id": 12,
+            "type": "single",
+            "question": "¿Qué indica la presencia de menu.lst en el sistema?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "GRUB Legacy está en uso",
+                    "correct": true
+                },
+                { "label": "b", "text": "GRUB2 está en uso", "correct": false },
+                {
+                    "label": "c",
+                    "text": "Error al crear menu.lst",
+                    "correct": false
+                },
+                {
+                    "label": "d",
+                    "text": "Cambios en opciones de rescate",
+                    "correct": false
+                }
+            ],
+            "feedback": "Los archivos menu.lst y grub.conf se utilizan en GRUB Legacy, es decir, anterior a GRUB 2. Por lo tanto, esto hace que la opción B sea incorrecta."
+        },
+        {
+            "id": 13,
+            "type": "single",
+            "question": "¿Qué comando muestra las bibliotecas de las que depende un comando?",
+            "options": [
+                { "label": "a", "text": "ldconfig", "correct": false },
+                { "label": "b", "text": "librarylist", "correct": false },
+                { "label": "c", "text": "listdeps", "correct": false },
+                { "label": "d", "text": "ldd", "correct": true }
+            ],
+            "feedback": "El comando ldd enumerará las bibliotecas de las que depende el argumento del comando."
+        },
+        {
+            "id": 14,
+            "type": "single",
+            "question": "¿Qué es cierto sobre el espacio swap en Linux?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "Almacena tablas temporales de bases de datos",
+                    "correct": false
+                },
+                {
+                    "label": "b",
+                    "text": "Proporciona memoria adicional cuando falta RAM",
+                    "correct": true
+                },
+                {
+                    "label": "c",
+                    "text": "Lo usa el servidor de correo para seguridad",
+                    "correct": false
+                },
+                {
+                    "label": "d",
+                    "text": "Limpia datos temporales de red",
+                    "correct": false
+                }
+            ],
+            "feedback": "El espacio de intercambio se utiliza cuando no hay suficiente memoria RAM en un sistema."
+        },
+        {
+            "id": 15,
+            "type": "single",
+            "question": "¿Qué opción en GRUB establece la partición raíz (/dev/sda2) al arrancar?",
+            "options": [
+                { "label": "a", "text": "root=/dev/sda2", "correct": true },
+                { "label": "b", "text": "root={hd0,3}", "correct": false },
+                {
+                    "label": "c",
+                    "text": "rootpartition=/dev/sda2",
+                    "correct": false
+                },
+                {
+                    "label": "d",
+                    "text": "rootpartition={hd0,2}",
+                    "correct": false
+                }
+            ],
+            "feedback": "La opción root=/dev/sda2 hará que el kernel cargue /dev/sda2 para su partición raíz. La opción rootpartition no es válida, y el formato de root={hd0,3} no es válido en este contexto."
+        },
+        {
+            "id": 16,
+            "type": "single",
+            "question": "¿Qué directorio NO se usa normalmente para bibliotecas?",
+            "options": [
+                { "label": "a", "text": "/lib", "correct": false },
+                { "label": "b", "text": "/etc/lib", "correct": true },
+                { "label": "c", "text": "/usr/lib", "correct": false },
+                { "label": "d", "text": "/usr/local/lib", "correct": false }
+            ],
+            "feedback": "El directorio /etc/lib no suele estar asociado con archivos de biblioteca y no suele existir en un sistema Linux a menos que se cree manualmente. Las demás opciones contienen bibliotecas del sistema o pueden usarse para ese fin."
+        },
+        {
+            "id": 17,
+            "type": "single",
+            "question": "¿Qué comando actualiza la caché de paquetes en Debian?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "apt-get cache-update",
+                    "correct": false
+                },
+                { "label": "b", "text": "apt-cache update", "correct": false },
+                { "label": "c", "text": "apt-get update", "correct": true },
+                { "label": "d", "text": "apt-get upgrade", "correct": false }
+            ],
+            "feedback": "El comando apt-get update actualiza la caché de paquetes recuperando la lista de paquetes más reciente del origen. Apt-cache no incluye las opciones cache-update ni update. La opción upgrade se utiliza para actualizar los paquetes del sistema, no la caché."
+        },
+        {
+            "id": 18,
+            "type": "single",
+            "question": "¿Dónde se almacenan los repositorios de paquetes en Debian?",
+            "options": [
+                { "label": "a", "text": "/etc/apt.list", "correct": false },
+                { "label": "b", "text": "/etc/sources.list", "correct": false },
+                {
+                    "label": "c",
+                    "text": "/etc/apt/sources.list",
+                    "correct": true
+                },
+                {
+                    "label": "d",
+                    "text": "/etc/apt.d/sources.list",
+                    "correct": false
+                }
+            ],
+            "feedback": "El archivo sources.list, ubicado en /etc/apt, contiene la lista de repositorios de paquetes Debian. Las demás ubicaciones de los archivos no existen por defecto."
+        },
+        {
+            "id": 19,
+            "type": "single",
+            "question": "¿Qué tamaño es apropiado para la partición /boot?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "Entre 100MB y 500MB",
+                    "correct": true
+                },
+                { "label": "b", "text": "Entre 1GB y 10GB", "correct": false },
+                {
+                    "label": "c",
+                    "text": "No debe particionarse por separado",
+                    "correct": false
+                },
+                { "label": "d", "text": "Menos de 5MB", "correct": false }
+            ],
+            "feedback": "La partición /boot suele tener mucho menos de 500 MB, pero no debe ser demasiado pequeña. El espacio utilizado en /boot aumentará a medida que se añadan más núcleos, como durante un proceso de actualización. Por lo tanto, aunque el tamaño recomendado es de hasta 500 MB, la experiencia demuestra que una partición más grande, posiblemente de 1 GB a 2 GB, es útil."
+        },
+        {
+            "id": 20,
+            "type": "single",
+            "question": "¿Qué comando inicializa una partición para LVM?",
+            "options": [
+                { "label": "a", "text": "lvmcreate", "correct": false },
+                { "label": "b", "text": "pvcreate", "correct": true },
+                { "label": "c", "text": "fvcreate", "correct": false },
+                { "label": "d", "text": "lvinit", "correct": false }
+            ],
+            "feedback": "El comando pvcreate inicializa una partición física para uso futuro como un volumen lógico con LVM."
+        },
+        {
+            "id": 21,
+            "type": "single",
+            "question": "¿Qué comando instala GRUB en el MBR del segundo disco SATA?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "grub-install /dev/hdb2",
+                    "correct": false
+                },
+                {
+                    "label": "b",
+                    "text": "grub-install /dev/sda2",
+                    "correct": false
+                },
+                {
+                    "label": "c",
+                    "text": "grub-config /dev/sda",
+                    "correct": false
+                },
+                {
+                    "label": "d",
+                    "text": "grub-install /dev/sdb",
+                    "correct": true
+                }
+            ],
+            "feedback": "El comando grub-install se utiliza para instalar GRUB en un disco y el segundo disco SATA sería /dev/sdb, lo que hace que la opción D sea correcta."
+        },
+        {
+            "id": 22,
+            "type": "single",
+            "question": "¿Qué comando modifica las opciones elegidas durante la instalación de un paquete Debian?",
+            "options": [
+                { "label": "a", "text": "dpkg-reconfigure", "correct": true },
+                { "label": "b", "text": "dpkg -r", "correct": false },
+                { "label": "c", "text": "dpkg --reconf", "correct": false },
+                { "label": "d", "text": "apt-get reinstall", "correct": false }
+            ],
+            "feedback": "El programa dpkg-reconfigure reconfigurará o modificará un paquete ya instalado. La opción -r de dpkg elimina un paquete, lo que hace que la opción B sea incorrecta. No existe la opción reconf para dpkg ni la opción reinstall para apt-get."
+        },
+        {
+            "id": 23,
+            "type": "single",
+            "question": "¿Qué comando crea un volumen lógico con LVM?",
+            "options": [
+                { "label": "a", "text": "pvcreate", "correct": false },
+                { "label": "b", "text": "lvmcreate", "correct": false },
+                { "label": "c", "text": "lvcreate", "correct": true },
+                { "label": "d", "text": "volcreate", "correct": false }
+            ],
+            "feedback": "El comando lvcreate se utiliza para crear volúmenes lógicos con LVM. El comando pvcreate inicializa los volúmenes físicos antes de crear los volúmenes lógicos. Los comandos de las otras dos opciones para esta pregunta no existen."
+        },
+        {
+            "id": 24,
+            "type": "single",
+            "question": "¿Cuál es el orden lógico para crear un volumen LVM?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "Crear volumen físico → grupo de volúmenes → volumen lógico",
+                    "correct": true
+                },
+                {
+                    "label": "b",
+                    "text": "Crear volumen físico → volumen lógico → grupo de volúmenes",
+                    "correct": false
+                },
+                {
+                    "label": "c",
+                    "text": "Crear volumen lógico → volumen físico → grupo de volúmenes",
+                    "correct": false
+                },
+                {
+                    "label": "d",
+                    "text": "Crear LVM → formatear → particionar",
+                    "correct": false
+                }
+            ],
+            "feedback": "Primero se inicializan los volúmenes físicos, luego se crea el grupo de volúmenes y luego se crea el volumen lógico."
+        },
+        {
+            "id": 25,
+            "type": "single",
+            "question": "¿Qué herramienta de Debian ofrece interfaz terminal para gestión de paquetes?",
+            "options": [
+                { "label": "a", "text": "apt-get", "correct": false },
+                { "label": "b", "text": "dpkg", "correct": false },
+                { "label": "c", "text": "apt-cache", "correct": false },
+                { "label": "d", "text": "aptitude", "correct": true }
+            ],
+            "feedback": "aptitude proporciona la interfaz basada en terminal en lugar de la interfaz de línea de comandos estándar de las otras herramientas enumeradas en esta pregunta."
+        },
+        {
+            "id": 26,
+            "type": "single",
+            "question": "¿Qué combinación de teclas edita opciones del kernel en GRUB Legacy?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "ESC para editar + Enter para arrancar",
+                    "correct": false
+                },
+                {
+                    "label": "b",
+                    "text": "v para editar + Enter para arrancar",
+                    "correct": false
+                },
+                {
+                    "label": "c",
+                    "text": "e para editar + b para arrancar",
+                    "correct": true
+                },
+                {
+                    "label": "d",
+                    "text": "v para editar + b para arrancar",
+                    "correct": false
+                }
+            ],
+            "feedback": "Comienza una sesión de edición con una e cuando la opción de arranque está resaltada. Luego puedes hacer cambios y, al terminar, pulsar b para arrancar el sistema."
+        },
+        {
+            "id": 27,
+            "type": "single",
+            "question": "¿Qué opción de yum busca en la caché de paquetes?",
+            "options": [
+                { "label": "a", "text": "seek", "correct": false },
+                { "label": "b", "text": "query", "correct": false },
+                { "label": "c", "text": "--search", "correct": false },
+                { "label": "d", "text": "search", "correct": true }
+            ],
+            "feedback": "La opción de búsqueda realiza una búsqueda de varios campos como el nombre y la descripción del paquete."
+        },
+        {
+            "id": 28,
+            "type": "single",
+            "question": "¿Qué opción de rpm muestra la versión del kernel?",
+            "options": [
+                { "label": "a", "text": "rpm kernel", "correct": false },
+                { "label": "b", "text": "rpm -qa kernel", "correct": true },
+                { "label": "c", "text": "rpm search kernel", "correct": false },
+                { "label": "d", "text": "rpm --list kern", "correct": false }
+            ],
+            "feedback": "El comando rpm -qa kernel mostrará la versión del kernel. También puede usar uname -r para el mismo propósito."
+        },
+        {
+            "id": 29,
+            "type": "single",
+            "question": "Para hacer de \"Debian\" el SO predeterminado en GRUB, ¿qué opción se usa en /etc/default/grub?",
+            "options": [
+                { "label": "a", "text": "GRUB_OS", "correct": false },
+                { "label": "b", "text": "GRUB_OS_DEF", "correct": false },
+                { "label": "c", "text": "GRUB_DEFAULT", "correct": true },
+                { "label": "d", "text": "GRUB_CONF", "correct": false }
+            ],
+            "feedback": "La opción GRUB_DEFAULT en /etc/default/grub configurará el sistema operativo para que arranque de forma predeterminada."
+        },
+        {
+            "id": 30,
+            "type": "single",
+            "question": "¿Qué opción en /etc/yum.conf excluye actualizaciones del kernel?",
+            "options": [
+                { "label": "a", "text": "exclude=kernel*", "correct": true },
+                { "label": "b", "text": "exclude-kernel", "correct": false },
+                {
+                    "label": "c",
+                    "text": "updatekernel=false",
+                    "correct": false
+                },
+                {
+                    "label": "d",
+                    "text": "include-except=kernel",
+                    "correct": false
+                }
+            ],
+            "feedback": "La opción de exclusión permite excluir ciertos paquetes. El argumento acepta comodines, por lo que excluir todas las actualizaciones del kernel* generará el comportamiento deseado."
+        },
+        {
+            "id": 31,
+            "type": "single",
+            "question": "¿Qué comando debe ejecutarse después de modificar /etc/default/grub?",
+            "options": [
+                { "label": "a", "text": "grub", "correct": false },
+                { "label": "b", "text": "grub-mkconfig", "correct": true },
+                { "label": "c", "text": "grub-inst", "correct": false },
+                { "label": "d", "text": "reboot", "correct": false }
+            ],
+            "feedback": "El comando grub-mkconfig debe ejecutarse después de realizar un cambio en el archivo /etc/default/grub para que se pueda crear un nuevo archivo de configuración con las opciones modificadas."
+        },
+        {
+            "id": 32,
+            "type": "single",
+            "question": "¿Qué comando busca información de un paquete en Debian (incluyendo si está instalado)?",
+            "options": [
+                { "label": "a", "text": "dpkg -i", "correct": false },
+                { "label": "b", "text": "dpkg -s", "correct": true },
+                { "label": "c", "text": "apt-cache", "correct": false },
+                { "label": "d", "text": "apt-info", "correct": false }
+            ],
+            "feedback": "La opción -s de dpkg busca el paquete indicado y proporciona información sobre su estado actual en el sistema. El comando apt-cache no se utiliza para este fin, y la opción -i de dpkg instala un paquete. El comando apt-info no existe."
+        },
+        {
+            "id": 33,
+            "type": "single",
+            "question": "¿Qué comando busca volúmenes físicos para LVM?",
+            "options": [
+                { "label": "a", "text": "lvmcreate", "correct": false },
+                { "label": "b", "text": "pvcreate", "correct": false },
+                { "label": "c", "text": "lvmdiskscan", "correct": true },
+                { "label": "d", "text": "lvmscan", "correct": false }
+            ],
+            "feedback": "El comando lvmdiskscan busca volúmenes físicos que se hayan inicializado para su uso con LVM."
+        },
+        {
+            "id": 34,
+            "type": "single",
+            "question": "¿Qué opción de yumdownloader descarga también dependencias?",
+            "options": [
+                { "label": "a", "text": "--deps", "correct": false },
+                { "label": "b", "text": "--resolve", "correct": true },
+                { "label": "c", "text": "--resdeps", "correct": false },
+                { "label": "d", "text": "--resolve", "correct": false }
+            ],
+            "feedback": "La opción --resolve descargará las dependencias del paquete que se está descargando. Las demás opciones de esta pregunta no son válidas para el comando yumdownloader."
+        },
+        {
+            "id": 35,
+            "type": "single",
+            "question": "¿Qué comando instala un paquete Debian previamente descargado?",
+            "options": [
+                { "label": "a", "text": "dpkg -i", "correct": true },
+                { "label": "b", "text": "apt-install", "correct": false },
+                { "label": "c", "text": "apt-slash", "correct": false },
+                { "label": "d", "text": "dpkg -U", "correct": false }
+            ],
+            "feedback": "La opción -i de dpkg instalará un paquete previamente descargado. Los demás comandos no existen, y la opción -U de dpkg tampoco."
+        },
+        {
+            "id": 36,
+            "type": "single",
+            "question": "¿A qué disco/partición corresponde hd(0,0) en GRUB Legacy?",
+            "options": [
+                { "label": "a", "text": "/dev/hdb2", "correct": false },
+                { "label": "b", "text": "/dev/hda0", "correct": false },
+                { "label": "c", "text": "/dev/disk1", "correct": false },
+                { "label": "d", "text": "/dev/sda1", "correct": true }
+            ],
+            "feedback": "GRUB Legacy empieza a contar desde 0 y separa la letra del disco y la partición con una coma, convirtiendo 0,0 en la primera partición del primer disco. Las opciones A y C no son el primer disco del sistema, y la opción B contiene una partición inexistente."
+        },
+        {
+            "id": 37,
+            "type": "single",
+            "question": "En máquinas virtuales, ¿qué sigue después de que el kernel inicializa dispositivos?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "La BIOS inicializa dispositivos",
+                    "correct": false
+                },
+                {
+                    "label": "b",
+                    "text": "El sistema entra en modo multiusuario",
+                    "correct": false
+                },
+                {
+                    "label": "c",
+                    "text": "El gestor de arranque inicializa el kernel",
+                    "correct": true
+                },
+                {
+                    "label": "d",
+                    "text": "Se monta la partición raíz",
+                    "correct": false
+                }
+            ],
+            "feedback": "La partición raíz se monta tras la inicialización del dispositivo. Los servicios del sistema, incluido el modo multiusuario, se inician tras el montaje de la partición raíz. Las otras dos opciones, A y C, se ejecutan antes de que el kernel inicialice los controladores del dispositivo. Este proceso es básicamente el mismo para las máquinas virtuales que para las físicas."
+        },
+        {
+            "id": 38,
+            "type": "single",
+            "question": "¿Qué formato usa la Partición del Sistema EFI (ESP)?",
+            "options": [
+                { "label": "a", "text": "FAT", "correct": true },
+                { "label": "b", "text": "EXT4", "correct": false },
+                { "label": "c", "text": "NTFS", "correct": false },
+                { "label": "d", "text": "EXT3", "correct": false }
+            ],
+            "feedback": "ESP utiliza el sistema de archivos FAT heredado como formato subyacente. Existe una especificación que regula cómo debe crearse la partición ESP sobre el formato FAT para cargadores de arranque e imágenes del kernel. Tenga en cuenta que la partición suele ser FAT32, pero puede ser FAT16 si solo se alojarán sistemas Linux en la unidad."
+        },
+        {
+            "id": 39,
+            "type": "single",
+            "question": "¿Qué comando instala extlinux en /boot?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "extlinux --install /boot",
+                    "correct": true
+                },
+                {
+                    "label": "b",
+                    "text": "extlinux --inst /boot",
+                    "correct": false
+                },
+                { "label": "c", "text": "extlinux -boot", "correct": false },
+                {
+                    "label": "d",
+                    "text": "extlinux /boot install",
+                    "correct": false
+                }
+            ],
+            "feedback": "Se utiliza la opción --install seguida de la partición en la que se instalará extlinux para el arranque."
+        },
+        {
+            "id": 40,
+            "type": "single",
+            "question": "¿Qué comando monta /dev/sda1 en /boot?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "mount /dev/sda /boot",
+                    "correct": false
+                },
+                {
+                    "label": "b",
+                    "text": "mount /boot /dev/sda1",
+                    "correct": false
+                },
+                {
+                    "label": "c",
+                    "text": "mount /dev/sda1 /boot",
+                    "correct": true
+                },
+                {
+                    "label": "d",
+                    "text": "mount -dev sda1 /boot",
+                    "correct": false
+                }
+            ],
+            "feedback": "El formato del comando de montaje es [partición] [destino], lo que hace que la opción C sea correcta. Las otras opciones no son válidas porque los argumentos están en el orden incorrecto."
+        },
+        {
+            "id": 41,
+            "type": "single",
+            "question": "¿Qué sector inicial del disco almacena información sobre particiones y ubicación del SO?",
+            "options": [
+                {
+                    "label": "a",
+                    "text": "Minimal boot record (MBR)",
+                    "correct": false
+                },
+                {
+                    "label": "b",
+                    "text": "Master boot record (MBR)",
+                    "correct": true
+                },
+                { "label": "c", "text": "Init sector", "correct": false },
+                {
+                    "label": "d",
+                    "text": "Master partition table (MPT)",
+                    "correct": false
+                }
+            ],
+            "feedback": "El registro maestro de arranque (MBR) es el primer sector de un disco y contiene información sobre su estructura. Si el MBR se daña, se podrían perder todos los datos del disco. Las demás opciones mostradas para esta pregunta no son válidas."
+        },
+        {
+            "id": 42,
+            "type": "single",
+            "question": "¿Qué opción de grub-install coloca imágenes GRUB en directorio alternativo?",
+            "options": [
+                { "label": "a", "text": "--boot-dir", "correct": false },
+                { "label": "b", "text": "-b", "correct": false },
+                { "label": "c", "text": "-boot", "correct": false },
+                { "label": "d", "text": "--boot-directory", "correct": true }
+            ],
+            "feedback": "La opción --boot-directory permite especificar una ubicación alternativa para las imágenes de GRUB, en lugar de la predeterminada /boot. Las demás opciones mostradas para esta pregunta no son válidas."
+        },
+        {
+            "id": 43,
+            "type": "single",
+            "question": "¿Qué archivo lista los sistemas de archivos actualmente montados?",
+            "options": [
+                { "label": "a", "text": "/etc/fstab", "correct": false },
+                { "label": "b", "text": "/etc/curmount", "correct": false },
+                { "label": "c", "text": "/var/spool/files", "correct": false },
+                { "label": "d", "text": "/etc/mtab", "correct": true }
+            ],
+            "feedback": "El archivo /etc/mtab lista los sistemas de archivos actualmente montados. El archivo /etc/fstab lista todos los sistemas de archivos del equipo, pero no distingue entre sistemas montados y no montados. Las demás opciones de esta pregunta no existen."
+        },
+        {
+            "id": 44,
+            "type": "single",
+            "question": "¿Qué comando activa espacio swap?",
+            "options": [
+                { "label": "a", "text": "mkswap", "correct": false },
+                { "label": "b", "text": "swapon", "correct": true },
+                { "label": "c", "text": "swapact", "correct": false },
+                { "label": "d", "text": "actswap", "correct": false }
+            ],
+            "feedback": "El comando swapon habilita el espacio de intercambio, permitiéndole usarse como memoria virtual. El comando mkswap formatea el espacio. Los otros dos comandos no son válidos."
+        }
+    ]
+}
