@@ -38,7 +38,7 @@
         <div class="d-flex align-items-center">
             <i class="fas fa-chart-line text-muted me-2"></i>
             <small class="text-muted">
-                Tienes {{ $exam->totalIntentos }} intentos registrados
+                Tienes {{ auth()->user()->results->where('exam.course', $course)->count() }} intentos registrados
             </small>
         </div>
     </div>
