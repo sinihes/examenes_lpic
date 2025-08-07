@@ -1,0 +1,4 @@
+name: examenes_lpic
+root: public
+domains:
+  - examenes.sinihescode.com
