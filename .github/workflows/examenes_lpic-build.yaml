@@ -72,7 +72,6 @@ jobs:
           DB_PORT: 3306
           DB_USERNAME: dbu4846625
         run: |
-          php artisan key:generate --force -n
           [ -f .env ] || cp .env.example .env
           php artisan storage:link
           chmod -R 755 storage bootstrap/cache
