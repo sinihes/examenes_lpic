@@ -1,0 +1,335 @@
+{
+  "id": "5",
+  "title": "211 - Email Services",
+  "questions": [
+    {
+      "id": 1,
+      "type": "single",
+      "question": "¿Qué comando se utiliza para eliminar un correo electrónico de la cola de correo con Postfix?",
+      "options": [
+        { "label": "a", "text": "postsuper -d", "correct": true },
+        { "label": "b", "text": "postmaster", "correct": false },
+        { "label": "c", "text": "postfix -d", "correct": false },
+        { "label": "d", "text": "postdel", "correct": false }
+      ],
+      "feedback": "El comando postsuper se utiliza para la gestión de varios elementos con Postfix, incluida la eliminación de mensajes individuales de la cola de correo. Los otros comandos no funcionarán para el propósito descrito."
+    },
+    {
+      "id": 2,
+      "type": "single",
+      "question": "¿Dentro de qué jerarquía de directorios se almacenan los mensajes relacionados con la cola para Postfix?",
+      "options": [
+        { "label": "a", "text": "/var/mqueue", "correct": false },
+        { "label": "b", "text": "/var/spool/mailq", "correct": false },
+        { "label": "c", "text": "/var/spool/postfix", "correct": true },
+        { "label": "d", "text": "/var/postfix", "correct": false }
+      ],
+      "feedback": "El directorio /var/spool/postfix contiene directorios y archivos relacionados con la cola de correo para Postfix. Los otros directorios listados no son válidos para este escenario."
+    },
+    {
+      "id": 3,
+      "type": "single",
+      "question": "¿En qué formato deben estar el certificado y la clave para una configuración TLS de Postfix?",
+      "options": [
+        { "label": "a", "text": "PKCS", "correct": false },
+        { "label": "b", "text": "PEM", "correct": true },
+        { "label": "c", "text": "TLS", "correct": false },
+        { "label": "d", "text": "SSL", "correct": false }
+      ],
+      "feedback": "El formato PEM se utiliza para claves públicas y privadas con una configuración TLS de Postfix. Los otros métodos listados son algoritmos o sistemas criptográficos válidos pero no para el escenario descrito."
+    },
+    {
+      "id": 4,
+      "type": "single",
+      "question": "¿Qué palabra clave de configuración para Sieve es responsable de mover el correo al buzón especificado?",
+      "options": [
+        { "label": "a", "text": "filein", "correct": false },
+        { "label": "b", "text": "moveinto", "correct": false },
+        { "label": "c", "text": "mailmover", "correct": false },
+        { "label": "d", "text": "fileinto", "correct": true }
+      ],
+      "feedback": "La palabra clave fileinto se utiliza para definir el destino del correo que coincide con una o más condiciones dentro de Sieve. Las otras palabras clave de configuración no son válidas."
+    },
+    {
+      "id": 5,
+      "type": "single",
+      "question": "¿Dentro de qué directorio se almacenan los archivos de configuración para el servidor de correo Postfix?",
+      "options": [
+        { "label": "a", "text": "/etc/postfix.d", "correct": false },
+        { "label": "b", "text": "/etc/postfix.conf.d", "correct": false },
+        { "label": "c", "text": "/etc/mail/postfix", "correct": false },
+        { "label": "d", "text": "/etc/postfix", "correct": true }
+      ],
+      "feedback": "El directorio /etc/postfix contiene archivos relacionados con la configuración de Postfix en un servidor dado. Aunque los otros directorios mostrados son nombres válidos, no son la ubicación predeterminada para las configuraciones relacionadas con Postfix."
+    },
+    {
+      "id": 6,
+      "type": "single",
+      "question": "¿Cuál de los siguientes archivos se utiliza como archivo de configuración basado en usuario para Procmail?",
+      "options": [
+        { "label": "a", "text": "/home/procmail.conf", "correct": false },
+        { "label": "b", "text": "~/.procmailrc", "correct": true },
+        { "label": "c", "text": "/etc/procmail.conf", "correct": false },
+        { "label": "d", "text": "~/procmail.conf", "correct": false }
+      ],
+      "feedback": "El archivo .procmailrc, encontrado en el directorio home de un usuario, es utilizado por Procmail para procesar mensajes en una base por usuario. Los otros archivos no son utilizados por Procmail en una configuración predeterminada."
+    },
+    {
+      "id": 7,
+      "type": "single",
+      "question": "¿Cuál de las siguientes definiciones en /etc/aliases entregará el correo destinado a root a dos direcciones de correo electrónico, admin@example.com y webmaster@example.com?",
+      "options": [
+        { "label": "a", "text": "[root] = admin@example.com, webmaster@example.com", "correct": false },
+        { "label": "b", "text": "root: admin webmaster", "correct": false },
+        { "label": "c", "text": "root: admin, webmaster", "correct": false },
+        { "label": "d", "text": "root: admin@example.com, webmaster@example.com", "correct": true }
+      ],
+      "feedback": "El formato es dirección-local: dirección-destino. Cada dirección de destino está separada por una coma. La diferencia entre las respuestas C y D es que la pregunta específicamente pidió direcciones @example.com, y como la pregunta no especificó si este servidor era el servidor para @example.com, las direcciones de destino necesitaban estar completamente calificadas."
+    },
+    {
+      "id": 8,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos muestra la cola de correo para un servidor Postfix?",
+      "options": [
+        { "label": "a", "text": "mailqueue", "correct": false },
+        { "label": "b", "text": "qmail", "correct": false },
+        { "label": "c", "text": "mailq", "correct": true },
+        { "label": "d", "text": "mail-queue", "correct": false }
+      ],
+      "feedback": "El comando mailq muestra la cola de correo actual para un servidor Postfix. Los otros comandos no son válidos, aunque existe un software popular de servidor de correo llamado qmail."
+    },
+    {
+      "id": 9,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos hace que Postfix procese la cola de correo inmediatamente?",
+      "options": [
+        { "label": "a", "text": "postqueue -f", "correct": true },
+        { "label": "b", "text": "mailq -f", "correct": false },
+        { "label": "c", "text": "postqueue -a", "correct": false },
+        { "label": "d", "text": "postmailq -process", "correct": false }
+      ],
+      "feedback": "El comando postqueue se utilizará para este propósito, y cuando se le da la opción -f, vaciará la cola inmediatamente. Los otros comandos y opciones no cumplen con el propósito previsto para el escenario."
+    },
+    {
+      "id": 10,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos elimina todos los mensajes de la cola de correo con Postfix?",
+      "options": [
+        { "label": "a", "text": "postsuper -d mqueue", "correct": false },
+        { "label": "b", "text": "postsuper -d ALL", "correct": true },
+        { "label": "c", "text": "postsuper delete-all", "correct": false },
+        { "label": "d", "text": "postsuper -D", "correct": false }
+      ],
+      "feedback": "El comando postsuper se utiliza para este propósito, específicamente con la opción -d. Cuando se le da la palabra clave ALL, todos los mensajes serán eliminados de la cola."
+    },
+        {
+      "id": 21,
+      "type": "single",
+      "question": "Cuando se trabaja con Sieve, ¿qué acción se realiza implícitamente cuando ninguna otra acción tiene precedencia?",
+      "options": [
+        { "label": "a", "text": "keep", "correct": true },
+        { "label": "b", "text": "discard", "correct": false },
+        { "label": "c", "text": "shred", "correct": false },
+        { "label": "d", "text": "forward", "correct": false }
+      ],
+      "feedback": "Existe una acción implícita keep si ninguna otra acción tiene precedencia o maneja el correo dentro de un conjunto de acciones. Existe una acción discard, pero no es la predeterminada. No existen acciones llamadas shred o forward."
+    },
+    {
+      "id": 22,
+      "type": "single",
+      "question": "¿Qué parámetro de configuración para Postfix establece las redes que pueden retransmitir a través del servidor?",
+      "options": [
+        { "label": "a", "text": "relaynet", "correct": false },
+        { "label": "b", "text": "mynetworks", "correct": true },
+        { "label": "c", "text": "networkrelay", "correct": false },
+        { "label": "d", "text": "relnet", "correct": false }
+      ],
+      "feedback": "El parámetro mynetworks establece las redes o hosts que pueden retransmitir a través del servidor Postfix. Las otras opciones no son válidas. Nota: existen parámetros relacionados con retransmisión como relayhost, pero estos típicamente se usan para establecer el destino de retransmisión en lugar de permitir retransmisión a través del servidor."
+    },
+    {
+      "id": 23,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos prueba la autenticación para un usuario de un servidor Dovecot?",
+      "options": [
+        { "label": "a", "text": "dovecot -testauth", "correct": false },
+        { "label": "b", "text": "dovecot testauth", "correct": false },
+        { "label": "c", "text": "dovecot auth", "correct": false },
+        { "label": "d", "text": "doveadm auth", "correct": true }
+      ],
+      "feedback": "El comando doveadm, cuando se usa con la opción auth, prueba la autenticación para un usuario dado. Existe un comando dovecot, pero este no tiene opciones auth o testauth. Asimismo, no existe una opción testauth para doveadm."
+    },
+    {
+      "id": 24,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos compila un archivo de configuración de Sendmail en su lenguaje nativo a un archivo de configuración estándar de Sendmail en /etc/sendmail.cf?",
+      "options": [
+        { "label": "a", "text": "makemap sendmail.mc > /etc/sendmail.cf", "correct": false },
+        { "label": "b", "text": "m1 sendmail.mc > /etc/sendmail.cf", "correct": false },
+        { "label": "c", "text": "gcc sendmail.mc > /etc/sendmail.cf", "correct": false },
+        { "label": "d", "text": "m4 sendmail.mc > /etc/sendmail.cf", "correct": true }
+      ],
+      "feedback": "El comando m4 compila una configuración nativa de Sendmail al archivo de configuración final de Sendmail. Se usa una redirección estándar para enviar la salida a su destino final."
+    },
+    {
+      "id": 25,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos muestra todos los parámetros relacionados con una configuración de Postfix?",
+      "options": [
+        { "label": "a", "text": "postconf -d", "correct": true },
+        { "label": "b", "text": "postmaster -config", "correct": false },
+        { "label": "c", "text": "postfix -c", "correct": false },
+        { "label": "d", "text": "postc -a", "correct": false }
+      ],
+      "feedback": "El comando postconf se usa para este propósito, y cuando se le da la opción -d muestra todos los parámetros en la configuración actual de Postfix. Nota: el único otro comando mostrado que es válido es postfix, pero ese comando usa -c para especificar el directorio de configuración y no para el propósito descrito en el escenario de esta pregunta."
+    },
+    {
+      "id": 26,
+      "type": "single",
+      "question": "¿En qué archivo se encontrarán errores relacionados con la entrega de correo en un servidor Postfix?",
+      "options": [
+        { "label": "a", "text": "/var/log/mail", "correct": false },
+        { "label": "b", "text": "/var/log/postfix.log", "correct": false },
+        { "label": "c", "text": "/var/log/mail.err", "correct": true },
+        { "label": "d", "text": "/var/log/postfix.err", "correct": false }
+      ],
+      "feedback": "El archivo /var/log/mail.err contiene errores relacionados con la entrega de correo. Sin embargo, en algunos sistemas, los errores relacionados con correo pueden ir a un registro diferente como /var/log/mail.log o /var/log/mail.info o similar."
+    },
+    {
+      "id": 27,
+      "type": "single",
+      "question": "¿Qué opción se usa para crear una estrofa (stanza) de puerto de escucha dentro de una configuración de Dovecot?",
+      "options": [
+        { "label": "a", "text": "inet_port", "correct": false },
+        { "label": "b", "text": "inet_listener", "correct": true },
+        { "label": "c", "text": "listening_port", "correct": false },
+        { "label": "d", "text": "listener", "correct": false }
+      ],
+      "feedback": "La directiva inet_listener crea una estrofa para un puerto de escucha dentro de Dovecot. Se pueden especificar parámetros adicionales relacionados con el listener dado dentro de la estrofa inet_listener."
+    },
+    {
+      "id": 28,
+      "type": "single",
+      "question": "¿En qué puerto opera SMTP por defecto?",
+      "options": [
+        { "label": "a", "text": "25", "correct": true },
+        { "label": "b", "text": "2525", "correct": false },
+        { "label": "c", "text": "110", "correct": false },
+        { "label": "d", "text": "143", "correct": false }
+      ],
+      "feedback": "SMTP usa el puerto TCP 25 por defecto. El puerto 110 es para POP3, y 143 para IMAP. El puerto 2525 no es un puerto bien conocido."
+    },
+    {
+      "id": 29,
+      "type": "single",
+      "question": "Necesitas encontrar la ruta de la cola de correo en un servidor Postfix. Estás usando postconf -d para ver todos los parámetros. ¿Qué parámetro de configuración contiene la ruta de la cola de correo en un servidor Postfix?",
+      "options": [
+        { "label": "a", "text": "mqueue", "correct": false },
+        { "label": "b", "text": "queue_dir", "correct": false },
+        { "label": "c", "text": "mailq_path", "correct": true },
+        { "label": "d", "text": "mqueue_path", "correct": false }
+      ],
+      "feedback": "El parámetro mailq_path contiene la ruta a la cola de correo para Postfix. Puedes usar esto para diagnosticar problemas con los directorios de cola. Los otros parámetros mostrados no son válidos en Postfix."
+    },
+    {
+      "id": 30,
+      "type": "single",
+      "question": "Al probar comunicaciones SMTP entre un cliente y un servidor, necesitas iniciar la conversación. ¿Cuál de las siguientes líneas muestra el inicio de una conversación SMTP usando la sintaxis Extended Hello desde mail.example.com?",
+      "options": [
+        { "label": "a", "text": "BEGIN mail.example.com", "correct": false },
+        { "label": "b", "text": "SMTP mail.example.com", "correct": false },
+        { "label": "c", "text": "HELO mail.example.com", "correct": false },
+        { "label": "d", "text": "EHLO mail.example.com", "correct": true }
+      ],
+      "feedback": "El comando EHLO indica la sintaxis Extended Hello, y va seguido del host desde el que se ha iniciado la comunicación. De las otras opciones, HELO es válida, pero no es la sintaxis Extended Hello especificada en la pregunta."
+    },
+    {
+      "id": 31,
+      "type": "single",
+      "question": "¿Cuál de las siguientes palabras clave define una condición alternativa cuando falla la condición if original en Sieve?",
+      "options": [
+        { "label": "a", "text": "else if", "correct": false },
+        { "label": "b", "text": "elsif", "correct": true },
+        { "label": "c", "text": "elseif", "correct": false },
+        { "label": "d", "text": "alt", "correct": false }
+      ],
+      "feedback": "Sieve usa elsif para definir una condición alternativa. Las otras formas de esta palabra clave son válidas en muchos lenguajes pero no en Sieve. No existe la palabra clave alt."
+    },
+    {
+      "id": 32,
+      "type": "single",
+      "question": "¿Qué prueba de Sieve examina un objeto como una dirección para determinar si contiene una cadena específica?",
+      "options": [
+        { "label": "a", "text": ":grep", "correct": false },
+        { "label": "b", "text": ":contains", "correct": true },
+        { "label": "c", "text": ":has", "correct": false },
+        { "label": "d", "text": ":lookin", "correct": false }
+      ],
+      "feedback": "La palabra clave :contains busca en un objeto como una dirección para ver si contiene una cadena que coincida. Las otras palabras clave mostradas no son válidas."
+    },
+    {
+      "id": 33,
+      "type": "single",
+      "question": "¿Qué opción de configuración especifica el número máximo de procesos de autenticación que pueden estar activos dentro de un servidor Dovecot?",
+      "options": [
+        { "label": "a", "text": "process_limit", "correct": true },
+        { "label": "b", "text": "max_proc", "correct": false },
+        { "label": "c", "text": "proc_max", "correct": false },
+        { "label": "d", "text": "auth_proc_max", "correct": false }
+      ],
+      "feedback": "La opción process_limit especifica el máximo de procesos de inicio de sesión para un servidor Dovecot. El parámetro se establece por servicio."
+    },
+    {
+      "id": 34,
+      "type": "single",
+      "question": "Al examinar una dirección en Sieve, ¿qué palabra clave intenta mirar solo la parte del nombre de dominio de la dirección?",
+      "options": [
+        { "label": "a", "text": ":domainname", "correct": false },
+        { "label": "b", "text": ":afterat", "correct": false },
+        { "label": "c", "text": ":last", "correct": false },
+        { "label": "d", "text": ":domain", "correct": true }
+      ],
+      "feedback": "La palabra clave :domain coincide solo con la parte del dominio de una dirección en Sieve. Las otras palabras clave mostradas no son válidas."
+    },
+    {
+      "id": 35,
+      "type": "single",
+      "question": "¿En qué puerto escucha Dovecot para IMAP o IMAPS basado en SSL/TLS?",
+      "options": [
+        { "label": "a", "text": "143", "correct": false },
+        { "label": "b", "text": "993", "correct": true },
+        { "label": "c", "text": "995", "correct": false },
+        { "label": "d", "text": "110", "correct": false }
+      ],
+      "feedback": "El puerto predeterminado para IMAPS es 993. POP3 usa 110 para comunicación no cifrada y 995 para comunicación cifrada. El puerto predeterminado para IMAP no cifrado es 143."
+    },
+    {
+      "id": 36,
+      "type": "single",
+      "question": "¿Cuál de los siguientes archivos se utiliza como archivo de configuración predeterminado para Exim 4 en un sistema Debian?",
+      "options": [
+        { "label": "a", "text": "/etc/exim/exim4.conf", "correct": true },
+        { "label": "b", "text": "/etc/exim.conf", "correct": false },
+        { "label": "c", "text": "/etc/exim.configure", "correct": false },
+        { "label": "d", "text": "/etc/exim/configure", "correct": false }
+      ],
+      "feedback": "El archivo de configuración de Exim es /etc/exim/exim4.conf por defecto en Debian, pero puede tener los nombres mostrados en las otras opciones cuando se usan otras distribuciones Linux."
+    },
+
+
+
+
+
+    {
+      "id": 37,
+      "type": "single",
+      "question": "¿Qué opción de configuración de Postfix se usa con el servidor postscreen para establecer el nivel de seguridad TLS?",
+      "options": [
+        { "label": "a", "text": "postscreen_tls", "correct": false },
+        { "label": "b", "text": "postscreen_tls_security_level", "correct": true },
+        { "label": "c", "text": "postscreen_security_level", "correct": false },
+        { "label": "d", "text": "post_tls_sec_level", "correct": false }
+      ],
+      "feedback": "La opción postscreen_tls_security_level establece el nivel de seguridad para el servidor postscreen. Esta opción debe usarse en lugar de las opciones postscreen_use_tls y smtpd_use_tls."
+    }
+  ]
+}

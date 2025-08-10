@@ -1,0 +1,450 @@
+{
+  "id": "4",
+  "title": "203 - Filessytem and Devices",
+  "questions": [
+    {
+      "id": 1,
+      "type": "single",
+      "question": "Within which file is a list of the currently mounted filesystems stored?",
+      "options": [
+        { "label": "a", "text": "/etc/fstab", "correct": false },
+        { "label": "b", "text": "/etc/curmount", "correct": false },
+        { "label": "c", "text": "/var/spool/files", "correct": false },
+        { "label": "d", "text": "/etc/mtab", "correct": true }
+      ],
+      "feedback": "The file /etc/mtab lists the currently mounted filesystems. The /etc/fstab file lists overall filesystems for the computer, but it does not distinguish between mounted or unmounted filesystems. The other options listed for this question do not exist."
+    },
+    {
+      "id": 2,
+      "type": "single",
+      "question": "Which option to mke2fs sets the type of filesystem to be created?",
+      "options": [
+        { "label": "a", "text": "-f", "correct": false },
+        { "label": "b", "text": "-a", "correct": false },
+        { "label": "c", "text": "-t", "correct": true },
+        { "label": "d", "text": "-e", "correct": false }
+      ],
+      "feedback": "The -t option sets the filesystem type as ext2, ext3, or ext4. The mke2fs command is typically symlinked from /sbin/mkfs.ext2, /sbin/mkfs.ext3, and /sbin/mkfs.ext4. The -f option forces mke2fs to create a filesystem. The -a and -e options do not exist."
+    },
+    {
+      "id": 3,
+      "type": "single",
+      "question": "Which of the following files is the default configuration file for the autofs automounter?",
+      "options": [
+        { "label": "a", "text": "/etc/autofs", "correct": false },
+        { "label": "b", "text": "/etc/auto.master", "correct": true },
+        { "label": "c", "text": "/etc/autofs.conf", "correct": false },
+        { "label": "d", "text": "/ect/automounter.conf", "correct": false }
+      ],
+      "feedback": "The file /etc/auto.master contains the configuration for autofs. The other files listed as options are not valid for this scenario."
+    },
+    {
+      "id": 4,
+      "type": "single",
+      "question": "Which of the following commands is used to create an ISO filesystem?",
+      "options": [
+        { "label": "a", "text": "mkiso", "correct": false },
+        { "label": "b", "text": "mkfsiso", "correct": false },
+        { "label": "c", "text": "mkisofs", "correct": true },
+        { "label": "d", "text": "isofs-mk", "correct": false }
+      ],
+      "feedback": "The mkisofs command creates an ISO filesystem, which can then be written to a CD or DVD. The other commands listed are not valid."
+    },
+    {
+      "id": 5,
+      "type": "single",
+      "question": "Which of the following commands is used to configure dm-crypt volumes?",
+      "options": [
+        { "label": "a", "text": "cryptsetup", "correct": true },
+        { "label": "b", "text": "dm-cryptsetup", "correct": false },
+        { "label": "c", "text": "dm-setup", "correct": false },
+        { "label": "d", "text": "dm-crypts", "correct": false }
+      ],
+      "feedback": "The cryptsetup command is used to set up and help configure dm-crypt volumes. The other commands shown for this question are not valid."
+    },
+    {
+      "id": 6,
+      "type": "single",
+      "question": "Which command is used to format a swap partition?",
+      "options": [
+        { "label": "a", "text": "mkfs -swap", "correct": false },
+        { "label": "b", "text": "mkswap", "correct": true },
+        { "label": "c", "text": "format -swap", "correct": false },
+        { "label": "d", "text": "mksw", "correct": false }
+      ],
+      "feedback": "The mkswap command is used to format a swap partition. The other commands are not valid."
+    },
+    {
+      "id": 7,
+      "type": "single",
+      "question": "Which option to the tune2fs command sets the maximum mount count before the system will automatically run fsck on the partition on boot?",
+      "options": [
+        { "label": "a", "text": "-b", "correct": false },
+        { "label": "b", "text": "-c", "correct": true },
+        { "label": "c", "text": "-C", "correct": false },
+        { "label": "d", "text": "-a", "correct": false }
+      ],
+      "feedback": "The -c option sets the maximum mount count. The -C option sets the current number of mounts. The -b and -a options do not exist."
+    },
+    {
+      "id": 8,
+      "type": "single",
+      "question": "Which option to the mount command can be used to simulate the mount process without actually mounting the filesystem?",
+      "options": [
+        { "label": "a", "text": "-q", "correct": false },
+        { "label": "b", "text": "-v", "correct": false },
+        { "label": "c", "text": "-l", "correct": false },
+        { "label": "d", "text": "-f", "correct": true }
+      ],
+      "feedback": "The -f option, also known as fake, is helpful for situations where you need to debug the mount process or when you need to add an entry into for a previously mounted filesystem. The -l option shows labels, and -v is verbose. There is no -q option."
+    },
+    {
+      "id": 9,
+      "type": "single",
+      "question": "When viewing /proc/mounts, you see a filesystem with the letters ro in the fourth column. To what do the letters ro refer?",
+      "options": [
+        { "label": "a", "text": "relative option", "correct": false },
+        { "label": "b", "text": "realtime option", "correct": false },
+        { "label": "c", "text": "read only", "correct": true },
+        { "label": "d", "text": "relative only", "correct": false }
+      ],
+      "feedback": "The letters ro indicate that the filesystem has been mounted read-only, meaning that it is not possible to perform a write to the filesystem. The other possible option is rw, indicating that the filesystem has been mounted as read-write."
+    },
+    {
+      "id": 10,
+      "type": "single",
+      "question": "Which option to dumpe2fs displays the bad blocks for a given partition?",
+      "options": [
+        { "label": "a", "text": "-bb", "correct": false },
+        { "label": "b", "text": "-C", "correct": false },
+        { "label": "c", "text": "-b", "correct": true },
+        { "label": "d", "text": "-f", "correct": false }
+      ],
+      "feedback": "Bad blocks are shown with the -b option. The -f option forces dumpe2fs to perform the requested operation, and the other command options do not exist."
+    },
+    {
+    "id": 11,
+    "type": "single",
+    "question": "Which of the following filesystem types features copy-on-write?",
+    "options": [
+      { "label": "a", "text": "ext3", "correct": false },
+      { "label": "b", "text": "ext4", "correct": false },
+      { "label": "c", "text": "FAT", "correct": false },
+      { "label": "d", "text": "btrfs", "correct": true }
+    ],
+    "feedback": "btrfs is based on the copy-on-write principle, and it is generally considered more advanced than ext4 and its predecessors. FAT is a legacy filesystem primarily used for DOS and its follow-ons, like Windows."
+  },
+  {
+    "id": 12,
+    "type": "single",
+    "question": "Which of the following commands displays filesystem geometry for an XFS filesystem?",
+    "options": [
+      { "label": "a", "text": "xfsinfo", "correct": false },
+      { "label": "b", "text": "xfs_info", "correct": true },
+      { "label": "c", "text": "xfs -info", "correct": false },
+      { "label": "d", "text": "xfs --info", "correct": false }
+    ],
+    "feedback": "The xfs_info command, which is functionally equivalent to xfs_grow -n, displays information about an XFS-formatted filesystem."
+  },
+  {
+    "id": 13,
+    "type": "single",
+    "question": "Which of the following commands can be used to display information such as the UUID for partitions on a system?",
+    "options": [
+      { "label": "a", "text": "blkid", "correct": true },
+      { "label": "b", "text": "blockdev", "correct": false },
+      { "label": "c", "text": "devinfo", "correct": false },
+      { "label": "d", "text": "uuidinfo", "correct": false }
+    ],
+    "feedback": "The blkid command shows information about partitions including their type, their UUID, and other basic information. The other commands shown for options do not exist."
+  },
+  {
+    "id": 14,
+    "type": "single",
+    "question": "Which option to the umount command will cause it to unmount only filesystems of the specified type?",
+    "options": [
+      { "label": "a", "text": "-v", "correct": false },
+      { "label": "b", "text": "-f", "correct": false },
+      { "label": "c", "text": "-t", "correct": true },
+      { "label": "d", "text": "-a", "correct": false }
+    ],
+    "feedback": "The -t option, which can accept a comma-separated list of types, specifies that only filesystems of the listed type are to be unmounted. This is useful in conjunction with the -a option, which unmounts all filesystems except /proc. The -v option is verbose and -f forces the operation to continue."
+  },
+  {
+    "id": 15,
+    "type": "single",
+    "question": "Which command causes unwritten data to be written to disk immediately?",
+    "options": [
+      { "label": "a", "text": "write", "correct": false },
+      { "label": "b", "text": "wrnow", "correct": false },
+      { "label": "c", "text": "connwrite", "correct": false },
+      { "label": "d", "text": "sync", "correct": true }
+    ],
+    "feedback": "The sync command writes unwritten data to the disk immediately, and it is useful to run just prior to attempting an unmount operation."
+  },
+  {
+    "id": 16,
+    "type": "single",
+    "question": "Which command is used to activate swap space on a system?",
+    "options": [
+      { "label": "a", "text": "mkswap", "correct": false },
+      { "label": "b", "text": "swapon", "correct": true },
+      { "label": "c", "text": "swapact", "correct": false },
+      { "label": "d", "text": "actswap", "correct": false }
+    ],
+    "feedback": "The swapon command enables swap space, making it available for use as virtual memory. The mkswap command formats the space. The other two commands are not valid."
+  },
+  {
+    "id": 17,
+    "type": "single",
+    "question": "Which option to xfs_check is used to verify a filesystem that is stored in a file?",
+    "options": [
+      { "label": "a", "text": "-v", "correct": false },
+      { "label": "b", "text": "-a", "correct": false },
+      { "label": "c", "text": "-f", "correct": true },
+      { "label": "d", "text": "-d", "correct": false }
+    ],
+    "feedback": "The -f option specifies that xfs_check should check the contents of the named file for consistency. The -v option sets verbosity, and there is no -d or -a option."
+  },
+  {
+    "id": 18,
+    "type": "single",
+    "question": "Which option to debugfs causes the filesystem to be opened in read-write mode rather than the default read-only?",
+    "options": [
+      { "label": "a", "text": "-rw", "correct": false },
+      { "label": "b", "text": "-w", "correct": true },
+      { "label": "c", "text": "-r", "correct": false },
+      { "label": "d", "text": "-n", "correct": false }
+    ],
+    "feedback": "The -w option causes debugfs to open the filesystem in read-write mode. There is also a -c option to open in catastrophic mode for filesystems with significant damage. The -rw, -r, and -n options are not valid."
+  },
+  {
+    "id": 19,
+    "type": "single",
+    "question": "Which daemon is responsible for monitoring Self-Monitoring, Analysis, and Reporting Technology–compatible hard drives?",
+    "options": [
+      { "label": "a", "text": "smartmon", "correct": false },
+      { "label": "b", "text": "smarty", "correct": false },
+      { "label": "c", "text": "sartd", "correct": false },
+      { "label": "d", "text": "smartd", "correct": true }
+    ],
+    "feedback": "The smartd daemon monitors SMART-compatible disks for notable events, and it can be configured to send alerts when events occur. The other commands listed are not valid for this scenario."
+  },
+  {
+    "id": 20,
+    "type": "single",
+    "question": "Which option to the fsck command causes it to run the check even if the filesystem is apparently marked as clean?",
+    "options": [
+      { "label": "a", "text": "-f", "correct": true },
+      { "label": "b", "text": "-m", "correct": false },
+      { "label": "c", "text": "-a", "correct": false },
+      { "label": "d", "text": "-c", "correct": false }
+    ],
+    "feedback": "The -f option forces fsck to run on an otherwise clean filesystem. This can be helpful for times when you suspect that there is an error on the filesystem, and you need to verify this as part of the troubleshooting process. This can also be helpful to prepare the filesystem for conversion, such as might be the case with a tool like btrfs-convert."
+  },
+    {
+    "id": 21,
+    "type": "single",
+    "question": "You are performing an xfsrestore. The xfsdump was executed with a block size of 4M. Which option do you need to invoke on xfsrestore in order for it to use this dump successfully?",
+    "options": [
+      { "label": "a", "text": "-b 4M", "correct": true },
+      { "label": "b", "text": "-g 1M", "correct": false },
+      { "label": "c", "text": "-i 1M", "correct": false },
+      { "label": "d", "text": "-k 1028K", "correct": false }
+    ],
+    "feedback": "The block size for import or restore must match the block size used on export or dump. Block size is specified with the -b option, thus making option A correct. The other options are not valid for xfsrestore."
+  },
+  {
+    "id": 22,
+    "type": "single",
+    "question": "You see the word defaults within /etc/fstab. Which options are encompassed within the defaults?",
+    "options": [
+      { "label": "a", "text": "ro, exec, auto", "correct": false },
+      { "label": "b", "text": "rw, suid, dev, exec, auto, nouser, async", "correct": true },
+      { "label": "c", "text": "rw, exec, auto, nouser, async", "correct": false },
+      { "label": "d", "text": "rw, exec, nouser, async, noauto, suid", "correct": false }
+    ],
+    "feedback": "A filesystem with the word defaults for its mount options will be mounted read-write (rw), suid, with the ability to have executables (exec). The filesystem will be auto-mounted (auto), but users will not be able to mount it (nouser). Character and block special devices will be interpreted (dev), and operations on the disk will be performed in an asynchronous manner (async)."
+  },
+  {
+    "id": 23,
+    "type": "single",
+    "question": "Which of the following commands is used to administer and configure how SMART monitoring is done?",
+    "options": [
+      { "label": "a", "text": "smartmon", "correct": false },
+      { "label": "b", "text": "smartconf", "correct": false },
+      { "label": "c", "text": "smartd", "correct": false },
+      { "label": "d", "text": "smartctl", "correct": true }
+    ],
+    "feedback": "The smartctl command controls how SMART monitoring is done for a given device, assuming that the smartmon utilities have been installed. The smartd option represents the overall daemon for monitoring SMART events."
+  },
+  {
+    "id": 24,
+    "type": "single",
+    "question": "Which of the following is the correct format for a filesystem in /etc/fstab?",
+    "options": [
+      { "label": "a", "text": "<filesystem> <mountpoint> <type> <options> <dump> <pass>", "correct": true },
+      { "label": "b", "text": "<mountpoint> <filesystem> <type> <options> <dump> <pass>", "correct": false },
+      { "label": "c", "text": "<mountpoint> <filesystem> <type> <options> <pass> <dump>", "correct": false },
+      { "label": "d", "text": "<filesystem> <mountpoint> <type> <dump> <pass> <options>", "correct": false }
+    ],
+    "feedback": "Within /etc/fstab, the filesystem to be mounted (such as /dev/sda1) is found first, followed by the destination location to which the filesystem will be mounted. The type of filesystem follows next, along with any options needed for the filesystem. The dump utility indicator follows the options, and finally the pass or fsck order is last. The last field determines the order in which filesystems are checked by fsck on boot."
+  },
+  {
+    "id": 25,
+    "type": "single",
+    "question": "Which key derivation function is used by LUKS?",
+    "options": [
+      { "label": "a", "text": "PBKDF2", "correct": true },
+      { "label": "b", "text": "SSL", "correct": false },
+      { "label": "c", "text": "RSA", "correct": false },
+      { "label": "d", "text": "DSA", "correct": false }
+    ],
+    "feedback": "Password-based Key Derivation Function 2 (PBKDF2) is used for key derivation for the password-based cryptography used with LUKS. SSL is Secure Sockets Layer, and it is typically used for encryption of HTTP traffic. Both RSA and DSA are encryption algorithms, but they are not related to this question."
+  },
+  {
+    "id": 26,
+    "type": "single",
+    "question": "Which of the following commands creates a btrfs subvolume?",
+    "options": [
+      { "label": "a", "text": "btrfs create subvolume", "correct": false },
+      { "label": "b", "text": "btrfs subvolume create", "correct": true },
+      { "label": "c", "text": "btrfs sv create", "correct": false },
+      { "label": "d", "text": "btrfs svcreate", "correct": false }
+    ],
+    "feedback": "The btrfs subvolume create command creates a btrfs subvolume. The other commands are not valid."
+  },
+  {
+    "id": 27,
+    "type": "single",
+    "question": "Which of the following options to xfsdump sets the maximum size for files to be included in the dump?",
+    "options": [
+      { "label": "a", "text": "-p", "correct": false },
+      { "label": "b", "text": "-s", "correct": false },
+      { "label": "c", "text": "-z", "correct": true },
+      { "label": "d", "text": "-b", "correct": false }
+    ],
+    "feedback": "The -z option sets the maximum size for files to be included in the dump. The -b option sets the block size, but it is not related to what is being asked for in this scenario. The -s option sets the path for inclusion in the dump, and -p sets the interval for progress indicators."
+  },
+  {
+    "id": 28,
+    "type": "single",
+    "question": "Which option to the tune2fs command sets the behavior when a filesystem error occurs?",
+    "options": [
+      { "label": "a", "text": "-f", "correct": false },
+      { "label": "b", "text": "-d", "correct": false },
+      { "label": "c", "text": "-e", "correct": true },
+      { "label": "d", "text": "-k", "correct": false }
+    ],
+    "feedback": "The -e option sets the behavior, such as continue, remount read-only, or panic when an error occurs at the filesystem level. The -f option forces whatever operation you’re requesting to continue, even if there are errors. The -d and -k options are not valid."
+  },
+  {
+    "id": 29,
+    "type": "single",
+    "question": "The /etc filesystem has been mounted as read-only for a recovery process. You need to mount another partition. Which option to the mount command causes it not to write to /etc/mtab?",
+    "options": [
+      { "label": "a", "text": "-a", "correct": false },
+      { "label": "b", "text": "-m", "correct": false },
+      { "label": "c", "text": "-b", "correct": false },
+      { "label": "d", "text": "-n", "correct": true }
+    ],
+    "feedback": "The -n option causes mount not to write to /etc/mtab, and it is particularly useful for the scenario described. The -a option mounts all filesystems in /etc/fstab. There is no -b or -m option."
+  },
+    {
+    "id": 30,
+    "type": "single",
+    "question": "Which of the following commands deactivates swap space?",
+    "options": [
+      { "label": "a", "text": "swapoff", "correct": true },
+      { "label": "b", "text": "swap -off", "correct": false },
+      { "label": "c", "text": "unmountswap", "correct": false },
+      { "label": "d", "text": "uswap", "correct": false }
+    ],
+    "feedback": "The swapoff command deactivates swap space, thereby making it unavailable as virtual memory on the system. The other commands shown as options are not valid."
+  },
+  {
+    "id": 31,
+    "type": "single",
+    "question": "Within the [mount] section of a systemd mount unit, which directive specifies the location for mounting the chosen filesystem?",
+    "options": [
+      { "label": "a", "text": "Where=", "correct": true },
+      { "label": "b", "text": "Location=", "correct": false },
+      { "label": "c", "text": "List=", "correct": false },
+      { "label": "d", "text": "Dest=", "correct": false }
+    ],
+    "feedback": "The Where= directive specifies the location for the final mounted filesystem."
+  },
+  {
+    "id": 32,
+    "type": "single",
+    "question": "Which of the following swapon options displays information on the size of swap space along with its used space?",
+    "options": [
+      { "label": "a", "text": "--list", "correct": false },
+      { "label": "b", "text": "-a", "correct": false },
+      { "label": "c", "text": "--show", "correct": true },
+      { "label": "d", "text": "-h", "correct": false }
+    ],
+    "feedback": "The –show option displays information about the swap spaces on the computer, including how much swap space is currently being used. The -a option activates all swap spaces. There is no –list option and -h displays help."
+  },
+  {
+    "id": 33,
+    "type": "single",
+    "question": "Which of the following commands can be used to format a FAT filesystem?",
+    "options": [
+      { "label": "a", "text": "mkfs.fat", "correct": true },
+      { "label": "b", "text": "mkfs -f", "correct": false },
+      { "label": "c", "text": "mkfs --fat", "correct": false },
+      { "label": "d", "text": "mkfat", "correct": false }
+    ],
+    "feedback": "The mkfs.fat or mkfs.vfat commands are valid for creation of FAT filesystems. There is no -f option to mkfs and there is no mkfat command."
+  },
+  {
+    "id": 34,
+    "type": "single",
+    "question": "Which of the following commands adds a journal to an existing ext3 filesystem?",
+    "options": [
+      { "label": "a", "text": "tune2fs -jrn", "correct": false },
+      { "label": "b", "text": "e2fs -x", "correct": false },
+      { "label": "c", "text": "tune3fs", "correct": false },
+      { "label": "d", "text": "tune2fs -j", "correct": true }
+    ],
+    "feedback": "The tune2fs command is used for working with ext2, ext3, and ext4 filesystems. The -j option adds a journal. The other commands are not valid."
+  },
+  {
+    "id": 35,
+    "type": "single",
+    "question": "Which of the following commands creates a snapshot of a btrfs subvolume?",
+    "options": [
+      { "label": "a", "text": "btrfs subvolume snapshot", "correct": true },
+      { "label": "b", "text": "btrfs snapshot ––create", "correct": false },
+      { "label": "c", "text": "btrfs create snapshot", "correct": false },
+      { "label": "d", "text": "btrfs --create", "correct": false }
+    ],
+    "feedback": "The snapshot subcommand of btrfs subvolume creates a snapshot. The other commands shown are not valid."
+  },
+  {
+    "id": 36,
+    "type": "single",
+    "question": "Which option to xfs_repair will force log zeroing, even if there may be metadata within the log?",
+    "options": [
+      { "label": "a", "text": "-L", "correct": true },
+      { "label": "b", "text": "-v", "correct": false },
+      { "label": "c", "text": "-d", "correct": false },
+      { "label": "d", "text": "-V", "correct": false }
+    ],
+    "feedback": "The -L option forces the log to be cleared or zeroed out, which may cause a loss of data. The -v option sets verbose output, while -V prints the version. The -d option performs a dangerous repair, which can be used on a read-only filesystem."
+  },
+  {
+    "id": 37,
+    "type": "single",
+    "question": "Which of the following commands mounts a filesystem in read-only mode?",
+    "options": [
+      { "label": "a", "text": "mount read-only", "correct": false },
+      { "label": "b", "text": "mount --read", "correct": false },
+      { "label": "c", "text": "mount -o ro", "correct": true },
+      { "label": "d", "text": "mount -or", "correct": false }
+    ],
+    "feedback": "The -o option enables the setting of one or more options for the mount command and ro is read-only. Note that the -r option will also mount as read-only. The other options shown are not valid."
+  }
+  ]
+}

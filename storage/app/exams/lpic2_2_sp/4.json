@@ -1,0 +1,454 @@
+{
+  "id": "4",
+  "title": "210 - Network Client Management",
+  "questions": [
+    {
+      "id": 1,
+      "type": "single",
+      "question": "¿Qué opción dentro de dhcpd.conf configura cómo se realizan las actualizaciones dinámicas de DNS?",
+      "options": [
+        { "label": "a", "text": "ddns-update-style", "correct": true },
+        { "label": "b", "text": "ddns-updates", "correct": false },
+        { "label": "c", "text": "ddns-server", "correct": false },
+        { "label": "d", "text": "ddns-enable", "correct": false }
+      ],
+      "feedback": "La opción ddns-update-style configura si un servidor realiza una actualización de DNS cuando se crean o confirman concesiones. Las otras opciones no son válidas para usar con DHCP."
+    },
+    {
+      "id": 2,
+      "type": "single",
+      "question": "¿Cuál de las siguientes definiciones de subred para DHCP se puede usar con redes privadas con al menos 100 direcciones?",
+      "options": [
+        { "label": "a", "text": "subnet 192.168.1.0 netmask 255.255.255.128", "correct": true },
+        { "label": "b", "text": "subnet 192.168.1.0 size 100", "correct": false },
+        { "label": "c", "text": "subnet 192.168.1.0 size 102", "correct": false },
+        { "label": "d", "text": "subnet 192.168.1.0/26", "correct": false }
+      ],
+      "feedback": "La palabra clave subnet se usa para este propósito junto con un parámetro netmask. La máscara de red mostrada proporcionará 126 direcciones utilizables."
+    },
+    {
+      "id": 3,
+      "type": "single",
+      "question": "Al crear una reserva DHCP, ¿qué opción dentro de una estrofa host se usa para indicar la dirección MAC del host?",
+      "options": [
+        { "label": "a", "text": "mac", "correct": false },
+        { "label": "b", "text": "hardware ethernet", "correct": true },
+        { "label": "c", "text": "mac address", "correct": false },
+        { "label": "d", "text": "hw-address", "correct": false }
+      ],
+      "feedback": "La directiva hardware ethernet se usa para especificar la dirección MAC para un host determinado al que se vinculará la reserva. Las otras opciones no se usan dentro de DHCP."
+    },
+    {
+      "id": 4,
+      "type": "single",
+      "question": "¿Dentro de qué directorio se almacenan archivos de configuración individuales para el mecanismo de Módulo de Autenticación Conectable (PAM)?",
+      "options": [
+        { "label": "a", "text": "/etc/pamd", "correct": false },
+        { "label": "b", "text": "/etc/pam", "correct": false },
+        { "label": "c", "text": "/etc/pam.d", "correct": true },
+        { "label": "d", "text": "/etc/pam.conf.d", "correct": false }
+      ],
+      "feedback": "El directorio /etc/pam.d almacena archivos de configuración para servicios individuales compatibles con PAM. Cada servicio generalmente tiene su propio archivo que se gestiona para ese servicio según su uso de PAM. Ninguno de los otros directorios son los directorios predeterminados utilizados para PAM."
+    },
+    {
+      "id": 5,
+      "type": "single",
+      "question": "¿En qué puerto escucha el demonio LDAP slapd para conexiones?",
+      "options": [
+        { "label": "a", "text": "389", "correct": true },
+        { "label": "b", "text": "3389", "correct": false },
+        { "label": "c", "text": "3306", "correct": false },
+        { "label": "d", "text": "110", "correct": false }
+      ],
+      "feedback": "El puerto estándar para LDAP es 389, y ese es el puerto en el que slapd escucha conexiones. El puerto 3389 es RDP, mientras que 3306 es MySQL. Finalmente, 110 es POP3."
+    },
+    {
+      "id": 6,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos se usa para agregar entradas a la base de datos OpenLDAP?",
+      "options": [
+        { "label": "a", "text": "ldapd", "correct": false },
+        { "label": "b", "text": "adduser", "correct": false },
+        { "label": "c", "text": "addldap", "correct": false },
+        { "label": "d", "text": "ldapadd", "correct": true }
+      ],
+      "feedback": "El comando ldapadd se usa para agregar entradas a la base de datos OpenLDAP."
+    },
+    {
+      "id": 7,
+      "type": "single",
+      "question": "¿En qué puertos se comunica el tráfico DHCP?",
+      "options": [
+        { "label": "a", "text": "50 y 51", "correct": false },
+        { "label": "b", "text": "143 y 144", "correct": false },
+        { "label": "c", "text": "67 y 68", "correct": true },
+        { "label": "d", "text": "530 y 531", "correct": false }
+      ],
+      "feedback": "El tráfico DHCP, que usa UDP, se comunica en los puertos 67 y 68. De los otros puertos, solo 143 es ampliamente utilizado pero como el puerto para IMAP y no está relacionado con UDP."
+    },
+    {
+      "id": 8,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos se puede usar para ayudar con la recuperación de una base de datos OpenLDAP corrupta?",
+      "options": [
+        { "label": "a", "text": "openldap-recover", "correct": false },
+        { "label": "b", "text": "oreco", "correct": false },
+        { "label": "c", "text": "slapd-recover", "correct": false },
+        { "label": "d", "text": "slapd_db_recover", "correct": true }
+      ],
+      "feedback": "El comando slapd_db_recover se puede usar para ayudar a recuperar una base de datos OpenLDAP que se ha corrompido o se ha vuelto inválida. Las otras opciones de esta pregunta no son comandos válidos."
+    },
+    {
+      "id": 9,
+      "type": "single",
+      "question": "¿Cuál de las siguientes líneas de configuración establece el orden de búsqueda de sufijos de dominio a example.com seguido de example.org dentro de una configuración DHCP?",
+      "options": [
+        { "label": "a", "text": "open domain-search \"example.com\", \"example.org\";", "correct": false },
+        { "label": "b", "text": "option domain-search \"example.com, example.org\";", "correct": false },
+        { "label": "c", "text": "option domain-search \"example.com\", \"example.org\";", "correct": true },
+        { "label": "d", "text": "option domain-suffix \"example.com\", \"example.org\";", "correct": false }
+      ],
+      "feedback": "El orden de búsqueda de sufijos de dominio se puede establecer a través de una opción DHCP. El nombre de la opción es domain-search y los valores están separados por una coma."
+    },
+    {
+      "id": 10,
+      "type": "single",
+      "question": "¿Dentro de qué directorio se almacenan las bases de datos para OpenLDAP?",
+      "options": [
+        { "label": "a", "text": "/var/lib/ldap", "correct": true },
+        { "label": "b", "text": "/var/cache/openldap", "correct": false },
+        { "label": "c", "text": "/var/share/ldap", "correct": false },
+        { "label": "d", "text": "/usr/share/openldap", "correct": false }
+      ],
+      "feedback": "El directorio /var/lib/ldap almacena archivos de base de datos relacionados con la implementación de OpenLDAP en un servidor determinado. Los otros directorios mostrados no son válidos para este propósito."
+    },
+        {
+      "id": 11,
+      "type": "single",
+      "question": "¿Qué módulo PAM evita inicios de sesión de cuentas distintas a root cuando existe el archivo /etc/nologin?",
+      "options": [
+        { "label": "a", "text": "pam_login.so", "correct": false },
+        { "label": "b", "text": "pam_preventlogin.so", "correct": false },
+        { "label": "c", "text": "pam_nologin.so", "correct": true },
+        { "label": "d", "text": "pam_logindef.so", "correct": false }
+      ],
+      "feedback": "El módulo pam_nologin.so facilita un escenario donde se previenen inicios de sesión no root cuando existe /etc/nologin. Este módulo debe especificarse dentro del archivo de configuración para un servicio dado."
+    },
+    {
+      "id": 12,
+      "type": "single",
+      "question": "Al importar entradas a la base de datos LDAP usando ldapadd -f <archivo>, ¿qué formato debe tener el archivo?",
+      "options": [
+        { "label": "a", "text": "LDAP", "correct": false },
+        { "label": "b", "text": "TXT", "correct": false },
+        { "label": "c", "text": "CSV", "correct": false },
+        { "label": "d", "text": "LDIF", "correct": true }
+      ],
+      "feedback": "El formato LDIF (LDAP Data Interchange Format), definido en RFC 2849, permite importar y exportar entradas LDAP. Los formatos TXT y CSV son válidos pero no para este propósito."
+    },
+    {
+      "id": 13,
+      "type": "single",
+      "question": "¿Qué módulo PAM es responsable de la autenticación estándar con contraseña?",
+      "options": [
+        { "label": "a", "text": "pam_auth.so", "correct": false },
+        { "label": "b", "text": "pam_login.so", "correct": false },
+        { "label": "c", "text": "pam_unix.so", "correct": true },
+        { "label": "d", "text": "pam_standardlogin.so", "correct": false }
+      ],
+      "feedback": "El módulo pam_unix.so se usa para autenticación tradicional con contraseña. Los otros módulos listados no son módulos PAM estándar."
+    },
+    {
+      "id": 14,
+      "type": "single",
+      "question": "¿Qué opción en radvd.conf se usa para limitar los nodos a los que se enviarán anuncios?",
+      "options": [
+        { "label": "a", "text": "cnodes", "correct": false },
+        { "label": "b", "text": "clients", "correct": true },
+        { "label": "c", "text": "nodes", "correct": false },
+        { "label": "d", "text": "lnodes", "correct": false }
+      ],
+      "feedback": "La sección 'clients' dentro de una interfaz en radvd.conf permite configurar clientes específicos para anuncios de ruta."
+    },
+    {
+      "id": 15,
+      "type": "single",
+      "question": "¿Qué nivel de depuración para slapd se usa para depurar el procesamiento del archivo de configuración?",
+      "options": [
+        { "label": "a", "text": "1", "correct": false },
+        { "label": "b", "text": "64", "correct": true },
+        { "label": "c", "text": "8", "correct": false },
+        { "label": "d", "text": "0", "correct": false }
+      ],
+      "feedback": "El nivel 64 proporciona información de depuración del procesamiento de configuración. El nivel 1 rastrea llamadas de función y el nivel 8 muestra gestión de conexiones."
+    },
+    {
+      "id": 16,
+      "type": "single",
+      "question": "¿Qué opción en dhcpd.conf especifica el tiempo máximo que un cliente puede tener una concesión DHCP?",
+      "options": [
+        { "label": "a", "text": "max-time", "correct": false },
+        { "label": "b", "text": "max-lease-time", "correct": true },
+        { "label": "c", "text": "lease-max", "correct": false },
+        { "label": "d", "text": "maximun-lease-duration", "correct": false }
+      ],
+      "feedback": "La directiva max-lease-time especifica el tiempo máximo (en segundos) que un host puede tener una concesión antes de ser purgada."
+    },
+    {
+      "id": 17,
+      "type": "single",
+      "question": "Cuando ves mensajes DHCPDISCOVER en syslog seguidos de una MAC e interfaz, ¿qué describe mejor este mensaje?",
+      "options": [
+        { "label": "a", "text": "El servidor está buscando clientes", "correct": false },
+        { "label": "b", "text": "El cliente está iniciando el proceso para obtener una IP", "correct": true },
+        { "label": "c", "text": "El servidor responde a un cliente", "correct": false },
+        { "label": "d", "text": "El cliente responde a una oferta del servidor", "correct": false }
+      ],
+      "feedback": "El mensaje DHCPDISCOVER proviene del cliente e inicia el proceso de obtención de una dirección IP."
+    },
+    {
+      "id": 18,
+      "type": "single",
+      "question": "¿Qué línea en /etc/nsswitch.conf usa archivos locales seguidos de LDAP para autenticación?",
+      "options": [
+        { "label": "a", "text": "passwd: files ldap", "correct": true },
+        { "label": "b", "text": "passwd [files ldap]", "correct": false },
+        { "label": "c", "text": "auth: local ldap", "correct": false },
+        { "label": "d", "text": "auth: localfiles ldap", "correct": false }
+      ],
+      "feedback": "La línea 'passwd: files ldap' en nsswitch.conf configura la autenticación local (files) seguida de LDAP."
+    },
+    {
+      "id": 19,
+      "type": "single",
+      "question": "¿Qué módulo PAM verifica y aplica la fortaleza de contraseñas?",
+      "options": [
+        { "label": "a", "text": "pam_passwdstr.so", "correct": false },
+        { "label": "b", "text": "pam_cracklib.so", "correct": true },
+        { "label": "c", "text": "pam_libpasswd.so", "correct": false },
+        { "label": "d", "text": "pam_strpass.so", "correct": false }
+      ],
+      "feedback": "El módulo pam_cracklib.so aplica requisitos de fortaleza para contraseñas."
+    },
+    {
+      "id": 20,
+      "type": "single",
+      "question": "¿Qué opción se usa con el comando sssd para especificar un archivo de configuración alternativo?",
+      "options": [
+        { "label": "a", "text": "-f", "correct": false },
+        { "label": "b", "text": "-c", "correct": true },
+        { "label": "c", "text": "-a", "correct": false },
+        { "label": "d", "text": "-m", "correct": false }
+      ],
+      "feedback": "La opción -c especifica un archivo de configuración alternativo para sssd. La opción -f envía salida de depuración a un archivo."
+    },
+        {
+      "id": 21,
+      "type": "single",
+      "question": "¿En qué puerto se comunica el failover de DHCP?",
+      "options": [
+        { "label": "a", "text": "67", "correct": false },
+        { "label": "b", "text": "68", "correct": false },
+        { "label": "c", "text": "647", "correct": true },
+        { "label": "d", "text": "389", "correct": false }
+      ],
+      "feedback": "El failover de DHCP se comunica en el puerto 647. Los puertos 67 y 68 se usan para tráfico DHCP normal, mientras que 389 es para LDAP."
+    },
+    {
+      "id": 22,
+      "type": "single",
+      "question": "¿Qué opción en dhcpd.conf define la puerta de enlace predeterminada que se enviará con la concesión DHCP?",
+      "options": [
+        { "label": "a", "text": "default-gw", "correct": false },
+        { "label": "b", "text": "default-gateway", "correct": false },
+        { "label": "c", "text": "routers", "correct": true },
+        { "label": "d", "text": "default-route", "correct": false }
+      ],
+      "feedback": "La opción 'routers' define la puerta de enlace predeterminada para una concesión DHCP. Puede especificarse a nivel de subred o para un host individual."
+    },
+    {
+      "id": 23,
+      "type": "single",
+      "question": "¿Qué comando crea un archivo LDIF a partir de la base de datos LDAP actual?",
+      "options": [
+        { "label": "a", "text": "slapdump", "correct": false },
+        { "label": "b", "text": "ldapdump", "correct": false },
+        { "label": "c", "text": "slapcat", "correct": true },
+        { "label": "d", "text": "catldap", "correct": false }
+      ],
+      "feedback": "El comando slapcat vuelca la base de datos slapd en formato LDIF."
+    },
+    {
+      "id": 24,
+      "type": "single",
+      "question": "¿Qué módulo PAM es responsable de aplicar límites como el número máximo de inicios de sesión y tiempo de CPU usado?",
+      "options": [
+        { "label": "a", "text": "pam_enforce.so", "correct": false },
+        { "label": "b", "text": "pam_limittest.so", "correct": false },
+        { "label": "c", "text": "pam_max.so", "correct": false },
+        { "label": "d", "text": "pam_limits.so", "correct": true }
+      ],
+      "feedback": "El módulo pam_limits.so aplica límites como máximo de inicios de sesión, tamaño de archivos, uso de memoria, etc."
+    },
+    {
+      "id": 25,
+      "type": "single",
+      "question": "¿Qué comando se usa para recrear índices basados en bases de datos slapd existentes?",
+      "options": [
+        { "label": "a", "text": "ldapind", "correct": false },
+        { "label": "b", "text": "ldapindex", "correct": false },
+        { "label": "c", "text": "slapindex", "correct": true },
+        { "label": "d", "text": "indexldap", "correct": false }
+      ],
+      "feedback": "El comando slapindex genera índices basados en bases de datos slapd."
+    },
+    {
+      "id": 26,
+      "type": "single",
+      "question": "¿Qué se registrará con loglevel establecido en 0x10 en un archivo slapd.conf?",
+      "options": [
+        { "label": "a", "text": "Sin depuración", "correct": false },
+        { "label": "b", "text": "Depuración de trazas", "correct": false },
+        { "label": "c", "text": "Registro de estadísticas", "correct": false },
+        { "label": "d", "text": "Paquetes enviados y recibidos", "correct": true }
+      ],
+      "feedback": "El valor hexadecimal 0x10 (16 en decimal) registra paquetes enviados y recibidos. 0 es sin depuración, 1 para trazas, y 256/512 para estadísticas."
+    },
+    {
+      "id": 27,
+      "type": "single",
+      "question": "Cuando ocurre un error en slapadd al 90% de importación, ¿qué opción permite reiniciar desde un número de línea específico?",
+      "options": [
+        { "label": "a", "text": "-l", "correct": false },
+        { "label": "b", "text": "-f", "correct": false },
+        { "label": "c", "text": "-q", "correct": false },
+        { "label": "d", "text": "-j", "correct": true }
+      ],
+      "feedback": "La opción -j permite especificar una línea desde la cual reiniciar la importación. -f especifica un archivo de configuración alternativo, -q es modo rápido, y -l especifica el archivo de entrada."
+    },
+    {
+      "id": 28,
+      "type": "single",
+      "question": "¿Qué comando se recomienda para configurar slapd en OpenLDAP versión 2.3 y posteriores?",
+      "options": [
+        { "label": "a", "text": "slapd-conf", "correct": false },
+        { "label": "b", "text": "config-slapd", "correct": false },
+        { "label": "c", "text": "openldap-config", "correct": false },
+        { "label": "d", "text": "slapd-config", "correct": true }
+      ],
+      "feedback": "Desde OpenLDAP 2.3, slapd-config es el método recomendado para configuración."
+    },
+    {
+      "id": 29,
+      "type": "single",
+      "question": "En un archivo LDIF, ¿qué changetype se usa para crear una nueva entrada en la base de datos LDAP?",
+      "options": [
+        { "label": "a", "text": "create", "correct": false },
+        { "label": "b", "text": "add", "correct": true },
+        { "label": "c", "text": "addmod", "correct": false },
+        { "label": "d", "text": "insert", "correct": false }
+      ],
+      "feedback": "El changetype 'add' crea una nueva entrada en la base de datos LDAP."
+    },
+    {
+      "id": 30,
+      "type": "single",
+      "question": "¿Qué opción de ldapsearch produce salida en formato LDIFv1 sin comentarios ni información de versión?",
+      "options": [
+        { "label": "a", "text": "-L", "correct": false },
+        { "label": "b", "text": "-LLL", "correct": true },
+        { "label": "c", "text": "-cal", "correct": false },
+        { "label": "d", "text": "-e", "correct": false }
+      ],
+      "feedback": "Tres -L (-LLL) producen salida LDIFv1 sin comentarios ni versión. Un -L solo indica formato LDIFv1."
+    },
+        {
+      "id": 31,
+      "type": "single",
+      "question": "¿En qué puerto escucha LDAP sobre SSL para conexiones?",
+      "options": [
+        { "label": "a", "text": "389", "correct": false },
+        { "label": "b", "text": "443", "correct": false },
+        { "label": "c", "text": "636", "correct": true },
+        { "label": "d", "text": "3128", "correct": false }
+      ],
+      "feedback": "El puerto para LDAPS (LDAP sobre SSL) es 636. El puerto 389 es para LDAP estándar sin SSL, 443 se usa para HTTPS y 3128 para proxies Squid."
+    },
+    {
+      "id": 32,
+      "type": "single",
+      "question": "¿Qué módulo PAM puede usarse para escenarios de autenticación y autorización usando archivos externos?",
+      "options": [
+        { "label": "a", "text": "pam_authfiles.so", "correct": false },
+        { "label": "b", "text": "pam_listfiles.so", "correct": true },
+        { "label": "c", "text": "pam_filesauth.so", "correct": false },
+        { "label": "d", "text": "pam_fileauth.so", "correct": false }
+      ],
+      "feedback": "El módulo pam_listfiles.so permite crear escenarios donde archivos externos controlan la autenticación y autorización a través del sistema PAM."
+    },
+    {
+      "id": 33,
+      "type": "single",
+      "question": "¿Qué opción de ldapmodify se usa para hacer una prueba sin modificar realmente la base de datos?",
+      "options": [
+        { "label": "a", "text": "-n", "correct": true },
+        { "label": "b", "text": "-d", "correct": false },
+        { "label": "c", "text": "-l", "correct": false },
+        { "label": "d", "text": "-e", "correct": false }
+      ],
+      "feedback": "La opción -n muestra los resultados sin realizar cambios reales en la base de datos LDAP."
+    },
+    {
+      "id": 34,
+      "type": "single",
+      "question": "¿Cuál es el filtro predeterminado que usa ldapsearch cuando no se proporciona uno?",
+      "options": [
+        { "label": "a", "text": "(*)", "correct": false },
+        { "label": "b", "text": "(objectClass=*)", "correct": true },
+        { "label": "c", "text": "(class=*)", "correct": false },
+        { "label": "d", "text": "(list*)", "correct": false }
+      ],
+      "feedback": "El filtro (objectClass=*) se usa cuando no se proporciona un filtro específico para ldapsearch."
+    },
+    {
+      "id": 35,
+      "type": "single",
+      "question": "¿Qué módulo PAM se usa para integración con el sistema SSSD?",
+      "options": [
+        { "label": "a", "text": "pam_sss.so", "correct": true },
+        { "label": "b", "text": "pam_sssd.so", "correct": false },
+        { "label": "c", "text": "pam_sssd_config.so", "correct": false },
+        { "label": "d", "text": "pam_sss_mod.so", "correct": false }
+      ],
+      "feedback": "El módulo pam_sss.so permite la integración de SSSD con el sistema de autenticación PAM."
+    },
+    {
+      "id": 36,
+      "type": "single",
+      "question": "¿Qué opción en sssd.conf establece la URI del servidor LDAP?",
+      "options": [
+        { "label": "a", "text": "ldap_server", "correct": false },
+        { "label": "b", "text": "ldap_uri", "correct": true },
+        { "label": "c", "text": "ldap_connect", "correct": false },
+        { "label": "d", "text": "ldap_use", "correct": false }
+      ],
+      "feedback": "La opción ldap_uri configura la URI del servidor LDAP que usará SSSD."
+    },
+
+
+
+
+    {
+      "id": 37,
+      "type": "single",
+      "question": "¿Qué línea de configuración hace que el servidor DHCP rechace solicitudes de clientes desconocidos?",
+      "options": [
+        { "label": "a", "text": "unknown-clients: deny;", "correct": false },
+        { "label": "b", "text": "deny unknown-clients;", "correct": true },
+        { "label": "c", "text": "clients-deny: unknown", "correct": false },
+        { "label": "d", "text": "list-clients-deny", "correct": false }
+      ],
+      "feedback": "La directiva 'deny unknown-clients;' hace que el servidor DHCP rechace direcciones a clientes no conocidos."
+    }
+  ]
+}

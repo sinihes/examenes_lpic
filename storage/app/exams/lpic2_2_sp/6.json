@@ -1,0 +1,576 @@
+{
+  "id": "6",
+  "title": "212 - System Security",
+  "questions": [
+    {
+      "id": 1,
+      "type": "single",
+      "question": "¿Cuál de las siguientes opciones dentro de la configuración de un servidor OpenSSH se utiliza para determinar si el usuario root puede iniciar sesión directamente con un cliente ssh?",
+      "options": [
+        { "label": "a", "text": "PermitRootLogin", "correct": true },
+        { "label": "b", "text": "AllowRoot", "correct": false },
+        { "label": "c", "text": "RootLogin", "correct": false },
+        { "label": "d", "text": "PermitDirectRootLogin", "correct": false }
+      ],
+      "feedback": "La directiva PermitRootLogin, establecida en yes o no, determina si el usuario root puede iniciar sesión directamente. Las otras opciones mostradas no son válidas."
+    },
+    {
+      "id": 2,
+      "type": "single",
+      "question": "¿Cuál de los siguientes archivos se utiliza como archivo de configuración principal para vsftpd?",
+      "options": [
+        { "label": "a", "text": "vsftp.cfg", "correct": false },
+        { "label": "b", "text": "vsftpd.conf", "correct": true },
+        { "label": "c", "text": "vsftpd.cfg", "correct": false },
+        { "label": "d", "text": "vsftp.conf", "correct": false }
+      ],
+      "feedback": "El archivo vsftpd.conf contiene la configuración para vsftpd. El archivo se puede encontrar en /etc o dentro de un subdirectorio como /etc/vsftpd."
+    },
+    {
+      "id": 3,
+      "type": "single",
+      "question": "¿Qué cadena de iptables se utiliza para crear un redireccionamiento de puerto?",
+      "options": [
+        { "label": "a", "text": "REDIRECT", "correct": false },
+        { "label": "b", "text": "PREROUTING", "correct": true },
+        { "label": "c", "text": "PORTREDIR", "correct": false },
+        { "label": "d", "text": "ROUTING", "correct": false }
+      ],
+      "feedback": "La cadena PREROUTING, parte de la tabla nat, contiene reglas que se aplican cuando llegan los paquetes. Un uso común para esta cadena es aplicar reglas de redireccionamiento. Entre las otras respuestas, REDIRECT puede parecer válida, pero en realidad es un objetivo y no una cadena. Las otras opciones mostradas no son válidas."
+    },
+    {
+      "id": 4,
+      "type": "single",
+      "question": "¿Cuál de los siguientes archivos es el archivo de configuración principal del servidor para OpenSSH?",
+      "options": [
+        { "label": "a", "text": "/etc/ssh/sshd_config", "correct": true },
+        { "label": "b", "text": "/etc/sshserver.conf", "correct": false },
+        { "label": "c", "text": "/etc/openssh.conf", "correct": false },
+        { "label": "d", "text": "/etc/openssh/sshd.conf", "correct": false }
+      ],
+      "feedback": "El archivo de configuración principal para OpenSSH es /etc/ssh/sshd_config. Las otras opciones mostradas no son válidas."
+    },
+    {
+      "id": 5,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos guarda el conjunto actual de reglas de iptables en un archivo?",
+      "options": [
+        { "label": "a", "text": "save-iptables", "correct": false },
+        { "label": "b", "text": "iptables-create", "correct": false },
+        { "label": "c", "text": "iptables-save", "correct": true },
+        { "label": "d", "text": "ipt-save", "correct": false }
+      ],
+      "feedback": "El comando iptables-save crea un archivo con las reglas de iptables actualmente en ejecución. El archivo se puede aplicar la próxima vez que se reinicie el servidor. Los otros comandos mostrados no son válidos."
+    },
+    {
+      "id": 6,
+      "type": "single",
+      "question": "Al iniciar Pure FTPd, ¿qué opción de línea de comandos se utiliza para indicar que no se deben resolver nombres de host en la conexión del cliente?",
+      "options": [
+        { "label": "a", "text": "-n", "correct": false },
+        { "label": "b", "text": "-H", "correct": true },
+        { "label": "c", "text": "-r", "correct": false },
+        { "label": "d", "text": "-z", "correct": false }
+      ],
+      "feedback": "La opción -H hace que Pure FTPd no resuelva nombres de host. La opción -n se utiliza para aplicar cuotas, y la opción -r se utiliza para indicar que no se deben sobrescribir los archivos existentes. La opción -z permite a los usuarios anónimos leer directorios y archivos que comienzan con un punto."
+    },
+    {
+      "id": 7,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos se puede utilizar para generar un par de claves privada y pública para autenticación con ssh?",
+      "options": [
+        { "label": "a", "text": "ssh-createkey", "correct": false },
+        { "label": "b", "text": "sshkey", "correct": false },
+        { "label": "c", "text": "ssh-key", "correct": false },
+        { "label": "d", "text": "ssh-keygen", "correct": true }
+      ],
+      "feedback": "El comando ssh-keygen genera un par de claves pública y privada que se puede utilizar para la autenticación de usuarios entre un cliente y un servidor. Los otros comandos mostrados no son válidos."
+    },
+    {
+      "id": 8,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos prueba una conexión a mail.example.com en el puerto SMTP estándar?",
+      "options": [
+        { "label": "a", "text": "telnet mail.example.com smtp", "correct": false },
+        { "label": "b", "text": "telnet mail.example.com 25", "correct": true },
+        { "label": "c", "text": "telnet mail.example.com", "correct": false },
+        { "label": "d", "text": "smtptest mail.example.com", "correct": false }
+      ],
+      "feedback": "El comando telnet se puede utilizar para este propósito y, para SMTP, requiere el uso de un puerto como se muestra en la respuesta correcta a esta pregunta. No existe un comando smtptest, y especificar el puerto por nombre o no especificar el puerto no funcionará."
+    },
+    {
+      "id": 9,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos lista las reglas actuales de iptables sin intentar resolver nombres de host o puertos?",
+      "options": [
+        { "label": "a", "text": "iptables -L", "correct": false },
+        { "label": "b", "text": "iptables -List -no-resolve", "correct": false },
+        { "label": "c", "text": "iptables -a", "correct": false },
+        { "label": "d", "text": "iptables -nL", "correct": true }
+      ],
+      "feedback": "La opción -n de iptables hace que iptables no resuelva nombres de host o puertos. La opción -L lista las reglas actuales. No existe una opción -a."
+    },
+    {
+      "id": 10,
+      "type": "single",
+      "question": "¿Qué opción de línea de comandos de Pure FTPd deshabilita la carga anónima?",
+      "options": [
+        { "label": "a", "text": "-n", "correct": false },
+        { "label": "b", "text": "-a", "correct": false },
+        { "label": "c", "text": "-i", "correct": true },
+        { "label": "d", "text": "-m", "correct": false }
+      ],
+      "feedback": "La opción -i deshabilita las cargas por usuarios anónimos. La opción -a mantiene a los usuarios en su directorio home a menos que sean miembros de un grupo especificado. La opción -m evita la descarga anónima si la carga de CPU en el servidor está por encima de un umbral. La opción -n se utiliza para aplicar cuotas."
+    },
+    {
+      "id": 11,
+      "type": "single",
+      "question": "Which option within an OpenSSH configuration is used to specify the port on which the daemon will listen?",
+      "options": [
+        { "label": "a", "text": "Port", "correct": true },
+        { "label": "b", "text": "ListenOn", "correct": false },
+        { "label": "c", "text": "ListenPort", "correct": false },
+        { "label": "d", "text": "PortNum", "correct": false }
+      ],
+      "feedback": "The Port option specifies the port on which the OpenSSH server daemon will listen. Clients will need to specify the port using -p or with colon notation in order to connect to the server. The other options shown are not valid."
+    },
+    {
+      "id": 12,
+      "type": "single",
+      "question": "Which option within an OpenVPN configuration lets a client know that it can reach the network 192.168.5.0/24?",
+      "options": [
+        { "label": "a", "text": "client-route 192.168.5.0", "correct": false },
+        { "label": "b", "text": "push \"route 192.168.5.0 255.255.255.0\"", "correct": true },
+        { "label": "c", "text": "send \"route 192.168.5.0/24\"", "correct": false },
+        { "label": "d", "text": "client-route \"192.168.5.0/24\"", "correct": false }
+      ],
+      "feedback": "The push directive is used to send a route to clients on connection. In this case, the network and netmask are sent, with 255.255.255.0 being appropriate for a /24. The other options are not valid."
+    },
+    {
+      "id": 13,
+      "type": "single",
+      "question": "Which of the following commands executes a port scan using TCP Connect to the host 192.168.2.3?",
+      "options": [
+        { "label": "a", "text": "portscan 192.168.2.3", "correct": false },
+        { "label": "b", "text": "nmap -sT 192.168.2.3", "correct": true },
+        { "label": "c", "text": "maphost 192.168.2.3", "correct": false },
+        { "label": "d", "text": "tcpscan -C 192.168.2.3", "correct": false }
+      ],
+      "feedback": "The nmap command is used for this purpose, and the -sT option performs a TCP Connect to the specified host or network. The other commands are not valid."
+    },
+    {
+      "id": 14,
+      "type": "single",
+      "question": "Which of the following directories contains configuration files for the fail2ban system?",
+      "options": [
+        { "label": "a", "text": "/etc/fail2ban.cfg", "correct": false },
+        { "label": "b", "text": "/etc/fail2ban.d", "correct": false },
+        { "label": "c", "text": "/etc/f2b", "correct": false },
+        { "label": "d", "text": "/etc/fail2ban", "correct": true }
+      ],
+      "feedback": "The /etc/fail2ban directory contains configuration files related to fail2ban. The other directories shown are not valid."
+    },
+    {
+      "id": 15,
+      "type": "single",
+      "question": "Which option on the client side of an SSH connection is used to specify the private key for authentication?",
+      "options": [
+        { "label": "a", "text": "ssh -i", "correct": true },
+        { "label": "b", "text": "ssh -k", "correct": false },
+        { "label": "c", "text": "ssh -p", "correct": false },
+        { "label": "d", "text": "ssh -l", "correct": false }
+      ],
+      "feedback": "The -i option specifies the identity file or key that will be used for authentication. The server must have a copy of the public key and be configured for key-based authentication in order for the authentication to be successful. The -p option specifies the port. The -k option disables forwarding of GSSAPI credentials and is not related to the described scenario. The -l option specifies the username to use for authentication."
+    },
+
+
+
+
+
+    
+    {
+      "id": 16,
+      "type": "single",
+      "question": "Which of the following commands saves the current IPv6 iptables configuration?",
+      "options": [
+        { "label": "a", "text": "iptables6-save", "correct": false },
+        { "label": "b", "text": "ip6tables-save", "correct": true },
+        { "label": "c", "text": "iptables6save", "correct": false },
+        { "label": "d", "text": "save-iptables6", "correct": false }
+      ],
+      "feedback": "The ip6tables-save command saves the currently running IPv6 iptables configuration. The other commands shown are not valid. Most of the IPv6 commands related to iptables are of the form ip6tables."
+    },
+    {
+      "id": 17,
+      "type": "single",
+      "question": "Within an OpenSSH configuration, which option disables the use of empty passwords?",
+      "options": [
+        { "label": "a", "text": "DisableEmptyPass", "correct": false },
+        { "label": "b", "text": "PermitEmptyPasswords", "correct": true },
+        { "label": "c", "text": "EmptyPasswordAuth", "correct": false },
+        { "label": "d", "text": "PermitPasswordLength", "correct": false }
+      ],
+      "feedback": "The PermitEmptyPasswords directive, when set to yes or no, specifies whether empty passwords can be used for authentication. Enabling empty passwords would be a specialized use case and generally not recommended. The other options shown are not valid."
+    },
+    {
+      "id": 18,
+      "type": "single",
+      "question": "Which of the following commands sets the default policy for the INPUT chain to discard packets that don’t have a specific rule allowing them?",
+      "options": [
+        { "label": "a", "text": "iptables INPUT DROP", "correct": false },
+        { "label": "b", "text": "iptables chain INPUT policy DROP", "correct": false },
+        { "label": "c", "text": "iptables -P INPUT DROP", "correct": true },
+        { "label": "d", "text": "iptables POLICY=DROP CHAIN=INPUT", "correct": false }
+      ],
+      "feedback": "The -P option sets the policy for a given chain in iptables. In this case, the chain is INPUT and the policy necessary is DROP."
+    },
+    {
+      "id": 19,
+      "type": "single",
+      "question": "On which port and protocol does OpenVPN listen?",
+      "options": [
+        { "label": "a", "text": "ICMP/1194", "correct": false },
+        { "label": "b", "text": "UDP/1194", "correct": true },
+        { "label": "c", "text": "TCP/1194", "correct": false },
+        { "label": "d", "text": "VPN/1194", "correct": false }
+      ],
+      "feedback": "OpenVPN listens on UDP port 1194 by default. The other combinations are not the valid OpenVPN configuration."
+    },
+    {
+      "id": 20,
+      "type": "single",
+      "question": "Which directive in an OpenSSH configuration is used for specifying the version of the SSH protocol to use?",
+      "options": [
+        { "label": "a", "text": "Proto", "correct": false },
+        { "label": "b", "text": "Protocol", "correct": true },
+        { "label": "c", "text": "ProtoVer", "correct": false },
+        { "label": "d", "text": "Version", "correct": false }
+      ],
+      "feedback": "The Protocol directive specifies the version of the SSH protocol that should be used. Currently, version 2 is recommended. The other options shown are not valid."
+    },
+        {
+      "id": 11,
+      "type": "single",
+      "question": "¿Qué opción dentro de una configuración de OpenSSH se utiliza para especificar el puerto en el que escuchará el demonio?",
+      "options": [
+        { "label": "a", "text": "Port", "correct": true },
+        { "label": "b", "text": "ListenOn", "correct": false },
+        { "label": "c", "text": "ListenPort", "correct": false },
+        { "label": "d", "text": "PortNum", "correct": false }
+      ],
+      "feedback": "La opción Port especifica el puerto en el que escuchará el demonio del servidor OpenSSH. Los clientes deberán especificar el puerto usando -p o con notación de dos puntos para conectarse al servidor. Las otras opciones mostradas no son válidas."
+    },
+    {
+      "id": 12,
+      "type": "single",
+      "question": "¿Qué opción dentro de una configuración de OpenVPN informa a un cliente que puede alcanzar la red 192.168.5.0/24?",
+      "options": [
+        { "label": "a", "text": "client-route 192.168.5.0", "correct": false },
+        { "label": "b", "text": "push \"route 192.168.5.0 255.255.255.0\"", "correct": true },
+        { "label": "c", "text": "send \"route 192.168.5.0/24\"", "correct": false },
+        { "label": "d", "text": "client-route \"192.168.5.0/24\"", "correct": false }
+      ],
+      "feedback": "La directiva push se utiliza para enviar una ruta a los clientes al conectarse. En este caso, se envían la red y la máscara de red, siendo 255.255.255.0 apropiado para un /24. Las otras opciones no son válidas."
+    },
+    {
+      "id": 13,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos ejecuta un escaneo de puertos usando TCP Connect al host 192.168.2.3?",
+      "options": [
+        { "label": "a", "text": "portscan 192.168.2.3", "correct": false },
+        { "label": "b", "text": "nmap -sT 192.168.2.3", "correct": true },
+        { "label": "c", "text": "maphost 192.168.2.3", "correct": false },
+        { "label": "d", "text": "tcpscan -C 192.168.2.3", "correct": false }
+      ],
+      "feedback": "El comando nmap se utiliza para este propósito, y la opción -sT realiza un TCP Connect al host o red especificado. Los otros comandos no son válidos."
+    },
+    {
+      "id": 14,
+      "type": "single",
+      "question": "¿Cuál de los siguientes directorios contiene archivos de configuración para el sistema fail2ban?",
+      "options": [
+        { "label": "a", "text": "/etc/fail2ban.cfg", "correct": false },
+        { "label": "b", "text": "/etc/fail2ban.d", "correct": false },
+        { "label": "c", "text": "/etc/f2b", "correct": false },
+        { "label": "d", "text": "/etc/fail2ban", "correct": true }
+      ],
+      "feedback": "El directorio /etc/fail2ban contiene archivos de configuración relacionados con fail2ban. Los otros directorios mostrados no son válidos."
+    },
+    {
+      "id": 15,
+      "type": "single",
+      "question": "¿Qué opción en el lado cliente de una conexión SSH se utiliza para especificar la clave privada para autenticación?",
+      "options": [
+        { "label": "a", "text": "ssh -i", "correct": true },
+        { "label": "b", "text": "ssh -k", "correct": false },
+        { "label": "c", "text": "ssh -p", "correct": false },
+        { "label": "d", "text": "ssh -l", "correct": false }
+      ],
+      "feedback": "La opción -i especifica el archivo de identidad o clave que se utilizará para la autenticación. El servidor debe tener una copia de la clave pública y estar configurado para autenticación basada en claves para que la autenticación sea exitosa. La opción -p especifica el puerto. La opción -k deshabilita el reenvío de credenciales GSSAPI y no está relacionada con el escenario descrito. La opción -l especifica el nombre de usuario a utilizar para la autenticación."
+    },
+    {
+      "id": 16,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos guarda la configuración actual de iptables IPv6?",
+      "options": [
+        { "label": "a", "text": "iptables6-save", "correct": false },
+        { "label": "b", "text": "ip6tables-save", "correct": true },
+        { "label": "c", "text": "iptables6save", "correct": false },
+        { "label": "d", "text": "save-iptables6", "correct": false }
+      ],
+      "feedback": "El comando ip6tables-save guarda la configuración actual de iptables IPv6 en ejecución. Los otros comandos mostrados no son válidos. La mayoría de los comandos IPv6 relacionados con iptables tienen la forma ip6tables."
+    },
+    {
+      "id": 17,
+      "type": "single",
+      "question": "Dentro de una configuración de OpenSSH, ¿qué opción deshabilita el uso de contraseñas vacías?",
+      "options": [
+        { "label": "a", "text": "DisableEmptyPass", "correct": false },
+        { "label": "b", "text": "PermitEmptyPasswords", "correct": true },
+        { "label": "c", "text": "EmptyPasswordAuth", "correct": false },
+        { "label": "d", "text": "PermitPasswordLength", "correct": false }
+      ],
+      "feedback": "La directiva PermitEmptyPasswords, cuando se establece en yes o no, especifica si se pueden usar contraseñas vacías para autenticación. Habilitar contraseñas vacías sería un caso de uso especializado y generalmente no recomendado. Las otras opciones mostradas no son válidas."
+    },
+    {
+      "id": 18,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos establece la política predeterminada para la cadena INPUT para descartar paquetes que no tengan una regla específica que los permita?",
+      "options": [
+        { "label": "a", "text": "iptables INPUT DROP", "correct": false },
+        { "label": "b", "text": "iptables chain INPUT policy DROP", "correct": false },
+        { "label": "c", "text": "iptables -P INPUT DROP", "correct": true },
+        { "label": "d", "text": "iptables POLICY=DROP CHAIN=INPUT", "correct": false }
+      ],
+      "feedback": "La opción -P establece la política para una cadena dada en iptables. En este caso, la cadena es INPUT y la política necesaria es DROP."
+    },
+    {
+      "id": 19,
+      "type": "single",
+      "question": "¿En qué puerto y protocolo escucha OpenVPN?",
+      "options": [
+        { "label": "a", "text": "ICMP/1194", "correct": false },
+        { "label": "b", "text": "UDP/1194", "correct": true },
+        { "label": "c", "text": "TCP/1194", "correct": false },
+        { "label": "d", "text": "VPN/1194", "correct": false }
+      ],
+      "feedback": "OpenVPN escucha en el puerto UDP 1194 por defecto. Las otras combinaciones no son una configuración válida de OpenVPN."
+    },
+    {
+      "id": 20,
+      "type": "single",
+      "question": "¿Qué directiva en una configuración de OpenSSH se utiliza para especificar la versión del protocolo SSH a usar?",
+      "options": [
+        { "label": "a", "text": "Proto", "correct": false },
+        { "label": "b", "text": "Protocol", "correct": true },
+        { "label": "c", "text": "ProtoVer", "correct": false },
+        { "label": "d", "text": "Version", "correct": false }
+      ],
+      "feedback": "La directiva Protocol especifica la versión del protocolo SSH que debe usarse. Actualmente, se recomienda la versión 2. Las otras opciones mostradas no son válidas."
+    },
+        {
+      "id": 21,
+      "type": "single",
+      "question": "¿Cuál de las siguientes opciones describe mejor la diferencia entre los objetivos DROP y REJECT en iptables?",
+      "options": [
+        { "label": "a", "text": "Tanto DROP como REJECT hacen lo mismo", "correct": false },
+        { "label": "b", "text": "DROP descarta paquetes silenciosamente, mientras que REJECT envía un acuse ICMP", "correct": true },
+        { "label": "c", "text": "REJECT descarta paquetes silenciosamente, mientras que DROP envía un acuse ICMP", "correct": false },
+        { "label": "d", "text": "DROP envía un mensaje directo y REJECT envía un redireccionamiento", "correct": false }
+      ],
+      "feedback": "El objetivo DROP descarta silenciosamente los paquetes que coinciden con la regla. Para REJECT se envía un mensaje ICMP de inalcanzable. En general, se prefiere DROP para reducir las posibilidades de Denegación de Servicio (DoS) u otros problemas de recopilación de información."
+    },
+    {
+      "id": 22,
+      "type": "single",
+      "question": "¿Qué archivo contiene una lista de claves que serán aceptadas para autenticación para un usuario dado?",
+      "options": [
+        { "label": "a", "text": "~/ssh/keys", "correct": false },
+        { "label": "b", "text": "~/.ssh/pubkeys", "correct": false },
+        { "label": "c", "text": "~/.ssh/keyauth", "correct": false },
+        { "label": "d", "text": "~/.ssh/authorized_keys", "correct": true }
+      ],
+      "feedback": "El archivo authorized_keys contiene claves que pueden usarse para autenticación cuando el cliente envía la clave privada correspondiente. Los otros archivos no son válidos."
+    },
+    {
+      "id": 23,
+      "type": "single",
+      "question": "¿Cuál de las siguientes reglas parciales de iptables configura un límite de tres entradas de registro por minuto?",
+      "options": [
+        { "label": "a", "text": "-m limit 3 -j LOG", "correct": false },
+        { "label": "b", "text": "-m limit --limit 3/minute --limit-burst 3 -j LOG", "correct": true },
+        { "label": "c", "text": "-m limit --limit 3", "correct": false },
+        { "label": "d", "text": "-m limit --limit-minute 3 --burst 3 -j LOG", "correct": false }
+      ],
+      "feedback": "La coincidencia -m limit, junto con las opciones de configuración mostradas, crea el escenario descrito. Habrá tres entradas de registro por minuto. Esto puede ser útil para prevenir Denegación de Servicio al llenar archivos de registro o sobrecargar la E/S del servidor mientras se lleva a cabo otro ataque."
+    },
+    {
+      "id": 24,
+      "type": "single",
+      "question": "¿Qué opción del comando ssh se utiliza para el reenvío de aplicaciones X11?",
+      "options": [
+        { "label": "a", "text": "-X11", "correct": false },
+        { "label": "b", "text": "-A", "correct": false },
+        { "label": "c", "text": "-X", "correct": true },
+        { "label": "d", "text": "-F", "correct": false }
+      ],
+      "feedback": "La opción -X habilita el reenvío de aplicaciones X11 a través de una conexión SSH. La opción -A se usa para el reenvío del agente de autenticación, y -F indica un archivo de configuración por usuario. No existe una opción -X11."
+    },
+    {
+      "id": 25,
+      "type": "single",
+      "question": "El comando netstat -a reporta que el puerto 80 está en uso en el servidor. ¿Cuál de los siguientes comandos puede usarse para determinar qué está usando realmente ese puerto?",
+      "options": [
+        { "label": "a", "text": "listPorts", "correct": false },
+        { "label": "b", "text": "portlist -a", "correct": false },
+        { "label": "c", "text": "lsof -i", "correct": true },
+        { "label": "d", "text": "tcpdump", "correct": false }
+      ],
+      "feedback": "El comando y opción lsof -i puede usarse para este propósito. Se mostrará una lista de procesos y puertos que puede usarse para determinar qué proceso específico está escuchando en el puerto. De los otros comandos, tcpdump es válido pero no mostrará la información necesaria para resolver el problema descrito. Los otros comandos no son válidos."
+    },
+    {
+      "id": 26,
+      "type": "single",
+      "question": "¿Cuál de las siguientes reglas parciales de iptables permite tráfico ICMP entrante?",
+      "options": [
+        { "label": "a", "text": "-A INPUT -p ICMP -j ACCEPT", "correct": true },
+        { "label": "b", "text": "-A IN -P ICMP", "correct": false },
+        { "label": "c", "text": "-A INPUT -P ACCEPT-ICMP", "correct": false },
+        { "label": "d", "text": "-A IN -P ICMP -j ACCEPT", "correct": false }
+      ],
+      "feedback": "Se usa la cadena INPUT, y cuando se usa con la opción -A, agregará una regla a la cadena. La opción -p especifica el protocolo, ICMP en este caso, y la opción -j especifica el objetivo, ACCEPT en este caso. La opción -P especifica una política y no se usa para este escenario."
+    },
+    {
+      "id": 27,
+      "type": "single",
+      "question": "¿Qué opción en una configuración de OpenSSH se utiliza para determinar si se habilitará el reenvío de puertos?",
+      "options": [
+        { "label": "a", "text": "AllowPortForwarding", "correct": false },
+        { "label": "b", "text": "PortForwarding", "correct": false },
+        { "label": "c", "text": "ForwardPort", "correct": false },
+        { "label": "d", "text": "AllowTcpForwarding", "correct": true }
+      ],
+      "feedback": "La directiva de configuración AllowTcpForwarding determina si se permitirá el reenvío de puertos a través del servidor SSH. Cuando está habilitado, los clientes pueden reenviar puertos a través de sus conexiones SSH. Las otras directivas no son válidas."
+    },
+    {
+      "id": 28,
+      "type": "single",
+      "question": "¿Cuál de las siguientes reglas parciales de iptables bloquea todo el tráfico desde 192.168.51.50?",
+      "options": [
+        { "label": "a", "text": "-A INPUT -p ALL 192.168.51.50 -j ACCEPT", "correct": false },
+        { "label": "b", "text": "-A INPUT -p ALL -s 192.168.51.50 -j DROP", "correct": true },
+        { "label": "c", "text": "-A INPUT -p ALL -s 192.168.51.50 -j BLOCK", "correct": false },
+        { "label": "d", "text": "-A INPUT -p ALL -f 192.168.51.50 -j DISCARD", "correct": false }
+      ],
+      "feedback": "Se usará la cadena INPUT, y se debe agregar una regla con -A. La opción ALL al especificar protocolo significa que todos los protocolos se incluirán en la regla. La opción -s especifica la fuente, que en este caso es una única dirección IP. Finalmente, el objetivo DROP descarta silenciosamente los paquetes. No existe un objetivo BLOCK o DISCARD, y el objetivo ACCEPT no bloqueará sino que aceptará todo el tráfico."
+    },
+    {
+      "id": 29,
+      "type": "single",
+      "question": "¿Cuál de las siguientes reglas parciales de iptables permitirá que todos los hosts se conecten al puerto TCP 2222?",
+      "options": [
+        { "label": "a", "text": "-A INPUT -p TCP -s 0/0 --destination-port 2222 -j ACCEPT", "correct": true },
+        { "label": "b", "text": "-A TCP -s ALL -p 2222 -j ACCEPT", "correct": false },
+        { "label": "c", "text": "-A INPUT -p TCP -s *.* --destination-port 2222 -j ALLOW", "correct": false },
+        { "label": "d", "text": "-A INPUT --destination-port */* -j ACCEPT", "correct": false }
+      ],
+      "feedback": "Se agregará una regla a la cadena INPUT con -A. En este caso, el protocolo debe especificarse con -p TCP y un puerto de destino de 2222. La dirección de origen indicada, 0/0, aplica la regla a todos los hosts. Se usará el objetivo ACCEPT."
+    },
+    {
+      "id": 30,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos habilita el reenvío como el que se usaría para NAT?",
+      "options": [
+        { "label": "a", "text": "echo \"1\" > /proc/sys/net/ipv4/nat", "correct": false },
+        { "label": "b", "text": "echo \"1\" > /proc/sys/net/ipv4/ip_forward", "correct": true },
+        { "label": "c", "text": "iptables --enable-forwarding", "correct": false },
+        { "label": "d", "text": "ip-forward --enable", "correct": false }
+      ],
+      "feedback": "Al escribir 1 en el archivo /proc/sys/net/ipv4/ip_forward se habilita el reenvío de paquetes IP. Esto es necesario para utilizar NAT y para otros usos. No existe el archivo /proc/sys/net/ipv4/nat."
+    },
+{
+  "id": 31,
+  "type": "single",
+  "question": "Dentro del archivo vsftpd.conf, ¿qué directiva habilita IPv6?",
+  "options": [
+    { "label": "a", "text": "ipv6_enable", "correct": false },
+    { "label": "b", "text": "ipv6", "correct": false },
+    { "label": "c", "text": "ipv6_listen", "correct": false },
+    { "label": "d", "text": "listen_ipv6", "correct": true }
+  ],
+  "feedback": "La directiva listen_ipv6 se utiliza para indicar que IPv6 estará habilitado para vsftpd. Las demás directivas mostradas no son válidas."
+},
+{
+  "id": 32,
+  "type": "single",
+  "question": "¿Qué directiva de configuración de OpenSSH determina si se usará autenticación basada en clave?",
+  "options": [
+    { "label": "a", "text": "KeyAuth", "correct": false },
+    { "label": "b", "text": "PubKeyAuth", "correct": false },
+    { "label": "c", "text": "PubkeyAuthentication", "correct": true },
+    { "label": "d", "text": "AuthenticationKey", "correct": false }
+  ],
+  "feedback": "La directiva PubkeyAuthentication determina si se puede usar la autenticación basada en clave con el servidor. Las demás directivas mostradas no son válidas."
+},
+{
+  "id": 33,
+  "type": "single",
+  "question": "Dentro de una configuración jail para fail2ban, ¿qué opción establece el nombre y ubicación del archivo de registro que se supervisará en busca de fallos?",
+  "options": [
+    { "label": "a", "text": "logpath", "correct": true },
+    { "label": "b", "text": "monitor", "correct": false },
+    { "label": "c", "text": "logfile_mon", "correct": false },
+    { "label": "d", "text": "monitor_log", "correct": false }
+  ],
+  "feedback": "La directiva logpath determina el archivo de registro que fail2ban supervisará para detectar fallos. Las demás directivas no son válidas para fail2ban."
+},
+{
+  "id": 34,
+  "type": "single",
+  "question": "¿Qué comando envía una copia de la clave pública de identidad a otro servidor para su uso con SSH?",
+  "options": [
+    { "label": "a", "text": "ssh-key", "correct": false },
+    { "label": "b", "text": "ssh-copy-key", "correct": false },
+    { "label": "c", "text": "ssh-sendkey", "correct": false },
+    { "label": "d", "text": "ssh-copy-id", "correct": true }
+  ],
+  "feedback": "El comando ssh-copy-id envía una identidad a un servidor remoto que luego puede usarse para la autenticación basada en clave. Los demás comandos mostrados no son válidos."
+},
+{
+  "id": 35,
+  "type": "single",
+  "question": "¿Qué comando se utiliza para la creación y mantenimiento de reglas de firewall para IPv6?",
+  "options": [
+    { "label": "a", "text": "iptables6", "correct": false },
+    { "label": "b", "text": "ip6tables", "correct": true },
+    { "label": "c", "text": "ipv6tables", "correct": false },
+    { "label": "d", "text": "ipfw6", "correct": false }
+  ],
+  "feedback": "El comando ip6tables se utiliza para la creación y mantenimiento de un firewall para IPv6. Es similar al comando iptables."
+},
+{
+  "id": 36,
+  "type": "single",
+  "question": "¿Cuál de las siguientes entradas de configuración de OpenVPN envía una opción DHCP a un cliente para indicar el servidor DNS (192.168.2.1) que debe usar?",
+  "options": [
+    { "label": "a", "text": "push \"dhcp-option ns 192.168.2.1\"", "correct": false },
+    { "label": "b", "text": "push \"dhcp-nameserver 192.168.2.1\"", "correct": false },
+    { "label": "c", "text": "push \"dhcp-option DNS 192.168.2.1\"", "correct": true },
+    { "label": "d", "text": "push \"dhcp-dns 192.168.2.1\"", "correct": false }
+  ],
+  "feedback": "La directiva push requiere 'dhcp-option DNS' para especificar el servidor DNS que se envía a los clientes."
+},
+{
+  "id": 37,
+  "type": "single",
+  "question": "¿Qué opción en vsftpd.conf especifica si los usuarios podrán autenticarse en el servidor?",
+  "options": [
+    { "label": "a", "text": "local_enable", "correct": true },
+    { "label": "b", "text": "users_login", "correct": false },
+    { "label": "c", "text": "user_login", "correct": false },
+    { "label": "d", "text": "local_users", "correct": false }
+  ],
+  "feedback": "La directiva local_enable especifica si los usuarios pueden iniciar sesión. No se utiliza para servidores FTP solo anónimos."
+}
+  ]
+}

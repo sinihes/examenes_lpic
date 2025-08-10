@@ -1,0 +1,450 @@
+{
+  "id": "7",
+  "title": "206 - System Maintenance",
+  "questions": [
+        {
+      "id": 1,
+      "type": "single",
+      "question": "Which of the following compression programs is used for compression of the official kernel source code?",
+      "options": [
+        { "label": "a", "text": "gzip2", "correct": false },
+        { "label": "b", "text": "bzip2", "correct": false },
+        { "label": "c", "text": "xz", "correct": true },
+        { "label": "d", "text": "xy", "correct": false }
+      ],
+      "feedback": "The kernel sources now use xz compression. Previously, these sources had used bzip2, and prior to that they used gzip. There is no xy compression algorithm."
+    },
+    {
+      "id": 2,
+      "type": "single",
+      "question": "Which option to the rsync command provides archive mode?",
+      "options": [
+        { "label": "a", "text": "-r", "correct": false },
+        { "label": "b", "text": "-o", "correct": false },
+        { "label": "c", "text": "-a", "correct": true },
+        { "label": "d", "text": "-f", "correct": false }
+      ],
+      "feedback": "The -a option provides archive mode, which is a substitute for several other options. The -r option is recursive, the -o option indicates that ownership should be preserved, and the -f option enables a filter."
+    },
+    {
+      "id": 3,
+      "type": "single",
+      "question": "Which option to the tar command creates a tar file?",
+      "options": [
+        { "label": "a", "text": "-c", "correct": true },
+        { "label": "b", "text": "-b", "correct": false },
+        { "label": "c", "text": "-f", "correct": false },
+        { "label": "d", "text": "-d", "correct": false }
+      ],
+      "feedback": "The -c option indicates the creation of a tar file. The -d option is used for diffing or differencing between two tar files, the -b option provides block size, and -f specifies the file for use with tar."
+    },
+    {
+      "id": 4,
+      "type": "single",
+      "question": "Which option to tar removes files after adding them to the archive?",
+      "options": [
+        { "label": "a", "text": "-r", "correct": false },
+        { "label": "b", "text": "-d", "correct": false },
+        { "label": "c", "text": "--remove-files", "correct": true },
+        { "label": "d", "text": "-f", "correct": false }
+      ],
+      "feedback": "The –remove-files option removes files from the filesystem after adding them to the archive. The -r option appends files to the end of an archive, the -d option provides a diff between the filesystem and an archive, and the -f option specifies the file."
+    },
+    {
+      "id": 5,
+      "type": "single",
+      "question": "Which of the following patch commands strips the leading slash from the path for files to patch?",
+      "options": [
+        { "label": "a", "text": "patch -p0", "correct": false },
+        { "label": "b", "text": "patch -strip 1", "correct": false },
+        { "label": "c", "text": "patch -s0", "correct": false },
+        { "label": "d", "text": "patch -p1", "correct": true }
+      ],
+      "feedback": "The -p option specifies the number of slashes to be stripped from the beginning of the path for patching. Both the -p1 and -p0 options are quite common. The -s option specifies silent operation. There is no -strip option."
+    },
+    {
+      "id": 6,
+      "type": "single",
+      "question": "Which of the following is the recommended name for a file containing commands and relationships used with the make command?",
+      "options": [
+        { "label": "a", "text": "Makefile", "correct": true },
+        { "label": "b", "text": "makefile", "correct": false },
+        { "label": "c", "text": "make.file", "correct": false },
+        { "label": "d", "text": "Makefile.txt", "correct": false }
+      ],
+      "feedback": "According to the man(1) page for the make command, the name Makefile, with an uppercase M, is the recommended name for the file. The name makefile is valid as a default, but it is not the recommended option. The other files are not valid as default names."
+    },
+    {
+      "id": 7,
+      "type": "single",
+      "question": "Which make target is commonly used as a standard convention for removing extraneous files from a previous make process?",
+      "options": [
+        { "label": "a", "text": "cleanup", "correct": false },
+        { "label": "b", "text": "next", "correct": false },
+        { "label": "c", "text": "netbuild", "correct": false },
+        { "label": "d", "text": "clean", "correct": true }
+      ],
+      "feedback": "The clean target is typically included in most Makefiles for projects in order to remove files leftover from a previous compilation. The other targets are not valid."
+    },
+    {
+      "id": 8,
+      "type": "single",
+      "question": "Which script, typically included with source code, is used to check dependencies and prepare the Makefile with customizations based on the system?",
+      "options": [
+        { "label": "a", "text": "config", "correct": false },
+        { "label": "b", "text": "installer", "correct": false },
+        { "label": "c", "text": "prep", "correct": false },
+        { "label": "d", "text": "configure", "correct": true }
+      ],
+      "feedback": "The configure script, which is usually included in source code packages, customizes the software based on the local environment. The other script names shown are generally not used."
+    },
+    {
+      "id": 9,
+      "type": "single",
+      "question": "According to the Filesystem Hierarchy Standard (FHS), within which directory should source code be placed?",
+      "options": [
+        { "label": "a", "text": "/usr/local/src", "correct": false },
+        { "label": "b", "text": "/usr/src", "correct": true },
+        { "label": "c", "text": "/src", "correct": false },
+        { "label": "d", "text": "/home/source", "correct": false }
+      ],
+      "feedback": "The /usr/src directory is the recommended location for source code according to the Filesystem Hierarchy Standard. Many administrators use /usr/local/src instead, but this is not specified in the FHS."
+    },
+    {
+      "id": 10,
+      "type": "single",
+      "question": "You have downloaded a source file with the extension .gz. Which of the following commands will uncompress the file?",
+      "options": [
+        { "label": "a", "text": "unzip", "correct": false },
+        { "label": "b", "text": "gunzip", "correct": true },
+        { "label": "c", "text": "dezip", "correct": false },
+        { "label": "d", "text": "uncomp", "correct": false }
+      ],
+      "feedback": "The gunzip command is used to uncompress files that have been compressed using gzip compression."
+    },
+        {
+      "id": 11,
+      "type": "single",
+      "question": "Which of the following dd commands reads and writes bytes one megabyte at a time?",
+      "options": [
+        { "label": "a", "text": "dd bsl=1024M", "correct": false },
+        { "label": "b", "text": "dd size=1M", "correct": false },
+        { "label": "c", "text": "dd bs=1M", "correct": true },
+        { "label": "d", "text": "dd rw=1M", "correct": false }
+      ],
+      "feedback": "The bs option is used to specify block size. Various suffixes are possible such as M, which is equivalent to megabytes, and K, which is equivalent to kilobytes."
+    },
+    {
+      "id": 12,
+      "type": "single",
+      "question": "Which configuration directive for Amanda defines a name for the type of tape (or device) to be used as a backup destination?",
+      "options": [
+        { "label": "a", "text": "dest", "correct": false },
+        { "label": "b", "text": "index", "correct": false },
+        { "label": "c", "text": "tapetype", "correct": true },
+        { "label": "d", "text": "desttype", "correct": false }
+      ],
+      "feedback": "The tapetype directive defines a friendly name for a destination. The destination is then further configured within a corresponding define directive. The other directives are not valid for Amanda."
+    },
+    {
+      "id": 13,
+      "type": "single",
+      "question": "Which of the following devices is the location of the first SCSI tape device detected at boot?",
+      "options": [
+        { "label": "a", "text": "/dev/st", "correct": false },
+        { "label": "b", "text": "/dev/sd0", "correct": false },
+        { "label": "c", "text": "/dev/sd1", "correct": false },
+        { "label": "d", "text": "/dev/st0", "correct": true }
+      ],
+      "feedback": "Tape devices are found within /dev/st*, thereby making st0 the first device."
+    },
+    {
+      "id": 14,
+      "type": "single",
+      "question": "Which of the following files should be used to display a message to users prior to logging in locally?",
+      "options": [
+        { "label": "a", "text": "/etc/loginmesg", "correct": false },
+        { "label": "b", "text": "/etc/logmessage.txt", "correct": false },
+        { "label": "c", "text": "/etc/issue", "correct": true },
+        { "label": "d", "text": "/etc/banner", "correct": false }
+      ],
+      "feedback": "The /etc/issue file is used to provide a message to users, such as a login banner, prior to local login. The other files shown are not valid for the purpose described."
+    },
+    {
+      "id": 15,
+      "type": "single",
+      "question": "Which option to the rsync command, when used in archive mode, will remove files that no longer exist on the host?",
+      "options": [
+        { "label": "a", "text": "--delete", "correct": true },
+        { "label": "b", "text": "--remove", "correct": false },
+        { "label": "c", "text": "-del", "correct": false },
+        { "label": "d", "text": "-rem", "correct": false }
+      ],
+      "feedback": "The –delete option removes files that no longer exist on the host system when syncing with archive mode in rsync. The other options shown are not valid for rsync."
+    },
+    {
+      "id": 16,
+      "type": "single",
+      "question": "Which of the following commands broadcasts a message to all logged-in users?",
+      "options": [
+        { "label": "a", "text": "bcast", "correct": false },
+        { "label": "b", "text": "broadcast", "correct": false },
+        { "label": "c", "text": "show", "correct": false },
+        { "label": "d", "text": "wall", "correct": true }
+      ],
+      "feedback": "The wall command displays a message to all logged-in users. The command is sometimes used to communicate an impending reboot or shutdown of the server. The other commands shown are not valid."
+    },
+    {
+      "id": 17,
+      "type": "single",
+      "question": "When creating a tar archive, you need to exclude certain files from the archive. Which option facilitates this scenario?",
+      "options": [
+        { "label": "a", "text": "-x", "correct": false },
+        { "label": "b", "text": "--exclude", "correct": true },
+        { "label": "c", "text": "--ex", "correct": false },
+        { "label": "d", "text": "--remove", "correct": false }
+      ],
+      "feedback": "The –exclude option excludes files matching a pattern from the archive. This option can greatly reduce the size of an archive by excluding unnecessary files from the archive. The -x option is the only other valid option that extracts files from an archive."
+    },
+    {
+      "id": 18,
+      "type": "single",
+      "question": "Which file contains a message that is then displayed after a successful login?",
+      "options": [
+        { "label": "a", "text": "/etc/loginbanner", "correct": false },
+        { "label": "b", "text": "/etc/issue", "correct": false },
+        { "label": "c", "text": "/etc/motd", "correct": true },
+        { "label": "d", "text": "/etc/message", "correct": false }
+      ],
+      "feedback": "The contents of the file motd, an abbreviation for Message of the Day, are displayed when a user logs in successfully. Among the other options, the contents of /etc/issue are displayed prior to local login. The other filenames are not valid for this purpose."
+    },
+    {
+      "id": 19,
+      "type": "single",
+      "question": "Which of the following tar commands is used to extract from a file named archive.tar in such a manner that the contents are printed to STDOUT during extraction?",
+      "options": [
+        { "label": "a", "text": "tar -cvf archive.tar", "correct": false },
+        { "label": "b", "text": "tar -xvf archive.tar", "correct": true },
+        { "label": "c", "text": "tar -zf archive.tar", "correct": false },
+        { "label": "d", "text": "tar -yvf archive.tar", "correct": false }
+      ],
+      "feedback": "The -f option specifies the filename and -v is verbose, making both of those options required based on the scenario. The -x option extracts from the archive."
+    },
+    {
+      "id": 20,
+      "type": "single",
+      "question": "Which of the following commands will properly execute the configure script for a source code package, assuming that you have already changed into the source code directory?",
+      "options": [
+        { "label": "a", "text": "configure./", "correct": false },
+        { "label": "b", "text": "./config", "correct": false },
+        { "label": "c", "text": "./configure", "correct": true },
+        { "label": "d", "text": "exec config", "correct": false }
+      ],
+      "feedback": "Executing the configure script from the current directory typically means prefacing the script name with ./, as shown in the correct option."
+    },
+        {
+      "id": 21,
+      "type": "single",
+      "question": "Which of the following options to the tar command can be used to uncompress a file that has been compressed using gzip?",
+      "options": [
+        { "label": "a", "text": "-z", "correct": true },
+        { "label": "b", "text": "-x", "correct": false },
+        { "label": "c", "text": "-c", "correct": false },
+        { "label": "d", "text": "-f", "correct": false }
+      ],
+      "feedback": "The -z option will uncompress a tar file that has been compressed with gzip. The -x option extracts, while -c creates a tar file. Finally, -f specifies the tar file to work with."
+    },
+    {
+      "id": 22,
+      "type": "single",
+      "question": "Which of the following files can be used to provide a message to users logging in remotely with a protocol such as Telnet?",
+      "options": [
+        { "label": "a", "text": "/etc/telnet.msg", "correct": false },
+        { "label": "b", "text": "/etc/issue", "correct": true },
+        { "label": "c", "text": "/etc/login.msg", "correct": false },
+        { "label": "d", "text": "/etc/telnet.login", "correct": false }
+      ],
+      "feedback": "The file /etc/issue.net is used to provide a message for remote logins such as Telnet. The other files listed are not valid for the purpose described."
+    },
+    {
+      "id": 23,
+      "type": "single",
+      "question": "Which of the following commands turns off the computer, including removing power, if possible?",
+      "options": [
+        { "label": "a", "text": "systemctl halt", "correct": false },
+        { "label": "b", "text": "systemctl reboot", "correct": false },
+        { "label": "c", "text": "systemctl stop", "correct": false },
+        { "label": "d", "text": "systemctl poweroff", "correct": true }
+      ],
+      "feedback": "The poweroff target of systemd, accessed using the systemctl command, is used for halting the system and then attempting to remove power on compatible systems. The halt target stops the system but does not attempt to remove power, while reboot simply restarts the system. There is no stop target."
+    },
+    {
+      "id": 24,
+      "type": "single",
+      "question": "Which of the following commands outputs information about the kernel version and processor architecture?",
+      "options": [
+        { "label": "a", "text": "uname -a", "correct": true },
+        { "label": "b", "text": "lskern", "correct": false },
+        { "label": "c", "text": "kern -v", "correct": false },
+        { "label": "d", "text": "proc info", "correct": false }
+      ],
+      "feedback": "The uname command displays information about the kernel, processor type, and other relevant components that might be helpful when compiling software."
+    },
+    {
+      "id": 25,
+      "type": "single",
+      "question": "Which option to the rsync command changes the resolution for determining file modifications?",
+      "options": [
+        { "label": "a", "text": "--mod-time", "correct": false },
+        { "label": "b", "text": "--modify-time", "correct": false },
+        { "label": "c", "text": "--mod-res", "correct": false },
+        { "label": "d", "text": "--modify-window", "correct": true }
+      ],
+      "feedback": "The –modify-window option modifies how file synchronization is determined. The default behavior is to match to the nearest second. This option is useful for synchronizing between filesystem types, such as Microsoft FAT, which don’t have the precision of Linux-based filesystems."
+    },
+    {
+      "id": 26,
+      "type": "single",
+      "question": "Which option to the patch command creates a backup of files being patched?",
+      "options": [
+        { "label": "a", "text": "-r", "correct": false },
+        { "label": "b", "text": "-b", "correct": true },
+        { "label": "c", "text": "-l", "correct": false },
+        { "label": "d", "text": "-a", "correct": false }
+      ],
+      "feedback": "The -b option specifies that a backup should be made during the patching process. The -l option tells patch to ignore whitespace. The -r option specifies a reject file. There is no -a option."
+    },
+    {
+      "id": 27,
+      "type": "single",
+      "question": "Which target for make, typically included in the Makefile for most projects, will place compiled files into their final destination and perform other operations such as making the appropriate files executable?",
+      "options": [
+        { "label": "a", "text": "list", "correct": false },
+        { "label": "b", "text": "distclean", "correct": false },
+        { "label": "c", "text": "run", "correct": false },
+        { "label": "d", "text": "install", "correct": true }
+      ],
+      "feedback": "The install target installs the final compiled files in their appropriate location and makes them executable, if applicable. Of the other options, distclean is sometimes included as a target to return source files to their pristine state. The other targets listed are not valid."
+    },
+    {
+      "id": 28,
+      "type": "single",
+      "question": "Which option to the tar command indicates xz compression?",
+      "options": [
+        { "label": "a", "text": "-z", "correct": false },
+        { "label": "b", "text": "-xz", "correct": false },
+        { "label": "c", "text": "-J", "correct": true },
+        { "label": "d", "text": "--compress", "correct": false }
+      ],
+      "feedback": "Compression using the xz program is indicated with the -J option. The -j option indicates bzip2 compression. The -x and -c options are extract and create, respectively."
+    },
+    {
+      "id": 29,
+      "type": "single",
+      "question": "Which option to the rsync command examines only the file size as a means of determining whether the file should be synchronized?",
+      "options": [
+        { "label": "a", "text": "--filesize", "correct": false },
+        { "label": "b", "text": "--size-only", "correct": true },
+        { "label": "c", "text": "--list-size", "correct": false },
+        { "label": "d", "text": "--file-size", "correct": false }
+      ],
+      "feedback": "The –size-only option examines whether the files being synchronized are the same size. This can be helpful for situations where there may be significant time skew or other issues preventing the normal differencing mechanisms from working properly. The other options shown are not valid for rsync."
+    },
+    {
+      "id": 30,
+      "type": "single",
+      "question": "Which of the following xz options is used to uncompress a file and send the uncompressed contents to STDOUT?",
+      "options": [
+        { "label": "a", "text": "--decompress --stdout", "correct": true },
+        { "label": "b", "text": "--deout", "correct": false },
+        { "label": "c", "text": "--uncomp --stdout", "correct": false },
+        { "label": "d", "text": "-out -u", "correct": false }
+      ],
+      "feedback": "The –decompress option uncompresses an xz file, while the –stdout option sends the output to standard out. The other options shown are not valid."
+    },
+        {
+      "id": 31,
+      "type": "single",
+      "question": "Which of the following options to bzip2 sends the output to STDOUT?",
+      "options": [
+        { "label": "a", "text": "-s", "correct": false },
+        { "label": "b", "text": "-c", "correct": true },
+        { "label": "c", "text": "-d", "correct": false },
+        { "label": "d", "text": "-f", "correct": false }
+      ],
+      "feedback": "The -c option sends output to STDOUT. The -d option decompresses, while -f forces an operation. Finally, -s reduces the memory footprint for bzip2."
+    },
+    {
+      "id": 32,
+      "type": "single",
+      "question": "Which of the following files is typically used as the Bacula Director configuration file?",
+      "options": [
+        { "label": "a", "text": "/etc/bacula/bacula.cfg", "correct": false },
+        { "label": "b", "text": "/etc/bacula.cfg", "correct": false },
+        { "label": "c", "text": "/etc/bacula-dir.conf", "correct": false },
+        { "label": "d", "text": "/etc/bacula/bacula-dir.conf", "correct": true }
+      ],
+      "feedback": "The Bacula Director configuration file is called /etc/bacula/bacula-dir.conf by default. The other files are not normally used as part of a Bacula configuration."
+    },
+    {
+      "id": 33,
+      "type": "single",
+      "question": "Which of the following commands rewinds a tape when using the mt command?",
+      "options": [
+        { "label": "a", "text": "mt reverse", "correct": false },
+        { "label": "b", "text": "mt rewind", "correct": true },
+        { "label": "c", "text": "mt goback", "correct": false },
+        { "label": "d", "text": "mt operation=back", "correct": false }
+      ],
+      "feedback": "The rewind subcommand for the mt command rewinds the tape to the beginning. This subcommand can be shortened to rew instead of rewind. The other subcommands shown do not work with mt."
+    },
+    {
+      "id": 34,
+      "type": "single",
+      "question": "Which of the following shutdown commands reboots the system in 15 minutes?",
+      "options": [
+        { "label": "a", "text": "shutdown -r +15", "correct": true },
+        { "label": "b", "text": "shutdown +15", "correct": false },
+        { "label": "c", "text": "shutdown -15", "correct": false },
+        { "label": "d", "text": "shutdown -r 00:15", "correct": false }
+      ],
+      "feedback": "The -r option is needed to specify reboot and the format for counting time from now. It is prefaced with a plus sign (+), thereby making option A correct. Of the other commands, specifying +15 without the -r option simply shuts down the computer in 15 minutes, and specifying the time as 00:15, as in option D, will reboot the computer at 12:15 a.m."
+    },
+    {
+      "id": 35,
+      "type": "single",
+      "question": "Which option to the gzip command will suppress all warning messages and might be useful in a situation where output is not appropriate?",
+      "options": [
+        { "label": "a", "text": "-v", "correct": false },
+        { "label": "b", "text": "-q", "correct": true },
+        { "label": "c", "text": "-L", "correct": false },
+        { "label": "d", "text": "-r", "correct": false }
+      ],
+      "feedback": "The -q option suppresses all warnings. The -v option is verbose, while -L displays the license. The -r option is recursive."
+    },
+    {
+      "id": 36,
+      "type": "single",
+      "question": "Which option to rsync specifies that the remote shell or transport for the synchronization process should use SSH?",
+      "options": [
+        { "label": "a", "text": "-t ssh", "correct": false },
+        { "label": "b", "text": "--overssh", "correct": false },
+        { "label": "c", "text": "-e ssh", "correct": true },
+        { "label": "d", "text": "-F ssh", "correct": false }
+      ],
+      "feedback": "The -e option, also available as –rsh=ssh, uses ssh as the means for transport, thereby ensuring an encrypted tunnel over which the synchronization process will occur. The other options shown are not valid."
+    },
+    {
+      "id": 37,
+      "type": "single",
+      "question": "Which option to a configure script will typically produce a list of available options for the command?",
+      "options": [
+        { "label": "a", "text": "--list", "correct": false },
+        { "label": "b", "text": "--help", "correct": true },
+        { "label": "c", "text": "--show", "correct": false },
+        { "label": "d", "text": "--get", "correct": false }
+      ],
+      "feedback": "The –help option is usually included with the configure script as a means to list the other available options. Because every configure script is customized for a given source code package, the other options may vary. Even –help may not always be available, depending on whether the source code author included it."
+    }
+  ]
+}

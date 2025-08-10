@@ -1,0 +1,455 @@
+{
+  "id": "5",
+  "title": "211 - Email Services",
+  "questions": [
+    {
+      "id": 1,
+      "type": "single",
+      "question": "Which command is used to remove an e-mail from the mail queue with Postfix?",
+      "options": [
+        { "label": "a", "text": "postsuper -d", "correct": true },
+        { "label": "b", "text": "postmaster", "correct": false },
+        { "label": "c", "text": "postfix -d", "correct": false },
+        { "label": "d", "text": "postdel", "correct": false }
+      ],
+      "feedback": "The postsuper command is used for management of various items with Postfix, including deletion of individual messages from the mail queue. The other commands will not work for the purpose described."
+    },
+    {
+      "id": 2,
+      "type": "single",
+      "question": "Within which directory hierarchy are queue-related messages stored for Postfix?",
+      "options": [
+        { "label": "a", "text": "/var/mqueue", "correct": false },
+        { "label": "b", "text": "/var/spool/mailq", "correct": false },
+        { "label": "c", "text": "/var/spool/postfix", "correct": true },
+        { "label": "d", "text": "/var/postfix", "correct": false }
+      ],
+      "feedback": "The /var/spool/postfix directory contains directories and files related to the mail queue for Postfix. The other directories listed are not valid for this scenario."
+    },
+    {
+      "id": 3,
+      "type": "single",
+      "question": "Which format should the certificate and key be in for a Postfix TLS configuration?",
+      "options": [
+        { "label": "a", "text": "PKCS", "correct": false },
+        { "label": "b", "text": "PEM", "correct": true },
+        { "label": "c", "text": "TLS", "correct": false },
+        { "label": "d", "text": "SSL", "correct": false }
+      ],
+      "feedback": "PEM format is used for public and private keys with a Postfix TLS configuration. The other methods listed are valid cryptographic algorithms or systems but not for the scenario described."
+    },
+    {
+      "id": 4,
+      "type": "single",
+      "question": "Which configuration keyword for Sieve is responsible for moving mail into the specified mailbox?",
+      "options": [
+        { "label": "a", "text": "filein", "correct": false },
+        { "label": "b", "text": "moveinto", "correct": false },
+        { "label": "c", "text": "mailmover", "correct": false },
+        { "label": "d", "text": "fileinfo", "correct": true }
+      ],
+      "feedback": "The fileinto keyword is used to define the destination for mail that matches one or more conditions within Sieve. The other configuration keywords are not valid."
+    },
+    {
+      "id": 5,
+      "type": "single",
+      "question": "Within which directory are configuration files stored for the Postfix e-mail server?",
+      "options": [
+        { "label": "a", "text": "/etc/postfix.d", "correct": false },
+        { "label": "b", "text": "/etc/postfix.conf.d", "correct": false },
+        { "label": "c", "text": "/etc/mail/postfix", "correct": false },
+        { "label": "d", "text": "/etc/postfix", "correct": true }
+      ],
+      "feedback": "The directory /etc/postfix contains files related to the configuration of Postfix on a given server. While the other directories shown are valid names, they are not the default location for Postfix-related configs."
+    },
+    {
+      "id": 6,
+      "type": "single",
+      "question": "Which of the following files is used as a user-based configuration file for Procmail?",
+      "options": [
+        { "label": "a", "text": "/home/procmail.conf", "correct": false },
+        { "label": "b", "text": "~/.procmailrc", "correct": true },
+        { "label": "c", "text": "/etc/procmail.conf", "correct": false },
+        { "label": "d", "text": "~/procmail.conf", "correct": false }
+      ],
+      "feedback": "The file .procmailrc, found in a user’s home directory, is used by Procmail for processing messages on a per-user basis. The other files are not used by Procmail in a default ­configuration."
+    },
+    {
+      "id": 7,
+      "type": "single",
+      "question": "Which of the following definitions in /etc/aliases will deliver mail destined to root to two e-mail addresses, admin@example.com and webmaster@example.com?",
+      "options": [
+        { "label": "a", "text": "[root] = admin@example.com, webmaster@example.com", "correct": false },
+        { "label": "b", "text": "root: admin webmaster", "correct": false },
+        { "label": "c", "text": "root: admin, webmaster", "correct": false },
+        { "label": "d", "text": "root: admin@example.com, webmaster@example.com", "correct": true }
+      ],
+      "feedback": "The format is local-address: destination-address. Each destination address is separated by a comma. The difference between answers C and D is that the question specifically asked for addresses @example.com, and since the question didn’t specify whether this server was the server for @example.com, the destination addresses needed to be fully qualified."
+    },
+    {
+      "id": 8,
+      "type": "single",
+      "question": "Which of the following commands displays the mail queue for a Postfix server?",
+      "options": [
+        { "label": "a", "text": "mailqueue", "correct": false },
+        { "label": "b", "text": "qmail", "correct": false },
+        { "label": "c", "text": "mailq", "correct": true },
+        { "label": "d", "text": "mail-queue", "correct": false }
+      ],
+      "feedback": "The mailq command displays the current mail queue for a Postfix server. The other commands are not valid, though there is popular mail server software named qmail."
+    },
+    {
+      "id": 9,
+      "type": "single",
+      "question": "Which of the following commands causes Postfix to process the mail queue immediately?",
+      "options": [
+        { "label": "a", "text": "postqueue -f", "correct": true },
+        { "label": "b", "text": "mailq -f", "correct": false },
+        { "label": "c", "text": "postqueue -a", "correct": false },
+        { "label": "d", "text": "postmailq -process", "correct": false }
+      ],
+      "feedback": "The postqueue command will be used for this purpose, and when given the -f option, it will flush the queue immediately. The other commands and options do not meet the intended purpose for the scenario."
+    },
+    {
+      "id": 10,
+      "type": "single",
+      "question": "Which of the following commands deletes all messages from the mail queue with Postfix?",
+      "options": [
+        { "label": "a", "text": "postsuper -d mqueue", "correct": false },
+        { "label": "b", "text": "postsuper -d ALL", "correct": true },
+        { "label": "c", "text": "postsuper delete-all", "correct": false },
+        { "label": "d", "text": "postsuper -D", "correct": false }
+      ],
+      "feedback": "The postsuper command is used for this purpose, specifically with the -d option. When given the ALL keyword, all messages will be deleted from the queue."
+    },
+    {
+    "id": 11,
+    "type": "single",
+    "question": "Which of the following commands can be executed in order to rebuild the /etc/aliases database?",
+    "options": [
+      { "label": "a", "text": "newaliases", "correct": true },
+      { "label": "b", "text": "realias", "correct": false },
+      { "label": "c", "text": "rebuildaliases", "correct": false },
+      { "label": "d", "text": "realiases", "correct": false }
+    ],
+    "feedback": "The newaliases command will rebuild the /etc/aliases database so that changes will be noted by the mail daemon. The other commands shown are not valid."
+  },
+  {
+    "id": 12,
+    "type": "single",
+    "question": "Which Sieve action retains the message in the mailbox?",
+    "options": [
+      { "label": "a", "text": "remain", "correct": false },
+      { "label": "b", "text": "keep", "correct": true },
+      { "label": "c", "text": "store", "correct": false },
+      { "label": "d", "text": "file", "correct": false }
+    ],
+    "feedback": "The keep action causes the message to be preserved in the mailbox. The other verbs shown are not valid Sieve actions."
+  },
+  {
+    "id": 13,
+    "type": "single",
+    "question": "Which of the following commands views the contents of a message that exists in the Postfix queue?",
+    "options": [
+      { "label": "a", "text": "postshow", "correct": false },
+      { "label": "b", "text": "postless", "correct": false },
+      { "label": "c", "text": "postmore", "correct": false },
+      { "label": "d", "text": "postcat", "correct": true }
+    ],
+    "feedback": "The postcat command shows the contents of a message from the Postfix queue. The other commands shown are not valid."
+  },
+  {
+    "id": 14,
+    "type": "single",
+    "question": "Which command can be used to view the currently logged-in users for the Dovecot server?",
+    "options": [
+      { "label": "a", "text": "doveadm list", "correct": false },
+      { "label": "b", "text": "dovecot list", "correct": false },
+      { "label": "c", "text": "dovecot users", "correct": false },
+      { "label": "d", "text": "doveadm who", "correct": true }
+    ],
+    "feedback": "The doveadm command is used for this solution. The option called who produces a list of the users who are currently logged in, their PIDs, and their IP addresses. There is no list option for doveadm or dovecot, and likewise there is no users option for the dovecot command."
+  },
+  {
+    "id": 15,
+    "type": "single",
+    "question": "Which of the following deletes a message that matches on a condition with Sieve?",
+    "options": [
+      { "label": "a", "text": "delete", "correct": false },
+      { "label": "b", "text": "discard", "correct": true },
+      { "label": "c", "text": "remove", "correct": false },
+      { "label": "d", "text": "kill", "correct": false }
+    ],
+    "feedback": "The discard keyword is used to specify that a message should be deleted. It is usually followed by the stop keyword in order to indicate that no further processing needs to be done for that message."
+  },
+  {
+    "id": 16,
+    "type": "single",
+    "question": "Which of the following commands is used to view the pending messages queue on a Postfix server?",
+    "options": [
+      { "label": "a", "text": "postqueue -p", "correct": true },
+      { "label": "b", "text": "postconf -pending", "correct": false },
+      { "label": "c", "text": "postqueue -f", "correct": false },
+      { "label": "d", "text": "postsuper pending", "correct": false }
+    ],
+    "feedback": "The postqueue -p command and option view the pending queue. The postqueue -f command and option cause the queue to be flushed. The other commands shown are valid but their options are not."
+  },
+  {
+    "id": 17,
+    "type": "single",
+    "question": "Which of the following action lines in a Sieve configuration forwards a copy of the message to admin@example.com and keeps a copy for further processing?",
+    "options": [
+      { "label": "a", "text": "redirect \"admin@example.com\";", "correct": false },
+      { "label": "b", "text": "forward \"admin@example.com\";", "correct": false },
+      { "label": "c", "text": "redirect :copy \"admin@example.com\";", "correct": true },
+      { "label": "d", "text": "forward :duplicate \"admin@example.com\";", "correct": false }
+    ],
+    "feedback": "The redirect action will be used but must be accompanied by the :copy keyword in order to retain a copy of the message. There are no forward or :duplicate keywords in Sieve."
+  },
+  {
+    "id": 18,
+    "type": "single",
+    "question": "Which configuration parameter within the vacation Sieve functionality is used to specify how often a vacation reply should be sent to the same sender?",
+    "options": [
+      { "label": "a", "text": ":freq", "correct": false },
+      { "label": "b", "text": ":days", "correct": true },
+      { "label": "c", "text": ":often", "correct": false },
+      { "label": "d", "text": ":replyfrequency", "correct": false }
+    ],
+    "feedback": "The :days keyword sets how frequently the vacation auto-responder will reply to a given sender. For example, setting :days 1 means that the same sender will receive a vacation auto-response once a day at most. The other keywords are not valid."
+  },
+  {
+    "id": 19,
+    "type": "single",
+    "question": "Which Postfix-related command is used to provide an overview of the number of messages in the incoming and active queues arranged by age?",
+    "options": [
+      { "label": "a", "text": "queuelist", "correct": false },
+      { "label": "b", "text": "postq", "correct": false },
+      { "label": "c", "text": "qshape", "correct": true },
+      { "label": "d", "text": "queueshow", "correct": false }
+    ],
+    "feedback": "The qshape command displays information regarding the number and age of the messages in the Postfix incoming and active queues. Other queues can be viewed using the command as well. The other commands shown as options for this question are not valid."
+  },
+  {
+    "id": 20,
+    "type": "single",
+    "question": "Which of the following commands displays the current Dovecot configuration?",
+    "options": [
+      { "label": "a", "text": "doveconf", "correct": true },
+      { "label": "b", "text": "doveconfig", "correct": false },
+      { "label": "c", "text": "dovecot --list", "correct": false },
+      { "label": "d", "text": "doveadm conf", "correct": false }
+    ],
+    "feedback": "The doveconf command displays configuration parameters related to Dovecot, including the setting name and its value. The dovecot command is valid, as is the doveadm command. However, the options shown for both of those commands are not valid. There is no doveconfig command."
+  },
+  {
+    "id": 21,
+    "type": "single",
+    "question": "When working with Sieve, which action is performed implicitly when no other action takes precedence?",
+    "options": [
+      { "label": "a", "text": "keep", "correct": true },
+      { "label": "b", "text": "discard", "correct": false },
+      { "label": "c", "text": "shred", "correct": false },
+      { "label": "d", "text": "forward", "correct": false }
+    ],
+    "feedback": "There is an implicit keep action if no other action takes precedence or otherwise handles the e-mail within a set of actions. There is a discard action, but it is not the default. There is no action called shred or forward."
+  },
+  {
+    "id": 22,
+    "type": "single",
+    "question": "Which configuration parameter for Postfix sets the networks that are allowed to relay through the server?",
+    "options": [
+      { "label": "a", "text": "relaynet", "correct": false },
+      { "label": "b", "text": "mynetworks", "correct": true },
+      { "label": "c", "text": "networkrelay", "correct": false },
+      { "label": "d", "text": "relnet", "correct": false }
+    ],
+    "feedback": "The mynetworks parameter sets the networks or hosts that are allowed to relay through the Postfix server. The other options are not valid. Note that there are parameters related to relaying, such as relayhost, but those are typically used to set the destination for relaying rather than allow relaying through the server."
+  },
+  {
+    "id": 23,
+    "type": "single",
+    "question": "Which of the following commands tests authentication for a user of a Dovecot server?",
+    "options": [
+      { "label": "a", "text": "dovecot -testauth", "correct": false },
+      { "label": "b", "text": "dovecot testauth", "correct": false },
+      { "label": "c", "text": "dovecot auth", "correct": false },
+      { "label": "d", "text": "doveadm auth", "correct": true }
+    ],
+    "feedback": "The doveadm command, when used with the auth option, tests authentication for a given user. There is a dovecot command, but the command does not have auth or testauth options. Likewise, there is no testauth option to doveadm."
+  },
+  {
+    "id": 24,
+    "type": "single",
+    "question": "Which of the following commands compiles a Sendmail configuration file in its native language to a standard Sendmail configuration file at /etc/sendmail.cf?",
+    "options": [
+      { "label": "a", "text": "makemap sendmail.mc > /etc/sendmail.cf", "correct": false },
+      { "label": "b", "text": "m1 sendmail.mc > /etc/sendmail.cf", "correct": false },
+      { "label": "c", "text": "gcc sendmail.mc > /etc/sendmail.cf", "correct": false },
+      { "label": "d", "text": "m4 sendmail.mc > /etc/sendmail.cf", "correct": true }
+    ],
+    "feedback": "The m4 command compiles a native Sendmail configuration into the final Sendmail configuration file. A standard redirect is used to send the output to its final destination."
+  },
+  {
+    "id": 25,
+    "type": "single",
+    "question": "Which of the following commands views all parameters related to a Postfix configuration?",
+    "options": [
+      { "label": "a", "text": "postconf -d", "correct": true },
+      { "label": "b", "text": "postmaster -config", "correct": false },
+      { "label": "c", "text": "postfix -c", "correct": false },
+      { "label": "d", "text": "postc -a", "correct": false }
+    ],
+    "feedback": "The postconf command is used for this purpose, and when given the -d option it displays all parameters in the current Postfix configuration. Note that the only other command shown that is valid is postfix, but that command uses -c to specify the configuration directory and not for the purpose described in the scenario for this question."
+  },
+  {
+    "id": 26,
+    "type": "single",
+    "question": "Within which file will you find errors related to delivery of mail on a Postfix server?",
+    "options": [
+      { "label": "a", "text": "/var/log/mail", "correct": false },
+      { "label": "b", "text": "/var/log/postfix.log", "correct": false },
+      { "label": "c", "text": "/var/log/mail.err", "correct": true },
+      { "label": "d", "text": "/var/log/postfix.err", "correct": false }
+    ],
+    "feedback": "The file /var/log/mail.err contains errors related to mail delivery. However, on some systems, mail-related errors may go to a different log such as /var/log/mail.log or /var/log/mail.info or similar."
+  },
+  {
+    "id": 27,
+    "type": "single",
+    "question": "Which option is used to create a listening port stanza within a Dovecot configuration?",
+    "options": [
+      { "label": "a", "text": "inet_port", "correct": false },
+      { "label": "b", "text": "inet_listener", "correct": true },
+      { "label": "c", "text": "listening_port", "correct": false },
+      { "label": "d", "text": "listener", "correct": false }
+    ],
+    "feedback": "The inet_listener directive creates a stanza for a listening port within Dovecot. Additional parameters can be specified relating to the given listener within the inet_listener stanza."
+  },
+  {
+    "id": 28,
+    "type": "single",
+    "question": "On which port does SMTP operate by default?",
+    "options": [
+      { "label": "a", "text": "25", "correct": true },
+      { "label": "b", "text": "2525", "correct": false },
+      { "label": "c", "text": "110", "correct": false },
+      { "label": "d", "text": "143", "correct": false }
+    ],
+    "feedback": "SMTP uses TCP port 25 by default. Port 110 is POP3, and 143 is IMAP. Port 2525 is not a well-known port."
+  },
+  {
+    "id": 29,
+    "type": "single",
+    "question": "You need to find the mail queue path on a Postfix server. You’re using postconf -d to view all parameters. Which configuration parameter contains the mail queue path on a Postfix server?",
+    "options": [
+      { "label": "a", "text": "mqueue", "correct": false },
+      { "label": "b", "text": "queue_dir", "correct": false },
+      { "label": "c", "text": "mailq_path", "correct": true },
+      { "label": "d", "text": "mqueue_path", "correct": false }
+    ],
+    "feedback": "The mailq_path parameter contains the path to the mail queue for Postfix. You can use this to diagnose problems with the queue directories. The other parameters shown are not valid in Postfix."
+  },
+  {
+    "id": 30,
+    "type": "single",
+    "question": "When testing SMTP communications between a client and a server, you need to begin the conversation. Which of the following lines shows the beginning of an SMTP conversation using Extended Hello syntax from mail.example.com?",
+    "options": [
+      { "label": "a", "text": "BEGIN mail.example.com", "correct": false },
+      { "label": "b", "text": "SMTP mail.example.com", "correct": false },
+      { "label": "c", "text": "HELO mail.example.com", "correct": false },
+      { "label": "d", "text": "EHLO mail.example.com", "correct": true }
+    ],
+    "feedback": "The EHLO command indicates Extended Hello syntax, and it is followed by the host from which communication has been initiated. Of the other options, the HELO option is valid, but it is not the Extended Hello syntax specified in the question."
+  },
+  {
+    "id": 31,
+    "type": "single",
+    "question": "Which of the following keywords defines an alternate condition when the original if condition fails in Sieve?",
+    "options": [
+      { "label": "a", "text": "else if", "correct": false },
+      { "label": "b", "text": "elsif", "correct": true },
+      { "label": "c", "text": "elseif", "correct": false },
+      { "label": "d", "text": "alt", "correct": false }
+    ],
+    "feedback": "Sieve uses elsif for definition of an alternate condition. The other forms of this keyword are valid for many languages but not for Sieve. There is no alt keyword."
+  },
+  {
+    "id": 32,
+    "type": "single",
+    "question": "Which Sieve test examines an object such as an address to determine if there is a string within it?",
+    "options": [
+      { "label": "a", "text": ":grep", "correct": false },
+      { "label": "b", "text": ":contains", "correct": true },
+      { "label": "c", "text": ":has", "correct": false },
+      { "label": "d", "text": ":lookin", "correct": false }
+    ],
+    "feedback": "The :contains keyword looks through an object such as an address to see if there is a matching string within it. The other keywords shown are not valid."
+  },
+  {
+    "id": 33,
+    "type": "single",
+    "question": "Which configuration option specifies the maximum number of authentication processes that can be active within a Dovecot server?",
+    "options": [
+      { "label": "a", "text": "process_limit", "correct": true },
+      { "label": "b", "text": "max_proc", "correct": false },
+      { "label": "c", "text": "proc_max", "correct": false },
+      { "label": "d", "text": "auth_proc_max", "correct": false }
+    ],
+    "feedback": "The process_limit option specifies the maximum login processes for a Dovecot server. The parameter is set on a per-service basis."
+  },
+  {
+    "id": 34,
+    "type": "single",
+    "question": "When examining an address in Sieve, which keyword attempts to look at just the domain name portion of the address?",
+    "options": [
+      { "label": "a", "text": ":domainname", "correct": false },
+      { "label": "b", "text": ":afterat", "correct": false },
+      { "label": "c", "text": ":last", "correct": false },
+      { "label": "d", "text": ":domain", "correct": true }
+    ],
+    "feedback": "The :domain keyword matches on just the domain portion of an address in Sieve. The other keywords shown are not valid."
+  },
+  {
+    "id": 35,
+    "type": "single",
+    "question": "On which port does Dovecot listen for SSL/TLS-based IMAP or IMAPS?",
+    "options": [
+      { "label": "a", "text": "143", "correct": false },
+      { "label": "b", "text": "993", "correct": true },
+      { "label": "c", "text": "995", "correct": false },
+      { "label": "d", "text": "110", "correct": false }
+    ],
+    "feedback": "The default port for IMAPS is 993. POP3 uses 110 for unencrypted communication and 995 for encrypted communication. The default port for unencrypted IMAP is 143."
+  },
+  {
+    "id": 36,
+    "type": "single",
+    "question": "Which of the following files is used as the default configuration file for Exim 4 on a Debian system?",
+    "options": [
+      { "label": "a", "text": "/etc/exim/exim4.conf", "correct": true },
+      { "label": "b", "text": "/etc/exim.conf", "correct": false },
+      { "label": "c", "text": "/etc/exim.configure", "correct": false },
+      { "label": "d", "text": "/etc/exim/configure", "correct": false }
+    ],
+    "feedback": "The Exim configuration file is /etc/exim/exim4.conf by default on Debian, but it may be named as shown for the other options when using other Linux distributions."
+  },
+
+
+
+
+
+  {
+    "id": 37,
+    "type": "single",
+    "question": "Which Postfix configuration option is used with the postscreen server to set the TLS security level?",
+    "options": [
+      { "label": "a", "text": "postscreen_tls", "correct": false },
+      { "label": "b", "text": "postscreen_tls_security_level", "correct": true },
+      { "label": "c", "text": "postscreen_security_level", "correct": false },
+      { "label": "d", "text": "post_tls_sec_level", "correct": false }
+    ],
+    "feedback": "The postscreen_tls_security_level option sets the security level for the postscreen server. This option should be used instead of the postscreen_use_tls and smtpd_use_tls options."
+  }
+  ]
+}

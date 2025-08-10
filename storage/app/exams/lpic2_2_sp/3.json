@@ -1,0 +1,455 @@
+{
+  "id": "3",
+  "title": "209 - File Sharing",
+  "questions": [
+    {
+      "id": 1,
+      "type": "single",
+      "question": "¿En qué directorio se encuentran los archivos de configuración relacionados con Samba versión 4?",
+      "options": [
+        { "label": "a", "text": "/etc/samba4", "correct": false },
+        { "label": "b", "text": "/etc/samba", "correct": true },
+        { "label": "c", "text": "/etc/smb", "correct": false },
+        { "label": "d", "text": "/etc/filesharing/samba", "correct": false }
+      ],
+      "feedback": "Los archivos de configuración para Samba se encuentran en /etc/samba. El directorio no está nombrado para una versión específica de Samba. Los otros directorios listados no existen por defecto."
+    },
+    {
+      "id": 2,
+      "type": "single",
+      "question": "¿Cuál de los demonios de Samba es responsable de responder a las solicitudes del servicio de nombres NetBIOS?",
+      "options": [
+        { "label": "a", "text": "smbd", "correct": false },
+        { "label": "b", "text": "nmbd", "correct": true },
+        { "label": "c", "text": "winbindd", "correct": false },
+        { "label": "d", "text": "samba", "correct": false }
+      ],
+      "feedback": "El demonio nmbd es responsable del manejo de solicitudes del servicio de nombres NetBIOS. El demonio smbd es responsable del intercambio de archivos e impresión, y winbindd proporciona información de usuarios y grupos. No existe un demonio llamado samba."
+    },
+    {
+      "id": 3,
+      "type": "single",
+      "question": "Has realizado un cambio de configuración en smb.conf y necesitas recargar la configuración. ¿Cuál de los siguientes comandos realiza esta tarea con la menor interrupción para los usuarios?",
+      "options": [
+        { "label": "a", "text": "smbcontrol all shutdown", "correct": false },
+        { "label": "b", "text": "smbcontrol smbd reload", "correct": false },
+        { "label": "c", "text": "smbcontrol all reload", "correct": false },
+        { "label": "d", "text": "smbcontrol all reload-config", "correct": true }
+      ],
+      "feedback": "El comando smbcontrol puede usarse para enviar mensajes a smbd, nmbd o winbindd. Cuando se usa el destino 'all', el mensaje se envía a los tres demonios. Hay varios tipos de mensajes que se pueden enviar con smbcontrol, uno de los cuales es reload-config. Existe un mensaje shutdown, pero sería disruptivo para los usuarios y no recargaría las configuraciones hasta el reinicio."
+    },
+    {
+      "id": 4,
+      "type": "single",
+      "question": "¿Cuál de los siguientes archivos se utiliza para definir los sistemas de archivos compartidos por NFS?",
+      "options": [
+        { "label": "a", "text": "/etc/nfs.cfg", "correct": false },
+        { "label": "b", "text": "/etc/nfs.conf", "correct": false },
+        { "label": "c", "text": "/etc/export.nfs", "correct": false },
+        { "label": "d", "text": "/etc/exports", "correct": true }
+      ],
+      "feedback": "El archivo /etc/exports contiene definiciones de sistemas de archivos para compartir usando NFS. Los otros archivos no son válidos para usar con NFS."
+    },
+    {
+      "id": 5,
+      "type": "single",
+      "question": "¿Cuál de las siguientes acciones de NFS permite a los usuarios de cwa.example.com conectarse con acceso de lectura-escritura a un recurso compartido NFS en /srv/vhosts?",
+      "options": [
+        { "label": "a", "text": "/srv/vhosts www.example.com(rw)", "correct": true },
+        { "label": "b", "text": "www.example.com (rw) /srv/vhosts", "correct": false },
+        { "label": "c", "text": "/srv/vhosts www.example.com (rw)", "correct": false },
+        { "label": "d", "text": "/srv/vhosts www.example.com", "correct": false }
+      ],
+      "feedback": "El espaciado es importante dentro de una configuración de exportación NFS. Esta es la principal diferencia entre la opción A y la opción C, respecto a un espacio entre el nombre de host y la directiva de configuración (rw). Con la opción A, donde no hay espacio, www.example.com tiene acceso de lectura-escritura al recurso compartido. Con la opción C, donde hay un espacio, www.example.com solo tiene acceso de lectura mientras que todos los demás tienen acceso de lectura-escritura."
+    },
+    {
+      "id": 6,
+      "type": "single",
+      "question": "Cuando se usa el comando net en un entorno de Active Directory, ¿qué opción habilita la autenticación usando Kerberos?",
+      "options": [
+        { "label": "a", "text": "-b", "correct": false },
+        { "label": "b", "text": "-k", "correct": true },
+        { "label": "c", "text": "-l", "correct": false },
+        { "label": "d", "text": "-a", "correct": false }
+      ],
+      "feedback": "La opción -k habilita la autenticación Kerberos para el comando net. La opción -a indica que se debe usar el modo no interactivo, y -l establece el directorio de registro. No existe una opción -b."
+    },
+    {
+      "id": 7,
+      "type": "single",
+      "question": "¿Qué opción dentro de una configuración de Samba habilita la traducción de nombres de usuario de Windows a Linux?",
+      "options": [
+        { "label": "a", "text": "usermap", "correct": false },
+        { "label": "b", "text": "usernamemaps", "correct": false },
+        { "label": "c", "text": "userfile", "correct": false },
+        { "label": "d", "text": "username map", "correct": true }
+      ],
+      "feedback": "La opción username map, que se establece en un archivo que contiene los mapeos de nombres de usuario, se utiliza para proporcionar la traducción entre un nombre de usuario de Windows y el nombre de usuario en Linux para cada usuario. Las otras opciones mostradas no son válidas en una configuración de Samba."
+    },
+    {
+      "id": 8,
+      "type": "single",
+      "question": "Al especificar credenciales en la línea de comandos con el comando net de Samba, ¿qué carácter se utiliza para separar el nombre de usuario de la contraseña?",
+      "options": [
+        { "label": "a", "text": "/", "correct": false },
+        { "label": "b", "text": "\\", "correct": false },
+        { "label": "c", "text": "%", "correct": true },
+        { "label": "d", "text": "!", "correct": false }
+      ],
+      "feedback": "Se utiliza un signo de porcentaje (%) para separar el nombre de usuario de la contraseña, como en este ejemplo con un nombre de usuario de Administrator y una contraseña de adminpass: -U Administrator%adminpass."
+    },
+    {
+      "id": 9,
+      "type": "single",
+      "question": "¿Cuál de las siguientes especificaciones de host permite que cualquier host dentro del dominio example.org monte un sistema de archivos NFS?",
+      "options": [
+        { "label": "a", "text": "all=example.org", "correct": false },
+        { "label": "b", "text": "rw=*.example.org", "correct": false },
+        { "label": "c", "text": "*.example.org", "correct": true },
+        { "label": "d", "text": "%.example.org", "correct": false }
+      ],
+      "feedback": "Los comodines se especifican con un * o ? para NFS; por lo tanto, *.example.org indica que todos los hosts directamente bajo example.org pueden conectarse. Tenga en cuenta que la coincidencia de comodines no es jerárquica, lo que significa que los subdominios debajo de *.example.org no están incluidos (por ejemplo, www.chicago.example.org)."
+    },
+    {
+      "id": 10,
+      "type": "single",
+      "question": "¿Qué tipo de sistema de archivos para el comando mount se utiliza para montar recursos compartidos de Samba?",
+      "options": [
+        { "label": "a", "text": "win", "correct": false },
+        { "label": "b", "text": "ext4", "correct": false },
+        { "label": "c", "text": "vfat", "correct": false },
+        { "label": "d", "text": "cifs", "correct": true }
+      ],
+      "feedback": "El tipo de sistema de archivos cifs se utiliza para montar recursos compartidos de Samba. El sistema de archivos vfat se utiliza para montar sistemas de archivos nativos de Windows, y ext4 es un sistema de archivos nativo de Linux. No existe un tipo win."
+    },
+        {
+      "id": 11,
+      "type": "single",
+      "question": "Which of the following commands displays the currently mounted CIFS filesystems?",
+      "options": [
+        { "label": "a", "text": "mount -t smb", "correct": false },
+        { "label": "b", "text": "lssmbd", "correct": false },
+        { "label": "c", "text": "mount -t cifs", "correct": true },
+        { "label": "d", "text": "ls -cifs", "correct": false }
+      ],
+      "feedback": "The mount command can be used for this purpose, and when given the -t cifs argument it will show all mounted CIFS filesystems. There is no smb filesystem type, and the ls command with -cifs options will display various file listings but none specific to the CIFS filesystem."
+    },
+    {
+      "id": 12,
+      "type": "single",
+      "question": "To which setting should the security parameter be set within the Samba configuration in order for share-level security to be used?",
+      "options": [
+        { "label": "a", "text": "sharelevel", "correct": false },
+        { "label": "b", "text": "share-level", "correct": false },
+        { "label": "c", "text": "high", "correct": false },
+        { "label": "d", "text": "share", "correct": true }
+      ],
+      "feedback": "Setting the security parameter to share indicates that share-level security will be used. The parameter is set as in security = share. The other options shown for this question are not valid."
+    },
+    {
+      "id": 13,
+      "type": "single",
+      "question": "Which option to rpcinfo displays statistics on rpcbind operations?",
+      "options": [
+        { "label": "a", "text": "-s", "correct": false },
+        { "label": "b", "text": "-m", "correct": true },
+        { "label": "c", "text": "-l", "correct": false },
+        { "label": "d", "text": "-e", "correct": false }
+      ],
+      "feedback": "The -m option to rpcinfo displays statistics for rpcbind. The -s and -l options are used to display lists of programs and entries for the specific program. There is no -e option for rpcinfo."
+    },
+    {
+      "id": 14,
+      "type": "single",
+      "question": "Which of the following commands displays the export list for a given NFS server?",
+      "options": [
+        { "label": "a", "text": "rpcmount", "correct": false },
+        { "label": "b", "text": "showmount -e", "correct": true },
+        { "label": "c", "text": "mount -shownfs", "correct": false },
+        { "label": "d", "text": "mount -listnfs", "correct": false }
+      ],
+      "feedback": "The showmount command is used for this purpose, and when given the -e option it displays the exports for the server. Among the other options, the mount command is valid but not with the given options."
+    },
+    {
+      "id": 15,
+      "type": "single",
+      "question": "Which of the following lines in /etc/fstab will mount an NFS filesystem shared as /source from the host src.example.com into a directory called /srv/source on the local server?",
+      "options": [
+        { "label": "a", "text": "/source /srv/source -h src.example.com", "correct": false },
+        { "label": "b", "text": "src.example.com/source /srv/source", "correct": false },
+        { "label": "c", "text": "src.example.com:/source /srv/source nfs", "correct": true },
+        { "label": "d", "text": "nfs src.example.com:/source /srv/source", "correct": false }
+      ],
+      "feedback": "The /etc/fstab file utilizes a specific format calling for the filesystem device, in this case src.example.com:/source, followed by the mount destination, in this case /srv/source, and then followed by the filesystem type. For this scenario, the filesystem type is nfs. Options for the filesystem along with default mount order are typically also included in /etc/fstab."
+    },
+    {
+      "id": 16,
+      "type": "single",
+      "question": "Which option to the nfsstat command shows statistics about only NFSv3?",
+      "options": [
+        { "label": "a", "text": "-3", "correct": true },
+        { "label": "b", "text": "-o3", "correct": false },
+        { "label": "c", "text": "-v3", "correct": false },
+        { "label": "d", "text": "-t", "correct": false }
+      ],
+      "feedback": "The -3 option shows only NFSv3 statistics. There are also corresponding -2 and -4 options for NFSv2 and NFSv4, respectively. The other options shown do not exist."
+    },
+    {
+      "id": 17,
+      "type": "single",
+      "question": "Which of the following files shows the currently mounted filesystems?",
+      "options": [
+        { "label": "a", "text": "/etc/mounts", "correct": false },
+        { "label": "b", "text": "/proc/mounts", "correct": true },
+        { "label": "c", "text": "/proc/mtab", "correct": false },
+        { "label": "d", "text": "/etc/fstab", "correct": false }
+      ],
+      "feedback": "The /proc/mounts file shows currently mounted filesystems. The /etc/fstab file shows filesystems that could be mounted but may not currently be mounted. The other files shown are not valid."
+    },
+    {
+      "id": 18,
+      "type": "single",
+      "question": "Which of the following blocks access to the portmap service from the hosts within example.com’s network (192.168.1.0/24) when placed in hosts.deny?",
+      "options": [
+        { "label": "a", "text": "portmap: 192.168.1.0/24", "correct": true },
+        { "label": "b", "text": "portmap: example.com", "correct": false },
+        { "label": "c", "text": "portmap: *.example.com", "correct": false },
+        { "label": "d", "text": "portmap: ALL/DENY 192.168.1.0/24", "correct": false }
+      ],
+      "feedback": "When used with TCP Wrappers, as in hosts.allow and hosts.deny, the portmap service must use IP addresses. Therefore, option A is correct."
+    },
+    {
+      "id": 19,
+      "type": "single",
+      "question": "Which option to smbstatus displays a list of locks?",
+      "options": [
+        { "label": "a", "text": "-l", "correct": false },
+        { "label": "b", "text": "-L", "correct": true },
+        { "label": "c", "text": "-o", "correct": false },
+        { "label": "d", "text": "-m", "correct": false }
+      ],
+      "feedback": "The -L option displays a list of locks. The -l option sets the base directory for logging. There is no -o or -m option for smbstatus."
+    },
+    {
+      "id": 20,
+      "type": "single",
+      "question": "Which of the following commands creates a new user in the Samba password database?",
+      "options": [
+        { "label": "a", "text": "passwd -samba", "correct": false },
+        { "label": "b", "text": "smbpasswd -a", "correct": true },
+        { "label": "c", "text": "smbpass", "correct": false },
+        { "label": "d", "text": "smbuser -c", "correct": false }
+      ],
+      "feedback": "The smbpasswd command is used for management of Samba credentials. When given the -a option, a new user is created. Of the other commands, the passwd command is valid but does not have a -samba option. The other commands are not valid."
+    },
+        {
+      "id": 21,
+      "type": "single",
+      "question": "¿Qué opción, definida dentro de un recurso compartido en el archivo de configuración de Samba, especifica si los usuarios que navegan por recursos de red podrán ver el recurso compartido?",
+      "options": [
+        { "label": "a", "text": "browseable", "correct": true },
+        { "label": "b", "text": "shareconnect", "correct": false },
+        { "label": "c", "text": "sharepoint", "correct": false },
+        { "label": "d", "text": "browseenable", "correct": false }
+      ],
+      "feedback": "La opción browseable, configurada como yes o no, determina si un recurso compartido puede ser visto al navegar. Cuando se establece en no, los usuarios deben conocer el nombre del recurso para interactuar con él."
+    },
+    {
+      "id": 22,
+      "type": "single",
+      "question": "¿Cuál de los comandos samba-tool se utiliza para verificar la base de datos local de Active Directory y asegurarse de que no tenga errores?",
+      "options": [
+        { "label": "a", "text": "dbverify", "correct": false },
+        { "label": "b", "text": "dblist", "correct": false },
+        { "label": "c", "text": "verifydb", "correct": false },
+        { "label": "d", "text": "dbcheck", "correct": true }
+      ],
+      "feedback": "El comando dbcheck de samba-tool verifica la ubicación de la base de datos de Active Directory. Los otros comandos no se utilizan con samba-tool."
+    },
+    {
+      "id": 23,
+      "type": "single",
+      "question": "¿En qué sección del archivo de configuración de Samba se especifica el archivo de registro?",
+      "options": [
+        { "label": "a", "text": "[server]", "correct": false },
+        { "label": "b", "text": "[logging]", "correct": false },
+        { "label": "c", "text": "[global]", "correct": true },
+        { "label": "d", "text": "[debug]", "correct": false }
+      ],
+      "feedback": "La sección [global] del archivo de configuración de Samba permite establecer el archivo de registro. Las otras secciones mostradas no son válidas."
+    },
+    {
+      "id": 24,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos se puede utilizar para verificar la sintaxis del archivo de configuración de Samba?",
+      "options": [
+        { "label": "a", "text": "testsmb", "correct": false },
+        { "label": "b", "text": "smbtest", "correct": false },
+        { "label": "c", "text": "testparm", "correct": true },
+        { "label": "d", "text": "smbver", "correct": false }
+      ],
+      "feedback": "El comando testparm se puede utilizar para verificar la sintaxis dentro de los archivos de configuración de Samba. Los otros comandos mostrados no son válidos."
+    },
+    {
+      "id": 25,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos exporta todos los sistemas de archivos en /etc/exports recargando el archivo para hacerlo?",
+      "options": [
+        { "label": "a", "text": "export -a", "correct": false },
+        { "label": "b", "text": "exportfs -ra", "correct": true },
+        { "label": "c", "text": "exportnfs -a", "correct": false },
+        { "label": "d", "text": "exportnfs -r", "correct": false }
+      ],
+      "feedback": "El comando exportfs se utiliza para varias tareas administrativas relacionadas con NFS. Cuando se le da la opción -ra, se vuelve a leer el archivo /etc/exports, se crea una nueva lista de exportaciones y se crean los recursos compartidos."
+    },
+    {
+      "id": 26,
+      "type": "single",
+      "question": "¿Qué opción de smbclient permite especificar el orden en que se resuelven los nombres?",
+      "options": [
+        { "label": "a", "text": "-R", "correct": true },
+        { "label": "b", "text": "-r", "correct": false },
+        { "label": "c", "text": "-d", "correct": false },
+        { "label": "d", "text": "-o", "correct": false }
+      ],
+      "feedback": "La opción -R especifica el orden de resolución de nombres utilizado con smbclient. Por ejemplo, establecer el valor de la opción -R en wins especifica que se debe usar el servidor WINS para la resolución de nombres. La opción -d especifica el nivel de depuración."
+    },
+    {
+      "id": 27,
+      "type": "single",
+      "question": "¿Qué opción de mountd registra todas las solicitudes exitosas?",
+      "options": [
+        { "label": "a", "text": "-n", "correct": false },
+        { "label": "b", "text": "-b", "correct": false },
+        { "label": "c", "text": "-l", "correct": true },
+        { "label": "d", "text": "-r", "correct": false }
+      ],
+      "feedback": "La opción -l registra todas las solicitudes exitosas de mountd. De las otras opciones, la opción -n permite solicitudes de usuarios no root, y -r permite que archivos regulares sean servidos a través de solicitudes RPC."
+    },
+    {
+      "id": 28,
+      "type": "single",
+      "question": "¿Qué opción dentro de un recurso compartido de Samba configura si el recurso permitirá acceso de lectura-escritura?",
+      "options": [
+        { "label": "a", "text": "read write", "correct": false },
+        { "label": "b", "text": "read only", "correct": true },
+        { "label": "c", "text": "read/write", "correct": false },
+        { "label": "d", "text": "read-write", "correct": false }
+      ],
+      "feedback": "La opción read only, establecida en yes o no, define si los usuarios que se conectan a un recurso compartido pueden realizar operaciones de lectura/escritura en el recurso. Las otras opciones mostradas no son válidas para Samba."
+    },
+    {
+      "id": 29,
+      "type": "single",
+      "question": "¿En qué puerto(s) escucha smbd por defecto?",
+      "options": [
+        { "label": "a", "text": "139", "correct": false },
+        { "label": "b", "text": "443", "correct": false },
+        { "label": "c", "text": "139 and 445", "correct": true },
+        { "label": "d", "text": "161 and 162", "correct": false }
+      ],
+      "feedback": "El demonio smbd escucha en los puertos TCP 139 y 445. El puerto 443 se usa para HTTPS, y los puertos 161 y 162 se usan para SNMP."
+    },
+    {
+      "id": 30,
+      "type": "single",
+      "question": "¿Qué opción dentro de /etc/exports evita que los usuarios root remotos tengan privilegios de root en el sistema de archivos compartido por el servidor NFS?",
+      "options": [
+        { "label": "a", "text": "no_root", "correct": false },
+        { "label": "b", "text": "deny_root", "correct": false },
+        { "label": "c", "text": "root_squash", "correct": true },
+        { "label": "d", "text": "disallow_root", "correct": false }
+      ],
+      "feedback": "La opción root_squash cambia los privilegios de root cuando se usa un recurso compartido NFS desde un cliente remoto. El usuario root tendrá los privilegios más bajos posibles. Las otras opciones no son válidas para NFS."
+    },
+        {
+      "id": 31,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos muestra las asignaciones de grupos de Windows a Linux?",
+      "options": [
+        { "label": "a", "text": "groupmap list", "correct": false },
+        { "label": "b", "text": "net groupmap list", "correct": true },
+        { "label": "c", "text": "netgroup list", "correct": false },
+        { "label": "d", "text": "net list groupmapping", "correct": false }
+      ],
+      "feedback": "El comando net se usa para esta solución, y cuando se le da el subcomando y opción groupmap list, se mostrará un mapeo de grupos de Windows a Linux. Los otros comandos no son válidos."
+    },
+    {
+      "id": 32,
+      "type": "single",
+      "question": "¿Qué opción de rpcinfo muestra los mapeos de puertos actuales?",
+      "options": [
+        { "label": "a", "text": "-p", "correct": true },
+        { "label": "b", "text": "-c", "correct": false },
+        { "label": "c", "text": "-m", "correct": false },
+        { "label": "d", "text": "-f", "correct": false }
+      ],
+      "feedback": "La opción -p muestra los mapeos de puertos actuales para los diversos servicios relacionados con RPC en el host. La opción -m muestra estadísticas. No hay opciones -c o -f para rpcinfo."
+    },
+    {
+      "id": 33,
+      "type": "single",
+      "question": "¿Cuál de las siguientes opciones del comando smbpasswd elimina el usuario especificado?",
+      "options": [
+        { "label": "a", "text": "-d", "correct": false },
+        { "label": "b", "text": "-x", "correct": true },
+        { "label": "c", "text": "-o", "correct": false },
+        { "label": "d", "text": "-e", "correct": false }
+      ],
+      "feedback": "La opción -x elimina un usuario de la base de datos de usuarios de Samba. La opción -d deshabilita la cuenta. La opción -e habilita la cuenta. No hay una opción -o."
+    },
+    {
+      "id": 34,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos lista los recursos compartidos disponibles en un host llamado fs.example.com?",
+      "options": [
+        { "label": "a", "text": "smblist", "correct": false },
+        { "label": "b", "text": "smbshares -list", "correct": false },
+        { "label": "c", "text": "smbclient -L", "correct": true },
+        { "label": "d", "text": "smbshare -L", "correct": false }
+      ],
+      "feedback": "El comando smbclient puede usarse para este propósito, y cuando se le da la opción -L y un nombre de host, el comando mostrará los servicios disponibles en ese host. Los otros comandos mostrados no son válidos."
+    },
+    {
+      "id": 35,
+      "type": "single",
+      "question": "¿Cuál de las siguientes directivas de archivo de registro crea un archivo de registro separado para cada recurso compartido?",
+      "options": [
+        { "label": "a", "text": "log file = <share>.log", "correct": false },
+        { "label": "b", "text": "log file = %<share>.log", "correct": false },
+        { "label": "c", "text": "log file = %S.log", "correct": true },
+        { "label": "d", "text": "log file = [share].log", "correct": false }
+      ],
+      "feedback": "La configuración mostrada, con %S.log, creará un archivo de registro separado para cada recurso compartido. Todas las demás opciones contienen errores de sintaxis que las hacen inválidas para el archivo de configuración de Samba."
+    },
+    {
+      "id": 36,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos puede usarse para probar el estado de los servicios de nombres relacionados con NetBIOS de Windows y la navegación?",
+      "options": [
+        { "label": "a", "text": "mblookup", "correct": false },
+        { "label": "b", "text": "adlookup", "correct": false },
+        { "label": "c", "text": "browserl", "correct": false },
+        { "label": "d", "text": "nmblookup", "correct": true }
+      ],
+      "feedback": "El comando nmblookup puede usarse para probar servicios relacionados con NetBIOS en una red."
+    },
+
+
+
+
+
+    {
+      "id": 37,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos detiene el compartir de todos los recursos compartidos de archivos NFS?",
+      "options": [
+        { "label": "a", "text": "nfs stop -a", "correct": false },
+        { "label": "b", "text": "nfs-stopshare", "correct": false },
+        { "label": "c", "text": "stopnfs -a", "correct": false },
+        { "label": "d", "text": "exportfs -ua", "correct": true }
+      ],
+      "feedback": "El comando exportfs con las opciones -u y -a desexporta todos los directorios. Otra forma de realizar esta tarea sería detener los demonios NFS, pero esa opción no se proporcionó entre las opciones."
+    }
+  ]
+}

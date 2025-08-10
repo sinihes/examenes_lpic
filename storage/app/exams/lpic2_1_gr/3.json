@@ -1,0 +1,450 @@
+{
+  "id": "3",
+  "title": "202 - 202- System Startup",
+  "questions": [
+    {
+      "id": 1,
+      "type": "single",
+      "question": "Within which directory should systemd unit files that you create be stored?",
+      "options": [
+        { "label": "a", "text": "/etc/system", "correct": false },
+        { "label": "b", "text": "/etc/systemd/system", "correct": true },
+        { "label": "c", "text": "/usr/share/systemd", "correct": false },
+        { "label": "d", "text": "/usr/share/system", "correct": false }
+      ],
+      "feedback": "The /etc/systemd/system directory is the recommended location to store unit files for systemd. The other locations are not valid."
+    },
+    {
+      "id": 2,
+      "type": "single",
+      "question": "Which of the following commands should you execute after making changes to systemd service configurations in order for those changes to take effect?",
+      "options": [
+        { "label": "a", "text": "systemd reload", "correct": false },
+        { "label": "b", "text": "reboot", "correct": false },
+        { "label": "c", "text": "systemctl daemon-reload", "correct": true },
+        { "label": "d", "text": "systemctl reboot", "correct": false }
+      ],
+      "feedback": "The systemctl command is used for this purpose and then with the daemon-reload subcommand. The reboot option would work to reload the systemd configuration but is not correct because it requires the entire server to reboot, which is not what this question asked."
+    },
+    {
+      "id": 3,
+      "type": "single",
+      "question": "Which of the following files contains the runlevels for the system along with a reference to the corresponding rc file?",
+      "options": [
+        { "label": "a", "text": "/etc/runlevels", "correct": false },
+        { "label": "b", "text": "/etc/inittab", "correct": true },
+        { "label": "c", "text": "/etc/rc", "correct": false },
+        { "label": "d", "text": "/etc/runlevel", "correct": false }
+      ],
+      "feedback": "The /etc/inittab file contains the various runlevels and what to run at the given runlevel. For example, runlevel 1 is single user, runlevel 6 is reboot, and so on. The other files listed do not exist."
+    },
+    {
+      "id": 4,
+      "type": "single",
+      "question": "Which bootloader can be used for FAT filesystems and might be used for a rescue disk?",
+      "options": [
+        { "label": "a", "text": "SYSBOOT", "correct": false },
+        { "label": "b", "text": "SYSLINUX", "correct": true },
+        { "label": "c", "text": "TIELINUX", "correct": false },
+        { "label": "d", "text": "FATLINUX", "correct": false }
+      ],
+      "feedback": "The SYSLINUX bootloader is used for FAT filesystems to create rescue disks and to assist with the installation of Linux in general. Syslinux also describes an overall project containing other specialty bootloaders. The other options listed for this question are not valid bootloaders, though."
+    },
+    {
+      "id": 5,
+      "type": "single",
+      "question": "Which filesystem format type is used for the EFI System Partition (ESP)?",
+      "options": [
+        { "label": "a", "text": "FAT", "correct": true },
+        { "label": "b", "text": "EXT4", "correct": false },
+        { "label": "c", "text": "NTFS", "correct": false },
+        { "label": "d", "text": "EXT3", "correct": false }
+      ],
+      "feedback": "ESP uses the legacy FAT filesystem type for its underlying format. There is a specification for how the ESP partition must be created on top of the FAT format for bootloaders and kernel images. Note that the partition is typically FAT32, but it can be FAT16 if only Linux systems will reside on the drive."
+    },
+    {
+      "id": 6,
+      "type": "single",
+      "question": "Which of the following is used to provide an early filesystem-based loading process for key drivers needed to continue the boot process?",
+      "options": [
+        { "label": "a", "text": "bootrd", "correct": false },
+        { "label": "b", "text": "driverload", "correct": false },
+        { "label": "c", "text": "initrd", "correct": true },
+        { "label": "d", "text": "initdrv", "correct": false }
+      ],
+      "feedback": "initrd is used for an initial root filesystem for early drivers. initrd is configured to load within the grub configuration file for a given operating system."
+    },
+    {
+      "id": 7,
+      "type": "single",
+      "question": "When booting a system, you receive an error similar to “No init found” and are then placed at an initramfs prompt. You need to check the hard drive for errors. Which of the following commands performs an error check on a hard drive partition in Linux?",
+      "options": [
+        { "label": "a", "text": "defrag", "correct": false },
+        { "label": "b", "text": "fsck", "correct": true },
+        { "label": "c", "text": "checkfs", "correct": false },
+        { "label": "d", "text": "chkfs", "correct": false }
+      ],
+      "feedback": "The fsck command is used to diagnose and repair hard drive problems in Linux. The defrag command is not available in Linux."
+    },
+    {
+      "id": 8,
+      "type": "single",
+      "question": "Which of the following commands places the system in single-user mode?",
+      "options": [
+        { "label": "a", "text": "tellinit 1", "correct": false },
+        { "label": "b", "text": "chginit 1", "correct": false },
+        { "label": "c", "text": "telinet 1", "correct": false },
+        { "label": "d", "text": "telinit 1", "correct": true }
+      ],
+      "feedback": "The telinit command can be used for this purpose, and passing 1 as the argument will switch the system into single-user mode. The other commands shown are not valid."
+    },
+    {
+      "id": 9,
+      "type": "single",
+      "question": "Which of the following commands installs extlinux into the /boot partition?",
+      "options": [
+        { "label": "a", "text": "extlinux ––install /boot", "correct": true },
+        { "label": "b", "text": "extlinux ––inst /boot", "correct": false },
+        { "label": "c", "text": "extlinux -boot", "correct": false },
+        { "label": "d", "text": "extlinux /boot install", "correct": false }
+      ],
+      "feedback": "The –install option is used followed by the partition to which extlinux will be installed for boot."
+    },
+    {
+      "id": 10,
+      "type": "single",
+      "question": "Which of the following commands mounts /dev/sda1 in the /boot partition?",
+      "options": [
+        { "label": "a", "text": "mount /dev/sda /boot", "correct": false },
+        { "label": "b", "text": "mount /boot /dev/sda1", "correct": false },
+        { "label": "c", "text": "mount /dev/sda1 /boot", "correct": true },
+        { "label": "d", "text": "mount -dev sda1 /boot", "correct": false }
+      ],
+      "feedback": "The format for the mount command is [partition] [target], thereby making option C correct. The other options are not valid because the arguments are in the wrong order."
+    },
+      {
+    "id": 11,
+    "type": "single",
+    "question": "Which of the following commands installs GRUB into the master boot record (MBR) of the first SATA drive?",
+    "options": [
+      { "label": "a", "text": "grub-install /dev/hda", "correct": false },
+      { "label": "b", "text": "grub-install /dev/sda", "correct": true },
+      { "label": "c", "text": "grub-install /dev/hd0,0", "correct": false },
+      { "label": "d", "text": "grub -i /dev/hda", "correct": false }
+    ],
+    "feedback": "The command to install GRUB is grub-install, and the first SATA drive is /dev/sda. A device listed as hda is typically a PATA drive, thereby making those options incorrect."
+  },
+  {
+    "id": 12,
+    "type": "single",
+    "question": "Which of the following commands changes the boot order for the next boot?",
+    "options": [
+      { "label": "a", "text": "efibootmgr -c", "correct": false },
+      { "label": "b", "text": "efibootmgr -b -B", "correct": false },
+      { "label": "c", "text": "efibootmgr -o", "correct": false },
+      { "label": "d", "text": "efibootmgr -n", "correct": true }
+    ],
+    "feedback": "The -n option changes the boot order for the next boot only and boots from the specified partition. The -b along with -B modifies and then deletes the option. The -o option sets the boot order. The -c option creates a boot number."
+  },
+  {
+    "id": 13,
+    "type": "single",
+    "question": "Which bootloader can be used with ISO9660 CD-ROMs?",
+    "options": [
+      { "label": "a", "text": "ISOLINUX", "correct": true },
+      { "label": "b", "text": "EFIBOOT", "correct": false },
+      { "label": "c", "text": "ISOFS", "correct": false },
+      { "label": "d", "text": "BOOTISO", "correct": false }
+    ],
+    "feedback": "ISOLINUX provides a means by which CD-ROMs formatted as ISO 9660 can be booted. It’s very common to have live CDs or rescue/recovery CDs that use ISOLINUX for boot. The other bootloaders are not valid for this purpose or don’t exist."
+  },
+  {
+    "id": 14,
+    "type": "single",
+    "question": "Within which directory are systemd user unit files placed by installed packages?",
+    "options": [
+      { "label": "a", "text": "/usr/lib/systemd/user", "correct": true },
+      { "label": "b", "text": "/usr/lib/systemd/system", "correct": false },
+      { "label": "c", "text": "/usr/systemd", "correct": false },
+      { "label": "d", "text": "/usr/system", "correct": false }
+    ],
+    "feedback": "The /usr/lib/systemd hierarchy contains files related to systemd configuration. The user directory within the hierarchy is used for user unit files, and the system files are stored in /usr/lib/systemd/system."
+  },
+  {
+    "id": 15,
+    "type": "single",
+    "question": "When using UEFI, which of the following files can be used as a bootloader?",
+    "options": [
+      { "label": "a", "text": "shim.uefi", "correct": false },
+      { "label": "b", "text": "shim.efi", "correct": true },
+      { "label": "c", "text": "shim.fx", "correct": false },
+      { "label": "d", "text": "efi.shim", "correct": false }
+    ],
+    "feedback": "Due to the decidedly insecure decisions made with the design of Microsoft’s UEFI, a shim is often needed to enable Linux to boot on a system with UEFI. The file shim.efi can be used as an initial bootloader for this purpose."
+  },
+  {
+    "id": 16,
+    "type": "single",
+    "question": "Which of the following describes the priority order for configuration files with systemd?",
+    "options": [
+      { "label": "a", "text": "Files in /etc, files in /run, and then files in /lib", "correct": true },
+      { "label": "b", "text": "Files in /run, files in /etc, and then files in /lib", "correct": false },
+      { "label": "c", "text": "Files in /lib, files in /run, and then files in /etc", "correct": false },
+      { "label": "d", "text": "Files in /lib, files in /etc, and then files in /run", "correct": false }
+    ],
+    "feedback": "Priority order for systemd configuration files are those within the /etc hierarchy, followed by files in the /run hierarchy, and then followed by files in the /lib hierarchy."
+  },
+  {
+    "id": 17,
+    "type": "single",
+    "question": "Which directory on a SysV init-based system contains scripts that are used for starting and stopping services?",
+    "options": [
+      { "label": "a", "text": "/etc/rc.init", "correct": false },
+      { "label": "b", "text": "/etc/boot", "correct": false },
+      { "label": "c", "text": "/etc/bootscripts", "correct": false },
+      { "label": "d", "text": "/etc/init.d", "correct": true }
+    ],
+    "feedback": "Scripts for starting and stopping services are located in /etc/init.d on a SysV init-based system. The other directories listed within this option are not valid."
+  },
+  {
+    "id": 18,
+    "type": "single",
+    "question": "Which of the following commands is used to find overriding configuration files on a systemd-based system?",
+    "options": [
+      { "label": "a", "text": "diff", "correct": false },
+      { "label": "b", "text": "systemctl -diff", "correct": false },
+      { "label": "c", "text": "systemd-delta", "correct": true },
+      { "label": "d", "text": "systemctl configoverride", "correct": false }
+    ],
+    "feedback": "The systemd-delta command is used to determine overridden configuration files. Of the other commands, diff is valid, but not for this purpose. The systemctl command is also valid, but again not for the purpose described."
+  },
+  {
+    "id": 19,
+    "type": "single",
+    "question": "Which of the following commands on a Red Hat system lists all of the files set to be executed on boot along with their setting for each runlevel?",
+    "options": [
+      { "label": "a", "text": "rlevel", "correct": false },
+      { "label": "b", "text": "chkconfig --list", "correct": true },
+      { "label": "c", "text": "bootldr --list", "correct": false },
+      { "label": "d", "text": "init --bootlist", "correct": false }
+    ],
+    "feedback": "The chkconfig –list command displays all services that will be executed on boot along with the setting for each service for each runlevel. Of the other commands, the init command is valid, but it does not have a –bootlist option. The other commands are invalid."
+  },
+  {
+    "id": 20,
+    "type": "single",
+    "question": "Which of the following commands, executed from within the UEFI shell, controls the boot configuration?",
+    "options": [
+      { "label": "a", "text": "bootcfg", "correct": false },
+      { "label": "b", "text": "bcfg", "correct": true },
+      { "label": "c", "text": "grub-install", "correct": false },
+      { "label": "d", "text": "grcfg", "correct": false }
+    ],
+    "feedback": "The bcfg command within the UEFI shell is used to configure bootloaders on a UEFI-based system. The command can accept various parameters to configure how the bootloader and kernel will load on boot. Of the other commands shown, grub-install is valid but not within the UEFI shell."
+  },
+    {
+    "id": 21,
+    "type": "single",
+    "question": "Which of the following can be identified as an initial sector on a disk that stores information about the disk partitioning and operating system location?",
+    "options": [
+      { "label": "a", "text": "Minimal Boot Record (MBR)", "correct": false },
+      { "label": "b", "text": "Master Boot Record (MBR)", "correct": true },
+      { "label": "c", "text": "Init sector", "correct": false },
+      { "label": "d", "text": "Master Partition Table (MPT)", "correct": false }
+    ],
+    "feedback": "The Master Boot Record, or MBR, is the first sector on a disk, and it contains information about the structure of the disk. If the MBR becomes corrupt, all data on the disk may be lost. The other options shown for this question are not valid."
+  },
+  {
+    "id": 22,
+    "type": "single",
+    "question": "Once booted, within which directory is the EFI bootloader mounted?",
+    "options": [
+      { "label": "a", "text": "/boot/efi", "correct": true },
+      { "label": "b", "text": "/etc/boot/efi", "correct": false },
+      { "label": "c", "text": "/etc/efi", "correct": false },
+      { "label": "d", "text": "/boot/loader", "correct": false }
+    ],
+    "feedback": "The bootloader is mounted into /boot/efi. The other directories do not exist."
+  },
+  {
+    "id": 23,
+    "type": "single",
+    "question": "To which target can a systemd-based system be set in order to assist with recovery?",
+    "options": [
+      { "label": "a", "text": "recovery.target", "correct": false },
+      { "label": "b", "text": "recover.target", "correct": false },
+      { "label": "c", "text": "target.recover", "correct": false },
+      { "label": "d", "text": "rescue.target", "correct": true }
+    ],
+    "feedback": "The rescue.target is used to assist in recovery by loading a minimal base system and then going to a shell akin to single-user mode or runlevel 1."
+  },
+  {
+    "id": 24,
+    "type": "single",
+    "question": "Which of the following configuration files is used for ISOLINUX?",
+    "options": [
+      { "label": "a", "text": "isolinux.cfg", "correct": true },
+      { "label": "b", "text": "isolinux.conf", "correct": false },
+      { "label": "c", "text": "isolin.cfg", "correct": false },
+      { "label": "d", "text": "isolinux.conf.d", "correct": false }
+    ],
+    "feedback": "The configuration file is called isolinux.cfg, and it is typically located in /boot/isolinux or /isolinux. The other options shown are not valid filenames for this question."
+  },
+  {
+    "id": 25,
+    "type": "single",
+    "question": "Which file must exist within /tftpboot on the TFTP server for a system that will use PXELINUX for its bootloader?",
+    "options": [
+      { "label": "a", "text": "pxelinux.tftp", "correct": false },
+      { "label": "b", "text": "pxelinux.boot", "correct": false },
+      { "label": "c", "text": "pxelinux.conf", "correct": false },
+      { "label": "d", "text": "pxelinux.0", "correct": true }
+    ],
+    "feedback": "The file pxelinux.0 must exist within /tftpboot on the TFTP server in order for a system to use PXELINUX for booting. The other files are not valid or necessary for ­PXELINUX."
+  },
+  {
+    "id": 26,
+    "type": "single",
+    "question": "Which utility can you use on a Debian or Ubuntu system to manage SysV init scripts, such as setting them to run on boot?",
+    "options": [
+      { "label": "a", "text": "bootorder", "correct": false },
+      { "label": "b", "text": "bootloader", "correct": false },
+      { "label": "c", "text": "configchk", "correct": false },
+      { "label": "d", "text": "update-rc.d", "correct": true }
+    ],
+    "feedback": "The update-rc.d utility can be used to manage SysV init scripts on Debian or Ubuntu and other distributions. When using update-rc.d, you supply the script name and the utility will take care of creating symlinks to the appropriate runlevels."
+  },
+  {
+    "id": 27,
+    "type": "single",
+    "question": "Which key when pressed during the operating system selection menu is used to enable editing of the parameters related to boot with GRUB?",
+    "options": [
+      { "label": "a", "text": "v", "correct": false },
+      { "label": "b", "text": "e", "correct": true },
+      { "label": "c", "text": "r", "correct": false },
+      { "label": "d", "text": "y", "correct": false }
+    ],
+    "feedback": "The e key, when pressed at the right time during boot, will send you into the GRUB shell, where you can change parameters related to boot such as the kernel options and other related parameters."
+  },
+  {
+    "id": 28,
+    "type": "single",
+    "question": "Which of the following commands displays the default target for a systemd-based system?",
+    "options": [
+      { "label": "a", "text": "systemctl list-unit-default", "correct": false },
+      { "label": "b", "text": "systemctl get-default", "correct": true },
+      { "label": "c", "text": "systemctl get-unit-default", "correct": false },
+      { "label": "d", "text": "systemctl get-default-unit", "correct": false }
+    ],
+    "feedback": "The systemctl command is used for this purpose, and the get-default subcommand will display the default target for boot. On many distributions, the default target is ­graphical.target. The other subcommands shown for this question are not valid."
+  },
+  {
+    "id": 29,
+    "type": "single",
+    "question": "Which options to the fsck command will find errors and automatically assume that it should repair the errors that it finds?",
+    "options": [
+      { "label": "a", "text": "-ry", "correct": true },
+      { "label": "b", "text": "-vy", "correct": false },
+      { "label": "c", "text": "-my", "correct": false },
+      { "label": "d", "text": "-xy", "correct": false }
+    ],
+    "feedback": "The -r option repairs the filesystem, while the -y option causes fsck to assume “yes” instead of prompting. The -v option is verbosity. There is no -m or -x option for fsck."
+  },
+  {
+    "id": 30,
+    "type": "single",
+    "question": "Which option to grub-install will place the GRUB images into an alternate directory?",
+    "options": [
+      { "label": "a", "text": "--boot-dir", "correct": false },
+      { "label": "b", "text": "-b", "correct": false },
+      { "label": "c", "text": "-boot", "correct": false },
+      { "label": "d", "text": "--boot-directory", "correct": true }
+    ],
+    "feedback": "The –boot-directory option enables you to specify an alternate location for GRUB images rather than the default /boot. The other options shown for this question are not valid."
+  },
+      {
+      "id": 31,
+      "type": "single",
+      "question": "¿Qué subcomando de systemctl se usa para cambiar entre niveles de ejecución?",
+      "options": [
+        { "label": "a", "text": "switch", "correct": false },
+        { "label": "b", "text": "move", "correct": false },
+        { "label": "c", "text": "runlevel", "correct": false },
+        { "label": "d", "text": "isolate", "correct": true }
+      ],
+      "feedback": "El subcomando isolate seguido del target deseado se usa para cambiar entre niveles de ejecución en un sistema basado en systemd. Los otros subcomandos mostrados no son válidos para systemctl."
+    },
+    {
+      "id": 32,
+      "type": "single",
+      "question": "Al examinar el archivo /etc/inittab, ¿qué opción indica el nivel de ejecución predeterminado al que arrancará el sistema?",
+      "options": [
+        { "label": "a", "text": "default", "correct": false },
+        { "label": "b", "text": "defaultboot", "correct": false },
+        { "label": "c", "text": "initdefault", "correct": true },
+        { "label": "d", "text": "defaultlvl", "correct": false }
+      ],
+      "feedback": "El nivel de ejecución definido como initdefault es el nivel predeterminado para el sistema. Las otras opciones mostradas no existen."
+    },
+    {
+      "id": 33,
+      "type": "single",
+      "question": "¿Cuál de los siguientes se usa en lugar de initrd para proporcionar un sistema de archivos temprano para controladores esenciales?",
+      "options": [
+        { "label": "a", "text": "initnext", "correct": false },
+        { "label": "b", "text": "initramfs", "correct": true },
+        { "label": "c", "text": "initialize", "correct": false },
+        { "label": "d", "text": "initfs", "correct": false }
+      ],
+      "feedback": "El sistema initramfs se usa en lugar de initrd para crear el proceso de carga basado en sistema de archivos para controladores clave necesarios para el arranque."
+    },
+    {
+      "id": 34,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos establece el target predeterminado de systemd a multi-usuario?",
+      "options": [
+        { "label": "a", "text": "systemctl set-default multi-user.target", "correct": true },
+        { "label": "b", "text": "systemd set-default multi-user.target", "correct": false },
+        { "label": "c", "text": "systemctl set-def muser.target", "correct": false },
+        { "label": "d", "text": "systemd set-def muser.target", "correct": false }
+      ],
+      "feedback": "El comando systemctl se usa para este propósito, y el subcomando set-default es necesario para lograr el comportamiento deseado. El archivo target se llama simplemente multi-user.target."
+    },
+    {
+      "id": 35,
+      "type": "single",
+      "question": "Usando un shim para arrancar un sistema basado en UEFI, ¿qué archivo se carga después de shim.efi?",
+      "options": [
+        { "label": "a", "text": "grubx64.cfg", "correct": false },
+        { "label": "b", "text": "grub.conf", "correct": false },
+        { "label": "c", "text": "grubx64.efi", "correct": true },
+        { "label": "d", "text": "efi.boot", "correct": false }
+      ],
+      "feedback": "El gestor de arranque shim.efi carga otro gestor de arranque, que por defecto es grubx64.efi. Las otras opciones no son nombres de archivo válidos para el propósito descrito."
+    },
+    {
+      "id": 36,
+      "type": "single",
+      "question": "¿Dentro de qué jerarquía se enlazan los archivos de /etc/init.d para que se ejecuten durante los distintos niveles de ejecución de un sistema SysV?",
+      "options": [
+        { "label": "a", "text": "/etc/rc.S", "correct": false },
+        { "label": "b", "text": "/etc/rc", "correct": false },
+        { "label": "c", "text": "/etc/boot/rc", "correct": false },
+        { "label": "d", "text": "/etc/rc.d", "correct": true }
+      ],
+      "feedback": "La jerarquía /etc/rc.d contiene enlaces simbólicos a archivos encontrados en /etc/init.d. Estos enlaces se usan luego para ejecutar los scripts en el nivel de ejecución apropiado. Por ejemplo, al arrancar el sistema ejecutará los scripts encontrados en el directorio del nivel de ejecución para cada nivel ejecutado durante el arranque."
+    },
+    {
+      "id": 37,
+      "type": "single",
+      "question": "¿Cuál es el nombre de la unidad a la que arranca un sistema systemd para iniciar otros niveles?",
+      "options": [
+        { "label": "a", "text": "default.target", "correct": true },
+        { "label": "b", "text": "init.target", "correct": false },
+        { "label": "c", "text": "initial.target", "correct": false },
+        { "label": "d", "text": "load.target", "correct": false }
+      ],
+      "feedback": "default.target es la unidad target predeterminada que es activada por systemd al arrancar. El target predeterminado luego inicia otros servicios basados en las dependencias."
+    }
+  ]
+}

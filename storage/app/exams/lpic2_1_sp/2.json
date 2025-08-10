@@ -1,0 +1,450 @@
+{
+  "id": "1",
+  "title": "201 - Linux Kernel",
+  "questions": [
+    {
+      "id": 1,
+      "type": "single",
+      "question": "Estás actualizando un kernel que ha sido compilado previamente en el mismo servidor. ¿Cuál de los siguientes comandos incorpora la configuración existente del kernel al nuevo kernel?",
+      "options": [
+        { "label": "a", "text": "config --merge", "correct": false },
+        { "label": "b", "text": "make oldconfig", "correct": true },
+        { "label": "c", "text": "merge config", "correct": false },
+        { "label": "d", "text": "init configs", "correct": false }
+      ],
+      "feedback": "El comando 'make oldconfig' integrará el archivo de configuración existente en la nueva configuración del kernel. Aún debes revisar los elementos que hayan cambiado o se hayan movido en el nuevo kernel para asegurarte de que la configuración sea correcta."
+    },
+    {
+      "id": 2,
+      "type": "single",
+      "question": "¿En qué directorio se suele guardar el código fuente del kernel?",
+      "options": [
+        { "label": "a", "text": "/usr/src/linux", "correct": true },
+        { "label": "b", "text": "/usr/linux/kernel", "correct": false },
+        { "label": "c", "text": "/usr/source/kernel", "correct": false },
+        { "label": "d", "text": "/etc/kernelsrc", "correct": false }
+      ],
+      "feedback": "El código fuente del kernel generalmente se guarda en /usr/src/linux."
+    },
+    {
+      "id": 3,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos descomprime un archivo de código fuente del kernel que ha sido comprimido con compresión xz?",
+      "options": [
+        { "label": "a", "text": "xz -c", "correct": false },
+        { "label": "b", "text": "xz -u", "correct": false },
+        { "label": "c", "text": "xz -f", "correct": false },
+        { "label": "d", "text": "xz -d", "correct": true }
+      ],
+      "feedback": "El comando 'xz' se usa tanto para comprimir como para descomprimir archivos. Cuando se usa con la opción '-d', el archivo proporcionado como argumento se descomprime."
+    },
+    {
+      "id": 4,
+      "type": "single",
+      "question": "¿Cuál de las siguientes imágenes de kernel comprimidas está limitada a un tamaño máximo de 512 KB?",
+      "options": [
+        { "label": "a", "text": "zImage", "correct": true },
+        { "label": "b", "text": "bzImage", "correct": false },
+        { "label": "c", "text": "kImage", "correct": false },
+        { "label": "d", "text": "lImage", "correct": false }
+      ],
+      "feedback": "El formato heredado 'zImage' está limitado a 512 KB de tamaño, mientras que 'bzImage' no tiene tal limitación."
+    },
+    {
+      "id": 5,
+      "type": "single",
+      "question": "¿Qué objetivo de 'make' proporciona una interfaz basada en curses para la compilación del kernel que ayuda a seleccionar opciones dentro del kernel?",
+      "options": [
+        { "label": "a", "text": "config", "correct": false },
+        { "label": "b", "text": "menuconfig", "correct": true },
+        { "label": "c", "text": "cursesconfig", "correct": false },
+        { "label": "d", "text": "cleanconfig", "correct": false }
+      ],
+      "feedback": "El objetivo 'menuconfig' proporciona una interfaz de estilo gráfico para elegir opciones del kernel y es apropiado para usar sobre una conexión ssh. Sin embargo, ten cuidado al compilar un kernel sobre ssh, ya que si eliges opciones incorrectas, el servidor podría no arrancar correctamente. Asegúrate de tener otro medio para acceder a la consola."
+    },
+    {
+      "id": 6,
+      "type": "single",
+      "question": "Estás trabajando con un sistema heredado CentOS 5 y necesitas recrear el disco RAM inicial. ¿Cuál de los siguientes comandos se usa para este propósito?",
+      "options": [
+        { "label": "a", "text": "mkinitrd", "correct": true },
+        { "label": "b", "text": "mkramdisk", "correct": false },
+        { "label": "c", "text": "mkdisk --init", "correct": false },
+        { "label": "d", "text": "mkfs.init", "correct": false }
+      ],
+      "feedback": "El comando 'mkinitrd' se usa en sistemas antiguos para crear el disco RAM inicial. Este disco se usa para cargar (o precargar) módulos esenciales para componentes vitales necesarios para el arranque, como discos."
+    },
+    {
+      "id": 7,
+      "type": "single",
+      "question": "¿Qué método de compresión se usa para crear una bzImage?",
+      "options": [
+        { "label": "a", "text": "zip", "correct": false },
+        { "label": "b", "text": "lzip", "correct": false },
+        { "label": "c", "text": "bzip2", "correct": true },
+        { "label": "d", "text": "bzip3", "correct": false }
+      ],
+      "feedback": "Cuando está disponible, 'bzip2' se usa para comprimir una bzImage. bzImage describe un formato diferente para imágenes de kernel comprimidas que pueden superar el límite de 512 KB que normalmente aplica a una zImage."
+    },
+    {
+      "id": 8,
+      "type": "single",
+      "question": "Al compilar un kernel, la configuración final se guarda en ¿cuál de los siguientes archivos?",
+      "options": [
+        { "label": "a", "text": "/usr/src/linux/.kernelcfg", "correct": false },
+        { "label": "b", "text": "/usr/src/linux/.config", "correct": true },
+        { "label": "c", "text": "/usr/src/linux/.kconfig", "correct": false },
+        { "label": "d", "text": "/usr/src/linux/kernel.cfg", "correct": false }
+      ],
+      "feedback": "La configuración del kernel se guarda en /usr/src/linux/.config. Es una buena idea hacer una copia de seguridad de este archivo por si necesitas recrear el kernel desde el código fuente en el futuro o como referencia."
+    },
+    {
+      "id": 9,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos se usa para mostrar los módulos actualmente cargados en un sistema en ejecución?",
+      "options": [
+        { "label": "a", "text": "ls -mod", "correct": false },
+        { "label": "b", "text": "lsmod", "correct": true },
+        { "label": "c", "text": "listmod", "correct": false },
+        { "label": "d", "text": "mod --list", "correct": false }
+      ],
+      "feedback": "El comando 'lsmod' se usa para mostrar los módulos actualmente cargados. Esto es útil para escenarios donde estás migrando desde un kernel proporcionado por la distribución a un kernel personalizado y necesitas saber qué módulos compilar en el nuevo kernel."
+    },
+    {
+      "id": 10,
+      "type": "single",
+      "question": "¿Cuál de los siguientes objetivos de 'make' se debe usar para asegurarse de que se eliminen la mayoría de los archivos compilados de una compilación anterior?",
+      "options": [
+        { "label": "a", "text": "config", "correct": false },
+        { "label": "b", "text": "clean", "correct": true },
+        { "label": "c", "text": "proper", "correct": false },
+        { "label": "d", "text": "mrproper", "correct": false }
+      ],
+      "feedback": "El objetivo 'clean' elimina la mayoría de los archivos compilados, aunque algunos pueden quedar, como los relacionados con la compilación del kernel. El objetivo 'mrproper' elimina los archivos compilados de compilaciones anteriores del kernel pero también limpia el archivo .config. El objetivo 'config' se usa para configurar opciones del kernel pero no debe usarse hasta después de 'mrproper'."
+    },
+        {
+      "id": 11,
+      "type": "single",
+      "question": "¿Qué opción de configuración del kernel permite agregar información como un número de versión personalizado a la versión del kernel?",
+      "options": [
+        { "label": "a", "text": "CUSTVER", "correct": false },
+        { "label": "b", "text": "LOCALVERSION", "correct": true },
+        { "label": "c", "text": "CUSTOMVERSION", "correct": false },
+        { "label": "d", "text": "APPENDVER", "correct": false }
+      ],
+      "feedback": "La opción LOCALVERSION, encontrada en el área General Setup, puede usarse para agregar versionamiento personalizado según necesidades locales."
+    },
+    {
+      "id": 12,
+      "type": "single",
+      "question": "¿Cuál de las siguientes herramientas se usa para crear módulos del kernel, incluso si el código fuente está fuera del árbol de fuentes del kernel?",
+      "options": [
+        { "label": "a", "text": "kbuild", "correct": false },
+        { "label": "b", "text": "mkmod", "correct": false },
+        { "label": "c", "text": "dkms", "correct": true },
+        { "label": "d", "text": "modbuild", "correct": false }
+      ],
+      "feedback": "Dynamic Kernel Module Support (dkms) se usa para construir módulos del kernel fuera del árbol de fuentes del kernel."
+    },
+    {
+      "id": 13,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos crea una lista de módulos y sus dependencias?",
+      "options": [
+        { "label": "a", "text": "lsmod", "correct": false },
+        { "label": "b", "text": "depmod", "correct": true },
+        { "label": "c", "text": "modlist", "correct": false },
+        { "label": "d", "text": "listmod", "correct": false }
+      ],
+      "feedback": "El comando depmod se usa para crear una lista de módulos. Esta lista se guarda en un archivo llamado modules.dep, cuya ubicación depende de la distribución de Linux en uso."
+    },
+    {
+      "id": 14,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos se usa para ver eventos relacionados con udev del kernel en tiempo real?",
+      "options": [
+        { "label": "a", "text": "udevls all", "correct": false },
+        { "label": "b", "text": "lsudev -f", "correct": false },
+        { "label": "c", "text": "udevmon -a", "correct": false },
+        { "label": "d", "text": "udevadm monitor", "correct": true }
+      ],
+      "feedback": "El comando udevadm se usa para trabajar con la interfaz udev del kernel, y el subcomando monitor muestra eventos del kernel (uevents) y otros eventos udev en tiempo real."
+    },
+    {
+      "id": 15,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos muestra información relacionada con USB del kernel en una estructura tipo árbol?",
+      "options": [
+        { "label": "a", "text": "lsusb -t", "correct": true },
+        { "label": "b", "text": "usblist --tree", "correct": false },
+        { "label": "c", "text": "usbtree", "correct": false },
+        { "label": "d", "text": "usblist -t", "correct": false }
+      ],
+      "feedback": "El comando lsusb muestra información sobre la interfaz USB del kernel. La opción -t formatea esta información en una estructura tipo árbol que ayuda a visualizar cómo los dispositivos están conectados al computador."
+    },
+    {
+      "id": 16,
+      "type": "single",
+      "question": "¿Qué opción de sysctl muestra todos los valores y sus configuraciones actuales?",
+      "options": [
+        { "label": "a", "text": "-a", "correct": true },
+        { "label": "b", "text": "-b", "correct": false },
+        { "label": "c", "text": "-d", "correct": false },
+        { "label": "d", "text": "-c", "correct": false }
+      ],
+      "feedback": "La opción -a muestra todos los valores y sus configuraciones actuales en sysctl. La opción -b muestra valores en binario sin saltos de línea. La opción -d es un alias para -h (ayuda). No existe una opción -c."
+    },
+    {
+      "id": 17,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos instala un módulo del kernel incluyendo sus dependencias?",
+      "options": [
+        { "label": "a", "text": "lsmod", "correct": false },
+        { "label": "b", "text": "modprobe", "correct": true },
+        { "label": "c", "text": "modinst", "correct": false },
+        { "label": "d", "text": "instmod", "correct": false }
+      ],
+      "feedback": "El comando modprobe examina las dependencias de un módulo dado y carga tanto las dependencias como el módulo solicitado."
+    },
+    {
+      "id": 18,
+      "type": "single",
+      "question": "¿Qué objetivo de make puede usarse para crear un paquete Debian de una imagen del kernel y archivos relacionados?",
+      "options": [
+        { "label": "a", "text": "kpkg", "correct": false },
+        { "label": "b", "text": "deb-pkg", "correct": true },
+        { "label": "c", "text": "bin-deb", "correct": false },
+        { "label": "d", "text": "deb-bin", "correct": false }
+      ],
+      "feedback": "El objetivo deb-pkg crea archivos .deb que luego pueden gestionarse mediante el sistema de gestión de paquetes de Debian. Objetivos similares existen para otros sistemas, como rpm-pkg para sistemas Red Hat y CentOS."
+    },
+    {
+      "id": 19,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos muestra la versión actual del kernel?",
+      "options": [
+        { "label": "a", "text": "kver", "correct": false },
+        { "label": "b", "text": "uname -r", "correct": true },
+        { "label": "c", "text": "uptime -k", "correct": false },
+        { "label": "d", "text": "kerver", "correct": false }
+      ],
+      "feedback": "El comando uname se usa para este propósito, y la opción -r muestra el número de versión del kernel."
+    },
+    {
+      "id": 20,
+      "type": "single",
+      "question": "¿Dentro de qué jerarquía de directorios se encuentran los nombres y valores para sysctl?",
+      "options": [
+        { "label": "a", "text": "/sysctl", "correct": false },
+        { "label": "b", "text": "/etc/sysctl.info", "correct": false },
+        { "label": "c", "text": "/proc/sys", "correct": true },
+        { "label": "d", "text": "/proc/sysctl", "correct": false }
+      ],
+      "feedback": "La información para sysctl se encuentra dentro de /proc/sys. Dentro de este directorio hay una jerarquía de directorios que eventualmente llevan a un archivo normal, cuyo contenido es el valor de la variable."
+    },
+        {
+      "id": 21,
+      "type": "single",
+      "question": "¿En qué directorio se almacenan las reglas relacionadas con udev?",
+      "options": [
+        { "label": "a", "text": "/etc/udev.conf", "correct": false },
+        { "label": "b", "text": "/etc/udev.conf.d", "correct": false },
+        { "label": "c", "text": "/etc/udev/rules.d", "correct": true },
+        { "label": "d", "text": "/etc/udev.d", "correct": false }
+      ],
+      "feedback": "Las reglas relacionadas con udev se almacenan en /etc/udev/rules.d. La jerarquía /etc/udev contiene el archivo de configuración udev.conf junto con otros componentes relacionados con la configuración de udev."
+    },
+    {
+      "id": 22,
+      "type": "single",
+      "question": "¿Qué comando se usa para determinar los módulos de los que depende otro módulo?",
+      "options": [
+        { "label": "a", "text": "modinfo", "correct": true },
+        { "label": "b", "text": "modlist", "correct": false },
+        { "label": "c", "text": "modprobe", "correct": false },
+        { "label": "d", "text": "tracemod", "correct": false }
+      ],
+      "feedback": "El comando modinfo proporciona información sobre un módulo del kernel dado. Puedes usar modinfo para descubrir los parámetros necesarios para un módulo y los módulos de los que depende, entre otra información. El comando modprobe se usa para cargar un módulo. No existen los comandos tracemod o modlist."
+    },
+    {
+      "id": 23,
+      "type": "single",
+      "question": "¿En qué directorio se suele encontrar la documentación relacionada con el código fuente del kernel?",
+      "options": [
+        { "label": "a", "text": "/usr/src/Documentation", "correct": false },
+        { "label": "b", "text": "/usr/share/kerneldocs", "correct": false },
+        { "label": "c", "text": "/usr/src/linux/Documentation", "correct": true },
+        { "label": "d", "text": "/usr/share/kernel/Documentation", "correct": false }
+      ],
+      "feedback": "Dentro de /usr/src/linux/Documentation encontrarás documentación extensa sobre el código fuente del kernel, incluyendo instrucciones sobre cómo compilar el kernel y los diversos elementos que contiene el propio kernel."
+    },
+    {
+      "id": 24,
+      "type": "single",
+      "question": "¿Qué opción de lspci muestra el controlador del kernel en uso para un dispositivo PCI dado?",
+      "options": [
+        { "label": "a", "text": "-t", "correct": false },
+        { "label": "b", "text": "-k", "correct": true },
+        { "label": "c", "text": "-n", "correct": false },
+        { "label": "d", "text": "-a", "correct": false }
+      ],
+      "feedback": "La opción -k muestra el controlador del kernel asociado con un dispositivo PCI dado, y puede ser útil al planificar una nueva compilación del kernel. La opción -t muestra la información en estructura de árbol, y -n usa números en lugar de nombres de dispositivos. No existe una opción -a."
+    },
+    {
+      "id": 25,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos inserta un módulo en el kernel en ejecución pero no resuelve dependencias?",
+      "options": [
+        { "label": "a", "text": "lsmod", "correct": false },
+        { "label": "b", "text": "modinstall", "correct": false },
+        { "label": "c", "text": "insmod", "correct": true },
+        { "label": "d", "text": "moduleinst", "correct": false }
+      ],
+      "feedback": "El comando insmod inserta un módulo en el kernel en ejecución. Sin embargo, no intenta resolver dependencias, sino que muestra un error si hay módulos dependientes o símbolos del kernel que no están disponibles."
+    },
+    {
+      "id": 26,
+      "type": "single",
+      "question": "¿Qué opción de modprobe eliminará un módulo e intentará eliminar cualquier módulo no utilizado del que dependa?",
+      "options": [
+        { "label": "a", "text": "-v", "correct": false },
+        { "label": "b", "text": "-r", "correct": true },
+        { "label": "c", "text": "-d", "correct": false },
+        { "label": "d", "text": "-f", "correct": false }
+      ],
+      "feedback": "La opción -r elimina los módulos del kernel nombrados e intenta eliminar cualquier módulo del que dependa el módulo nombrado, cuando sea posible. La opción -d establece el directorio raíz para módulos, mientras que -v es modo verboso y -f fuerza la carga del módulo."
+    },
+    {
+      "id": 27,
+      "type": "single",
+      "question": "¿Qué objetivo de make se usa para instalar módulos previamente compilados?",
+      "options": [
+        { "label": "a", "text": "modules", "correct": false },
+        { "label": "b", "text": "modules_install", "correct": true },
+        { "label": "c", "text": "instmod", "correct": false },
+        { "label": "d", "text": "modinst", "correct": false }
+      ],
+      "feedback": "El objetivo modules_install de make se usa para instalar módulos que han sido previamente compilados usando el objetivo modules. Los objetivos instmod y modinst no son válidos."
+    },
+    {
+      "id": 28,
+      "type": "single",
+      "question": "¿En cuál de los siguientes directorios encontrarás información de lista negra para módulos cargados con modprobe?",
+      "options": [
+        { "label": "a", "text": "/etc/blackllist", "correct": false },
+        { "label": "b", "text": "/etc/modprobe.d", "correct": true },
+        { "label": "c", "text": "/etc/blacklist.mod", "correct": false },
+        { "label": "d", "text": "/etc/modprobe", "correct": false }
+      ],
+      "feedback": "El directorio /etc/modprobe.d se usa para almacenar información de configuración relacionada con módulos, como la usada para listas negras, pero también para otra información de configuración como opciones de udev y módulos."
+    },
+    {
+      "id": 29,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos muestra una lista de módulos actualmente cargados?",
+      "options": [
+        { "label": "a", "text": "depmod", "correct": false },
+        { "label": "b", "text": "depmod -a", "correct": false },
+        { "label": "c", "text": "lsmod", "correct": true },
+        { "label": "d", "text": "listmod", "correct": false }
+      ],
+      "feedback": "El comando lsmod muestra una lista de módulos actualmente cargados. La lista incluye el tamaño del módulo en memoria y qué, si hay algo, está usando actualmente el módulo."
+    },
+    {
+      "id": 30,
+      "type": "single",
+      "question": "Cuando se trabaja con un sistema CentOS 6, ¿qué comando se usa para crear el disco RAM inicial?",
+      "options": [
+        { "label": "a", "text": "mkinit", "correct": false },
+        { "label": "b", "text": "dracut", "correct": true },
+        { "label": "c", "text": "mkraminit", "correct": false },
+        { "label": "d", "text": "mkinitfs", "correct": false }
+      ],
+      "feedback": "El comando dracut se usa para crear el disco RAM inicial en sistemas más nuevos y ha reemplazado al comando heredado mkinitrd que se usaba para el mismo propósito."
+    },
+        {
+      "id": 31,
+      "type": "single",
+      "question": "¿Qué comando se usa para eliminar un módulo del kernel de un sistema en ejecución?",
+      "options": [
+        { "label": "a", "text": "modrm", "correct": false },
+        { "label": "b", "text": "rmmod", "correct": true },
+        { "label": "c", "text": "modremove", "correct": false },
+        { "label": "d", "text": "removemod", "correct": false }
+      ],
+      "feedback": "El comando rmmod elimina módulos de un sistema en ejecución. Para usar rmmod, el módulo no puede estar en uso o ser dependido por otros módulos actualmente cargados. Los otros comandos mostrados no son válidos."
+    },
+    {
+      "id": 32,
+      "type": "single",
+      "question": "Si deseas que un valor establecido con el comando sysctl tenga efecto al arrancar, ¿en qué archivo deberías colocar la variable y su valor?",
+      "options": [
+        { "label": "a", "text": "/etc/sysctl.cfg", "correct": false },
+        { "label": "b", "text": "/etc/sysctl.conf", "correct": true },
+        { "label": "c", "text": "/lib/sysctl", "correct": false },
+        { "label": "d", "text": "/var/sysctl.conf", "correct": false }
+      ],
+      "feedback": "Las variables y valores colocados en /etc/sysctl.conf tendrán efecto al arrancar. Los otros archivos listados no son válidos."
+    },
+    {
+      "id": 33,
+      "type": "single",
+      "question": "¿En qué archivo encontrarás una lista de los símbolos del kernel actualmente disponibles?",
+      "options": [
+        { "label": "a", "text": "/proc/kernelsyms", "correct": false },
+        { "label": "b", "text": "/etc/kernel.conf", "correct": false },
+        { "label": "c", "text": "/etc/lsyms", "correct": false },
+        { "label": "d", "text": "/proc/kallsyms", "correct": true }
+      ],
+      "feedback": "El archivo /proc/kallsyms proporciona una forma de ver los símbolos del kernel actualmente cargados. Esto puede ser útil para resolver dependencias de módulos. Nota que en sistemas heredados, este archivo podría llamarse /proc/ksyms."
+    },
+    {
+      "id": 34,
+      "type": "single",
+      "question": "¿Cuál de las siguientes opciones de modprobe mostrará las dependencias de un módulo?",
+      "options": [
+        { "label": "a", "text": "--show-deps", "correct": false },
+        { "label": "b", "text": "--show-depends", "correct": true },
+        { "label": "c", "text": "--deps", "correct": false },
+        { "label": "d", "text": "--list-depends", "correct": false }
+      ],
+      "feedback": "La opción --show-depends muestra las dependencias para un módulo dado. Las otras opciones no son válidas para el comando modprobe."
+    },
+    {
+      "id": 35,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos puede usarse para mostrar varias piezas de información relacionadas con un módulo actualmente cargado, incluyendo tamaño del núcleo y configuraciones de opciones?",
+      "options": [
+        { "label": "a", "text": "systool -v -m <module>", "correct": true },
+        { "label": "b", "text": "modinfo -r <module>", "correct": false },
+        { "label": "c", "text": "lsmod <module>", "correct": false },
+        { "label": "d", "text": "infmod <module>", "correct": false }
+      ],
+      "feedback": "La utilidad systool puede usarse para mostrar las opciones actualmente cargadas para un módulo dado. El comando modinfo -r no es válido, y aunque modinfo muestra información sobre un módulo, no incluye tamaño del núcleo y otras configuraciones. El comando lsmod no puede usarse para este propósito, y no existe el comando infmod."
+    },
+    {
+      "id": 36,
+      "type": "single",
+      "question": "¿Qué directorio contiene varios elementos e información de configuración sobre el kernel, como el número de versión, nombre de dominio, ubicación de modprobe y otras configuraciones?",
+      "options": [
+        { "label": "a", "text": "/proc/sys/kmod", "correct": false },
+        { "label": "b", "text": "/proc/sys/kernel", "correct": true },
+        { "label": "c", "text": "/proc/kernel", "correct": false },
+        { "label": "d", "text": "/proc/kernel/sys", "correct": false }
+      ],
+      "feedback": "La jerarquía /proc/sys/kernel contiene información de configuración vital para un kernel. Estas configuraciones pueden cambiarse en un sistema en ejecución."
+    },
+    {
+      "id": 37,
+      "type": "single",
+      "question": "¿Cuál de los siguientes comandos muestra mensajes en el buffer de anillo del kernel?",
+      "options": [
+        { "label": "a", "text": "kring", "correct": false },
+        { "label": "b", "text": "ringbuf", "correct": false },
+        { "label": "c", "text": "dmesg", "correct": true },
+        { "label": "d", "text": "kmesg", "correct": false }
+      ],
+      "feedback": "El buffer de anillo del kernel, o los mensajes de registro relacionados con el kernel, pueden verse usando el comando dmesg. Los mensajes normalmente rotan mostrando solo los más recientes, pero esto puede cambiarse mediante opciones de configuración."
+    }
+  ]
+}

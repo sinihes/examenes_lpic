@@ -1,0 +1,558 @@
+{
+  "id": "2",
+  "title": "208 - HTTP Services",
+  "questions": [
+{
+      "id": 1,
+      "type": "single",
+      "question": "Which directive within an Apache configuration file facilitates serving websites for more than one domain using a single IP address?",
+      "options": [
+        { "label": "a", "text": "<VirtualServer>", "correct": false },
+        { "label": "b", "text": "<VirtualHost>", "correct": true },
+        { "label": "c", "text": "<VirtContainer>", "correct": false },
+        { "label": "d", "text": "<Virtualization>", "correct": false }
+      ],
+      "feedback": "The <VirtualHost> directive begins a stanza that facilitates serving websites using virtual servers. The other directives are not valid for Apache."
+    },
+    {
+      "id": 2,
+      "type": "single",
+      "question": "Which command is used to creates or update credentials for htaccess scenarios?",
+      "options": [
+        { "label": "a", "text": "passwd", "correct": false },
+        { "label": "b", "text": "apachepasswd", "correct": false },
+        { "label": "c", "text": "htpass", "correct": false },
+        { "label": "d", "text": "htpasswd", "correct": true }
+      ],
+      "feedback": "The htpasswd command creates or updates credentials for native Apache authentication using htaccess. The passwd command is valid, but it does not work with htaccess. The other commands are not valid."
+    },
+    {
+      "id": 3,
+      "type": "single",
+      "question": "Which option to the apachectl command examines the configuration files to verify that there are no syntax errors?",
+      "options": [
+        { "label": "a", "text": "verifyconfig", "correct": false },
+        { "label": "b", "text": "configver", "correct": false },
+        { "label": "c", "text": "configtest", "correct": true },
+        { "label": "d", "text": "testconfig", "correct": false }
+      ],
+      "feedback": "The configtest option verifies the configuration file syntax, and it is quite helpful in order to prevent a situation where the server cannot restart due to a fatal error in the configuration. The other options are not valid for the apachectl command."
+    },
+    {
+      "id": 4,
+      "type": "single",
+      "question": "Which of the following commands generates a private key for use with SSL and places it into the file /etc/ssl/example.com.private?",
+      "options": [
+        { "label": "a", "text": "openssl genrsa -out /etc/ssl/example.com.private", "correct": true },
+        { "label": "b", "text": "openssl generate-private > /etc/ssl/example.com.private", "correct": false },
+        { "label": "c", "text": "openssl genpriv > /etc/ssl/example.com.private", "correct": false },
+        { "label": "d", "text": "openssh genkey -out /etc/ssl/example.com.private", "correct": false }
+      ],
+      "feedback": "The openssl command is used for this purpose with the genrsa option. An output file is specified with -out. The other commands containing openssl all contain an invalid option, and the final command is openssh and it is not used for this scenario."
+    },
+    {
+      "id": 5,
+      "type": "single",
+      "question": "Which of the following configuration directives for Apache works with the mod_auth_basic and mod_authn_file modules to specify the filename for authentication?",
+      "options": [
+        { "label": "a", "text": "AuthFile", "correct": false },
+        { "label": "b", "text": "AuthUserFile", "correct": true },
+        { "label": "c", "text": "AuthenticationFile", "correct": false },
+        { "label": "d", "text": "AuthN_File", "correct": false }
+      ],
+      "feedback": "The AuthUserFile directive works with mod_auth_basic and mod_authn_file to tell Apache the location of the file that will be used for authentication."
+    },
+    {
+      "id": 6,
+      "type": "single",
+      "question": "Which directive within a <VirtualHost> stanza in an Apache configuration is used to specify the name of the virtual server?",
+      "options": [
+        { "label": "a", "text": "Server", "correct": false },
+        { "label": "b", "text": "VirtualServer", "correct": false },
+        { "label": "c", "text": "ServerName", "correct": true },
+        { "label": "d", "text": "ServerInfo", "correct": false }
+      ],
+      "feedback": "The ServerName directive provides the hostname for the virtual server. The other directives are not used."
+    },
+    {
+      "id": 7,
+      "type": "single",
+      "question": "Which option in an Apache configuration enables the SSL configuration for a given website or server?",
+      "options": [
+        { "label": "a", "text": "SSLEngine", "correct": true },
+        { "label": "b", "text": "SSLDirect", "correct": false },
+        { "label": "c", "text": "SSLEnable", "correct": false },
+        { "label": "d", "text": "SSLConnect", "correct": false }
+      ],
+      "feedback": "The SSLEngine option needs to be set to On for SSL to be enabled for a given site or server. The other options are not valid."
+    },
+    {
+      "id": 8,
+      "type": "single",
+      "question": "Which option within an http section for nginx is used to configure the names of valid index files?",
+      "options": [
+        { "label": "a", "text": "indexFiles", "correct": false },
+        { "label": "b", "text": "index_files", "correct": false },
+        { "label": "c", "text": "indexfile", "correct": false },
+        { "label": "d", "text": "index", "correct": true }
+      ],
+      "feedback": "The index option enables the administrator to set a space-separated list of valid index files for the server, such as index.html, index.htm, and index.php. The other options listed for this question are not valid."
+    },
+    {
+      "id": 9,
+      "type": "single",
+      "question": "When creating a Squid proxy configuration, you need to create an access control list for the local network. Which configuration option creates an access control list for Squid?",
+      "options": [
+        { "label": "a", "text": "accesscontrol", "correct": false },
+        { "label": "b", "text": "acl", "correct": true },
+        { "label": "c", "text": "access-control", "correct": false },
+        { "label": "d", "text": "access-control-list", "correct": false }
+      ],
+      "feedback": "The acl configuration directive creates an access control list. Access control lists are powerful features of a Squid proxy setup and can include networks, MAC addresses, ports, browsers, and much more."
+    },
+    {
+      "id": 10,
+      "type": "single",
+      "question": "Which of the following configuration directives prevents Apache from printing version information on documents generated by the server?",
+      "options": [
+        { "label": "a", "text": "ServerDocs Off", "correct": false },
+        { "label": "b", "text": "Signature Off", "correct": false },
+        { "label": "c", "text": "ServerSignature Off", "correct": true },
+        { "label": "d", "text": "ServerStatus Off", "correct": false }
+      ],
+      "feedback": "It can be desirable at times not to display the version of Apache in use. Some say that doing so might help security. However, this type of “security through obscurity” may not be entirely effective."
+    },
+        {
+      "id": 11,
+      "type": "single",
+      "question": "Which of the following technologies enables name-based virtual hosting over SSL using a single IP address?",
+      "options": [
+        { "label": "a", "text": "Server Naming (SN)", "correct": false },
+        { "label": "b", "text": "Extended Virtual Host (EVH)", "correct": false },
+        { "label": "c", "text": "Server Name Indication (SNI)", "correct": true },
+        { "label": "d", "text": "Advanced Virtual Hosting (AVH)", "correct": false }
+      ],
+      "feedback": "Server Name Indication, or SNI, facilitates serving multiple virtual hosts from the same IP address even when SSL is used. Without SNI, each SSL-based virtual host would require its own IP address. The other technologies are not valid for this scenario."
+    },
+    {
+      "id": 12,
+      "type": "single",
+      "question": "Which Apache configuration directive sets the name of the PEM file containing CA certificates for clients?",
+      "options": [
+        { "label": "a", "text": "SSLCACertificateFile", "correct": true },
+        { "label": "b", "text": "SSLCaCertFile", "correct": false },
+        { "label": "c", "text": "SSLCAFile", "correct": false },
+        { "label": "d", "text": "CACertificateFile", "correct": false }
+      ],
+      "feedback": "The SSLCACertificateFile directive enables specification of a single PEM file containing CA certificates for client authentication."
+    },
+    {
+      "id": 13,
+      "type": "single",
+      "question": "Which Apache2 configuration option sets the name that is displayed in the pop-up window for authentication when using Basic authentication?",
+      "options": [
+        { "label": "a", "text": "AuthDisplay", "correct": false },
+        { "label": "b", "text": "AuthName", "correct": true },
+        { "label": "c", "text": "AuthList", "correct": false },
+        { "label": "d", "text": "FriendlyName", "correct": false }
+      ],
+      "feedback": "The AuthName directive sets a friendly display value that is shown within the authentication pop-up window. The other values shown do not have any effect within Apache2."
+    },
+    {
+      "id": 14,
+      "type": "single",
+      "question": "Which of the following Apache configuration lines enables the php7_module located at modules/libphp7.so?",
+      "options": [
+        { "label": "a", "text": "Load php7_module modules/libphp7.so", "correct": false },
+        { "label": "b", "text": "Module php7_module modules/libphp7.so", "correct": false },
+        { "label": "c", "text": "LoadMod php7_module modules/libphp7.so", "correct": false },
+        { "label": "d", "text": "LoadModule php7_module modules/libphp7.so", "correct": true }
+      ],
+      "feedback": "The LoadModule directive is used for this purpose and accepts the name of the module followed by its filename."
+    },
+    {
+      "id": 15,
+      "type": "single",
+      "question": "Which subcommand of openssl is used to create a Certificate Signing Request (CSR)?",
+      "options": [
+        { "label": "a", "text": "req", "correct": true },
+        { "label": "b", "text": "csr", "correct": false },
+        { "label": "c", "text": "gencsr", "correct": false },
+        { "label": "d", "text": "newcsr", "correct": false }
+      ],
+      "feedback": "The req option begins the CSR generation process, typically also requiring -new as an additional option. The other subcommands are not valid."
+    },
+    {
+      "id": 16,
+      "type": "single",
+      "question": "Which Apache configuration directive sets the default directory for documents to be served for a given virtual host?",
+      "options": [
+        { "label": "a", "text": "ServerRoot", "correct": false },
+        { "label": "b", "text": "DocumentRoot", "correct": true },
+        { "label": "c", "text": "DefaultLoc", "correct": false },
+        { "label": "d", "text": "DefaultDocRoot", "correct": false }
+      ],
+      "feedback": "The DocumentRoot directive sets the default directory from which documents are served, both inside and outside a virtual host stanza. The ServerRoot directive sets the overall root directory for the server and is not related to virtual hosts or document serving. The other two options are not valid Apache directives."
+    },
+    {
+      "id": 17,
+      "type": "single",
+      "question": "Which of the following files represents the primary configuration file for PHP?",
+      "options": [
+        { "label": "a", "text": "php.conf", "correct": false },
+        { "label": "b", "text": "php.cfg", "correct": false },
+        { "label": "c", "text": "php.config", "correct": false },
+        { "label": "d", "text": "php.ini", "correct": true }
+      ],
+      "feedback": "The file php.ini, typically located within the /etc/ hierarchy, depending on distribution, is used as the primary configuration file for PHP. The other files are not used by PHP."
+    },
+    {
+      "id": 18,
+      "type": "single",
+      "question": "Which of the following lines within an Apache configuration disables the display of files in a directory for which no default document exists?",
+      "options": [
+        { "label": "a", "text": "Options +Default", "correct": false },
+        { "label": "b", "text": "Options -Default", "correct": false },
+        { "label": "c", "text": "Options -Indexes", "correct": true },
+        { "label": "d", "text": "Options +Indexes", "correct": false }
+      ],
+      "feedback": "The Options directive is used for this purpose and the option to exclude is Indexes. Options are included or excluded by a plus or minus sign, respectively. There is no option named Default."
+    },
+    {
+      "id": 19,
+      "type": "single",
+      "question": "Which of the following RedirectMatch directives will provide a Page Not Found error to the user if they attempt to view the .git directory?",
+      "options": [
+        { "label": "a", "text": "RedirectMatch 404 /\\.git(/|$)", "correct": true },
+        { "label": "b", "text": "RedirectMatch PageNotFound /.git/", "correct": false },
+        { "label": "c", "text": "RedirectMatch 404 .git", "correct": false },
+        { "label": "d", "text": "RedirectMatch .git 404", "correct": false }
+      ],
+      "feedback": "The syntax shown will redirect the user to a 404 page in the event that they attempt to navigate to the .git directory. The other options will not work because of syntax errors."
+    },
+    {
+      "id": 20,
+      "type": "single",
+      "question": "Which of the following directives for an Apache configuration tells the server the location of the SSL private key?",
+      "options": [
+        { "label": "a", "text": "SSLKeyFile", "correct": false },
+        { "label": "b", "text": "SSLCertificatePrivateKey", "correct": false },
+        { "label": "c", "text": "SSLCertificateKeyFile", "correct": true },
+        { "label": "d", "text": "SSLPrivateKey", "correct": false }
+      ],
+      "feedback": "The SSLCertificateKeyFile directive points to the location of the private key for an SSL configuration. The other options shown are not valid directives."
+    },
+        {
+      "id": 21,
+      "type": "single",
+      "question": "On which port does Squid listen by default?",
+      "options": [
+        { "label": "a", "text": "3000", "correct": false },
+        { "label": "b", "text": "3128", "correct": true },
+        { "label": "c", "text": "5150", "correct": false },
+        { "label": "d", "text": "10300", "correct": false }
+      ],
+      "feedback": "Squid listens on port 3128 by default. The other ports listed are valid but are not the default port for Squid."
+    },
+    {
+      "id": 22,
+      "type": "single",
+      "question": "Which of the following modules provides authorization for Apache based on a hostname or IP address?",
+      "options": [
+        { "label": "a", "text": "mod_auth_ipaddress", "correct": false },
+        { "label": "b", "text": "mod_auth_host", "correct": false },
+        { "label": "c", "text": "mod_authz_host", "correct": true },
+        { "label": "d", "text": "mod_auth_dns", "correct": false }
+      ],
+      "feedback": "The mod_authz_host module is used for authorization based on IP address or hostname. The other modules are not valid for a default Apache configuration for the purpose described."
+    },
+    {
+      "id": 23,
+      "type": "single",
+      "question": "Within which log file does Apache record requests to the server?",
+      "options": [
+        { "label": "a", "text": "access_log", "correct": true },
+        { "label": "b", "text": "access-log", "correct": false },
+        { "label": "c", "text": "access.txt", "correct": false },
+        { "label": "d", "text": "syslog", "correct": false }
+      ],
+      "feedback": "The default name for the primary log file for Apache is access_log. This file may sometimes be called access.log, depending on the distribution. The name of the file along with what is recorded in the log can be customized."
+    },
+    {
+      "id": 24,
+      "type": "single",
+      "question": "Which directive in a Squid configuration configures whether a given ACL can use the proxy?",
+      "options": [
+        { "label": "a", "text": "access_allow", "correct": false },
+        { "label": "b", "text": "http_access", "correct": true },
+        { "label": "c", "text": "proxy_access", "correct": false },
+        { "label": "d", "text": "enable_access", "correct": false }
+      ],
+      "feedback": "The http_access directive is combined with ACL directives to define access to use the Squid proxy. The other directives are not valid for use in Squid."
+    },
+    {
+  "id": 16,
+  "type": "single",
+  "question": "¿Qué directiva de configuración de Apache establece el directorio predeterminado para los documentos que se servirán para un host virtual dado?",
+  "options": [
+    { "label": "a", "text": "ServerRoot", "correct": false },
+    { "label": "b", "text": "DocumentRoot", "correct": true },
+    { "label": "c", "text": "DefaultLoc", "correct": false },
+    { "label": "d", "text": "DefaultDocRoot", "correct": false }
+  ],
+  "feedback": "La directiva DocumentRoot establece el directorio predeterminado desde el cual se sirven los documentos, tanto dentro como fuera de un bloque de host virtual. La directiva ServerRoot establece el directorio raíz general para el servidor y no está relacionada con hosts virtuales ni con el servicio de documentos. Las otras dos opciones no son directivas válidas de Apache."
+},
+{
+  "id": 17,
+  "type": "single",
+  "question": "¿Cuál de los siguientes archivos representa el archivo principal de configuración para PHP?",
+  "options": [
+    { "label": "a", "text": "php.conf", "correct": false },
+    { "label": "b", "text": "php.cfg", "correct": false },
+    { "label": "c", "text": "php.config", "correct": false },
+    { "label": "d", "text": "php.ini", "correct": true }
+  ],
+  "feedback": "El archivo php.ini, típicamente ubicado dentro de la jerarquía /etc/ según la distribución, se usa como el archivo principal de configuración para PHP. Los otros archivos no son usados por PHP."
+},
+{
+  "id": 18,
+  "type": "single",
+  "question": "¿Cuál de las siguientes líneas dentro de una configuración de Apache desactiva la visualización de archivos en un directorio para el cual no existe un documento predeterminado?",
+  "options": [
+    { "label": "a", "text": "Options +Default", "correct": false },
+    { "label": "b", "text": "Options -Default", "correct": false },
+    { "label": "c", "text": "Options -Indexes", "correct": true },
+    { "label": "d", "text": "Options +Indexes", "correct": false }
+  ],
+  "feedback": "La directiva Options se usa para este propósito y la opción que se excluye es Indexes. Las opciones se incluyen o excluyen mediante un signo más o menos, respectivamente. No existe una opción llamada Default."
+},
+{
+  "id": 19,
+  "type": "single",
+  "question": "¿Cuál de las siguientes directivas RedirectMatch proporcionará un error de Página No Encontrada al usuario si intenta ver el directorio .git?",
+  "options": [
+    { "label": "a", "text": "RedirectMatch 404 /\\.git(/|$)", "correct": true },
+    { "label": "b", "text": "RedirectMatch PageNotFound /.git/", "correct": false },
+    { "label": "c", "text": "RedirectMatch 404 .git", "correct": false },
+    { "label": "d", "text": "RedirectMatch .git 404", "correct": false }
+  ],
+  "feedback": "La sintaxis mostrada redirigirá al usuario a una página 404 en caso de que intente navegar al directorio .git. Las otras opciones no funcionarán debido a errores de sintaxis."
+},
+{
+  "id": 20,
+  "type": "single",
+  "question": "¿Cuál de las siguientes directivas en una configuración de Apache indica al servidor la ubicación de la clave privada SSL?",
+  "options": [
+    { "label": "a", "text": "SSLKeyFile", "correct": false },
+    { "label": "b", "text": "SSLCertificatePrivateKey", "correct": false },
+    { "label": "c", "text": "SSLCertificateKeyFile", "correct": true },
+    { "label": "d", "text": "SSLPrivateKey", "correct": false }
+  ],
+  "feedback": "La directiva SSLCertificateKeyFile apunta a la ubicación de la clave privada para una configuración SSL. Las otras opciones mostradas no son directivas válidas."
+},
+{
+  "id": 21,
+  "type": "single",
+  "question": "¿En qué puerto escucha Squid por defecto?",
+  "options": [
+    { "label": "a", "text": "3000", "correct": false },
+    { "label": "b", "text": "3128", "correct": true },
+    { "label": "c", "text": "5150", "correct": false },
+    { "label": "d", "text": "10300", "correct": false }
+  ],
+  "feedback": "Squid escucha en el puerto 3128 por defecto. Los otros puertos listados son válidos, pero no son el puerto predeterminado de Squid."
+},
+{
+  "id": 22,
+  "type": "single",
+  "question": "¿Cuál de los siguientes módulos proporciona autorización para Apache basada en un nombre de host o dirección IP?",
+  "options": [
+    { "label": "a", "text": "mod_auth_ipaddress", "correct": false },
+    { "label": "b", "text": "mod_auth_host", "correct": false },
+    { "label": "c", "text": "mod_authz_host", "correct": true },
+    { "label": "d", "text": "mod_auth_dns", "correct": false }
+  ],
+  "feedback": "El módulo mod_authz_host se usa para autorización basada en dirección IP o nombre de host. Los otros módulos no son válidos para una configuración Apache predeterminada para el propósito descrito."
+},
+{
+  "id": 23,
+  "type": "single",
+  "question": "¿En cuál archivo de registro Apache registra las solicitudes al servidor?",
+  "options": [
+    { "label": "a", "text": "access_log", "correct": true },
+    { "label": "b", "text": "access-log", "correct": false },
+    { "label": "c", "text": "access.txt", "correct": false },
+    { "label": "d", "text": "syslog", "correct": false }
+  ],
+  "feedback": "El nombre predeterminado para el archivo principal de registro de Apache es access_log. Este archivo a veces puede llamarse access.log, dependiendo de la distribución. El nombre del archivo y lo que se registra en el log pueden personalizarse."
+},
+{
+  "id": 24,
+  "type": "single",
+  "question": "¿Qué directiva en una configuración de Squid configura si una ACL dada puede usar el proxy?",
+  "options": [
+    { "label": "a", "text": "access_allow", "correct": false },
+    { "label": "b", "text": "http_access", "correct": true },
+    { "label": "c", "text": "proxy_access", "correct": false },
+    { "label": "d", "text": "enable_access", "correct": false }
+  ],
+  "feedback": "La directiva http_access se combina con las directivas ACL para definir el acceso al uso del proxy Squid. Las otras directivas no son válidas para uso en Squid."
+},
+    {
+      "id": 25,
+      "type": "single",
+      "question": "Which of the following Apache configuration lines changes the name of the .htaccess file to .accesslist?",
+      "options": [
+        { "label": "a", "text": "Access .accesslist", "correct": false },
+        { "label": "b", "text": "AccessFile .accesslist", "correct": false },
+        { "label": "c", "text": "AccessFileName \".accesslist\"", "correct": true },
+        { "label": "d", "text": "AuthFile \".accesslist\"", "correct": false }
+      ],
+      "feedback": "The AccessFileName directive can be used to set the access filename to something other than .htaccess."
+    },
+    {
+      "id": 26,
+      "type": "single",
+      "question": "According to the Apache documentation, what is the preferred location for directives related to user authentication?",
+      "options": [
+        { "label": "a", "text": "Within a .htaccess file", "correct": false },
+        { "label": "b", "text": "Within the main server configuration", "correct": true },
+        { "label": "c", "text": "Inside a mod_rewrite block", "correct": false },
+        { "label": "d", "text": "In a specialized module for user authentication", "correct": false }
+      ],
+      "feedback": "Apache explains within the documentation that higher performance is achieved by storing the directives related to user authentication within the main server configuration when possible. The only reason not to do this is so that the authentication directives are accessible by the user. There is no scenario to store user authentication configuration information in a mod_rewrite block or in a module, as was the case for two of the four options for this question."
+    },
+    {
+      "id": 27,
+      "type": "single",
+      "question": "Which Apache configuration directive enables group-based authorization?",
+      "options": [
+        { "label": "a", "text": "AuthGroups", "correct": false },
+        { "label": "b", "text": "AuthGroupList", "correct": false },
+        { "label": "c", "text": "AuthGrouping", "correct": false },
+        { "label": "d", "text": "AuthGroupFile", "correct": true }
+      ],
+      "feedback": "The AuthGroupFile directive facilitates the scenario described. Users must be authenticated, and then a directory or other resource can be associated with the group file to enable users in the file to access the resource. The other directives shown are not valid."
+    },
+    {
+      "id": 28,
+      "type": "single",
+      "question": "Which of the following commands shows the current status of the Apache server, including number of requests currently being processed and server uptime?",
+      "options": [
+        { "label": "a", "text": "apachectl serverstatus", "correct": false },
+        { "label": "b", "text": "apachectl status", "correct": true },
+        { "label": "c", "text": "apachectl faststatus", "correct": false },
+        { "label": "d", "text": "apachectl stats", "correct": false }
+      ],
+      "feedback": "The apachectl command can be used for this purpose, and when given the status argument will print status information for the server. The other arguments for apachectl are not valid."
+    },
+    {
+      "id": 29,
+      "type": "single",
+      "question": "Which HTTP status code is returned when TraceEnable has been set to off within Apache?",
+      "options": [
+        { "label": "a", "text": "405", "correct": true },
+        { "label": "b", "text": "100", "correct": false },
+        { "label": "c", "text": "302", "correct": false },
+        { "label": "d", "text": "200", "correct": false }
+      ],
+      "feedback": "A 405, Method not allowed, response will be sent when TraceEnable is off. A 100 code is continue, while 302 is redirect and 200 is OK."
+    },
+    {
+      "id": 30,
+      "type": "single",
+      "question": "Which option to htpasswd creates the credentials file and places a new entry into it?",
+      "options": [
+        { "label": "a", "text": "-f", "correct": false },
+        { "label": "b", "text": "-b", "correct": false },
+        { "label": "c", "text": "-c", "correct": true },
+        { "label": "d", "text": "-e", "correct": false }
+      ],
+      "feedback": "The -c option creates a new file. The -b option is batch mode. The -e and -f options do not exist for htpasswd."
+    },
+        {
+      "id": 31,
+      "type": "single",
+      "question": "Which Apache server log format sequence is used to log the time taken to service the request in microseconds?",
+      "options": [
+        { "label": "a", "text": "%D", "correct": true },
+        { "label": "b", "text": "%T", "correct": false },
+        { "label": "c", "text": "%t", "correct": false },
+        { "label": "d", "text": "-m", "correct": false }
+      ],
+      "feedback": "Log format sequences begin with a percent sign, and %D logs the time taken to service the request in microseconds. The %T sequence logs the time taken to service the request, but it requires a preceding unit of time to log. The %t sequence is the time of day when the request was received."
+    },
+    {
+      "id": 32,
+      "type": "single",
+      "question": "Which of the following configuration lines makes the directory /home/web/docs available at the location /documentation/ on the server?",
+      "options": [
+        { "label": "a", "text": "Connect /documentation /home/web/docs", "correct": false },
+        { "label": "b", "text": "Alias /documentation/ /home/web/docs/", "correct": true },
+        { "label": "c", "text": "Connect /home/web/docs /documentation", "correct": false },
+        { "label": "d", "text": "Alias ~/docs/ /documentation/", "correct": false }
+      ],
+      "feedback": "The Alias directive is used for this purpose. The format calls for the destination followed by the location to be aliased, thereby making option B correct. There is no Connect directive in Apache."
+    },
+    {
+      "id": 33,
+      "type": "single",
+      "question": "Within a valid <Location> stanza, which directive in Apache indicates that mod_perl will be used for resources in that location?",
+      "options": [
+        { "label": "a", "text": "Handler mod_perl", "correct": false },
+        { "label": "b", "text": "SetHandler perl-script", "correct": true },
+        { "label": "c", "text": "SetHandler mod_perl", "correct": false },
+        { "label": "d", "text": "LoadModule perl-script", "correct": false }
+      ],
+      "feedback": "The SetHandler directive is used for this purpose. SetHandler should be set to perl-script for mod_perl to work. There is a LoadModule required for mod_perl, but its arguments include mod_perl and the location of the mod_perl module."
+    },
+    {
+      "id": 34,
+      "type": "single",
+      "question": "Which directive for nginx sets up a pass-through proxy for a given location?",
+      "options": [
+        { "label": "a", "text": "pass-through", "correct": false },
+        { "label": "b", "text": "proxy", "correct": false },
+        { "label": "c", "text": "proxy_pass", "correct": true },
+        { "label": "d", "text": "proxypass", "correct": false }
+      ],
+      "feedback": "The proxy_pass directive, found within a location stanza in nginx, enables proxying of requests for that location to the specified URL. The other directives are not valid for nginx."
+    },
+    {
+      "id": 35,
+      "type": "single",
+      "question": "Which configuration directive determines the number of Apache child server processes to initially start?",
+      "options": [
+        { "label": "a", "text": "Servers", "correct": false },
+        { "label": "b", "text": "MaxServers", "correct": false },
+        { "label": "c", "text": "StartServers", "correct": true },
+        { "label": "d", "text": "ServerStarts", "correct": false }
+      ],
+      "feedback": "The StartServers directive determines the number of child processes that will start initially. This number will change as requests are received, especially simultaneous requests. On busy servers, the StartServers directive may need to be increased, as will other related directives to ensure adequate performance."
+    },
+    {
+      "id": 36,
+      "type": "single",
+      "question": "Which Apache directive sets the format of a log file, including which elements are recorded in the log file?",
+      "options": [
+        { "label": "a", "text": "LogFile", "correct": false },
+        { "label": "b", "text": "Format", "correct": false },
+        { "label": "c", "text": "LoggingDirective", "correct": false },
+        { "label": "d", "text": "LogFormat", "correct": true }
+      ],
+      "feedback": "The LogFormat directive sets the parameters that are stored in a log file. The LogFormat directive sets up a logging profile that can then be used elsewhere within the configuration. The other options are not valid."
+    },
+    {
+      "id": 37,
+      "type": "single",
+      "question": "Which option within a .htaccess file allows access only to the user ssuehring?",
+      "options": [
+        { "label": "a", "text": "Require ssuehring", "correct": false },
+        { "label": "b", "text": "RequireUser ssuehring", "correct": false },
+        { "label": "c", "text": "Require user ssuehring", "correct": true },
+        { "label": "d", "text": "AllowOnly ssuehring", "correct": false }
+      ],
+      "feedback": "The Require directive is used for this, and when requiring a specific user, the directive is followed by the keyword user and then the user to allow. The other directives shown are not valid for Apache."
+    }
+  ]
+}

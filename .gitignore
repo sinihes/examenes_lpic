@@ -22,4 +22,7 @@
 Homestead.json
 Homestead.yaml
 Thumbs.db
-!storage/app/exams/*
+storage/*
+!storage/app/
+!storage/app/exams/
+!storage/app/exams/**

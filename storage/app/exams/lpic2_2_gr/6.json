@@ -1,0 +1,339 @@
+{
+  "id": "6",
+  "title": "212 - System Security",
+  "questions": [
+    {
+      "id": 1,
+      "type": "single",
+      "question": "Which of the following options within an OpenSSH server configuration is used to determine whether the root user can log in directly with an ssh client?",
+      "options": [
+        { "label": "a", "text": "PermitRootLogin", "correct": true },
+        { "label": "b", "text": "AllowRoot", "correct": false },
+        { "label": "c", "text": "RootLogin", "correct": false },
+        { "label": "d", "text": "PermitDirectRootLogin", "correct": false }
+      ],
+      "feedback": "The PermitRootLogin directive, set to yes or no, determines whether the root user can log in directly. The other options shown are not valid."
+    },
+    {
+      "id": 2,
+      "type": "single",
+      "question": "Which of the following files is used as the primary configuration file for vsftpd?",
+      "options": [
+        { "label": "a", "text": "vsftp.cfg", "correct": false },
+        { "label": "b", "text": "vsftpd.conf", "correct": true },
+        { "label": "c", "text": "vsftpd.cfg", "correct": false },
+        { "label": "d", "text": "vsftp.conf", "correct": false }
+      ],
+      "feedback": "The file vsftpd.conf contains the configuration for vsftpd. The file can be found in /etc or within a subdirectory such as /etc/vsftpd."
+    },
+    {
+      "id": 3,
+      "type": "single",
+      "question": "Which iptables chain is used to create a port redirect?",
+      "options": [
+        { "label": "a", "text": "REDIRECT", "correct": false },
+        { "label": "b", "text": "PREROUTING", "correct": true },
+        { "label": "c", "text": "PORTREDIR", "correct": false },
+        { "label": "d", "text": "ROUTING", "correct": false }
+      ],
+      "feedback": "The PREROUTING chain, part of the nat table, contains rules that are applied as packets arrive. A common use for this chain is to apply redirect rules. Among the other answers, REDIRECT may appear valid, but it is in fact a target and not a chain. The other options shown are not valid."
+    },
+    {
+      "id": 4,
+      "type": "single",
+      "question": "Which of the following files is the primary server configuration file for OpenSSH?",
+      "options": [
+        { "label": "a", "text": "/etc/ssh/sshd_config", "correct": true },
+        { "label": "b", "text": "/etc/sshserver.conf", "correct": false },
+        { "label": "c", "text": "/etc/openssh.conf", "correct": false },
+        { "label": "d", "text": "/etc/openssh/sshd.conf", "correct": false }
+      ],
+      "feedback": "The primary configuration file for OpenSSH is /etc/ssh/sshd_config. The other options shown are not valid."
+    },
+    {
+      "id": 5,
+      "type": "single",
+      "question": "Which of the following commands saves the current set of iptables rules into a file?",
+      "options": [
+        { "label": "a", "text": "save-iptables", "correct": false },
+        { "label": "b", "text": "iptables-create", "correct": false },
+        { "label": "c", "text": "iptables-save", "correct": true },
+        { "label": "d", "text": "ipt-save", "correct": false }
+      ],
+      "feedback": "The iptables-save command creates a file with the currently running iptables rules. The file can then be applied the next time the server is restarted. The other commands shown are not valid."
+    },
+    {
+      "id": 6,
+      "type": "single",
+      "question": "When starting Pure FTPd, which command-line option is used to indicate that host names should not be resolved on client connection?",
+      "options": [
+        { "label": "a", "text": "-n", "correct": false },
+        { "label": "b", "text": "-H", "correct": true },
+        { "label": "c", "text": "-r", "correct": false },
+        { "label": "d", "text": "-z", "correct": false }
+      ],
+      "feedback": "The -H option causes Pure FTPd not to resolve host names. The -n option is used for quota enforcement, and the -r option is used to indicate that existing files should not be overwritten. The -z option allows anonymous users to read directories and files that are preceded with a dot."
+    },
+    {
+      "id": 7,
+      "type": "single",
+      "question": "Which of the following commands can be used to generate a private and public key pair for authentication with ssh?",
+      "options": [
+        { "label": "a", "text": "ssh-createkey", "correct": false },
+        { "label": "b", "text": "sshkey", "correct": false },
+        { "label": "c", "text": "ssh-key", "correct": false },
+        { "label": "d", "text": "ssh-keygen", "correct": true }
+      ],
+      "feedback": "The ssh-keygen command generates a public and private key pair that can be used for user authentication between a client and server. The other commands shown are not valid."
+    },
+    {
+      "id": 8,
+      "type": "single",
+      "question": "Which of the following commands tests a connection to mail.example.com on the standard SMTP port?",
+      "options": [
+        { "label": "a", "text": "telnet mail.example.com smtp", "correct": false },
+        { "label": "b", "text": "telnet mail.example.com 25", "correct": true },
+        { "label": "c", "text": "telnet mail.example.com", "correct": false },
+        { "label": "d", "text": "smtptest mail.example.com", "correct": false }
+      ],
+      "feedback": "The telnet command can be used for this purpose and, for SMTP, requires the use of a port as shown in the correct answer for this question. There is no smtptest command, and specifying the port by name or not specifying the port will not work."
+    },
+    {
+      "id": 9,
+      "type": "single",
+      "question": "Which of the following commands lists the current iptables rules while not attempting to resolve host or port names?",
+      "options": [
+        { "label": "a", "text": "iptables -L", "correct": false },
+        { "label": "b", "text": "iptables -List -no-resolve", "correct": false },
+        { "label": "c", "text": "iptables -a", "correct": false },
+        { "label": "d", "text": "iptables -nL", "correct": true }
+      ],
+      "feedback": "The iptables -n option causes iptables not to resolve host names or port names. The -L option lists current rules. There is no -a option."
+    },
+    {
+      "id": 10,
+      "type": "single",
+      "question": "Which command-line option to Pure FTPd disables anonymous upload?",
+      "options": [
+        { "label": "a", "text": "-n", "correct": false },
+        { "label": "b", "text": "-a", "correct": false },
+        { "label": "c", "text": "-i", "correct": true },
+        { "label": "d", "text": "-m", "correct": false }
+      ],
+      "feedback": "The -i option disables uploads by anonymous users. The -a option keeps users in their home directory unless they are a member of a specified group. The -m option prevents anonymous download if the CPU load on the server is above a threshold. The -n option is used for quota enforcement."
+    },
+        {
+      "id": 21,
+      "type": "single",
+      "question": "Which of the following best describes the difference between the DROP and REJECT targets in iptables?",
+      "options": [
+        { "label": "a", "text": "Both DROP and REJECT do the same thing.", "correct": false },
+        { "label": "b", "text": "DROP silently discards packets, while REJECT sends back an ICMP acknowledgement.", "correct": true },
+        { "label": "c", "text": "REJECT silently discards packets, while DROP sends back an ICMP acknowledgement.", "correct": false },
+        { "label": "d", "text": "DROP sends back a direct message, and REJECT sends a redirect.", "correct": false }
+      ],
+      "feedback": "The DROP target silently discards packets that match the rule. An ICMP unreachable message is sent back for REJECT. In general, DROP is preferred to reduce chances of DoS or information-gathering issues."
+    },
+    {
+      "id": 22,
+      "type": "single",
+      "question": "Which file contains a list of keys that will be accepted for authentication for a given user?",
+      "options": [
+        { "label": "a", "text": "~/ssh/keys", "correct": false },
+        { "label": "b", "text": "~/.ssh/pubkeys", "correct": false },
+        { "label": "c", "text": "~/.ssh/keyauth", "correct": false },
+        { "label": "d", "text": "~/.ssh/authorized_keys", "correct": true }
+      ],
+      "feedback": "The file authorized_keys contains keys that can then be used for authentication when the corresponding private key is sent by the client."
+    },
+    {
+      "id": 23,
+      "type": "single",
+      "question": "Which of the following partial iptables rules sets up a configuration that limits log entries to three per minute?",
+      "options": [
+        { "label": "a", "text": "-m limit 3 -j LOG", "correct": false },
+        { "label": "b", "text": "-m limit --limit 3/minute --limit-burst 3 -j LOG", "correct": true },
+        { "label": "c", "text": "-m limit --limit 3", "correct": false },
+        { "label": "d", "text": "-m limit --limit-minute 3 --burst 3 -j LOG", "correct": false }
+      ],
+      "feedback": "The -m limit match with the options shown limits log entries to three per minute, preventing log flooding during attacks."
+    },
+    {
+      "id": 24,
+      "type": "single",
+      "question": "Which option to the ssh command is used for X11 application forwarding?",
+      "options": [
+        { "label": "a", "text": "-X11", "correct": false },
+        { "label": "b", "text": "-A", "correct": false },
+        { "label": "c", "text": "-X", "correct": true },
+        { "label": "d", "text": "-F", "correct": false }
+      ],
+      "feedback": "The -X option enables X11 application forwarding. -A is for agent forwarding; -F specifies a config file. There is no -X11 option."
+    },
+    {
+      "id": 25,
+      "type": "single",
+      "question": "The command netstat -a is reporting that port 80 is in use on the server. Which of the following commands can be used to determine what is actually using that port?",
+      "options": [
+        { "label": "a", "text": "listPorts", "correct": false },
+        { "label": "b", "text": "portlist -a", "correct": false },
+        { "label": "c", "text": "lsof -i", "correct": true },
+        { "label": "d", "text": "tcpdump", "correct": false }
+      ],
+      "feedback": "The lsof -i command lists processes and ports, helping identify what is listening on port 80."
+    },
+    {
+      "id": 26,
+      "type": "single",
+      "question": "Which of the following partial iptables rules allows incoming ICMP traffic?",
+      "options": [
+        { "label": "a", "text": "-A INPUT -p ICMP -j ACCEPT", "correct": true },
+        { "label": "b", "text": "-A IN -P ICMP", "correct": false },
+        { "label": "c", "text": "-A INPUT -P ACCEPT-ICMP", "correct": false },
+        { "label": "d", "text": "-A IN -P ICMP -j ACCEPT", "correct": false }
+      ],
+      "feedback": "Use the INPUT chain with -A to append, -p to specify ICMP protocol, and -j ACCEPT to allow the traffic."
+    },
+    {
+      "id": 27,
+      "type": "single",
+      "question": "Which option in an OpenSSH configuration is used to determine whether port forwarding will be enabled?",
+      "options": [
+        { "label": "a", "text": "AllowPortForwarding", "correct": false },
+        { "label": "b", "text": "PortForwarding", "correct": false },
+        { "label": "c", "text": "ForwardPort", "correct": false },
+        { "label": "d", "text": "AllowTcpForwarding", "correct": true }
+      ],
+      "feedback": "AllowTcpForwarding enables or disables port forwarding through SSH. Other options are invalid."
+    },
+    {
+      "id": 28,
+      "type": "single",
+      "question": "Which of the following partial iptables rules blocks all traffic from 192.168.51.50?",
+      "options": [
+        { "label": "a", "text": "-A INPUT -p ALL 192.168.51.50 -j ACCEPT", "correct": false },
+        { "label": "b", "text": "-A INPUT -p ALL -s 192.168.51.50 -j DROP", "correct": true },
+        { "label": "c", "text": "-A INPUT -p ALL -s 192.168.51.50 -j BLOCK", "correct": false },
+        { "label": "d", "text": "-A INPUT -p ALL -f 192.168.51.50 -j DISCARD", "correct": false }
+      ],
+      "feedback": "Use -s to specify source and DROP to block traffic. BLOCK and DISCARD are not valid targets."
+    },
+    {
+      "id": 29,
+      "type": "single",
+      "question": "Which of the following partial iptables rules will allow all hosts to connect to TCP port 2222?",
+      "options": [
+        { "label": "a", "text": "-A INPUT -p TCP -s 0/0 --destination-port 2222 -j ACCEPT", "correct": true },
+        { "label": "b", "text": "-A TCP -s ALL -p 2222 -j ACCEPT", "correct": false },
+        { "label": "c", "text": "-A INPUT -p TCP -s *.* --destination-port 2222 -j ALLOW", "correct": false },
+        { "label": "d", "text": "-A INPUT --destination-port */* -j ACCEPT", "correct": false }
+      ],
+      "feedback": "The rule appends to INPUT, protocol TCP, source all (0/0), destination port 2222, and accepts the traffic."
+    },
+    {
+      "id": 30,
+      "type": "single",
+      "question": "Which of the following commands enables forwarding such as would be used for NAT?",
+      "options": [
+        { "label": "a", "text": "echo \"1\" > /proc/sys/net/ipv4/nat", "correct": false },
+        { "label": "b", "text": "echo \"1\" > /proc/sys/net/ipv4/ip_forward", "correct": true },
+        { "label": "c", "text": "iptables --enable-forwarding", "correct": false },
+        { "label": "d", "text": "ip-forward --enable", "correct": false }
+      ],
+      "feedback": "Writing '1' to /proc/sys/net/ipv4/ip_forward enables IP packet forwarding, necessary for NAT and routing."
+    },
+
+
+
+
+
+
+
+
+
+        {
+      "id": 31,
+      "type": "single",
+      "question": "Within the vsftpd.conf file, which directive enables IPv6?",
+      "options": [
+        { "label": "a", "text": "ipv6_enable", "correct": false },
+        { "label": "b", "text": "ipv6", "correct": false },
+        { "label": "c", "text": "ipv6_listen", "correct": false },
+        { "label": "d", "text": "listen_ipv6", "correct": true }
+      ],
+      "feedback": "The listen_ipv6 directive is used to indicate that IPv6 will be enabled for vsftpd. The other directives shown are not valid."
+    },
+    {
+      "id": 32,
+      "type": "single",
+      "question": "Which configuration directive for OpenSSH determines whether key-based authentication will be used?",
+      "options": [
+        { "label": "a", "text": "KeyAuth", "correct": false },
+        { "label": "b", "text": "PubKeyAuth", "correct": false },
+        { "label": "c", "text": "PubkeyAuthentication", "correct": true },
+        { "label": "d", "text": "AuthenticationKey", "correct": false }
+      ],
+      "feedback": "The PubkeyAuthentication directive determines whether key-based authentication can be used with the server. The other directives shown are not valid."
+    },
+    {
+      "id": 33,
+      "type": "single",
+      "question": "Within a jail configuration for fail2ban, which configuration option sets the name and location of the log file to monitor for failures?",
+      "options": [
+        { "label": "a", "text": "logpath", "correct": true },
+        { "label": "b", "text": "monitor", "correct": false },
+        { "label": "c", "text": "logfile_mon", "correct": false },
+        { "label": "d", "text": "monitor_log", "correct": false }
+      ],
+      "feedback": "The logpath directive determines the log file that will be monitored for failures by fail2ban. The other directives are not valid for fail2ban."
+    },
+    {
+      "id": 34,
+      "type": "single",
+      "question": "Which command sends a copy of the public key identity to another server for use with SSH?",
+      "options": [
+        { "label": "a", "text": "ssh-key", "correct": false },
+        { "label": "b", "text": "ssh-copy-key", "correct": false },
+        { "label": "c", "text": "ssh-sendkey", "correct": false },
+        { "label": "d", "text": "ssh-copy-id", "correct": true }
+      ],
+      "feedback": "The ssh-copy-id command sends an identity to a remote server that can then be used for key-based authentication. The other commands shown are not valid."
+    },
+    {
+      "id": 35,
+      "type": "single",
+      "question": "Which command is used for creation and maintenance of firewall rules for IPv6?",
+      "options": [
+        { "label": "a", "text": "iptables6", "correct": false },
+        { "label": "b", "text": "ip6tables", "correct": true },
+        { "label": "c", "text": "ipv6tables", "correct": false },
+        { "label": "d", "text": "ipfw6", "correct": false }
+      ],
+      "feedback": "The ip6tables command is used for creation and maintenance of a firewall for IPv6. It is similar to the iptables command."
+    },
+    {
+      "id": 36,
+      "type": "single",
+      "question": "Which of the following OpenVPN configuration entries sends a DHCP option to a client to indicate the DNS server (192.168.2.1) to be used by the client?",
+      "options": [
+        { "label": "a", "text": "push \"dhcp-option ns 192.168.2.1\"", "correct": false },
+        { "label": "b", "text": "push \"dhcp-nameserver 192.168.2.1\"", "correct": false },
+        { "label": "c", "text": "push \"dhcp-option DNS 192.168.2.1\"", "correct": true },
+        { "label": "d", "text": "push \"dhcp-dns 192.168.2.1\"", "correct": false }
+      ],
+      "feedback": "The push directive requires 'dhcp-option DNS' to specify the DNS server sent to clients."
+    },
+    {
+      "id": 37,
+      "type": "single",
+      "question": "Which option in vsftpd.conf specifies whether users will be able to authenticate to the server?",
+      "options": [
+        { "label": "a", "text": "local_enable", "correct": true },
+        { "label": "b", "text": "users_login", "correct": false },
+        { "label": "c", "text": "user_login", "correct": false },
+        { "label": "d", "text": "local_users", "correct": false }
+      ],
+      "feedback": "The local_enable directive specifies whether users can log in. It is not used for anonymous-only FTP servers."
+    }
+  ]
+}

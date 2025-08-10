@@ -1,0 +1,450 @@
+{
+  "id": "6",
+  "title": "205 - Networking Configuration",
+  "questions": [
+    {
+      "id": 1,
+      "type": "single",
+      "question": "When using the ip command, which protocol family is used as the default if not otherwise specified?",
+      "options": [
+        { "label": "a", "text": "TCPIP", "correct": false },
+        { "label": "b", "text": "IP", "correct": false },
+        { "label": "c", "text": "INET", "correct": true },
+        { "label": "d", "text": "ARP", "correct": false }
+      ],
+      "feedback": "The ip command defaults to the INET family if not otherwise specified with the -f option. The command attempts to guess the correct family and falls back to INET. The other families listed as options for this command are not valid for use with the ip ­command."
+    },
+    {
+      "id": 2,
+      "type": "single",
+      "question": "Which of the following commands changes the MAC address of eth0?",
+      "options": [
+        { "label": "a", "text": "ifmac eth0", "correct": false },
+        { "label": "b", "text": "ifconfig eth0 hw ether", "correct": true },
+        { "label": "c", "text": "ifconfig eth0 mac", "correct": false },
+        { "label": "d", "text": "ifconfig eth0 hw mac", "correct": false }
+      ],
+      "feedback": "The ifconfig command is used for this purpose, followed by the interface. The hw keyword is used for the hardware address, which is then followed by the hardware class, in this case ether. That is followed by the new MAC address (not depicted in the options). The other commands are not valid."
+    },
+    {
+      "id": 3,
+      "type": "single",
+      "question": "You are using the route command to view routes. However, name resolution is taking a long time and causing a delay in the response from the route command. Which option to route can be added to cause it to not perform name resolution?",
+      "options": [
+        { "label": "a", "text": "-d", "correct": false },
+        { "label": "b", "text": "-e", "correct": false },
+        { "label": "c", "text": "-f", "correct": false },
+        { "label": "d", "text": "-n", "correct": true }
+      ],
+      "feedback": "The -n option causes route to use numeric values only, performing no name resolution. This option is useful for the scenario described. The -e option causes the output to be in netstat format. There is no -d or -f option for the route command."
+    },
+    {
+      "id": 4,
+      "type": "single",
+      "question": "You have replaced a device on the network but used the IP address from another active device. Which command can be run to remove the MAC address entry from your computer so that it performs the address resolution again?",
+      "options": [
+        { "label": "a", "text": "arp -d", "correct": true },
+        { "label": "b", "text": "netstat -rn", "correct": false },
+        { "label": "c", "text": "hostname", "correct": false },
+        { "label": "d", "text": "dig", "correct": false }
+      ],
+      "feedback": "Because you’re working with MAC addresses, the arp command will be used. The -d option removes or deletes an ARP entry, which would be appropriate here so that the MAC address resolution occurs again. The netstat command is not used for this purpose. The hostname and dig commands work with name resolution but not for MAC addresses or the ARP table."
+    },
+    {
+      "id": 5,
+      "type": "single",
+      "question": "Which of the following commands displays information such as link status about the wireless device wlan0?",
+      "options": [
+        { "label": "a", "text": "iw dev wlan0 link", "correct": true },
+        { "label": "b", "text": "wlan0 list", "correct": false },
+        { "label": "c", "text": "iw wlan0 -l", "correct": false },
+        { "label": "d", "text": "iw dev link", "correct": false }
+      ],
+      "feedback": "The iw command is used for this purpose. When you’re using iw with a specific device, the dev keyword appears next followed by the device name. Finally, the command to execute on that device, in this case the link command, is used."
+    },
+    {
+      "id": 6,
+      "type": "single",
+      "question": "Which command is used for setting parameters such as the essid, channel, and other related options for a wireless device?",
+      "options": [
+        { "label": "a", "text": "ifconfig", "correct": false },
+        { "label": "b", "text": "iwconfig", "correct": true },
+        { "label": "c", "text": "wlancfg", "correct": false },
+        { "label": "d", "text": "iconf", "correct": false }
+      ],
+      "feedback": "The iwconfig command, which is similar to the ifconfig command, works with an individual wireless interface to set and display parameters. Of the other commands, the ifconfig command is valid but not used for wireless. The other commands are not valid."
+    },
+    {
+      "id": 7,
+      "type": "single",
+      "question": "Which of the following commands can be used to scan for available wireless networks?",
+      "options": [
+        { "label": "a", "text": "iwlist get", "correct": false },
+        { "label": "b", "text": "iwconfig scan", "correct": false },
+        { "label": "c", "text": "iwlist scan", "correct": true },
+        { "label": "d", "text": "iw-scan", "correct": false }
+      ],
+      "feedback": "The iwlist command can be used for this purpose, and the scan subcommand is used to look for local access points and wireless networks. The iwconfig command does not have a scan subcommand. Likewise, there is no subcommand called get for the iwlist command, and there is no iw-scan command."
+    },
+    {
+      "id": 8,
+      "type": "single",
+      "question": "When looking to parse the output of the ip command, which option can be set to remove newlines such that the output could be piped to the grep command?",
+      "options": [
+        { "label": "a", "text": "-n", "correct": false },
+        { "label": "b", "text": "-o", "correct": true },
+        { "label": "c", "text": "-l", "correct": false },
+        { "label": "d", "text": "-f", "correct": false }
+      ],
+      "feedback": "The -o option removes newlines from the output, thereby making the output more suitable for the grep command. The -l option specifies the number of loops for the ip addr flush command; The -f option specifies the protocol family. There is no -n option."
+    },
+    {
+      "id": 9,
+      "type": "single",
+      "question": "You need to set the MTU to a specific value for a network interface. Which option to ifconfig facilitates this?",
+      "options": [
+        { "label": "a", "text": "-mtu", "correct": false },
+        { "label": "b", "text": "mtu", "correct": true },
+        { "label": "c", "text": "metric", "correct": false },
+        { "label": "d", "text": "addrmtu", "correct": false }
+      ],
+      "feedback": "The mtu option can be used to set the value for the maximum transmission unit (MTU) for a given interface. The metric option sets the interface metric. The other options are not valid."
+    },
+    {
+      "id": 10,
+      "type": "single",
+      "question": "Which of the following commands creates a reject route for the network 172.16.3.0/24?",
+      "options": [
+        { "label": "a", "text": "route del 172.16.3.0/24", "correct": false },
+        { "label": "b", "text": "route add -net 172.16.3.0 netmask 255.255.255.0 reject", "correct": true },
+        { "label": "c", "text": "route del -net 172.16.3.0 netmask 255.255.255.0", "correct": false },
+        { "label": "d", "text": "route del default", "correct": false }
+      ],
+      "feedback": "A route will need to be added in order to utilize the reject destination, thereby making option B correct. Option C deletes the route but does not create a reject route. Option D deletes the default route, and option A is not valid."
+    },
+        {
+      "id": 11,
+      "type": "single",
+      "question": "Which option to the arp command creates a new entry for a given IP address to a MAC address pair?",
+      "options": [
+        { "label": "a", "text": "-s", "correct": true },
+        { "label": "b", "text": "-c", "correct": false },
+        { "label": "c", "text": "-d", "correct": false },
+        { "label": "d", "text": "--add", "correct": false }
+      ],
+      "feedback": "The -s option creates an ARP table entry. The -d option removes an entry. The -c and –add options do not exist."
+    },
+    {
+      "id": 12,
+      "type": "single",
+      "question": "Which of the following commands shows network sockets and their allocated memory?",
+      "options": [
+        { "label": "a", "text": "ss -m", "correct": true },
+        { "label": "b", "text": "mpas", "correct": false },
+        { "label": "c", "text": "mem", "correct": false },
+        { "label": "d", "text": "free", "correct": false }
+      ],
+      "feedback": "The ss command provides many of the same functions as netstat, but it can show some extended information, such as memory allocation for a given socket. The free command shows memory usage but not by socket. The other two commands do not exist."
+    },
+    {
+      "id": 13,
+      "type": "single",
+      "question": "Which options to netstat shows both active and listening TCP sockets and connections?",
+      "options": [
+        { "label": "a", "text": "-tu", "correct": false },
+        { "label": "b", "text": "-f", "correct": false },
+        { "label": "c", "text": "-an", "correct": false },
+        { "label": "d", "text": "-ta", "correct": true }
+      ],
+      "feedback": "The -t option shows TCP connections, while -a shows active sockets. The -n option disables name resolution."
+    },
+    {
+      "id": 14,
+      "type": "single",
+      "question": "Which of the following commands lists open files belonging to all processes except those owned by the user bind?",
+      "options": [
+        { "label": "a", "text": "lsof -i", "correct": false },
+        { "label": "b", "text": "lsof -u bind", "correct": false },
+        { "label": "c", "text": "lsof -u ^bind", "correct": true },
+        { "label": "d", "text": "lsof | grep bind", "correct": false }
+      ],
+      "feedback": "This solution requires a way to filter out the bind user; therefore, answers that grep for bind or specify bind as the user are incorrect. However, the lsof command allows for negation with the caret ^ character. Therefore, listing all files except bind requires the syntax shown."
+    },
+    {
+      "id": 15,
+      "type": "single",
+      "question": "When troubleshooting a potential hardware problem, you need to determine which physical interface is being used for a certain address. One way to accomplish this is with the ping command in order to monitor the activity lights on the device. Which of the following options to ping will flood the interface with ECHO_REQUEST packets?",
+      "options": [
+        { "label": "a", "text": "-e", "correct": false },
+        { "label": "b", "text": "-a", "correct": false },
+        { "label": "c", "text": "-c", "correct": false },
+        { "label": "d", "text": "-f", "correct": true }
+      ],
+      "feedback": "The -f option is a flood ping. This will effectively cause the interface to send and receive large amounts of traffic, usually making it easier to find on a switch. The -a option is an audible ping, emitting a sound on ping. The -c option sends a certain count of pings. There is no -e option."
+    },
+    {
+      "id": 16,
+      "type": "single",
+      "question": "Which of the following commands can be used to test network connectivity at the TCP level instead of Telnet?",
+      "options": [
+        { "label": "a", "text": "netstat", "correct": false },
+        { "label": "b", "text": "nc", "correct": true },
+        { "label": "c", "text": "nettest", "correct": false },
+        { "label": "d", "text": "ping", "correct": false }
+      ],
+      "feedback": "The netcat command provides a method for opening and communicating on both sides, server and client, for a TCP connection. The netcat command avoids some of the issues with Telnet capturing characters specific to the Telnet protocol. The netstat command does not test connectivity, and ping does not do so at the TCP level. There is no nettest command."
+    },
+    {
+      "id": 17,
+      "type": "single",
+      "question": "Which option to tcpdump displays a list of available interfaces on which tcpdump can operate?",
+      "options": [
+        { "label": "a", "text": "-a", "correct": false },
+        { "label": "b", "text": "-d", "correct": false },
+        { "label": "c", "text": "-D", "correct": true },
+        { "label": "d", "text": "-i", "correct": false }
+      ],
+      "feedback": "The -D option lists the interfaces on a given computer. The -d option dumps compiled matching code, and -i selects an interface. There is no -a option."
+    },
+    {
+      "id": 18,
+      "type": "single",
+      "question": "Which option to nmap will cause it always to perform name resolution?",
+      "options": [
+        { "label": "a", "text": "-n", "correct": false },
+        { "label": "b", "text": "-R", "correct": true },
+        { "label": "c", "text": "-b", "correct": false },
+        { "label": "d", "text": "-a", "correct": false }
+      ],
+      "feedback": "The -R option requires that an attempt at name resolution be performed. The -n option does the opposite; that is, it disables name resolution. There is no -b or -a option."
+    },
+    {
+      "id": 19,
+      "type": "single",
+      "question": "Which command provides a method for sending ICMP requests for IPv6?",
+      "options": [
+        { "label": "a", "text": "ping6", "correct": true },
+        { "label": "b", "text": "pingv6", "correct": false },
+        { "label": "c", "text": "tracert", "correct": false },
+        { "label": "d", "text": "6ping", "correct": false }
+      ],
+      "feedback": "The ping6 command performs the same as the IPv4 ping command, but it does so for IPv6. The other commands are not valid on Linux."
+    },
+    {
+      "id": 20,
+      "type": "single",
+      "question": "Which of the following commands displays information about addresses, specifically only IPv6 addresses, currently in use on the computer?",
+      "options": [
+        { "label": "a", "text": "ip addr", "correct": false },
+        { "label": "b", "text": "ip -6 addr", "correct": true },
+        { "label": "c", "text": "ip6add", "correct": false },
+        { "label": "d", "text": "ipv6addr", "correct": false }
+      ],
+      "feedback": "The ip command can be used for this purpose. When used with the addr object and the -6 option, only information about IPv6 addresses will be shown. The first option, simply ip addr, will show all addresses including IPv4. The other commands are not valid."
+    },
+    {
+  "id": 21,
+  "type": "single",
+  "question": "Which of the following commands will disable ARP on the interface eth0?",
+  "options": [
+    { "label": "a", "text": "ifconfig eth0 -arp", "correct": true },
+    { "label": "b", "text": "ip eth0 noarp", "correct": false },
+    { "label": "c", "text": "ifconfig eth0 noarp", "correct": false },
+    { "label": "d", "text": "if eth0 disable arp", "correct": false }
+  ],
+  "feedback": "The ifconfig command is used for this purpose, and ARP can be disabled by preceding the word arp with a minus sign, as shown. If no minus sign is present, then ARP will be enabled. The other commands will not work for this scenario."
+},
+{
+  "id": 22,
+  "type": "single",
+  "question": "Which option to the route command forces the kernel to use the specified device for the route rather than attempting to determine the correct device?",
+  "options": [
+    { "label": "a", "text": "inet", "correct": false },
+    { "label": "b", "text": "addr", "correct": false },
+    { "label": "c", "text": "dev", "correct": true },
+    { "label": "d", "text": "device", "correct": false }
+  ],
+  "feedback": "The dev option specifies the device to use for the route being specified. This is a typical use case for many routes to reduce the chances of the kernel guessing incorrectly. The other options shown for this question are not valid."
+},
+{
+  "id": 23,
+  "type": "single",
+  "question": "Which option to the ss command shows the process IDs associated with the socket?",
+  "options": [
+    { "label": "a", "text": "-l", "correct": false },
+    { "label": "b", "text": "-a", "correct": false },
+    { "label": "c", "text": "-p", "correct": true },
+    { "label": "d", "text": "-f", "correct": false }
+  ],
+  "feedback": "The -p option shows the process IDs associated with a given socket within the ss output. The -a option is for all sockets, while -l is for listening sockets. The -f option is used to specify the protocol family."
+},
+{
+  "id": 24,
+  "type": "single",
+  "question": "Which option to netstat displays interface information in a table-like format that might be suitable for use with scripting?",
+  "options": [
+    { "label": "a", "text": "-i", "correct": true },
+    { "label": "b", "text": "-r", "correct": false },
+    { "label": "c", "text": "-t", "correct": false },
+    { "label": "d", "text": "-l", "correct": false }
+  ],
+  "feedback": "The -i option shows interface information in a table-like format. Information such as transmit and receive bytes as well as the MTU for the interface and other information is shown. The -r option shows routes, while -l shows listening sockets. There is no -t option."
+},
+{
+  "id": 25,
+  "type": "single",
+  "question": "On a Debian system, within which directory hierarchy will you find configuration information and directories to hold scripts to be run when an interface is brought up or taken down?",
+  "options": [
+    { "label": "a", "text": "/etc/netconf", "correct": false },
+    { "label": "b", "text": "/etc/netconfig", "correct": false },
+    { "label": "c", "text": "/etc/net.conf.d", "correct": false },
+    { "label": "d", "text": "/etc/network", "correct": true }
+  ],
+  "feedback": "/etc/network contains information on network interfaces and contains directories that further contain scripts to be executed when interfaces are brought up or down. The other directories listed do not exist."
+},
+{
+  "id": 26,
+  "type": "single",
+  "question": "Which option to traceroute causes the command to use ICMP for requests?",
+  "options": [
+    { "label": "a", "text": "-T", "correct": false },
+    { "label": "b", "text": "-A", "correct": false },
+    { "label": "c", "text": "-I", "correct": true },
+    { "label": "d", "text": "-i", "correct": false }
+  ],
+  "feedback": "The -I option tells traceroute to use ICMP for requests. The -T option is TCP SYN. The -A option performs AS path lookups, and the -i option configures traceroute to use the specified interface."
+},
+{
+  "id": 27,
+  "type": "single",
+  "question": "Which of the following commands provides a live traceroute of the route between two hosts, updating the information for each hop in near real time?",
+  "options": [
+    { "label": "a", "text": "traceroute --live", "correct": false },
+    { "label": "b", "text": "mtr", "correct": true },
+    { "label": "c", "text": "route -update", "correct": false },
+    { "label": "d", "text": "liveroute", "correct": false }
+  ],
+  "feedback": "The mtr command provides a unique way to view real-time information about each hop in a route between hosts. Both the traceroute and route commands are valid, but the options shown for each are not. There is no liveroute command."
+},
+{
+  "id": 28,
+  "type": "single",
+  "question": "Which programmatic function is used by the hostname command internally?",
+  "options": [
+    { "label": "a", "text": "getaddr", "correct": false },
+    { "label": "b", "text": "gethost", "correct": false },
+    { "label": "c", "text": "gethostname", "correct": true },
+    { "label": "d", "text": "getname", "correct": false }
+  ],
+  "feedback": "Internally, the hostname command uses gethostname. This can be useful to know when troubleshooting address resolution issues such as conflicting results for host naming. The other functions are not valid."
+},
+{
+  "id": 29,
+  "type": "single",
+  "question": "Which of the following commands will examine the system log for information regarding DHCP activity?",
+  "options": [
+    { "label": "a", "text": "grep -i dhcp /var/log/syslog", "correct": true },
+    { "label": "b", "text": "grep -v dhcp /var/log/syslog", "correct": false },
+    { "label": "c", "text": "grep -vi dhcp /var/log/kern.log", "correct": false },
+    { "label": "d", "text": "dmesg | grep dhcp", "correct": false }
+  ],
+  "feedback": "The grep command and the -i option should be used in order to make the grep case-insensitive. When used with -v, grep will exclude the argument, thus doing the opposite of what’s needed here. The kernel ring buffer will probably not contain information about DHCP, therefore making dmesg not the correct option."
+},
+{
+  "id": 30,
+  "type": "single",
+  "question": "Which of the following characters are valid for hostnames in /etc/hosts?",
+  "options": [
+    { "label": "a", "text": "Alphanumerics, minus, underscore, and dot", "correct": false },
+    { "label": "b", "text": "Alphanumerics, minus, and dot", "correct": true },
+    { "label": "c", "text": "Alphanumerics and dot", "correct": false },
+    { "label": "d", "text": "Alphanumerics", "correct": false }
+  ],
+  "feedback": "Only alphanumerics, minus/dash, and dot are valid for hosts in /etc/hosts."
+},
+{
+  "id": 31,
+  "type": "single",
+  "question": "Which of the following configuration lines in /etc/resolv.conf enables debugging?",
+  "options": [
+    { "label": "a", "text": "debug", "correct": false },
+    { "label": "b", "text": "options debug", "correct": true },
+    { "label": "c", "text": "option debug", "correct": false },
+    { "label": "d", "text": "enable-debug", "correct": false }
+  ],
+  "feedback": "Options within /etc/resolv.conf are preceded with the options keyword followed by one or more options such as debug."
+},
+{
+  "id": 32,
+  "type": "single",
+  "question": "Which option to dmesg clears the contents after they have been read once?",
+  "options": [
+    { "label": "a", "text": "-C", "correct": false },
+    { "label": "b", "text": "-c", "correct": true },
+    { "label": "c", "text": "-a", "correct": false },
+    { "label": "d", "text": "-e", "correct": false }
+  ],
+  "feedback": "The -c option clears the kernel ring buffer after the first read. The -C option clears it immediately. The -e option displays relative time and local time. There is no -a option."
+},
+{
+  "id": 33,
+  "type": "single",
+  "question": "Which of the following commands views systemd journal entries for the NetworkManager unit?",
+  "options": [
+    { "label": "a", "text": "systemd NetworkManager", "correct": false },
+    { "label": "b", "text": "systemd NetworkCtl", "correct": false },
+    { "label": "c", "text": "journalctl NetworkManager", "correct": false },
+    { "label": "d", "text": "journalctl -u NetworkManager", "correct": true }
+  ],
+  "feedback": "The systemctl command is used for this purpose. Adding the -u option specifies the unit for which journal entries are desired."
+},
+{
+  "id": 34,
+  "type": "single",
+  "question": "Which file is read at boot to set the local computer’s hostname?",
+  "options": [
+    { "label": "a", "text": "/etc/hostname", "correct": true },
+    { "label": "b", "text": "/etc/hosts", "correct": false },
+    { "label": "c", "text": "/etc/localhost", "correct": false },
+    { "label": "d", "text": "/etc/networkhost", "correct": false }
+  ],
+  "feedback": "The /etc/hostname file typically contains only the hostname of the local computer rather than the hostname and domain name. This is then read at boot time to set the hostname for the computer. The /etc/hosts file contains information on various hosts for name resolution purposes. The other files do not exist."
+},
+{
+  "id": 35,
+  "type": "single",
+  "question": "Which of the following directories on a Red Hat system contains network interface configuration information?",
+  "options": [
+    { "label": "a", "text": "/etc/network-scripts", "correct": false },
+    { "label": "b", "text": "/etc/system/network", "correct": false },
+    { "label": "c", "text": "/etc/sysconfig/network-scripts", "correct": true },
+    { "label": "d", "text": "/etc/sysconfig/net.d", "correct": false }
+  ],
+  "feedback": "/etc/sysconfig/network-scripts contains configuration information for a Red Hat system. The other directories shown do not exist."
+},
+{
+  "id": 36,
+  "type": "single",
+  "question": "Which traceroute command is used exclusively for IPv6 route traces?",
+  "options": [
+    { "label": "a", "text": "trace6", "correct": false },
+    { "label": "b", "text": "traceroute6", "correct": true },
+    { "label": "c", "text": "tracert6", "correct": false },
+    { "label": "d", "text": "6trace", "correct": false }
+  ],
+  "feedback": "The traceroute6 command is used for tracing IPv6 routes. The other commands do not exist."
+},
+{
+  "id": 37,
+  "type": "single",
+  "question": "Which wildcard can be used in /etc/hosts.allow to specify a match for a host whose name does not match its IP address?",
+  "options": [
+    { "label": "a", "text": "*", "correct": false },
+    { "label": "b", "text": "ALL", "correct": false },
+    { "label": "c", "text": "PARANOID", "correct": true },
+    { "label": "d", "text": "NAMEMATCH", "correct": false }
+  ],
+  "feedback": "The PARANOID wildcard specifies that the hostname and IP must match. The ALL keyword is also a valid wildcard in TCP Wrappers for use in both /etc/hosts.allow and /etc/hosts.deny."
+}
+  ]
+}

@@ -1,0 +1,360 @@
+{
+
+
+
+
+
+  "id": "2",
+
+  
+  "title": "208 - HTTP Services",
+  "questions": [
+      {
+    "id": 1,
+    "type": "single",
+    "question": "¿Qué directiva dentro de un archivo de configuración de Apache facilita servir sitios web para más de un dominio usando una sola dirección IP?",
+    "options": [
+      { "label": "a", "text": "<VirtualServer>", "correct": false },
+      { "label": "b", "text": "<VirtualHost>", "correct": true },
+      { "label": "c", "text": "<VirtContainer>", "correct": false },
+      { "label": "d", "text": "<Virtualization>", "correct": false }
+    ],
+    "feedback": "La directiva <VirtualHost> inicia un bloque que facilita servir sitios web usando servidores virtuales. Las otras directivas no son válidas para Apache."
+  },
+  {
+    "id": 2,
+    "type": "single",
+    "question": "¿Qué comando se usa para crear o actualizar credenciales para escenarios con htaccess?",
+    "options": [
+      { "label": "a", "text": "passwd", "correct": false },
+      { "label": "b", "text": "apachepasswd", "correct": false },
+      { "label": "c", "text": "htpass", "correct": false },
+      { "label": "d", "text": "htpasswd", "correct": true }
+    ],
+    "feedback": "El comando htpasswd crea o actualiza credenciales para la autenticación nativa de Apache usando htaccess. El comando passwd es válido, pero no funciona con htaccess. Los otros comandos no son válidos."
+  },
+  {
+    "id": 3,
+    "type": "single",
+    "question": "¿Qué opción del comando apachectl examina los archivos de configuración para verificar que no haya errores de sintaxis?",
+    "options": [
+      { "label": "a", "text": "verifyconfig", "correct": false },
+      { "label": "b", "text": "configver", "correct": false },
+      { "label": "c", "text": "configtest", "correct": true },
+      { "label": "d", "text": "testconfig", "correct": false }
+    ],
+    "feedback": "La opción configtest verifica la sintaxis del archivo de configuración y es muy útil para evitar que el servidor no pueda reiniciarse debido a un error fatal en la configuración. Las otras opciones no son válidas para apachectl."
+  },
+  {
+    "id": 4,
+    "type": "single",
+    "question": "¿Cuál de los siguientes comandos genera una clave privada para usar con SSL y la coloca en el archivo /etc/ssl/example.com.private?",
+    "options": [
+      { "label": "a", "text": "openssl genrsa -out /etc/ssl/example.com.private", "correct": true },
+      { "label": "b", "text": "openssl generate-private > /etc/ssl/example.com.private", "correct": false },
+      { "label": "c", "text": "openssl genpriv > /etc/ssl/example.com.private", "correct": false },
+      { "label": "d", "text": "openssh genkey -out /etc/ssl/example.com.private", "correct": false }
+    ],
+    "feedback": "El comando openssl se usa para este propósito con la opción genrsa. Se especifica el archivo de salida con -out. Los otros comandos con openssl contienen opciones inválidas y el comando openssh no se usa para este escenario."
+  },
+  {
+    "id": 5,
+    "type": "single",
+    "question": "¿Cuál de las siguientes directivas de configuración para Apache funciona con los módulos mod_auth_basic y mod_authn_file para especificar el nombre del archivo para la autenticación?",
+    "options": [
+      { "label": "a", "text": "AuthFile", "correct": false },
+      { "label": "b", "text": "AuthUserFile", "correct": true },
+      { "label": "c", "text": "AuthenticationFile", "correct": false },
+      { "label": "d", "text": "AuthN_File", "correct": false }
+    ],
+    "feedback": "La directiva AuthUserFile funciona con mod_auth_basic y mod_authn_file para indicarle a Apache la ubicación del archivo que se usará para la autenticación."
+  },
+  {
+    "id": 6,
+    "type": "single",
+    "question": "¿Qué directiva dentro de un bloque <VirtualHost> en una configuración de Apache se usa para especificar el nombre del servidor virtual?",
+    "options": [
+      { "label": "a", "text": "Server", "correct": false },
+      { "label": "b", "text": "VirtualServer", "correct": false },
+      { "label": "c", "text": "ServerName", "correct": true },
+      { "label": "d", "text": "ServerInfo", "correct": false }
+    ],
+    "feedback": "La directiva ServerName proporciona el nombre de host para el servidor virtual. Las otras directivas no se usan."
+  },
+  {
+    "id": 7,
+    "type": "single",
+    "question": "¿Qué opción en una configuración de Apache habilita la configuración SSL para un sitio web o servidor dado?",
+    "options": [
+      { "label": "a", "text": "SSLEngine", "correct": true },
+      { "label": "b", "text": "SSLDirect", "correct": false },
+      { "label": "c", "text": "SSLEnable", "correct": false },
+      { "label": "d", "text": "SSLConnect", "correct": false }
+    ],
+    "feedback": "La opción SSLEngine debe estar configurada en On para que SSL esté habilitado para un sitio o servidor. Las otras opciones no son válidas."
+  },
+  {
+    "id": 8,
+    "type": "single",
+    "question": "¿Qué opción dentro de una sección http para nginx se usa para configurar los nombres de archivos índice válidos?",
+    "options": [
+      { "label": "a", "text": "indexFiles", "correct": false },
+      { "label": "b", "text": "index_files", "correct": false },
+      { "label": "c", "text": "indexfile", "correct": false },
+      { "label": "d", "text": "index", "correct": true }
+    ],
+    "feedback": "La opción index permite al administrador establecer una lista separada por espacios de archivos índice válidos para el servidor, como index.html, index.htm e index.php. Las otras opciones listadas no son válidas."
+  },
+  {
+    "id": 9,
+    "type": "single",
+    "question": "Al crear una configuración de proxy Squid, necesitas crear una lista de control de acceso para la red local. ¿Qué opción de configuración crea una lista de control de acceso para Squid?",
+    "options": [
+      { "label": "a", "text": "accesscontrol", "correct": false },
+      { "label": "b", "text": "acl", "correct": true },
+      { "label": "c", "text": "access-control", "correct": false },
+      { "label": "d", "text": "access-control-list", "correct": false }
+    ],
+    "feedback": "La directiva acl crea una lista de control de acceso. Las listas de control de acceso son funciones poderosas en la configuración de un proxy Squid e incluyen redes, direcciones MAC, puertos, navegadores y mucho más."
+  },
+  {
+    "id": 10,
+    "type": "single",
+    "question": "¿Cuál de las siguientes directivas de configuración evita que Apache imprima información de la versión en documentos generados por el servidor?",
+    "options": [
+      { "label": "a", "text": "ServerDocs Off", "correct": false },
+      { "label": "b", "text": "Signature Off", "correct": false },
+      { "label": "c", "text": "ServerSignature Off", "correct": true },
+      { "label": "d", "text": "ServerStatus Off", "correct": false }
+    ],
+    "feedback": "A veces es deseable no mostrar la versión de Apache en uso. Algunos dicen que esto podría ayudar en seguridad. Sin embargo, este tipo de “seguridad por oscuridad” puede no ser completamente efectiva."
+  },
+  {
+    "id": 11,
+    "type": "single",
+    "question": "¿Cuál de las siguientes tecnologías permite hosting virtual basado en nombre sobre SSL usando una sola dirección IP?",
+    "options": [
+      { "label": "a", "text": "Server Naming (SN)", "correct": false },
+      { "label": "b", "text": "Extended Virtual Host (EVH)", "correct": false },
+      { "label": "c", "text": "Server Name Indication (SNI)", "correct": true },
+      { "label": "d", "text": "Advanced Virtual Hosting (AVH)", "correct": false }
+    ],
+    "feedback": "Server Name Indication, o SNI, facilita servir múltiples hosts virtuales desde la misma dirección IP incluso cuando se usa SSL. Sin SNI, cada host virtual SSL necesitaría su propia IP. Las otras tecnologías no son válidas para este escenario."
+  },
+  {
+    "id": 12,
+    "type": "single",
+    "question": "¿Qué directiva de configuración de Apache establece el nombre del archivo PEM que contiene los certificados CA para clientes?",
+    "options": [
+      { "label": "a", "text": "SSLCACertificateFile", "correct": true },
+      { "label": "b", "text": "SSLCaCertFile", "correct": false },
+      { "label": "c", "text": "SSLCAFile", "correct": false },
+      { "label": "d", "text": "CACertificateFile", "correct": false }
+    ],
+    "feedback": "La directiva SSLCACertificateFile permite especificar un único archivo PEM que contiene certificados CA para la autenticación de clientes."
+  },
+  {
+    "id": 13,
+    "type": "single",
+    "question": "¿Qué opción de configuración de Apache2 establece el nombre que se muestra en la ventana emergente para autenticación cuando se usa autenticación básica?",
+    "options": [
+      { "label": "a", "text": "AuthDisplay", "correct": false },
+      { "label": "b", "text": "AuthName", "correct": true },
+      { "label": "c", "text": "AuthList", "correct": false },
+      { "label": "d", "text": "FriendlyName", "correct": false }
+    ],
+    "feedback": "La directiva AuthName establece un valor amigable que se muestra en la ventana emergente de autenticación. Los otros valores no tienen efecto en Apache2."
+  },
+  {
+    "id": 14,
+    "type": "single",
+    "question": "¿Cuál de las siguientes líneas de configuración de Apache habilita el módulo php7_module ubicado en modules/libphp7.so?",
+    "options": [
+      { "label": "a", "text": "Load php7_module modules/libphp7.so", "correct": false },
+      { "label": "b", "text": "Module php7_module modules/libphp7.so", "correct": false },
+      { "label": "c", "text": "LoadMod php7_module modules/libphp7.so", "correct": false },
+      { "label": "d", "text": "LoadModule php7_module modules/libphp7.so", "correct": true }
+    ],
+    "feedback": "La directiva LoadModule se usa para este propósito y acepta el nombre del módulo seguido de su archivo."
+  },
+
+
+
+
+
+
+
+
+  {
+    "id": 15,
+    "type": "single",
+    "question": "¿Qué subcomando de openssl se usa para crear una Solicitud de Firma de Certificado (CSR)?",
+    "options": [
+      { "label": "a", "text": "req", "correct": true },
+      { "label": "b", "text": "csr", "correct": false },
+      { "label": "c", "text": "gencsr", "correct": false },
+      { "label": "d", "text": "newcsr", "correct": false }
+    ],
+    "feedback": "La opción req inicia el proceso de generación de la CSR, normalmente también requiere -new como opción adicional. Los otros subcomandos no son válidos."
+  },
+
+
+
+  {
+    "id": 25,
+    "type": "single",
+    "question": "¿Cuál de las siguientes líneas de configuración de Apache cambia el nombre del archivo .htaccess a .accesslist?",
+    "options": [
+      { "label": "a", "text": "Access .accesslist", "correct": false },
+      { "label": "b", "text": "AccessFile .accesslist", "correct": false },
+      { "label": "c", "text": "AccessFileName \".accesslist\"", "correct": true },
+      { "label": "d", "text": "AuthFile \".accesslist\"", "correct": false }
+    ],
+    "feedback": "La directiva AccessFileName se puede usar para establecer un nombre de archivo de acceso diferente a .htaccess."
+  },
+  {
+    "id": 26,
+    "type": "single",
+    "question": "Según la documentación de Apache, ¿cuál es la ubicación preferida para las directivas relacionadas con la autenticación de usuarios?",
+    "options": [
+      { "label": "a", "text": "Dentro de un archivo .htaccess", "correct": false },
+      { "label": "b", "text": "Dentro de la configuración principal del servidor", "correct": true },
+      { "label": "c", "text": "Dentro de un bloque mod_rewrite", "correct": false },
+      { "label": "d", "text": "En un módulo especializado para autenticación de usuarios", "correct": false }
+    ],
+    "feedback": "Apache explica en la documentación que se obtiene mejor rendimiento al almacenar las directivas de autenticación dentro de la configuración principal del servidor cuando es posible. La única razón para no hacerlo es para que las directivas sean accesibles por el usuario. No hay escenario para almacenar configuración de autenticación en un bloque mod_rewrite o en un módulo, como indican dos de las opciones."
+  },
+  {
+    "id": 27,
+    "type": "single",
+    "question": "¿Qué directiva de configuración de Apache habilita la autorización basada en grupos?",
+    "options": [
+      { "label": "a", "text": "AuthGroups", "correct": false },
+      { "label": "b", "text": "AuthGroupList", "correct": false },
+      { "label": "c", "text": "AuthGrouping", "correct": false },
+      { "label": "d", "text": "AuthGroupFile", "correct": true }
+    ],
+    "feedback": "La directiva AuthGroupFile facilita la autorización basada en grupos. Los usuarios deben estar autenticados, luego un directorio u otro recurso puede asociarse con el archivo de grupos para permitir acceso a esos usuarios. Las otras directivas no son válidas."
+  },
+  {
+    "id": 28,
+    "type": "single",
+    "question": "¿Cuál de los siguientes comandos muestra el estado actual del servidor Apache, incluyendo número de solicitudes en proceso y tiempo de actividad del servidor?",
+    "options": [
+      { "label": "a", "text": "apachectl serverstatus", "correct": false },
+      { "label": "b", "text": "apachectl status", "correct": true },
+      { "label": "c", "text": "apachectl faststatus", "correct": false },
+      { "label": "d", "text": "apachectl stats", "correct": false }
+    ],
+    "feedback": "El comando apachectl con el argumento status imprime información sobre el estado del servidor. Los otros argumentos no son válidos."
+  },
+  {
+    "id": 29,
+    "type": "single",
+    "question": "¿Qué código de estado HTTP se devuelve cuando TraceEnable está configurado en off en Apache?",
+    "options": [
+      { "label": "a", "text": "405", "correct": true },
+      { "label": "b", "text": "100", "correct": false },
+      { "label": "c", "text": "302", "correct": false },
+      { "label": "d", "text": "200", "correct": false }
+    ],
+    "feedback": "Cuando TraceEnable está desactivado, se envía un código 405, método no permitido. 100 es continuar, 302 es redirección y 200 es OK."
+  },
+  {
+    "id": 30,
+    "type": "single",
+    "question": "¿Qué opción de htpasswd crea el archivo de credenciales y añade una nueva entrada en él?",
+    "options": [
+      { "label": "a", "text": "-f", "correct": false },
+      { "label": "b", "text": "-b", "correct": false },
+      { "label": "c", "text": "-c", "correct": true },
+      { "label": "d", "text": "-e", "correct": false }
+    ],
+    "feedback": "La opción -c crea un archivo nuevo. -b es modo batch. Las opciones -e y -f no existen para htpasswd."
+  },
+  {
+    "id": 31,
+    "type": "single",
+    "question": "¿Qué secuencia de formato de registro de Apache se usa para registrar el tiempo tomado para atender una solicitud en microsegundos?",
+    "options": [
+      { "label": "a", "text": "%D", "correct": true },
+      { "label": "b", "text": "%T", "correct": false },
+      { "label": "c", "text": "%t", "correct": false },
+      { "label": "d", "text": "-m", "correct": false }
+    ],
+    "feedback": "Las secuencias de formato de registro comienzan con %, y %D registra el tiempo para atender la solicitud en microsegundos. %T requiere una unidad previa y registra el tiempo total, y %t es la hora en que se recibió la solicitud."
+  },
+  {
+    "id": 32,
+    "type": "single",
+    "question": "¿Cuál de las siguientes líneas de configuración hace que el directorio /home/web/docs esté disponible en la ubicación /documentation/ del servidor?",
+    "options": [
+      { "label": "a", "text": "Connect /documentation /home/web/docs", "correct": false },
+      { "label": "b", "text": "Alias /documentation/ /home/web/docs/", "correct": true },
+      { "label": "c", "text": "Connect /home/web/docs /documentation", "correct": false },
+      { "label": "d", "text": "Alias ~/docs/ /documentation/", "correct": false }
+    ],
+    "feedback": "La directiva Alias se usa para esto, con formato: destino seguido de la ubicación a la que se asigna. No existe la directiva Connect en Apache."
+  },
+  {
+    "id": 33,
+    "type": "single",
+    "question": "Dentro de una sección <Location> válida, ¿qué directiva indica que mod_perl se usará para los recursos en esa ubicación?",
+    "options": [
+      { "label": "a", "text": "Handler mod_perl", "correct": false },
+      { "label": "b", "text": "SetHandler perl-script", "correct": true },
+      { "label": "c", "text": "SetHandler mod_perl", "correct": false },
+      { "label": "d", "text": "LoadModule perl-script", "correct": false }
+    ],
+    "feedback": "La directiva SetHandler debe establecerse a perl-script para que mod_perl funcione. LoadModule se usa para cargar el módulo, pero SetHandler controla el manejo."
+  },
+  {
+    "id": 34,
+    "type": "single",
+    "question": "¿Qué directiva de nginx configura un proxy de paso para una ubicación dada?",
+    "options": [
+      { "label": "a", "text": "pass-through", "correct": false },
+      { "label": "b", "text": "proxy", "correct": false },
+      { "label": "c", "text": "proxy_pass", "correct": true },
+      { "label": "d", "text": "proxypass", "correct": false }
+    ],
+    "feedback": "La directiva proxy_pass, dentro de una sección location en nginx, permite que las solicitudes se proxyen a la URL especificada. Las otras directivas no son válidas para nginx."
+  },
+  {
+    "id": 35,
+    "type": "single",
+    "question": "¿Qué directiva de configuración determina el número de procesos hijo que Apache inicia inicialmente?",
+    "options": [
+      { "label": "a", "text": "Servers", "correct": false },
+      { "label": "b", "text": "MaxServers", "correct": false },
+      { "label": "c", "text": "StartServers", "correct": true },
+      { "label": "d", "text": "ServerStarts", "correct": false }
+    ],
+    "feedback": "La directiva StartServers determina cuántos procesos hijo inician inicialmente. Este número cambia con las solicitudes, especialmente simultáneas. En servidores ocupados puede ser necesario aumentarla."
+  },
+  {
+    "id": 36,
+    "type": "single",
+    "question": "¿Qué directiva de Apache configura el formato de un archivo de registro, incluyendo qué elementos se registran?",
+    "options": [
+      { "label": "a", "text": "LogFile", "correct": false },
+      { "label": "b", "text": "Format", "correct": false },
+      { "label": "c", "text": "LoggingDirective", "correct": false },
+      { "label": "d", "text": "LogFormat", "correct": true }
+    ],
+    "feedback": "La directiva LogFormat define los parámetros que se almacenan en un archivo de registro, creando un perfil de registro que puede usarse en la configuración."
+  },
+  {
+    "id": 37,
+    "type": "single",
+    "question": "¿Qué opción dentro de un archivo .htaccess permite el acceso sólo al usuario ssuehring?",
+    "options": [
+      { "label": "a", "text": "Require ssuehring", "correct": false },
+      { "label": "b", "text": "RequireUser ssuehring", "correct": false },
+      { "label": "c", "text": "Require user ssuehring", "correct": true },
+      { "label": "d", "text": "AllowOnly ssuehring", "correct": false }
+    ],
+    "feedback": "La directiva Require se usa para esto, seguida de la palabra clave user y luego el usuario permitido. Las otras opciones no son válidas para Apache."
+  }
+  ]
+}

@@ -1,0 +1,450 @@
+{
+  "id": "5",
+  "title": "204 - Advanced Storage Device Adminstration",
+  "questions": [
+    {
+      "id": 1,
+      "type": "single",
+      "question": "Which file is used as a configuration file for RAID devices that use the md driver?",
+      "options": [
+        { "label": "a", "text": "/etc/md.conf", "correct": false },
+        { "label": "b", "text": "/etc/mdadm.conf", "correct": true },
+        { "label": "c", "text": "/etc/md.cfg", "correct": false },
+        { "label": "d", "text": "/etc/md/md.conf", "correct": false }
+      ],
+      "feedback": "The file /etc/mdadm.conf is the configuration file used for RAID setups that use md. The other files listed are not valid."
+    },
+    {
+      "id": 2,
+      "type": "single",
+      "question": "Which partition type is used to indicate a software RAID array, such as that built with mdadm?",
+      "options": [
+        { "label": "a", "text": "0xmd", "correct": false },
+        { "label": "b", "text": "-x-", "correct": false },
+        { "label": "c", "text": "0xRD", "correct": false },
+        { "label": "d", "text": "0xFD", "correct": true }
+      ],
+      "feedback": "A partition type 0xFD is used for software RAID arrays. This can be set or viewed using a tool such as fdisk. The other options shown are not valid partition types."
+    },
+    {
+      "id": 3,
+      "type": "single",
+      "question": "When working with World Wide Identifiers (WWIDs), within which directory on a Red Hat server will you find symlinks to the current /dev/sd device names?",
+      "options": [
+        { "label": "a", "text": "/dev/disk/wwid", "correct": false },
+        { "label": "b", "text": "/dev/wwid", "correct": false },
+        { "label": "c", "text": "/dev/disk/by-id", "correct": true },
+        { "label": "d", "text": "/dev/sd.wwid", "correct": false }
+      ],
+      "feedback": "The /dev/disk/by-id directory contains symbolic links to /dev/sd, such as /dev/sda. Because WWIDs can be used to identify a device across systems, they are often used within the context of SANs. The other directories listed as options do not exist."
+    },
+    {
+      "id": 4,
+      "type": "single",
+      "question": "Which of the following commands is used to perform administration related to iSCSI on a Linux server?",
+      "options": [
+        { "label": "a", "text": "iscsiadm", "correct": true },
+        { "label": "b", "text": "iscsiadmin", "correct": false },
+        { "label": "c", "text": "iscsi", "correct": false },
+        { "label": "d", "text": "scsiadm", "correct": false }
+      ],
+      "feedback": "The iscsiadm command is used for administration of iSCSI devices on a Linux system. The other options shown for this question are not valid."
+    },
+    {
+      "id": 5,
+      "type": "single",
+      "question": "Which of the following commands displays information about a given physical volume in an LVM setup?",
+      "options": [
+        { "label": "a", "text": "pvdisp", "correct": false },
+        { "label": "b", "text": "pvlist", "correct": false },
+        { "label": "c", "text": "pvdisplay", "correct": true },
+        { "label": "d", "text": "pvl", "correct": false }
+      ],
+      "feedback": "The pvdisplay command shows information about a given physical volume. You can use pvdisplay to view the device on which the PV is built along with the extent size of the PV. The other commands shown are not valid."
+    },
+    {
+      "id": 6,
+      "type": "single",
+      "question": "Which of the following configuration lines informs the md program that the first partition on both sda and sdb are eligible for use in a RAID array?",
+      "options": [
+        { "label": "a", "text": "DEV sda1 sdb1", "correct": false },
+        { "label": "b", "text": "DEV /dev/sda1 /dev/sdb1", "correct": false },
+        { "label": "c", "text": "DEVICE sda0 sdb0", "correct": false },
+        { "label": "d", "text": "DEVICE /dev/sda1 /dev/sdb1", "correct": true }
+      ],
+      "feedback": "The DEVICE configuration line contains a list of devices that can be used for an array. The keyword DEVICE is then followed by a space-separated list of devices."
+    },
+    {
+      "id": 7,
+      "type": "single",
+      "question": "When viewing information in /dev/disk/by-path using the command ls -l, which of the following filenames represents a LUN from Fibre Channel?",
+      "options": [
+        { "label": "a", "text": "/dev/fc0", "correct": false },
+        { "label": "b", "text": "pci-0000:1a:00.0-fc-0x500601653ee0025f:0x0000000000000000", "correct": true },
+        { "label": "c", "text": "pci-0000:1a:00.0-scsi-0x500601653ee0025f:0x0000000000000000", "correct": false },
+        { "label": "d", "text": "/dev/fibre0", "correct": false }
+      ],
+      "feedback": "Logical unit numbers (LUNs) that contain the characters fc are those found through Fibre Channel. Therein lies the difference between options B and C, where option C contains the letters scsi, which would usually represent a local disk. The other options are not valid."
+    },
+    {
+      "id": 8,
+      "type": "single",
+      "question": "Which of the following commands displays path information for LUNs?",
+      "options": [
+        { "label": "a", "text": "luninfo -a", "correct": false },
+        { "label": "b", "text": "ls -lun", "correct": false },
+        { "label": "c", "text": "multipath -l", "correct": true },
+        { "label": "d", "text": "dm-multi", "correct": false }
+      ],
+      "feedback": "The multipath command is used for administration of devices such as LUNs and can be used for finding the path to LUNs for a server, such as in a SAN configuration. The other commands are not valid, with the exception of ls, which is valid; however, the option shown is not related to LUNs but rather to a combination of various flags to the ls ­command."
+    },
+    {
+      "id": 9,
+      "type": "single",
+      "question": "Which command is used to remove unused filesystem blocks from thinly provisioned storage?",
+      "options": [
+        { "label": "a", "text": "thintrim", "correct": false },
+        { "label": "b", "text": "thtrim", "correct": false },
+        { "label": "c", "text": "fstrim", "correct": true },
+        { "label": "d", "text": "fsclean", "correct": false }
+      ],
+      "feedback": "The fstrim command is used to remove blocks that are not in use. The fstrim command is frequently used in a SAN configuration to give back unused storage to the SAN. The fstrim command can also be used with solid-state drives for the same purpose. The other commands shown are not valid."
+    },
+    {
+      "id": 10,
+      "type": "single",
+      "question": "You have purchased new SSD hardware that uses the NVMe protocol, but you cannot find the disks in the normal /dev/sd* location in which you have traditionally found such storage. In which location should you look for these drives?",
+      "options": [
+        { "label": "a", "text": "/dev/nd*", "correct": false },
+        { "label": "b", "text": "/dev/nvme*", "correct": true },
+        { "label": "c", "text": "/dev/nv*", "correct": false },
+        { "label": "d", "text": "/dev/nvme/*", "correct": false }
+      ],
+      "feedback": "NVMe-capable drives are named /dev/nvme*. No special drivers are needed other than those found in the native kernel on a modern system. The other answers do not exist as paths by default."
+    },
+        {
+      "id": 11,
+      "type": "single",
+      "question": "Which of the following commands can be used to generate a unique SCSI identifier?",
+      "options": [
+        { "label": "a", "text": "scsi_id", "correct": true },
+        { "label": "b", "text": "scsi_identifier", "correct": false },
+        { "label": "c", "text": "id_scsi", "correct": false },
+        { "label": "d", "text": "lsid", "correct": false }
+      ],
+      "feedback": "The scsi_id command generates a SCSI identifier based on page 0x80 or 0x83 of the vital product data on a device. The other commands are not valid."
+    },
+    {
+      "id": 12,
+      "type": "single",
+      "question": "Which storage protocol features the ability to send ATA commands over Ethernet?",
+      "options": [
+        { "label": "a", "text": "iSCSI", "correct": false },
+        { "label": "b", "text": "PXE", "correct": false },
+        { "label": "c", "text": "POE", "correct": false },
+        { "label": "d", "text": "AOE", "correct": true }
+      ],
+      "feedback": "AOE, or ATA over Ethernet, sends ATA commands directly over Ethernet. AOE commands are sent at a lower layer of the OSI model than TCP/IP or even IP, but they are not routable. The other acronyms shown are valid but not for the purpose described. PXE is a boot protocol, POE is used for power over Ethernet, and iSCSI is a storage protocol, though not related to ATA."
+    },
+    {
+      "id": 13,
+      "type": "single",
+      "question": "Which command can be used to set parameters for IDE and SATA devices on Linux?",
+      "options": [
+        { "label": "a", "text": "hdparam", "correct": false },
+        { "label": "b", "text": "hdparm", "correct": true },
+        { "label": "c", "text": "hdc", "correct": false },
+        { "label": "d", "text": "hdcontrol", "correct": false }
+      ],
+      "feedback": "The hdparm command can be used to get or set values related to the low-level configuration of drive settings for both IDE and SATA devices. The other commands shown for this question are not valid."
+    },
+    {
+      "id": 14,
+      "type": "single",
+      "question": "After creating the physical volumes for an md RAID setup, what is the typical next step?",
+      "options": [
+        { "label": "a", "text": "Create one or more volume groups with vgcreate", "correct": true },
+        { "label": "b", "text": "Reboot the server", "correct": false },
+        { "label": "c", "text": "Start the array", "correct": false },
+        { "label": "d", "text": "Link the physical volumes to virtual groups with vgcreate.", "correct": false }
+      ],
+      "feedback": "The next step is typically to create a volume group (or more than one) with vgcreate based on the newly created physical volumes."
+    },
+    {
+      "id": 15,
+      "type": "single",
+      "question": "When using tune2fs to set an extended option such as stripe_width, which command-line option is needed to signify that an extended option follows?",
+      "options": [
+        { "label": "a", "text": "-extend", "correct": false },
+        { "label": "b", "text": "-E", "correct": true },
+        { "label": "c", "text": "-e", "correct": false },
+        { "label": "d", "text": "-f", "correct": false }
+      ],
+      "feedback": "The -E option signals that an extended option follows, such as stripe_width. The -f option forces an operation but should not be necessary for this solution, and the -e option sets the behavior on error. There is no -extend option."
+    },
+    {
+      "id": 16,
+      "type": "single",
+      "question": "Which file contains information about the current md RAID configuration such as the personalities?",
+      "options": [
+        { "label": "a", "text": "/proc/raidinfo", "correct": false },
+        { "label": "b", "text": "/proc/rhyinfo", "correct": false },
+        { "label": "c", "text": "/proc/mdraid", "correct": false },
+        { "label": "d", "text": "/proc/mdstat", "correct": true }
+      ],
+      "feedback": "The file /proc/mdstat contains information on RAID arrays including RAID personalities found on the system, the devices that compose the array, and other pertinent information. The other files shown are not valid."
+    },
+    {
+      "id": 17,
+      "type": "single",
+      "question": "Which of the following daemons is in charge of maintaining connections to iSCSI targets?",
+      "options": [
+        { "label": "a", "text": "iscsid", "correct": true },
+        { "label": "b", "text": "iscsiadm", "correct": false },
+        { "label": "c", "text": "iscsimgr", "correct": false },
+        { "label": "d", "text": "iscsim", "correct": false }
+      ],
+      "feedback": "The iscsid daemon creates and maintains connections to iSCSI targets, making them available in Linux. The iscsiadm command is used for administrative purposes, and the other commands shown are not valid."
+    },
+    {
+      "id": 18,
+      "type": "single",
+      "question": "Which module can be examined with modinfo for information related to the NVMe driver?",
+      "options": [
+        { "label": "a", "text": "nvmeid", "correct": false },
+        { "label": "b", "text": "sata", "correct": false },
+        { "label": "c", "text": "nvme", "correct": true },
+        { "label": "d", "text": "nvemod", "correct": false }
+      ],
+      "feedback": "The nvme module, available on modern systems, is used as a driver for NVMe devices on Linux. You can examine the nvme module with the modinfo command."
+    },
+    {
+      "id": 19,
+      "type": "single",
+      "question": "Which of the following directory hierarchies contains information such as the WWN for Fibre Channel?",
+      "options": [
+        { "label": "a", "text": "/sys/class/wwn", "correct": false },
+        { "label": "b", "text": "/sys/class/fc_host", "correct": true },
+        { "label": "c", "text": "/sys/class/fclist", "correct": false },
+        { "label": "d", "text": "/sys/class/fc/wwn", "correct": false }
+      ],
+      "feedback": "The directory /sys/class/fc_host contains other directories based on the Fibre Channel connections available. Within those host directories will be found the WWN (World Wide Name) in a file called port_name. The other directory hierarchies are not valid."
+    },
+    {
+      "id": 20,
+      "type": "single",
+      "question": "Which option to mdadm is used to create a new array?",
+      "options": [
+        { "label": "a", "text": "--create", "correct": true },
+        { "label": "b", "text": "--start", "correct": false },
+        { "label": "c", "text": "--begin", "correct": false },
+        { "label": "d", "text": "--construct", "correct": false }
+      ],
+      "feedback": "The –create option enables creation of a RAID array that will use md. The typical argument is the /dev/mdN device. The other options listed are not valid for mdadm."
+    },
+    {
+      "id": 21,
+      "type": "single",
+      "question": "Which of the following files is used as a configuration file for iscsid?",
+      "options": [
+        { "label": "a", "text": "iscsid.cfg", "correct": false },
+        { "label": "b", "text": "iscsid.conf", "correct": true },
+        { "label": "c", "text": "iscsidaemon.conf", "correct": false },
+        { "label": "d", "text": "iscsi.cfg", "correct": false }
+      ],
+      "feedback": "The file iscsid.conf, typically found in either /etc/ or /etc/iscsid/, is used for configuration related to the iscsi daemon. The other configuration files are not valid for iscsid."
+    },
+    {
+      "id": 22,
+      "type": "single",
+      "question": "Information about logical volumes can be found in which of the following directories?",
+      "options": [
+        { "label": "a", "text": "/dev/lvinfo", "correct": false },
+        { "label": "b", "text": "/dev/map", "correct": false },
+        { "label": "c", "text": "/dev/mapper", "correct": true },
+        { "label": "d", "text": "/dev/lvmap", "correct": false }
+      ],
+      "feedback": "The /dev/mapper directory contains information about multipath devices such as logical volumes. The other directories are not valid."
+    },
+    {
+      "id": 23,
+      "type": "single",
+      "question": "Which option to mdadm watches a RAID array for anomalies?",
+      "options": [
+        { "label": "a", "text": "--mon", "correct": false },
+        { "label": "b", "text": "--watch", "correct": false },
+        { "label": "c", "text": "--monitor", "correct": true },
+        { "label": "d", "text": "--examine", "correct": false }
+      ],
+      "feedback": "The –monitor option is used to actively watch an array for issues such as disk failure. The monitoring can be done as a daemon and run in the background, thereby alerting when there is an issue."
+    },
+    {
+      "id": 24,
+      "type": "single",
+      "question": "When troubleshooting a failed md RAID array, you need to mount one of the drives in read-only mode. Which option will mount the drive in read-only?",
+      "options": [
+        { "label": "a", "text": "-o ro", "correct": true },
+        { "label": "b", "text": "read-only", "correct": false },
+        { "label": "c", "text": "-o rw", "correct": false },
+        { "label": "d", "text": "-op ro", "correct": false }
+      ],
+      "feedback": "The -o ro option mounts the drive in read-only mode. The rw mode is read-write. Mounting in read-only is useful if you need to diagnose the drive without potentially destroying any information on the drive. The other options are not valid."
+    },
+    {
+      "id": 25,
+      "type": "single",
+      "question": "Which of the following commands creates a logical volume with LVM?",
+      "options": [
+        { "label": "a", "text": "lvc", "correct": false },
+        { "label": "b", "text": "lvcreate", "correct": true },
+        { "label": "c", "text": "lvlist", "correct": false },
+        { "label": "d", "text": "lvmake", "correct": false }
+      ],
+      "feedback": "The lvcreate command is used to create a logical volume from previously created physical devices and volume groups. Using lvcreate is the final of three steps in the process for using LVM prior to actually using the logical volume."
+    },
+    {
+      "id": 26,
+      "type": "single",
+      "question": "When running mdadm in monitor mode, which option within /etc/mdadm.conf sets the destination for email if an issue is discovered?",
+      "options": [
+        { "label": "a", "text": "MAILTO", "correct": false },
+        { "label": "b", "text": "MAILADDR", "correct": true },
+        { "label": "c", "text": "MAILFROM", "correct": false },
+        { "label": "d", "text": "MAILDEST", "correct": false }
+      ],
+      "feedback": "The MAILADDR option sets the destination address for mail about RAID events that are noted by mdadm when in monitor mode."
+    },
+    {
+      "id": 27,
+      "type": "single",
+      "question": "Which of the following commands looks for LVM physical volumes and volume groups involved in an LVM configuration?",
+      "options": [
+        { "label": "a", "text": "vgscan", "correct": true },
+        { "label": "b", "text": "lvmscan", "correct": false },
+        { "label": "c", "text": "lvlist", "correct": false },
+        { "label": "d", "text": "pvlist", "correct": false }
+      ],
+      "feedback": "The vgscan command looks for both physical volumes and volume groups related to an LVM configuration. The vgscan command is run at system startup, but it can also be run manually. The other commands are not valid."
+    },
+    {
+      "id": 28,
+      "type": "single",
+      "question": "Which partition type is used to indicate a software RAID array, such as that built with mdadm?",
+      "options": [
+        { "label": "a", "text": "0xmd", "correct": false },
+        { "label": "b", "text": "-x-", "correct": false },
+        { "label": "c", "text": "0xRD", "correct": false },
+        { "label": "d", "text": "0xFD", "correct": true }
+      ],
+      "feedback": "A partition type of 0xFD is used for software RAID arrays. This can be set or viewed using a tool such as fdisk. The other options shown are not valid partition types."
+    },
+    {
+      "id": 29,
+      "type": "single",
+      "question": "Which of the following commands is used to display a list of physical volumes involved in LVM?",
+      "options": [
+        { "label": "a", "text": "pvdisp", "correct": false },
+        { "label": "b", "text": "pvlist", "correct": false },
+        { "label": "c", "text": "pvscan", "correct": true },
+        { "label": "d", "text": "pvmm", "correct": false }
+      ],
+      "feedback": "The pvscan command displays a list of physical volumes on a given server. The PVs displayed are those that have been initialized with pvcreate for use with LVM."
+    },
+    {
+      "id": 30,
+      "type": "single",
+      "question": "Which of the following options to the multipathd command will enter the interactive console?",
+      "options": [
+        { "label": "a", "text": "-c", "correct": false },
+        { "label": "b", "text": "-k", "correct": true },
+        { "label": "c", "text": "-f", "correct": false },
+        { "label": "d", "text": "-n", "correct": false }
+      ],
+      "feedback": "The interactive console is accessed by calling multipathd with the -k option. Once in the console, you can obtain help by typing help. The other options shown are not valid for multipathd."
+    },
+        {
+      "id": 31,
+      "type": "single",
+      "question": "Which option to lvchange sets whether the logical volume is available?",
+      "options": [
+        { "label": "a", "text": "-a", "correct": true },
+        { "label": "b", "text": "-b", "correct": false },
+        { "label": "c", "text": "-c", "correct": false },
+        { "label": "d", "text": "-d", "correct": false }
+      ],
+      "feedback": "The -a or –available (sometimes known as –activate) option sets whether the logical volume can be used. There is no -b or -c option, and the -d option is used for debugging."
+    },
+    {
+      "id": 32,
+      "type": "single",
+      "question": "Within which file can you configure a filter for devices when using vgscan?",
+      "options": [
+        { "label": "a", "text": "lvm.conf", "correct": true },
+        { "label": "b", "text": "vg.conf", "correct": false },
+        { "label": "c", "text": "vgscan.conf", "correct": false },
+        { "label": "d", "text": "lv.cfg", "correct": false }
+      ],
+      "feedback": "The file lvm.conf is a primary configuration file for LVM. Within lvm.conf, typically found in /etc/ or /etc/lvm/, you can set things like filters for devices to include or exclude from the vgscan process. The other commands shown are not valid."
+    },
+    {
+      "id": 33,
+      "type": "single",
+      "question": "Which option to lvcreate will create a snapshot of a logical volume?",
+      "options": [
+        { "label": "a", "text": "snap", "correct": false },
+        { "label": "b", "text": "snapshot", "correct": true },
+        { "label": "c", "text": "ss", "correct": false },
+        { "label": "d", "text": "Snapshots are not created with lvcreate", "correct": false }
+      ],
+      "feedback": "The snapshot option creates a snapshot of a logical volume. The other options shown are not valid."
+    },
+    {
+      "id": 34,
+      "type": "single",
+      "question": "Which option is given to sysctl to change one of the kernel parameters?",
+      "options": [
+        { "label": "a", "text": "-a", "correct": false },
+        { "label": "b", "text": "-k", "correct": false },
+        { "label": "c", "text": "-w", "correct": true },
+        { "label": "d", "text": "-A", "correct": false }
+      ],
+      "feedback": "The -w option writes a new value to the given kernel parameter. The -a and -A options both list all values. There is no -k option."
+    },
+    {
+      "id": 35,
+      "type": "single",
+      "question": "Which of the following commands is used to access and change values for SCSI devices?",
+      "options": [
+        { "label": "a", "text": "scsiparm", "correct": false },
+        { "label": "b", "text": "scsiparam", "correct": false },
+        { "label": "c", "text": "sdlist", "correct": false },
+        { "label": "d", "text": "sdparm", "correct": true }
+      ],
+      "feedback": "The sdparm command is similar to the hdparm command. Whereas hdparm is used for IDE and SATA, sdparm is used for SCSI devices. The other commands shown are not valid."
+    },
+    {
+      "id": 36,
+      "type": "single",
+      "question": "Which of the following directories contains configuration information for Fibre Channel over Ethernet (FCoE) on Linux?",
+      "options": [
+        { "label": "a", "text": "/etc/fcoe", "correct": true },
+        { "label": "b", "text": "/etc/fibrecoe", "correct": false },
+        { "label": "c", "text": "/etc/fibredev", "correct": false },
+        { "label": "d", "text": "/etc/fc", "correct": false }
+      ],
+      "feedback": "The directory /etc/fcoe contains information related to the FCoE configuration on a given system. The other directories are not valid for FCoE."
+    },
+    {
+      "id": 37,
+      "type": "single",
+      "question": "Which of the following commands will examine the PCI subsystem for NVMe-based devices?",
+      "options": [
+        { "label": "a", "text": "psnvme", "correct": false },
+        { "label": "b", "text": "lsnvme", "correct": false },
+        { "label": "c", "text": "lspci | grep scsi", "correct": false },
+        { "label": "d", "text": "lspci | grep -i nvme", "correct": true }
+      ],
+      "feedback": "The lspci command is used for this purpose. NVME devices are listed with the name nVME or NVMe; therefore, adding -i to grep will make the search case insensitive. You’d use this in order to ensure that the devices are detected. The other commands are not valid, with the exception of the lspci command, but you cannot grep for scsi for this scenario."
+    }
+  ]
+}
