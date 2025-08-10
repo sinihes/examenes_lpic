@@ -2,6 +2,449 @@
   "id": "1",
   "title": "200 - Capacity Planning",
   "questions": [
-
+        {
+      "id": 1,
+      "type": "single",
+      "question": "When using iostat to assess performance, which option displays information on a per-partition basis for block devices?",
+      "options": [
+        { "label": "a", "text": "-a", "correct": false },
+        { "label": "b", "text": "-c", "correct": false },
+        { "label": "c", "text": "-d", "correct": false },
+        { "label": "d", "text": "-p", "correct": true }
+      ],
+      "feedback": "The -p option to iostat displays information on devices and partitions. The -c option shows CPU utilization, and -d shows device utilization. There is no -a option."
+    },
+    {
+      "id": 2,
+      "type": "single",
+      "question": "When using iptraf for monitoring over an ssh connection, all of the traffic from your ssh session is showing up within the monitor. Which of the following is used to exclude and/or include traffic from the iptraf monitor?",
+      "options": [
+        { "label": "a", "text": "Area", "correct": false },
+        { "label": "b", "text": "Filter", "correct": true },
+        { "label": "c", "text": "Exclusion", "correct": false },
+        { "label": "d", "text": "Selector", "correct": false }
+      ],
+      "feedback": "Filters are used within iptraf to define traffic that should be included or excluded when monitoring. For this scenario, you could define the source IP address as your own and the destination as that of the interface being monitored and then look specifically for destination port 22 for ssh."
+    },
+    {
+      "id": 3,
+      "type": "single",
+      "question": "Which of the following commands displays blocks in and blocks out as related to I/O?",
+      "options": [
+        { "label": "a", "text": "iorpt", "correct": false },
+        { "label": "b", "text": "iptraf", "correct": false },
+        { "label": "c", "text": "vmswap", "correct": false },
+        { "label": "d", "text": "vmstat", "correct": true }
+      ],
+      "feedback": "The vmstat command is used to display extended information about performance including blocks in and out. The iptraf command is used to provide network-level monitoring, and the other two commands listed are not valid."
+    },
+    {
+      "id": 4,
+      "type": "single",
+      "question": "Which of the following commands can be used to display real-time information about disk usage on a per-process basis?",
+      "options": [
+        { "label": "a", "text": "iostat", "correct": false },
+        { "label": "b", "text": "top", "correct": false },
+        { "label": "c", "text": "iotop", "correct": true },
+        { "label": "d", "text": "free", "correct": false }
+      ],
+      "feedback": "The iotop command is used to monitor disk usage, such as reads and writes on a per-process basis in real time. The top command does not provide disk usages, and iostat does not provide information in a per-process manner. Finally, free provides aggregate information on memory."
+    },
+    {
+      "id": 5,
+      "type": "single",
+      "question": "You need to deploy a monitoring solution that enables alerts along with advanced scripted responses based on configurable performance conditions. Which of the following software packages performs these tasks?",
+      "options": [
+        { "label": "a", "text": "MySQL", "correct": false },
+        { "label": "b", "text": "ntop", "correct": false },
+        { "label": "c", "text": "mrtg", "correct": false },
+        { "label": "d", "text": "Nagios", "correct": true }
+      ],
+      "feedback": "Nagios provides advanced monitoring capabilities appropriate for the scenario described. Nagios works using various plugins that monitor numerous aspects of devices and systems. ntop and mrtg both provide graphical statistics but do not have the alerting capabilities specified."
+    },
+    {
+      "id": 6,
+      "type": "single",
+      "question": "Which of the following commands can be used to display a list of currently logged-in users along with the current load average and time since last reboot?",
+      "options": [
+        { "label": "a", "text": "uptime", "correct": false },
+        { "label": "b", "text": "w", "correct": true },
+        { "label": "c", "text": "swap", "correct": false },
+        { "label": "d", "text": "sysinfo", "correct": false }
+      ],
+      "feedback": "The w command shows a variety of useful information including load average, logged-in users, and other uptime information. The uptime command does not show who is currently logged in. There is no swap or sysinfo command."
+    },
+    {
+      "id": 7,
+      "type": "single",
+      "question": "Which of the following commands provides an overview of current memory usage along with swap space and its current utilization?",
+      "options": [
+        { "label": "a", "text": "mem", "correct": false },
+        { "label": "b", "text": "free", "correct": true },
+        { "label": "c", "text": "pstat", "correct": false },
+        { "label": "d", "text": "swap", "correct": false }
+      ],
+      "feedback": "The free command shows current memory usage for both RAM and swap space, including total available, current amount used, and current amount free. The other commands shown as options do not exist."
+    },
+    {
+      "id": 8,
+      "type": "single",
+      "question": "Which of the following describes a method for changing the sort order when using the top command such that the highest memory utilizers will be shown at the top of the list?",
+      "options": [
+        { "label": "a", "text": "Within top, type o and then select mem.", "correct": false },
+        { "label": "b", "text": "Within top, press Shift+F, scroll to %MEM, press s to select, and then press q to quit.", "correct": true },
+        { "label": "c", "text": "Within top, press S and then select %MEM.", "correct": false },
+        { "label": "d", "text": "Within top, press Shift+S, select %MEM, then press q to quit.", "correct": false }
+      ],
+      "feedback": "Pressing Shift+F within top enables you to choose which columns display as well as the sort order for these columns. In the scenario described, you can view the processes using the highest amount of memory."
+    },
+    {
+      "id": 9,
+      "type": "single",
+      "question": "Which of the following commands can be used to display the current disk utilization?",
+      "options": [
+        { "label": "a", "text": "df", "correct": true },
+        { "label": "b", "text": "du", "correct": false },
+        { "label": "c", "text": "diskutil", "correct": false },
+        { "label": "d", "text": "diskuse", "correct": false }
+      ],
+      "feedback": "The df command displays information on disk usage, and it can help with planning disk utilization over time. For example, if you note that disk utilization is increasing significantly, you can prepare to bring more disk online or even to change the log rotation schedule such that logs are rotated faster, thereby freeing up space."
+    },
+    {
+      "id": 10,
+      "type": "single",
+      "question": "Which of the following monitoring tools can use SNMP and scripts to collect data for performance-related graphing?",
+      "options": [
+        { "label": "a", "text": "ptop", "correct": false },
+        { "label": "b", "text": "pstree", "correct": false },
+        { "label": "c", "text": "Cacti", "correct": true },
+        { "label": "d", "text": "Grafr", "correct": false }
+      ],
+      "feedback": "Cacti is a graphing tool that uses both scripts for gathering performance data as well as SNMP. The graphs can help you visualize the performance of networks and systems alike. The pstree command is used to show a tree-like structure of processes."
+    },
+        {
+      "id": 11,
+      "type": "single",
+      "question": "Which tool can be used to measure the memory usage of individual processes in order to aid in capacity planning?",
+      "options": [
+        { "label": "a", "text": "ps", "correct": true },
+        { "label": "b", "text": "iotop", "correct": false },
+        { "label": "c", "text": "iostat", "correct": false },
+        { "label": "d", "text": "ifconfig", "correct": false }
+      ],
+      "feedback": "The ps command provides information on processor and memory usage for individual processes. You can use this information to predict capacity."
+    },
+    {
+      "id": 12,
+      "type": "single",
+      "question": "Which option to htop enables monitoring of a single process ID?",
+      "options": [
+        { "label": "a", "text": "-p", "correct": true },
+        { "label": "b", "text": "-a", "correct": false },
+        { "label": "c", "text": "-e", "correct": false },
+        { "label": "d", "text": "-s", "correct": false }
+      ],
+      "feedback": "The -p option enables monitoring of one or more process IDs. If you're monitoring more than one process ID, separate each with a comma. The -s option sets the sort order. The -a and the -e options do not exist."
+    },
+    {
+      "id": 13,
+      "type": "single",
+      "question": "Which of the following netstat options displays the send and receive queues for each socket?",
+      "options": [
+        { "label": "a", "text": "-r", "correct": false },
+        { "label": "b", "text": "-M", "correct": false },
+        { "label": "c", "text": "-a", "correct": true },
+        { "label": "d", "text": "-v", "correct": false }
+      ],
+      "feedback": "The -a option displays statistics for each socket, both listening and non-listening. Included in this information are the send and receive queues. This information can be used to gauge performance and potential bottlenecks."
+    },
+    {
+      "id": 14,
+      "type": "single",
+      "question": "Which of the following tools provides an ncurses-based graphical tool for network monitoring that can be used over an ssh connection?",
+      "options": [
+        { "label": "a", "text": "ipmon", "correct": false },
+        { "label": "b", "text": "iptraf", "correct": true },
+        { "label": "c", "text": "ipconfig", "correct": false },
+        { "label": "d", "text": "netmon", "correct": false }
+      ],
+      "feedback": "The iptraf tool is used for monitoring network traffic in real time to provide statistics on usage and throughput. The tool is graphical in nature, but it is appropriate for use over an ssh connection without an X server installed. The other commands listed as options are not valid Linux commands."
+    },
+    {
+      "id": 15,
+      "type": "single",
+      "question": "Which of the following commands enables a sorted and grouped list of processes, grouped into a parent/child display?",
+      "options": [
+        { "label": "a", "text": "ps", "correct": false },
+        { "label": "b", "text": "psdisp", "correct": false },
+        { "label": "c", "text": "pstree", "correct": true },
+        { "label": "d", "text": "ptree", "correct": false }
+      ],
+      "feedback": "The pstree command displays current processes in a tree-like structure, with parent processes connected to child processes. The pstree command makes it easy to see processes in a grouped format to check for potential high resource usage."
+    },
+    {
+      "id": 16,
+      "type": "single",
+      "question": "Which of the following commands displays CPU-related performance information a total of 10 times gathered every two seconds?",
+      "options": [
+        { "label": "a", "text": "sar -u 2 10", "correct": true },
+        { "label": "b", "text": "sar -u 10 2", "correct": false },
+        { "label": "c", "text": "sar -u 2", "correct": false },
+        { "label": "d", "text": "uptime -t", "correct": false }
+      ],
+      "feedback": "The sar command can be used for this purpose, and when provided with numbers in the format displayed, it will update every X seconds for Y executions, as in the answer with sar -u 2 10, which will update every two seconds for 10 executions."
+    },
+    {
+      "id": 17,
+      "type": "single",
+      "question": "Which of the following tools provides an ncurses-based interface for working with processes, including viewing, changing priority, and killing the processes?",
+      "options": [
+        { "label": "a", "text": "htop", "correct": true },
+        { "label": "b", "text": "ptop", "correct": false },
+        { "label": "c", "text": "libtop", "correct": false },
+        { "label": "d", "text": "restop", "correct": false }
+      ],
+      "feedback": "The htop command enables advanced scenarios for working with processes through a graphical interface created with ncurses. This means that the interface is appropriate for use through ssh, for example."
+    },
+    {
+      "id": 18,
+      "type": "single",
+      "question": "When viewing statistics with vmstat, which statistic represents the time that the CPU spent waiting for I/O?",
+      "options": [
+        { "label": "a", "text": "sy", "correct": false },
+        { "label": "b", "text": "us", "correct": false },
+        { "label": "c", "text": "wa", "correct": true },
+        { "label": "d", "text": "io", "correct": false }
+      ],
+      "feedback": "The wa statistic shows time spent waiting for I/O, and it can be used to measure or find a bottleneck related to disk. The us statistic is time spent on user space processes, while sy is time spent on kernel processes. There is no statistic called io within vmstat."
+    },
+    {
+      "id": 19,
+      "type": "single",
+      "question": "Which option to the pstree command displays process IDs along with the normal output?",
+      "options": [
+        { "label": "a", "text": "-i", "correct": false },
+        { "label": "b", "text": "-b", "correct": false },
+        { "label": "c", "text": "-p", "correct": true },
+        { "label": "d", "text": "-a", "correct": false }
+      ],
+      "feedback": "The -p option to pstree shows process IDs along with the standard pstree output. The -a option displays command-line arguments for commands. There is no -i or -b option."
+    },
+    {
+      "id": 20,
+      "type": "single",
+      "question": "When viewing information with ps, what does the RSS column indicate?",
+      "options": [
+        { "label": "a", "text": "Real Swap Size", "correct": false },
+        { "label": "b", "text": "Remaining Swap Space", "correct": false },
+        { "label": "c", "text": "Resident Set Size", "correct": true },
+        { "label": "d", "text": "Recommended Set Space", "correct": false }
+      ],
+      "feedback": "The RSS column is Resident Set Size, and it indicates the amount of physical RAM that is allocated to the given process."
+    },
+        {
+      "id": 21,
+      "type": "single",
+      "question": "Which of the following commands displays a list of currently open files along with their sizes?",
+      "options": [
+        { "label": "a", "text": "ls", "correct": false },
+        { "label": "b", "text": "lsof", "correct": true },
+        { "label": "c", "text": "lsio", "correct": false },
+        { "label": "d", "text": "ls -o", "correct": false }
+      ],
+      "feedback": "The lsof command is used for this purpose, and it can help if there are large files that may be affecting performance. The ls command does not show whether a file is open."
+    },
+    {
+      "id": 22,
+      "type": "single",
+      "question": "When using htop to monitor a process interactively, which key can be used to display open files for the selected process?",
+      "options": [
+        { "label": "a", "text": "L", "correct": false },
+        { "label": "b", "text": "l", "correct": true },
+        { "label": "c", "text": "f", "correct": false },
+        { "label": "d", "text": "o", "correct": false }
+      ],
+      "feedback": "The l key will list open files for a given process, assuming that lsof is installed. The L key performs a library trace if ltrace is available."
+    },
+    {
+      "id": 23,
+      "type": "single",
+      "question": "When working in a virtual server environment, which column within iostat output shows the amount (percentage) of time spent in an involuntary wait scenario due to the hypervisor?",
+      "options": [
+        { "label": "a", "text": "proc", "correct": false },
+        { "label": "b", "text": "wait", "correct": false },
+        { "label": "c", "text": "user", "correct": false },
+        { "label": "d", "text": "steal", "correct": true }
+      ],
+      "feedback": "The steal column shows the percentage of time that was spent waiting due to the hypervisor stealing cycles for another virtual processor."
+    },
+    {
+      "id": 24,
+      "type": "single",
+      "question": "Which of the following performance-monitoring commands is available by default in most modern Linux installs and does not need to be installed as a separate package?",
+      "options": [
+        { "label": "a", "text": "Icinga2", "correct": false },
+        { "label": "b", "text": "top", "correct": true },
+        { "label": "c", "text": "sar", "correct": false },
+        { "label": "d", "text": "Nagios", "correct": false }
+      ],
+      "feedback": "While all of the commands and programs listed are typically available on modern Linux distributions, all of them need to be installed separately except the top command, which is usually available for performance troubleshooting and monitoring."
+    },
+    {
+      "id": 25,
+      "type": "single",
+      "question": "What time intervals are represented by the three numbers in the load average output obtained with the uptime command?",
+      "options": [
+        { "label": "a", "text": "1, 5, and 15 minutes", "correct": true },
+        { "label": "b", "text": "5, 10, and 15 minutes", "correct": false },
+        { "label": "c", "text": "10, 30, and 60 seconds", "correct": false },
+        { "label": "d", "text": "1, 3, and 5 minutes", "correct": false }
+      ],
+      "feedback": "Load average with the uptime command is displayed in 1-, 5-, and 15-minute increments."
+    },
+    {
+      "id": 26,
+      "type": "single",
+      "question": "Which of the following files contains information about the swap space including the currently used amount of swap and the disk partitions used for the swap space?",
+      "options": [
+        { "label": "a", "text": "/proc/swapinfo", "correct": false },
+        { "label": "b", "text": "/proc/swaps", "correct": true },
+        { "label": "c", "text": "/proc/swap", "correct": false },
+        { "label": "d", "text": "/etc/swap.conf", "correct": false }
+      ],
+      "feedback": "The /proc/swaps file can be used to gather information quickly, especially within a script, on swap space."
+    },
+    {
+      "id": 27,
+      "type": "single",
+      "question": "Which of the following tools provides a web interface for network-related statistics such as bandwidth usage per protocol and host?",
+      "options": [
+        { "label": "a", "text": "mrtg", "correct": false },
+        { "label": "b", "text": "Nagios", "correct": false },
+        { "label": "c", "text": "ntop", "correct": true },
+        { "label": "d", "text": "htop", "correct": false }
+      ],
+      "feedback": "The ntop program monitors network interfaces and provides web-based reporting on bandwidth utilization by protocol and host. Both mrtg and Nagios can provide similar information but typically not on a per-protocol or per-host basis."
+    },
+    {
+      "id": 28,
+      "type": "single",
+      "question": "Which option to the ps command displays information in a wide format?",
+      "options": [
+        { "label": "a", "text": "z", "correct": false },
+        { "label": "b", "text": "w", "correct": true },
+        { "label": "c", "text": "a", "correct": false },
+        { "label": "d", "text": "o", "correct": false }
+      ],
+      "feedback": "Providing information from ps in a wide format can be helpful for viewing the command line of a given command. The a option displays all processes while the o option enables the choice of columns for output."
+    },
+    {
+      "id": 29,
+      "type": "single",
+      "question": "When no interval or count is provided for the sar command, what information is used as output?",
+      "options": [
+        { "label": "a", "text": "Statistics gathered since last restart", "correct": true },
+        { "label": "b", "text": "Current load average", "correct": false },
+        { "label": "c", "text": "Statistics on current utilization", "correct": false },
+        { "label": "d", "text": "Average I/O", "correct": false }
+      ],
+      "feedback": "When no interval or count are provided, the gathered statistics are displayed for each interval in which statistics were gathered. For example, if sar gathered statistics every five minutes since the last restart, then each of those data points is displayed."
+    },
+    {
+      "id": 30,
+      "type": "single",
+      "question": "Which of the following lsof commands will display all open connections for port 80?",
+      "options": [
+        { "label": "a", "text": "lsof -i 80", "correct": false },
+        { "label": "b", "text": "lsof 80", "correct": false },
+        { "label": "c", "text": "lsof -i :80", "correct": true },
+        { "label": "d", "text": "lsof -i -80", "correct": false }
+      ],
+      "feedback": "The -i option is needed for this case, and the format for the port is preceded by a colon."
+    },
+    {
+      "id": 31,
+      "type": "single",
+      "question": "Which option to iostat causes the display to output in megabytes?",
+      "options": [
+        { "label": "a", "text": "-k", "correct": false },
+        { "label": "b", "text": "-l", "correct": false },
+        { "label": "c", "text": "-m", "correct": true },
+        { "label": "d", "text": "-o m", "correct": false }
+      ],
+      "feedback": "The -m option causes the disk-related statistics to use megabytes as the scale rather than the default kilobytes."
+    },
+    {
+      "id": 32,
+      "type": "single",
+      "question": "When viewing information with vmstat, you notice that there are two processes in the b column, indicating uninterruptible sleep. How do you find which specific processes are currently in uninterruptible sleep mode?",
+      "options": [
+        { "label": "a", "text": "Add the -n option to vmstat.", "correct": false },
+        { "label": "b", "text": "Use ps and look for D in the Stat column.", "correct": true },
+        { "label": "c", "text": "Use ps and look for Sl in the Stat column.", "correct": false },
+        { "label": "d", "text": "Reboot the server.", "correct": false }
+      ],
+      "feedback": "If the Stat column within the output of a ps command shows D, then there is a process in uninterruptible sleep, meaning that it cannot be killed and is typically waiting on I/O. A process in Sl is in normal sleep for a multithreaded process. Rebooting the server is the only way to clear processes that are in uninterruptible sleep, assuming that they don't wake up of their own accord. Finally, the -n option to vmstat selects how the header is displayed."
+    },
+    {
+      "id": 33,
+      "type": "single",
+      "question": "When working with htop, which of the following options sets the delay between updates to 10 seconds?",
+      "options": [
+        { "label": "a", "text": "-d 10", "correct": false },
+        { "label": "b", "text": "-d 100", "correct": true },
+        { "label": "c", "text": "-f 10", "correct": false },
+        { "label": "d", "text": "-f 100", "correct": false }
+      ],
+      "feedback": "The -d option is used to set the delay, and the interval is tenths of a second, thereby needing 100 such intervals to equal 10 seconds."
+    },
+    {
+      "id": 34,
+      "type": "single",
+      "question": "Which of the following commands and options displays performance information including memory and CPU usage every second for 10 seconds?",
+      "options": [
+        { "label": "a", "text": "vmstat 1 10", "correct": true },
+        { "label": "b", "text": "iostat 10 1", "correct": false },
+        { "label": "c", "text": "vmstat 10 1", "correct": false },
+        { "label": "d", "text": "iostat 1 10", "correct": false }
+      ],
+      "feedback": "The vmstat command displays both memory and CPU usage information. The iostat command does not display memory information. Once you know the command, then it's a matter of the correct syntax for per-second updates for 10 seconds."
+    },
+    {
+      "id": 35,
+      "type": "single",
+      "question": "Which of the following commands displays the number of packets forwarded by the kernel?",
+      "options": [
+        { "label": "a", "text": "ls", "correct": false },
+        { "label": "b", "text": "ipstat", "correct": false },
+        { "label": "c", "text": "ifconfig -a", "correct": false },
+        { "label": "d", "text": "netstat -s", "correct": true }
+      ],
+      "feedback": "The netstat -s command displays aggregate statistical information for networking, including the total packets received and the number of packets forwarded. The ifconfig command does not show packets forwarded. The ls command is not used for networking, and the ipstat command does not exist."
+    },
+    {
+      "id": 36,
+      "type": "single",
+      "question": "You are using a two-processor system and notice that the one-minute load average is 1.00. What does this mean for performance?",
+      "options": [
+        { "label": "a", "text": "One of the processors was idle 50% of the time.", "correct": true },
+        { "label": "b", "text": "The system is constrained by the CPUs because it is at 100% capacity.", "correct": false },
+        { "label": "c", "text": "The CPU utilization cannot be determined from this information.", "correct": false },
+        { "label": "d", "text": "One of the processors was idle 25% of the time.", "correct": false }
+      ],
+      "feedback": "On a system with one processor, a load average of 1.00 would indicate high utilization. However, with two processors that load average equals approximately 50% capacity. Even at 50% capacity, it might be a good idea to examine what is causing that utilization with the top or ps command."
+    },
+    {
+      "id": 37,
+      "type": "single",
+      "question": "What is the expected output when providing a 0-increment value to the sar command with no count value provided?",
+      "options": [
+        { "label": "a", "text": "Statistics from the beginning of time", "correct": false },
+        { "label": "b", "text": "Average utilization since last restart", "correct": true },
+        { "label": "c", "text": "Continuously updated statistics", "correct": false },
+        { "label": "d", "text": "An error will occur.", "correct": false }
+      ],
+      "feedback": "When a 0 interval with no value for count is sent as an argument to sar, the overall averages since last restart will be displayed, and the program will exit."
+    }
   ]
 }

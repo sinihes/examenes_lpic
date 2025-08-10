@@ -1,36 +1,450 @@
 {
   "id": "1",
-  "title": "Topic 102 - linux Installation and Package Management",
+  "title": "207 - Domain Name Server",
   "questions": [
-    {
+        {
       "id": 1,
       "type": "single",
-      "question": "¿Cuál es la capital de España?",
+      "question": "Which configuration file is used as the default configuration for a BIND server?",
       "options": [
-        { "label": "a", "text": "Madrid", "correct": true },
-        { "label": "b", "text": "Barcelona", "correct": false },
-        { "label": "c", "text": "Valencia", "correct": false }
+        { "label": "a", "text": "named.conf", "correct": true },
+        { "label": "b", "text": "named.cfg", "correct": false },
+        { "label": "c", "text": "bind.cfg", "correct": false },
+        { "label": "d", "text": "bind.conf", "correct": false }
       ],
-      "feedback": "La capital de España es Madrid, que es también la ciudad más grande del país."
+      "feedback": "The file named.conf, located in /etc/ or /etc/bind/, is the default configuration file for the BIND server. The file typically loads or includes other configuration files for specific configurations."
     },
     {
       "id": 2,
-      "type": "multiple",
-      "question": "¿Cuáles son lenguajes de programación?",
+      "type": "single",
+      "question": "Which directive within a BIND configuration specifies the addresses or networks that are allowed to query the nameserver?",
       "options": [
-        { "label": "a", "text": "Python", "correct": true },
-        { "label": "b", "text": "HTML", "correct": false },
-        { "label": "c", "text": "Java", "correct": true },
-        { "label": "d", "text": "CSS", "correct": false }
+        { "label": "a", "text": "query-addresses", "correct": false },
+        { "label": "b", "text": "allow-query", "correct": true },
+        { "label": "c", "text": "query-allow", "correct": false },
+        { "label": "d", "text": "query-auth", "correct": false }
       ],
-      "feedback": "Python y Java son lenguajes de programación; HTML y CSS son lenguajes de marcado y estilos."
+      "feedback": "The allow-query directive sets the hosts from which DNS queries will be allowed for the nameserver. This can be helpful for situations where there may be untrusted clients that can reach the nameserver."
     },
     {
       "id": 3,
-      "type": "text",
-      "question": "¿Cómo se llama la red de computadoras global?",
-      "answer": "Internet",
-      "feedback": "Internet es la red mundial de computadoras que permite la comunicación global."
+      "type": "single",
+      "question": "Which signal to the kill command can be used to signal that BIND should reload, including its configuration?",
+      "options": [
+        { "label": "a", "text": "-15", "correct": false },
+        { "label": "b", "text": "-1", "correct": true },
+        { "label": "c", "text": "-9", "correct": false },
+        { "label": "d", "text": "-2", "correct": false }
+      ],
+      "feedback": "The -1 or -HUP signal reloads the given process. The -15 signal is the default terminate signal, while -2 is an interrupt signal. The -9 signal is for kill, and it is considered bad practice except in emergencies when the process doesn’t respond to normal signals."
+    },
+    {
+      "id": 4,
+      "type": "single",
+      "question": "What option to dnssec-keygen specifies the algorithm to use for the key?",
+      "options": [
+        { "label": "a", "text": "-a", "correct": true },
+        { "label": "b", "text": "-n", "correct": false },
+        { "label": "c", "text": "-d", "correct": false },
+        { "label": "d", "text": "-e", "correct": false }
+      ],
+      "feedback": "The -a option enables specification of the algorithm to use, while -n specifies the name type to use such as zone, host, or others. There is no -d or -e option."
+    },
+    {
+      "id": 5,
+      "type": "single",
+      "question": "Which of the following describes a fundamental difference between named-compilezone and named-checkzone?",
+      "options": [
+        { "label": "a", "text": "named-checkzone and named-compilezone do the same thing.", "correct": false },
+        { "label": "b", "text": "named-checkzone checks a zone for syntax errors; named-compilezone checks a zone for syntax errors and sends output to a file.", "correct": true },
+        { "label": "c", "text": "named-checkzone performs syntax checking, while named-compilezone converts the zone to a different format.", "correct": false },
+        { "label": "d", "text": "named-checkzone performs syntax checking, while named-compilezone prepares the zone for usage with BIND.", "correct": false }
+      ],
+      "feedback": "The named-checkzone command examines a zone file for obvious syntax errors that would prevent BIND from using the file. The named-compilezone file does the same thing as named-checkzone but sends the output directly to a file instead."
+    },
+    {
+      "id": 6,
+      "type": "single",
+      "question": "When creating MX records for a zone, which of the following is the highest priority mail exchanger?",
+      "options": [
+        { "label": "a", "text": "0", "correct": true },
+        { "label": "b", "text": "10", "correct": false },
+        { "label": "c", "text": "20", "correct": false },
+        { "label": "d", "text": "100", "correct": false }
+      ],
+      "feedback": "The lowest priority number wins for MX records, thereby making 0 the highest priority MX record for the domain."
+    },
+    {
+      "id": 7,
+      "type": "single",
+      "question": "On which protocol and port are zone transfer requests sent?",
+      "options": [
+        { "label": "a", "text": "UDP/53", "correct": false },
+        { "label": "b", "text": "ICMP/53", "correct": false },
+        { "label": "c", "text": "TCP/143", "correct": false },
+        { "label": "d", "text": "TCP/53", "correct": true }
+      ],
+      "feedback": "DNS typically uses UDP port 53, except for zone transfers, in which case TCP port 53 is used because of the size of the request for most zones."
+    },
+    {
+      "id": 8,
+      "type": "single",
+      "question": "Within which of the following directories are zone files stored for BIND?",
+      "options": [
+        { "label": "a", "text": "/var/named", "correct": true },
+        { "label": "b", "text": "/etc/named", "correct": false },
+        { "label": "c", "text": "/var/cache/named", "correct": false },
+        { "label": "d", "text": "/var/named.zones", "correct": false }
+      ],
+      "feedback": "The directory /var/named stores zones. On Debian, this directory is /var/cache/bind. The /etc/named directory is used by some distributions as a location for configuration files."
+    },
+    {
+      "id": 9,
+      "type": "single",
+      "question": "Which of the following commands is used to control a BIND name server?",
+      "options": [
+        { "label": "a", "text": "bind-config", "correct": false },
+        { "label": "b", "text": "named-config", "correct": false },
+        { "label": "c", "text": "rndc", "correct": true },
+        { "label": "d", "text": "rdmc", "correct": false }
+      ],
+      "feedback": "The rndc command is used to control a BIND server, including controlling it over a remote connection. The other commands shown are not valid."
+    },
+    {
+      "id": 10,
+      "type": "single",
+      "question": "Which type can be used with the dig command to test a zone transfer?",
+      "options": [
+        { "label": "a", "text": "xfr", "correct": false },
+        { "label": "b", "text": "transfer", "correct": false },
+        { "label": "c", "text": "zxfr", "correct": false },
+        { "label": "d", "text": "axfr", "correct": true }
+      ],
+      "feedback": "The axfr type can be used with dig to request a zone transfer. The client from which you request the zone transfer will need to be authorized to initiate a transfer."
+    },
+    {
+      "id": 11,
+      "type": "single",
+      "question": "Which BIND configuration directive sets the IP addresses on which the daemon will listen?",
+      "options": [
+        { "label": "a", "text": "listeners", "correct": false },
+        { "label": "b", "text": "listen-on", "correct": true },
+        { "label": "c", "text": "listen-in", "correct": false },
+        { "label": "d", "text": "ip-listeners", "correct": false }
+      ],
+      "feedback": "The listen-on directive sets the IP address or addresses on which the daemon will operate. The other directives are not valid."
+    },
+    {
+      "id": 12,
+      "type": "single",
+      "question": "When configuring BIND for a chroot scenario, within which of the following files should you set the home directory for the chroot user to use with bind?",
+      "options": [
+        { "label": "a", "text": "/etc/bind.home", "correct": false },
+        { "label": "b", "text": "/etc/bind.user", "correct": false },
+        { "label": "c", "text": "/etc/passwd", "correct": true },
+        { "label": "d", "text": "/etc/bindauth", "correct": false }
+      ],
+      "feedback": "The home directory should be set in /etc/passwd, and it should be set to the chroot directory. The other files listed are not valid."
+    },
+    {
+      "id": 13,
+      "type": "single",
+      "question": "Which command is used to sign a DNS zone for DNSSEC?",
+      "options": [
+        { "label": "a", "text": "dnssec-signzone", "correct": true },
+        { "label": "b", "text": "signzone", "correct": false },
+        { "label": "c", "text": "bind-signzone", "correct": false },
+        { "label": "d", "text": "dnssec-sign", "correct": false }
+      ],
+      "feedback": "The dnssec-signzone command is used to sign DNS zones when using DNSSEC. The other commands do not exist."
+    },
+    {
+      "id": 14,
+      "type": "single",
+      "question": "Which option to the host command sets the query type to ANY?",
+      "options": [
+        { "label": "a", "text": "-a", "correct": true },
+        { "label": "b", "text": "-b", "correct": false },
+        { "label": "c", "text": "-c", "correct": false },
+        { "label": "d", "text": "-d", "correct": false }
+      ],
+      "feedback": "Setting -a as an option to the host command sets the query type to ANY. The -c option sets the class, and the -d option turns on debugging. There is no -b option."
+    },
+    {
+      "id": 15,
+      "type": "single",
+      "question": "Which of the following correctly creates a CNAME record between the hostname www and the host web.example.com?",
+      "options": [
+        { "label": "a", "text": "www CNAME web.example.com", "correct": false },
+        { "label": "b", "text": "web.example.com CNAME www", "correct": false },
+        { "label": "c", "text": "www IN CNAME web.example.com.", "correct": true },
+        { "label": "d", "text": "www IN CNAME web.example.com", "correct": false }
+      ],
+      "feedback": "The correct format for a CNAME requires a trailing dot, which represents the only difference between answers C and D."
+    },
+    {
+      "id": 16,
+      "type": "single",
+      "question": "Which option to the forward directive in BIND sets the server as a forwarding server?",
+      "options": [
+        { "label": "a", "text": "only", "correct": true },
+        { "label": "b", "text": "first", "correct": false },
+        { "label": "c", "text": "now", "correct": false },
+        { "label": "d", "text": "required", "correct": false }
+      ],
+      "feedback": "The only option, as in forward only, is used to indicate that the server should only forward queries and not attempt to answer them directly. The first option forwards the query, and if no response is received, then it attempts to perform the query itself. The other options are not valid."
+    },
+    {
+      "id": 17,
+      "type": "single",
+      "question": "When running a recursive nameserver, which of the following options refuses to provide answers to queries from the given addresses?",
+      "options": [
+        { "label": "a", "text": "deny-hosts", "correct": false },
+        { "label": "b", "text": "blackhole", "correct": true },
+        { "label": "c", "text": "deny-query", "correct": false },
+        { "label": "d", "text": "deny-answer", "correct": false }
+      ],
+      "feedback": "The blackhole option provides a list of addresses that will not be allowed to receive answers for queries. This can be helpful for security reasons. The other options are not valid."
+    },
+    {
+      "id": 18,
+      "type": "single",
+      "question": "Which of the following is a prerequisite for installing djbdns?",
+      "options": [
+        { "label": "a", "text": "BIND9", "correct": false },
+        { "label": "b", "text": "daemontools", "correct": true },
+        { "label": "c", "text": "qmail", "correct": false },
+        { "label": "d", "text": "bind-tools", "correct": false }
+      ],
+      "feedback": "The daemontools package is required in order to install djbdns. BIND9 is not typically used when djbdns is used, and qmail is not required."
+    },
+    {
+      "id": 19,
+      "type": "single",
+      "question": "Which command can be used to verify that a BIND configuration file is valid?",
+      "options": [
+        { "label": "a", "text": "bind9-ver", "correct": false },
+        { "label": "b", "text": "bind-check", "correct": false },
+        { "label": "c", "text": "config-check", "correct": false },
+        { "label": "d", "text": "named-checkconf", "correct": true }
+      ],
+      "feedback": "The named-checkconf command is used to verify the configuration of BIND. When no configuration file is given, it is assumed that /etc/named.conf represents the configuration file."
+    },
+    {
+      "id": 20,
+      "type": "single",
+      "question": "Which of the following TTL values represents eight hours?",
+      "options": [
+        { "label": "a", "text": "8", "correct": false },
+        { "label": "b", "text": "480", "correct": false },
+        { "label": "c", "text": "28800", "correct": true },
+        { "label": "d", "text": "86400", "correct": false }
+      ],
+      "feedback": "TTL, or time to live, values are provided in seconds by default, thereby making 28,800 equal to eight hours."
+    },
+        {
+      "id": 21,
+      "type": "single",
+      "question": "Assuming the following portion of a BIND zone file, what does the value 1800 represent?\n\n@ IN SOA cwa.example.org. root.example.org. (\n2016070400\n3600\n1800\n604800\n86400 )",
+      "options": [
+        { "label": "a", "text": "Refresh", "correct": false },
+        { "label": "b", "text": "Retry", "correct": true },
+        { "label": "c", "text": "Default TTL", "correct": false },
+        { "label": "d", "text": "Serial", "correct": false }
+      ],
+      "feedback": "The value 1800 represents the retry value for the zone. The refresh is 3600, while the default TTL is 86400. Finally, the serial is 2016070400."
+    },
+    {
+      "id": 22,
+      "type": "single",
+      "question": "Which type of resource record is used for SPF records?",
+      "options": [
+        { "label": "a", "text": "SPF", "correct": false },
+        { "label": "b", "text": "MX", "correct": false },
+        { "label": "c", "text": "TXT", "correct": true },
+        { "label": "d", "text": "MAIL", "correct": false }
+      ],
+      "feedback": "TXT records are used to create resource records in support of SPF. MX is used for SMTP servers."
+    },
+    {
+      "id": 23,
+      "type": "single",
+      "question": "Which of the following defines an MX record with a priority of 10?",
+      "options": [
+        { "label": "a", "text": "MX 10 mail.example.com.", "correct": false },
+        { "label": "b", "text": "10 MX mail.example.com.", "correct": true },
+        { "label": "c", "text": "mail.example.com 10 MX", "correct": false },
+        { "label": "d", "text": "mail.example.com MX 10", "correct": false }
+      ],
+      "feedback": "The mail exchanger is defined as Priority MX Hostname in the format shown."
+    },
+    {
+      "id": 24,
+      "type": "single",
+      "question": "Within which file can per-user default settings be created for the dig command?",
+      "options": [
+        { "label": "a", "text": "/etc/dig.cfg", "correct": false },
+        { "label": "b", "text": "/etc/dig.conf", "correct": false },
+        { "label": "c", "text": "~/.digrc", "correct": true },
+        { "label": "d", "text": "~/.dig.conf", "correct": false }
+      ],
+      "feedback": "The .digrc file, found in a user’s home directory, can be used to set defaults for use of the dig command. There is no dig configuration file found in /etc."
+    },
+    {
+      "id": 25,
+      "type": "single",
+      "question": "Which option to the mount command is helpful to facilitate running BIND in a chroot environment?",
+      "options": [
+        { "label": "a", "text": "--bind", "correct": true },
+        { "label": "b", "text": "--chroot", "correct": false },
+        { "label": "c", "text": "--lift", "correct": false },
+        { "label": "d", "text": "-secure", "correct": false }
+      ],
+      "feedback": "The –bind option for the mount command, which has nothing to do with the BIND daemon itself, enables mounting or remounting a portion of the filesystem in another ­location. This is helpful for facilitating working with BIND configuration files in a chroot environment."
+    },
+    {
+      "id": 26,
+      "type": "single",
+      "question": "When setting up a recursive name server, which type of zone is set up for the root hints file?",
+      "options": [
+        { "label": "a", "text": "Master", "correct": false },
+        { "label": "b", "text": "Slave", "correct": false },
+        { "label": "c", "text": "Recurse", "correct": false },
+        { "label": "d", "text": "Hint", "correct": true }
+      ],
+      "feedback": "The zone type of hint is used with the root zone file. When setting up a zone for which the server is authoritative, the type is master or slave. There is no recurse type."
+    },
+    {
+      "id": 27,
+      "type": "single",
+      "question": "After making changes to a DNS zone, which of the following commands can be used to reload the zones so that the changes take effect?",
+      "options": [
+        { "label": "a", "text": "rndc reload", "correct": true },
+        { "label": "b", "text": "rndc restart-zones", "correct": false },
+        { "label": "c", "text": "rndc zone-reload", "correct": false },
+        { "label": "d", "text": "rndc-rel", "correct": false }
+      ],
+      "feedback": "The rndc command can be used for this purpose and, when given the reload subcommand, will reload the zones for the server."
+    },
+    {
+      "id": 28,
+      "type": "single",
+      "question": "Which configuration option within a BIND zone configuration specifies the hosts that are allowed to request a zone transfer?",
+      "options": [
+        { "label": "a", "text": "allow-axfr", "correct": false },
+        { "label": "b", "text": "allow-xfr", "correct": false },
+        { "label": "c", "text": "allow-trans", "correct": false },
+        { "label": "d", "text": "allow-transfer", "correct": true }
+      ],
+      "feedback": "The allow-transfer directive specifies the hosts that are allowed to request a transfer of the zone. The other options shown are not valid."
+    },
+    {
+      "id": 29,
+      "type": "single",
+      "question": "Which type of DNS record is used for specifying a POP3 server?",
+      "options": [
+        { "label": "a", "text": "POP", "correct": false },
+        { "label": "b", "text": "PO", "correct": false },
+        { "label": "c", "text": "MX", "correct": false },
+        { "label": "d", "text": "There is no specific type for POP3 servers.", "correct": true }
+      ],
+      "feedback": "POP3 servers do not have a specific type in DNS. The MX type indicates mail exchanger, or SMTP server."
+    },
+    {
+      "id": 30,
+      "type": "single",
+      "question": "Which directive within a BIND configuration enables specification of the hosts or networks that are allowed to perform a recursive lookup using the server?",
+      "options": [
+        { "label": "a", "text": "allow-recurs", "correct": false },
+        { "label": "b", "text": "allow-recursive", "correct": false },
+        { "label": "c", "text": "allow-recursion", "correct": true },
+        { "label": "d", "text": "allow-rec", "correct": false }
+      ],
+      "feedback": "The allow-recursion option is useful for situations where certain clients can query the nameserver for its authoritative names but not request recursion."
+    },
+        {
+      "id": 31,
+      "type": "single",
+      "question": "Which of the following is the correct format for a named-checkzone command?",
+      "options": [
+        { "label": "a", "text": "named-checkzone <zone> <zonefile>", "correct": true },
+        { "label": "b", "text": "named-checkzone -z <zone>", "correct": false },
+        { "label": "c", "text": "named-checkzone -f <zonefile>", "correct": false },
+        { "label": "d", "text": "named-checkzone <zonefile> <zone>", "correct": false }
+      ],
+      "feedback": "The correct format is named-checkzone <zone> <zonefile>. No other options are required."
+    },
+    {
+      "id": 32,
+      "type": "single",
+      "question": "Which algorithm must be used for rndc authentication when generating a key with dnssec-keygen?",
+      "options": [
+        { "label": "a", "text": "sha1", "correct": false },
+        { "label": "b", "text": "sha256", "correct": false },
+        { "label": "c", "text": "md5", "correct": false },
+        { "label": "d", "text": "hmac-md5", "correct": true }
+      ],
+      "feedback": "The only available algorithm for rndc is hmac-md5, and the key can be generated with dnssec-keygen. The other options shown are encryption or hashing algorithms but are not used for the scenario described."
+    },
+    {
+      "id": 33,
+      "type": "single",
+      "question": "Which of the following configuration directives tells BIND not to divulge its version?",
+      "options": [
+        { "label": "a", "text": "allow-version { none }", "correct": false },
+        { "label": "b", "text": "version none;", "correct": true },
+        { "label": "c", "text": "allow-query-version { none; }", "correct": false },
+        { "label": "d", "text": "query-version no;", "correct": false }
+      ],
+      "feedback": "The version none; directive within a BIND configuration file tells BIND not to return version information. The other directives are not valid."
+    },
+    {
+      "id": 34,
+      "type": "single",
+      "question": "Which option to named-checkconf is used to perform a test of all master zones noted in the config file?",
+      "options": [
+        { "label": "a", "text": "-l", "correct": false },
+        { "label": "b", "text": "-f", "correct": false },
+        { "label": "c", "text": "-z", "correct": true },
+        { "label": "d", "text": "-d", "correct": false }
+      ],
+      "feedback": "The -z option tells named-checkconf to verify the master zones as part of the verification process. The other options are not valid."
+    },
+    {
+      "id": 35,
+      "type": "single",
+      "question": "You have specified 300 as the TTL for an individual record within your zone, and the zone itself has an 86400 default TTL. When making a change to that individual record, how long will it take for the change to propagate to external resolvers after you have restarted BIND?",
+      "options": [
+        { "label": "a", "text": "Up to 86400 seconds", "correct": false },
+        { "label": "b", "text": "Up to 300 seconds", "correct": true },
+        { "label": "c", "text": "The change is immediate after restart.", "correct": false },
+        { "label": "d", "text": "It is impossible to tell from the information given.", "correct": false }
+      ],
+      "feedback": "An individual TTL on a record means that it will take up to that many seconds for the change to propagate. New requests will begin seeing the change immediately after restart, but external resolvers may cache for up to the TTL value before requesting another resolution."
+    },
+    {
+      "id": 36,
+      "type": "single",
+      "question": "Which of the following packages will install the PowerDNS authoritative nameserver on Debian and Red Hat, respectively?",
+      "options": [
+        { "label": "a", "text": "pdns-server on Debian and pdns on Red Hat", "correct": true },
+        { "label": "b", "text": "pdns on Debian and pdns-server on Red Hat", "correct": false },
+        { "label": "c", "text": "pdns on both Debian and Red Hat", "correct": false },
+        { "label": "d", "text": "pdns-server on both Debian and Red Hat", "correct": false }
+      ],
+      "feedback": "The pdns-server package is available on Debian and pdns on Red Hat. Red Hat will require installation from EPEL."
+    },
+    {
+      "id": 37,
+      "type": "single",
+      "question": "Which of the following commands can be used to restart a BIND server so that changes to the named.conf file take effect?",
+      "options": [
+        { "label": "a", "text": "rndc reload", "correct": false },
+        { "label": "b", "text": "rndc reconfig", "correct": true },
+        { "label": "c", "text": "named reboot", "correct": false },
+        { "label": "d", "text": "restart bind", "correct": false }
+      ],
+      "feedback": "The rndc command can be used for this purpose with the reconfig subcommand. Because the scenario includes changes to the named.conf configuration file, a simple rndc reload is not appropriate."
     }
   ]
 }
